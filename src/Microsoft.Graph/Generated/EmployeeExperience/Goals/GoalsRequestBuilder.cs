@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
     /// <summary>
     /// Provides operations to manage the goals property of the microsoft.graph.employeeExperience entity.
     /// </summary>
-    public class GoalsRequestBuilder : BaseRequestBuilder {
+    public class GoalsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.goals entity.</summary>
-        public ExportJobsRequestBuilder ExportJobs { get =>
-            new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
+        public ExportJobsRequestBuilder ExportJobs
+        {
+            get =>             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GoalsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GoalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/goals{?%24expand,%24select}", pathParameters) {
+        public GoalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/goals{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GoalsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GoalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/goals{?%24expand,%24select}", rawUrl) {
+        public GoalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/goals{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property goals for employeeExperience
@@ -41,13 +45,16 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,13 +68,16 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Goals?> GetAsync(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Goals?> GetAsync(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Goals> GetAsync(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Goals> GetAsync(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Goals>(requestInfo, Microsoft.Graph.Beta.Models.Goals.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,14 +92,17 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Goals?> PatchAsync(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Goals?> PatchAsync(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Goals> PatchAsync(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Goals> PatchAsync(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Goals>(requestInfo, Microsoft.Graph.Beta.Models.Goals.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -101,10 +114,12 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/employeeExperience/goals", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -118,10 +133,12 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GoalsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -136,10 +153,12 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Goals body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/employeeExperience/goals", PathParameters);
@@ -153,19 +172,22 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// </summary>
         /// <returns>A <see cref="GoalsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GoalsRequestBuilder WithUrl(string rawUrl) {
+        public GoalsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GoalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GoalsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GoalsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Represents a collection of goals in a Viva Goals organization.
         /// </summary>
-        public class GoalsRequestBuilderGetQueryParameters {
+        public class GoalsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,13 +213,15 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GoalsRequestBuilderGetRequestConfiguration : RequestConfiguration<GoalsRequestBuilderGetQueryParameters> {
+        public class GoalsRequestBuilderGetRequestConfiguration : RequestConfiguration<GoalsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GoalsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GoalsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

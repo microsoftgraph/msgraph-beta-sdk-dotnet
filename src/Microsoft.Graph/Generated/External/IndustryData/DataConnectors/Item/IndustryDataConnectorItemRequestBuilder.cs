@@ -15,28 +15,33 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
     /// <summary>
     /// Provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
     /// </summary>
-    public class IndustryDataConnectorItemRequestBuilder : BaseRequestBuilder {
+    public class IndustryDataConnectorItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the validate method.</summary>
-        public MicrosoftGraphIndustryDataValidateRequestBuilder MicrosoftGraphIndustryDataValidate { get =>
-            new MicrosoftGraphIndustryDataValidateRequestBuilder(PathParameters, RequestAdapter);
+        public MicrosoftGraphIndustryDataValidateRequestBuilder MicrosoftGraphIndustryDataValidate
+        {
+            get =>             new MicrosoftGraphIndustryDataValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sourceSystem property of the microsoft.graph.industryData.industryDataConnector entity.</summary>
-        public SourceSystemRequestBuilder SourceSystem { get =>
-            new SourceSystemRequestBuilder(PathParameters, RequestAdapter);
+        public SourceSystemRequestBuilder SourceSystem
+        {
+            get =>             new SourceSystemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="IndustryDataConnectorItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndustryDataConnectorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24expand,%24select}", pathParameters) {
+        public IndustryDataConnectorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="IndustryDataConnectorItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndustryDataConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24expand,%24select}", rawUrl) {
+        public IndustryDataConnectorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete an industryDataConnector object.
@@ -47,13 +52,16 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -68,20 +76,23 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IndustryDataConnector?> GetAsync(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IndustryDataConnector?> GetAsync(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<IndustryDataConnector> GetAsync(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IndustryDataConnector> GetAsync(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an industryDataConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0" />
+        /// Update the properties of an azureDataLakeConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -90,14 +101,17 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IndustryDataConnector?> PatchAsync(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IndustryDataConnector?> PatchAsync(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<IndustryDataConnector> PatchAsync(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IndustryDataConnector> PatchAsync(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -109,10 +123,12 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -126,10 +142,12 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -137,17 +155,19 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an industryDataConnector object.
+        /// Update the properties of an azureDataLakeConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(IndustryDataConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}", PathParameters);
@@ -161,19 +181,22 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnectorItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IndustryDataConnectorItemRequestBuilder WithUrl(string rawUrl) {
+        public IndustryDataConnectorItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new IndustryDataConnectorItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class IndustryDataConnectorItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
-        public class IndustryDataConnectorItemRequestBuilderGetQueryParameters {
+        public class IndustryDataConnectorItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,13 +222,15 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IndustryDataConnectorItemRequestBuilderGetRequestConfiguration : RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> {
+        public class IndustryDataConnectorItemRequestBuilderGetRequestConfiguration : RequestConfiguration<IndustryDataConnectorItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IndustryDataConnectorItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class IndustryDataConnectorItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

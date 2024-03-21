@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class FilteringProfile : Profile, IParsable {
+    public class FilteringProfile : Profile, IParsable 
+    {
         /// <summary>A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +34,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// Instantiates a new <see cref="FilteringProfile"/> and sets the default values.
         /// </summary>
-        public FilteringProfile() : base() {
+        public FilteringProfile() : base()
+        {
             OdataType = "#microsoft.graph.networkaccess.filteringProfile";
         }
         /// <summary>
@@ -41,7 +43,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         /// <returns>A <see cref="FilteringProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilteringProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new FilteringProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new FilteringProfile();
         }
@@ -49,8 +52,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"priority", n => { Priority = n.GetLongValue(); } },
@@ -60,7 +65,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);

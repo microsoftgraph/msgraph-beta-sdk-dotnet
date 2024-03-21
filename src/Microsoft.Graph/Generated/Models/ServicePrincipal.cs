@@ -5,13 +5,14 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class ServicePrincipal : DirectoryObject, IParsable {
-        /// <summary>true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).</summary>
+    public class ServicePrincipal : DirectoryObject, IParsable 
+    {
+        /// <summary>true if the service principal account is enabled; otherwise, false. If set to false, then no users are able to sign in to this app, even if they&apos;re assigned to it. Supports $filter (eq, ne, not, in).</summary>
         public bool? AccountEnabled {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
-        /// <summary>Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &apos;FileHandler&apos; functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.</summary>
+        /// <summary>Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its &apos;FileHandler&apos; functionality. This lets services like Microsoft 365 call the application in the context of a document the user is working on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AddIn>? AddIns {
@@ -25,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("addIns", value); }
         }
 #endif
-        /// <summary>Used to retrieve service principals by subscription, identify resource group and full resource ids for managed identities. Supports $filter (eq, not, ge, le, startsWith).</summary>
+        /// <summary>Used to retrieve service principals by subscription, identify resource group and full resource IDs for managed identities. Supports $filter (eq, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AlternativeNames {
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>Unique identifier of the applicationTemplate that the servicePrincipal was created from. Read-only. Supports $filter (eq, ne, NOT, startsWith).</summary>
+        /// <summary>Unique identifier of the applicationTemplate. Supports $filter (eq, not, ne). Read-only. null if the app wasn&apos;t created from an application template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApplicationTemplateId {
@@ -109,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
 #endif
-        /// <summary>Contains the tenant id where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).</summary>
+        /// <summary>Contains the tenant ID where the application is registered. This is applicable only to service principals backed by applications. Supports $filter (eq, ne, NOT, ge, le).</summary>
         public Guid? AppOwnerOrganizationId {
             get { return BackingStore?.Get<Guid?>("appOwnerOrganizationId"); }
             set { BackingStore?.Set("appOwnerOrganizationId", value); }
@@ -147,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
-        /// <summary>The roles exposed by the application, which this service principal represents. For more information see the appRoles property definition on the application entity. Not nullable.</summary>
+        /// <summary>The roles exposed by the application, which this service principal represents. For more information, see the appRoles property definition on the application entity. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AppRole>? AppRoles {
@@ -217,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("delegatedPermissionClassifications", value); }
         }
 #endif
-        /// <summary>Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps will display the application description in this field. The maximum allowed size is 1024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
+        /// <summary>Free text field to provide an internal end-user facing description of the service principal. End-user portals such MyApps displays the application description in this field. The maximum allowed size is 1,024 characters. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -385,7 +386,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("loginUrl", value); }
         }
 #endif
-        /// <summary>Specifies the URL that will be used by Microsoft&apos;s authorization service to logout an user using OpenId Connect front-channel, back-channel or SAML logout protocols.</summary>
+        /// <summary>Specifies the URL that the Microsoft&apos;s authorization service uses to sign out a user using OpenId Connect front-channel, back-channel, or SAML sign out protocols.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoutUrl {
@@ -413,7 +414,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
-        /// <summary>Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1024 characters.</summary>
+        /// <summary>Free text field to capture information about the service principal, typically used for operational purposes. Maximum allowed size is 1,024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Notes {
@@ -469,7 +470,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownedObjects", value); }
         }
 #endif
-        /// <summary>Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
+        /// <summary>Directory objects that are owners of this servicePrincipal. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DirectoryObject>? Owners {
@@ -525,12 +526,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("preferredSingleSignOnMode", value); }
         }
 #endif
-        /// <summary>Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute is not currentlysupported. For details, see ServicePrincipal property differences.</summary>
+        /// <summary>Specifies the expiration date of the keyCredential used for token signing, marked by preferredTokenSigningKeyThumbprint. Updating this attribute isn&apos;t currently supported. For details, see ServicePrincipal property differences.</summary>
         public DateTimeOffset? PreferredTokenSigningKeyEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("preferredTokenSigningKeyEndDateTime"); }
             set { BackingStore?.Set("preferredTokenSigningKeyEndDateTime", value); }
         }
-        /// <summary>This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that are not SAML, do not write or otherwise rely on this property.</summary>
+        /// <summary>This property can be used on SAML applications (apps that have preferredSingleSignOnMode set to saml) to control which certificate is used to sign the SAML responses. For applications that aren&apos;t SAML, don&apos;t write or otherwise rely on this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredTokenSigningKeyThumbprint {
@@ -544,7 +545,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("preferredTokenSigningKeyThumbprint", value); }
         }
 #endif
-        /// <summary>The delegated permissions exposed by the application. For more information see the oauth2PermissionScopes property on the application entity&apos;s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.</summary>
+        /// <summary>The delegated permissions exposed by the application. For more information, see the oauth2PermissionScopes property on the application entity&apos;s api property. Not nullable. Note: This property is named oauth2PermissionScopes in v1.0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PermissionScope>? PublishedPermissionScopes {
@@ -628,7 +629,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("samlSingleSignOnSettings", value); }
         }
 #endif
-        /// <summary>Contains the list of identifiersUris, copied over from the associated application. Additional values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI which is based on the values of this property to acquire an access token, which is the URI returned in the &apos;aud&apos; claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).</summary>
+        /// <summary>Contains the list of identifiersUris, copied over from the associated application. More values can be added to hybrid applications. These values can be used to identify the permissions exposed by this app within Microsoft Entra ID. For example,Client apps can specify a resource URI that is based on the values of this property to acquire an access token, which is the URI returned in the &apos;aud&apos; claim.The any operator is required for filter expressions on multi-valued properties. Not nullable.  Supports $filter (eq, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ServicePrincipalNames {
@@ -642,7 +643,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalNames", value); }
         }
 #endif
-        /// <summary>Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represent a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.</summary>
+        /// <summary>Identifies if the service principal represents an application or a managed identity. This is set by Microsoft Entra ID internally. For a service principal that represents an application this is set as Application. For a service principal that represents a managed identity this is set as ManagedIdentity. The SocialIdp type is for internal use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalType {
@@ -656,7 +657,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
 #endif
-        /// <summary>Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization&apos;s Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization&apos;s Microsoft Entra tenant (multi-tenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization&apos;s Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.</summary>
+        /// <summary>Specifies the Microsoft accounts that are supported for the current application. Read-only. Supported values are:AzureADMyOrg: Users with a Microsoft work or school account in my organization&apos;s Microsoft Entra tenant (single-tenant).AzureADMultipleOrgs: Users with a Microsoft work or school account in any organization&apos;s Microsoft Entra tenant (multitenant).AzureADandPersonalMicrosoftAccount: Users with a personal Microsoft account, or a work or school account in any organization&apos;s Microsoft Entra tenant.PersonalMicrosoftAccount: Users with a personal Microsoft account only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignInAudience {
@@ -745,7 +746,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
 #endif
-        /// <summary>Specifies the verified publisher of the application which this service principal represents.</summary>
+        /// <summary>Specifies the verified publisher of the application that&apos;s linked to this service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.VerifiedPublisher? VerifiedPublisher {
@@ -762,7 +763,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="ServicePrincipal"/> and sets the default values.
         /// </summary>
-        public ServicePrincipal() : base() {
+        public ServicePrincipal() : base()
+        {
             OdataType = "#microsoft.graph.servicePrincipal";
         }
         /// <summary>
@@ -770,7 +772,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="ServicePrincipal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ServicePrincipal();
         }
@@ -778,8 +781,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
                 {"addIns", n => { AddIns = n.GetCollectionOfObjectValues<AddIn>(AddIn.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"alternativeNames", n => { AlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -843,7 +848,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);

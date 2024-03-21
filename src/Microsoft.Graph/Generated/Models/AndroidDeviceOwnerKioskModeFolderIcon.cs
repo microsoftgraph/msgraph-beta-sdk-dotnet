@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner Kiosk Mode folder icon type.</summary>
-    public enum AndroidDeviceOwnerKioskModeFolderIcon {
+    public enum AndroidDeviceOwnerKioskModeFolderIcon
+    {
         /// <summary>Not configured; this value is ignored.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

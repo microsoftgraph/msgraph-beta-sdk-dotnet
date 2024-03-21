@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcRegionGroup {
+    public enum CloudPcRegionGroup
+    {
         [EnumMember(Value = "default")]
         Default,
         [EnumMember(Value = "australia")]

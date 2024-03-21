@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// By providing the configurations in this profile you can instruct the iOS device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class IosVpnConfiguration : AppleVpnConfiguration, IParsable {
+    public class IosVpnConfiguration : AppleVpnConfiguration, IParsable 
+    {
         /// <summary>Zscaler only. Zscaler cloud which the user is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +116,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="IosVpnConfiguration"/> and sets the default values.
         /// </summary>
-        public IosVpnConfiguration() : base() {
+        public IosVpnConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.iosVpnConfiguration";
         }
         /// <summary>
@@ -123,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="IosVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IosVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.iosikEv2VpnConfiguration" => new IosikEv2VpnConfiguration(),
                 _ => new IosVpnConfiguration(),
             };
@@ -135,8 +139,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"cloudName", n => { CloudName = n.GetStringValue(); } },
                 {"derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
                 {"excludeList", n => { ExcludeList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -151,7 +157,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("cloudName", CloudName);

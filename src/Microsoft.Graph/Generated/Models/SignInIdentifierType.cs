@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum SignInIdentifierType {
+    public enum SignInIdentifierType
+    {
         [EnumMember(Value = "userPrincipalName")]
         UserPrincipalName,
         [EnumMember(Value = "phoneNumber")]

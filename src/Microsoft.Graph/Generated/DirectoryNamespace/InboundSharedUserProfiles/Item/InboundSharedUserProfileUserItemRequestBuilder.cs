@@ -15,28 +15,33 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
     /// <summary>
     /// Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
     /// </summary>
-    public class InboundSharedUserProfileUserItemRequestBuilder : BaseRequestBuilder {
+    public class InboundSharedUserProfileUserItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the exportPersonalData method.</summary>
-        public ExportPersonalDataRequestBuilder ExportPersonalData { get =>
-            new ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
+        public ExportPersonalDataRequestBuilder ExportPersonalData
+        {
+            get =>             new ExportPersonalDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removePersonalData method.</summary>
-        public RemovePersonalDataRequestBuilder RemovePersonalData { get =>
-            new RemovePersonalDataRequestBuilder(PathParameters, RequestAdapter);
+        public RemovePersonalDataRequestBuilder RemovePersonalData
+        {
+            get =>             new RemovePersonalDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="InboundSharedUserProfileUserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InboundSharedUserProfileUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}", pathParameters) {
+        public InboundSharedUserProfileUserItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="InboundSharedUserProfileUserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InboundSharedUserProfileUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}", rawUrl) {
+        public InboundSharedUserProfileUserItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property inboundSharedUserProfiles for directory
@@ -46,13 +51,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -67,13 +75,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<InboundSharedUserProfile?> GetAsync(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InboundSharedUserProfile?> GetAsync(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<InboundSharedUserProfile> GetAsync(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InboundSharedUserProfile> GetAsync(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<InboundSharedUserProfile>(requestInfo, InboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -88,14 +99,17 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<InboundSharedUserProfile?> PatchAsync(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InboundSharedUserProfile?> PatchAsync(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<InboundSharedUserProfile> PatchAsync(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<InboundSharedUserProfile> PatchAsync(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<InboundSharedUserProfile>(requestInfo, InboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -107,10 +121,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -124,10 +140,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -142,10 +160,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(InboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/directory/inboundSharedUserProfiles/{inboundSharedUserProfile%2DuserId}", PathParameters);
@@ -159,19 +179,22 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// </summary>
         /// <returns>A <see cref="InboundSharedUserProfileUserItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InboundSharedUserProfileUserItemRequestBuilder WithUrl(string rawUrl) {
+        public InboundSharedUserProfileUserItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new InboundSharedUserProfileUserItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class InboundSharedUserProfileUserItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Read the properties of an inboundSharedUserProfile.
         /// </summary>
-        public class InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters {
+        public class InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,13 +220,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration : RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters> {
+        public class InboundSharedUserProfileUserItemRequestBuilderGetRequestConfiguration : RequestConfiguration<InboundSharedUserProfileUserItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InboundSharedUserProfileUserItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class InboundSharedUserProfileUserItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

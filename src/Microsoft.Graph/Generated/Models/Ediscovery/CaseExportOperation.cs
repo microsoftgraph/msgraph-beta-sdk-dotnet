@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    public class CaseExportOperation : CaseOperation, IParsable {
+    public class CaseExportOperation : CaseOperation, IParsable 
+    {
         /// <summary>The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +106,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// </summary>
         /// <returns>A <see cref="CaseExportOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CaseExportOperation CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new CaseExportOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CaseExportOperation();
         }
@@ -113,8 +115,10 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
                 {"azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -129,7 +133,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("azureBlobContainer", AzureBlobContainer);

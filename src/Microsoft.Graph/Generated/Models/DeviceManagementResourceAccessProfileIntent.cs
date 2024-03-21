@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The administrator intent for the assignment of the profile.</summary>
-    public enum DeviceManagementResourceAccessProfileIntent {
+    public enum DeviceManagementResourceAccessProfileIntent
+    {
         /// <summary>Apply the profile.</summary>
         [EnumMember(Value = "apply")]
         Apply,

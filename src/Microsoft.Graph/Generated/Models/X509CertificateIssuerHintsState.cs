@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum X509CertificateIssuerHintsState {
+    public enum X509CertificateIssuerHintsState
+    {
         [EnumMember(Value = "disabled")]
         Disabled,
         [EnumMember(Value = "enabled")]

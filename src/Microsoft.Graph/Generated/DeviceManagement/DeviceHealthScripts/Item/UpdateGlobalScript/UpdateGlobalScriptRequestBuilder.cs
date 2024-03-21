@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateG
     /// <summary>
     /// Provides operations to call the updateGlobalScript method.
     /// </summary>
-    public class UpdateGlobalScriptRequestBuilder : BaseRequestBuilder {
+    public class UpdateGlobalScriptRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="UpdateGlobalScriptRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdateGlobalScriptRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/updateGlobalScript", pathParameters) {
+        public UpdateGlobalScriptRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/updateGlobalScript", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UpdateGlobalScriptRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdateGlobalScriptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/updateGlobalScript", rawUrl) {
+        public UpdateGlobalScriptRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/deviceHealthScripts/{deviceHealthScript%2Did}/updateGlobalScript", rawUrl)
+        {
         }
         /// <summary>
         /// Update the Proprietary Device Health Script
@@ -37,14 +40,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateG
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UpdateGlobalScriptPostResponse?> PostAsUpdateGlobalScriptPostResponseAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UpdateGlobalScriptPostResponse?> PostAsUpdateGlobalScriptPostResponseAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UpdateGlobalScriptPostResponse> PostAsUpdateGlobalScriptPostResponseAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UpdateGlobalScriptPostResponse> PostAsUpdateGlobalScriptPostResponseAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UpdateGlobalScriptPostResponse>(requestInfo, UpdateGlobalScriptPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,14 +66,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateG
         [Obsolete("This method is obsolete. Use PostAsUpdateGlobalScriptPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UpdateGlobalScriptResponse?> PostAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UpdateGlobalScriptResponse?> PostAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UpdateGlobalScriptResponse> PostAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UpdateGlobalScriptResponse> PostAsync(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UpdateGlobalScriptResponse>(requestInfo, UpdateGlobalScriptResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -80,10 +89,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateG
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(UpdateGlobalScriptPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -97,14 +108,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateG
         /// </summary>
         /// <returns>A <see cref="UpdateGlobalScriptRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UpdateGlobalScriptRequestBuilder WithUrl(string rawUrl) {
+        public UpdateGlobalScriptRequestBuilder WithUrl(string rawUrl)
+        {
             return new UpdateGlobalScriptRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UpdateGlobalScriptRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class UpdateGlobalScriptRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

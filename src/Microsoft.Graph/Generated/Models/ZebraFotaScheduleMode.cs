@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents various schedule modes for Zebra FOTA deployment.</summary>
-    public enum ZebraFotaScheduleMode {
+    public enum ZebraFotaScheduleMode
+    {
         /// <summary>Instructs the device to install the update as soon as it is received.</summary>
         [EnumMember(Value = "installNow")]
         InstallNow,

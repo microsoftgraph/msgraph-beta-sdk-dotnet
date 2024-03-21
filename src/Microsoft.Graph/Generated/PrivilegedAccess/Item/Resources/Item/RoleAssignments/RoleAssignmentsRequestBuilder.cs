@@ -16,36 +16,45 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
     /// <summary>
     /// Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.
     /// </summary>
-    public class RoleAssignmentsRequestBuilder : BaseRequestBuilder {
+    public class RoleAssignmentsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the export method.</summary>
-        public ExportRequestBuilder Export { get =>
-            new ExportRequestBuilder(PathParameters, RequestAdapter);
+        public ExportRequestBuilder Export
+        {
+            get =>             new ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.</summary>
         /// <param name="position">The unique identifier of governanceRoleAssignment</param>
         /// <returns>A <see cref="GovernanceRoleAssignmentItemRequestBuilder"/></returns>
-        public GovernanceRoleAssignmentItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("governanceRoleAssignment%2Did", position);
-            return new GovernanceRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public GovernanceRoleAssignmentItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("governanceRoleAssignment%2Did", position);
+                return new GovernanceRoleAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="RoleAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleAssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public RoleAssignmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public RoleAssignmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// The collection of role assignments for the resource.
@@ -56,13 +65,16 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GovernanceRoleAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentCollectionResponse>(requestInfo, GovernanceRoleAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,14 +89,17 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleAssignment?> PostAsync(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleAssignment?> PostAsync(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GovernanceRoleAssignment> PostAsync(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleAssignment> PostAsync(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GovernanceRoleAssignment>(requestInfo, GovernanceRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -96,10 +111,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -114,10 +131,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GovernanceRoleAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/privilegedAccess/{privilegedAccess%2Did}/resources/{governanceResource%2Did}/roleAssignments", PathParameters);
@@ -131,13 +150,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// </summary>
         /// <returns>A <see cref="RoleAssignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleAssignmentsRequestBuilder WithUrl(string rawUrl) {
+        public RoleAssignmentsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The collection of role assignments for the resource.
         /// </summary>
-        public class RoleAssignmentsRequestBuilderGetQueryParameters {
+        public class RoleAssignmentsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -202,13 +223,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> {
+        public class RoleAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class RoleAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

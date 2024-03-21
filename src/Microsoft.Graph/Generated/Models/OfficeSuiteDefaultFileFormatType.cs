@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Describes the OfficeSuiteApp file format types that can be selected.</summary>
-    public enum OfficeSuiteDefaultFileFormatType {
+    public enum OfficeSuiteDefaultFileFormatType
+    {
         /// <summary>No file format selected</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

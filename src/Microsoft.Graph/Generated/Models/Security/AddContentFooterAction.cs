@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class AddContentFooterAction : InformationProtectionAction, IParsable {
+    public class AddContentFooterAction : InformationProtectionAction, IParsable 
+    {
         /// <summary>The alignment property</summary>
         public ContentAlignment? Alignment {
             get { return BackingStore?.Get<ContentAlignment?>("alignment"); }
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>
         /// Instantiates a new <see cref="AddContentFooterAction"/> and sets the default values.
         /// </summary>
-        public AddContentFooterAction() : base() {
+        public AddContentFooterAction() : base()
+        {
             OdataType = "#microsoft.graph.security.addContentFooterAction";
         }
         /// <summary>
@@ -88,7 +90,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         /// <returns>A <see cref="AddContentFooterAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AddContentFooterAction CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AddContentFooterAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AddContentFooterAction();
         }
@@ -96,8 +99,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"alignment", n => { Alignment = n.GetEnumValue<ContentAlignment>(); } },
                 {"fontColor", n => { FontColor = n.GetStringValue(); } },
                 {"fontName", n => { FontName = n.GetStringValue(); } },
@@ -111,7 +116,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<ContentAlignment>("alignment", Alignment);

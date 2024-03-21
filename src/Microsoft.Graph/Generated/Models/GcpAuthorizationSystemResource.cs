@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class GcpAuthorizationSystemResource : AuthorizationSystemResource, IParsable {
+    public class GcpAuthorizationSystemResource : AuthorizationSystemResource, IParsable 
+    {
         /// <summary>The service associated with the resource in an GCP authorization system. This object is auto-expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="GcpAuthorizationSystemResource"/> and sets the default values.
         /// </summary>
-        public GcpAuthorizationSystemResource() : base() {
+        public GcpAuthorizationSystemResource() : base()
+        {
             OdataType = "#microsoft.graph.gcpAuthorizationSystemResource";
         }
         /// <summary>
@@ -31,7 +33,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="GcpAuthorizationSystemResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GcpAuthorizationSystemResource CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GcpAuthorizationSystemResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GcpAuthorizationSystemResource();
         }
@@ -39,8 +42,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"service", n => { Service = n.GetObjectValue<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue); } },
             };
         }
@@ -48,7 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<AuthorizationSystemTypeService>("service", Service);

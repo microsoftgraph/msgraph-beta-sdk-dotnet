@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers.Item {
     /// <summary>
     /// Provides operations to manage the inactiveUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
     /// </summary>
-    public class MonthlyInactiveUsersMetricItemRequestBuilder : BaseRequestBuilder {
+    public class MonthlyInactiveUsersMetricItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MonthlyInactiveUsersMetricItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyInactiveUsersMetricItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/inactiveUsers/{monthlyInactiveUsersMetric%2Did}{?%24expand,%24select}", pathParameters) {
+        public MonthlyInactiveUsersMetricItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/inactiveUsers/{monthlyInactiveUsersMetric%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MonthlyInactiveUsersMetricItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyInactiveUsersMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/inactiveUsers/{monthlyInactiveUsersMetric%2Did}{?%24expand,%24select}", rawUrl) {
+        public MonthlyInactiveUsersMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/inactiveUsers/{monthlyInactiveUsersMetric%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get inactiveUsers from reports
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MonthlyInactiveUsersMetric?> GetAsync(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MonthlyInactiveUsersMetric?> GetAsync(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MonthlyInactiveUsersMetric> GetAsync(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MonthlyInactiveUsersMetric> GetAsync(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MonthlyInactiveUsersMetric>(requestInfo, MonthlyInactiveUsersMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers.Item {
         /// </summary>
         /// <returns>A <see cref="MonthlyInactiveUsersMetricItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MonthlyInactiveUsersMetricItemRequestBuilder WithUrl(string rawUrl) {
+        public MonthlyInactiveUsersMetricItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new MonthlyInactiveUsersMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get inactiveUsers from reports
         /// </summary>
-        public class MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters {
+        public class MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonthlyInactiveUsersMetricItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters> {
+        public class MonthlyInactiveUsersMetricItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MonthlyInactiveUsersMetricItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

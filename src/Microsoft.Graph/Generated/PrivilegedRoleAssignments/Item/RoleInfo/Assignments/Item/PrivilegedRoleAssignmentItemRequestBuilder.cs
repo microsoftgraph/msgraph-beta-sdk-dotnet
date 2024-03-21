@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
     /// <summary>
     /// Provides operations to manage the assignments property of the microsoft.graph.privilegedRole entity.
     /// </summary>
-    public class PrivilegedRoleAssignmentItemRequestBuilder : BaseRequestBuilder {
+    public class PrivilegedRoleAssignmentItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="PrivilegedRoleAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegedRoleAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24expand,%24select}", pathParameters) {
+        public PrivilegedRoleAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PrivilegedRoleAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegedRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24expand,%24select}", rawUrl) {
+        public PrivilegedRoleAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/privilegedRoleAssignments/{privilegedRoleAssignment%2Did}/roleInfo/assignments/{privilegedRoleAssignment%2Did1}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get assignments from privilegedRoleAssignments
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegedRoleAssignment?> GetAsync(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedRoleAssignment?> GetAsync(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<PrivilegedRoleAssignment> GetAsync(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedRoleAssignment> GetAsync(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignment>(requestInfo, PrivilegedRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         /// </summary>
         /// <returns>A <see cref="PrivilegedRoleAssignmentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrivilegedRoleAssignmentItemRequestBuilder WithUrl(string rawUrl) {
+        public PrivilegedRoleAssignmentItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new PrivilegedRoleAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get assignments from privilegedRoleAssignments
         /// </summary>
-        public class PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters {
+        public class PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.Assignmen
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters> {
+        public class PrivilegedRoleAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegedRoleAssignmentItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

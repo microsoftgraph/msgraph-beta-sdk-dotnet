@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Subject Name Format Options.</summary>
-    public enum SubjectNameFormat {
+    public enum SubjectNameFormat
+    {
         /// <summary>Common name.</summary>
         [EnumMember(Value = "commonName")]
         CommonName,

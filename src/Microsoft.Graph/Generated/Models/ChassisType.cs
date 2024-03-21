@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Chassis type.</summary>
-    public enum ChassisType {
+    public enum ChassisType
+    {
         /// <summary>Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

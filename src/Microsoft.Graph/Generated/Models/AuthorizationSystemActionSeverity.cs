@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AuthorizationSystemActionSeverity {
+    public enum AuthorizationSystemActionSeverity
+    {
         [EnumMember(Value = "normal")]
         Normal,
         [EnumMember(Value = "high")]

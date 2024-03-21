@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of the DmaGuardDeviceEnumerationPolicy.</summary>
-    public enum DmaGuardDeviceEnumerationPolicyType {
+    public enum DmaGuardDeviceEnumerationPolicyType
+    {
         /// <summary>Default value. Devices with DMA remapping incompatible drivers will only be enumerated after the user unlocks the screen.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class UserSet : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class UserSet : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -36,7 +37,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="UserSet"/> and sets the default values.
         /// </summary>
-        public UserSet() {
+        public UserSet()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -45,10 +47,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="UserSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserSet CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static UserSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.connectedOrganizationMembers" => new ConnectedOrganizationMembers(),
                 "#microsoft.graph.externalSponsors" => new ExternalSponsors(),
                 "#microsoft.graph.groupMembers" => new GroupMembers(),
@@ -63,8 +67,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"isBackup", n => { IsBackup = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -73,7 +79,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isBackup", IsBackup);
             writer.WriteStringValue("@odata.type", OdataType);

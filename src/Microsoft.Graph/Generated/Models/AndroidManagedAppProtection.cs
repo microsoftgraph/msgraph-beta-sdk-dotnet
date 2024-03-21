@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
     /// </summary>
-    public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable {
+    public class AndroidManagedAppProtection : TargetedManagedAppProtection, IParsable 
+    {
         /// <summary>Semicolon seperated list of device manufacturers allowed, as a string, for the managed app to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedAndroidDeviceModels", value); }
         }
 #endif
-        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).</summary>
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
             set { BackingStore?.Set("appActionIfAccountIsClockedOut", value); }
@@ -67,22 +68,22 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDeviceLockNotSet"); }
             set { BackingStore?.Set("appActionIfDeviceLockNotSet", value); }
         }
-        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action.</summary>
+        /// <summary>If the device does not have a passcode of high complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanHigh {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanHigh"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanHigh", value); }
         }
-        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action.</summary>
+        /// <summary>If the device does not have a passcode of low complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanLow {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanLow"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanLow", value); }
         }
-        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action.</summary>
+        /// <summary>If the device does not have a passcode of medium complexity or higher, trigger the stored action. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfDevicePasscodeComplexityLessThanMedium {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDevicePasscodeComplexityLessThanMedium"); }
             set { BackingStore?.Set("appActionIfDevicePasscodeComplexityLessThanMedium", value); }
         }
-        /// <summary>Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block &amp; wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured.</summary>
+        /// <summary>Defines the behavior of a managed app when Samsung Knox Attestation is required. Possible values are null, warn, block &amp; wipe. If the admin does not set this action, the default is null, which indicates this setting is not configured. Possible values are: block, wipe, warn.</summary>
         public ManagedAppRemediationAction? AppActionIfSamsungKnoxAttestationRequired {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfSamsungKnoxAttestationRequired"); }
             set { BackingStore?.Set("appActionIfSamsungKnoxAttestationRequired", value); }
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("connectToVpnOnLaunch"); }
             set { BackingStore?.Set("connectToVpnOnLaunch", value); }
         }
-        /// <summary>Friendly name of the preferred custom browser to open weblink on Android.</summary>
+        /// <summary>Friendly name of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserDisplayName {
@@ -144,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customBrowserDisplayName", value); }
         }
 #endif
-        /// <summary>Unique identifier of a custom browser to open weblink on Android.</summary>
+        /// <summary>Unique identifier of the preferred custom browser to open weblink on Android. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserPackageId {
@@ -399,7 +400,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AndroidManagedAppProtection"/> and sets the default values.
         /// </summary>
-        public AndroidManagedAppProtection() : base() {
+        public AndroidManagedAppProtection() : base()
+        {
             OdataType = "#microsoft.graph.androidManagedAppProtection";
         }
         /// <summary>
@@ -407,7 +409,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AndroidManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AndroidManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AndroidManagedAppProtection();
         }
@@ -415,8 +418,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowedAndroidDeviceManufacturers", n => { AllowedAndroidDeviceManufacturers = n.GetStringValue(); } },
                 {"allowedAndroidDeviceModels", n => { AllowedAndroidDeviceModels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<ManagedAppRemediationAction>(); } },
@@ -468,7 +473,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("allowedAndroidDeviceManufacturers", AllowedAndroidDeviceManufacturers);

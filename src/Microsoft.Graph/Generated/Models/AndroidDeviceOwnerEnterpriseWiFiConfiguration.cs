@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android Device Owner device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.
     /// </summary>
-    public class AndroidDeviceOwnerEnterpriseWiFiConfiguration : AndroidDeviceOwnerWiFiConfiguration, IParsable {
+    public class AndroidDeviceOwnerEnterpriseWiFiConfiguration : AndroidDeviceOwnerWiFiConfiguration, IParsable 
+    {
         /// <summary>Indicates the Authentication Method the client (device) needs to use when the EAP Type is configured to PEAP or EAP-TTLS. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
             get { return BackingStore?.Get<WiFiAuthenticationMethod?>("authenticationMethod"); }
@@ -102,7 +103,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AndroidDeviceOwnerEnterpriseWiFiConfiguration"/> and sets the default values.
         /// </summary>
-        public AndroidDeviceOwnerEnterpriseWiFiConfiguration() : base() {
+        public AndroidDeviceOwnerEnterpriseWiFiConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration";
         }
         /// <summary>
@@ -110,7 +112,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AndroidDeviceOwnerEnterpriseWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerEnterpriseWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AndroidDeviceOwnerEnterpriseWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AndroidDeviceOwnerEnterpriseWiFiConfiguration();
         }
@@ -118,8 +121,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<WiFiAuthenticationMethod>(); } },
                 {"derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
                 {"eapType", n => { EapType = n.GetEnumValue<AndroidEapType>(); } },
@@ -135,7 +140,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<WiFiAuthenticationMethod>("authenticationMethod", AuthenticationMethod);

@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// The Zebra FOTA connector entity that represents the tenant&apos;s authorization status for Intune to call Zebra Update Services.
     /// </summary>
-    public class ZebraFotaConnector : Entity, IParsable {
+    public class ZebraFotaConnector : Entity, IParsable 
+    {
         /// <summary>Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="ZebraFotaConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ZebraFotaConnector CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ZebraFotaConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ZebraFotaConnector();
         }
@@ -65,8 +67,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"enrollmentAuthorizationUrl", n => { EnrollmentAuthorizationUrl = n.GetStringValue(); } },
                 {"enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
                 {"fotaAppsApproved", n => { FotaAppsApproved = n.GetBoolValue(); } },
@@ -78,7 +82,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("enrollmentAuthorizationUrl", EnrollmentAuthorizationUrl);

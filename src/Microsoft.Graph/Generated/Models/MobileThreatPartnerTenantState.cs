@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Partner state of this tenant.</summary>
-    public enum MobileThreatPartnerTenantState {
+    public enum MobileThreatPartnerTenantState
+    {
         /// <summary>Partner is unavailable.</summary>
         [EnumMember(Value = "unavailable")]
         Unavailable,

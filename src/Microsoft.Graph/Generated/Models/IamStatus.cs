@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum IamStatus {
+    public enum IamStatus
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "inactive")]

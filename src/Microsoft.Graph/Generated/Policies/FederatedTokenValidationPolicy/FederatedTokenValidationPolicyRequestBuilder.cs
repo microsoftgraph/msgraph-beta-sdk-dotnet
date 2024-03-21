@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
     /// <summary>
     /// Provides operations to manage the federatedTokenValidationPolicy property of the microsoft.graph.policyRoot entity.
     /// </summary>
-    public class FederatedTokenValidationPolicyRequestBuilder : BaseRequestBuilder {
+    public class FederatedTokenValidationPolicyRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="FederatedTokenValidationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FederatedTokenValidationPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/federatedTokenValidationPolicy{?%24expand,%24select}", pathParameters) {
+        public FederatedTokenValidationPolicyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/federatedTokenValidationPolicy{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="FederatedTokenValidationPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FederatedTokenValidationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/federatedTokenValidationPolicy{?%24expand,%24select}", rawUrl) {
+        public FederatedTokenValidationPolicyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/federatedTokenValidationPolicy{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property federatedTokenValidationPolicy for policies
@@ -36,19 +39,23 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get federatedTokenValidationPolicy from policies
+        /// Read the properties and relationships of a federatedTokenValidationPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,19 +63,23 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy?> GetAsync(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy?> GetAsync(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy> GetAsync(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy> GetAsync(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property federatedTokenValidationPolicy in policies
+        /// Update the properties of a federatedTokenValidationPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -77,14 +88,17 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy?> PatchAsync(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy> PatchAsync(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy> PatchAsync(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -96,10 +110,12 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/policies/federatedTokenValidationPolicy", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -107,16 +123,18 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Get federatedTokenValidationPolicy from policies
+        /// Read the properties and relationships of a federatedTokenValidationPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -124,17 +142,19 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property federatedTokenValidationPolicy in policies
+        /// Update the properties of a federatedTokenValidationPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/policies/federatedTokenValidationPolicy", PathParameters);
@@ -148,19 +168,22 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         /// </summary>
         /// <returns>A <see cref="FederatedTokenValidationPolicyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public FederatedTokenValidationPolicyRequestBuilder WithUrl(string rawUrl) {
+        public FederatedTokenValidationPolicyRequestBuilder WithUrl(string rawUrl)
+        {
             return new FederatedTokenValidationPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FederatedTokenValidationPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class FederatedTokenValidationPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
-        /// Get federatedTokenValidationPolicy from policies
+        /// Read the properties and relationships of a federatedTokenValidationPolicy object.
         /// </summary>
-        public class FederatedTokenValidationPolicyRequestBuilderGetQueryParameters {
+        public class FederatedTokenValidationPolicyRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,13 +209,15 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters> {
+        public class FederatedTokenValidationPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<FederatedTokenValidationPolicyRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FederatedTokenValidationPolicyRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class FederatedTokenValidationPolicyRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
     /// <summary>
     /// Provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.
     /// </summary>
-    public class SettingTemplatesRequestBuilder : BaseRequestBuilder {
+    public class SettingTemplatesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settingTemplates property of the microsoft.graph.deviceManagementConfigurationPolicyTemplate entity.</summary>
         /// <param name="position">The unique identifier of deviceManagementConfigurationSettingTemplate</param>
         /// <returns>A <see cref="DeviceManagementConfigurationSettingTemplateItemRequestBuilder"/></returns>
-        public DeviceManagementConfigurationSettingTemplateItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("deviceManagementConfigurationSettingTemplate%2Did", position);
-            return new DeviceManagementConfigurationSettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public DeviceManagementConfigurationSettingTemplateItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("deviceManagementConfigurationSettingTemplate%2Did", position);
+                return new DeviceManagementConfigurationSettingTemplateItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SettingTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingTemplatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public SettingTemplatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SettingTemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public SettingTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Setting templates
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementConfigurationSettingTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingTemplateCollectionResponse?> GetAsync(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceManagementConfigurationSettingTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingTemplateCollectionResponse> GetAsync(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingTemplateCollectionResponse>(requestInfo, DeviceManagementConfigurationSettingTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -72,14 +83,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementConfigurationSettingTemplate?> PostAsync(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingTemplate?> PostAsync(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceManagementConfigurationSettingTemplate> PostAsync(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingTemplate> PostAsync(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementConfigurationSettingTemplate>(requestInfo, DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -109,10 +125,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeviceManagementConfigurationSettingTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/configurationPolicyTemplates/{deviceManagementConfigurationPolicyTemplate%2Did}/settingTemplates", PathParameters);
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// </summary>
         /// <returns>A <see cref="SettingTemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SettingTemplatesRequestBuilder WithUrl(string rawUrl) {
+        public SettingTemplatesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SettingTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Setting templates
         /// </summary>
-        public class SettingTemplatesRequestBuilderGetQueryParameters {
+        public class SettingTemplatesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -197,13 +217,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SettingTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters> {
+        public class SettingTemplatesRequestBuilderGetRequestConfiguration : RequestConfiguration<SettingTemplatesRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SettingTemplatesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class SettingTemplatesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

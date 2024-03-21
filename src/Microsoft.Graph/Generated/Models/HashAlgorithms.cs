@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Hash Algorithm Options.</summary>
     [Flags]
-    public enum HashAlgorithms {
+    public enum HashAlgorithms
+    {
         /// <summary>SHA-1 Hash Algorithm.</summary>
         [EnumMember(Value = "sha1")]
         Sha1 = 1,

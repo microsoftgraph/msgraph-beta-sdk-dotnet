@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
     /// <summary>
     /// Provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.
     /// </summary>
-    public class ClassifyFileJobsRequestBuilder : BaseRequestBuilder {
+    public class ClassifyFileJobsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         /// <param name="position">The unique identifier of jobResponseBase</param>
         /// <returns>A <see cref="JobResponseBaseItemRequestBuilder"/></returns>
-        public JobResponseBaseItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("jobResponseBase%2Did", position);
-            return new JobResponseBaseItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public JobResponseBaseItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("jobResponseBase%2Did", position);
+                return new JobResponseBaseItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ClassifyFileJobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClassifyFileJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dataClassification/classifyFileJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public ClassifyFileJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dataClassification/classifyFileJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ClassifyFileJobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ClassifyFileJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dataClassification/classifyFileJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public ClassifyFileJobsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/dataClassification/classifyFileJobs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get classifyFileJobs from dataClassification
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<JobResponseBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<JobResponseBaseCollectionResponse?> GetAsync(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<JobResponseBaseCollectionResponse> GetAsync(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<JobResponseBaseCollectionResponse> GetAsync(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<JobResponseBaseCollectionResponse>(requestInfo, JobResponseBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -72,14 +83,17 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<JobResponseBase?> PostAsync(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<JobResponseBase?> PostAsync(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<JobResponseBase> PostAsync(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<JobResponseBase> PostAsync(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<JobResponseBase>(requestInfo, JobResponseBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -109,10 +125,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(JobResponseBase body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/dataClassification/classifyFileJobs", PathParameters);
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
         /// </summary>
         /// <returns>A <see cref="ClassifyFileJobsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ClassifyFileJobsRequestBuilder WithUrl(string rawUrl) {
+        public ClassifyFileJobsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ClassifyFileJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get classifyFileJobs from dataClassification
         /// </summary>
-        public class ClassifyFileJobsRequestBuilderGetQueryParameters {
+        public class ClassifyFileJobsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -197,13 +217,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ClassifyFileJobsRequestBuilderGetRequestConfiguration : RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters> {
+        public class ClassifyFileJobsRequestBuilderGetRequestConfiguration : RequestConfiguration<ClassifyFileJobsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ClassifyFileJobsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ClassifyFileJobsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

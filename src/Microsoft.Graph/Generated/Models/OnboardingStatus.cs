@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The onboarding status of the tenant.</summary>
-    public enum OnboardingStatus {
+    public enum OnboardingStatus
+    {
         /// <summary>Unknown</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

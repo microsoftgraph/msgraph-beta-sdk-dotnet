@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum SignInAccessType {
+    public enum SignInAccessType
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "b2bCollaboration")]

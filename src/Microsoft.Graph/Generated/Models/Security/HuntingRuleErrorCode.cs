@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum HuntingRuleErrorCode {
+    public enum HuntingRuleErrorCode
+    {
         [EnumMember(Value = "queryExecutionFailed")]
         QueryExecutionFailed,
         [EnumMember(Value = "queryExecutionThrottling")]

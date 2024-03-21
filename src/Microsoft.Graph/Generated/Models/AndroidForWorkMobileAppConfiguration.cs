@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties, inherited properties and actions for AFW mobile app configurations.
     /// </summary>
-    public class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable {
+    public class AndroidForWorkMobileAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable 
+    {
         /// <summary>Setting to specify whether to allow ConnectedApps experience for this app.</summary>
         public bool? ConnectedAppsEnabled {
             get { return BackingStore?.Get<bool?>("connectedAppsEnabled"); }
@@ -64,7 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AndroidForWorkMobileAppConfiguration"/> and sets the default values.
         /// </summary>
-        public AndroidForWorkMobileAppConfiguration() : base() {
+        public AndroidForWorkMobileAppConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.androidForWorkMobileAppConfiguration";
         }
         /// <summary>
@@ -72,7 +74,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AndroidForWorkMobileAppConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkMobileAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AndroidForWorkMobileAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AndroidForWorkMobileAppConfiguration();
         }
@@ -80,8 +83,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"connectedAppsEnabled", n => { ConnectedAppsEnabled = n.GetBoolValue(); } },
                 {"packageId", n => { PackageId = n.GetStringValue(); } },
                 {"payloadJson", n => { PayloadJson = n.GetStringValue(); } },
@@ -93,7 +98,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("connectedAppsEnabled", ConnectedAppsEnabled);

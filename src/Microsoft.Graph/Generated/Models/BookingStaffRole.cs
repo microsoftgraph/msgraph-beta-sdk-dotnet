@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum BookingStaffRole {
+    public enum BookingStaffRole
+    {
         [EnumMember(Value = "guest")]
         Guest,
         [EnumMember(Value = "administrator")]

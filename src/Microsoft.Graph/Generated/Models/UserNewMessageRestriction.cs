@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum UserNewMessageRestriction {
+    public enum UserNewMessageRestriction
+    {
         [EnumMember(Value = "everyone")]
         Everyone,
         [EnumMember(Value = "everyoneExceptGuests")]

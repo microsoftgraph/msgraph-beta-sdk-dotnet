@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner Location Mode Type</summary>
-    public enum AndroidDeviceOwnerLocationMode {
+    public enum AndroidDeviceOwnerLocationMode
+    {
         /// <summary>No restrictions on the location setting and no specific behavior is set or enforced. This is the default</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

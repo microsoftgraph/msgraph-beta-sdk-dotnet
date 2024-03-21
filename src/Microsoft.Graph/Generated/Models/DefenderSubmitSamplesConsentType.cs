@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for DefenderSubmitSamplesConsentType</summary>
-    public enum DefenderSubmitSamplesConsentType {
+    public enum DefenderSubmitSamplesConsentType
+    {
         /// <summary>Send safe samples automatically</summary>
         [EnumMember(Value = "sendSafeSamplesAutomatically")]
         SendSafeSamplesAutomatically,

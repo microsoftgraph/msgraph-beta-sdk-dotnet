@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
     /// <summary>
     /// Provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.
     /// </summary>
-    public class ExternalUserProfilesRequestBuilder : BaseRequestBuilder {
+    public class ExternalUserProfilesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.</summary>
         /// <param name="position">The unique identifier of externalUserProfile</param>
         /// <returns>A <see cref="ExternalUserProfileItemRequestBuilder"/></returns>
-        public ExternalUserProfileItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("externalUserProfile%2Did", position);
-            return new ExternalUserProfileItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public ExternalUserProfileItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("externalUserProfile%2Did", position);
+                return new ExternalUserProfileItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ExternalUserProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalUserProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/externalUserProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public ExternalUserProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/externalUserProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ExternalUserProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalUserProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/externalUserProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public ExternalUserProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/externalUserProfiles{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieve the properties of all externalUserProfiles
@@ -52,13 +60,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalUserProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalUserProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ExternalUserProfileCollectionResponse> GetAsync(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalUserProfileCollectionResponse> GetAsync(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ExternalUserProfileCollectionResponse>(requestInfo, ExternalUserProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -73,14 +84,17 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ExternalUserProfile?> PostAsync(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalUserProfile?> PostAsync(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ExternalUserProfile> PostAsync(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ExternalUserProfile> PostAsync(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ExternalUserProfile>(requestInfo, ExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -92,10 +106,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -110,10 +126,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ExternalUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/directory/externalUserProfiles", PathParameters);
@@ -127,13 +145,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         /// </summary>
         /// <returns>A <see cref="ExternalUserProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ExternalUserProfilesRequestBuilder WithUrl(string rawUrl) {
+        public ExternalUserProfilesRequestBuilder WithUrl(string rawUrl)
+        {
             return new ExternalUserProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties of all externalUserProfiles
         /// </summary>
-        public class ExternalUserProfilesRequestBuilderGetQueryParameters {
+        public class ExternalUserProfilesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -198,13 +218,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExternalUserProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters> {
+        public class ExternalUserProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<ExternalUserProfilesRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ExternalUserProfilesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ExternalUserProfilesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

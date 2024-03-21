@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum FileProcessingStatus {
+    public enum FileProcessingStatus
+    {
         [EnumMember(Value = "success")]
         Success,
         [EnumMember(Value = "internalError")]

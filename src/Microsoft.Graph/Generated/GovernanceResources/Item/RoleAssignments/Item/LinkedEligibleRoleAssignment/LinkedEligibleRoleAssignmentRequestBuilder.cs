@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Lin
     /// <summary>
     /// Provides operations to manage the linkedEligibleRoleAssignment property of the microsoft.graph.governanceRoleAssignment entity.
     /// </summary>
-    public class LinkedEligibleRoleAssignmentRequestBuilder : BaseRequestBuilder {
+    public class LinkedEligibleRoleAssignmentRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LinkedEligibleRoleAssignmentRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LinkedEligibleRoleAssignmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}", pathParameters) {
+        public LinkedEligibleRoleAssignmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LinkedEligibleRoleAssignmentRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LinkedEligibleRoleAssignmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}", rawUrl) {
+        public LinkedEligibleRoleAssignmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleAssignments/{governanceRoleAssignment%2Did}/linkedEligibleRoleAssignment{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Lin
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleAssignment?> GetAsync(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleAssignment?> GetAsync(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GovernanceRoleAssignment> GetAsync(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleAssignment> GetAsync(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GovernanceRoleAssignment>(requestInfo, GovernanceRoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Lin
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Lin
         /// </summary>
         /// <returns>A <see cref="LinkedEligibleRoleAssignmentRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LinkedEligibleRoleAssignmentRequestBuilder WithUrl(string rawUrl) {
+        public LinkedEligibleRoleAssignmentRequestBuilder WithUrl(string rawUrl)
+        {
             return new LinkedEligibleRoleAssignmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.
         /// </summary>
-        public class LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters {
+        public class LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignments.Item.Lin
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration : RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters> {
+        public class LinkedEligibleRoleAssignmentRequestBuilderGetRequestConfiguration : RequestConfiguration<LinkedEligibleRoleAssignmentRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

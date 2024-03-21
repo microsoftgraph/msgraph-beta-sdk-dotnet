@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public enum ExternalActivityType {
+    public enum ExternalActivityType
+    {
         [EnumMember(Value = "viewed")]
         Viewed,
         [EnumMember(Value = "modified")]

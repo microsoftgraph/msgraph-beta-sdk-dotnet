@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DiskType {
+    public enum DiskType
+    {
         /// <summary>Enum member for unknown or default diskType.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

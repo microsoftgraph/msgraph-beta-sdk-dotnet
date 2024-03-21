@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum TemplateApplicationLevel {
+    public enum TemplateApplicationLevel
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "newPartners")]

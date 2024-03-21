@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ImportedDeviceIdentityType {
+    public enum ImportedDeviceIdentityType
+    {
         /// <summary>Unknown value of importedDeviceIdentityType.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,
@@ -12,5 +13,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device Identity is of type serial number.</summary>
         [EnumMember(Value = "serialNumber")]
         SerialNumber,
+        /// <summary>Device Identity is of type manufacturer + model + serial number semi-colon delimited tuple with enforced order.</summary>
+        [EnumMember(Value = "manufacturerModelSerial")]
+        ManufacturerModelSerial,
     }
 }

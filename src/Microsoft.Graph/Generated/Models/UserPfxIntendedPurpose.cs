@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported values for the intended purpose of a user PFX certificate.</summary>
-    public enum UserPfxIntendedPurpose {
+    public enum UserPfxIntendedPurpose
+    {
         /// <summary>No roles/usages assigned.</summary>
         [EnumMember(Value = "unassigned")]
         Unassigned,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Data types for rules.</summary>
-    public enum DeviceComplianceScriptRuleDataType {
+    public enum DeviceComplianceScriptRuleDataType
+    {
         /// <summary>None data type.</summary>
         [EnumMember(Value = "none")]
         None,

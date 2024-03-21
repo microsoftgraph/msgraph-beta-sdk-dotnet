@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for the Certificate Destination Store.</summary>
-    public enum CertificateDestinationStore {
+    public enum CertificateDestinationStore
+    {
         /// <summary>Computer Certificate Store - Root.</summary>
         [EnumMember(Value = "computerCertStoreRoot")]
         ComputerCertStoreRoot,

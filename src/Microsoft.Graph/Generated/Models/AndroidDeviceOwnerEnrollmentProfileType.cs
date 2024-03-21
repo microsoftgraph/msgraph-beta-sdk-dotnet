@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner Enrollment Profile types.</summary>
-    public enum AndroidDeviceOwnerEnrollmentProfileType {
+    public enum AndroidDeviceOwnerEnrollmentProfileType
+    {
         /// <summary>Not configured; this value is ignored.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

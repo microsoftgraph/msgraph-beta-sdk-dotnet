@@ -19,44 +19,53 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
     /// <summary>
     /// Provides operations to manage the updates property of the microsoft.graph.adminWindows entity.
     /// </summary>
-    public class UpdatesRequestBuilder : BaseRequestBuilder {
+    public class UpdatesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the catalog property of the microsoft.graph.adminWindowsUpdates entity.</summary>
-        public CatalogRequestBuilder Catalog { get =>
-            new CatalogRequestBuilder(PathParameters, RequestAdapter);
+        public CatalogRequestBuilder Catalog
+        {
+            get =>             new CatalogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deploymentAudiences property of the microsoft.graph.adminWindowsUpdates entity.</summary>
-        public DeploymentAudiencesRequestBuilder DeploymentAudiences { get =>
-            new DeploymentAudiencesRequestBuilder(PathParameters, RequestAdapter);
+        public DeploymentAudiencesRequestBuilder DeploymentAudiences
+        {
+            get =>             new DeploymentAudiencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deployments property of the microsoft.graph.adminWindowsUpdates entity.</summary>
-        public DeploymentsRequestBuilder Deployments { get =>
-            new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
+        public DeploymentsRequestBuilder Deployments
+        {
+            get =>             new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.</summary>
-        public ResourceConnectionsRequestBuilder ResourceConnections { get =>
-            new ResourceConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        public ResourceConnectionsRequestBuilder ResourceConnections
+        {
+            get =>             new ResourceConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.adminWindowsUpdates entity.</summary>
-        public UpdatableAssetsRequestBuilder UpdatableAssets { get =>
-            new UpdatableAssetsRequestBuilder(PathParameters, RequestAdapter);
+        public UpdatableAssetsRequestBuilder UpdatableAssets
+        {
+            get =>             new UpdatableAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the updatePolicies property of the microsoft.graph.adminWindowsUpdates entity.</summary>
-        public UpdatePoliciesRequestBuilder UpdatePolicies { get =>
-            new UpdatePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public UpdatePoliciesRequestBuilder UpdatePolicies
+        {
+            get =>             new UpdatePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="UpdatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates{?%24expand,%24select}", pathParameters) {
+        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UpdatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates{?%24expand,%24select}", rawUrl) {
+        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/windows/updates{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property updates for admin
@@ -66,13 +75,16 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -86,13 +98,16 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AdminWindowsUpdates?> GetAsync(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates?> GetAsync(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AdminWindowsUpdates> GetAsync(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates> GetAsync(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -107,14 +122,17 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AdminWindowsUpdates?> PatchAsync(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates?> PatchAsync(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AdminWindowsUpdates> PatchAsync(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AdminWindowsUpdates> PatchAsync(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AdminWindowsUpdates>(requestInfo, AdminWindowsUpdates.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -126,10 +144,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/admin/windows/updates", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -143,10 +163,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UpdatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -161,10 +183,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AdminWindowsUpdates body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/admin/windows/updates", PathParameters);
@@ -178,19 +202,22 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// </summary>
         /// <returns>A <see cref="UpdatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UpdatesRequestBuilder WithUrl(string rawUrl) {
+        public UpdatesRequestBuilder WithUrl(string rawUrl)
+        {
             return new UpdatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UpdatesRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class UpdatesRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.
         /// </summary>
-        public class UpdatesRequestBuilderGetQueryParameters {
+        public class UpdatesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,13 +243,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UpdatesRequestBuilderGetRequestConfiguration : RequestConfiguration<UpdatesRequestBuilderGetQueryParameters> {
+        public class UpdatesRequestBuilderGetRequestConfiguration : RequestConfiguration<UpdatesRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UpdatesRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class UpdatesRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

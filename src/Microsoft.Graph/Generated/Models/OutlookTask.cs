@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class OutlookTask : OutlookItem, IParsable {
+    public class OutlookTask : OutlookItem, IParsable 
+    {
         /// <summary>The name of the person who has been assigned the task in Outlook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,12 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
-        /// <summary>The importance property</summary>
+        /// <summary>The importance of the event. Possible values are: low, normal, high.</summary>
         public Microsoft.Graph.Beta.Models.Importance? Importance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The isReminderOn property</summary>
+        /// <summary>Set to true if an alert is set to remind the user of the task.</summary>
         public bool? IsReminderOn {
             get { return BackingStore?.Get<bool?>("isReminderOn"); }
             set { BackingStore?.Set("isReminderOn", value); }
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>The name of the person who created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner {
@@ -119,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("owner", value); }
         }
 #endif
-        /// <summary>The parentFolderId property</summary>
+        /// <summary>The unique identifier for the task&apos;s parent folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentFolderId {
@@ -133,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("parentFolderId", value); }
         }
 #endif
-        /// <summary>The recurrence property</summary>
+        /// <summary>The recurrence pattern for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PatternedRecurrence? Recurrence {
@@ -147,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recurrence", value); }
         }
 #endif
-        /// <summary>The reminderDateTime property</summary>
+        /// <summary>The date and time for a reminder alert of the task to occur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? ReminderDateTime {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
-        /// <summary>The sensitivity property</summary>
+        /// <summary>Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.</summary>
         public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
@@ -180,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The date in the specified time zone when the task is to begin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? StartDateTime {
@@ -194,12 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
         public TaskStatus? Status {
             get { return BackingStore?.Get<TaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The subject property</summary>
+        /// <summary>A brief description or title of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject {
@@ -216,7 +217,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="OutlookTask"/> and sets the default values.
         /// </summary>
-        public OutlookTask() : base() {
+        public OutlookTask() : base()
+        {
             OdataType = "#microsoft.graph.outlookTask";
         }
         /// <summary>
@@ -224,7 +226,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="OutlookTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookTask CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new OutlookTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new OutlookTask();
         }
@@ -232,8 +235,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
@@ -258,7 +263,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignedTo", AssignedTo);

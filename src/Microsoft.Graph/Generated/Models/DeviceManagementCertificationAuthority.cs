@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device Management Certification Authority Types.</summary>
-    public enum DeviceManagementCertificationAuthority {
+    public enum DeviceManagementCertificationAuthority
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

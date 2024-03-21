@@ -5,13 +5,14 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Search {
-    public class Bookmark : SearchAnswer, IParsable {
-        /// <summary>Timestamp of when the bookmark will stop to appear as a search result. Set as null for always available.</summary>
+    public class Bookmark : SearchAnswer, IParsable 
+    {
+        /// <summary>Date and time when the bookmark stops appearing as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? AvailabilityEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("availabilityEndDateTime"); }
             set { BackingStore?.Set("availabilityEndDateTime", value); }
         }
-        /// <summary>Timestamp of when the bookmark will start to appear as a search result. Set as null for always available.</summary>
+        /// <summary>Date and time when the bookmark starts to appear as a search result. Set as null for always available. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? AvailabilityStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("availabilityStartDateTime"); }
             set { BackingStore?.Set("availabilityStartDateTime", value); }
@@ -30,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>List of security groups able to view this bookmark.</summary>
+        /// <summary>The list of security groups that are able to view this bookmark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? GroupIds {
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("groupIds", value); }
         }
 #endif
-        /// <summary>True if this bookmark was suggested to the admin by a user or was mined and suggested by Microsoft. Read-only.</summary>
+        /// <summary>True if this bookmark was suggested to the admin, by a user, or was mined and suggested by Microsoft. Read-only.</summary>
         public bool? IsSuggested {
             get { return BackingStore?.Get<bool?>("isSuggested"); }
             set { BackingStore?.Set("isSuggested", value); }
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("keywords", value); }
         }
 #endif
-        /// <summary>A list of language names that are geographically specific and that this bookmark can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.</summary>
+        /// <summary>A list of geographically specific language names in which this bookmark can be viewed. Each language tag value follows the pattern {language}-{region}. For example, en-us is English as used in the United States. For the list of possible values, see Supported language tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LanguageTags {
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("languageTags", value); }
         }
 #endif
-        /// <summary>List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.</summary>
+        /// <summary>List of devices and operating systems that are able to view this bookmark. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DevicePlatformType?>? Platforms {
@@ -91,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("platforms", value); }
         }
 #endif
-        /// <summary>List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.</summary>
+        /// <summary>List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks directly on the search results page, such as entering vacation time or reporting expenses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PowerAppIds {
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<AnswerState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings will apply to all variations.</summary>
+        /// <summary>Variations of a bookmark for different countries or devices. Use when you need to show different content to users based on their device, country/region, or both. The date and group settings apply to all variations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AnswerVariant>? TargetedVariations {
@@ -129,7 +130,8 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// </summary>
         /// <returns>A <see cref="Bookmark"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Bookmark CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Bookmark CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Bookmark();
         }
@@ -137,8 +139,10 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"availabilityEndDateTime", n => { AvailabilityEndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"availabilityStartDateTime", n => { AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -156,7 +160,8 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("availabilityEndDateTime", AvailabilityEndDateTime);

@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class DeviceManagementSettings : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class DeviceManagementSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -83,6 +84,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isScheduledActionEnabled"); }
             set { BackingStore?.Set("isScheduledActionEnabled", value); }
         }
+        /// <summary>The property to determine if M365 App log collection is enabled for account. When TRUE it indicates that M365 app log collection is enabled for account.  When FALSE it indicates that M365 app log collection is disabled for account. Default value is FALSE</summary>
+        public bool? M365AppDiagnosticsEnabled {
+            get { return BackingStore?.Get<bool?>("m365AppDiagnosticsEnabled"); }
+            set { BackingStore?.Set("m365AppDiagnosticsEnabled", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +111,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementSettings"/> and sets the default values.
         /// </summary>
-        public DeviceManagementSettings() {
+        public DeviceManagementSettings()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -114,7 +121,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="DeviceManagementSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DeviceManagementSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceManagementSettings();
         }
@@ -122,8 +130,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"androidDeviceAdministratorEnrollmentEnabled", n => { AndroidDeviceAdministratorEnrollmentEnabled = n.GetBoolValue(); } },
                 {"derivedCredentialProvider", n => { DerivedCredentialProvider = n.GetEnumValue<DerivedCredentialProviderType>(); } },
                 {"derivedCredentialUrl", n => { DerivedCredentialUrl = n.GetStringValue(); } },
@@ -136,6 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enhancedJailBreak", n => { EnhancedJailBreak = n.GetBoolValue(); } },
                 {"ignoreDevicesForUnsupportedSettingsEnabled", n => { IgnoreDevicesForUnsupportedSettingsEnabled = n.GetBoolValue(); } },
                 {"isScheduledActionEnabled", n => { IsScheduledActionEnabled = n.GetBoolValue(); } },
+                {"m365AppDiagnosticsEnabled", n => { M365AppDiagnosticsEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"secureByDefault", n => { SecureByDefault = n.GetBoolValue(); } },
             };
@@ -144,7 +155,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("androidDeviceAdministratorEnrollmentEnabled", AndroidDeviceAdministratorEnrollmentEnabled);
             writer.WriteEnumValue<DerivedCredentialProviderType>("derivedCredentialProvider", DerivedCredentialProvider);
@@ -158,6 +170,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("enhancedJailBreak", EnhancedJailBreak);
             writer.WriteBoolValue("ignoreDevicesForUnsupportedSettingsEnabled", IgnoreDevicesForUnsupportedSettingsEnabled);
             writer.WriteBoolValue("isScheduledActionEnabled", IsScheduledActionEnabled);
+            writer.WriteBoolValue("m365AppDiagnosticsEnabled", M365AppDiagnosticsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("secureByDefault", SecureByDefault);
             writer.WriteAdditionalData(AdditionalData);

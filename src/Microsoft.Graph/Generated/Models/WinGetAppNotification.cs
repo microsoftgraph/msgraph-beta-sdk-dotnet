@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains value for notification status.</summary>
-    public enum WinGetAppNotification {
+    public enum WinGetAppNotification
+    {
         /// <summary>Show all notifications.</summary>
         [EnumMember(Value = "showAll")]
         ShowAll,

@@ -13,14 +13,16 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
     /// <summary>
     /// Provides operations to manage the sessions property of the microsoft.graph.virtualEventPresenter entity.
     /// </summary>
-    public class SessionsWithJoinWebUrlRequestBuilder : BaseRequestBuilder {
+    public class SessionsWithJoinWebUrlRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SessionsWithJoinWebUrlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="joinWebUrl">Alternate key of virtualEventSession</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsWithJoinWebUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string joinWebUrl = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters) {
+        public SessionsWithJoinWebUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string joinWebUrl = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(joinWebUrl)) PathParameters.Add("joinWebUrl", joinWebUrl);
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsWithJoinWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", rawUrl) {
+        public SessionsWithJoinWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/townhalls/{virtualEventTownhall%2Did}/presenters/{virtualEventPresenter%2Did}/sessions(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get sessions from solutions
@@ -39,13 +42,16 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventSession?> GetAsync(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventSession?> GetAsync(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<VirtualEventSession> GetAsync(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<VirtualEventSession> GetAsync(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<VirtualEventSession>(requestInfo, VirtualEventSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -72,13 +80,15 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// </summary>
         /// <returns>A <see cref="SessionsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SessionsWithJoinWebUrlRequestBuilder WithUrl(string rawUrl) {
+        public SessionsWithJoinWebUrlRequestBuilder WithUrl(string rawUrl)
+        {
             return new SessionsWithJoinWebUrlRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get sessions from solutions
         /// </summary>
-        public class SessionsWithJoinWebUrlRequestBuilderGetQueryParameters {
+        public class SessionsWithJoinWebUrlRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +114,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SessionsWithJoinWebUrlRequestBuilderGetRequestConfiguration : RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters> {
+        public class SessionsWithJoinWebUrlRequestBuilderGetRequestConfiguration : RequestConfiguration<SessionsWithJoinWebUrlRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

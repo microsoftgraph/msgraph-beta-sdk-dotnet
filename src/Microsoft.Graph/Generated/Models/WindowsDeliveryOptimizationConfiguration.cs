@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Windows Delivery Optimization configuration
     /// </summary>
-    public class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295</summary>
         public long? BackgroundDownloadFromHttpDelayInSeconds {
             get { return BackingStore?.Get<long?>("backgroundDownloadFromHttpDelayInSeconds"); }
@@ -142,7 +143,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsDeliveryOptimizationConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsDeliveryOptimizationConfiguration() : base() {
+        public WindowsDeliveryOptimizationConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsDeliveryOptimizationConfiguration";
         }
         /// <summary>
@@ -150,7 +152,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsDeliveryOptimizationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsDeliveryOptimizationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsDeliveryOptimizationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsDeliveryOptimizationConfiguration();
         }
@@ -158,8 +161,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"backgroundDownloadFromHttpDelayInSeconds", n => { BackgroundDownloadFromHttpDelayInSeconds = n.GetLongValue(); } },
                 {"bandwidthMode", n => { BandwidthMode = n.GetObjectValue<DeliveryOptimizationBandwidth>(DeliveryOptimizationBandwidth.CreateFromDiscriminatorValue); } },
                 {"cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", n => { CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds = n.GetIntValue(); } },
@@ -183,7 +188,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("backgroundDownloadFromHttpDelayInSeconds", BackgroundDownloadFromHttpDelayInSeconds);

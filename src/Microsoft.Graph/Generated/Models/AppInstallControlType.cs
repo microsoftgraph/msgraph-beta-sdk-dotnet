@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>App Install control Setting</summary>
-    public enum AppInstallControlType {
+    public enum AppInstallControlType
+    {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

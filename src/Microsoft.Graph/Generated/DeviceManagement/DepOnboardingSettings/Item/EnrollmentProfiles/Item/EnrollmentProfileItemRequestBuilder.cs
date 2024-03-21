@@ -16,32 +16,38 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
     /// <summary>
     /// Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.
     /// </summary>
-    public class EnrollmentProfileItemRequestBuilder : BaseRequestBuilder {
+    public class EnrollmentProfileItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the exportMobileConfig method.</summary>
-        public ExportMobileConfigRequestBuilder ExportMobileConfig { get =>
-            new ExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
+        public ExportMobileConfigRequestBuilder ExportMobileConfig
+        {
+            get =>             new ExportMobileConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setDefaultProfile method.</summary>
-        public SetDefaultProfileRequestBuilder SetDefaultProfile { get =>
-            new SetDefaultProfileRequestBuilder(PathParameters, RequestAdapter);
+        public SetDefaultProfileRequestBuilder SetDefaultProfile
+        {
+            get =>             new SetDefaultProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateDeviceProfileAssignment method.</summary>
-        public UpdateDeviceProfileAssignmentRequestBuilder UpdateDeviceProfileAssignment { get =>
-            new UpdateDeviceProfileAssignmentRequestBuilder(PathParameters, RequestAdapter);
+        public UpdateDeviceProfileAssignmentRequestBuilder UpdateDeviceProfileAssignment
+        {
+            get =>             new UpdateDeviceProfileAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="EnrollmentProfileItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnrollmentProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24expand,%24select}", pathParameters) {
+        public EnrollmentProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EnrollmentProfileItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnrollmentProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24expand,%24select}", rawUrl) {
+        public EnrollmentProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property enrollmentProfiles for deviceManagement
@@ -51,13 +57,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -71,13 +80,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EnrollmentProfile?> GetAsync(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnrollmentProfile?> GetAsync(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EnrollmentProfile> GetAsync(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnrollmentProfile> GetAsync(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EnrollmentProfile>(requestInfo, EnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -92,14 +104,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EnrollmentProfile?> PatchAsync(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnrollmentProfile?> PatchAsync(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EnrollmentProfile> PatchAsync(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnrollmentProfile> PatchAsync(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EnrollmentProfile>(requestInfo, EnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -111,10 +126,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -128,10 +145,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -146,10 +165,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(EnrollmentProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/depOnboardingSettings/{depOnboardingSetting%2Did}/enrollmentProfiles/{enrollmentProfile%2Did}", PathParameters);
@@ -163,19 +184,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// </summary>
         /// <returns>A <see cref="EnrollmentProfileItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EnrollmentProfileItemRequestBuilder WithUrl(string rawUrl) {
+        public EnrollmentProfileItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new EnrollmentProfileItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EnrollmentProfileItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EnrollmentProfileItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// The enrollment profiles.
         /// </summary>
-        public class EnrollmentProfileItemRequestBuilderGetQueryParameters {
+        public class EnrollmentProfileItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,13 +225,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Enrol
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EnrollmentProfileItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters> {
+        public class EnrollmentProfileItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EnrollmentProfileItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EnrollmentProfileItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EnrollmentProfileItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

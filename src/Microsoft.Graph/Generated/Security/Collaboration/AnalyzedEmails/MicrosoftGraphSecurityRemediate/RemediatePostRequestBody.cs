@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate {
-    public class RemediatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class RemediatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>The action property</summary>
         public RemediationAction? Action {
             get { return BackingStore?.Get<RemediationAction?>("action"); }
@@ -89,7 +90,8 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// <summary>
         /// Instantiates a new <see cref="RemediatePostRequestBody"/> and sets the default values.
         /// </summary>
-        public RemediatePostRequestBody() {
+        public RemediatePostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -98,7 +100,8 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// </summary>
         /// <returns>A <see cref="RemediatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RemediatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RemediatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RemediatePostRequestBody();
         }
@@ -106,8 +109,10 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"action", n => { Action = n.GetEnumValue<RemediationAction>(); } },
                 {"analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"approverUpn", n => { ApproverUpn = n.GetStringValue(); } },
@@ -121,7 +126,8 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RemediationAction>("action", Action);
             writer.WriteCollectionOfObjectValues<AnalyzedEmail>("analyzedEmails", AnalyzedEmails);

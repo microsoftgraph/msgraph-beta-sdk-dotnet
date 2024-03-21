@@ -21,52 +21,63 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
     /// <summary>
     /// Provides operations to manage the industryData property of the microsoft.graph.externalConnectors.external entity.
     /// </summary>
-    public class IndustryDataRequestBuilder : BaseRequestBuilder {
+    public class IndustryDataRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public DataConnectorsRequestBuilder DataConnectors { get =>
-            new DataConnectorsRequestBuilder(PathParameters, RequestAdapter);
+        public DataConnectorsRequestBuilder DataConnectors
+        {
+            get =>             new DataConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public InboundFlowsRequestBuilder InboundFlows { get =>
-            new InboundFlowsRequestBuilder(PathParameters, RequestAdapter);
+        public InboundFlowsRequestBuilder InboundFlows
+        {
+            get =>             new InboundFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public OperationsRequestBuilder Operations { get =>
-            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        public OperationsRequestBuilder Operations
+        {
+            get =>             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public ReferenceDefinitionsRequestBuilder ReferenceDefinitions { get =>
-            new ReferenceDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        public ReferenceDefinitionsRequestBuilder ReferenceDefinitions
+        {
+            get =>             new ReferenceDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleGroups property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public RoleGroupsRequestBuilder RoleGroups { get =>
-            new RoleGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public RoleGroupsRequestBuilder RoleGroups
+        {
+            get =>             new RoleGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public RunsRequestBuilder Runs { get =>
-            new RunsRequestBuilder(PathParameters, RequestAdapter);
+        public RunsRequestBuilder Runs
+        {
+            get =>             new RunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public SourceSystemsRequestBuilder SourceSystems { get =>
-            new SourceSystemsRequestBuilder(PathParameters, RequestAdapter);
+        public SourceSystemsRequestBuilder SourceSystems
+        {
+            get =>             new SourceSystemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the years property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
-        public YearsRequestBuilder Years { get =>
-            new YearsRequestBuilder(PathParameters, RequestAdapter);
+        public YearsRequestBuilder Years
+        {
+            get =>             new YearsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="IndustryDataRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndustryDataRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData{?%24expand,%24select}", pathParameters) {
+        public IndustryDataRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="IndustryDataRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndustryDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData{?%24expand,%24select}", rawUrl) {
+        public IndustryDataRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get industryData from external
@@ -77,13 +88,16 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IndustryDataRoot?> GetAsync(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IndustryDataRoot?> GetAsync(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<IndustryDataRoot> GetAsync(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<IndustryDataRoot> GetAsync(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IndustryDataRoot>(requestInfo, IndustryDataRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -95,10 +109,12 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -110,13 +126,15 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
         /// </summary>
         /// <returns>A <see cref="IndustryDataRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IndustryDataRequestBuilder WithUrl(string rawUrl) {
+        public IndustryDataRequestBuilder WithUrl(string rawUrl)
+        {
             return new IndustryDataRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get industryData from external
         /// </summary>
-        public class IndustryDataRequestBuilderGetQueryParameters {
+        public class IndustryDataRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,7 +160,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IndustryDataRequestBuilderGetRequestConfiguration : RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters> {
+        public class IndustryDataRequestBuilderGetRequestConfiguration : RequestConfiguration<IndustryDataRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

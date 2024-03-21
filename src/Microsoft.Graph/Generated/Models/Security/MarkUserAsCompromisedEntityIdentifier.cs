@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
-    public enum MarkUserAsCompromisedEntityIdentifier {
+    public enum MarkUserAsCompromisedEntityIdentifier
+    {
         [EnumMember(Value = "accountObjectId")]
         AccountObjectId = 1,
         [EnumMember(Value = "initiatingProcessAccountObjectId")]

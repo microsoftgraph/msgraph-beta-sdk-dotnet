@@ -9,7 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// The home button configuration base class used to identify the available options
     /// </summary>
-    public class EdgeHomeButtonConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class EdgeHomeButtonConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -34,7 +35,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="EdgeHomeButtonConfiguration"/> and sets the default values.
         /// </summary>
-        public EdgeHomeButtonConfiguration() {
+        public EdgeHomeButtonConfiguration()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -43,10 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="EdgeHomeButtonConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EdgeHomeButtonConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static EdgeHomeButtonConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.edgeHomeButtonHidden" => new EdgeHomeButtonHidden(),
                 "#microsoft.graph.edgeHomeButtonLoadsStartPage" => new EdgeHomeButtonLoadsStartPage(),
                 "#microsoft.graph.edgeHomeButtonOpensCustomURL" => new EdgeHomeButtonOpensCustomURL(),
@@ -58,8 +62,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -67,7 +73,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

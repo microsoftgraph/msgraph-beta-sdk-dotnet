@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum ConnectivityState {
+    public enum ConnectivityState
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "connected")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum type to represent approval status of a driver.</summary>
-    public enum DriverApprovalStatus {
+    public enum DriverApprovalStatus
+    {
         /// <summary>This indicates a driver needs IT admin&apos;s review.</summary>
         [EnumMember(Value = "needsReview")]
         NeedsReview,

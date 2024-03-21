@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum MlClassificationMatchTolerance {
+    public enum MlClassificationMatchTolerance
+    {
         [EnumMember(Value = "exact")]
         Exact = 1,
         [EnumMember(Value = "near")]

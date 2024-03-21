@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents the state of Zebra FOTA deployment.</summary>
-    public enum ZebraFotaDeploymentState {
+    public enum ZebraFotaDeploymentState
+    {
         /// <summary>Deployment is created but Zebra has not confirmed its creation.</summary>
         [EnumMember(Value = "pendingCreation")]
         PendingCreation,

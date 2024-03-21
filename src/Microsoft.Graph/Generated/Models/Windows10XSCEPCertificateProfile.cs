@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Windows X SCEP Certificate configuration profile
     /// </summary>
-    public class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile, IParsable {
+    public class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile, IParsable 
+    {
         /// <summary>CertificateStore types</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
@@ -122,7 +123,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Windows10XSCEPCertificateProfile"/> and sets the default values.
         /// </summary>
-        public Windows10XSCEPCertificateProfile() : base() {
+        public Windows10XSCEPCertificateProfile() : base()
+        {
             OdataType = "#microsoft.graph.windows10XSCEPCertificateProfile";
         }
         /// <summary>
@@ -130,7 +132,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Windows10XSCEPCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10XSCEPCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Windows10XSCEPCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Windows10XSCEPCertificateProfile();
         }
@@ -138,8 +141,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
                 {"certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
                 {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
@@ -159,7 +164,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<CertificateStore>("certificateStore", CertificateStore);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Mobile device management authority.</summary>
-    public enum MdmAuthority {
+    public enum MdmAuthority
+    {
         /// <summary>Unknown</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

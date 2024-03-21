@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported platform types.</summary>
-    public enum DevicePlatformType {
+    public enum DevicePlatformType
+    {
         /// <summary>Android.</summary>
         [EnumMember(Value = "android")]
         Android,

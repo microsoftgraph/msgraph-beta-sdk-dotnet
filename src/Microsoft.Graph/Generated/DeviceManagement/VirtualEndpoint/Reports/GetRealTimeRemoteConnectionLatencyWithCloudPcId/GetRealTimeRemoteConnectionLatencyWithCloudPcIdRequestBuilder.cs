@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
     /// <summary>
     /// Provides operations to call the getRealTimeRemoteConnectionLatency method.
     /// </summary>
-    public class GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder : BaseRequestBuilder {
+    public class GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string cloudPcId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionLatency(cloudPcId='{cloudPcId}')", pathParameters) {
+        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string cloudPcId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionLatency(cloudPcId='{cloudPcId}')", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(cloudPcId)) PathParameters.Add("cloudPcId", cloudPcId);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionLatency(cloudPcId='{cloudPcId}')", rawUrl) {
+        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/virtualEndpoint/reports/getRealTimeRemoteConnectionLatency(cloudPcId='{cloudPcId}')", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getRealTimeRemoteConnectionLatency
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -56,10 +62,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -71,14 +79,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealT
         /// </summary>
         /// <returns>A <see cref="GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder WithUrl(string rawUrl) {
+        public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

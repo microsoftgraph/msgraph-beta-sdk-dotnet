@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The type of Windows kiosk app.</summary>
-    public enum WindowsKioskAppType {
+    public enum WindowsKioskAppType
+    {
         /// <summary>Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcAuditActivityOperationType {
+    public enum CloudPcAuditActivityOperationType
+    {
         [EnumMember(Value = "create")]
         Create,
         [EnumMember(Value = "delete")]

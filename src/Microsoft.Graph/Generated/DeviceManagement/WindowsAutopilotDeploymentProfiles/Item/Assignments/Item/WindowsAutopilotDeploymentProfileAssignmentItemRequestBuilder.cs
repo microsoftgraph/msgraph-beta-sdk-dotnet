@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
     /// <summary>
     /// Provides operations to manage the assignments property of the microsoft.graph.windowsAutopilotDeploymentProfile entity.
     /// </summary>
-    public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder : BaseRequestBuilder {
+    public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignments/{windowsAutopilotDeploymentProfileAssignment%2Did}{?%24expand,%24select}", pathParameters) {
+        public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignments/{windowsAutopilotDeploymentProfileAssignment%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignments/{windowsAutopilotDeploymentProfileAssignment%2Did}{?%24expand,%24select}", rawUrl) {
+        public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignments/{windowsAutopilotDeploymentProfileAssignment%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property assignments for deviceManagement
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -56,13 +62,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsAutopilotDeploymentProfileAssignment?> GetAsync(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsAutopilotDeploymentProfileAssignment?> GetAsync(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WindowsAutopilotDeploymentProfileAssignment> GetAsync(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsAutopilotDeploymentProfileAssignment> GetAsync(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WindowsAutopilotDeploymentProfileAssignment>(requestInfo, WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,14 +86,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsAutopilotDeploymentProfileAssignment?> PatchAsync(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsAutopilotDeploymentProfileAssignment?> PatchAsync(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WindowsAutopilotDeploymentProfileAssignment> PatchAsync(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsAutopilotDeploymentProfileAssignment> PatchAsync(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WindowsAutopilotDeploymentProfileAssignment>(requestInfo, WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -96,10 +108,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignments/{windowsAutopilotDeploymentProfileAssignment%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -113,10 +127,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -131,10 +147,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(WindowsAutopilotDeploymentProfileAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/windowsAutopilotDeploymentProfiles/{windowsAutopilotDeploymentProfile%2Did}/assignments/{windowsAutopilotDeploymentProfileAssignment%2Did}", PathParameters);
@@ -148,19 +166,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// </summary>
         /// <returns>A <see cref="WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder WithUrl(string rawUrl) {
+        public WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// The list of group assignments for the profile.
         /// </summary>
-        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters {
+        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,13 +207,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters> {
+        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class WindowsAutopilotDeploymentProfileAssignmentItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

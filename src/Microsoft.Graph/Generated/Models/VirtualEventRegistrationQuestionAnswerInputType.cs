@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum VirtualEventRegistrationQuestionAnswerInputType {
+    public enum VirtualEventRegistrationQuestionAnswerInputType
+    {
         [EnumMember(Value = "text")]
         Text,
         [EnumMember(Value = "multilineText")]

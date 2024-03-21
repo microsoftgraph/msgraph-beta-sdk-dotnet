@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows 10 VPN connection types.</summary>
-    public enum Windows10VpnAuthenticationMethod {
+    public enum Windows10VpnAuthenticationMethod
+    {
         /// <summary>Authenticate with a certificate.</summary>
         [EnumMember(Value = "certificate")]
         Certificate,

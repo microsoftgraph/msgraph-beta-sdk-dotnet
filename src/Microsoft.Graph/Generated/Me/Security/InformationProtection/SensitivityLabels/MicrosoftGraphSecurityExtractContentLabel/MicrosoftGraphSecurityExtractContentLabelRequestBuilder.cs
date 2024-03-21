@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
     /// <summary>
     /// Provides operations to call the extractContentLabel method.
     /// </summary>
-    public class MicrosoftGraphSecurityExtractContentLabelRequestBuilder : BaseRequestBuilder {
+    public class MicrosoftGraphSecurityExtractContentLabelRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftGraphSecurityExtractContentLabelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel", pathParameters) {
+        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftGraphSecurityExtractContentLabelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel", rawUrl) {
+        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/security/informationProtection/sensitivityLabels/microsoft.graph.security.extractContentLabel", rawUrl)
+        {
         }
         /// <summary>
         /// Use the metadata that exists on an already-labeled piece of information to resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
@@ -39,14 +42,17 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ContentLabel?> PostAsync(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentLabel?> PostAsync(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ContentLabel> PostAsync(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ContentLabel> PostAsync(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ContentLabel>(requestInfo, ContentLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,10 +65,12 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(ExtractContentLabelPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -76,14 +84,16 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.SensitivityLabe
         /// </summary>
         /// <returns>A <see cref="MicrosoftGraphSecurityExtractContentLabelRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder WithUrl(string rawUrl) {
+        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder WithUrl(string rawUrl)
+        {
             return new MicrosoftGraphSecurityExtractContentLabelRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphSecurityExtractContentLabelRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MicrosoftGraphSecurityExtractContentLabelRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

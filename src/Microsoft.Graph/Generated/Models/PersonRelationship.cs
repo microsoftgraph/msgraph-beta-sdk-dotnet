@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum PersonRelationship {
+    public enum PersonRelationship
+    {
         [EnumMember(Value = "manager")]
         Manager,
         [EnumMember(Value = "colleague")]

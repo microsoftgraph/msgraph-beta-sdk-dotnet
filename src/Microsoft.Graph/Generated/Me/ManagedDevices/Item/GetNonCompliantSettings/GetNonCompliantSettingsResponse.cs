@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings {
     [Obsolete("This class is obsolete. Use GetNonCompliantSettingsGetResponse instead.")]
-    public class GetNonCompliantSettingsResponse : GetNonCompliantSettingsGetResponse, IParsable {
+    public class GetNonCompliantSettingsResponse : GetNonCompliantSettingsGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetNonCompliantSettingsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetNonCompliantSettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetNonCompliantSettingsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetNonCompliantSettingsResponse();
         }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum AllowedAudiences {
+    public enum AllowedAudiences
+    {
         [EnumMember(Value = "me")]
         Me = 1,
         [EnumMember(Value = "family")]

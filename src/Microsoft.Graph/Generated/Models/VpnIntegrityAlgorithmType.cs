@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The type of VPN security association integrity algorithm</summary>
-    public enum VpnIntegrityAlgorithmType {
+    public enum VpnIntegrityAlgorithmType
+    {
         /// <summary>SHA2-256</summary>
         [EnumMember(Value = "sha2_256")]
         Sha2_256,

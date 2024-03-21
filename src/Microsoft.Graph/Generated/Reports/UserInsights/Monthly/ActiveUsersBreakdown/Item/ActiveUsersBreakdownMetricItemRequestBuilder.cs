@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
     /// <summary>
     /// Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.
     /// </summary>
-    public class ActiveUsersBreakdownMetricItemRequestBuilder : BaseRequestBuilder {
+    public class ActiveUsersBreakdownMetricItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ActiveUsersBreakdownMetricItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveUsersBreakdownMetricItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}", pathParameters) {
+        public ActiveUsersBreakdownMetricItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ActiveUsersBreakdownMetricItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActiveUsersBreakdownMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}", rawUrl) {
+        public ActiveUsersBreakdownMetricItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly/activeUsersBreakdown/{activeUsersBreakdownMetric%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get activeUsersBreakdown from reports
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         [Obsolete("The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ActiveUsersBreakdownMetric?> GetAsync(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActiveUsersBreakdownMetric?> GetAsync(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ActiveUsersBreakdownMetric> GetAsync(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActiveUsersBreakdownMetric> GetAsync(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ActiveUsersBreakdownMetric>(requestInfo, ActiveUsersBreakdownMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         [Obsolete("The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -73,13 +81,15 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         /// <returns>A <see cref="ActiveUsersBreakdownMetricItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The Active Users Breakdown Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Active Users API. as of 2024-02/Remove_Breakdown_APIs")]
-        public ActiveUsersBreakdownMetricItemRequestBuilder WithUrl(string rawUrl) {
+        public ActiveUsersBreakdownMetricItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ActiveUsersBreakdownMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get activeUsersBreakdown from reports
         /// </summary>
-        public class ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters {
+        public class ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +115,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ActiveUsersBreakdownMetricItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> {
+        public class ActiveUsersBreakdownMetricItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ActiveUsersBreakdownMetricItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

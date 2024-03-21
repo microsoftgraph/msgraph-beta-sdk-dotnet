@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the Wired Network CSP.
     /// </summary>
-    public class WindowsWiredNetworkConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsWiredNetworkConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Specify the duration for which automatic authentication attempts will be blocked from occuring after a failed authentication attempt.</summary>
         public int? AuthenticationBlockPeriodInMinutes {
             get { return BackingStore?.Get<int?>("authenticationBlockPeriodInMinutes"); }
@@ -195,7 +196,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsWiredNetworkConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsWiredNetworkConfiguration() : base() {
+        public WindowsWiredNetworkConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsWiredNetworkConfiguration";
         }
         /// <summary>
@@ -203,7 +205,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsWiredNetworkConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsWiredNetworkConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsWiredNetworkConfiguration();
         }
@@ -211,8 +214,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"authenticationBlockPeriodInMinutes", n => { AuthenticationBlockPeriodInMinutes = n.GetIntValue(); } },
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<WiredNetworkAuthenticationMethod>(); } },
                 {"authenticationPeriodInSeconds", n => { AuthenticationPeriodInSeconds = n.GetIntValue(); } },
@@ -243,7 +248,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("authenticationBlockPeriodInMinutes", AuthenticationBlockPeriodInMinutes);

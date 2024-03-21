@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Constraint that enforces the maximum number of elements a collection
     /// </summary>
-    public class DeviceManagementSettingCollectionConstraint : DeviceManagementConstraint, IParsable {
+    public class DeviceManagementSettingCollectionConstraint : DeviceManagementConstraint, IParsable 
+    {
         /// <summary>The maximum number of elements in the collection</summary>
         public int? MaximumLength {
             get { return BackingStore?.Get<int?>("maximumLength"); }
@@ -22,7 +23,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementSettingCollectionConstraint"/> and sets the default values.
         /// </summary>
-        public DeviceManagementSettingCollectionConstraint() : base() {
+        public DeviceManagementSettingCollectionConstraint() : base()
+        {
             OdataType = "#microsoft.graph.deviceManagementSettingCollectionConstraint";
         }
         /// <summary>
@@ -30,7 +32,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="DeviceManagementSettingCollectionConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingCollectionConstraint CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DeviceManagementSettingCollectionConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceManagementSettingCollectionConstraint();
         }
@@ -38,8 +41,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"maximumLength", n => { MaximumLength = n.GetIntValue(); } },
                 {"minimumLength", n => { MinimumLength = n.GetIntValue(); } },
             };
@@ -48,7 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("maximumLength", MaximumLength);

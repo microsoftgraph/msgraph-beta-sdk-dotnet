@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum QueryType {
+    public enum QueryType
+    {
         [EnumMember(Value = "files")]
         Files,
         [EnumMember(Value = "messages")]

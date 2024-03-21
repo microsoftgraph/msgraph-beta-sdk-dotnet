@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
     /// <summary>
     /// Provides operations to call the getRoleScopeTagsByIds method.
     /// </summary>
-    public class GetRoleScopeTagsByIdsWithIdsRequestBuilder : BaseRequestBuilder {
+    public class GetRoleScopeTagsByIdsWithIdsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetRoleScopeTagsByIdsWithIdsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="ids">Usage: ids={ids}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRoleScopeTagsByIdsWithIdsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ids = "") : base(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByIds(ids={ids}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetRoleScopeTagsByIdsWithIdsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string ids = "") : base(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByIds(ids={ids}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(ids)) PathParameters.Add("ids", ids);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetRoleScopeTagsByIdsWithIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByIds(ids={ids}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetRoleScopeTagsByIdsWithIdsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getRoleScopeTagsByIds(ids={ids}){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByIds
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRoleScopeTagsByIdsWithIdsGetResponse?> GetAsGetRoleScopeTagsByIdsWithIdsGetResponseAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRoleScopeTagsByIdsWithIdsGetResponse?> GetAsGetRoleScopeTagsByIdsWithIdsGetResponseAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetRoleScopeTagsByIdsWithIdsGetResponse> GetAsGetRoleScopeTagsByIdsWithIdsGetResponseAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRoleScopeTagsByIdsWithIdsGetResponse> GetAsGetRoleScopeTagsByIdsWithIdsGetResponseAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetRoleScopeTagsByIdsWithIdsGetResponse>(requestInfo, GetRoleScopeTagsByIdsWithIdsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         [Obsolete("This method is obsolete. Use GetAsGetRoleScopeTagsByIdsWithIdsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRoleScopeTagsByIdsWithIdsResponse?> GetAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRoleScopeTagsByIdsWithIdsResponse?> GetAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetRoleScopeTagsByIdsWithIdsResponse> GetAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetRoleScopeTagsByIdsWithIdsResponse> GetAsync(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetRoleScopeTagsByIdsWithIdsResponse>(requestInfo, GetRoleScopeTagsByIdsWithIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// </summary>
         /// <returns>A <see cref="GetRoleScopeTagsByIdsWithIdsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetRoleScopeTagsByIdsWithIdsRequestBuilder WithUrl(string rawUrl) {
+        public GetRoleScopeTagsByIdsWithIdsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetRoleScopeTagsByIdsWithIdsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByIds
         /// </summary>
-        public class GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters {
+        public class GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters> {
+        public class GetRoleScopeTagsByIdsWithIdsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRoleScopeTagsByIdsWithIdsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

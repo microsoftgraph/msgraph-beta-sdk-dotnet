@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the Wifi CSP.
     /// </summary>
-    public class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration, IParsable {
+    public class WindowsWifiEnterpriseEAPConfiguration : WindowsWifiConfiguration, IParsable 
+    {
         /// <summary>Specify the authentication method. Possible values are: certificate, usernameAndPassword, derivedCredential.</summary>
         public WiFiAuthenticationMethod? AuthenticationMethod {
             get { return BackingStore?.Get<WiFiAuthenticationMethod?>("authenticationMethod"); }
@@ -192,7 +193,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsWifiEnterpriseEAPConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsWifiEnterpriseEAPConfiguration() : base() {
+        public WindowsWifiEnterpriseEAPConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration";
         }
         /// <summary>
@@ -200,7 +202,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsWifiEnterpriseEAPConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsWifiEnterpriseEAPConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsWifiEnterpriseEAPConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsWifiEnterpriseEAPConfiguration();
         }
@@ -208,8 +211,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<WiFiAuthenticationMethod>(); } },
                 {"authenticationPeriodInSeconds", n => { AuthenticationPeriodInSeconds = n.GetIntValue(); } },
                 {"authenticationRetryDelayPeriodInSeconds", n => { AuthenticationRetryDelayPeriodInSeconds = n.GetIntValue(); } },
@@ -243,7 +248,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<WiFiAuthenticationMethod>("authenticationMethod", AuthenticationMethod);

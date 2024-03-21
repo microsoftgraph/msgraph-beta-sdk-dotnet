@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
     /// <summary>
     /// Provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilder : BaseRequestBuilder {
+    public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceTimelineEvent property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsDeviceTimelineEvent</param>
         /// <returns>A <see cref="UserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder"/></returns>
-        public UserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("userExperienceAnalyticsDeviceTimelineEvent%2Did", position);
-            return new UserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public UserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("userExperienceAnalyticsDeviceTimelineEvent%2Did", position);
+                return new UserExperienceAnalyticsDeviceTimelineEventItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceTimelineEventRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceTimelineEvent{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceTimelineEvent{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UserExperienceAnalyticsDeviceTimelineEventRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceTimelineEvent{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceTimelineEvent{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// The user experience analytics device events entity contains NRT device timeline event details.
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsDeviceTimelineEventCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsDeviceTimelineEventCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsDeviceTimelineEventCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsDeviceTimelineEventCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsDeviceTimelineEventCollectionResponse>(requestInfo, UserExperienceAnalyticsDeviceTimelineEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -72,14 +83,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -109,10 +125,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/deviceManagement/userExperienceAnalyticsDeviceTimelineEvent", PathParameters);
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
         /// </summary>
         /// <returns>A <see cref="UserExperienceAnalyticsDeviceTimelineEventRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsDeviceTimelineEventRequestBuilder WithUrl(string rawUrl) {
+        public UserExperienceAnalyticsDeviceTimelineEventRequestBuilder WithUrl(string rawUrl)
+        {
             return new UserExperienceAnalyticsDeviceTimelineEventRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The user experience analytics device events entity contains NRT device timeline event details.
         /// </summary>
-        public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters {
+        public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -197,13 +217,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTim
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters> {
+        public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsDeviceTimelineEventRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class UserExperienceAnalyticsDeviceTimelineEventRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

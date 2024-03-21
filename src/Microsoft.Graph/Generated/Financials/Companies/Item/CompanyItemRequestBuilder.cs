@@ -48,160 +48,198 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
     /// <summary>
     /// Provides operations to manage the companies property of the microsoft.graph.financials entity.
     /// </summary>
-    public class CompanyItemRequestBuilder : BaseRequestBuilder {
+    public class CompanyItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the accounts property of the microsoft.graph.company entity.</summary>
-        public AccountsRequestBuilder Accounts { get =>
-            new AccountsRequestBuilder(PathParameters, RequestAdapter);
+        public AccountsRequestBuilder Accounts
+        {
+            get =>             new AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsPayable property of the microsoft.graph.company entity.</summary>
-        public AgedAccountsPayableRequestBuilder AgedAccountsPayable { get =>
-            new AgedAccountsPayableRequestBuilder(PathParameters, RequestAdapter);
+        public AgedAccountsPayableRequestBuilder AgedAccountsPayable
+        {
+            get =>             new AgedAccountsPayableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agedAccountsReceivable property of the microsoft.graph.company entity.</summary>
-        public AgedAccountsReceivableRequestBuilder AgedAccountsReceivable { get =>
-            new AgedAccountsReceivableRequestBuilder(PathParameters, RequestAdapter);
+        public AgedAccountsReceivableRequestBuilder AgedAccountsReceivable
+        {
+            get =>             new AgedAccountsReceivableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the companyInformation property of the microsoft.graph.company entity.</summary>
-        public CompanyInformationRequestBuilder CompanyInformation { get =>
-            new CompanyInformationRequestBuilder(PathParameters, RequestAdapter);
+        public CompanyInformationRequestBuilder CompanyInformation
+        {
+            get =>             new CompanyInformationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the countriesRegions property of the microsoft.graph.company entity.</summary>
-        public CountriesRegionsRequestBuilder CountriesRegions { get =>
-            new CountriesRegionsRequestBuilder(PathParameters, RequestAdapter);
+        public CountriesRegionsRequestBuilder CountriesRegions
+        {
+            get =>             new CountriesRegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the currencies property of the microsoft.graph.company entity.</summary>
-        public CurrenciesRequestBuilder Currencies { get =>
-            new CurrenciesRequestBuilder(PathParameters, RequestAdapter);
+        public CurrenciesRequestBuilder Currencies
+        {
+            get =>             new CurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customerPaymentJournals property of the microsoft.graph.company entity.</summary>
-        public CustomerPaymentJournalsRequestBuilder CustomerPaymentJournals { get =>
-            new CustomerPaymentJournalsRequestBuilder(PathParameters, RequestAdapter);
+        public CustomerPaymentJournalsRequestBuilder CustomerPaymentJournals
+        {
+            get =>             new CustomerPaymentJournalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customerPayments property of the microsoft.graph.company entity.</summary>
-        public CustomerPaymentsRequestBuilder CustomerPayments { get =>
-            new CustomerPaymentsRequestBuilder(PathParameters, RequestAdapter);
+        public CustomerPaymentsRequestBuilder CustomerPayments
+        {
+            get =>             new CustomerPaymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customers property of the microsoft.graph.company entity.</summary>
-        public CustomersRequestBuilder Customers { get =>
-            new CustomersRequestBuilder(PathParameters, RequestAdapter);
+        public CustomersRequestBuilder Customers
+        {
+            get =>             new CustomersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dimensions property of the microsoft.graph.company entity.</summary>
-        public DimensionsRequestBuilder Dimensions { get =>
-            new DimensionsRequestBuilder(PathParameters, RequestAdapter);
+        public DimensionsRequestBuilder Dimensions
+        {
+            get =>             new DimensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dimensionValues property of the microsoft.graph.company entity.</summary>
-        public DimensionValuesRequestBuilder DimensionValues { get =>
-            new DimensionValuesRequestBuilder(PathParameters, RequestAdapter);
+        public DimensionValuesRequestBuilder DimensionValues
+        {
+            get =>             new DimensionValuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employees property of the microsoft.graph.company entity.</summary>
-        public EmployeesRequestBuilder Employees { get =>
-            new EmployeesRequestBuilder(PathParameters, RequestAdapter);
+        public EmployeesRequestBuilder Employees
+        {
+            get =>             new EmployeesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the generalLedgerEntries property of the microsoft.graph.company entity.</summary>
-        public GeneralLedgerEntriesRequestBuilder GeneralLedgerEntries { get =>
-            new GeneralLedgerEntriesRequestBuilder(PathParameters, RequestAdapter);
+        public GeneralLedgerEntriesRequestBuilder GeneralLedgerEntries
+        {
+            get =>             new GeneralLedgerEntriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the itemCategories property of the microsoft.graph.company entity.</summary>
-        public ItemCategoriesRequestBuilder ItemCategories { get =>
-            new ItemCategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public ItemCategoriesRequestBuilder ItemCategories
+        {
+            get =>             new ItemCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.company entity.</summary>
-        public ItemsRequestBuilder Items { get =>
-            new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        public ItemsRequestBuilder Items
+        {
+            get =>             new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the journalLines property of the microsoft.graph.company entity.</summary>
-        public JournalLinesRequestBuilder JournalLines { get =>
-            new JournalLinesRequestBuilder(PathParameters, RequestAdapter);
+        public JournalLinesRequestBuilder JournalLines
+        {
+            get =>             new JournalLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the journals property of the microsoft.graph.company entity.</summary>
-        public JournalsRequestBuilder Journals { get =>
-            new JournalsRequestBuilder(PathParameters, RequestAdapter);
+        public JournalsRequestBuilder Journals
+        {
+            get =>             new JournalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentMethods property of the microsoft.graph.company entity.</summary>
-        public PaymentMethodsRequestBuilder PaymentMethods { get =>
-            new PaymentMethodsRequestBuilder(PathParameters, RequestAdapter);
+        public PaymentMethodsRequestBuilder PaymentMethods
+        {
+            get =>             new PaymentMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentTerms property of the microsoft.graph.company entity.</summary>
-        public PaymentTermsRequestBuilder PaymentTerms { get =>
-            new PaymentTermsRequestBuilder(PathParameters, RequestAdapter);
+        public PaymentTermsRequestBuilder PaymentTerms
+        {
+            get =>             new PaymentTermsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the picture property of the microsoft.graph.company entity.</summary>
-        public PictureRequestBuilder Picture { get =>
-            new PictureRequestBuilder(PathParameters, RequestAdapter);
+        public PictureRequestBuilder Picture
+        {
+            get =>             new PictureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.company entity.</summary>
-        public PurchaseInvoiceLinesRequestBuilder PurchaseInvoiceLines { get =>
-            new PurchaseInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
+        public PurchaseInvoiceLinesRequestBuilder PurchaseInvoiceLines
+        {
+            get =>             new PurchaseInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.</summary>
-        public PurchaseInvoicesRequestBuilder PurchaseInvoices { get =>
-            new PurchaseInvoicesRequestBuilder(PathParameters, RequestAdapter);
+        public PurchaseInvoicesRequestBuilder PurchaseInvoices
+        {
+            get =>             new PurchaseInvoicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.company entity.</summary>
-        public SalesCreditMemoLinesRequestBuilder SalesCreditMemoLines { get =>
-            new SalesCreditMemoLinesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesCreditMemoLinesRequestBuilder SalesCreditMemoLines
+        {
+            get =>             new SalesCreditMemoLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.</summary>
-        public SalesCreditMemosRequestBuilder SalesCreditMemos { get =>
-            new SalesCreditMemosRequestBuilder(PathParameters, RequestAdapter);
+        public SalesCreditMemosRequestBuilder SalesCreditMemos
+        {
+            get =>             new SalesCreditMemosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.company entity.</summary>
-        public SalesInvoiceLinesRequestBuilder SalesInvoiceLines { get =>
-            new SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesInvoiceLinesRequestBuilder SalesInvoiceLines
+        {
+            get =>             new SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
-        public SalesInvoicesRequestBuilder SalesInvoices { get =>
-            new SalesInvoicesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesInvoicesRequestBuilder SalesInvoices
+        {
+            get =>             new SalesInvoicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesOrderLines property of the microsoft.graph.company entity.</summary>
-        public SalesOrderLinesRequestBuilder SalesOrderLines { get =>
-            new SalesOrderLinesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesOrderLinesRequestBuilder SalesOrderLines
+        {
+            get =>             new SalesOrderLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesOrders property of the microsoft.graph.company entity.</summary>
-        public SalesOrdersRequestBuilder SalesOrders { get =>
-            new SalesOrdersRequestBuilder(PathParameters, RequestAdapter);
+        public SalesOrdersRequestBuilder SalesOrders
+        {
+            get =>             new SalesOrdersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.</summary>
-        public SalesQuoteLinesRequestBuilder SalesQuoteLines { get =>
-            new SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesQuoteLinesRequestBuilder SalesQuoteLines
+        {
+            get =>             new SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
-        public SalesQuotesRequestBuilder SalesQuotes { get =>
-            new SalesQuotesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesQuotesRequestBuilder SalesQuotes
+        {
+            get =>             new SalesQuotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shipmentMethods property of the microsoft.graph.company entity.</summary>
-        public ShipmentMethodsRequestBuilder ShipmentMethods { get =>
-            new ShipmentMethodsRequestBuilder(PathParameters, RequestAdapter);
+        public ShipmentMethodsRequestBuilder ShipmentMethods
+        {
+            get =>             new ShipmentMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxAreas property of the microsoft.graph.company entity.</summary>
-        public TaxAreasRequestBuilder TaxAreas { get =>
-            new TaxAreasRequestBuilder(PathParameters, RequestAdapter);
+        public TaxAreasRequestBuilder TaxAreas
+        {
+            get =>             new TaxAreasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taxGroups property of the microsoft.graph.company entity.</summary>
-        public TaxGroupsRequestBuilder TaxGroups { get =>
-            new TaxGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public TaxGroupsRequestBuilder TaxGroups
+        {
+            get =>             new TaxGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the unitsOfMeasure property of the microsoft.graph.company entity.</summary>
-        public UnitsOfMeasureRequestBuilder UnitsOfMeasure { get =>
-            new UnitsOfMeasureRequestBuilder(PathParameters, RequestAdapter);
+        public UnitsOfMeasureRequestBuilder UnitsOfMeasure
+        {
+            get =>             new UnitsOfMeasureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vendors property of the microsoft.graph.company entity.</summary>
-        public VendorsRequestBuilder Vendors { get =>
-            new VendorsRequestBuilder(PathParameters, RequestAdapter);
+        public VendorsRequestBuilder Vendors
+        {
+            get =>             new VendorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CompanyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompanyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}{?%24expand,%24select}", pathParameters) {
+        public CompanyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CompanyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompanyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}{?%24expand,%24select}", rawUrl) {
+        public CompanyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get companies from financials
@@ -212,13 +250,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Company?> GetAsync(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Company?> GetAsync(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Company> GetAsync(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Company> GetAsync(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Company>(requestInfo, Company.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -230,10 +271,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -245,13 +288,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         /// </summary>
         /// <returns>A <see cref="CompanyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CompanyItemRequestBuilder WithUrl(string rawUrl) {
+        public CompanyItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new CompanyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get companies from financials
         /// </summary>
-        public class CompanyItemRequestBuilderGetQueryParameters {
+        public class CompanyItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,7 +322,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CompanyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters> {
+        public class CompanyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<CompanyItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

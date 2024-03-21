@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum CloudPcPolicySettingType {
+    public enum CloudPcPolicySettingType
+    {
         [EnumMember(Value = "region")]
         Region = 1,
         [EnumMember(Value = "singleSignOn")]

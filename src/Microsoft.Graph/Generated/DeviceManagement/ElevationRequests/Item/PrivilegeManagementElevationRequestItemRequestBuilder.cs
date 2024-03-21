@@ -16,32 +16,38 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
     /// <summary>
     /// Provides operations to manage the elevationRequests property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class PrivilegeManagementElevationRequestItemRequestBuilder : BaseRequestBuilder {
+    public class PrivilegeManagementElevationRequestItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the approve method.</summary>
-        public ApproveRequestBuilder Approve { get =>
-            new ApproveRequestBuilder(PathParameters, RequestAdapter);
+        public ApproveRequestBuilder Approve
+        {
+            get =>             new ApproveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deny method.</summary>
-        public DenyRequestBuilder Deny { get =>
-            new DenyRequestBuilder(PathParameters, RequestAdapter);
+        public DenyRequestBuilder Deny
+        {
+            get =>             new DenyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllElevationRequests method.</summary>
-        public GetAllElevationRequestsRequestBuilder GetAllElevationRequests { get =>
-            new GetAllElevationRequestsRequestBuilder(PathParameters, RequestAdapter);
+        public GetAllElevationRequestsRequestBuilder GetAllElevationRequests
+        {
+            get =>             new GetAllElevationRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="PrivilegeManagementElevationRequestItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegeManagementElevationRequestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24expand,%24select}", pathParameters) {
+        public PrivilegeManagementElevationRequestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PrivilegeManagementElevationRequestItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrivilegeManagementElevationRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24expand,%24select}", rawUrl) {
+        public PrivilegeManagementElevationRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property elevationRequests for deviceManagement
@@ -51,13 +57,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -71,13 +80,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegeManagementElevationRequest?> GetAsync(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegeManagementElevationRequest?> GetAsync(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<PrivilegeManagementElevationRequest> GetAsync(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegeManagementElevationRequest> GetAsync(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PrivilegeManagementElevationRequest>(requestInfo, PrivilegeManagementElevationRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -92,14 +104,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivilegeManagementElevationRequest?> PatchAsync(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegeManagementElevationRequest?> PatchAsync(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<PrivilegeManagementElevationRequest> PatchAsync(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegeManagementElevationRequest> PatchAsync(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PrivilegeManagementElevationRequest>(requestInfo, PrivilegeManagementElevationRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -111,10 +126,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -128,10 +145,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -146,10 +165,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(PrivilegeManagementElevationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/elevationRequests/{privilegeManagementElevationRequest%2Did}", PathParameters);
@@ -163,19 +184,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// </summary>
         /// <returns>A <see cref="PrivilegeManagementElevationRequestItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrivilegeManagementElevationRequestItemRequestBuilder WithUrl(string rawUrl) {
+        public PrivilegeManagementElevationRequestItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new PrivilegeManagementElevationRequestItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegeManagementElevationRequestItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class PrivilegeManagementElevationRequestItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// List of elevation requests
         /// </summary>
-        public class PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters {
+        public class PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,13 +225,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegeManagementElevationRequestItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters> {
+        public class PrivilegeManagementElevationRequestItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrivilegeManagementElevationRequestItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrivilegeManagementElevationRequestItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class PrivilegeManagementElevationRequestItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum representing possible values for cross profile data sharing.</summary>
-    public enum AndroidDeviceOwnerCrossProfileDataSharing {
+    public enum AndroidDeviceOwnerCrossProfileDataSharing
+    {
         /// <summary>Not configured; this value defaults to CROSS_PROFILE_DATA_SHARING_UNSPECIFIED.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

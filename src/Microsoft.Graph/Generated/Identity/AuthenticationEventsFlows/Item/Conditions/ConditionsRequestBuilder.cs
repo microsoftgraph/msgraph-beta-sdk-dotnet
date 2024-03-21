@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Condition
     /// <summary>
     /// Builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\conditions
     /// </summary>
-    public class ConditionsRequestBuilder : BaseRequestBuilder {
+    public class ConditionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The applications property</summary>
-        public ApplicationsRequestBuilder Applications { get =>
-            new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
+        public ApplicationsRequestBuilder Applications
+        {
+            get =>             new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ConditionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConditionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions{?%24expand,%24select}", pathParameters) {
+        public ConditionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ConditionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConditionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions{?%24expand,%24select}", rawUrl) {
+        public ConditionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/conditions{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
@@ -42,13 +46,16 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Condition
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationConditions?> GetAsync(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationConditions?> GetAsync(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AuthenticationConditions> GetAsync(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuthenticationConditions> GetAsync(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuthenticationConditions>(requestInfo, AuthenticationConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,10 +67,12 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Condition
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ConditionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,13 +84,15 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Condition
         /// </summary>
         /// <returns>A <see cref="ConditionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ConditionsRequestBuilder WithUrl(string rawUrl) {
+        public ConditionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ConditionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
         /// </summary>
-        public class ConditionsRequestBuilderGetQueryParameters {
+        public class ConditionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +118,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Condition
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ConditionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ConditionsRequestBuilderGetQueryParameters> {
+        public class ConditionsRequestBuilderGetRequestConfiguration : RequestConfiguration<ConditionsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

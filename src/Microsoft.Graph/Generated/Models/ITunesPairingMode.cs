@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ITunesPairingMode {
+    public enum ITunesPairingMode
+    {
         /// <summary>Pairing is not allowed</summary>
         [EnumMember(Value = "disallow")]
         Disallow,

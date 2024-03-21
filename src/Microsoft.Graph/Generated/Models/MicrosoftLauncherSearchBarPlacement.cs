@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Microsoft Launcher Search Bar Placement selection.</summary>
-    public enum MicrosoftLauncherSearchBarPlacement {
+    public enum MicrosoftLauncherSearchBarPlacement
+    {
         /// <summary>Not configured; this value is ignored.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

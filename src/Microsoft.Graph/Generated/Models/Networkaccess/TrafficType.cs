@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum TrafficType {
+    public enum TrafficType
+    {
         [EnumMember(Value = "internet")]
         Internet,
         [EnumMember(Value = "private")]

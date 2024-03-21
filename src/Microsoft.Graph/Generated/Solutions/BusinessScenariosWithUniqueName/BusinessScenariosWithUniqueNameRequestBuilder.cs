@@ -13,14 +13,16 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
     /// <summary>
     /// Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
     /// </summary>
-    public class BusinessScenariosWithUniqueNameRequestBuilder : BaseRequestBuilder {
+    public class BusinessScenariosWithUniqueNameRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="BusinessScenariosWithUniqueNameRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of businessScenario</param>
-        public BusinessScenariosWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters) {
+        public BusinessScenariosWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessScenariosWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl) {
+        public BusinessScenariosWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
@@ -39,13 +42,16 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,13 +66,16 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessScenario?> GetAsync(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessScenario?> GetAsync(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BusinessScenario> GetAsync(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessScenario> GetAsync(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,14 +91,17 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessScenario?> PatchAsync(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessScenario?> PatchAsync(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BusinessScenario> PatchAsync(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessScenario> PatchAsync(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -101,10 +113,12 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}')", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -118,10 +132,12 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -136,10 +152,12 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(BusinessScenario body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/solutions/businessScenarios(uniqueName='{uniqueName}')", PathParameters);
@@ -153,19 +171,22 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// </summary>
         /// <returns>A <see cref="BusinessScenariosWithUniqueNameRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BusinessScenariosWithUniqueNameRequestBuilder WithUrl(string rawUrl) {
+        public BusinessScenariosWithUniqueNameRequestBuilder WithUrl(string rawUrl)
+        {
             return new BusinessScenariosWithUniqueNameRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessScenariosWithUniqueNameRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class BusinessScenariosWithUniqueNameRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Read the properties and relationships of a businessScenario object.
         /// </summary>
-        public class BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters {
+        public class BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,13 +212,15 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenariosWithUniqueName {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessScenariosWithUniqueNameRequestBuilderGetRequestConfiguration : RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters> {
+        public class BusinessScenariosWithUniqueNameRequestBuilderGetRequestConfiguration : RequestConfiguration<BusinessScenariosWithUniqueNameRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessScenariosWithUniqueNameRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class BusinessScenariosWithUniqueNameRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

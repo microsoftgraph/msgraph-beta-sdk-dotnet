@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Template type</summary>
-    public enum DeviceManagementTemplateType {
+    public enum DeviceManagementTemplateType
+    {
         /// <summary>Security baseline template</summary>
         [EnumMember(Value = "securityBaseline")]
         SecurityBaseline,

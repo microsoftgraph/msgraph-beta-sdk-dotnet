@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.</summary>
-    public enum UserExperienceAnalyticsAnomalySeverity {
+    public enum UserExperienceAnalyticsAnomalySeverity
+    {
         /// <summary>Indicates the anomaly is of high severity.</summary>
         [EnumMember(Value = "high")]
         High,

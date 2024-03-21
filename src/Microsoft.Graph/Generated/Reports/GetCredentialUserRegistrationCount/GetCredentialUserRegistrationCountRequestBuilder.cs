@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
     /// <summary>
     /// Provides operations to call the getCredentialUserRegistrationCount method.
     /// </summary>
-    public class GetCredentialUserRegistrationCountRequestBuilder : BaseRequestBuilder {
+    public class GetCredentialUserRegistrationCountRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetCredentialUserRegistrationCountRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCredentialUserRegistrationCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetCredentialUserRegistrationCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetCredentialUserRegistrationCountRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetCredentialUserRegistrationCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetCredentialUserRegistrationCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getCredentialUserRegistrationCount(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCredentialUserRegistrationCountGetResponse?> GetAsGetCredentialUserRegistrationCountGetResponseAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetCredentialUserRegistrationCountGetResponse?> GetAsGetCredentialUserRegistrationCountGetResponseAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetCredentialUserRegistrationCountGetResponse> GetAsGetCredentialUserRegistrationCountGetResponseAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetCredentialUserRegistrationCountGetResponse> GetAsGetCredentialUserRegistrationCountGetResponseAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountGetResponse>(requestInfo, GetCredentialUserRegistrationCountGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         [Obsolete("This method is obsolete. Use GetAsGetCredentialUserRegistrationCountGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetCredentialUserRegistrationCountResponse?> GetAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetCredentialUserRegistrationCountResponse?> GetAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetCredentialUserRegistrationCountResponse> GetAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetCredentialUserRegistrationCountResponse> GetAsync(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         /// </summary>
         /// <returns>A <see cref="GetCredentialUserRegistrationCountRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetCredentialUserRegistrationCountRequestBuilder WithUrl(string rawUrl) {
+        public GetCredentialUserRegistrationCountRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetCredentialUserRegistrationCountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
         /// </summary>
-        public class GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters {
+        public class GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration : RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters> {
+        public class GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration : RequestConfiguration<GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

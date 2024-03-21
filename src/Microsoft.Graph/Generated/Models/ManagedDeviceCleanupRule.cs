@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Define the rule when the admin wants the devices to be cleaned up.
     /// </summary>
-    public class ManagedDeviceCleanupRule : Entity, IParsable {
+    public class ManagedDeviceCleanupRule : Entity, IParsable 
+    {
         /// <summary>Indicates the description for the device clean up rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="ManagedDeviceCleanupRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedDeviceCleanupRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ManagedDeviceCleanupRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ManagedDeviceCleanupRule();
         }
@@ -65,8 +67,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"deviceCleanupRulePlatformType", n => { DeviceCleanupRulePlatformType = n.GetEnumValue<DeviceCleanupRulePlatformType>(); } },
                 {"deviceInactivityBeforeRetirementInDays", n => { DeviceInactivityBeforeRetirementInDays = n.GetIntValue(); } },
@@ -78,7 +82,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);

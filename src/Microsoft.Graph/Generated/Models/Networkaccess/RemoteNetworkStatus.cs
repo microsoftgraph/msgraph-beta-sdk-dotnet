@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum RemoteNetworkStatus {
+    public enum RemoteNetworkStatus
+    {
         [EnumMember(Value = "tunnelDisconnected")]
         TunnelDisconnected,
         [EnumMember(Value = "tunnelConnected")]

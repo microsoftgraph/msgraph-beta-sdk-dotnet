@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
-    public enum AdditionalOptions {
+    public enum AdditionalOptions
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "teamsAndYammerConversations")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum NetworkingProtocol {
+    public enum NetworkingProtocol
+    {
         [EnumMember(Value = "ip")]
         Ip,
         [EnumMember(Value = "icmp")]

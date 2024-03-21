@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains all supported file system detection type.</summary>
-    public enum Win32LobAppFileSystemDetectionType {
+    public enum Win32LobAppFileSystemDetectionType
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

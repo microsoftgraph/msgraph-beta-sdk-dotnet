@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
-    public enum IndustryDataRunStatus {
+    public enum IndustryDataRunStatus
+    {
         [EnumMember(Value = "running")]
         Running,
         [EnumMember(Value = "failed")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum SensitiveTypeScope {
+    public enum SensitiveTypeScope
+    {
         [EnumMember(Value = "fullDocument")]
         FullDocument = 1,
         [EnumMember(Value = "partialDocument")]

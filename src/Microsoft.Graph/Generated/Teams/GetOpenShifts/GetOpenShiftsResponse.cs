@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
     [Obsolete("This class is obsolete. Use GetOpenShiftsGetResponse instead.")]
-    public class GetOpenShiftsResponse : GetOpenShiftsGetResponse, IParsable {
+    public class GetOpenShiftsResponse : GetOpenShiftsGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="GetOpenShiftsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetOpenShiftsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GetOpenShiftsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GetOpenShiftsResponse();
         }

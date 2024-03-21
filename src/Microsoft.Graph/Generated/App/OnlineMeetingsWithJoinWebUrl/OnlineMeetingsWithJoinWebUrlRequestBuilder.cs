@@ -16,18 +16,22 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
     /// <summary>
     /// Provides operations to manage the onlineMeetings property of the microsoft.graph.commsApplication entity.
     /// </summary>
-    public class OnlineMeetingsWithJoinWebUrlRequestBuilder : BaseRequestBuilder {
+    public class OnlineMeetingsWithJoinWebUrlRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the getVirtualAppointmentJoinWebUrl method.</summary>
-        public GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl { get =>
-            new GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
+        public GetVirtualAppointmentJoinWebUrlRequestBuilder GetVirtualAppointmentJoinWebUrl
+        {
+            get =>             new GetVirtualAppointmentJoinWebUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendVirtualAppointmentReminderSms method.</summary>
-        public SendVirtualAppointmentReminderSmsRequestBuilder SendVirtualAppointmentReminderSms { get =>
-            new SendVirtualAppointmentReminderSmsRequestBuilder(PathParameters, RequestAdapter);
+        public SendVirtualAppointmentReminderSmsRequestBuilder SendVirtualAppointmentReminderSms
+        {
+            get =>             new SendVirtualAppointmentReminderSmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendVirtualAppointmentSms method.</summary>
-        public SendVirtualAppointmentSmsRequestBuilder SendVirtualAppointmentSms { get =>
-            new SendVirtualAppointmentSmsRequestBuilder(PathParameters, RequestAdapter);
+        public SendVirtualAppointmentSmsRequestBuilder SendVirtualAppointmentSms
+        {
+            get =>             new SendVirtualAppointmentSmsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="OnlineMeetingsWithJoinWebUrlRequestBuilder"/> and sets the default values.
@@ -35,7 +39,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <param name="joinWebUrl">Alternate key of onlineMeeting</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnlineMeetingsWithJoinWebUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string joinWebUrl = "") : base(requestAdapter, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters) {
+        public OnlineMeetingsWithJoinWebUrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string joinWebUrl = "") : base(requestAdapter, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(joinWebUrl)) PathParameters.Add("joinWebUrl", joinWebUrl);
         }
         /// <summary>
@@ -43,7 +48,8 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnlineMeetingsWithJoinWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", rawUrl) {
+        public OnlineMeetingsWithJoinWebUrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}'){?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property onlineMeetings for app
@@ -53,13 +59,16 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -73,13 +82,16 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnlineMeeting?> GetAsync(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeeting?> GetAsync(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<OnlineMeeting> GetAsync(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeeting> GetAsync(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -94,14 +106,17 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnlineMeeting?> PatchAsync(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeeting?> PatchAsync(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<OnlineMeeting> PatchAsync(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnlineMeeting> PatchAsync(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -113,10 +128,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}')", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -130,10 +147,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -148,10 +167,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(OnlineMeeting body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/app/onlineMeetings(joinWebUrl='{joinWebUrl}')", PathParameters);
@@ -165,19 +186,22 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// </summary>
         /// <returns>A <see cref="OnlineMeetingsWithJoinWebUrlRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OnlineMeetingsWithJoinWebUrlRequestBuilder WithUrl(string rawUrl) {
+        public OnlineMeetingsWithJoinWebUrlRequestBuilder WithUrl(string rawUrl)
+        {
             return new OnlineMeetingsWithJoinWebUrlRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnlineMeetingsWithJoinWebUrlRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class OnlineMeetingsWithJoinWebUrlRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get onlineMeetings from app
         /// </summary>
-        public class OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters {
+        public class OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,13 +227,15 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetingsWithJoinWebUrl {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration : RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters> {
+        public class OnlineMeetingsWithJoinWebUrlRequestBuilderGetRequestConfiguration : RequestConfiguration<OnlineMeetingsWithJoinWebUrlRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class OnlineMeetingsWithJoinWebUrlRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

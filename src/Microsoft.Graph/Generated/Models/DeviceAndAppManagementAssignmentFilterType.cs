@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents type of the assignment filter.</summary>
-    public enum DeviceAndAppManagementAssignmentFilterType {
+    public enum DeviceAndAppManagementAssignmentFilterType
+    {
         /// <summary>Default value. Do not use.</summary>
         [EnumMember(Value = "none")]
         None,

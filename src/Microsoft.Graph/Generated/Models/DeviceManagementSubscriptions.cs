@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Tenant mobile device management subscriptions.</summary>
     [Flags]
-    public enum DeviceManagementSubscriptions {
+    public enum DeviceManagementSubscriptions
+    {
         /// <summary>None</summary>
         [EnumMember(Value = "none")]
         None = 1,

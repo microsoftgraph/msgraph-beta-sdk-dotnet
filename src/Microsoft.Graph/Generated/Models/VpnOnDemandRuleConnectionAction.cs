@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>VPN On-Demand Rule Connection Action.</summary>
-    public enum VpnOnDemandRuleConnectionAction {
+    public enum VpnOnDemandRuleConnectionAction
+    {
         /// <summary>Connect.</summary>
         [EnumMember(Value = "connect")]
         Connect,

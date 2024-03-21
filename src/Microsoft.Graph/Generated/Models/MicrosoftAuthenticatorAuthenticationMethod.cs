@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable {
+    public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable 
+    {
         /// <summary>The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.</summary>
         public MicrosoftAuthenticatorAuthenticationMethodClientAppName? ClientAppName {
             get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMethodClientAppName?>("clientAppName"); }
@@ -75,7 +76,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftAuthenticatorAuthenticationMethod"/> and sets the default values.
         /// </summary>
-        public MicrosoftAuthenticatorAuthenticationMethod() : base() {
+        public MicrosoftAuthenticatorAuthenticationMethod() : base()
+        {
             OdataType = "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod";
         }
         /// <summary>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MicrosoftAuthenticatorAuthenticationMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftAuthenticatorAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MicrosoftAuthenticatorAuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MicrosoftAuthenticatorAuthenticationMethod();
         }
@@ -91,8 +94,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"clientAppName", n => { ClientAppName = n.GetEnumValue<MicrosoftAuthenticatorAuthenticationMethodClientAppName>(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
@@ -105,7 +110,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<MicrosoftAuthenticatorAuthenticationMethodClientAppName>("clientAppName", ClientAppName);

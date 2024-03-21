@@ -16,32 +16,38 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
     /// <summary>
     /// Casts the previous resource to windowsStoreApp.
     /// </summary>
-    public class GraphWindowsStoreAppRequestBuilder : BaseRequestBuilder {
+    public class GraphWindowsStoreAppRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments { get =>
-            new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AssignmentsRequestBuilder Assignments
+        {
+            get =>             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories { get =>
-            new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public CategoriesRequestBuilder Categories
+        {
+            get =>             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
-        public RelationshipsRequestBuilder Relationships { get =>
-            new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        public RelationshipsRequestBuilder Relationships
+        {
+            get =>             new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphWindowsStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphWindowsStoreAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp{?%24expand,%24select}", pathParameters) {
+        public GraphWindowsStoreAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphWindowsStoreAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphWindowsStoreAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp{?%24expand,%24select}", rawUrl) {
+        public GraphWindowsStoreAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.windowsStoreApp{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
@@ -52,13 +58,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WindowsStoreApp?> GetAsync(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsStoreApp?> GetAsync(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WindowsStoreApp> GetAsync(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsStoreApp> GetAsync(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WindowsStoreApp>(requestInfo, WindowsStoreApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +79,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +96,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// </summary>
         /// <returns>A <see cref="GraphWindowsStoreAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphWindowsStoreAppRequestBuilder WithUrl(string rawUrl) {
+        public GraphWindowsStoreAppRequestBuilder WithUrl(string rawUrl)
+        {
             return new GraphWindowsStoreAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.windowsStoreApp
         /// </summary>
-        public class GraphWindowsStoreAppRequestBuilderGetQueryParameters {
+        public class GraphWindowsStoreAppRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +130,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphWindowsStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters> {
+        public class GraphWindowsStoreAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWindowsStoreAppRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

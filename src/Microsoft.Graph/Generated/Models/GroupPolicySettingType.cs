@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Setting type of the group policy.</summary>
-    public enum GroupPolicySettingType {
+    public enum GroupPolicySettingType
+    {
         /// <summary>GroupPolicySettingType unknown</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

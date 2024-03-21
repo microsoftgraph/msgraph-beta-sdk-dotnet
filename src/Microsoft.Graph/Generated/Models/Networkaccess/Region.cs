@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum Region {
+    public enum Region
+    {
         [EnumMember(Value = "eastUS")]
         EastUS,
         [EnumMember(Value = "eastUS2")]
@@ -67,5 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         JapanWest,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "koreaSouth")]
+        KoreaSouth,
     }
 }

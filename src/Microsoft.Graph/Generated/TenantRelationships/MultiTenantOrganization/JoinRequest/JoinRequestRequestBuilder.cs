@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
     /// <summary>
     /// Provides operations to manage the joinRequest property of the microsoft.graph.multiTenantOrganization entity.
     /// </summary>
-    public class JoinRequestRequestBuilder : BaseRequestBuilder {
+    public class JoinRequestRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="JoinRequestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JoinRequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}", pathParameters) {
+        public JoinRequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="JoinRequestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public JoinRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}", rawUrl) {
+        public JoinRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the status of a tenant joining a multi-tenant organization.
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MultiTenantOrganizationJoinRequestRecord?> GetAsync(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationJoinRequestRecord?> GetAsync(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MultiTenantOrganizationJoinRequestRecord> GetAsync(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationJoinRequestRecord> GetAsync(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MultiTenantOrganizationJoinRequestRecord>(requestInfo, MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,14 +66,17 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MultiTenantOrganizationJoinRequestRecord?> PatchAsync(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationJoinRequestRecord?> PatchAsync(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MultiTenantOrganizationJoinRequestRecord> PatchAsync(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationJoinRequestRecord> PatchAsync(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MultiTenantOrganizationJoinRequestRecord>(requestInfo, MultiTenantOrganizationJoinRequestRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -79,10 +88,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -97,10 +108,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationJoinRequestRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/tenantRelationships/multiTenantOrganization/joinRequest", PathParameters);
@@ -114,13 +127,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// </summary>
         /// <returns>A <see cref="JoinRequestRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public JoinRequestRequestBuilder WithUrl(string rawUrl) {
+        public JoinRequestRequestBuilder WithUrl(string rawUrl)
+        {
             return new JoinRequestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the status of a tenant joining a multi-tenant organization.
         /// </summary>
-        public class JoinRequestRequestBuilderGetQueryParameters {
+        public class JoinRequestRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,13 +161,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.JoinR
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class JoinRequestRequestBuilderGetRequestConfiguration : RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters> {
+        public class JoinRequestRequestBuilderGetRequestConfiguration : RequestConfiguration<JoinRequestRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class JoinRequestRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class JoinRequestRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

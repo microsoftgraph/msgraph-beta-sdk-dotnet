@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum DecisionItemPrincipalResourceMembershipType {
+    public enum DecisionItemPrincipalResourceMembershipType
+    {
         [EnumMember(Value = "direct")]
         Direct = 1,
         [EnumMember(Value = "indirect")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AuthenticationStrengthResult {
+    public enum AuthenticationStrengthResult
+    {
         [EnumMember(Value = "notSet")]
         NotSet,
         [EnumMember(Value = "skippedForProofUp")]

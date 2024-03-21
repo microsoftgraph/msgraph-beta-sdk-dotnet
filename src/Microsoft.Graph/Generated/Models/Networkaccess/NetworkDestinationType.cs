@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum NetworkDestinationType {
+    public enum NetworkDestinationType
+    {
         [EnumMember(Value = "url")]
         Url,
         [EnumMember(Value = "fqdn")]

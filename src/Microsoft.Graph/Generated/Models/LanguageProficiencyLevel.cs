@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum LanguageProficiencyLevel {
+    public enum LanguageProficiencyLevel
+    {
         [EnumMember(Value = "elementary")]
         Elementary,
         [EnumMember(Value = "conversational")]

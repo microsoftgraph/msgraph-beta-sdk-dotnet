@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.</summary>
-    public enum DeviceScopeStatus {
+    public enum DeviceScopeStatus
+    {
         /// <summary>Indicates the device scope is not enabled and there are no calculations in progress.</summary>
         [EnumMember(Value = "none")]
         None,

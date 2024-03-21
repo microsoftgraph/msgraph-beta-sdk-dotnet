@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The enrollment token type for an enrollment profile.</summary>
-    public enum AndroidDeviceOwnerEnrollmentTokenType {
+    public enum AndroidDeviceOwnerEnrollmentTokenType
+    {
         /// <summary>Default token type.</summary>
         [EnumMember(Value = "default")]
         Default,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DeviceManangementIntentValueType {
+    public enum DeviceManangementIntentValueType
+    {
         /// <summary>The setting value is an integer</summary>
         [EnumMember(Value = "integer")]
         Integer,

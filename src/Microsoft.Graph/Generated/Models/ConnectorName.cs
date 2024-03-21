@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Connectors name for connector status</summary>
-    public enum ConnectorName {
+    public enum ConnectorName
+    {
         /// <summary>Indicates the expiration date/time for the Apple MDM Push Certificate.</summary>
         [EnumMember(Value = "applePushNotificationServiceExpirationDateTime")]
         ApplePushNotificationServiceExpirationDateTime,

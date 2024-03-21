@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum ContentAlignment {
+    public enum ContentAlignment
+    {
         [EnumMember(Value = "left")]
         Left,
         [EnumMember(Value = "right")]

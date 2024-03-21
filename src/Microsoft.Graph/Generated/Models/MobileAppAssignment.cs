@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// A class containing the properties used for Group Assignment of a Mobile App.
     /// </summary>
-    public class MobileAppAssignment : Entity, IParsable {
+    public class MobileAppAssignment : Entity, IParsable 
+    {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public InstallIntent? Intent {
             get { return BackingStore?.Get<InstallIntent?>("intent"); }
@@ -33,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>The identifier of the source of the assignment.</summary>
+        /// <summary>The identifier of the source of the assignment. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId {
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MobileAppAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileAppAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MobileAppAssignment();
         }
@@ -74,8 +76,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"intent", n => { Intent = n.GetEnumValue<InstallIntent>(); } },
                 {"settings", n => { Settings = n.GetObjectValue<MobileAppAssignmentSettings>(MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
                 {"source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
@@ -87,13 +91,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<InstallIntent>("intent", Intent);
             writer.WriteObjectValue<MobileAppAssignmentSettings>("settings", Settings);
             writer.WriteEnumValue<DeviceAndAppManagementAssignmentSource>("source", Source);
-            writer.WriteStringValue("sourceId", SourceId);
             writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }

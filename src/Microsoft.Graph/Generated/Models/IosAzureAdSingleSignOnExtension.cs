@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents an Azure AD-type Single Sign-On extension profile for iOS devices.
     /// </summary>
-    public class IosAzureAdSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
+    public class IosAzureAdSingleSignOnExtension : IosSingleSignOnExtension, IParsable 
+    {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +46,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="IosAzureAdSingleSignOnExtension"/> and sets the default values.
         /// </summary>
-        public IosAzureAdSingleSignOnExtension() : base() {
+        public IosAzureAdSingleSignOnExtension() : base()
+        {
             OdataType = "#microsoft.graph.iosAzureAdSingleSignOnExtension";
         }
         /// <summary>
@@ -53,7 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="IosAzureAdSingleSignOnExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosAzureAdSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IosAzureAdSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IosAzureAdSingleSignOnExtension();
         }
@@ -61,8 +64,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"bundleIdAccessControlList", n => { BundleIdAccessControlList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"enableSharedDeviceMode", n => { EnableSharedDeviceMode = n.GetBoolValue(); } },
@@ -72,7 +77,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("bundleIdAccessControlList", BundleIdAccessControlList);

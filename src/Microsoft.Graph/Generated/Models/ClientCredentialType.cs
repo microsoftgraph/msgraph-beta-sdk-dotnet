@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ClientCredentialType {
+    public enum ClientCredentialType
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "clientSecret")]

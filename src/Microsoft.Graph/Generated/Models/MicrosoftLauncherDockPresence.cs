@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Microsoft Launcher Dock Presence selection.</summary>
-    public enum MicrosoftLauncherDockPresence {
+    public enum MicrosoftLauncherDockPresence
+    {
         /// <summary>Not configured; this value is ignored.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

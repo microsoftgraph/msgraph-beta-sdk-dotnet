@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents a Microsoft Bookings Business.
     /// </summary>
-    public class BookingBusiness : BookingNamedEntity, IParsable {
+    public class BookingBusiness : BookingNamedEntity, IParsable 
+    {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -265,7 +266,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="BookingBusiness"/> and sets the default values.
         /// </summary>
-        public BookingBusiness() : base() {
+        public BookingBusiness() : base()
+        {
             OdataType = "#microsoft.graph.bookingBusiness";
         }
         /// <summary>
@@ -273,7 +275,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="BookingBusiness"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingBusiness CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new BookingBusiness CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new BookingBusiness();
         }
@@ -281,8 +284,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
                 {"appointments", n => { Appointments = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"bookingPageSettings", n => { BookingPageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.BookingPageSettings>(Microsoft.Graph.Beta.Models.BookingPageSettings.CreateFromDiscriminatorValue); } },
@@ -309,7 +314,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<PhysicalAddress>("address", Address);

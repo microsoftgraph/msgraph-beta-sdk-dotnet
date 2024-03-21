@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class Subscription : Entity, IParsable {
+    public class Subscription : Entity, IParsable 
+    {
         /// <summary>Optional. Identifier of the application used to create the subscription. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationId", value); }
         }
 #endif
-        /// <summary>Required. Indicates the type of change in the subscribed resource that will raise a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated or soft deleted.  Use deleted to receive notifications when user or group is permanently deleted.</summary>
+        /// <summary>Required. Indicates the type of change in the subscribed resource that raises a change notification. The supported values are: created, updated, deleted. Multiple values can be combined using a comma-separated list. Note:  Drive root item and list change notifications support only the updated changeType. User and group change notifications support updated and deleted changeType. Use updated to receive notifications when user or group is created, updated, or soft deleted. Use deleted to receive notifications when user or group is permanently deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangeType {
@@ -90,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encryptionCertificateId", value); }
         }
 #endif
-        /// <summary>Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see the table below.</summary>
+        /// <summary>Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notificationContentType", value); }
         }
 #endif
-        /// <summary>Optional.  OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks will deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.</summary>
+        /// <summary>Optional. OData query options for specifying the value for the targeting resource. Clients receive notifications when the resource reaches the state matching the query options provided here. With this new property in the subscription creation payload along with all existing properties, Webhooks deliver notifications whenever a resource reaches the desired state mentioned in the notificationQueryOptions property. For example, when the print job is completed or when a print job resource isFetchable property value becomes true etc.  Supported only for Universal Print Service. For more information, see Subscribe to change notifications from cloud printing APIs using Microsoft Graph.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationQueryOptions {
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notificationQueryOptions", value); }
         }
 #endif
-        /// <summary>Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property will be included in the HTTP POST request when Microsoft Graph sends the change notifications.</summary>
+        /// <summary>Required. The URL of the endpoint that receives the change notifications. This URL must make use of the HTTPS protocol. Any query string parameter included in the notificationUrl property is included in the HTTP POST request when Microsoft Graph sends the change notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationUrl {
@@ -170,7 +171,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notificationUrl", value); }
         }
 #endif
-        /// <summary>Optional. The app ID that the subscription service can use to generate the validation token. This allows the client to validate the authenticity of the notification received.</summary>
+        /// <summary>Optional. The app ID that the subscription service can use to generate the validation token. The value allows the client to validate the authenticity of the notification received.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationUrlAppId {
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notificationUrlAppId", value); }
         }
 #endif
-        /// <summary>Required. Specifies the resource that will be monitored for changes. Do not include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.</summary>
+        /// <summary>Required. Specifies the resource that is monitored for changes. Don&apos;t include the base URL (https://graph.microsoft.com/beta/). See the possible resource path values for each supported resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Resource {
@@ -203,7 +204,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Subscription"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Subscription CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Subscription CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Subscription();
         }
@@ -211,8 +213,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 {"changeType", n => { ChangeType = n.GetStringValue(); } },
                 {"clientState", n => { ClientState = n.GetStringValue(); } },
@@ -234,7 +238,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("applicationId", ApplicationId);

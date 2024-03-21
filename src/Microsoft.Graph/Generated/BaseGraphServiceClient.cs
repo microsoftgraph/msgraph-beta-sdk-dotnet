@@ -135,465 +135,580 @@ namespace Microsoft.Graph.Beta {
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class BaseGraphServiceClient : BaseRequestBuilder {
+    public class BaseGraphServiceClient : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
-        public AccessReviewDecisionsRequestBuilder AccessReviewDecisions { get =>
-            new AccessReviewDecisionsRequestBuilder(PathParameters, RequestAdapter);
+        public AccessReviewDecisionsRequestBuilder AccessReviewDecisions
+        {
+            get =>             new AccessReviewDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
-        public AccessReviewsRequestBuilder AccessReviews { get =>
-            new AccessReviewsRequestBuilder(PathParameters, RequestAdapter);
+        public AccessReviewsRequestBuilder AccessReviews
+        {
+            get =>             new AccessReviewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
-        public ActivitystatisticsRequestBuilder Activitystatistics { get =>
-            new ActivitystatisticsRequestBuilder(PathParameters, RequestAdapter);
+        public ActivitystatisticsRequestBuilder Activitystatistics
+        {
+            get =>             new ActivitystatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the admin singleton.</summary>
-        public AdminRequestBuilder Admin { get =>
-            new AdminRequestBuilder(PathParameters, RequestAdapter);
+        public AdminRequestBuilder Admin
+        {
+            get =>             new AdminRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
-        public AdministrativeUnitsRequestBuilder AdministrativeUnits { get =>
-            new AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
+        public AdministrativeUnitsRequestBuilder AdministrativeUnits
+        {
+            get =>             new AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
-        public AgreementAcceptancesRequestBuilder AgreementAcceptances { get =>
-            new AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
+        public AgreementAcceptancesRequestBuilder AgreementAcceptances
+        {
+            get =>             new AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of agreement entities.</summary>
-        public AgreementsRequestBuilder Agreements { get =>
-            new AgreementsRequestBuilder(PathParameters, RequestAdapter);
+        public AgreementsRequestBuilder Agreements
+        {
+            get =>             new AgreementsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of allowedDataLocation entities.</summary>
-        public AllowedDataLocationsRequestBuilder AllowedDataLocations { get =>
-            new AllowedDataLocationsRequestBuilder(PathParameters, RequestAdapter);
+        public AllowedDataLocationsRequestBuilder AllowedDataLocations
+        {
+            get =>             new AllowedDataLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the commsApplication singleton.</summary>
-        public AppRequestBuilder App { get =>
-            new AppRequestBuilder(PathParameters, RequestAdapter);
+        public AppRequestBuilder App
+        {
+            get =>             new AppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appCatalogs singleton.</summary>
-        public AppCatalogsRequestBuilder AppCatalogs { get =>
-            new AppCatalogsRequestBuilder(PathParameters, RequestAdapter);
+        public AppCatalogsRequestBuilder AppCatalogs
+        {
+            get =>             new AppCatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of application entities.</summary>
-        public ApplicationsRequestBuilder Applications { get =>
-            new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
+        public ApplicationsRequestBuilder Applications
+        {
+            get =>             new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
-        public ApplicationTemplatesRequestBuilder ApplicationTemplates { get =>
-            new ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        public ApplicationTemplatesRequestBuilder ApplicationTemplates
+        {
+            get =>             new ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of appRoleAssignment entities.</summary>
-        public AppRoleAssignmentsRequestBuilder AppRoleAssignments { get =>
-            new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        {
+            get =>             new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
-        public ApprovalWorkflowProvidersRequestBuilder ApprovalWorkflowProviders { get =>
-            new ApprovalWorkflowProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public ApprovalWorkflowProvidersRequestBuilder ApprovalWorkflowProviders
+        {
+            get =>             new ApprovalWorkflowProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
-        public AuditLogsRequestBuilder AuditLogs { get =>
-            new AuditLogsRequestBuilder(PathParameters, RequestAdapter);
+        public AuditLogsRequestBuilder AuditLogs
+        {
+            get =>             new AuditLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of authenticationMethodConfiguration entities.</summary>
-        public AuthenticationMethodConfigurationsRequestBuilder AuthenticationMethodConfigurations { get =>
-            new AuthenticationMethodConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        public AuthenticationMethodConfigurationsRequestBuilder AuthenticationMethodConfigurations
+        {
+            get =>             new AuthenticationMethodConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationMethodsPolicy singleton.</summary>
-        public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get =>
-            new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
+        public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        {
+            get =>             new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
-        public BookingBusinessesRequestBuilder BookingBusinesses { get =>
-            new BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
+        public BookingBusinessesRequestBuilder BookingBusinesses
+        {
+            get =>             new BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of bookingCurrency entities.</summary>
-        public BookingCurrenciesRequestBuilder BookingCurrencies { get =>
-            new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
+        public BookingCurrenciesRequestBuilder BookingCurrencies
+        {
+            get =>             new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of businessFlowTemplate entities.</summary>
-        public BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates { get =>
-            new BusinessFlowTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        public BusinessFlowTemplatesRequestBuilder BusinessFlowTemplates
+        {
+            get =>             new BusinessFlowTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of certificateBasedAuthConfiguration entities.</summary>
-        public CertificateBasedAuthConfigurationRequestBuilder CertificateBasedAuthConfiguration { get =>
-            new CertificateBasedAuthConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public CertificateBasedAuthConfigurationRequestBuilder CertificateBasedAuthConfiguration
+        {
+            get =>             new CertificateBasedAuthConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of chat entities.</summary>
-        public ChatsRequestBuilder Chats { get =>
-            new ChatsRequestBuilder(PathParameters, RequestAdapter);
+        public ChatsRequestBuilder Chats
+        {
+            get =>             new ChatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of command entities.</summary>
-        public CommandsRequestBuilder Commands { get =>
-            new CommandsRequestBuilder(PathParameters, RequestAdapter);
+        public CommandsRequestBuilder Commands
+        {
+            get =>             new CommandsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
-        public CommunicationsRequestBuilder Communications { get =>
-            new CommunicationsRequestBuilder(PathParameters, RequestAdapter);
+        public CommunicationsRequestBuilder Communications
+        {
+            get =>             new CommunicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the compliance singleton.</summary>
-        public ComplianceRequestBuilder Compliance { get =>
-            new ComplianceRequestBuilder(PathParameters, RequestAdapter);
+        public ComplianceRequestBuilder Compliance
+        {
+            get =>             new ComplianceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
-        public ConnectionsRequestBuilder Connections { get =>
-            new ConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        public ConnectionsRequestBuilder Connections
+        {
+            get =>             new ConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
-        public ContactsRequestBuilder Contacts { get =>
-            new ContactsRequestBuilder(PathParameters, RequestAdapter);
+        public ContactsRequestBuilder Contacts
+        {
+            get =>             new ContactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of contract entities.</summary>
-        public ContractsRequestBuilder Contracts { get =>
-            new ContractsRequestBuilder(PathParameters, RequestAdapter);
+        public ContractsRequestBuilder Contracts
+        {
+            get =>             new ContractsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
-        public DataClassificationRequestBuilder DataClassification { get =>
-            new DataClassificationRequestBuilder(PathParameters, RequestAdapter);
+        public DataClassificationRequestBuilder DataClassification
+        {
+            get =>             new DataClassificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of dataPolicyOperation entities.</summary>
-        public DataPolicyOperationsRequestBuilder DataPolicyOperations { get =>
-            new DataPolicyOperationsRequestBuilder(PathParameters, RequestAdapter);
+        public DataPolicyOperationsRequestBuilder DataPolicyOperations
+        {
+            get =>             new DataPolicyOperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
-        public DeviceAppManagementRequestBuilder DeviceAppManagement { get =>
-            new DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceAppManagementRequestBuilder DeviceAppManagement
+        {
+            get =>             new DeviceAppManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of deviceLocalCredentialInfo entities.</summary>
-        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials { get =>
-            new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials
+        {
+            get =>             new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagement singleton.</summary>
-        public DeviceManagementRequestBuilder DeviceManagement { get =>
-            new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceManagementRequestBuilder DeviceManagement
+        {
+            get =>             new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of device entities.</summary>
-        public DevicesRequestBuilder Devices { get =>
-            new DevicesRequestBuilder(PathParameters, RequestAdapter);
+        public DevicesRequestBuilder Devices
+        {
+            get =>             new DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directory singleton.</summary>
-        public DirectoryRequestBuilder Directory { get =>
-            new DirectoryRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryRequestBuilder Directory
+        {
+            get =>             new DirectoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryObject entities.</summary>
-        public DirectoryObjectsRequestBuilder DirectoryObjects { get =>
-            new DirectoryObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryObjectsRequestBuilder DirectoryObjects
+        {
+            get =>             new DirectoryObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
-        public DirectoryRolesRequestBuilder DirectoryRoles { get =>
-            new DirectoryRolesRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryRolesRequestBuilder DirectoryRoles
+        {
+            get =>             new DirectoryRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryRoleTemplate entities.</summary>
-        public DirectoryRoleTemplatesRequestBuilder DirectoryRoleTemplates { get =>
-            new DirectoryRoleTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryRoleTemplatesRequestBuilder DirectoryRoleTemplates
+        {
+            get =>             new DirectoryRoleTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
-        public DirectorySettingTemplatesRequestBuilder DirectorySettingTemplates { get =>
-            new DirectorySettingTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        public DirectorySettingTemplatesRequestBuilder DirectorySettingTemplates
+        {
+            get =>             new DirectorySettingTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of domainDnsRecord entities.</summary>
-        public DomainDnsRecordsRequestBuilder DomainDnsRecords { get =>
-            new DomainDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
+        public DomainDnsRecordsRequestBuilder DomainDnsRecords
+        {
+            get =>             new DomainDnsRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of domain entities.</summary>
-        public DomainsRequestBuilder Domains { get =>
-            new DomainsRequestBuilder(PathParameters, RequestAdapter);
+        public DomainsRequestBuilder Domains
+        {
+            get =>             new DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of drive entities.</summary>
-        public DrivesRequestBuilder Drives { get =>
-            new DrivesRequestBuilder(PathParameters, RequestAdapter);
+        public DrivesRequestBuilder Drives
+        {
+            get =>             new DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the educationRoot singleton.</summary>
-        public EducationRequestBuilder Education { get =>
-            new EducationRequestBuilder(PathParameters, RequestAdapter);
+        public EducationRequestBuilder Education
+        {
+            get =>             new EducationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the employeeExperience singleton.</summary>
-        public EmployeeExperienceRequestBuilder EmployeeExperience { get =>
-            new EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
+        public EmployeeExperienceRequestBuilder EmployeeExperience
+        {
+            get =>             new EmployeeExperienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the external singleton.</summary>
-        public ExternalRequestBuilder External { get =>
-            new ExternalRequestBuilder(PathParameters, RequestAdapter);
+        public ExternalRequestBuilder External
+        {
+            get =>             new ExternalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of filterOperatorSchema entities.</summary>
-        public FilterOperatorsRequestBuilder FilterOperators { get =>
-            new FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
+        public FilterOperatorsRequestBuilder FilterOperators
+        {
+            get =>             new FilterOperatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the financials singleton.</summary>
-        public FinancialsRequestBuilder Financials { get =>
-            new FinancialsRequestBuilder(PathParameters, RequestAdapter);
+        public FinancialsRequestBuilder Financials
+        {
+            get =>             new FinancialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of attributeMappingFunctionSchema entities.</summary>
-        public FunctionsRequestBuilder Functions { get =>
-            new FunctionsRequestBuilder(PathParameters, RequestAdapter);
+        public FunctionsRequestBuilder Functions
+        {
+            get =>             new FunctionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
-        public GovernanceResourcesRequestBuilder GovernanceResources { get =>
-            new GovernanceResourcesRequestBuilder(PathParameters, RequestAdapter);
+        public GovernanceResourcesRequestBuilder GovernanceResources
+        {
+            get =>             new GovernanceResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleAssignmentRequest entities.</summary>
-        public GovernanceRoleAssignmentRequestsRequestBuilder GovernanceRoleAssignmentRequests { get =>
-            new GovernanceRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+        public GovernanceRoleAssignmentRequestsRequestBuilder GovernanceRoleAssignmentRequests
+        {
+            get =>             new GovernanceRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleAssignment entities.</summary>
-        public GovernanceRoleAssignmentsRequestBuilder GovernanceRoleAssignments { get =>
-            new GovernanceRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public GovernanceRoleAssignmentsRequestBuilder GovernanceRoleAssignments
+        {
+            get =>             new GovernanceRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleDefinition entities.</summary>
-        public GovernanceRoleDefinitionsRequestBuilder GovernanceRoleDefinitions { get =>
-            new GovernanceRoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        public GovernanceRoleDefinitionsRequestBuilder GovernanceRoleDefinitions
+        {
+            get =>             new GovernanceRoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceRoleSetting entities.</summary>
-        public GovernanceRoleSettingsRequestBuilder GovernanceRoleSettings { get =>
-            new GovernanceRoleSettingsRequestBuilder(PathParameters, RequestAdapter);
+        public GovernanceRoleSettingsRequestBuilder GovernanceRoleSettings
+        {
+            get =>             new GovernanceRoleSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of governanceSubject entities.</summary>
-        public GovernanceSubjectsRequestBuilder GovernanceSubjects { get =>
-            new GovernanceSubjectsRequestBuilder(PathParameters, RequestAdapter);
+        public GovernanceSubjectsRequestBuilder GovernanceSubjects
+        {
+            get =>             new GovernanceSubjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
-        public GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies { get =>
-            new GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
+        {
+            get =>             new GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
-        public GroupsRequestBuilder Groups { get =>
-            new GroupsRequestBuilder(PathParameters, RequestAdapter);
+        public GroupsRequestBuilder Groups
+        {
+            get =>             new GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityContainer singleton.</summary>
-        public IdentityRequestBuilder Identity { get =>
-            new IdentityRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityRequestBuilder Identity
+        {
+            get =>             new IdentityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
-        public IdentityGovernanceRequestBuilder IdentityGovernance { get =>
-            new IdentityGovernanceRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityGovernanceRequestBuilder IdentityGovernance
+        {
+            get =>             new IdentityGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identityProtectionRoot singleton.</summary>
-        public IdentityProtectionRequestBuilder IdentityProtection { get =>
-            new IdentityProtectionRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityProtectionRequestBuilder IdentityProtection
+        {
+            get =>             new IdentityProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityProvider entities.</summary>
-        public IdentityProvidersRequestBuilder IdentityProviders { get =>
-            new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
+        public IdentityProvidersRequestBuilder IdentityProviders
+        {
+            get =>             new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the informationProtection singleton.</summary>
-        public InformationProtectionRequestBuilder InformationProtection { get =>
-            new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
+        public InformationProtectionRequestBuilder InformationProtection
+        {
+            get =>             new InformationProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of invitation entities.</summary>
-        public InvitationsRequestBuilder Invitations { get =>
-            new InvitationsRequestBuilder(PathParameters, RequestAdapter);
+        public InvitationsRequestBuilder Invitations
+        {
+            get =>             new InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the user singleton.</summary>
-        public MeRequestBuilder Me { get =>
-            new MeRequestBuilder(PathParameters, RequestAdapter);
+        public MeRequestBuilder Me
+        {
+            get =>             new MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageEvent entities.</summary>
-        public MessageEventsRequestBuilder MessageEvents { get =>
-            new MessageEventsRequestBuilder(PathParameters, RequestAdapter);
+        public MessageEventsRequestBuilder MessageEvents
+        {
+            get =>             new MessageEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageRecipient entities.</summary>
-        public MessageRecipientsRequestBuilder MessageRecipients { get =>
-            new MessageRecipientsRequestBuilder(PathParameters, RequestAdapter);
+        public MessageRecipientsRequestBuilder MessageRecipients
+        {
+            get =>             new MessageRecipientsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of messageTrace entities.</summary>
-        public MessageTracesRequestBuilder MessageTraces { get =>
-            new MessageTracesRequestBuilder(PathParameters, RequestAdapter);
+        public MessageTracesRequestBuilder MessageTraces
+        {
+            get =>             new MessageTracesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of mobilityManagementPolicy entities.</summary>
-        public MobilityManagementPoliciesRequestBuilder MobilityManagementPolicies { get =>
-            new MobilityManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public MobilityManagementPoliciesRequestBuilder MobilityManagementPolicies
+        {
+            get =>             new MobilityManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monitoring singleton.</summary>
-        public MonitoringRequestBuilder Monitoring { get =>
-            new MonitoringRequestBuilder(PathParameters, RequestAdapter);
+        public MonitoringRequestBuilder Monitoring
+        {
+            get =>             new MonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the networkAccessRoot singleton.</summary>
-        public NetworkAccessRequestBuilder NetworkAccess { get =>
-            new NetworkAccessRequestBuilder(PathParameters, RequestAdapter);
+        public NetworkAccessRequestBuilder NetworkAccess
+        {
+            get =>             new NetworkAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
-        public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants { get =>
-            new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
+        {
+            get =>             new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
-        public OnPremisesPublishingProfilesRequestBuilder OnPremisesPublishingProfiles { get =>
-            new OnPremisesPublishingProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public OnPremisesPublishingProfilesRequestBuilder OnPremisesPublishingProfiles
+        {
+            get =>             new OnPremisesPublishingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of organization entities.</summary>
-        public OrganizationRequestBuilder Organization { get =>
-            new OrganizationRequestBuilder(PathParameters, RequestAdapter);
+        public OrganizationRequestBuilder Organization
+        {
+            get =>             new OrganizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of payloadResponse entities.</summary>
-        public PayloadResponseRequestBuilder PayloadResponse { get =>
-            new PayloadResponseRequestBuilder(PathParameters, RequestAdapter);
+        public PayloadResponseRequestBuilder PayloadResponse
+        {
+            get =>             new PayloadResponseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of resourceSpecificPermissionGrant entities.</summary>
-        public PermissionGrantsRequestBuilder PermissionGrants { get =>
-            new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        public PermissionGrantsRequestBuilder PermissionGrants
+        {
+            get =>             new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The places property</summary>
-        public PlacesRequestBuilder Places { get =>
-            new PlacesRequestBuilder(PathParameters, RequestAdapter);
+        public PlacesRequestBuilder Places
+        {
+            get =>             new PlacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner singleton.</summary>
-        public PlannerRequestBuilder Planner { get =>
-            new PlannerRequestBuilder(PathParameters, RequestAdapter);
+        public PlannerRequestBuilder Planner
+        {
+            get =>             new PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policyRoot singleton.</summary>
-        public PoliciesRequestBuilder Policies { get =>
-            new PoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public PoliciesRequestBuilder Policies
+        {
+            get =>             new PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the print singleton.</summary>
-        public PrintRequestBuilder Print { get =>
-            new PrintRequestBuilder(PathParameters, RequestAdapter);
+        public PrintRequestBuilder Print
+        {
+            get =>             new PrintRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the privacy singleton.</summary>
-        public PrivacyRequestBuilder Privacy { get =>
-            new PrivacyRequestBuilder(PathParameters, RequestAdapter);
+        public PrivacyRequestBuilder Privacy
+        {
+            get =>             new PrivacyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedAccess entities.</summary>
-        public PrivilegedAccessRequestBuilder PrivilegedAccess { get =>
-            new PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedAccessRequestBuilder PrivilegedAccess
+        {
+            get =>             new PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedApproval entities.</summary>
-        public PrivilegedApprovalRequestBuilder PrivilegedApproval { get =>
-            new PrivilegedApprovalRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedApprovalRequestBuilder PrivilegedApproval
+        {
+            get =>             new PrivilegedApprovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedOperationEvent entities.</summary>
-        public PrivilegedOperationEventsRequestBuilder PrivilegedOperationEvents { get =>
-            new PrivilegedOperationEventsRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedOperationEventsRequestBuilder PrivilegedOperationEvents
+        {
+            get =>             new PrivilegedOperationEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
-        public PrivilegedRoleAssignmentRequestsRequestBuilder PrivilegedRoleAssignmentRequests { get =>
-            new PrivilegedRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedRoleAssignmentRequestsRequestBuilder PrivilegedRoleAssignmentRequests
+        {
+            get =>             new PrivilegedRoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRoleAssignment entities.</summary>
-        public PrivilegedRoleAssignmentsRequestBuilder PrivilegedRoleAssignments { get =>
-            new PrivilegedRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedRoleAssignmentsRequestBuilder PrivilegedRoleAssignments
+        {
+            get =>             new PrivilegedRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedRole entities.</summary>
-        public PrivilegedRolesRequestBuilder PrivilegedRoles { get =>
-            new PrivilegedRolesRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedRolesRequestBuilder PrivilegedRoles
+        {
+            get =>             new PrivilegedRolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of privilegedSignupStatus entities.</summary>
-        public PrivilegedSignupStatusRequestBuilder PrivilegedSignupStatus { get =>
-            new PrivilegedSignupStatusRequestBuilder(PathParameters, RequestAdapter);
+        public PrivilegedSignupStatusRequestBuilder PrivilegedSignupStatus
+        {
+            get =>             new PrivilegedSignupStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of programControl entities.</summary>
-        public ProgramControlsRequestBuilder ProgramControls { get =>
-            new ProgramControlsRequestBuilder(PathParameters, RequestAdapter);
+        public ProgramControlsRequestBuilder ProgramControls
+        {
+            get =>             new ProgramControlsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of programControlType entities.</summary>
-        public ProgramControlTypesRequestBuilder ProgramControlTypes { get =>
-            new ProgramControlTypesRequestBuilder(PathParameters, RequestAdapter);
+        public ProgramControlTypesRequestBuilder ProgramControlTypes
+        {
+            get =>             new ProgramControlTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of program entities.</summary>
-        public ProgramsRequestBuilder Programs { get =>
-            new ProgramsRequestBuilder(PathParameters, RequestAdapter);
+        public ProgramsRequestBuilder Programs
+        {
+            get =>             new ProgramsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reportRoot singleton.</summary>
-        public ReportsRequestBuilder Reports { get =>
-            new ReportsRequestBuilder(PathParameters, RequestAdapter);
+        public ReportsRequestBuilder Reports
+        {
+            get =>             new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of riskDetection entities.</summary>
-        public RiskDetectionsRequestBuilder RiskDetections { get =>
-            new RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
+        public RiskDetectionsRequestBuilder RiskDetections
+        {
+            get =>             new RiskDetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of riskyUser entities.</summary>
-        public RiskyUsersRequestBuilder RiskyUsers { get =>
-            new RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
+        public RiskyUsersRequestBuilder RiskyUsers
+        {
+            get =>             new RiskyUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleManagement singleton.</summary>
-        public RoleManagementRequestBuilder RoleManagement { get =>
-            new RoleManagementRequestBuilder(PathParameters, RequestAdapter);
+        public RoleManagementRequestBuilder RoleManagement
+        {
+            get =>             new RoleManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of schemaExtension entities.</summary>
-        public SchemaExtensionsRequestBuilder SchemaExtensions { get =>
-            new SchemaExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        public SchemaExtensionsRequestBuilder SchemaExtensions
+        {
+            get =>             new SchemaExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of scopedRoleMembership entities.</summary>
-        public ScopedRoleMembershipsRequestBuilder ScopedRoleMemberships { get =>
-            new ScopedRoleMembershipsRequestBuilder(PathParameters, RequestAdapter);
+        public ScopedRoleMembershipsRequestBuilder ScopedRoleMemberships
+        {
+            get =>             new ScopedRoleMembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the searchEntity singleton.</summary>
-        public SearchRequestBuilder Search { get =>
-            new SearchRequestBuilder(PathParameters, RequestAdapter);
+        public SearchRequestBuilder Search
+        {
+            get =>             new SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the security singleton.</summary>
-        public SecurityRequestBuilder Security { get =>
-            new SecurityRequestBuilder(PathParameters, RequestAdapter);
+        public SecurityRequestBuilder Security
+        {
+            get =>             new SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
-        public ServicePrincipalsRequestBuilder ServicePrincipals { get =>
-            new ServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
+        public ServicePrincipalsRequestBuilder ServicePrincipals
+        {
+            get =>             new ServicePrincipalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directorySetting entities.</summary>
-        public SettingsRequestBuilder Settings { get =>
-            new SettingsRequestBuilder(PathParameters, RequestAdapter);
+        public SettingsRequestBuilder Settings
+        {
+            get =>             new SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
-        public SharesRequestBuilder Shares { get =>
-            new SharesRequestBuilder(PathParameters, RequestAdapter);
+        public SharesRequestBuilder Shares
+        {
+            get =>             new SharesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of site entities.</summary>
-        public SitesRequestBuilder Sites { get =>
-            new SitesRequestBuilder(PathParameters, RequestAdapter);
+        public SitesRequestBuilder Sites
+        {
+            get =>             new SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the solutionsRoot singleton.</summary>
-        public SolutionsRequestBuilder Solutions { get =>
-            new SolutionsRequestBuilder(PathParameters, RequestAdapter);
+        public SolutionsRequestBuilder Solutions
+        {
+            get =>             new SolutionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
-        public SubscribedSkusRequestBuilder SubscribedSkus { get =>
-            new SubscribedSkusRequestBuilder(PathParameters, RequestAdapter);
+        public SubscribedSkusRequestBuilder SubscribedSkus
+        {
+            get =>             new SubscribedSkusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscription entities.</summary>
-        public SubscriptionsRequestBuilder Subscriptions { get =>
-            new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        public SubscriptionsRequestBuilder Subscriptions
+        {
+            get =>             new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of team entities.</summary>
-        public TeamsRequestBuilder Teams { get =>
-            new TeamsRequestBuilder(PathParameters, RequestAdapter);
+        public TeamsRequestBuilder Teams
+        {
+            get =>             new TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamsTemplate entities.</summary>
-        public TeamsTemplatesRequestBuilder TeamsTemplates { get =>
-            new TeamsTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        public TeamsTemplatesRequestBuilder TeamsTemplates
+        {
+            get =>             new TeamsTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of teamTemplateDefinition entities.</summary>
-        public TeamTemplateDefinitionRequestBuilder TeamTemplateDefinition { get =>
-            new TeamTemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
+        public TeamTemplateDefinitionRequestBuilder TeamTemplateDefinition
+        {
+            get =>             new TeamTemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork singleton.</summary>
-        public TeamworkRequestBuilder Teamwork { get =>
-            new TeamworkRequestBuilder(PathParameters, RequestAdapter);
+        public TeamworkRequestBuilder Teamwork
+        {
+            get =>             new TeamworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
-        public TenantRelationshipsRequestBuilder TenantRelationships { get =>
-            new TenantRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        public TenantRelationshipsRequestBuilder TenantRelationships
+        {
+            get =>             new TenantRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the store singleton.</summary>
-        public TermStoreRequestBuilder TermStore { get =>
-            new TermStoreRequestBuilder(PathParameters, RequestAdapter);
+        public TermStoreRequestBuilder TermStore
+        {
+            get =>             new TermStoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threatSubmissionRoot singleton.</summary>
-        public ThreatSubmissionRequestBuilder ThreatSubmission { get =>
-            new ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
+        public ThreatSubmissionRequestBuilder ThreatSubmission
+        {
+            get =>             new ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trustFramework singleton.</summary>
-        public TrustFrameworkRequestBuilder TrustFramework { get =>
-            new TrustFrameworkRequestBuilder(PathParameters, RequestAdapter);
+        public TrustFrameworkRequestBuilder TrustFramework
+        {
+            get =>             new TrustFrameworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
-        public UsersRequestBuilder Users { get =>
-            new UsersRequestBuilder(PathParameters, RequestAdapter);
+        public UsersRequestBuilder Users
+        {
+            get =>             new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to manage the collection of application entities.
         /// </summary>
         /// <returns>A <see cref="ApplicationsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of application</param>
-        public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId) {
+        public ApplicationsWithAppIdRequestBuilder ApplicationsWithAppId(string appId)
+        {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new ApplicationsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }
@@ -602,7 +717,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <returns>A <see cref="ApplicationsWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of application</param>
-        public ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName) {
+        public ApplicationsWithUniqueNameRequestBuilder ApplicationsWithUniqueName(string uniqueName)
+        {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
             return new ApplicationsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
@@ -611,7 +727,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <param name="backingStore">The backing store to use for the models.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaseGraphServiceClient(IRequestAdapter requestAdapter, IBackingStoreFactory backingStore = default) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>()) {
+        public BaseGraphServiceClient(IRequestAdapter requestAdapter, IBackingStoreFactory backingStore = default) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())
+        {
             ApiClientBuilder.RegisterDefaultSerializer<JsonSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<TextSerializationWriterFactory>();
             ApiClientBuilder.RegisterDefaultSerializer<FormSerializationWriterFactory>();
@@ -619,7 +736,8 @@ namespace Microsoft.Graph.Beta {
             ApiClientBuilder.RegisterDefaultDeserializer<JsonParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<TextParseNodeFactory>();
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
-            if (string.IsNullOrEmpty(RequestAdapter.BaseUrl)) {
+            if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
+            {
                 RequestAdapter.BaseUrl = "https://graph.microsoft.com/beta";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
@@ -630,7 +748,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <returns>A <see cref="DevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of device</param>
-        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId) {
+        public DevicesWithDeviceIdRequestBuilder DevicesWithDeviceId(string deviceId)
+        {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
             return new DevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
@@ -639,7 +758,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <returns>A <see cref="DirectoryRolesWithRoleTemplateIdRequestBuilder"/></returns>
         /// <param name="roleTemplateId">Alternate key of directoryRole</param>
-        public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId) {
+        public DirectoryRolesWithRoleTemplateIdRequestBuilder DirectoryRolesWithRoleTemplateId(string roleTemplateId)
+        {
             if(string.IsNullOrEmpty(roleTemplateId)) throw new ArgumentNullException(nameof(roleTemplateId));
             return new DirectoryRolesWithRoleTemplateIdRequestBuilder(PathParameters, RequestAdapter, roleTemplateId);
         }
@@ -648,7 +768,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <returns>A <see cref="GroupsWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of group</param>
-        public GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName) {
+        public GroupsWithUniqueNameRequestBuilder GroupsWithUniqueName(string uniqueName)
+        {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
             return new GroupsWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
@@ -657,7 +778,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <returns>A <see cref="PlacesWithPlaceIdRequestBuilder"/></returns>
         /// <param name="placeId">Alternate key of place</param>
-        public PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId) {
+        public PlacesWithPlaceIdRequestBuilder PlacesWithPlaceId(string placeId)
+        {
             if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
             return new PlacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
@@ -666,7 +788,8 @@ namespace Microsoft.Graph.Beta {
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalsWithAppIdRequestBuilder"/></returns>
         /// <param name="appId">Alternate key of servicePrincipal</param>
-        public ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId) {
+        public ServicePrincipalsWithAppIdRequestBuilder ServicePrincipalsWithAppId(string appId)
+        {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
         }

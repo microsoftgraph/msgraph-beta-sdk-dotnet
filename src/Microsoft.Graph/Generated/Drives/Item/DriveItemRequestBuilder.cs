@@ -25,64 +25,78 @@ namespace Microsoft.Graph.Beta.Drives.Item {
     /// <summary>
     /// Provides operations to manage the collection of drive entities.
     /// </summary>
-    public class DriveItemRequestBuilder : BaseRequestBuilder {
+    public class DriveItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.drive entity.</summary>
-        public ActivitiesRequestBuilder Activities { get =>
-            new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        public ActivitiesRequestBuilder Activities
+        {
+            get =>             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bundles property of the microsoft.graph.drive entity.</summary>
-        public BundlesRequestBuilder Bundles { get =>
-            new BundlesRequestBuilder(PathParameters, RequestAdapter);
+        public BundlesRequestBuilder Bundles
+        {
+            get =>             new BundlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdByUser property of the microsoft.graph.baseItem entity.</summary>
-        public CreatedByUserRequestBuilder CreatedByUser { get =>
-            new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
+        public CreatedByUserRequestBuilder CreatedByUser
+        {
+            get =>             new CreatedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the following property of the microsoft.graph.drive entity.</summary>
-        public FollowingRequestBuilder Following { get =>
-            new FollowingRequestBuilder(PathParameters, RequestAdapter);
+        public FollowingRequestBuilder Following
+        {
+            get =>             new FollowingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.drive entity.</summary>
-        public ItemsRequestBuilder Items { get =>
-            new ItemsRequestBuilder(PathParameters, RequestAdapter);
+        public ItemsRequestBuilder Items
+        {
+            get =>             new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the lastModifiedByUser property of the microsoft.graph.baseItem entity.</summary>
-        public LastModifiedByUserRequestBuilder LastModifiedByUser { get =>
-            new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
+        public LastModifiedByUserRequestBuilder LastModifiedByUser
+        {
+            get =>             new LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the list property of the microsoft.graph.drive entity.</summary>
-        public ListRequestBuilder List { get =>
-            new ListRequestBuilder(PathParameters, RequestAdapter);
+        public ListRequestBuilder List
+        {
+            get =>             new ListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the recent method.</summary>
-        public RecentRequestBuilder Recent { get =>
-            new RecentRequestBuilder(PathParameters, RequestAdapter);
+        public RecentRequestBuilder Recent
+        {
+            get =>             new RecentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the root property of the microsoft.graph.drive entity.</summary>
-        public RootRequestBuilder Root { get =>
-            new RootRequestBuilder(PathParameters, RequestAdapter);
+        public RootRequestBuilder Root
+        {
+            get =>             new RootRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sharedWithMe method.</summary>
-        public SharedWithMeRequestBuilder SharedWithMe { get =>
-            new SharedWithMeRequestBuilder(PathParameters, RequestAdapter);
+        public SharedWithMeRequestBuilder SharedWithMe
+        {
+            get =>             new SharedWithMeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the special property of the microsoft.graph.drive entity.</summary>
-        public SpecialRequestBuilder Special { get =>
-            new SpecialRequestBuilder(PathParameters, RequestAdapter);
+        public SpecialRequestBuilder Special
+        {
+            get =>             new SpecialRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DriveItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}{?%24expand,%24select}", pathParameters) {
+        public DriveItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DriveItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DriveItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}{?%24expand,%24select}", rawUrl) {
+        public DriveItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/drives/{drive%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete entity from drives
@@ -92,13 +106,16 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -112,13 +129,16 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Drive?> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Drive?> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Drive> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Drive> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -133,14 +153,17 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Drive?> PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Drive?> PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Drive> PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Drive> PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Drive>(requestInfo, Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -150,7 +173,8 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// </summary>
         /// <returns>A <see cref="SearchWithQRequestBuilder"/></returns>
         /// <param name="q">Usage: q=&apos;{q}&apos;</param>
-        public SearchWithQRequestBuilder SearchWithQ(string q) {
+        public SearchWithQRequestBuilder SearchWithQ(string q)
+        {
             if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
             return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);
         }
@@ -161,10 +185,12 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/drives/{drive%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -178,10 +204,12 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -196,10 +224,12 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/drives/{drive%2Did}", PathParameters);
@@ -213,19 +243,22 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// </summary>
         /// <returns>A <see cref="DriveItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DriveItemRequestBuilder WithUrl(string rawUrl) {
+        public DriveItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new DriveItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DriveItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DriveItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get entity from drives by key
         /// </summary>
-        public class DriveItemRequestBuilderGetQueryParameters {
+        public class DriveItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -251,13 +284,15 @@ namespace Microsoft.Graph.Beta.Drives.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DriveItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DriveItemRequestBuilderGetQueryParameters> {
+        public class DriveItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DriveItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DriveItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DriveItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Setting comparison result type</summary>
-    public enum DeviceManagementComparisonResult {
+    public enum DeviceManagementComparisonResult
+    {
         /// <summary>Unknown setting comparison</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

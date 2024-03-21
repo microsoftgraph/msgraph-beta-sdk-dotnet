@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
     /// </summary>
-    public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable {
+    public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable 
+    {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("apps", value); }
         }
 #endif
-        /// <summary>A custom browser protocol to open weblink on iOS.</summary>
+        /// <summary>A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserProtocol {
@@ -220,7 +221,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="IosManagedAppProtection"/> and sets the default values.
         /// </summary>
-        public IosManagedAppProtection() : base() {
+        public IosManagedAppProtection() : base()
+        {
             OdataType = "#microsoft.graph.iosManagedAppProtection";
         }
         /// <summary>
@@ -228,7 +230,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="IosManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IosManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IosManagedAppProtection();
         }
@@ -236,8 +239,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowedIosDeviceModels", n => { AllowedIosDeviceModels = n.GetStringValue(); } },
                 {"appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
@@ -264,7 +269,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("allowedIosDeviceModels", AllowedIosDeviceModels);

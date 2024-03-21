@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported values for the notification type to use.</summary>
     [Flags]
-    public enum DeviceManagementDerivedCredentialNotificationType {
+    public enum DeviceManagementDerivedCredentialNotificationType
+    {
         /// <summary>None</summary>
         [EnumMember(Value = "none")]
         None = 1,

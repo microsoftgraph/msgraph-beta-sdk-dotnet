@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
-    public enum EnrollmentRestrictionPlatformType {
+    public enum EnrollmentRestrictionPlatformType
+    {
         /// <summary>Indicates that the enrollment configuration applies to all platforms</summary>
         [EnumMember(Value = "allPlatforms")]
         AllPlatforms,

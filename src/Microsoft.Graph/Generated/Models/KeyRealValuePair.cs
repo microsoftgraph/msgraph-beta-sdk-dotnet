@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// A key-value pair with a string key and a real (floating-point) value.
     /// </summary>
-    public class KeyRealValuePair : KeyTypedValuePair, IParsable {
+    public class KeyRealValuePair : KeyTypedValuePair, IParsable 
+    {
         /// <summary>The real (floating-point) value of the key-value pair.</summary>
         public double? Value {
             get { return BackingStore?.Get<double?>("value"); }
@@ -17,7 +18,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="KeyRealValuePair"/> and sets the default values.
         /// </summary>
-        public KeyRealValuePair() : base() {
+        public KeyRealValuePair() : base()
+        {
             OdataType = "#microsoft.graph.keyRealValuePair";
         }
         /// <summary>
@@ -25,7 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="KeyRealValuePair"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new KeyRealValuePair CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new KeyRealValuePair CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new KeyRealValuePair();
         }
@@ -33,8 +36,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"value", n => { Value = n.GetDoubleValue(); } },
             };
         }
@@ -42,7 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDoubleValue("value", Value);

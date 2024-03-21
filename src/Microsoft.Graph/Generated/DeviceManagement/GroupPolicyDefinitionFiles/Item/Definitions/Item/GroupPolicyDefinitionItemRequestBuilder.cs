@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.
     /// <summary>
     /// Provides operations to manage the definitions property of the microsoft.graph.groupPolicyDefinitionFile entity.
     /// </summary>
-    public class GroupPolicyDefinitionItemRequestBuilder : BaseRequestBuilder {
+    public class GroupPolicyDefinitionItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GroupPolicyDefinitionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupPolicyDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}", pathParameters) {
+        public GroupPolicyDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GroupPolicyDefinitionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupPolicyDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}", rawUrl) {
+        public GroupPolicyDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyDefinitionFiles/{groupPolicyDefinitionFile%2Did}/definitions/{groupPolicyDefinition%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The group policy definitions associated with the file.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyDefinition?> GetAsync(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyDefinition?> GetAsync(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GroupPolicyDefinition> GetAsync(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyDefinition> GetAsync(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GroupPolicyDefinition>(requestInfo, GroupPolicyDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.
         /// </summary>
         /// <returns>A <see cref="GroupPolicyDefinitionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupPolicyDefinitionItemRequestBuilder WithUrl(string rawUrl) {
+        public GroupPolicyDefinitionItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new GroupPolicyDefinitionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The group policy definitions associated with the file.
         /// </summary>
-        public class GroupPolicyDefinitionItemRequestBuilderGetQueryParameters {
+        public class GroupPolicyDefinitionItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitionFiles.Item.
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters> {
+        public class GroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupPolicyDefinitionItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

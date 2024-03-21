@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
     /// </summary>
-    public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
+    public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.</summary>
         public bool? ActivationLockWhenSupervisedAllowed {
             get { return BackingStore?.Get<bool?>("activationLockWhenSupervisedAllowed"); }
@@ -339,7 +340,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MacOSGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
-        public MacOSGeneralDeviceConfiguration() : base() {
+        public MacOSGeneralDeviceConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.macOSGeneralDeviceConfiguration";
         }
         /// <summary>
@@ -347,7 +349,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MacOSGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSGeneralDeviceConfiguration();
         }
@@ -355,8 +358,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"activationLockWhenSupervisedAllowed", n => { ActivationLockWhenSupervisedAllowed = n.GetBoolValue(); } },
                 {"addingGameCenterFriendsBlocked", n => { AddingGameCenterFriendsBlocked = n.GetBoolValue(); } },
                 {"airDropBlocked", n => { AirDropBlocked = n.GetBoolValue(); } },
@@ -423,7 +428,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("activationLockWhenSupervisedAllowed", ActivationLockWhenSupervisedAllowed);

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    public enum RelationshipType {
+    public enum RelationshipType
+    {
         [EnumMember(Value = "and")]
         And,
         [EnumMember(Value = "or")]

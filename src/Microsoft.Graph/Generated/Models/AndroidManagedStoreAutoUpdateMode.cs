@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Prioritization for automatic updates of Android Managed Store apps set on assignment.</summary>
-    public enum AndroidManagedStoreAutoUpdateMode {
+    public enum AndroidManagedStoreAutoUpdateMode
+    {
         /// <summary>Default update behavior (device must be connected to Wifi, charging and not actively used).</summary>
         [EnumMember(Value = "default")]
         Default,

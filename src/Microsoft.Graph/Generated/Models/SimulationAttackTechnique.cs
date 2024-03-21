@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum SimulationAttackTechnique {
+    public enum SimulationAttackTechnique
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "credentialHarvesting")]
@@ -19,5 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         [EnumMember(Value = "oAuthConsentGrant")]
         OAuthConsentGrant,
+        [EnumMember(Value = "phishTraining")]
+        PhishTraining,
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of Credential Guard settings.</summary>
-    public enum DeviceGuardLocalSystemAuthorityCredentialGuardType {
+    public enum DeviceGuardLocalSystemAuthorityCredentialGuardType
+    {
         /// <summary>Turns off Credential Guard remotely if configured previously without UEFI Lock.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

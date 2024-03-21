@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
     /// <summary>
     /// Provides operations to call the getOffice365GroupsActivityFileCounts method.
     /// </summary>
-    public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder : BaseRequestBuilder {
+    public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365GroupsActivityFileCounts(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityFileCounts
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse?> GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse?> GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse> GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOffice365GroupsActivityFileCountsWithPeriodGetResponse>(requestInfo, GetOffice365GroupsActivityFileCountsWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         [Obsolete("This method is obsolete. Use GetAsGetOffice365GroupsActivityFileCountsWithPeriodGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365GroupsActivityFileCountsWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOffice365GroupsActivityFileCountsWithPeriodResponse>(requestInfo, GetOffice365GroupsActivityFileCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         /// </summary>
         /// <returns>A <see cref="GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder WithUrl(string rawUrl) {
+        public GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityFileCounts
         /// </summary>
-        public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters {
+        public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityFileCountsWithP
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters> {
+        public class GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOffice365GroupsActivityFileCountsWithPeriodRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

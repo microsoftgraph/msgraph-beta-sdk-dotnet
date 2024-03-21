@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Sale
     /// <summary>
     /// Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.
     /// </summary>
-    public class SalesInvoiceLinesRequestBuilder : BaseRequestBuilder {
+    public class SalesInvoiceLinesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.</summary>
         /// <param name="position">The unique identifier of salesInvoiceLine</param>
         /// <returns>A <see cref="SalesInvoiceLineItemRequestBuilder"/></returns>
-        public SalesInvoiceLineItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("salesInvoiceLine%2Did", position);
-            return new SalesInvoiceLineItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public SalesInvoiceLineItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("salesInvoiceLine%2Did", position);
+                return new SalesInvoiceLineItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SalesInvoiceLinesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesInvoiceLinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public SalesInvoiceLinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SalesInvoiceLinesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesInvoiceLinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public SalesInvoiceLinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices/{salesInvoice%2Did}/salesInvoiceLines{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get salesInvoiceLines from financials
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Sale
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesInvoiceLineCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesInvoiceLineCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SalesInvoiceLineCollectionResponse> GetAsync(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesInvoiceLineCollectionResponse> GetAsync(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SalesInvoiceLineCollectionResponse>(requestInfo, SalesInvoiceLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -69,10 +80,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Sale
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +97,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Sale
         /// </summary>
         /// <returns>A <see cref="SalesInvoiceLinesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesInvoiceLinesRequestBuilder WithUrl(string rawUrl) {
+        public SalesInvoiceLinesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SalesInvoiceLinesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesInvoiceLines from financials
         /// </summary>
-        public class SalesInvoiceLinesRequestBuilderGetQueryParameters {
+        public class SalesInvoiceLinesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -155,7 +170,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Sale
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesInvoiceLinesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters> {
+        public class SalesInvoiceLinesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesInvoiceLinesRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

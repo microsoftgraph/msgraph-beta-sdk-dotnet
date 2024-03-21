@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// A MobileApp that is based on a referenced application in a WinGet repository.
     /// </summary>
-    public class WinGetApp : MobileApp, IParsable {
+    public class WinGetApp : MobileApp, IParsable 
+    {
         /// <summary>The install experience settings associated with this application, which are used to ensure the desired install experiences on the target device are taken into account. This includes the account type (System or User) that actions should be run as on target devices. Required at creation time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WinGetApp"/> and sets the default values.
         /// </summary>
-        public WinGetApp() : base() {
+        public WinGetApp() : base()
+        {
             OdataType = "#microsoft.graph.winGetApp";
         }
         /// <summary>
@@ -62,7 +64,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WinGetApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WinGetApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WinGetApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WinGetApp();
         }
@@ -70,8 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"installExperience", n => { InstallExperience = n.GetObjectValue<WinGetAppInstallExperience>(WinGetAppInstallExperience.CreateFromDiscriminatorValue); } },
                 {"manifestHash", n => { ManifestHash = n.GetStringValue(); } },
                 {"packageIdentifier", n => { PackageIdentifier = n.GetStringValue(); } },
@@ -81,7 +86,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<WinGetAppInstallExperience>("installExperience", InstallExperience);

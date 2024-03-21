@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Connector health state for connector status</summary>
-    public enum ConnectorHealthState {
+    public enum ConnectorHealthState
+    {
         /// <summary>Indicates a healthy connector status and no action required.</summary>
         [EnumMember(Value = "healthy")]
         Healthy,

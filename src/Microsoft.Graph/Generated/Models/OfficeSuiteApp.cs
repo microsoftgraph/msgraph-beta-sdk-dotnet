@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties and inherited properties for the Office365 Suite App.
     /// </summary>
-    public class OfficeSuiteApp : MobileApp, IParsable {
+    public class OfficeSuiteApp : MobileApp, IParsable 
+    {
         /// <summary>The value to accept the EULA automatically on the enduser&apos;s device.</summary>
         public bool? AutoAcceptEula {
             get { return BackingStore?.Get<bool?>("autoAcceptEula"); }
@@ -131,7 +132,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="OfficeSuiteApp"/> and sets the default values.
         /// </summary>
-        public OfficeSuiteApp() : base() {
+        public OfficeSuiteApp() : base()
+        {
             OdataType = "#microsoft.graph.officeSuiteApp";
         }
         /// <summary>
@@ -139,7 +141,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="OfficeSuiteApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OfficeSuiteApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new OfficeSuiteApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new OfficeSuiteApp();
         }
@@ -147,8 +150,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"autoAcceptEula", n => { AutoAcceptEula = n.GetBoolValue(); } },
                 {"excludedApps", n => { ExcludedApps = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExcludedApps>(Microsoft.Graph.Beta.Models.ExcludedApps.CreateFromDiscriminatorValue); } },
                 {"installProgressDisplayLevel", n => { InstallProgressDisplayLevel = n.GetEnumValue<OfficeSuiteInstallProgressDisplayLevel>(); } },
@@ -168,7 +173,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("autoAcceptEula", AutoAcceptEula);

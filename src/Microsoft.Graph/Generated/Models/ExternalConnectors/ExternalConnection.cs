@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class ExternalConnection : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class ExternalConnection : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,7 +195,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         /// <returns>A <see cref="ExternalConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ExternalConnection();
         }
@@ -202,8 +204,10 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"activitySettings", n => { ActivitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>(Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },
                 {"complianceSettings", n => { ComplianceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>(Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings.CreateFromDiscriminatorValue); } },
                 {"configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
@@ -225,7 +229,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>("activitySettings", ActivitySettings);

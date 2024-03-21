@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
     /// <summary>
     /// Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.
     /// </summary>
-    public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilder : BaseRequestBuilder {
+    public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetManagedDevicesWithFailedOrPendingAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedDevicesWithFailedOrPendingApps(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedDevicesWithFailedOrPendingApps(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetManagedDevicesWithFailedOrPendingAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedDevicesWithFailedOrPendingApps(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/getManagedDevicesWithFailedOrPendingApps(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Retrieves the list of devices with failed or pending apps
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetManagedDevicesWithFailedOrPendingAppsGetResponse?> GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsGetResponse?> GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetManagedDevicesWithFailedOrPendingAppsGetResponse> GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsGetResponse> GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetManagedDevicesWithFailedOrPendingAppsGetResponse>(requestInfo, GetManagedDevicesWithFailedOrPendingAppsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
         [Obsolete("This method is obsolete. Use GetAsGetManagedDevicesWithFailedOrPendingAppsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetManagedDevicesWithFailedOrPendingAppsResponse?> GetAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsResponse?> GetAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetManagedDevicesWithFailedOrPendingAppsResponse> GetAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedDevicesWithFailedOrPendingAppsResponse> GetAsync(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetManagedDevicesWithFailedOrPendingAppsResponse>(requestInfo, GetManagedDevicesWithFailedOrPendingAppsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +101,15 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
         /// </summary>
         /// <returns>A <see cref="GetManagedDevicesWithFailedOrPendingAppsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder WithUrl(string rawUrl) {
+        public GetManagedDevicesWithFailedOrPendingAppsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetManagedDevicesWithFailedOrPendingAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieves the list of devices with failed or pending apps
         /// </summary>
-        public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters {
+        public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -131,7 +144,8 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters> {
+        public class GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetManagedDevicesWithFailedOrPendingAppsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

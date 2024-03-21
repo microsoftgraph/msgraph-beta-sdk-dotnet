@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Defender’s action to take on detected Potentially Unwanted Application (PUA).</summary>
-    public enum DefenderPotentiallyUnwantedAppAction {
+    public enum DefenderPotentiallyUnwantedAppAction
+    {
         /// <summary>PUA Protection is off. Defender will not protect against potentially unwanted applications.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

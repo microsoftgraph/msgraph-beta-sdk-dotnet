@@ -15,28 +15,33 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
     /// <summary>
     /// Provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.
     /// </summary>
-    public class ServicePrincipalCreationPolicyItemRequestBuilder : BaseRequestBuilder {
+    public class ServicePrincipalCreationPolicyItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.</summary>
-        public ExcludesRequestBuilder Excludes { get =>
-            new ExcludesRequestBuilder(PathParameters, RequestAdapter);
+        public ExcludesRequestBuilder Excludes
+        {
+            get =>             new ExcludesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.</summary>
-        public IncludesRequestBuilder Includes { get =>
-            new IncludesRequestBuilder(PathParameters, RequestAdapter);
+        public IncludesRequestBuilder Includes
+        {
+            get =>             new IncludesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ServicePrincipalCreationPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalCreationPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}{?%24expand,%24select}", pathParameters) {
+        public ServicePrincipalCreationPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ServicePrincipalCreationPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalCreationPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}{?%24expand,%24select}", rawUrl) {
+        public ServicePrincipalCreationPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property servicePrincipalCreationPolicies for policies
@@ -46,13 +51,16 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -66,13 +74,16 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipalCreationPolicy?> GetAsync(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalCreationPolicy?> GetAsync(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ServicePrincipalCreationPolicy> GetAsync(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalCreationPolicy> GetAsync(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicy>(requestInfo, ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -87,14 +98,17 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ServicePrincipalCreationPolicy?> PatchAsync(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalCreationPolicy?> PatchAsync(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ServicePrincipalCreationPolicy> PatchAsync(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ServicePrincipalCreationPolicy> PatchAsync(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ServicePrincipalCreationPolicy>(requestInfo, ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -106,10 +120,12 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -123,10 +139,12 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -141,10 +159,12 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(ServicePrincipalCreationPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/policies/servicePrincipalCreationPolicies/{servicePrincipalCreationPolicy%2Did}", PathParameters);
@@ -158,19 +178,22 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalCreationPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ServicePrincipalCreationPolicyItemRequestBuilder WithUrl(string rawUrl) {
+        public ServicePrincipalCreationPolicyItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ServicePrincipalCreationPolicyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalCreationPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ServicePrincipalCreationPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get servicePrincipalCreationPolicies from policies
         /// </summary>
-        public class ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters {
+        public class ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,13 +219,15 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters> {
+        public class ServicePrincipalCreationPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ServicePrincipalCreationPolicyItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ServicePrincipalCreationPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

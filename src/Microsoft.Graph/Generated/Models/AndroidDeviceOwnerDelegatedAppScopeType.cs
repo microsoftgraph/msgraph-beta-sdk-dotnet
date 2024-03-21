@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum representing possible values for delegated app scope.</summary>
-    public enum AndroidDeviceOwnerDelegatedAppScopeType {
+    public enum AndroidDeviceOwnerDelegatedAppScopeType
+    {
         /// <summary>Unspecified; this value defaults to DELEGATED_SCOPE_UNSPECIFIED.</summary>
         [EnumMember(Value = "unspecified")]
         Unspecified,

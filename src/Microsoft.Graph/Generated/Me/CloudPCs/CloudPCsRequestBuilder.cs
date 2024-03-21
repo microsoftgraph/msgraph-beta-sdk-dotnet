@@ -18,40 +18,50 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
     /// <summary>
     /// Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.
     /// </summary>
-    public class CloudPCsRequestBuilder : BaseRequestBuilder {
+    public class CloudPCsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the bulkResize method.</summary>
-        public BulkResizeRequestBuilder BulkResize { get =>
-            new BulkResizeRequestBuilder(PathParameters, RequestAdapter);
+        public BulkResizeRequestBuilder BulkResize
+        {
+            get =>             new BulkResizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateBulkResize method.</summary>
-        public ValidateBulkResizeRequestBuilder ValidateBulkResize { get =>
-            new ValidateBulkResizeRequestBuilder(PathParameters, RequestAdapter);
+        public ValidateBulkResizeRequestBuilder ValidateBulkResize
+        {
+            get =>             new ValidateBulkResizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of cloudPC</param>
         /// <returns>A <see cref="CloudPCItemRequestBuilder"/></returns>
-        public CloudPCItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("cloudPC%2Did", position);
-            return new CloudPCItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public CloudPCItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("cloudPC%2Did", position);
+                return new CloudPCItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="CloudPCsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPCsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public CloudPCsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CloudPCsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CloudPCsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public CloudPCsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/cloudPCs{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// List the cloudPC devices that are attributed to the signed-in user. 
@@ -63,13 +73,16 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CloudPCCollectionResponse?> GetAsync(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPCCollectionResponse?> GetAsync(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CloudPCCollectionResponse> GetAsync(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPCCollectionResponse> GetAsync(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloudPCCollectionResponse>(requestInfo, CloudPCCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -80,7 +93,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder"/></returns>
         /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
         /// <param name="servicePlanId">Usage: servicePlanId=&apos;{servicePlanId}&apos;</param>
-        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder GetProvisionedCloudPCsWithGroupIdWithServicePlanId(string groupId, string servicePlanId) {
+        public GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder GetProvisionedCloudPCsWithGroupIdWithServicePlanId(string groupId, string servicePlanId)
+        {
             if(string.IsNullOrEmpty(groupId)) throw new ArgumentNullException(nameof(groupId));
             if(string.IsNullOrEmpty(servicePlanId)) throw new ArgumentNullException(nameof(servicePlanId));
             return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(PathParameters, RequestAdapter, groupId, servicePlanId);
@@ -95,14 +109,17 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.CloudPC?> PostAsync(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CloudPC?> PostAsync(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.CloudPC> PostAsync(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CloudPC> PostAsync(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CloudPC>(requestInfo, Microsoft.Graph.Beta.Models.CloudPC.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -114,10 +131,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -132,10 +151,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.CloudPC body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/me/cloudPCs", PathParameters);
@@ -149,13 +170,15 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// </summary>
         /// <returns>A <see cref="CloudPCsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CloudPCsRequestBuilder WithUrl(string rawUrl) {
+        public CloudPCsRequestBuilder WithUrl(string rawUrl)
+        {
             return new CloudPCsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List the cloudPC devices that are attributed to the signed-in user. 
         /// </summary>
-        public class CloudPCsRequestBuilderGetQueryParameters {
+        public class CloudPCsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -220,13 +243,15 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPCsRequestBuilderGetRequestConfiguration : RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters> {
+        public class CloudPCsRequestBuilderGetRequestConfiguration : RequestConfiguration<CloudPCsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CloudPCsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class CloudPCsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

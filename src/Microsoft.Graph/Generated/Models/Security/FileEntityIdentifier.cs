@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
-    public enum FileEntityIdentifier {
+    public enum FileEntityIdentifier
+    {
         [EnumMember(Value = "sha1")]
         Sha1 = 1,
         [EnumMember(Value = "initiatingProcessSHA1")]

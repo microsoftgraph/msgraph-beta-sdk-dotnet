@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum representing possible values for kiosk customization system navigation.</summary>
-    public enum AndroidDeviceOwnerKioskCustomizationStatusBar {
+    public enum AndroidDeviceOwnerKioskCustomizationStatusBar
+    {
         /// <summary>Not configured; this value defaults to STATUS_BAR_UNSPECIFIED.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

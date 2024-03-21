@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class EnumeratedDomains : ValidatingDomains, IParsable {
-        /// <summary>The domainNames property</summary>
+    public class EnumeratedDomains : ValidatingDomains, IParsable 
+    {
+        /// <summary>List of federated or managed root domains that Microsoft Entra ID validates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DomainNames {
@@ -23,7 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="EnumeratedDomains"/> and sets the default values.
         /// </summary>
-        public EnumeratedDomains() : base() {
+        public EnumeratedDomains() : base()
+        {
             OdataType = "#microsoft.graph.enumeratedDomains";
         }
         /// <summary>
@@ -31,7 +33,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="EnumeratedDomains"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EnumeratedDomains CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EnumeratedDomains CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new EnumeratedDomains();
         }
@@ -39,8 +42,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"domainNames", n => { DomainNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -48,7 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("domainNames", DomainNames);

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceS
     /// <summary>
     /// Provides operations to manage the sourceSystem property of the microsoft.graph.industryData.industryDataConnector entity.
     /// </summary>
-    public class SourceSystemRequestBuilder : BaseRequestBuilder {
+    public class SourceSystemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SourceSystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SourceSystemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}", pathParameters) {
+        public SourceSystemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SourceSystemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SourceSystemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}", rawUrl) {
+        public SourceSystemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/external/industryData/dataConnectors/{industryDataConnector%2Did}/sourceSystem{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The sourceSystemDefinition this connector is connected to.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceS
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SourceSystemDefinition?> GetAsync(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SourceSystemDefinition?> GetAsync(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SourceSystemDefinition> GetAsync(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SourceSystemDefinition> GetAsync(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceS
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceS
         /// </summary>
         /// <returns>A <see cref="SourceSystemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SourceSystemRequestBuilder WithUrl(string rawUrl) {
+        public SourceSystemRequestBuilder WithUrl(string rawUrl)
+        {
             return new SourceSystemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The sourceSystemDefinition this connector is connected to.
         /// </summary>
-        public class SourceSystemRequestBuilderGetQueryParameters {
+        public class SourceSystemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item.SourceS
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SourceSystemRequestBuilderGetRequestConfiguration : RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters> {
+        public class SourceSystemRequestBuilderGetRequestConfiguration : RequestConfiguration<SourceSystemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

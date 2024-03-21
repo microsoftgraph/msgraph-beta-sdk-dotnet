@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ComanagementEligibleType {
+    public enum ComanagementEligibleType
+    {
         [EnumMember(Value = "comanaged")]
         Comanaged,
         [EnumMember(Value = "eligible")]

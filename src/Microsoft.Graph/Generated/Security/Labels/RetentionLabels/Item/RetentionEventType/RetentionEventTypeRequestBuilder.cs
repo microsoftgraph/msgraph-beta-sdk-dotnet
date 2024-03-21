@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
     /// <summary>
     /// Provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionLabel entity.
     /// </summary>
-    public class RetentionEventTypeRequestBuilder : BaseRequestBuilder {
+    public class RetentionEventTypeRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RetentionEventTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetentionEventTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24expand,%24select}", pathParameters) {
+        public RetentionEventTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RetentionEventTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetentionEventTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24expand,%24select}", rawUrl) {
+        public RetentionEventTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/retentionEventType{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Represents the type associated with a retention event.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Security.RetentionEventType?> GetAsync(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Security.RetentionEventType?> GetAsync(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Security.RetentionEventType> GetAsync(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Security.RetentionEventType> GetAsync(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
         /// </summary>
         /// <returns>A <see cref="RetentionEventTypeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RetentionEventTypeRequestBuilder WithUrl(string rawUrl) {
+        public RetentionEventTypeRequestBuilder WithUrl(string rawUrl)
+        {
             return new RetentionEventTypeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Represents the type associated with a retention event.
         /// </summary>
-        public class RetentionEventTypeRequestBuilderGetQueryParameters {
+        public class RetentionEventTypeRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RetentionEventTypeRequestBuilderGetRequestConfiguration : RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters> {
+        public class RetentionEventTypeRequestBuilderGetRequestConfiguration : RequestConfiguration<RetentionEventTypeRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

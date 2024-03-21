@@ -8,33 +8,34 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Windows 10 Enrollment Status Page Configuration
     /// </summary>
-    public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable {
-        /// <summary>Allow or block device reset on installation failure</summary>
+    public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable 
+    {
+        /// <summary>When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.</summary>
         public bool? AllowDeviceResetOnInstallFailure {
             get { return BackingStore?.Get<bool?>("allowDeviceResetOnInstallFailure"); }
             set { BackingStore?.Set("allowDeviceResetOnInstallFailure", value); }
         }
-        /// <summary>Allow the user to continue using the device on installation failure</summary>
+        /// <summary>When TRUE, allows the user to continue using the device on installation failure. When false, blocks the user on installation failure. The default is false.</summary>
         public bool? AllowDeviceUseOnInstallFailure {
             get { return BackingStore?.Get<bool?>("allowDeviceUseOnInstallFailure"); }
             set { BackingStore?.Set("allowDeviceUseOnInstallFailure", value); }
         }
-        /// <summary>Allow or block log collection on installation failure</summary>
+        /// <summary>When TRUE, allows log collection on installation failure. When false, log collection is not allowed. The default is false.</summary>
         public bool? AllowLogCollectionOnInstallFailure {
             get { return BackingStore?.Get<bool?>("allowLogCollectionOnInstallFailure"); }
             set { BackingStore?.Set("allowLogCollectionOnInstallFailure", value); }
         }
-        /// <summary>Install all required apps as non blocking apps during white glove</summary>
+        /// <summary>When TRUE, ESP (Enrollment Status Page) installs all required apps targeted during technician phase and ignores any failures for non-blocking apps. When FALSE, ESP fails on any error during app install. The default is false.</summary>
         public bool? AllowNonBlockingAppInstallation {
             get { return BackingStore?.Get<bool?>("allowNonBlockingAppInstallation"); }
             set { BackingStore?.Set("allowNonBlockingAppInstallation", value); }
         }
-        /// <summary>Allow the user to retry the setup on installation failure</summary>
+        /// <summary>When TRUE, blocks user from retrying the setup on installation failure. When false, user is allowed to retry. The default is false.</summary>
         public bool? BlockDeviceSetupRetryByUser {
             get { return BackingStore?.Get<bool?>("blockDeviceSetupRetryByUser"); }
             set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
-        /// <summary>Set custom error message to show upon installation failure</summary>
+        /// <summary>The custom error message to show upon installation failure. Max length is 10000. example: &apos;Setup could not be completed. Please try again or contact your support person for help.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomErrorMessage {
@@ -48,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customErrorMessage", value); }
         }
 #endif
-        /// <summary>Only show installation progress for first user post enrollment</summary>
+        /// <summary>When TRUE, disables showing installation progress for first user post enrollment. When false, enables showing progress. The default is false.</summary>
         public bool? DisableUserStatusTrackingAfterFirstUser {
             get { return BackingStore?.Get<bool?>("disableUserStatusTrackingAfterFirstUser"); }
             set { BackingStore?.Set("disableUserStatusTrackingAfterFirstUser", value); }
         }
-        /// <summary>Set installation progress timeout in minutes</summary>
+        /// <summary>The installation progress timeout in minutes. Default is 60 minutes.</summary>
         public int? InstallProgressTimeoutInMinutes {
             get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
             set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("installQualityUpdates"); }
             set { BackingStore?.Set("installQualityUpdates", value); }
         }
-        /// <summary>Selected applications to track the installation status</summary>
+        /// <summary>Selected applications to track the installation status. It is in the form of an array of GUIDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SelectedMobileAppIds {
@@ -77,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("selectedMobileAppIds", value); }
         }
 #endif
-        /// <summary>Show or hide installation progress to user</summary>
+        /// <summary>When TRUE, shows installation progress to user. When false, hides installation progress. The default is false.</summary>
         public bool? ShowInstallationProgress {
             get { return BackingStore?.Get<bool?>("showInstallationProgress"); }
             set { BackingStore?.Set("showInstallationProgress", value); }
         }
-        /// <summary>Only show installation progress for Autopilot enrollment scenarios</summary>
+        /// <summary>When TRUE, installation progress is tracked for only Autopilot enrollment scenarios. When false, other scenarios are tracked as well. The default is false.</summary>
         public bool? TrackInstallProgressForAutopilotOnly {
             get { return BackingStore?.Get<bool?>("trackInstallProgressForAutopilotOnly"); }
             set { BackingStore?.Set("trackInstallProgressForAutopilotOnly", value); }
@@ -90,7 +91,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Windows10EnrollmentCompletionPageConfiguration"/> and sets the default values.
         /// </summary>
-        public Windows10EnrollmentCompletionPageConfiguration() : base() {
+        public Windows10EnrollmentCompletionPageConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windows10EnrollmentCompletionPageConfiguration";
         }
         /// <summary>
@@ -98,7 +100,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Windows10EnrollmentCompletionPageConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10EnrollmentCompletionPageConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Windows10EnrollmentCompletionPageConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Windows10EnrollmentCompletionPageConfiguration();
         }
@@ -106,8 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowDeviceResetOnInstallFailure", n => { AllowDeviceResetOnInstallFailure = n.GetBoolValue(); } },
                 {"allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
                 {"allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
@@ -126,7 +131,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowDeviceResetOnInstallFailure", AllowDeviceResetOnInstallFailure);

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum IkeEncryption {
+    public enum IkeEncryption
+    {
         [EnumMember(Value = "aes128")]
         Aes128,
         [EnumMember(Value = "aes192")]

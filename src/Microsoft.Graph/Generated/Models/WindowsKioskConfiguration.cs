@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the kiosk resource.
     /// </summary>
-    public class WindowsKioskConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsKioskConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.</summary>
         public bool? EdgeKioskEnablePublicBrowsing {
             get { return BackingStore?.Get<bool?>("edgeKioskEnablePublicBrowsing"); }
@@ -107,7 +108,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsKioskConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsKioskConfiguration() : base() {
+        public WindowsKioskConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsKioskConfiguration";
         }
         /// <summary>
@@ -115,7 +117,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsKioskConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsKioskConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsKioskConfiguration();
         }
@@ -123,8 +126,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"edgeKioskEnablePublicBrowsing", n => { EdgeKioskEnablePublicBrowsing = n.GetBoolValue(); } },
                 {"kioskBrowserBlockedURLs", n => { KioskBrowserBlockedURLs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -141,7 +146,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("edgeKioskEnablePublicBrowsing", EdgeKioskEnablePublicBrowsing);

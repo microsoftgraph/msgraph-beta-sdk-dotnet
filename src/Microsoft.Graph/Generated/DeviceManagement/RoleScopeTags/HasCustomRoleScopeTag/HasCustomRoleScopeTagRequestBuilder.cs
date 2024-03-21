@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
     /// <summary>
     /// Provides operations to call the hasCustomRoleScopeTag method.
     /// </summary>
-    public class HasCustomRoleScopeTagRequestBuilder : BaseRequestBuilder {
+    public class HasCustomRoleScopeTagRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="HasCustomRoleScopeTagRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HasCustomRoleScopeTagRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleScopeTags/hasCustomRoleScopeTag()", pathParameters) {
+        public HasCustomRoleScopeTagRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleScopeTags/hasCustomRoleScopeTag()", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="HasCustomRoleScopeTagRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HasCustomRoleScopeTagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleScopeTags/hasCustomRoleScopeTag()", rawUrl) {
+        public HasCustomRoleScopeTagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleScopeTags/hasCustomRoleScopeTag()", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function hasCustomRoleScopeTag
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HasCustomRoleScopeTagGetResponse?> GetAsHasCustomRoleScopeTagGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HasCustomRoleScopeTagGetResponse?> GetAsHasCustomRoleScopeTagGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<HasCustomRoleScopeTagGetResponse> GetAsHasCustomRoleScopeTagGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HasCustomRoleScopeTagGetResponse> GetAsHasCustomRoleScopeTagGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<HasCustomRoleScopeTagGetResponse>(requestInfo, HasCustomRoleScopeTagGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
         [Obsolete("This method is obsolete. Use GetAsHasCustomRoleScopeTagGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HasCustomRoleScopeTagResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HasCustomRoleScopeTagResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<HasCustomRoleScopeTagResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<HasCustomRoleScopeTagResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<HasCustomRoleScopeTagResponse>(requestInfo, HasCustomRoleScopeTagResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,14 +101,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.HasCustomRoleScope
         /// </summary>
         /// <returns>A <see cref="HasCustomRoleScopeTagRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public HasCustomRoleScopeTagRequestBuilder WithUrl(string rawUrl) {
+        public HasCustomRoleScopeTagRequestBuilder WithUrl(string rawUrl)
+        {
             return new HasCustomRoleScopeTagRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class HasCustomRoleScopeTagRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

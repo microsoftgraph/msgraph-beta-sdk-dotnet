@@ -5,13 +5,14 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class AuthorizationPolicy : PolicyBase, IParsable {
+    public class AuthorizationPolicy : PolicyBase, IParsable 
+    {
         /// <summary>Indicates whether users can sign up for email based subscriptions.</summary>
         public bool? AllowedToSignUpEmailBasedSubscriptions {
             get { return BackingStore?.Get<bool?>("allowedToSignUpEmailBasedSubscriptions"); }
             set { BackingStore?.Set("allowedToSignUpEmailBasedSubscriptions", value); }
         }
-        /// <summary>Indicates whether users can use the Self-Service Password Reset feature on the tenant.</summary>
+        /// <summary>Indicates whether administrators of the tenant can use the Self-Service Password Reset (SSPR). For more information, see Self-service password reset for administrators.</summary>
         public bool? AllowedToUseSSPR {
             get { return BackingStore?.Get<bool?>("allowedToUseSSPR"); }
             set { BackingStore?.Set("allowedToUseSSPR", value); }
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowEmailVerifiedUsersToJoinOrganization"); }
             set { BackingStore?.Set("allowEmailVerifiedUsersToJoinOrganization", value); }
         }
-        /// <summary>Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.</summary>
+        /// <summary>Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.</summary>
         public Microsoft.Graph.Beta.Models.AllowInvitesFrom? AllowInvitesFrom {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
             set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }
         }
-        /// <summary>To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn&apos;t affect Microsoft Entra Connect or Microsoft Graph.</summary>
+        /// <summary>To disable the use of the MSOnline PowerShell module set this property to true. This also disables user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This doesn&apos;t affect Microsoft Entra Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
             get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
             set { BackingStore?.Set("blockMsolPowerShell", value); }
@@ -100,7 +101,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AuthorizationPolicy"/> and sets the default values.
         /// </summary>
-        public AuthorizationPolicy() : base() {
+        public AuthorizationPolicy() : base()
+        {
             OdataType = "#microsoft.graph.authorizationPolicy";
         }
         /// <summary>
@@ -108,7 +110,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AuthorizationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AuthorizationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AuthorizationPolicy();
         }
@@ -116,8 +119,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowEmailVerifiedUsersToJoinOrganization", n => { AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
                 {"allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
                 {"allowUserConsentForRiskyApps", n => { AllowUserConsentForRiskyApps = n.GetBoolValue(); } },
@@ -135,7 +140,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowedToSignUpEmailBasedSubscriptions", AllowedToSignUpEmailBasedSubscriptions);

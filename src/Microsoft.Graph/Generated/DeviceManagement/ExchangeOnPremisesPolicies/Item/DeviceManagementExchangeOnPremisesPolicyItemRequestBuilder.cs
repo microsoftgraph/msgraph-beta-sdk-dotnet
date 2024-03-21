@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
     /// <summary>
     /// Provides operations to manage the exchangeOnPremisesPolicies property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder : BaseRequestBuilder {
+    public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagementExchangeOnPremisesPolicy entity.</summary>
-        public ConditionalAccessSettingsRequestBuilder ConditionalAccessSettings { get =>
-            new ConditionalAccessSettingsRequestBuilder(PathParameters, RequestAdapter);
+        public ConditionalAccessSettingsRequestBuilder ConditionalAccessSettings
+        {
+            get =>             new ConditionalAccessSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}{?%24expand,%24select}", pathParameters) {
+        public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}{?%24expand,%24select}", rawUrl) {
+        public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property exchangeOnPremisesPolicies for deviceManagement
@@ -41,13 +45,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,13 +68,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementExchangeOnPremisesPolicy?> GetAsync(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy?> GetAsync(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy> GetAsync(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(requestInfo, DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,14 +92,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceManagementExchangeOnPremisesPolicy?> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy?> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceManagementExchangeOnPremisesPolicy> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementExchangeOnPremisesPolicy> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(requestInfo, DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -101,10 +114,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -118,10 +133,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -136,10 +153,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(DeviceManagementExchangeOnPremisesPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/exchangeOnPremisesPolicies/{deviceManagementExchangeOnPremisesPolicy%2Did}", PathParameters);
@@ -153,19 +172,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// </summary>
         /// <returns>A <see cref="DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder WithUrl(string rawUrl) {
+        public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new DeviceManagementExchangeOnPremisesPolicyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// The list of Exchange On Premisis policies configured by the tenant.
         /// </summary>
-        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters {
+        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,13 +213,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters> {
+        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

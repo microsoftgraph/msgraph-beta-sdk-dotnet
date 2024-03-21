@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Data type for a configuration item inside an Android application&apos;s custom configuration schema</summary>
-    public enum AndroidManagedStoreAppConfigurationSchemaItemDataType {
+    public enum AndroidManagedStoreAppConfigurationSchemaItemDataType
+    {
         [EnumMember(Value = "bool")]
         Bool,
         [EnumMember(Value = "integer")]

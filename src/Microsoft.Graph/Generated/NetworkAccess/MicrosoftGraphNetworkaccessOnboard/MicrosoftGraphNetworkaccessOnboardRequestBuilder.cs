@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard 
     /// <summary>
     /// Provides operations to call the onboard method.
     /// </summary>
-    public class MicrosoftGraphNetworkaccessOnboardRequestBuilder : BaseRequestBuilder {
+    public class MicrosoftGraphNetworkaccessOnboardRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftGraphNetworkaccessOnboardRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MicrosoftGraphNetworkaccessOnboardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/microsoft.graph.networkaccess.onboard", pathParameters) {
+        public MicrosoftGraphNetworkaccessOnboardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/microsoft.graph.networkaccess.onboard", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftGraphNetworkaccessOnboardRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MicrosoftGraphNetworkaccessOnboardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/microsoft.graph.networkaccess.onboard", rawUrl) {
+        public MicrosoftGraphNetworkaccessOnboardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networkAccess/microsoft.graph.networkaccess.onboard", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke action onboard
@@ -35,13 +38,16 @@ namespace Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard 
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -53,10 +59,12 @@ namespace Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -68,14 +76,16 @@ namespace Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard 
         /// </summary>
         /// <returns>A <see cref="MicrosoftGraphNetworkaccessOnboardRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphNetworkaccessOnboardRequestBuilder WithUrl(string rawUrl) {
+        public MicrosoftGraphNetworkaccessOnboardRequestBuilder WithUrl(string rawUrl)
+        {
             return new MicrosoftGraphNetworkaccessOnboardRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphNetworkaccessOnboardRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MicrosoftGraphNetworkaccessOnboardRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

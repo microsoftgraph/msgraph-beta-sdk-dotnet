@@ -15,32 +15,40 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
     /// <summary>
     /// Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.
     /// </summary>
-    public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder : BaseRequestBuilder {
+    public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
         /// <param name="position">The unique identifier of businessFlow</param>
         /// <returns>A <see cref="BusinessFlowItemRequestBuilder"/></returns>
-        public BusinessFlowItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("businessFlow%2Did", position);
-            return new BusinessFlowItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public BusinessFlowItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("businessFlow%2Did", position);
+                return new BusinessFlowItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
@@ -51,13 +59,16 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessFlowCollectionResponse?> GetAsync(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BusinessFlowCollectionResponse> GetAsync(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessFlowCollectionResponse> GetAsync(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BusinessFlowCollectionResponse>(requestInfo, BusinessFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -72,14 +83,17 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BusinessFlow?> PostAsync(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessFlow?> PostAsync(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<BusinessFlow> PostAsync(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<BusinessFlow> PostAsync(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BusinessFlow>(requestInfo, BusinessFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -91,10 +105,12 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -109,10 +125,12 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(BusinessFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/approvalWorkflowProviders/{approvalWorkflowProvider%2Did}/businessFlowsWithRequestsAwaitingMyDecision", PathParameters);
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// </summary>
         /// <returns>A <see cref="BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder WithUrl(string rawUrl) {
+        public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder WithUrl(string rawUrl)
+        {
             return new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get businessFlowsWithRequestsAwaitingMyDecision from approvalWorkflowProviders
         /// </summary>
-        public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters {
+        public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -197,13 +217,15 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetRequestConfiguration : RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters> {
+        public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetRequestConfiguration : RequestConfiguration<BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

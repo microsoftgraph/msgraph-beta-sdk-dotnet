@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DeviceGuardLocalSystemAuthorityCredentialGuardState {
+    public enum DeviceGuardLocalSystemAuthorityCredentialGuardState
+    {
         /// <summary>Running</summary>
         [EnumMember(Value = "running")]
         Running,

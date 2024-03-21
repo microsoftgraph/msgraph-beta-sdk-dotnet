@@ -16,32 +16,38 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
     /// <summary>
     /// Provides operations to manage the embeddedSIMActivationCodePools property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class EmbeddedSIMActivationCodePoolItemRequestBuilder : BaseRequestBuilder {
+    public class EmbeddedSIMActivationCodePoolItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the assign method.</summary>
-        public AssignRequestBuilder Assign { get =>
-            new AssignRequestBuilder(PathParameters, RequestAdapter);
+        public AssignRequestBuilder Assign
+        {
+            get =>             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.embeddedSIMActivationCodePool entity.</summary>
-        public AssignmentsRequestBuilder Assignments { get =>
-            new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AssignmentsRequestBuilder Assignments
+        {
+            get =>             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceStates property of the microsoft.graph.embeddedSIMActivationCodePool entity.</summary>
-        public DeviceStatesRequestBuilder DeviceStates { get =>
-            new DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceStatesRequestBuilder DeviceStates
+        {
+            get =>             new DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="EmbeddedSIMActivationCodePoolItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmbeddedSIMActivationCodePoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}{?%24expand,%24select}", pathParameters) {
+        public EmbeddedSIMActivationCodePoolItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EmbeddedSIMActivationCodePoolItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmbeddedSIMActivationCodePoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}{?%24expand,%24select}", rawUrl) {
+        public EmbeddedSIMActivationCodePoolItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property embeddedSIMActivationCodePools for deviceManagement
@@ -51,13 +57,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -71,13 +80,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EmbeddedSIMActivationCodePool?> GetAsync(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePool?> GetAsync(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EmbeddedSIMActivationCodePool> GetAsync(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePool> GetAsync(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EmbeddedSIMActivationCodePool>(requestInfo, EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -92,14 +104,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EmbeddedSIMActivationCodePool?> PatchAsync(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePool?> PatchAsync(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EmbeddedSIMActivationCodePool> PatchAsync(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EmbeddedSIMActivationCodePool> PatchAsync(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EmbeddedSIMActivationCodePool>(requestInfo, EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -111,10 +126,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -128,10 +145,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -146,10 +165,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(EmbeddedSIMActivationCodePool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceManagement/embeddedSIMActivationCodePools/{embeddedSIMActivationCodePool%2Did}", PathParameters);
@@ -163,19 +184,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// </summary>
         /// <returns>A <see cref="EmbeddedSIMActivationCodePoolItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EmbeddedSIMActivationCodePoolItemRequestBuilder WithUrl(string rawUrl) {
+        public EmbeddedSIMActivationCodePoolItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new EmbeddedSIMActivationCodePoolItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// The embedded SIM activation code pools created by this account.
         /// </summary>
-        public class EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters {
+        public class EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,13 +225,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters> {
+        public class EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

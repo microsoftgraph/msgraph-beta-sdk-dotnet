@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.Assign {
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -46,7 +47,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.Assign {
         /// <summary>
         /// Instantiates a new <see cref="AssignPostRequestBody"/> and sets the default values.
         /// </summary>
-        public AssignPostRequestBody() {
+        public AssignPostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -55,7 +57,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.Assign {
         /// </summary>
         /// <returns>A <see cref="AssignPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AssignPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AssignPostRequestBody();
         }
@@ -63,8 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.Assign {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"deviceManagementScriptAssignments", n => { DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceManagementScriptGroupAssignments", n => { DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -73,7 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.Assign {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("deviceManagementScriptAssignments", DeviceManagementScriptAssignments);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("deviceManagementScriptGroupAssignments", DeviceManagementScriptGroupAssignments);

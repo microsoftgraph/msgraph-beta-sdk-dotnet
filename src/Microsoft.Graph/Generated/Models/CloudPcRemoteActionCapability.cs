@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.</summary>
         public Microsoft.Graph.Beta.Models.ActionCapability? ActionCapability {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionCapability?>("actionCapability"); }
@@ -41,7 +42,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="CloudPcRemoteActionCapability"/> and sets the default values.
         /// </summary>
-        public CloudPcRemoteActionCapability() {
+        public CloudPcRemoteActionCapability()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -50,7 +52,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="CloudPcRemoteActionCapability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcRemoteActionCapability CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CloudPcRemoteActionCapability CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CloudPcRemoteActionCapability();
         }
@@ -58,8 +61,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"actionCapability", n => { ActionCapability = n.GetEnumValue<ActionCapability>(); } },
                 {"actionName", n => { ActionName = n.GetEnumValue<CloudPcRemoteActionName>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -69,7 +74,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<ActionCapability>("actionCapability", ActionCapability);
             writer.WriteEnumValue<CloudPcRemoteActionName>("actionName", ActionName);

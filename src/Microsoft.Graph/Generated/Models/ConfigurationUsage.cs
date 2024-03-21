@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of the ConfigurationUsage list.</summary>
-    public enum ConfigurationUsage {
+    public enum ConfigurationUsage
+    {
         /// <summary>Disallowed.</summary>
         [EnumMember(Value = "blocked")]
         Blocked,

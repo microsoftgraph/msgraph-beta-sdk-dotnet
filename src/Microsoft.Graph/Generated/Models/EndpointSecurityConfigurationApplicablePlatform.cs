@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The endpoint security configuration applicable platform.</summary>
-    public enum EndpointSecurityConfigurationApplicablePlatform {
+    public enum EndpointSecurityConfigurationApplicablePlatform
+    {
         /// <summary>Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

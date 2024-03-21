@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp {
     [Obsolete("This class is obsolete. Use IsSignedUpGetResponse instead.")]
-    public class IsSignedUpResponse : IsSignedUpGetResponse, IParsable {
+    public class IsSignedUpResponse : IsSignedUpGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="IsSignedUpResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IsSignedUpResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IsSignedUpResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IsSignedUpResponse();
         }

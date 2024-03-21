@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum DetectionStatus {
+    public enum DetectionStatus
+    {
         [EnumMember(Value = "detected")]
         Detected,
         [EnumMember(Value = "blocked")]

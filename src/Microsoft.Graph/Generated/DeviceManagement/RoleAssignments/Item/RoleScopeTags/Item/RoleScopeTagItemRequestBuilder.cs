@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
     /// <summary>
     /// Provides operations to manage the roleScopeTags property of the microsoft.graph.deviceAndAppManagementRoleAssignment entity.
     /// </summary>
-    public class RoleScopeTagItemRequestBuilder : BaseRequestBuilder {
+    public class RoleScopeTagItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RoleScopeTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleScopeTagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}/roleScopeTags/{roleScopeTag%2Did}{?%24expand,%24select}", pathParameters) {
+        public RoleScopeTagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}/roleScopeTags/{roleScopeTag%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleScopeTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleScopeTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}/roleScopeTags/{roleScopeTag%2Did}{?%24expand,%24select}", rawUrl) {
+        public RoleScopeTagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/roleAssignments/{deviceAndAppManagementRoleAssignment%2Did}/roleScopeTags/{roleScopeTag%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The set of Role Scope Tags defined on the Role Assignment.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RoleScopeTag?> GetAsync(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleScopeTag?> GetAsync(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RoleScopeTag> GetAsync(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RoleScopeTag> GetAsync(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RoleScopeTag>(requestInfo, RoleScopeTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
         /// </summary>
         /// <returns>A <see cref="RoleScopeTagItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleScopeTagItemRequestBuilder WithUrl(string rawUrl) {
+        public RoleScopeTagItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new RoleScopeTagItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The set of Role Scope Tags defined on the Role Assignment.
         /// </summary>
-        public class RoleScopeTagItemRequestBuilderGetQueryParameters {
+        public class RoleScopeTagItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleAssignments.Item.RoleScopeTa
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleScopeTagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters> {
+        public class RoleScopeTagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleScopeTagItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

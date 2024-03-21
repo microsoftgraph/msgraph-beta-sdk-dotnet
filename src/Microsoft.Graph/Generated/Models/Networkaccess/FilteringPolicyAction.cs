@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum FilteringPolicyAction {
+    public enum FilteringPolicyAction
+    {
         [EnumMember(Value = "block")]
         Block,
         [EnumMember(Value = "allow")]

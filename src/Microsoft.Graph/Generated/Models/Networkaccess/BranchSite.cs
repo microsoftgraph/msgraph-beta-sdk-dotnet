@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class BranchSite : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class BranchSite : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.</summary>
         public long? BandwidthCapacity {
             get { return BackingStore?.Get<long?>("bandwidthCapacity"); }
@@ -115,7 +116,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         /// <returns>A <see cref="BranchSite"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BranchSite CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new BranchSite CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new BranchSite();
         }
@@ -123,8 +125,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"bandwidthCapacity", n => { BandwidthCapacity = n.GetLongValue(); } },
                 {"connectivityConfiguration", n => { ConnectivityConfiguration = n.GetObjectValue<BranchConnectivityConfiguration>(BranchConnectivityConfiguration.CreateFromDiscriminatorValue); } },
                 {"connectivityState", n => { ConnectivityState = n.GetEnumValue<ConnectivityState>(); } },
@@ -141,7 +145,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteLongValue("bandwidthCapacity", BandwidthCapacity);

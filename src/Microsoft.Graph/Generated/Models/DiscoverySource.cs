@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DiscoverySource {
+    public enum DiscoverySource
+    {
         /// <summary>DiscoverySource is Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

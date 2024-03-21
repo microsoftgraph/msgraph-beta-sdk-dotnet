@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
     /// <summary>
     /// Provides operations to manage the multiTenantOrganizationIdentitySynchronization property of the microsoft.graph.policyTemplate entity.
     /// </summary>
-    public class MultiTenantOrganizationIdentitySynchronizationRequestBuilder : BaseRequestBuilder {
+    public class MultiTenantOrganizationIdentitySynchronizationRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the resetToDefaultSettings method.</summary>
-        public ResetToDefaultSettingsRequestBuilder ResetToDefaultSettings { get =>
-            new ResetToDefaultSettingsRequestBuilder(PathParameters, RequestAdapter);
+        public ResetToDefaultSettingsRequestBuilder ResetToDefaultSettings
+        {
+            get =>             new ResetToDefaultSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="MultiTenantOrganizationIdentitySynchronizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MultiTenantOrganizationIdentitySynchronizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24expand,%24select}", pathParameters) {
+        public MultiTenantOrganizationIdentitySynchronizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MultiTenantOrganizationIdentitySynchronizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MultiTenantOrganizationIdentitySynchronizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24expand,%24select}", rawUrl) {
+        public MultiTenantOrganizationIdentitySynchronizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property multiTenantOrganizationIdentitySynchronization for policies
@@ -41,13 +45,16 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -62,13 +69,16 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate?> GetAsync(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate?> GetAsync(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate> GetAsync(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate> GetAsync(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MultiTenantOrganizationIdentitySyncPolicyTemplate>(requestInfo, MultiTenantOrganizationIdentitySyncPolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -84,14 +94,17 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate?> PatchAsync(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate?> PatchAsync(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate> PatchAsync(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MultiTenantOrganizationIdentitySyncPolicyTemplate> PatchAsync(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MultiTenantOrganizationIdentitySyncPolicyTemplate>(requestInfo, MultiTenantOrganizationIdentitySyncPolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -103,10 +116,12 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -120,10 +135,12 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -138,10 +155,12 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(MultiTenantOrganizationIdentitySyncPolicyTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/policies/crossTenantAccessPolicy/templates/multiTenantOrganizationIdentitySynchronization", PathParameters);
@@ -155,19 +174,22 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationIdentitySynchronizationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MultiTenantOrganizationIdentitySynchronizationRequestBuilder WithUrl(string rawUrl) {
+        public MultiTenantOrganizationIdentitySynchronizationRequestBuilder WithUrl(string rawUrl)
+        {
             return new MultiTenantOrganizationIdentitySynchronizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get the cross-tenant access policy template with user synchronization settings for a multitenant organization.
         /// </summary>
-        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters {
+        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,13 +215,15 @@ namespace Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.Templates.MultiT
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetRequestConfiguration : RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters> {
+        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetRequestConfiguration : RequestConfiguration<MultiTenantOrganizationIdentitySynchronizationRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MultiTenantOrganizationIdentitySynchronizationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

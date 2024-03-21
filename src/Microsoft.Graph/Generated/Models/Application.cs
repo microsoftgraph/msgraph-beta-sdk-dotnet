@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class Application : DirectoryObject, IParsable {
+    public class Application : DirectoryObject, IParsable 
+    {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
 #endif
-        /// <summary>The default redirect URI. If specified and there is no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.</summary>
+        /// <summary>The default redirect URI. If specified and there&apos;s no explicit redirect URI in the sign-in request for SAML and OIDC flows, Microsoft Entra ID sends the token to this redirect URI. Microsoft Entra ID also sends the token to this default URI in SAML IdP-initiated single sign-on. The value must match one of the configured redirect URIs for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultRedirectUri {
@@ -137,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultRedirectUri", value); }
         }
 #endif
-        /// <summary>Free text field to provide a description of the application object to end users. The maximum allowed size is 1024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
+        /// <summary>Free text field to provide a description of the application object to end users. The maximum allowed size is 1,024 characters. Returned by default. Supports $filter (eq, ne, not, ge, le, startsWith) and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -235,7 +236,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #endif
-        /// <summary>Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you&apos;ll reference in your API&apos;s code, and it must be globally unique. You can use the default value provided, which is in the form api://&lt;application-client-id&gt;, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).</summary>
+        /// <summary>Also known as App ID URI, this value is set when an application is used as a resource app. The identifierUris acts as the prefix for the scopes you reference in your API&apos;s code, and it must be globally unique. You can use the default value provided, which is in the form api://&lt;application-client-id&gt;, or specify a more readable URI like https://contoso.com/api. For more information on valid identifierUris patterns and best practices, see Microsoft Entra application registration security best practices. Not nullable. Supports $filter (eq, ne, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IdentifierUris {
@@ -268,7 +269,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isDeviceOnlyAuthSupported"); }
             set { BackingStore?.Set("isDeviceOnlyAuthSupported", value); }
         }
-        /// <summary>Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID cannot determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.</summary>
+        /// <summary>Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can&apos;t determine the client application type. For example, the ROPC flow where the application is configured without specifying a redirect URI. In those cases Microsoft Entra ID interprets the application type based on the value of this property.</summary>
         public bool? IsFallbackPublicClient {
             get { return BackingStore?.Get<bool?>("isFallbackPublicClient"); }
             set { BackingStore?.Set("isFallbackPublicClient", value); }
@@ -469,7 +470,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("serviceManagementReference", value); }
         }
 #endif
-        /// <summary>Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.</summary>
+        /// <summary>Specifies whether sensitive properties of a multitenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration? ServicePrincipalLockConfiguration {
@@ -525,7 +526,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("synchronization", value); }
         }
 #endif
-        /// <summary>Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here will also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.</summary>
+        /// <summary>Custom strings that can be used to categorize and identify the application. Not nullable. Strings added here also appear in the tags property of any associated service principals.Supports $filter (eq, not, ge, le, startsWith) and $search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags {
@@ -572,7 +573,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
 #endif
-        /// <summary>The unique identifier that can be assigned to an application as an alternative identifier. Immutable. Read-only.</summary>
+        /// <summary>The unique identifier that can be assigned to an application and used as an alternate key. Immutable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UniqueName {
@@ -631,7 +632,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Application"/> and sets the default values.
         /// </summary>
-        public Application() : base() {
+        public Application() : base()
+        {
             OdataType = "#microsoft.graph.application";
         }
         /// <summary>
@@ -639,7 +641,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Application"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Application CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Application CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Application();
         }
@@ -647,8 +650,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"api", n => { Api = n.GetObjectValue<ApiApplication>(ApiApplication.CreateFromDiscriminatorValue); } },
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>(AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -702,7 +707,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<ApiApplication>("api", Api);

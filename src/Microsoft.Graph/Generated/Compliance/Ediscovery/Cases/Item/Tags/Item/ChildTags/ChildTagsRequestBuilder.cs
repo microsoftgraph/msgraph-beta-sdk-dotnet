@@ -15,34 +15,42 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
     /// <summary>
     /// Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.
     /// </summary>
-    public class ChildTagsRequestBuilder : BaseRequestBuilder {
+    public class ChildTagsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the childTags property of the microsoft.graph.ediscovery.tag entity.</summary>
         /// <param name="position">The unique identifier of tag</param>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item.TagItemRequestBuilder"/></returns>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item.TagItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("tag%2Did1", position);
-            return new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item.TagItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item.TagItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("tag%2Did1", position);
+                return new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildTags.Item.TagItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ChildTagsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChildTagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public ChildTagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ChildTagsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChildTagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public ChildTagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/compliance/ediscovery/cases/{case%2Did}/tags/{tag%2Did}/childTags{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get a list of child tag objects associated with a tag.
@@ -55,13 +63,16 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TagCollectionResponse?> GetAsync(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TagCollectionResponse?> GetAsync(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TagCollectionResponse> GetAsync(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TagCollectionResponse> GetAsync(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -74,10 +85,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +103,15 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
         /// <returns>A <see cref="ChildTagsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security. as of 2022-12/ediscoveryNamespace")]
-        public ChildTagsRequestBuilder WithUrl(string rawUrl) {
+        public ChildTagsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ChildTagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of child tag objects associated with a tag.
         /// </summary>
-        public class ChildTagsRequestBuilderGetQueryParameters {
+        public class ChildTagsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -161,7 +176,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChildTagsRequestBuilderGetRequestConfiguration : RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters> {
+        public class ChildTagsRequestBuilderGetRequestConfiguration : RequestConfiguration<ChildTagsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

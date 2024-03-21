@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for ApplicationGuardEnabledOptions</summary>
-    public enum ApplicationGuardEnabledOptions {
+    public enum ApplicationGuardEnabledOptions
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

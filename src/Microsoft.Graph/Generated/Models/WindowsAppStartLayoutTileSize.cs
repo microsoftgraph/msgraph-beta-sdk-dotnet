@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The tile size of Windows app in the start layout.</summary>
-    public enum WindowsAppStartLayoutTileSize {
+    public enum WindowsAppStartLayoutTileSize
+    {
         /// <summary>Hidden.</summary>
         [EnumMember(Value = "hidden")]
         Hidden,

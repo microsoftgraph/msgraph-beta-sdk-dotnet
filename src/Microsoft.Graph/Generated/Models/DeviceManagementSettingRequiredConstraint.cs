@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Constraint that enforces a particular required setting that is not null/undefined/empty string/not configured
     /// </summary>
-    public class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint, IParsable {
+    public class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint, IParsable 
+    {
         /// <summary>List of value which means not configured for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementSettingRequiredConstraint"/> and sets the default values.
         /// </summary>
-        public DeviceManagementSettingRequiredConstraint() : base() {
+        public DeviceManagementSettingRequiredConstraint() : base()
+        {
             OdataType = "#microsoft.graph.deviceManagementSettingRequiredConstraint";
         }
         /// <summary>
@@ -34,7 +36,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="DeviceManagementSettingRequiredConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingRequiredConstraint CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DeviceManagementSettingRequiredConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceManagementSettingRequiredConstraint();
         }
@@ -42,8 +45,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"notConfiguredValue", n => { NotConfiguredValue = n.GetStringValue(); } },
             };
         }
@@ -51,7 +56,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("notConfiguredValue", NotConfiguredValue);

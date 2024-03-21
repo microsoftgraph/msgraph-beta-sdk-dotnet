@@ -15,41 +15,53 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
     /// <summary>
     /// Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
     /// </summary>
-    public class SalesQuotesRequestBuilder : BaseRequestBuilder {
+    public class SalesQuotesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get =>             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of salesQuote</param>
         /// <returns>A <see cref="SalesQuoteItemRequestBuilder"/></returns>
-        public SalesQuoteItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("salesQuote%2Did", position);
-            return new SalesQuoteItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public SalesQuoteItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("salesQuote%2Did", position);
+                return new SalesQuoteItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of salesQuote</param>
         /// <returns>A <see cref="SalesQuoteItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public SalesQuoteItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("salesQuote%2Did", position);
-            return new SalesQuoteItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public SalesQuoteItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("salesQuote%2Did", position);
+                return new SalesQuoteItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SalesQuotesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesQuotesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public SalesQuotesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SalesQuotesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesQuotesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public SalesQuotesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get salesQuotes from financials
@@ -60,13 +72,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesQuoteCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuoteCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SalesQuoteCollectionResponse> GetAsync(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuoteCollectionResponse> GetAsync(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SalesQuoteCollectionResponse>(requestInfo, SalesQuoteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -78,10 +93,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -93,13 +110,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
         /// </summary>
         /// <returns>A <see cref="SalesQuotesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesQuotesRequestBuilder WithUrl(string rawUrl) {
+        public SalesQuotesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SalesQuotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesQuotes from financials
         /// </summary>
-        public class SalesQuotesRequestBuilderGetQueryParameters {
+        public class SalesQuotesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -164,7 +183,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesQuotesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters> {
+        public class SalesQuotesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesQuotesRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

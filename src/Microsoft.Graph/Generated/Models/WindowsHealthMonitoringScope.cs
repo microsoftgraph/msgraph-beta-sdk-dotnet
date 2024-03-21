@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device health monitoring scope</summary>
     [Flags]
-    public enum WindowsHealthMonitoringScope {
+    public enum WindowsHealthMonitoringScope
+    {
         /// <summary>Undefined</summary>
         [EnumMember(Value = "undefined")]
         Undefined = 1,

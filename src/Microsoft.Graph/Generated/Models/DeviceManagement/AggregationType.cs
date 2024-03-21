@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    public enum AggregationType {
+    public enum AggregationType
+    {
         [EnumMember(Value = "count")]
         Count,
         [EnumMember(Value = "percentage")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RegistrationStatusType {
+    public enum RegistrationStatusType
+    {
         [EnumMember(Value = "registered")]
         Registered,
         [EnumMember(Value = "enabled")]

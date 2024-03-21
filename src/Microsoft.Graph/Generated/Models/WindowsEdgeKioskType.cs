@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Edge kiosk type</summary>
-    public enum WindowsEdgeKioskType {
+    public enum WindowsEdgeKioskType
+    {
         /// <summary>public-browsing</summary>
         [EnumMember(Value = "publicBrowsing")]
         PublicBrowsing,
