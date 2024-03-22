@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RecommendationFeatureAreas {
+    public enum RecommendationFeatureAreas
+    {
         [EnumMember(Value = "users")]
         Users,
         [EnumMember(Value = "groups")]

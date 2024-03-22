@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DetectedApps
     /// <summary>
     /// Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
     /// </summary>
-    public class DetectedAppItemRequestBuilder : BaseRequestBuilder {
+    public class DetectedAppItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DetectedAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectedAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24expand,%24select}", pathParameters) {
+        public DetectedAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DetectedAppItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectedAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24expand,%24select}", rawUrl) {
+        public DetectedAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/{managedDevice%2Did}/detectedApps/{detectedApp%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// All applications currently installed on the device
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DetectedApps
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DetectedApp?> GetAsync(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DetectedApp?> GetAsync(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DetectedApp> GetAsync(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DetectedApp> GetAsync(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, DetectedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DetectedApps
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DetectedApps
         /// </summary>
         /// <returns>A <see cref="DetectedAppItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DetectedAppItemRequestBuilder WithUrl(string rawUrl) {
+        public DetectedAppItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new DetectedAppItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// All applications currently installed on the device
         /// </summary>
-        public class DetectedAppItemRequestBuilderGetQueryParameters {
+        public class DetectedAppItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DetectedApps
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DetectedAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters> {
+        public class DetectedAppItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DetectedAppItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

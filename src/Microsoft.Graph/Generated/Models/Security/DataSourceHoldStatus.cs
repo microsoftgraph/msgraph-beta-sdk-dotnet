@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum DataSourceHoldStatus {
+    public enum DataSourceHoldStatus
+    {
         [EnumMember(Value = "notApplied")]
         NotApplied,
         [EnumMember(Value = "applied")]

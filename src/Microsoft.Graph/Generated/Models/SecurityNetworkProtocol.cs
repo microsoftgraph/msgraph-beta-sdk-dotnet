@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum SecurityNetworkProtocol {
+    public enum SecurityNetworkProtocol
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "ip")]

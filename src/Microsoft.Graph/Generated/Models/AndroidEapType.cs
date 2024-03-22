@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Extensible Authentication Protocol (EAP) Configuration Types.</summary>
-    public enum AndroidEapType {
+    public enum AndroidEapType
+    {
         /// <summary>Extensible Authentication Protocol-Transport Layer Security (EAP-TLS).</summary>
         [EnumMember(Value = "eapTls")]
         EapTls,

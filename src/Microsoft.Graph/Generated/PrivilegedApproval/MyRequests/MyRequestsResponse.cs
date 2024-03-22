@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.PrivilegedApproval.MyRequests {
     [Obsolete("This class is obsolete. Use MyRequestsGetResponse instead.")]
-    public class MyRequestsResponse : MyRequestsGetResponse, IParsable {
+    public class MyRequestsResponse : MyRequestsGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="MyRequestsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MyRequestsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MyRequestsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MyRequestsResponse();
         }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows quality update classification</summary>
-    public enum WindowsQualityUpdateClassification {
+    public enum WindowsQualityUpdateClassification
+    {
         /// <summary>All update type</summary>
         [EnumMember(Value = "all")]
         All,

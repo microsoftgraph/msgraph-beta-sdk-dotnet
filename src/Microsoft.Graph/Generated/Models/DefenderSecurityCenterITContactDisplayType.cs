@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for defenderSecurityCenterITContactDisplay</summary>
-    public enum DefenderSecurityCenterITContactDisplayType {
+    public enum DefenderSecurityCenterITContactDisplayType
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum AuditLogRecordType {
+    public enum AuditLogRecordType
+    {
         [EnumMember(Value = "ExchangeAdmin")]
         ExchangeAdmin,
         [EnumMember(Value = "ExchangeItem")]

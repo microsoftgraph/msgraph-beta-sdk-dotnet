@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcOnPremisesConnection : Entity, IParsable {
+    public class CloudPcOnPremisesConnection : Entity, IParsable 
+    {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternateResourceUrl", value); }
         }
 #endif
-        /// <summary>The connectionType property</summary>
+        /// <summary>Specifies the method by which a provisioned Cloud PC is joined to Microsoft Entra. The azureADJoin option indicates the absence of an on-premises Active Directory (AD) in the current tenant that results in the Cloud PC device only joining to Microsoft Entra. The hybridAzureADJoin option indicates the presence of an on-premises AD in the current tenant and that the Cloud PC joins both the on-premises AD and Microsoft Entra. The selected option also determines the types of users who can be assigned and can sign into a Cloud PC. The azureADJoin option allows both cloud-only and hybrid users to be assigned and sign in, whereas hybridAzureADJoin is restricted to hybrid users only. The default value is hybridAzureADJoin. The possible values are: hybridAzureADJoin, azureADJoin, unknownFutureValue.</summary>
         public CloudPcOnPremisesConnectionType? ConnectionType {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
             set { BackingStore?.Set("healthCheckStatus", value); }
         }
-        /// <summary>The healthCheckStatusDetail property</summary>
+        /// <summary>Indicates the results of health checks performed on the on-premises connection. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail {
@@ -100,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
-        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
+        /// <summary>The healthCheckStatusDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcOnPremisesConnectionStatusDetails? HealthCheckStatusDetails {
@@ -208,7 +209,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #endif
-        /// <summary>Specifies how the provisioned Cloud PC is joined to Microsoft Entra ID. Default value is hybridAzureADJoin. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
+        /// <summary>The type property</summary>
         public CloudPcOnPremisesConnectionType? Type {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionType?>("type"); }
             set { BackingStore?.Set("type", value); }
@@ -246,7 +247,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="CloudPcOnPremisesConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcOnPremisesConnection CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new CloudPcOnPremisesConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CloudPcOnPremisesConnection();
         }
@@ -254,8 +256,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"adDomainName", n => { AdDomainName = n.GetStringValue(); } },
                 {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
                 {"adDomainUsername", n => { AdDomainUsername = n.GetStringValue(); } },
@@ -282,7 +286,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("adDomainName", AdDomainName);

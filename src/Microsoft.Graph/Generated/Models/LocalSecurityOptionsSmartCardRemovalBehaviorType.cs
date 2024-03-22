@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for LocalSecurityOptionsSmartCardRemovalBehaviorType</summary>
-    public enum LocalSecurityOptionsSmartCardRemovalBehaviorType {
+    public enum LocalSecurityOptionsSmartCardRemovalBehaviorType
+    {
         /// <summary>No Action</summary>
         [EnumMember(Value = "noAction")]
         NoAction,

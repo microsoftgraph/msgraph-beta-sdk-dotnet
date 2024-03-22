@@ -8,7 +8,22 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// A mobileApp that is based on a referenced application in a Win32CatalogApp repository
     /// </summary>
-    public class Win32CatalogApp : Win32LobApp, IParsable {
+    public class Win32CatalogApp : Win32LobApp, IParsable 
+    {
+        /// <summary>The latest available catalog package the app is upgradeable to. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public MobileAppCatalogPackage? LatestUpgradeCatalogPackage {
+            get { return BackingStore?.Get<MobileAppCatalogPackage?>("latestUpgradeCatalogPackage"); }
+            set { BackingStore?.Set("latestUpgradeCatalogPackage", value); }
+        }
+#nullable restore
+#else
+        public MobileAppCatalogPackage LatestUpgradeCatalogPackage {
+            get { return BackingStore?.Get<MobileAppCatalogPackage>("latestUpgradeCatalogPackage"); }
+            set { BackingStore?.Set("latestUpgradeCatalogPackage", value); }
+        }
+#endif
         /// <summary>The mobileAppCatalogPackageId property references the mobileAppCatalogPackage entity which contains information about an application catalog package that can be deployed to Intune-managed devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,10 +38,25 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mobileAppCatalogPackageId", value); }
         }
 #endif
+        /// <summary>The current catalog package the app is synced from. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public MobileAppCatalogPackage? ReferencedCatalogPackage {
+            get { return BackingStore?.Get<MobileAppCatalogPackage?>("referencedCatalogPackage"); }
+            set { BackingStore?.Set("referencedCatalogPackage", value); }
+        }
+#nullable restore
+#else
+        public MobileAppCatalogPackage ReferencedCatalogPackage {
+            get { return BackingStore?.Get<MobileAppCatalogPackage>("referencedCatalogPackage"); }
+            set { BackingStore?.Set("referencedCatalogPackage", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="Win32CatalogApp"/> and sets the default values.
         /// </summary>
-        public Win32CatalogApp() : base() {
+        public Win32CatalogApp() : base()
+        {
             OdataType = "#microsoft.graph.win32CatalogApp";
         }
         /// <summary>
@@ -34,7 +64,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Win32CatalogApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32CatalogApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Win32CatalogApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Win32CatalogApp();
         }
@@ -42,19 +73,26 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
+                {"latestUpgradeCatalogPackage", n => { LatestUpgradeCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
                 {"mobileAppCatalogPackageId", n => { MobileAppCatalogPackageId = n.GetStringValue(); } },
+                {"referencedCatalogPackage", n => { ReferencedCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<MobileAppCatalogPackage>("latestUpgradeCatalogPackage", LatestUpgradeCatalogPackage);
             writer.WriteStringValue("mobileAppCatalogPackageId", MobileAppCatalogPackageId);
+            writer.WriteObjectValue<MobileAppCatalogPackage>("referencedCatalogPackage", ReferencedCatalogPackage);
         }
     }
 }

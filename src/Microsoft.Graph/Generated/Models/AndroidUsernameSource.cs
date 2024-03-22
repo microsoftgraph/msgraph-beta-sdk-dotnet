@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android username source.</summary>
-    public enum AndroidUsernameSource {
+    public enum AndroidUsernameSource
+    {
         /// <summary>The username.</summary>
         [EnumMember(Value = "username")]
         Username,

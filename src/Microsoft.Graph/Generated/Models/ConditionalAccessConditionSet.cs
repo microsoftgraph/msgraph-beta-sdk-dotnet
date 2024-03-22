@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class ConditionalAccessConditionSet : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class ConditionalAccessConditionSet : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -24,6 +25,20 @@ namespace Microsoft.Graph.Beta.Models {
         public ConditionalAccessApplications Applications {
             get { return BackingStore?.Get<ConditionalAccessApplications>("applications"); }
             set { BackingStore?.Set("applications", value); }
+        }
+#endif
+        /// <summary>Authentication flows included in the policy scope. For more information, see Conditional Access: Authentication flows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ConditionalAccessAuthenticationFlows? AuthenticationFlows {
+            get { return BackingStore?.Get<ConditionalAccessAuthenticationFlows?>("authenticationFlows"); }
+            set { BackingStore?.Set("authenticationFlows", value); }
+        }
+#nullable restore
+#else
+        public ConditionalAccessAuthenticationFlows AuthenticationFlows {
+            get { return BackingStore?.Get<ConditionalAccessAuthenticationFlows>("authenticationFlows"); }
+            set { BackingStore?.Set("authenticationFlows", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
@@ -84,6 +99,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceStates", value); }
         }
 #endif
+        /// <summary>The insiderRiskLevels property</summary>
+        public ConditionalAccessInsiderRiskLevels? InsiderRiskLevels {
+            get { return BackingStore?.Get<ConditionalAccessInsiderRiskLevels?>("insiderRiskLevels"); }
+            set { BackingStore?.Set("insiderRiskLevels", value); }
+        }
         /// <summary>Locations included in and excluded from the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -185,7 +205,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="ConditionalAccessConditionSet"/> and sets the default values.
         /// </summary>
-        public ConditionalAccessConditionSet() {
+        public ConditionalAccessConditionSet()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -194,7 +215,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessConditionSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessConditionSet CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ConditionalAccessConditionSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ConditionalAccessConditionSet();
         }
@@ -202,13 +224,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"applications", n => { Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
+                {"authenticationFlows", n => { AuthenticationFlows = n.GetObjectValue<ConditionalAccessAuthenticationFlows>(ConditionalAccessAuthenticationFlows.CreateFromDiscriminatorValue); } },
                 {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>()?.ToList(); } },
                 {"clientApplications", n => { ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
                 {"deviceStates", n => { DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
                 {"devices", n => { Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
+                {"insiderRiskLevels", n => { InsiderRiskLevels = n.GetEnumValue<ConditionalAccessInsiderRiskLevels>(); } },
                 {"locations", n => { Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platforms", n => { Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
@@ -222,13 +248,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<ConditionalAccessApplications>("applications", Applications);
+            writer.WriteObjectValue<ConditionalAccessAuthenticationFlows>("authenticationFlows", AuthenticationFlows);
             writer.WriteObjectValue<ConditionalAccessClientApplications>("clientApplications", ClientApplications);
             writer.WriteCollectionOfEnumValues<ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
             writer.WriteObjectValue<ConditionalAccessDevices>("devices", Devices);
             writer.WriteObjectValue<ConditionalAccessDeviceStates>("deviceStates", DeviceStates);
+            writer.WriteEnumValue<ConditionalAccessInsiderRiskLevels>("insiderRiskLevels", InsiderRiskLevels);
             writer.WriteObjectValue<ConditionalAccessLocations>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<ConditionalAccessPlatforms>("platforms", Platforms);

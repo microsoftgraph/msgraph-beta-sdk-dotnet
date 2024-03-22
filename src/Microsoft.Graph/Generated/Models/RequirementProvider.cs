@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RequirementProvider {
+    public enum RequirementProvider
+    {
         [EnumMember(Value = "user")]
         User,
         [EnumMember(Value = "request")]

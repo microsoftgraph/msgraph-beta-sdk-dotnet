@@ -25,68 +25,83 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
     /// <summary>
     /// Provides operations to manage the events property of the microsoft.graph.user entity.
     /// </summary>
-    public class EventItemRequestBuilder : BaseRequestBuilder {
+    public class EventItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the accept method.</summary>
-        public AcceptRequestBuilder Accept { get =>
-            new AcceptRequestBuilder(PathParameters, RequestAdapter);
+        public AcceptRequestBuilder Accept
+        {
+            get => new AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
-        public AttachmentsRequestBuilder Attachments { get =>
-            new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AttachmentsRequestBuilder Attachments
+        {
+            get => new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
-        public CalendarRequestBuilder Calendar { get =>
-            new CalendarRequestBuilder(PathParameters, RequestAdapter);
+        public CalendarRequestBuilder Calendar
+        {
+            get => new CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        public CancelRequestBuilder Cancel
+        {
+            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decline method.</summary>
-        public DeclineRequestBuilder Decline { get =>
-            new DeclineRequestBuilder(PathParameters, RequestAdapter);
+        public DeclineRequestBuilder Decline
+        {
+            get => new DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismissReminder method.</summary>
-        public DismissReminderRequestBuilder DismissReminder { get =>
-            new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
+        public DismissReminderRequestBuilder DismissReminder
+        {
+            get => new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
-        public ExceptionOccurrencesRequestBuilder ExceptionOccurrences { get =>
-            new ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
+        public ExceptionOccurrencesRequestBuilder ExceptionOccurrences
+        {
+            get => new ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
-        public ExtensionsRequestBuilder Extensions { get =>
-            new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        public ExtensionsRequestBuilder Extensions
+        {
+            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward { get =>
-            new ForwardRequestBuilder(PathParameters, RequestAdapter);
+        public ForwardRequestBuilder Forward
+        {
+            get => new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
-        public InstancesRequestBuilder Instances { get =>
-            new InstancesRequestBuilder(PathParameters, RequestAdapter);
+        public InstancesRequestBuilder Instances
+        {
+            get => new InstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        public SnoozeReminderRequestBuilder SnoozeReminder { get =>
-            new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
+        public SnoozeReminderRequestBuilder SnoozeReminder
+        {
+            get => new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        public TentativelyAcceptRequestBuilder TentativelyAccept { get =>
-            new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
+        public TentativelyAcceptRequestBuilder TentativelyAccept
+        {
+            get => new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/events/{event%2Did}{?%24expand,%24select}", pathParameters) {
+        public EventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/events/{event%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/events/{event%2Did}{?%24expand,%24select}", rawUrl) {
+        public EventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/events/{event%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Removes the specified event from the containing calendar.  If the event is a meeting, deleting the event on the organizer&apos;s calendar sends a cancellation message to the meeting attendees.
@@ -97,13 +112,16 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -118,13 +136,16 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Event?> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Event?> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Event> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Event> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -140,14 +161,17 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Event?> PatchAsync(Event body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Event?> PatchAsync(Event body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Event> PatchAsync(Event body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Event> PatchAsync(Event body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -159,10 +183,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/users/{user%2Did}/events/{event%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -176,10 +202,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -194,10 +222,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Event body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Event body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Event body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Event body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/users/{user%2Did}/events/{event%2Did}", PathParameters);
@@ -211,19 +241,22 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// </summary>
         /// <returns>A <see cref="EventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EventItemRequestBuilder WithUrl(string rawUrl) {
+        public EventItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new EventItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EventItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EventItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
         /// </summary>
-        public class EventItemRequestBuilderGetQueryParameters {
+        public class EventItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,13 +282,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EventItemRequestBuilderGetQueryParameters> {
+        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EventItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EventItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EventItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

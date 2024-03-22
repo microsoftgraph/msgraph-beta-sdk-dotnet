@@ -32,88 +32,108 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
     /// <summary>
     /// Provides operations to manage the directory singleton.
     /// </summary>
-    public class DirectoryRequestBuilder : BaseRequestBuilder {
+    public class DirectoryRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the administrativeUnits property of the microsoft.graph.directory entity.</summary>
-        public AdministrativeUnitsRequestBuilder AdministrativeUnits { get =>
-            new AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
+        public AdministrativeUnitsRequestBuilder AdministrativeUnits
+        {
+            get => new AdministrativeUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.</summary>
-        public AttributeSetsRequestBuilder AttributeSets { get =>
-            new AttributeSetsRequestBuilder(PathParameters, RequestAdapter);
+        public AttributeSetsRequestBuilder AttributeSets
+        {
+            get => new AttributeSetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the certificateAuthorities property of the microsoft.graph.directory entity.</summary>
-        public CertificateAuthoritiesRequestBuilder CertificateAuthorities { get =>
-            new CertificateAuthoritiesRequestBuilder(PathParameters, RequestAdapter);
+        public CertificateAuthoritiesRequestBuilder CertificateAuthorities
+        {
+            get => new CertificateAuthoritiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customSecurityAttributeDefinitions property of the microsoft.graph.directory entity.</summary>
-        public CustomSecurityAttributeDefinitionsRequestBuilder CustomSecurityAttributeDefinitions { get =>
-            new CustomSecurityAttributeDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        public CustomSecurityAttributeDefinitionsRequestBuilder CustomSecurityAttributeDefinitions
+        {
+            get => new CustomSecurityAttributeDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
-        public DeletedItemsRequestBuilder DeletedItems { get =>
-            new DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
+        public DeletedItemsRequestBuilder DeletedItems
+        {
+            get => new DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceLocalCredentials property of the microsoft.graph.directory entity.</summary>
-        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials { get =>
-            new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceLocalCredentialsRequestBuilder DeviceLocalCredentials
+        {
+            get => new DeviceLocalCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalUserProfiles property of the microsoft.graph.directory entity.</summary>
-        public ExternalUserProfilesRequestBuilder ExternalUserProfiles { get =>
-            new ExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public ExternalUserProfilesRequestBuilder ExternalUserProfiles
+        {
+            get => new ExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.directory entity.</summary>
-        public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies { get =>
-            new FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies
+        {
+            get => new FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federationConfigurations property of the microsoft.graph.directory entity.</summary>
-        public FederationConfigurationsRequestBuilder FederationConfigurations { get =>
-            new FederationConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        public FederationConfigurationsRequestBuilder FederationConfigurations
+        {
+            get => new FederationConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.</summary>
-        public ImpactedResourcesRequestBuilder ImpactedResources { get =>
-            new ImpactedResourcesRequestBuilder(PathParameters, RequestAdapter);
+        public ImpactedResourcesRequestBuilder ImpactedResources
+        {
+            get => new ImpactedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
-        public InboundSharedUserProfilesRequestBuilder InboundSharedUserProfiles { get =>
-            new InboundSharedUserProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public InboundSharedUserProfilesRequestBuilder InboundSharedUserProfiles
+        {
+            get => new InboundSharedUserProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.</summary>
-        public OnPremisesSynchronizationRequestBuilder OnPremisesSynchronization { get =>
-            new OnPremisesSynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        public OnPremisesSynchronizationRequestBuilder OnPremisesSynchronization
+        {
+            get => new OnPremisesSynchronizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
-        public OutboundSharedUserProfilesRequestBuilder OutboundSharedUserProfiles { get =>
-            new OutboundSharedUserProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public OutboundSharedUserProfilesRequestBuilder OutboundSharedUserProfiles
+        {
+            get => new OutboundSharedUserProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pendingExternalUserProfiles property of the microsoft.graph.directory entity.</summary>
-        public PendingExternalUserProfilesRequestBuilder PendingExternalUserProfiles { get =>
-            new PendingExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
+        public PendingExternalUserProfilesRequestBuilder PendingExternalUserProfiles
+        {
+            get => new PendingExternalUserProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recommendations property of the microsoft.graph.directory entity.</summary>
-        public RecommendationsRequestBuilder Recommendations { get =>
-            new RecommendationsRequestBuilder(PathParameters, RequestAdapter);
+        public RecommendationsRequestBuilder Recommendations
+        {
+            get => new RecommendationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.</summary>
-        public SharedEmailDomainsRequestBuilder SharedEmailDomains { get =>
-            new SharedEmailDomainsRequestBuilder(PathParameters, RequestAdapter);
+        public SharedEmailDomainsRequestBuilder SharedEmailDomains
+        {
+            get => new SharedEmailDomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
-        public SubscriptionsRequestBuilder Subscriptions { get =>
-            new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        public SubscriptionsRequestBuilder Subscriptions
+        {
+            get => new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory{?%24expand,%24select}", pathParameters) {
+        public DirectoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DirectoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory{?%24expand,%24select}", rawUrl) {
+        public DirectoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get directory
@@ -124,13 +144,16 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObject1?> GetAsync(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject1?> GetAsync(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DirectoryObject1> GetAsync(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject1> GetAsync(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObject1>(requestInfo, DirectoryObject1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -145,14 +168,17 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DirectoryObject1?> PatchAsync(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject1?> PatchAsync(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DirectoryObject1> PatchAsync(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DirectoryObject1> PatchAsync(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DirectoryObject1>(requestInfo, DirectoryObject1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -162,7 +188,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// </summary>
         /// <returns>A <see cref="SubscriptionsWithCommerceSubscriptionIdRequestBuilder"/></returns>
         /// <param name="commerceSubscriptionId">Alternate key of companySubscription</param>
-        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder SubscriptionsWithCommerceSubscriptionId(string commerceSubscriptionId) {
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder SubscriptionsWithCommerceSubscriptionId(string commerceSubscriptionId)
+        {
             if(string.IsNullOrEmpty(commerceSubscriptionId)) throw new ArgumentNullException(nameof(commerceSubscriptionId));
             return new SubscriptionsWithCommerceSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, commerceSubscriptionId);
         }
@@ -171,7 +198,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// </summary>
         /// <returns>A <see cref="SubscriptionsWithOcpSubscriptionIdRequestBuilder"/></returns>
         /// <param name="ocpSubscriptionId">Alternate key of companySubscription</param>
-        public SubscriptionsWithOcpSubscriptionIdRequestBuilder SubscriptionsWithOcpSubscriptionId(string ocpSubscriptionId) {
+        public SubscriptionsWithOcpSubscriptionIdRequestBuilder SubscriptionsWithOcpSubscriptionId(string ocpSubscriptionId)
+        {
             if(string.IsNullOrEmpty(ocpSubscriptionId)) throw new ArgumentNullException(nameof(ocpSubscriptionId));
             return new SubscriptionsWithOcpSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, ocpSubscriptionId);
         }
@@ -182,10 +210,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DirectoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -200,10 +230,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(DirectoryObject1 body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/directory", PathParameters);
@@ -217,13 +249,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// </summary>
         /// <returns>A <see cref="DirectoryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DirectoryRequestBuilder WithUrl(string rawUrl) {
+        public DirectoryRequestBuilder WithUrl(string rawUrl)
+        {
             return new DirectoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get directory
         /// </summary>
-        public class DirectoryRequestBuilderGetQueryParameters {
+        public class DirectoryRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,13 +283,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectoryRequestBuilderGetQueryParameters> {
+        public class DirectoryRequestBuilderGetRequestConfiguration : RequestConfiguration<DirectoryRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DirectoryRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

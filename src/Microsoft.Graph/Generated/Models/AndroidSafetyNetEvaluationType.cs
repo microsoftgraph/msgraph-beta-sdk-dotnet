@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum representing the Android Play Integrity API evaluation types.</summary>
-    public enum AndroidSafetyNetEvaluationType {
+    public enum AndroidSafetyNetEvaluationType
+    {
         /// <summary>Default value. Typical measurements and reference data were used.</summary>
         [EnumMember(Value = "basic")]
         Basic,

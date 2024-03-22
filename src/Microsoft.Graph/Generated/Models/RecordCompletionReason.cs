@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RecordCompletionReason {
+    public enum RecordCompletionReason
+    {
         [EnumMember(Value = "operationCanceled")]
         OperationCanceled,
         [EnumMember(Value = "stopToneDetected")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>A list of possible operations for rules used to make determinations about an application based on files or folders. Unless noted, can be used with either detection or requirement rules.</summary>
-    public enum Win32LobAppFileSystemOperationType {
+    public enum Win32LobAppFileSystemOperationType
+    {
         /// <summary>Default. Indicates that the rule does not have the operation type configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

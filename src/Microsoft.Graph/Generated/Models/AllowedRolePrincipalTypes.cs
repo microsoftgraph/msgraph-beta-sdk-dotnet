@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum AllowedRolePrincipalTypes {
+    public enum AllowedRolePrincipalTypes
+    {
         [EnumMember(Value = "user")]
         User = 1,
         [EnumMember(Value = "servicePrincipal")]

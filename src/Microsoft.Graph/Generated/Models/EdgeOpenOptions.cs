@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for the EdgeOpensWith setting.</summary>
-    public enum EdgeOpenOptions {
+    public enum EdgeOpenOptions
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

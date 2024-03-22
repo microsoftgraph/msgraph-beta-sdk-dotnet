@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerCompliancePolicy resource.
     /// </summary>
-    public class AndroidDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable {
+    public class AndroidDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable 
+    {
         /// <summary>MDATP Require Mobile Threat Protection minimum risk level to report noncompliance. Possible values are: unavailable, secured, low, medium, high, notSet.</summary>
         public DeviceThreatProtectionLevel? AdvancedThreatProtectionRequiredSecurityLevel {
             get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("advancedThreatProtectionRequiredSecurityLevel"); }
@@ -131,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("requireNoPendingSystemUpdates"); }
             set { BackingStore?.Set("requireNoPendingSystemUpdates", value); }
         }
-        /// <summary>Require a specific Play Integrity evaluation type for compliance.</summary>
+        /// <summary>Require a specific Play Integrity evaluation type for compliance. Possible values are: basic, hardwareBacked.</summary>
         public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType {
             get { return BackingStore?.Get<AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }
             set { BackingStore?.Set("securityRequiredAndroidSafetyNetEvaluationType", value); }
@@ -159,7 +160,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AndroidDeviceOwnerCompliancePolicy"/> and sets the default values.
         /// </summary>
-        public AndroidDeviceOwnerCompliancePolicy() : base() {
+        public AndroidDeviceOwnerCompliancePolicy() : base()
+        {
             OdataType = "#microsoft.graph.androidDeviceOwnerCompliancePolicy";
         }
         /// <summary>
@@ -167,7 +169,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AndroidDeviceOwnerCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AndroidDeviceOwnerCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AndroidDeviceOwnerCompliancePolicy();
         }
@@ -175,8 +178,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"advancedThreatProtectionRequiredSecurityLevel", n => { AdvancedThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
                 {"deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
                 {"deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
@@ -207,7 +212,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<DeviceThreatProtectionLevel>("advancedThreatProtectionRequiredSecurityLevel", AdvancedThreatProtectionRequiredSecurityLevel);

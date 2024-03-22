@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Status of ServiceNow Connection</summary>
-    public enum ServiceNowConnectionStatus {
+    public enum ServiceNowConnectionStatus
+    {
         /// <summary>Tenant has disabled the connection</summary>
         [EnumMember(Value = "disabled")]
         Disabled,

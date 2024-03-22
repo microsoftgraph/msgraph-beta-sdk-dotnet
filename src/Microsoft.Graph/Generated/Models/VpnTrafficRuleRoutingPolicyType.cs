@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Specifies the routing policy for a VPN traffic rule.</summary>
-    public enum VpnTrafficRuleRoutingPolicyType {
+    public enum VpnTrafficRuleRoutingPolicyType
+    {
         /// <summary>No routing policy specified.</summary>
         [EnumMember(Value = "none")]
         None,

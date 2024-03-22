@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// The user experience analytics anomaly entity contains anomaly details.
     /// </summary>
-    public class UserExperienceAnalyticsAnomaly : Entity, IParsable {
+    public class UserExperienceAnalyticsAnomaly : Entity, IParsable 
+    {
         /// <summary>Indicates the first occurrence date and time for the anomaly.</summary>
         public DateTimeOffset? AnomalyFirstOccurrenceDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("anomalyFirstOccurrenceDateTime"); }
@@ -142,7 +143,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="UserExperienceAnalyticsAnomaly"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAnomaly CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new UserExperienceAnalyticsAnomaly CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UserExperienceAnalyticsAnomaly();
         }
@@ -150,8 +152,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"anomalyFirstOccurrenceDateTime", n => { AnomalyFirstOccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
                 {"anomalyId", n => { AnomalyId = n.GetStringValue(); } },
                 {"anomalyLatestOccurrenceDateTime", n => { AnomalyLatestOccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
@@ -171,7 +175,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("anomalyFirstOccurrenceDateTime", AnomalyFirstOccurrenceDateTime);

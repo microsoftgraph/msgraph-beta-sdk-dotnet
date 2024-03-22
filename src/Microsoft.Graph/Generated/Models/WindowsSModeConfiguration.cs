@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The possible options to configure S mode unlock</summary>
-    public enum WindowsSModeConfiguration {
+    public enum WindowsSModeConfiguration
+    {
         /// <summary>This option will remove all restrictions to unlock S mode - default</summary>
         [EnumMember(Value = "noRestriction")]
         NoRestriction,

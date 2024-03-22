@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum PlannerRelationshipUserRoles {
+    public enum PlannerRelationshipUserRoles
+    {
         [EnumMember(Value = "defaultRules")]
         DefaultRules,
         [EnumMember(Value = "groupOwners")]

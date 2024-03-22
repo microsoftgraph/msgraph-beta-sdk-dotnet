@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum TitleAreaLayoutType {
+    public enum TitleAreaLayoutType
+    {
         [EnumMember(Value = "imageAndTitle")]
         ImageAndTitle,
         [EnumMember(Value = "plain")]

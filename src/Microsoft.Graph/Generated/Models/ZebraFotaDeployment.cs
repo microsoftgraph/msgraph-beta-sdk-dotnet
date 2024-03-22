@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// The Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
     /// </summary>
-    public class ZebraFotaDeployment : Entity, IParsable {
+    public class ZebraFotaDeployment : Entity, IParsable 
+    {
         /// <summary>Collection of Android FOTA Assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +99,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="ZebraFotaDeployment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ZebraFotaDeployment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new ZebraFotaDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ZebraFotaDeployment();
         }
@@ -106,8 +108,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"deploymentAssignments", n => { DeploymentAssignments = n.GetCollectionOfObjectValues<AndroidFotaDeploymentAssignment>(AndroidFotaDeploymentAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<ZebraFotaDeploymentSettings>(ZebraFotaDeploymentSettings.CreateFromDiscriminatorValue); } },
                 {"deploymentStatus", n => { DeploymentStatus = n.GetObjectValue<ZebraFotaDeploymentStatus>(ZebraFotaDeploymentStatus.CreateFromDiscriminatorValue); } },
@@ -120,7 +124,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AndroidFotaDeploymentAssignment>("deploymentAssignments", DeploymentAssignments);

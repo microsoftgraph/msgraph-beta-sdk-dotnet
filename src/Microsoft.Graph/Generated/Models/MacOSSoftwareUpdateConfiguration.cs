@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// MacOS Software Update Configuration
     /// </summary>
-    public class MacOSSoftwareUpdateConfiguration : DeviceConfiguration, IParsable {
+    public class MacOSSoftwareUpdateConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior {
             get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("allOtherUpdateBehavior"); }
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MacOSSoftwareUpdateConfiguration"/> and sets the default values.
         /// </summary>
-        public MacOSSoftwareUpdateConfiguration() : base() {
+        public MacOSSoftwareUpdateConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.macOSSoftwareUpdateConfiguration";
         }
         /// <summary>
@@ -74,7 +76,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MacOSSoftwareUpdateConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSSoftwareUpdateConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MacOSSoftwareUpdateConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSSoftwareUpdateConfiguration();
         }
@@ -82,8 +85,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allOtherUpdateBehavior", n => { AllOtherUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
                 {"configDataUpdateBehavior", n => { ConfigDataUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
                 {"criticalUpdateBehavior", n => { CriticalUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
@@ -99,7 +104,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<MacOSSoftwareUpdateBehavior>("allOtherUpdateBehavior", AllOtherUpdateBehavior);

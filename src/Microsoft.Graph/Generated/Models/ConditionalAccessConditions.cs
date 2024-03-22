@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum ConditionalAccessConditions {
+    public enum ConditionalAccessConditions
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "application")]

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
     /// <summary>
     /// Provides operations to manage the roleSetting property of the microsoft.graph.governanceRoleDefinition entity.
     /// </summary>
-    public class RoleSettingRequestBuilder : BaseRequestBuilder {
+    public class RoleSettingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RoleSettingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleSettingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24expand,%24select}", pathParameters) {
+        public RoleSettingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleSettingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleSettingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24expand,%24select}", rawUrl) {
+        public RoleSettingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/governanceResources/{governanceResource%2Did}/roleDefinitions/{governanceRoleDefinition%2Did}/roleSetting{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The associated role setting for the role definition.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GovernanceRoleSetting?> GetAsync(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleSetting?> GetAsync(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GovernanceRoleSetting> GetAsync(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GovernanceRoleSetting> GetAsync(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
         /// </summary>
         /// <returns>A <see cref="RoleSettingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleSettingRequestBuilder WithUrl(string rawUrl) {
+        public RoleSettingRequestBuilder WithUrl(string rawUrl)
+        {
             return new RoleSettingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The associated role setting for the role definition.
         /// </summary>
-        public class RoleSettingRequestBuilderGetQueryParameters {
+        public class RoleSettingRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleDefinitions.Item.Rol
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleSettingRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters> {
+        public class RoleSettingRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleSettingRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

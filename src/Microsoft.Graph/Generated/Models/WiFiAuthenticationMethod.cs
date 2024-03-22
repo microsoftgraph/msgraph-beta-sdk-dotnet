@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wi-Fi authentication method.</summary>
-    public enum WiFiAuthenticationMethod {
+    public enum WiFiAuthenticationMethod
+    {
         /// <summary>Use an identity certificate for authentication.</summary>
         [EnumMember(Value = "certificate")]
         Certificate,

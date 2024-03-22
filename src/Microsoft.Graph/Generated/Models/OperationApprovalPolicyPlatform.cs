@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.</summary>
     [Flags]
-    public enum OperationApprovalPolicyPlatform {
+    public enum OperationApprovalPolicyPlatform
+    {
         /// <summary>Default. Indicates that a policy platform is not required for a chosen policy type.</summary>
         [EnumMember(Value = "notApplicable")]
         NotApplicable = 1,

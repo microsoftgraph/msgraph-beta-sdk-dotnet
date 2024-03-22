@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wi-Fi Authentication Type Settings.</summary>
-    public enum WifiAuthenticationType {
+    public enum WifiAuthenticationType
+    {
         /// <summary>None</summary>
         [EnumMember(Value = "none")]
         None,

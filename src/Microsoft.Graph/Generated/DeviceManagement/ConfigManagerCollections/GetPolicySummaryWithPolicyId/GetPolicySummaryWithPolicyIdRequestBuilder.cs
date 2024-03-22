@@ -13,14 +13,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
     /// <summary>
     /// Provides operations to call the getPolicySummary method.
     /// </summary>
-    public class GetPolicySummaryWithPolicyIdRequestBuilder : BaseRequestBuilder {
+    public class GetPolicySummaryWithPolicyIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetPolicySummaryWithPolicyIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string policyId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')", pathParameters) {
+        public GetPolicySummaryWithPolicyIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string policyId = "") : base(requestAdapter, "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(policyId)) PathParameters.Add("policyId", policyId);
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')", rawUrl) {
+        public GetPolicySummaryWithPolicyIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/configManagerCollections/getPolicySummary(policyId='{policyId}')", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getPolicySummary
@@ -39,13 +42,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ConfigManagerPolicySummary?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConfigManagerPolicySummary?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ConfigManagerPolicySummary> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ConfigManagerPolicySummary> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ConfigManagerPolicySummary>(requestInfo, ConfigManagerPolicySummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -72,14 +80,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
         /// </summary>
         /// <returns>A <see cref="GetPolicySummaryWithPolicyIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetPolicySummaryWithPolicyIdRequestBuilder WithUrl(string rawUrl) {
+        public GetPolicySummaryWithPolicyIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetPolicySummaryWithPolicyIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetPolicySummaryWithPolicyIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetPolicySummaryWithPolicyIdRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

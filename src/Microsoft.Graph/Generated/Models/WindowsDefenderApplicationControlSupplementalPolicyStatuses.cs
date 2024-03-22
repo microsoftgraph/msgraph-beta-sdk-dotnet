@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.</summary>
-    public enum WindowsDefenderApplicationControlSupplementalPolicyStatuses {
+    public enum WindowsDefenderApplicationControlSupplementalPolicyStatuses
+    {
         /// <summary>The status of the WindowsDefenderApplicationControl supplemental policy is not known.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

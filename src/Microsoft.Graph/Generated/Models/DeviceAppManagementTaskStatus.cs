@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device app management task status.</summary>
-    public enum DeviceAppManagementTaskStatus {
+    public enum DeviceAppManagementTaskStatus
+    {
         /// <summary>State is undefined.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

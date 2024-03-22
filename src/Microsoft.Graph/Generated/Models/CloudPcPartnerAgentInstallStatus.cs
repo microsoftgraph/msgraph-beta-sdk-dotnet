@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcPartnerAgentInstallStatus {
+    public enum CloudPcPartnerAgentInstallStatus
+    {
         [EnumMember(Value = "installed")]
         Installed,
         [EnumMember(Value = "installFailed")]

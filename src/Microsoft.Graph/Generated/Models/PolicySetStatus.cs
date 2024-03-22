@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The enum to specify the status of PolicySet.</summary>
-    public enum PolicySetStatus {
+    public enum PolicySetStatus
+    {
         /// <summary>Default Value.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

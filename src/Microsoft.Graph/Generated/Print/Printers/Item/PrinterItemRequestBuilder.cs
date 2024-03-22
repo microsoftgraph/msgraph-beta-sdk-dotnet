@@ -21,52 +21,63 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
     /// <summary>
     /// Provides operations to manage the printers property of the microsoft.graph.print entity.
     /// </summary>
-    public class PrinterItemRequestBuilder : BaseRequestBuilder {
+    public class PrinterItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the connectors property of the microsoft.graph.printer entity.</summary>
-        public ConnectorsRequestBuilder Connectors { get =>
-            new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
+        public ConnectorsRequestBuilder Connectors
+        {
+            get => new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getCapabilities method.</summary>
-        public GetCapabilitiesRequestBuilder GetCapabilities { get =>
-            new GetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        public GetCapabilitiesRequestBuilder GetCapabilities
+        {
+            get => new GetCapabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the jobs property of the microsoft.graph.printerBase entity.</summary>
-        public JobsRequestBuilder Jobs { get =>
-            new JobsRequestBuilder(PathParameters, RequestAdapter);
+        public JobsRequestBuilder Jobs
+        {
+            get => new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetDefaults method.</summary>
-        public ResetDefaultsRequestBuilder ResetDefaults { get =>
-            new ResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
+        public ResetDefaultsRequestBuilder ResetDefaults
+        {
+            get => new ResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restoreFactoryDefaults method.</summary>
-        public RestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults { get =>
-            new RestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
+        public RestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults
+        {
+            get => new RestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the share property of the microsoft.graph.printer entity.</summary>
-        public ShareRequestBuilder Share { get =>
-            new ShareRequestBuilder(PathParameters, RequestAdapter);
+        public ShareRequestBuilder Share
+        {
+            get => new ShareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shares property of the microsoft.graph.printer entity.</summary>
-        public SharesRequestBuilder Shares { get =>
-            new SharesRequestBuilder(PathParameters, RequestAdapter);
+        public SharesRequestBuilder Shares
+        {
+            get => new SharesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.</summary>
-        public TaskTriggersRequestBuilder TaskTriggers { get =>
-            new TaskTriggersRequestBuilder(PathParameters, RequestAdapter);
+        public TaskTriggersRequestBuilder TaskTriggers
+        {
+            get => new TaskTriggersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="PrinterItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrinterItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}{?%24expand,%24select}", pathParameters) {
+        public PrinterItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PrinterItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PrinterItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}{?%24expand,%24select}", rawUrl) {
+        public PrinterItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/print/printers/{printer%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete (unregister) a printer.
@@ -77,13 +88,16 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -98,13 +112,16 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Printer?> GetAsync(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Printer?> GetAsync(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Printer> GetAsync(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Printer> GetAsync(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -120,14 +137,17 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Printer?> PatchAsync(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Printer?> PatchAsync(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Printer> PatchAsync(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Printer> PatchAsync(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -139,10 +159,12 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/print/printers/{printer%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -156,10 +178,12 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -174,10 +198,12 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Printer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/print/printers/{printer%2Did}", PathParameters);
@@ -191,19 +217,22 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// </summary>
         /// <returns>A <see cref="PrinterItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PrinterItemRequestBuilder WithUrl(string rawUrl) {
+        public PrinterItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new PrinterItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrinterItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class PrinterItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a printer object.
         /// </summary>
-        public class PrinterItemRequestBuilderGetQueryParameters {
+        public class PrinterItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -229,13 +258,15 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrinterItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters> {
+        public class PrinterItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrinterItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrinterItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class PrinterItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

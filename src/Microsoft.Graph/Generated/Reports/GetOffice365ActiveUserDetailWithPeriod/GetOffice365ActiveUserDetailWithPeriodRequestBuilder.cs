@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
     /// <summary>
     /// Provides operations to call the getOffice365ActiveUserDetail method.
     /// </summary>
-    public class GetOffice365ActiveUserDetailWithPeriodRequestBuilder : BaseRequestBuilder {
+    public class GetOffice365ActiveUserDetailWithPeriodRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetOffice365ActiveUserDetailWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getOffice365ActiveUserDetail(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getOffice365ActiveUserDetail
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365ActiveUserDetailWithPeriodGetResponse?> GetAsGetOffice365ActiveUserDetailWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365ActiveUserDetailWithPeriodGetResponse?> GetAsGetOffice365ActiveUserDetailWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOffice365ActiveUserDetailWithPeriodGetResponse> GetAsGetOffice365ActiveUserDetailWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365ActiveUserDetailWithPeriodGetResponse> GetAsGetOffice365ActiveUserDetailWithPeriodGetResponseAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOffice365ActiveUserDetailWithPeriodGetResponse>(requestInfo, GetOffice365ActiveUserDetailWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         [Obsolete("This method is obsolete. Use GetAsGetOffice365ActiveUserDetailWithPeriodGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOffice365ActiveUserDetailWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365ActiveUserDetailWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOffice365ActiveUserDetailWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOffice365ActiveUserDetailWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOffice365ActiveUserDetailWithPeriodResponse>(requestInfo, GetOffice365ActiveUserDetailWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         /// </summary>
         /// <returns>A <see cref="GetOffice365ActiveUserDetailWithPeriodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder WithUrl(string rawUrl) {
+        public GetOffice365ActiveUserDetailWithPeriodRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetOffice365ActiveUserDetailWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getOffice365ActiveUserDetail
         /// </summary>
-        public class GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters {
+        public class GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters> {
+        public class GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOffice365ActiveUserDetailWithPeriodRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

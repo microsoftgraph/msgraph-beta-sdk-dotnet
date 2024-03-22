@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    public enum RuleSeverityType {
+    public enum RuleSeverityType
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "informational")]

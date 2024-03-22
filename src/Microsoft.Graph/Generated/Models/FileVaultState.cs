@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>FileVault State</summary>
     [Flags]
-    public enum FileVaultState {
+    public enum FileVaultState
+    {
         /// <summary>FileVault State Success</summary>
         [EnumMember(Value = "success")]
         Success = 1,

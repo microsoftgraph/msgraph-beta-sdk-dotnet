@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
-    public class ConfirmSafePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class ConfirmSafePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         /// <summary>
         /// Instantiates a new <see cref="ConfirmSafePostRequestBody"/> and sets the default values.
         /// </summary>
-        public ConfirmSafePostRequestBody() {
+        public ConfirmSafePostRequestBody()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -40,7 +42,8 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         /// </summary>
         /// <returns>A <see cref="ConfirmSafePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConfirmSafePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ConfirmSafePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ConfirmSafePostRequestBody();
         }
@@ -48,8 +51,10 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"requestIds", n => { RequestIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -57,7 +62,8 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("requestIds", RequestIds);
             writer.WriteAdditionalData(AdditionalData);

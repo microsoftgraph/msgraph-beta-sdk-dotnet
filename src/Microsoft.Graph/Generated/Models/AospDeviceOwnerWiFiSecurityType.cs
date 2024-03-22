@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wi-Fi Security Types for AOSP Device Owner.</summary>
-    public enum AospDeviceOwnerWiFiSecurityType {
+    public enum AospDeviceOwnerWiFiSecurityType
+    {
         /// <summary>Open (No Authentication).</summary>
         [EnumMember(Value = "open")]
         Open,

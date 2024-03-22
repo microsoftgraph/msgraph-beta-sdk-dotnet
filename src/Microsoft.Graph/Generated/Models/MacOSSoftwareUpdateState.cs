@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>MacOS Software Update State</summary>
-    public enum MacOSSoftwareUpdateState {
+    public enum MacOSSoftwareUpdateState
+    {
         /// <summary>The software update successfully installed</summary>
         [EnumMember(Value = "success")]
         Success,

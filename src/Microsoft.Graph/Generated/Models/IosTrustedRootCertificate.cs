@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// iOS Trusted Root Certificate configuration profile.
     /// </summary>
-    public class IosTrustedRootCertificate : DeviceConfiguration, IParsable {
+    public class IosTrustedRootCertificate : DeviceConfiguration, IParsable 
+    {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +41,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="IosTrustedRootCertificate"/> and sets the default values.
         /// </summary>
-        public IosTrustedRootCertificate() : base() {
+        public IosTrustedRootCertificate() : base()
+        {
             OdataType = "#microsoft.graph.iosTrustedRootCertificate";
         }
         /// <summary>
@@ -48,7 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="IosTrustedRootCertificate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosTrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IosTrustedRootCertificate CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IosTrustedRootCertificate();
         }
@@ -56,8 +59,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"certFileName", n => { CertFileName = n.GetStringValue(); } },
                 {"trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
             };
@@ -66,7 +71,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("certFileName", CertFileName);

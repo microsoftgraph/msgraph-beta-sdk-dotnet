@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>ManagedInstallerStatus</summary>
-    public enum ManagedInstallerStatus {
+    public enum ManagedInstallerStatus
+    {
         /// <summary>Managed Installer is Disabled</summary>
         [EnumMember(Value = "disabled")]
         Disabled,

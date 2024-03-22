@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Locations which can be used to bring data into organization documents</summary>
-    public enum ManagedAppDataIngestionLocation {
+    public enum ManagedAppDataIngestionLocation
+    {
         /// <summary>OneDrive for business</summary>
         [EnumMember(Value = "oneDriveForBusiness")]
         OneDriveForBusiness,

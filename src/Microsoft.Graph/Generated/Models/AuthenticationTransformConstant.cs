@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Authentication transform values for Windows10 VPN policies with IKEv2 connection type.</summary>
-    public enum AuthenticationTransformConstant {
+    public enum AuthenticationTransformConstant
+    {
         /// <summary>MD596</summary>
         [EnumMember(Value = "md5_96")]
         Md5_96,

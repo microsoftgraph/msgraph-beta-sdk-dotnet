@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// An abstract base class containing properties for all mobile line of business apps.
     /// </summary>
-    public class MobileLobApp : MobileApp, IParsable {
+    public class MobileLobApp : MobileApp, IParsable 
+    {
         /// <summary>The internal committed content version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("committedContentVersion", value); }
         }
 #endif
-        /// <summary>The list of content versions for this app.</summary>
+        /// <summary>The list of content versions for this app. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MobileAppContent>? ContentVersions {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
-        /// <summary>The total size, including all uploaded files.</summary>
+        /// <summary>The total size, including all uploaded files. This property is read-only.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MobileLobApp"/> and sets the default values.
         /// </summary>
-        public MobileLobApp() : base() {
+        public MobileLobApp() : base()
+        {
             OdataType = "#microsoft.graph.mobileLobApp";
         }
         /// <summary>
@@ -67,10 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MobileLobApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileLobApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileLobApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
                 "#microsoft.graph.iosLobApp" => new IosLobApp(),
                 "#microsoft.graph.macOSDmgApp" => new MacOSDmgApp(),
@@ -91,8 +95,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"committedContentVersion", n => { CommittedContentVersion = n.GetStringValue(); } },
                 {"contentVersions", n => { ContentVersions = n.GetCollectionOfObjectValues<MobileAppContent>(MobileAppContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"fileName", n => { FileName = n.GetStringValue(); } },
@@ -103,13 +109,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("committedContentVersion", CommittedContentVersion);
             writer.WriteCollectionOfObjectValues<MobileAppContent>("contentVersions", ContentVersions);
             writer.WriteStringValue("fileName", FileName);
-            writer.WriteLongValue("size", Size);
         }
     }
 }

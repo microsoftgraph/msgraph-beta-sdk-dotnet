@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The endpoint security policy profile type.</summary>
-    public enum EndpointSecurityConfigurationProfileType {
+    public enum EndpointSecurityConfigurationProfileType
+    {
         /// <summary>Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

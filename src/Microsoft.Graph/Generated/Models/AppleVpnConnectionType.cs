@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Apple VPN connection type.</summary>
-    public enum AppleVpnConnectionType {
+    public enum AppleVpnConnectionType
+    {
         /// <summary>Cisco AnyConnect.</summary>
         [EnumMember(Value = "ciscoAnyConnect")]
         CiscoAnyConnect,

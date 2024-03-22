@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Category Ingestion source</summary>
-    public enum IngestionSource {
+    public enum IngestionSource
+    {
         /// <summary>Indicates unknown category</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

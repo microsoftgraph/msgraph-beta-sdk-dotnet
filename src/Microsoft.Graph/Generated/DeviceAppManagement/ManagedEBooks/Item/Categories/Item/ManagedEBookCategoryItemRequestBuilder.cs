@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
     /// <summary>
     /// Provides operations to manage the categories property of the microsoft.graph.managedEBook entity.
     /// </summary>
-    public class ManagedEBookCategoryItemRequestBuilder : BaseRequestBuilder {
+    public class ManagedEBookCategoryItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ManagedEBookCategoryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedEBookCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24expand,%24select}", pathParameters) {
+        public ManagedEBookCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ManagedEBookCategoryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ManagedEBookCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24expand,%24select}", rawUrl) {
+        public ManagedEBookCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/managedEBooks/{managedEBook%2Did}/categories/{managedEBookCategory%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The list of categories for this eBook.
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedEBookCategory?> GetAsync(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBookCategory?> GetAsync(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ManagedEBookCategory> GetAsync(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ManagedEBookCategory> GetAsync(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ManagedEBookCategory>(requestInfo, ManagedEBookCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
         /// </summary>
         /// <returns>A <see cref="ManagedEBookCategoryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ManagedEBookCategoryItemRequestBuilder WithUrl(string rawUrl) {
+        public ManagedEBookCategoryItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ManagedEBookCategoryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of categories for this eBook.
         /// </summary>
-        public class ManagedEBookCategoryItemRequestBuilderGetQueryParameters {
+        public class ManagedEBookCategoryItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters> {
+        public class ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ManagedEBookCategoryItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

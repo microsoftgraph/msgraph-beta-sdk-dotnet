@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum WindowsAutopilotDeviceType {
+    public enum WindowsAutopilotDeviceType
+    {
         /// <summary>Windows PC</summary>
         [EnumMember(Value = "windowsPc")]
         WindowsPc,

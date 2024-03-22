@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
-    public class IndustryDataRoot : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class IndustryDataRoot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>Set of connectors for importing data from source systems.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,7 +124,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// </summary>
         /// <returns>A <see cref="IndustryDataRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IndustryDataRoot CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new IndustryDataRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IndustryDataRoot();
         }
@@ -131,8 +133,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"dataConnectors", n => { DataConnectors = n.GetCollectionOfObjectValues<IndustryDataConnector>(IndustryDataConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"inboundFlows", n => { InboundFlows = n.GetCollectionOfObjectValues<InboundFlow>(InboundFlow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LongRunningOperation>(Microsoft.Graph.Beta.Models.LongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -147,7 +151,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<IndustryDataConnector>("dataConnectors", DataConnectors);

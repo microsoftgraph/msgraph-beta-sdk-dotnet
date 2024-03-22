@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by Windows Hello for Business.
     /// </summary>
-    public class WindowsIdentityProtectionConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsIdentityProtectionConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Boolean value used to enable enhanced anti-spoofing for facial feature recognition on Windows Hello face authentication.</summary>
         public bool? EnhancedAntiSpoofingForFacialFeaturesEnabled {
             get { return BackingStore?.Get<bool?>("enhancedAntiSpoofingForFacialFeaturesEnabled"); }
@@ -82,7 +83,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsIdentityProtectionConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsIdentityProtectionConfiguration() : base() {
+        public WindowsIdentityProtectionConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsIdentityProtectionConfiguration";
         }
         /// <summary>
@@ -90,7 +92,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsIdentityProtectionConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsIdentityProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsIdentityProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WindowsIdentityProtectionConfiguration();
         }
@@ -98,8 +101,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"enhancedAntiSpoofingForFacialFeaturesEnabled", n => { EnhancedAntiSpoofingForFacialFeaturesEnabled = n.GetBoolValue(); } },
                 {"pinExpirationInDays", n => { PinExpirationInDays = n.GetIntValue(); } },
                 {"pinLowercaseCharactersUsage", n => { PinLowercaseCharactersUsage = n.GetEnumValue<ConfigurationUsage>(); } },
@@ -120,7 +125,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("enhancedAntiSpoofingForFacialFeaturesEnabled", EnhancedAntiSpoofingForFacialFeaturesEnabled);

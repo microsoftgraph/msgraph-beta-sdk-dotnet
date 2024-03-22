@@ -8,8 +8,9 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties for a single installer file that is associated with a given mobileAppContent version.
     /// </summary>
-    public class MobileAppContentFile : Entity, IParsable {
-        /// <summary>Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only.</summary>
+    public class MobileAppContentFile : Entity, IParsable 
+    {
+        /// <summary>Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureStorageUri {
@@ -23,17 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("azureStorageUri", value); }
         }
 #endif
-        /// <summary>Indicates the date and time when the Azure storage URI expires, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Read-only.</summary>
+        /// <summary>Indicates the date and time when the Azure storage URI expires, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Read-only. This property is read-only.</summary>
         public DateTimeOffset? AzureStorageUriExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("azureStorageUriExpirationDateTime"); }
             set { BackingStore?.Set("azureStorageUriExpirationDateTime", value); }
         }
-        /// <summary>Indicates created date and time associated with app content file, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Read-only.</summary>
+        /// <summary>Indicates created date and time associated with app content file, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Read-only. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>A value indicating whether the file is committed. A committed app content file has been fully uploaded and validated by the Intune service. TRUE means that app content file is committed, FALSE means that app content file is not committed. Defaults to FALSE. Read-only.</summary>
+        /// <summary>A value indicating whether the file is committed. A committed app content file has been fully uploaded and validated by the Intune service. TRUE means that app content file is committed, FALSE means that app content file is not committed. Defaults to FALSE. Read-only. This property is read-only.</summary>
         public bool? IsCommitted {
             get { return BackingStore?.Get<bool?>("isCommitted"); }
             set { BackingStore?.Set("isCommitted", value); }
@@ -86,12 +87,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }
             set { BackingStore?.Set("sizeEncrypted", value); }
         }
-        /// <summary>Indicates the size of the file after encryption, in bytes.</summary>
+        /// <summary>Indicates the size of the file after encryption, in bytes. Valid values 0 to 9.22337203685478E+18</summary>
         public long? SizeEncryptedInBytes {
             get { return BackingStore?.Get<long?>("sizeEncryptedInBytes"); }
             set { BackingStore?.Set("sizeEncryptedInBytes", value); }
         }
-        /// <summary>Indicates the original size of the file, in bytes.</summary>
+        /// <summary>Indicates the original size of the file, in bytes. Valid values 0 to 9.22337203685478E+18</summary>
         public long? SizeInBytes {
             get { return BackingStore?.Get<long?>("sizeInBytes"); }
             set { BackingStore?.Set("sizeInBytes", value); }
@@ -106,7 +107,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MobileAppContentFile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileAppContentFile CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MobileAppContentFile();
         }
@@ -114,8 +116,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"azureStorageUri", n => { AzureStorageUri = n.GetStringValue(); } },
                 {"azureStorageUriExpirationDateTime", n => { AzureStorageUriExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -135,13 +139,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("azureStorageUri", AzureStorageUri);
-            writer.WriteDateTimeOffsetValue("azureStorageUriExpirationDateTime", AzureStorageUriExpirationDateTime);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteBoolValue("isCommitted", IsCommitted);
             writer.WriteBoolValue("isDependency", IsDependency);
             writer.WriteBoolValue("isFrameworkFile", IsFrameworkFile);
             writer.WriteByteArrayValue("manifest", Manifest);

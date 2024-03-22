@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device enrollment join type.</summary>
-    public enum JoinType {
+    public enum JoinType
+    {
         /// <summary>Unknown enrollment join type.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

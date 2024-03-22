@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Specifies the type of scope for a Role Assignment.</summary>
-    public enum RoleAssignmentScopeType {
+    public enum RoleAssignmentScopeType
+    {
         /// <summary>Allow assignments to the specified ResourceScopes.</summary>
         [EnumMember(Value = "resourceScope")]
         ResourceScope,

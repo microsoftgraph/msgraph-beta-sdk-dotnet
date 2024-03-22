@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The maxium threat level allowed for an app to be compliant.</summary>
-    public enum ManagedAppDeviceThreatLevel {
+    public enum ManagedAppDeviceThreatLevel
+    {
         /// <summary>Value not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

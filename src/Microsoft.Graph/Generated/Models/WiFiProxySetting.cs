@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wi-Fi Proxy Settings.</summary>
-    public enum WiFiProxySetting {
+    public enum WiFiProxySetting
+    {
         /// <summary>No Proxy.</summary>
         [EnumMember(Value = "none")]
         None,

@@ -8,13 +8,14 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties and inherited properties for the MacOSPkgApp.
     /// </summary>
-    public class MacOSPkgApp : MobileLobApp, IParsable {
+    public class MacOSPkgApp : MobileLobApp, IParsable 
+    {
         /// <summary>When TRUE, indicates that the app&apos;s version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app&apos;s version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.</summary>
         public bool? IgnoreVersionDetection {
             get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
-        /// <summary>The list of apps expected to be installed by the PKG.</summary>
+        /// <summary>The list of apps expected to be installed by the PKG. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MacOSIncludedApp>? IncludedApps {
@@ -101,7 +102,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MacOSPkgApp"/> and sets the default values.
         /// </summary>
-        public MacOSPkgApp() : base() {
+        public MacOSPkgApp() : base()
+        {
             OdataType = "#microsoft.graph.macOSPkgApp";
         }
         /// <summary>
@@ -109,7 +111,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MacOSPkgApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSPkgApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MacOSPkgApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSPkgApp();
         }
@@ -117,8 +120,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
                 {"includedApps", n => { IncludedApps = n.GetCollectionOfObjectValues<MacOSIncludedApp>(MacOSIncludedApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<MacOSMinimumOperatingSystem>(MacOSMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
@@ -132,7 +137,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("ignoreVersionDetection", IgnoreVersionDetection);

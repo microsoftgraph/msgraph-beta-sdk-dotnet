@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Certificate Revocation Status.</summary>
-    public enum CertificateRevocationStatus {
+    public enum CertificateRevocationStatus
+    {
         /// <summary>Not revoked.</summary>
         [EnumMember(Value = "none")]
         None,

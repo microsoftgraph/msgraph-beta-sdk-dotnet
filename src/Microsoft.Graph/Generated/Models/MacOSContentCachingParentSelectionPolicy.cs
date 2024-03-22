@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Determines how content caches select a parent cache.</summary>
-    public enum MacOSContentCachingParentSelectionPolicy {
+    public enum MacOSContentCachingParentSelectionPolicy
+    {
         /// <summary>Defaults to round-robin strategy.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

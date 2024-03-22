@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RiskDetail {
+    public enum RiskDetail
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "adminGeneratedTemporaryPassword")]
@@ -33,5 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
         AdminDismissedAllRiskForServicePrincipal,
         [EnumMember(Value = "m365DAdminDismissedDetection")]
         M365DAdminDismissedDetection,
+        [EnumMember(Value = "userChangedPasswordOnPremises")]
+        UserChangedPasswordOnPremises,
+        [EnumMember(Value = "adminDismissedRiskForSignIn")]
+        AdminDismissedRiskForSignIn,
+        [EnumMember(Value = "adminConfirmedAccountSafe")]
+        AdminConfirmedAccountSafe,
     }
 }

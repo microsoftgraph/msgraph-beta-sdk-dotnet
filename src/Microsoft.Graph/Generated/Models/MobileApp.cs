@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// An abstract class containing the base properties for Intune mobile apps. Note: Listing mobile apps with `$expand=assignments` has been deprecated. Instead get the list of apps without the `$expand` query on `assignments`. Then, perform the expansion on individual applications.
     /// </summary>
-    public class MobileApp : Entity, IParsable {
+    public class MobileApp : Entity, IParsable 
+    {
         /// <summary>The list of group assignments for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The date and time the app was created.</summary>
+        /// <summary>The date and time the app was created. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The total number of dependencies the child app has.</summary>
+        /// <summary>The total number of dependencies the child app has. This property is read-only.</summary>
         public int? DependentAppCount {
             get { return BackingStore?.Get<int?>("dependentAppCount"); }
             set { BackingStore?.Set("dependentAppCount", value); }
@@ -103,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("informationUrl", value); }
         }
 #endif
-        /// <summary>The value indicating whether the app is assigned to at least one group.</summary>
+        /// <summary>The value indicating whether the app is assigned to at least one group. This property is read-only.</summary>
         public bool? IsAssigned {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
             set { BackingStore?.Set("isAssigned", value); }
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("largeIcon", value); }
         }
 #endif
-        /// <summary>The date and time the app was last modified.</summary>
+        /// <summary>The date and time the app was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
@@ -193,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
-        /// <summary>List of relationships for this mobile app.</summary>
+        /// <summary>The set of direct relationships for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MobileAppRelationship>? Relationships {
@@ -221,17 +222,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>The total number of apps this app is directly or indirectly superseded by.</summary>
+        /// <summary>The total number of apps this app is directly or indirectly superseded by. This property is read-only.</summary>
         public int? SupersededAppCount {
             get { return BackingStore?.Get<int?>("supersededAppCount"); }
             set { BackingStore?.Set("supersededAppCount", value); }
         }
-        /// <summary>The total number of apps this app directly or indirectly supersedes.</summary>
+        /// <summary>The total number of apps this app directly or indirectly supersedes. This property is read-only.</summary>
         public int? SupersedingAppCount {
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }
             set { BackingStore?.Set("supersedingAppCount", value); }
         }
-        /// <summary>The upload state.</summary>
+        /// <summary>The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.</summary>
         public int? UploadState {
             get { return BackingStore?.Get<int?>("uploadState"); }
             set { BackingStore?.Set("uploadState", value); }
@@ -241,10 +242,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MobileApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.androidForWorkApp" => new AndroidForWorkApp(),
                 "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
                 "#microsoft.graph.androidManagedStoreApp" => new AndroidManagedStoreApp(),
@@ -292,8 +295,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"categories", n => { Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -322,21 +327,18 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<MobileAppAssignment>("assignments", Assignments);
             writer.WriteCollectionOfObjectValues<MobileAppCategory>("categories", Categories);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteIntValue("dependentAppCount", DependentAppCount);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("developer", Developer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("informationUrl", InformationUrl);
-            writer.WriteBoolValue("isAssigned", IsAssigned);
             writer.WriteBoolValue("isFeatured", IsFeatured);
             writer.WriteObjectValue<MimeContent>("largeIcon", LargeIcon);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("privacyInformationUrl", PrivacyInformationUrl);
@@ -344,9 +346,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<MobileAppPublishingState>("publishingState", PublishingState);
             writer.WriteCollectionOfObjectValues<MobileAppRelationship>("relationships", Relationships);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteIntValue("supersededAppCount", SupersededAppCount);
-            writer.WriteIntValue("supersedingAppCount", SupersedingAppCount);
-            writer.WriteIntValue("uploadState", UploadState);
         }
     }
 }

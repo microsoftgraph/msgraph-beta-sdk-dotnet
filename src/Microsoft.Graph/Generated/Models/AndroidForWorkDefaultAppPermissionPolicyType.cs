@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android For Work default app permission policy type.</summary>
-    public enum AndroidForWorkDefaultAppPermissionPolicyType {
+    public enum AndroidForWorkDefaultAppPermissionPolicyType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

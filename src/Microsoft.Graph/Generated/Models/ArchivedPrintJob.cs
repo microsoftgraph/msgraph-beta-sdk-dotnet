@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class ArchivedPrintJob : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class ArchivedPrintJob : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>True if the job was acquired by a printer; false otherwise. Read-only.</summary>
         public bool? AcquiredByPrinter {
             get { return BackingStore?.Get<bool?>("acquiredByPrinter"); }
@@ -142,7 +143,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="ArchivedPrintJob"/> and sets the default values.
         /// </summary>
-        public ArchivedPrintJob() {
+        public ArchivedPrintJob()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -151,7 +153,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="ArchivedPrintJob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ArchivedPrintJob CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ArchivedPrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ArchivedPrintJob();
         }
@@ -159,8 +162,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"acquiredByPrinter", n => { AcquiredByPrinter = n.GetBoolValue(); } },
                 {"acquiredDateTime", n => { AcquiredDateTime = n.GetDateTimeOffsetValue(); } },
                 {"blackAndWhitePageCount", n => { BlackAndWhitePageCount = n.GetIntValue(); } },
@@ -183,7 +188,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("acquiredByPrinter", AcquiredByPrinter);
             writer.WriteDateTimeOffsetValue("acquiredDateTime", AcquiredDateTime);

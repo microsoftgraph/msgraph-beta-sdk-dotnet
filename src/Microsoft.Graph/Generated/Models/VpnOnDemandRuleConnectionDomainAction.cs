@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
-    public enum VpnOnDemandRuleConnectionDomainAction {
+    public enum VpnOnDemandRuleConnectionDomainAction
+    {
         /// <summary>Connect if needed.</summary>
         [EnumMember(Value = "connectIfNeeded")]
         ConnectIfNeeded,

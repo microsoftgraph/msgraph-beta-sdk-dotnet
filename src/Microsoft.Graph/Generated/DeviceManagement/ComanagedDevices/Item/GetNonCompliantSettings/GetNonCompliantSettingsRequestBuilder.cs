@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonComp
     /// <summary>
     /// Provides operations to call the getNonCompliantSettings method.
     /// </summary>
-    public class GetNonCompliantSettingsRequestBuilder : BaseRequestBuilder {
+    public class GetNonCompliantSettingsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetNonCompliantSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetNonCompliantSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/getNonCompliantSettings(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public GetNonCompliantSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/getNonCompliantSettings(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetNonCompliantSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetNonCompliantSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/getNonCompliantSettings(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public GetNonCompliantSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/getNonCompliantSettings(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getNonCompliantSettings
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonComp
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetNonCompliantSettingsGetResponse?> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetNonCompliantSettingsGetResponse?> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetNonCompliantSettingsGetResponse> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetNonCompliantSettingsGetResponse> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetNonCompliantSettingsGetResponse>(requestInfo, GetNonCompliantSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonComp
         [Obsolete("This method is obsolete. Use GetAsGetNonCompliantSettingsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetNonCompliantSettingsResponse?> GetAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetNonCompliantSettingsResponse?> GetAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetNonCompliantSettingsResponse> GetAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetNonCompliantSettingsResponse> GetAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetNonCompliantSettingsResponse>(requestInfo, GetNonCompliantSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonComp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +101,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonComp
         /// </summary>
         /// <returns>A <see cref="GetNonCompliantSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetNonCompliantSettingsRequestBuilder WithUrl(string rawUrl) {
+        public GetNonCompliantSettingsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetNonCompliantSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getNonCompliantSettings
         /// </summary>
-        public class GetNonCompliantSettingsRequestBuilderGetQueryParameters {
+        public class GetNonCompliantSettingsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -131,7 +144,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonComp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetNonCompliantSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters> {
+        public class GetNonCompliantSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

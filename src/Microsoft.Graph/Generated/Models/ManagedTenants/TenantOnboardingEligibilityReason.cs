@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public enum TenantOnboardingEligibilityReason {
+    public enum TenantOnboardingEligibilityReason
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "contractType")]

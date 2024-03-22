@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Security Baseline Compliance State</summary>
-    public enum SecurityBaselineComplianceState {
+    public enum SecurityBaselineComplianceState
+    {
         /// <summary>Unknown state</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

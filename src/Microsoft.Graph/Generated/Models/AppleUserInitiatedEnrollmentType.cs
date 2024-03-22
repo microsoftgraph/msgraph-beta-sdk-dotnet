@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AppleUserInitiatedEnrollmentType {
+    public enum AppleUserInitiatedEnrollmentType
+    {
         /// <summary>Default value in case enum parsing fails</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

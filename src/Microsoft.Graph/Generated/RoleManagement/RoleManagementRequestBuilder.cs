@@ -19,44 +19,53 @@ namespace Microsoft.Graph.Beta.RoleManagement {
     /// <summary>
     /// Provides operations to manage the roleManagement singleton.
     /// </summary>
-    public class RoleManagementRequestBuilder : BaseRequestBuilder {
+    public class RoleManagementRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the cloudPC property of the microsoft.graph.roleManagement entity.</summary>
-        public CloudPCRequestBuilder CloudPC { get =>
-            new CloudPCRequestBuilder(PathParameters, RequestAdapter);
+        public CloudPCRequestBuilder CloudPC
+        {
+            get => new CloudPCRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagement property of the microsoft.graph.roleManagement entity.</summary>
-        public DeviceManagementRequestBuilder DeviceManagement { get =>
-            new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceManagementRequestBuilder DeviceManagement
+        {
+            get => new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directory property of the microsoft.graph.roleManagement entity.</summary>
-        public DirectoryRequestBuilder Directory { get =>
-            new DirectoryRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryRequestBuilder Directory
+        {
+            get => new DirectoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enterpriseApps property of the microsoft.graph.roleManagement entity.</summary>
-        public EnterpriseAppsRequestBuilder EnterpriseApps { get =>
-            new EnterpriseAppsRequestBuilder(PathParameters, RequestAdapter);
+        public EnterpriseAppsRequestBuilder EnterpriseApps
+        {
+            get => new EnterpriseAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.roleManagement entity.</summary>
-        public EntitlementManagementRequestBuilder EntitlementManagement { get =>
-            new EntitlementManagementRequestBuilder(PathParameters, RequestAdapter);
+        public EntitlementManagementRequestBuilder EntitlementManagement
+        {
+            get => new EntitlementManagementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the exchange property of the microsoft.graph.roleManagement entity.</summary>
-        public ExchangeRequestBuilder Exchange { get =>
-            new ExchangeRequestBuilder(PathParameters, RequestAdapter);
+        public ExchangeRequestBuilder Exchange
+        {
+            get => new ExchangeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement{?%24expand,%24select}", pathParameters) {
+        public RoleManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RoleManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoleManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement{?%24expand,%24select}", rawUrl) {
+        public RoleManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/roleManagement{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get roleManagement
@@ -67,13 +76,16 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.RoleManagement?> GetAsync(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.RoleManagement?> GetAsync(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.RoleManagement> GetAsync(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.RoleManagement> GetAsync(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleManagement>(requestInfo, Microsoft.Graph.Beta.Models.RoleManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -88,14 +100,17 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.RoleManagement?> PatchAsync(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.RoleManagement?> PatchAsync(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.RoleManagement> PatchAsync(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.RoleManagement> PatchAsync(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoleManagement>(requestInfo, Microsoft.Graph.Beta.Models.RoleManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -107,10 +122,12 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -125,10 +142,12 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.RoleManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/roleManagement", PathParameters);
@@ -142,13 +161,15 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// </summary>
         /// <returns>A <see cref="RoleManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RoleManagementRequestBuilder WithUrl(string rawUrl) {
+        public RoleManagementRequestBuilder WithUrl(string rawUrl)
+        {
             return new RoleManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get roleManagement
         /// </summary>
-        public class RoleManagementRequestBuilderGetQueryParameters {
+        public class RoleManagementRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,13 +195,15 @@ namespace Microsoft.Graph.Beta.RoleManagement {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters> {
+        public class RoleManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleManagementRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class RoleManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

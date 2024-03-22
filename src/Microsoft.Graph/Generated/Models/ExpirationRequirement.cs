@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ExpirationRequirement {
+    public enum ExpirationRequirement
+    {
         [EnumMember(Value = "rememberMultifactorAuthenticationOnTrustedDevices")]
         RememberMultifactorAuthenticationOnTrustedDevices,
         [EnumMember(Value = "tenantTokenLifetimePolicy")]

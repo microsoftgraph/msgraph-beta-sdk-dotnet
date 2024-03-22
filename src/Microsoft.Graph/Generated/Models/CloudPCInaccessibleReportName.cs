@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPCInaccessibleReportName {
+    public enum CloudPCInaccessibleReportName
+    {
         [EnumMember(Value = "inaccessibleCloudPcReports")]
         InaccessibleCloudPcReports,
         [EnumMember(Value = "inaccessibleCloudPcTrendReport")]

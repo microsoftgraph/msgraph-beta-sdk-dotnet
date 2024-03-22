@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device type.</summary>
-    public enum DeviceType {
+    public enum DeviceType
+    {
         /// <summary>Desktop.</summary>
         [EnumMember(Value = "desktop")]
         Desktop,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum TeamsAppInstallationScopes {
+    public enum TeamsAppInstallationScopes
+    {
         [EnumMember(Value = "team")]
         Team = 1,
         [EnumMember(Value = "groupChat")]

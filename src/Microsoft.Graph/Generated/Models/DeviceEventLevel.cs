@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical</summary>
-    public enum DeviceEventLevel {
+    public enum DeviceEventLevel
+    {
         /// <summary>Indicates that the device event level is none.</summary>
         [EnumMember(Value = "none")]
         None,

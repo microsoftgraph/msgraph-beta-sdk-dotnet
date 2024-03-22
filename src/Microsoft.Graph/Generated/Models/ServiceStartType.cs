@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of xbox service start type</summary>
-    public enum ServiceStartType {
+    public enum ServiceStartType
+    {
         /// <summary>Manual service start type(default)</summary>
         [EnumMember(Value = "manual")]
         Manual,

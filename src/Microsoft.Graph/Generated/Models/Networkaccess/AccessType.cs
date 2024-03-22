@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum AccessType {
+    public enum AccessType
+    {
         [EnumMember(Value = "quickAccess")]
         QuickAccess,
         [EnumMember(Value = "privateAccess")]

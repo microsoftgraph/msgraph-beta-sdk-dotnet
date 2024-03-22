@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of Group Policy File or Definition.</summary>
-    public enum GroupPolicyType {
+    public enum GroupPolicyType
+    {
         /// <summary>Group Policy administrative templates built-in to the Policy configuration service provider (CSP).</summary>
         [EnumMember(Value = "admxBacked")]
         AdmxBacked,

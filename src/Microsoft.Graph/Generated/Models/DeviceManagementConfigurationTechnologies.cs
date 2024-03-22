@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Describes which technology this setting can be deployed with</summary>
     [Flags]
-    public enum DeviceManagementConfigurationTechnologies {
+    public enum DeviceManagementConfigurationTechnologies
+    {
         /// <summary>Default. Setting cannot be deployed through any channel.</summary>
         [EnumMember(Value = "none")]
         None = 1,

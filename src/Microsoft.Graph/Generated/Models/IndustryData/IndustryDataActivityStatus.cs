@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
-    public enum IndustryDataActivityStatus {
+    public enum IndustryDataActivityStatus
+    {
         [EnumMember(Value = "inProgress")]
         InProgress,
         [EnumMember(Value = "skipped")]

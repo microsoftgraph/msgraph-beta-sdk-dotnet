@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum AwsSecretInformationWebServices {
+    public enum AwsSecretInformationWebServices
+    {
         [EnumMember(Value = "secretsManager")]
         SecretsManager = 1,
         [EnumMember(Value = "certificateAuthority")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
-    public enum ExportLocation {
+    public enum ExportLocation
+    {
         [EnumMember(Value = "responsiveLocations")]
         ResponsiveLocations = 1,
         [EnumMember(Value = "nonresponsiveLocations")]

@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Flags representing firewall rule interface types.</summary>
     [Flags]
-    public enum WindowsFirewallRuleInterfaceTypes {
+    public enum WindowsFirewallRuleInterfaceTypes
+    {
         /// <summary>No flags set.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured = 1,

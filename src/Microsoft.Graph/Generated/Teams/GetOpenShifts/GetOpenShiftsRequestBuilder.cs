@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
     /// <summary>
     /// Provides operations to call the getOpenShifts method.
     /// </summary>
-    public class GetOpenShiftsRequestBuilder : BaseRequestBuilder {
+    public class GetOpenShiftsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetOpenShiftsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOpenShiftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/getOpenShifts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetOpenShiftsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/getOpenShifts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetOpenShiftsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetOpenShiftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/getOpenShifts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetOpenShiftsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/getOpenShifts(){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getOpenShifts
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOpenShiftsGetResponse?> GetAsGetOpenShiftsGetResponseAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOpenShiftsGetResponse?> GetAsGetOpenShiftsGetResponseAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOpenShiftsGetResponse> GetAsGetOpenShiftsGetResponseAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOpenShiftsGetResponse> GetAsGetOpenShiftsGetResponseAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOpenShiftsGetResponse>(requestInfo, GetOpenShiftsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         [Obsolete("This method is obsolete. Use GetAsGetOpenShiftsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetOpenShiftsResponse?> GetAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOpenShiftsResponse?> GetAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetOpenShiftsResponse> GetAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetOpenShiftsResponse> GetAsync(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetOpenShiftsResponse>(requestInfo, GetOpenShiftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +101,15 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         /// </summary>
         /// <returns>A <see cref="GetOpenShiftsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetOpenShiftsRequestBuilder WithUrl(string rawUrl) {
+        public GetOpenShiftsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetOpenShiftsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getOpenShifts
         /// </summary>
-        public class GetOpenShiftsRequestBuilderGetQueryParameters {
+        public class GetOpenShiftsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -161,7 +174,8 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetOpenShiftsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters> {
+        public class GetOpenShiftsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetOpenShiftsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

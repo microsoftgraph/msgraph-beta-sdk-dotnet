@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AuthenticationAppAdminConfiguration {
+    public enum AuthenticationAppAdminConfiguration
+    {
         [EnumMember(Value = "notApplicable")]
         NotApplicable,
         [EnumMember(Value = "enabled")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The type of user account on Windows that was used to performed the elevation.</summary>
-    public enum PrivilegeManagementEndUserType {
+    public enum PrivilegeManagementEndUserType
+    {
         /// <summary>Default. Unable to determine the login type of the user.</summary>
         [EnumMember(Value = "undetermined")]
         Undetermined,

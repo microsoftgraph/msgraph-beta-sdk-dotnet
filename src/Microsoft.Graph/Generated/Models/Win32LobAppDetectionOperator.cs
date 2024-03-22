@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Contains properties for detection operator.</summary>
     [Flags]
-    public enum Win32LobAppDetectionOperator {
+    public enum Win32LobAppDetectionOperator
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured = 1,

@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDevi
     /// <summary>
     /// Provides operations to call the createDeviceLogCollectionRequest method.
     /// </summary>
-    public class CreateDeviceLogCollectionRequestRequestBuilder : BaseRequestBuilder {
+    public class CreateDeviceLogCollectionRequestRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="CreateDeviceLogCollectionRequestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreateDeviceLogCollectionRequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/createDeviceLogCollectionRequest", pathParameters) {
+        public CreateDeviceLogCollectionRequestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/createDeviceLogCollectionRequest", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CreateDeviceLogCollectionRequestRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreateDeviceLogCollectionRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/createDeviceLogCollectionRequest", rawUrl) {
+        public CreateDeviceLogCollectionRequestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/comanagedDevices/{managedDevice%2Did}/createDeviceLogCollectionRequest", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke action createDeviceLogCollectionRequest
@@ -38,14 +41,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDevi
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeviceLogCollectionResponse?> PostAsync(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceLogCollectionResponse?> PostAsync(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeviceLogCollectionResponse> PostAsync(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceLogCollectionResponse> PostAsync(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeviceLogCollectionResponse>(requestInfo, DeviceLogCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -58,10 +64,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDevi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CreateDeviceLogCollectionRequestPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -75,14 +83,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDevi
         /// </summary>
         /// <returns>A <see cref="CreateDeviceLogCollectionRequestRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CreateDeviceLogCollectionRequestRequestBuilder WithUrl(string rawUrl) {
+        public CreateDeviceLogCollectionRequestRequestBuilder WithUrl(string rawUrl)
+        {
             return new CreateDeviceLogCollectionRequestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CreateDeviceLogCollectionRequestRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class CreateDeviceLogCollectionRequestRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

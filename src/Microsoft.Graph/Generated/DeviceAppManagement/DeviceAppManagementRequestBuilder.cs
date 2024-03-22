@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppStatuses;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBookCategories;
 using Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks;
 using Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies;
+using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCatalogPackages;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps;
@@ -39,124 +40,158 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
     /// <summary>
     /// Provides operations to manage the deviceAppManagement singleton.
     /// </summary>
-    public class DeviceAppManagementRequestBuilder : BaseRequestBuilder {
+    public class DeviceAppManagementRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public AndroidManagedAppProtectionsRequestBuilder AndroidManagedAppProtections { get =>
-            new AndroidManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+        public AndroidManagedAppProtectionsRequestBuilder AndroidManagedAppProtections
+        {
+            get => new AndroidManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public DefaultManagedAppProtectionsRequestBuilder DefaultManagedAppProtections { get =>
-            new DefaultManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+        public DefaultManagedAppProtectionsRequestBuilder DefaultManagedAppProtections
+        {
+            get => new DefaultManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceAppManagementTasks property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public DeviceAppManagementTasksRequestBuilder DeviceAppManagementTasks { get =>
-            new DeviceAppManagementTasksRequestBuilder(PathParameters, RequestAdapter);
+        public DeviceAppManagementTasksRequestBuilder DeviceAppManagementTasks
+        {
+            get => new DeviceAppManagementTasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the enterpriseCodeSigningCertificates property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public EnterpriseCodeSigningCertificatesRequestBuilder EnterpriseCodeSigningCertificates { get =>
-            new EnterpriseCodeSigningCertificatesRequestBuilder(PathParameters, RequestAdapter);
+        public EnterpriseCodeSigningCertificatesRequestBuilder EnterpriseCodeSigningCertificates
+        {
+            get => new EnterpriseCodeSigningCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosLobAppProvisioningConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public IosLobAppProvisioningConfigurationsRequestBuilder IosLobAppProvisioningConfigurations { get =>
-            new IosLobAppProvisioningConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        public IosLobAppProvisioningConfigurationsRequestBuilder IosLobAppProvisioningConfigurations
+        {
+            get => new IosLobAppProvisioningConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the iosManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public IosManagedAppProtectionsRequestBuilder IosManagedAppProtections { get =>
-            new IosManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+        public IosManagedAppProtectionsRequestBuilder IosManagedAppProtections
+        {
+            get => new IosManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public ManagedAppPoliciesRequestBuilder ManagedAppPolicies { get =>
-            new ManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedAppPoliciesRequestBuilder ManagedAppPolicies
+        {
+            get => new ManagedAppPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations { get =>
-            new ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations
+        {
+            get => new ManagedAppRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppStatuses property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public ManagedAppStatusesRequestBuilder ManagedAppStatuses { get =>
-            new ManagedAppStatusesRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedAppStatusesRequestBuilder ManagedAppStatuses
+        {
+            get => new ManagedAppStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedEBookCategories property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public ManagedEBookCategoriesRequestBuilder ManagedEBookCategories { get =>
-            new ManagedEBookCategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedEBookCategoriesRequestBuilder ManagedEBookCategories
+        {
+            get => new ManagedEBookCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public ManagedEBooksRequestBuilder ManagedEBooks { get =>
-            new ManagedEBooksRequestBuilder(PathParameters, RequestAdapter);
+        public ManagedEBooksRequestBuilder ManagedEBooks
+        {
+            get => new ManagedEBooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public MdmWindowsInformationProtectionPoliciesRequestBuilder MdmWindowsInformationProtectionPolicies { get =>
-            new MdmWindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public MdmWindowsInformationProtectionPoliciesRequestBuilder MdmWindowsInformationProtectionPolicies
+        {
+            get => new MdmWindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mobileAppCatalogPackages property of the microsoft.graph.deviceAppManagement entity.</summary>
+        public MobileAppCatalogPackagesRequestBuilder MobileAppCatalogPackages
+        {
+            get => new MobileAppCatalogPackagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppCategories property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public MobileAppCategoriesRequestBuilder MobileAppCategories { get =>
-            new MobileAppCategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public MobileAppCategoriesRequestBuilder MobileAppCategories
+        {
+            get => new MobileAppCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public MobileAppConfigurationsRequestBuilder MobileAppConfigurations { get =>
-            new MobileAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        public MobileAppConfigurationsRequestBuilder MobileAppConfigurations
+        {
+            get => new MobileAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public MobileAppsRequestBuilder MobileApps { get =>
-            new MobileAppsRequestBuilder(PathParameters, RequestAdapter);
+        public MobileAppsRequestBuilder MobileApps
+        {
+            get => new MobileAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policySets property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public PolicySetsRequestBuilder PolicySets { get =>
-            new PolicySetsRequestBuilder(PathParameters, RequestAdapter);
+        public PolicySetsRequestBuilder PolicySets
+        {
+            get => new PolicySetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the symantecCodeSigningCertificate property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public SymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate { get =>
-            new SymantecCodeSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
+        public SymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate
+        {
+            get => new SymantecCodeSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncMicrosoftStoreForBusinessApps method.</summary>
-        public SyncMicrosoftStoreForBusinessAppsRequestBuilder SyncMicrosoftStoreForBusinessApps { get =>
-            new SyncMicrosoftStoreForBusinessAppsRequestBuilder(PathParameters, RequestAdapter);
+        public SyncMicrosoftStoreForBusinessAppsRequestBuilder SyncMicrosoftStoreForBusinessApps
+        {
+            get => new SyncMicrosoftStoreForBusinessAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the targetedManagedAppConfigurations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public TargetedManagedAppConfigurationsRequestBuilder TargetedManagedAppConfigurations { get =>
-            new TargetedManagedAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        public TargetedManagedAppConfigurationsRequestBuilder TargetedManagedAppConfigurations
+        {
+            get => new TargetedManagedAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the vppTokens property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public VppTokensRequestBuilder VppTokens { get =>
-            new VppTokensRequestBuilder(PathParameters, RequestAdapter);
+        public VppTokensRequestBuilder VppTokens
+        {
+            get => new VppTokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the wdacSupplementalPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public WdacSupplementalPoliciesRequestBuilder WdacSupplementalPolicies { get =>
-            new WdacSupplementalPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public WdacSupplementalPoliciesRequestBuilder WdacSupplementalPolicies
+        {
+            get => new WdacSupplementalPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations { get =>
-            new WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsInformationProtectionDeviceRegistrationsRequestBuilder WindowsInformationProtectionDeviceRegistrations
+        {
+            get => new WindowsInformationProtectionDeviceRegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public WindowsInformationProtectionPoliciesRequestBuilder WindowsInformationProtectionPolicies { get =>
-            new WindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsInformationProtectionPoliciesRequestBuilder WindowsInformationProtectionPolicies
+        {
+            get => new WindowsInformationProtectionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionWipeActions property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public WindowsInformationProtectionWipeActionsRequestBuilder WindowsInformationProtectionWipeActions { get =>
-            new WindowsInformationProtectionWipeActionsRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsInformationProtectionWipeActionsRequestBuilder WindowsInformationProtectionWipeActions
+        {
+            get => new WindowsInformationProtectionWipeActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public WindowsManagedAppProtectionsRequestBuilder WindowsManagedAppProtections { get =>
-            new WindowsManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsManagedAppProtectionsRequestBuilder WindowsManagedAppProtections
+        {
+            get => new WindowsManagedAppProtectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsManagementApp property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public WindowsManagementAppRequestBuilder WindowsManagementApp { get =>
-            new WindowsManagementAppRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsManagementAppRequestBuilder WindowsManagementApp
+        {
+            get => new WindowsManagementAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DeviceAppManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceAppManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement{?%24expand,%24select}", pathParameters) {
+        public DeviceAppManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DeviceAppManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeviceAppManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement{?%24expand,%24select}", rawUrl) {
+        public DeviceAppManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get deviceAppManagement
@@ -167,13 +202,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement?> GetAsync(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement?> GetAsync(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> GetAsync(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> GetAsync(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -188,14 +226,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement?> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -207,10 +248,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -225,10 +268,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/deviceAppManagement", PathParameters);
@@ -242,13 +287,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// </summary>
         /// <returns>A <see cref="DeviceAppManagementRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceAppManagementRequestBuilder WithUrl(string rawUrl) {
+        public DeviceAppManagementRequestBuilder WithUrl(string rawUrl)
+        {
             return new DeviceAppManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get deviceAppManagement
         /// </summary>
-        public class DeviceAppManagementRequestBuilderGetQueryParameters {
+        public class DeviceAppManagementRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -274,13 +321,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceAppManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters> {
+        public class DeviceAppManagementRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceAppManagementRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceAppManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DeviceAppManagementRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser</summary>
-    public enum LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType {
+    public enum LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

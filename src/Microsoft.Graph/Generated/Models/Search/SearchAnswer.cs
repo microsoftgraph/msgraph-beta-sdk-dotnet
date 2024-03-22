@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Search {
-    public class SearchAnswer : Microsoft.Graph.Beta.Models.Entity, IParsable {
-        /// <summary>Search answer description shown on search results page.</summary>
+    public class SearchAnswer : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
+        /// <summary>The search answer description that is shown on the search results page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -20,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Search answer name displayed in search results.</summary>
+        /// <summary>The search answer name that is displayed in search results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -34,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Details of the user that created or last modified the search answer. Read-only.</summary>
+        /// <summary>Details of the user who created or last modified the search answer. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? LastModifiedBy {
@@ -48,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>Timestamp of when the search answer is created or edited. Read-only.</summary>
+        /// <summary>Date and time when the search answer was created or last edited. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Search answer URL link. When users click this search answer in search results, they&apos;ll go to this URL.</summary>
+        /// <summary>The URL link for the search answer. When users select this search answer from the search results, they&apos;re directed to the specified URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl {
@@ -72,10 +73,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// </summary>
         /// <returns>A <see cref="SearchAnswer"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SearchAnswer CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new SearchAnswer CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.search.acronym" => new Acronym(),
                 "#microsoft.graph.search.bookmark" => new Bookmark(),
                 "#microsoft.graph.search.qna" => new Qna(),
@@ -86,8 +89,10 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
@@ -99,7 +104,8 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);

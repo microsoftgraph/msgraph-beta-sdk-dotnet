@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum RetentionTrigger {
+    public enum RetentionTrigger
+    {
         [EnumMember(Value = "dateLabeled")]
         DateLabeled,
         [EnumMember(Value = "dateCreated")]

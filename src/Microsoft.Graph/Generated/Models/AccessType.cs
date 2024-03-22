@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AccessType {
+    public enum AccessType
+    {
         [EnumMember(Value = "grant")]
         Grant,
         [EnumMember(Value = "deny")]

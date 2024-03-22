@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class DeviceLink : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class DeviceLink : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps? BandwidthCapacityInMbps {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps?>("bandwidthCapacityInMbps"); }
@@ -96,7 +97,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         /// <returns>A <see cref="DeviceLink"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceLink CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new DeviceLink CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceLink();
         }
@@ -104,8 +106,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"bandwidthCapacityInMbps", n => { BandwidthCapacityInMbps = n.GetEnumValue<BandwidthCapacityInMbps>(); } },
                 {"bgpConfiguration", n => { BgpConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration.CreateFromDiscriminatorValue); } },
                 {"deviceVendor", n => { DeviceVendor = n.GetEnumValue<DeviceVendor>(); } },
@@ -120,7 +124,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<BandwidthCapacityInMbps>("bandwidthCapacityInMbps", BandwidthCapacityInMbps);

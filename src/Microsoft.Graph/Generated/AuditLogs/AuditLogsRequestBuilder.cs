@@ -18,40 +18,48 @@ namespace Microsoft.Graph.Beta.AuditLogs {
     /// <summary>
     /// Provides operations to manage the auditLogRoot singleton.
     /// </summary>
-    public class AuditLogsRequestBuilder : BaseRequestBuilder {
+    public class AuditLogsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the customSecurityAttributeAudits property of the microsoft.graph.auditLogRoot entity.</summary>
-        public CustomSecurityAttributeAuditsRequestBuilder CustomSecurityAttributeAudits { get =>
-            new CustomSecurityAttributeAuditsRequestBuilder(PathParameters, RequestAdapter);
+        public CustomSecurityAttributeAuditsRequestBuilder CustomSecurityAttributeAudits
+        {
+            get => new CustomSecurityAttributeAuditsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.</summary>
-        public DirectoryAuditsRequestBuilder DirectoryAudits { get =>
-            new DirectoryAuditsRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryAuditsRequestBuilder DirectoryAudits
+        {
+            get => new DirectoryAuditsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.</summary>
-        public DirectoryProvisioningRequestBuilder DirectoryProvisioning { get =>
-            new DirectoryProvisioningRequestBuilder(PathParameters, RequestAdapter);
+        public DirectoryProvisioningRequestBuilder DirectoryProvisioning
+        {
+            get => new DirectoryProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.</summary>
-        public ProvisioningRequestBuilder Provisioning { get =>
-            new ProvisioningRequestBuilder(PathParameters, RequestAdapter);
+        public ProvisioningRequestBuilder Provisioning
+        {
+            get => new ProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.</summary>
-        public SignInsRequestBuilder SignIns { get =>
-            new SignInsRequestBuilder(PathParameters, RequestAdapter);
+        public SignInsRequestBuilder SignIns
+        {
+            get => new SignInsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AuditLogsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditLogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs{?%24expand,%24select}", pathParameters) {
+        public AuditLogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AuditLogsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditLogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs{?%24expand,%24select}", rawUrl) {
+        public AuditLogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get auditLogs
@@ -62,13 +70,16 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuditLogRoot?> GetAsync(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot?> GetAsync(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AuditLogRoot> GetAsync(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot> GetAsync(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuditLogRoot>(requestInfo, AuditLogRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -83,14 +94,17 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuditLogRoot?> PatchAsync(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot?> PatchAsync(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AuditLogRoot> PatchAsync(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AuditLogRoot> PatchAsync(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AuditLogRoot>(requestInfo, AuditLogRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -102,10 +116,12 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -120,10 +136,12 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(AuditLogRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/auditLogs", PathParameters);
@@ -137,13 +155,15 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         /// </summary>
         /// <returns>A <see cref="AuditLogsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuditLogsRequestBuilder WithUrl(string rawUrl) {
+        public AuditLogsRequestBuilder WithUrl(string rawUrl)
+        {
             return new AuditLogsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get auditLogs
         /// </summary>
-        public class AuditLogsRequestBuilderGetQueryParameters {
+        public class AuditLogsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,13 +189,15 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuditLogsRequestBuilderGetRequestConfiguration : RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters> {
+        public class AuditLogsRequestBuilderGetRequestConfiguration : RequestConfiguration<AuditLogsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuditLogsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class AuditLogsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

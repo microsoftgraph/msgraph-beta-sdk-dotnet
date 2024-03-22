@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Defender TamperProtection setting options</summary>
-    public enum WindowsDefenderTamperProtectionOptions {
+    public enum WindowsDefenderTamperProtectionOptions
+    {
         /// <summary>Not Configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

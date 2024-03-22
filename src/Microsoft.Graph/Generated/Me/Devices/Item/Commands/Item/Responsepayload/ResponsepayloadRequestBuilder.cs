@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.Commands.Item.Responsepayload {
     /// <summary>
     /// Provides operations to manage the responsepayload property of the microsoft.graph.command entity.
     /// </summary>
-    public class ResponsepayloadRequestBuilder : BaseRequestBuilder {
+    public class ResponsepayloadRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ResponsepayloadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResponsepayloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", pathParameters) {
+        public ResponsepayloadRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ResponsepayloadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ResponsepayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", rawUrl) {
+        public ResponsepayloadRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/devices/{device%2Did}/commands/{command%2Did}/responsepayload{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get responsepayload from me
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.Commands.Item.Responsepayload {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.PayloadResponse?> GetAsync(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.PayloadResponse?> GetAsync(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.PayloadResponse> GetAsync(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.PayloadResponse> GetAsync(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PayloadResponse>(requestInfo, Microsoft.Graph.Beta.Models.PayloadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.Commands.Item.Responsepayload {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.Commands.Item.Responsepayload {
         /// </summary>
         /// <returns>A <see cref="ResponsepayloadRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ResponsepayloadRequestBuilder WithUrl(string rawUrl) {
+        public ResponsepayloadRequestBuilder WithUrl(string rawUrl)
+        {
             return new ResponsepayloadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get responsepayload from me
         /// </summary>
-        public class ResponsepayloadRequestBuilderGetQueryParameters {
+        public class ResponsepayloadRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item.Commands.Item.Responsepayload {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ResponsepayloadRequestBuilderGetRequestConfiguration : RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters> {
+        public class ResponsepayloadRequestBuilderGetRequestConfiguration : RequestConfiguration<ResponsepayloadRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

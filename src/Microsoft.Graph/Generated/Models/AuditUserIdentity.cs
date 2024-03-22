@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class AuditUserIdentity : UserIdentity, IParsable {
+    public class AuditUserIdentity : UserIdentity, IParsable 
+    {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +38,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AuditUserIdentity"/> and sets the default values.
         /// </summary>
-        public AuditUserIdentity() : base() {
+        public AuditUserIdentity() : base()
+        {
             OdataType = "#microsoft.graph.auditUserIdentity";
         }
         /// <summary>
@@ -45,7 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AuditUserIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuditUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AuditUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AuditUserIdentity();
         }
@@ -53,8 +56,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
                 {"homeTenantName", n => { HomeTenantName = n.GetStringValue(); } },
             };
@@ -63,7 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("homeTenantId", HomeTenantId);

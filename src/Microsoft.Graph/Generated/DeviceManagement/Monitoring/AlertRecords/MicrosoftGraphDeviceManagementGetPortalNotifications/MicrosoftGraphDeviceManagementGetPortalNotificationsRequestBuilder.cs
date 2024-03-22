@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
     /// <summary>
     /// Provides operations to call the getPortalNotifications method.
     /// </summary>
-    public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder : BaseRequestBuilder {
+    public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/monitoring/alertRecords/microsoft.graph.deviceManagement.getPortalNotifications(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getPortalNotifications
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPortalNotificationsGetResponse?> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPortalNotificationsGetResponse?> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetPortalNotificationsGetResponse> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPortalNotificationsGetResponse> GetAsGetPortalNotificationsGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetPortalNotificationsGetResponse>(requestInfo, GetPortalNotificationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         [Obsolete("This method is obsolete. Use GetAsGetPortalNotificationsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetPortalNotificationsResponse?> GetAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPortalNotificationsResponse?> GetAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetPortalNotificationsResponse> GetAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetPortalNotificationsResponse> GetAsync(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetPortalNotificationsResponse>(requestInfo, GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +101,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// </summary>
         /// <returns>A <see cref="MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder WithUrl(string rawUrl) {
+        public MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder WithUrl(string rawUrl)
+        {
             return new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getPortalNotifications
         /// </summary>
-        public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters {
+        public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -131,7 +144,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters> {
+        public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

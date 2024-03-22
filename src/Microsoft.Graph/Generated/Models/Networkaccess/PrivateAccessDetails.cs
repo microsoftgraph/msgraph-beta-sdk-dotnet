@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public class PrivateAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class PrivateAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>The accessType property</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.AccessType?>("accessType"); }
@@ -97,7 +98,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>
         /// Instantiates a new <see cref="PrivateAccessDetails"/> and sets the default values.
         /// </summary>
-        public PrivateAccessDetails() {
+        public PrivateAccessDetails()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -106,7 +108,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// </summary>
         /// <returns>A <see cref="PrivateAccessDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrivateAccessDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PrivateAccessDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PrivateAccessDetails();
         }
@@ -114,8 +117,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
                 {"connectionStatus", n => { ConnectionStatus = n.GetEnumValue<ConnectionStatus>(); } },
                 {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
@@ -129,7 +134,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AccessType>("accessType", AccessType);
             writer.WriteEnumValue<ConnectionStatus>("connectionStatus", ConnectionStatus);

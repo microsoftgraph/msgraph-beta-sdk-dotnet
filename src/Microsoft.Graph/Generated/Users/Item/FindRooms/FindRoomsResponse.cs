@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Users.Item.FindRooms {
     [Obsolete("This class is obsolete. Use FindRoomsGetResponse instead.")]
-    public class FindRoomsResponse : FindRoomsGetResponse, IParsable {
+    public class FindRoomsResponse : FindRoomsGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="FindRoomsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FindRoomsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new FindRoomsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new FindRoomsResponse();
         }

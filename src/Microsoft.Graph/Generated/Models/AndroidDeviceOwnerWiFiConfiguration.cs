@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable {
+    public class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
@@ -19,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
-        /// <summary>The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic.</summary>
+        /// <summary>The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.MacAddressRandomizationMode? MacAddressRandomizationMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacAddressRandomizationMode?>("macAddressRandomizationMode"); }
             set { BackingStore?.Set("macAddressRandomizationMode", value); }
@@ -131,7 +132,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AndroidDeviceOwnerWiFiConfiguration"/> and sets the default values.
         /// </summary>
-        public AndroidDeviceOwnerWiFiConfiguration() : base() {
+        public AndroidDeviceOwnerWiFiConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.androidDeviceOwnerWiFiConfiguration";
         }
         /// <summary>
@@ -139,10 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AndroidDeviceOwnerWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AndroidDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration" => new AndroidDeviceOwnerEnterpriseWiFiConfiguration(),
                 _ => new AndroidDeviceOwnerWiFiConfiguration(),
             };
@@ -151,8 +155,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
                 {"connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
                 {"macAddressRandomizationMode", n => { MacAddressRandomizationMode = n.GetEnumValue<MacAddressRandomizationMode>(); } },
@@ -172,7 +178,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("connectAutomatically", ConnectAutomatically);

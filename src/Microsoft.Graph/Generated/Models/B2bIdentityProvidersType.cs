@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum B2bIdentityProvidersType {
+    public enum B2bIdentityProvidersType
+    {
         [EnumMember(Value = "azureActiveDirectory")]
         AzureActiveDirectory,
         [EnumMember(Value = "externalFederation")]

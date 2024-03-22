@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Setting control type representation in the UX</summary>
-    public enum DeviceManagementConfigurationControlType {
+    public enum DeviceManagementConfigurationControlType
+    {
         /// <summary>Default. UX uses default UX element base on setting type for the setting.</summary>
         [EnumMember(Value = "default")]
         Default,

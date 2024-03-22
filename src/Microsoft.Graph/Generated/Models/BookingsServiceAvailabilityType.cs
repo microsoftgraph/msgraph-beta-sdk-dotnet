@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum BookingsServiceAvailabilityType {
+    public enum BookingsServiceAvailabilityType
+    {
         [EnumMember(Value = "bookWhenStaffAreFree")]
         BookWhenStaffAreFree,
         [EnumMember(Value = "notBookable")]

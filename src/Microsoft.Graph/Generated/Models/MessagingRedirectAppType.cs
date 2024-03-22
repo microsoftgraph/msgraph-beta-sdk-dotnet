@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.</summary>
-    public enum MessagingRedirectAppType {
+    public enum MessagingRedirectAppType
+    {
         /// <summary>App protection policy will allow messaging redirection to any app.</summary>
         [EnumMember(Value = "anyApp")]
         AnyApp,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcDeviceImageStatus {
+    public enum CloudPcDeviceImageStatus
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "ready")]

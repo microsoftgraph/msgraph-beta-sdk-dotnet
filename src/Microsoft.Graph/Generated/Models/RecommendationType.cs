@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RecommendationType {
+    public enum RecommendationType
+    {
         [EnumMember(Value = "adfsAppsMigration")]
         AdfsAppsMigration,
         [EnumMember(Value = "enableDesktopSSO")]
@@ -77,5 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
         OwnerlessApps,
         [EnumMember(Value = "inactiveGuests")]
         InactiveGuests,
+        [EnumMember(Value = "aadGraphDeprecationApplication")]
+        AadGraphDeprecationApplication,
+        [EnumMember(Value = "aadGraphDeprecationServicePrincipal")]
+        AadGraphDeprecationServicePrincipal,
+        [EnumMember(Value = "mfaServerDeprecation")]
+        MfaServerDeprecation,
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Enum of possible MicrosoftTunnelServer health status types</summary>
-    public enum MicrosoftTunnelServerHealthStatus {
+    public enum MicrosoftTunnelServerHealthStatus
+    {
         /// <summary>Indicates that the health status of the server is unknown. This occurs when no health status has been reported, for example when the server is initialized, but has not yet been evaluated for its health.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

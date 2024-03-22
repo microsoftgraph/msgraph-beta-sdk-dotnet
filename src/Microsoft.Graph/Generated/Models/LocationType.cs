@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum LocationType {
+    public enum LocationType
+    {
         [EnumMember(Value = "default")]
         Default,
         [EnumMember(Value = "conferenceRoom")]

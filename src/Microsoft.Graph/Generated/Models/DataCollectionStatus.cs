@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DataCollectionStatus {
+    public enum DataCollectionStatus
+    {
         [EnumMember(Value = "online")]
         Online,
         [EnumMember(Value = "offline")]

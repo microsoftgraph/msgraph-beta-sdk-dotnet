@@ -16,32 +16,38 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetAp
     /// <summary>
     /// Casts the previous resource to winGetApp.
     /// </summary>
-    public class GraphWinGetAppRequestBuilder : BaseRequestBuilder {
+    public class GraphWinGetAppRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments { get =>
-            new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AssignmentsRequestBuilder Assignments
+        {
+            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories { get =>
-            new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+        public CategoriesRequestBuilder Categories
+        {
+            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
-        public RelationshipsRequestBuilder Relationships { get =>
-            new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        public RelationshipsRequestBuilder Relationships
+        {
+            get => new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphWinGetAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphWinGetAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24expand,%24select}", pathParameters) {
+        public GraphWinGetAppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GraphWinGetAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GraphWinGetAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24expand,%24select}", rawUrl) {
+        public GraphWinGetAppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceAppManagement/mobileApps/{mobileApp%2Did}/graph.winGetApp{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
@@ -52,13 +58,16 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetAp
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WinGetApp?> GetAsync(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WinGetApp?> GetAsync(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WinGetApp> GetAsync(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WinGetApp> GetAsync(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WinGetApp>(requestInfo, WinGetApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -70,10 +79,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetAp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -85,13 +96,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetAp
         /// </summary>
         /// <returns>A <see cref="GraphWinGetAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphWinGetAppRequestBuilder WithUrl(string rawUrl) {
+        public GraphWinGetAppRequestBuilder WithUrl(string rawUrl)
+        {
             return new GraphWinGetAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.winGetApp
         /// </summary>
-        public class GraphWinGetAppRequestBuilderGetQueryParameters {
+        public class GraphWinGetAppRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +130,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWinGetAp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphWinGetAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters> {
+        public class GraphWinGetAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphWinGetAppRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

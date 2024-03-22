@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Determines which content caches other content caches will peer with.</summary>
-    public enum MacOSContentCachingPeerPolicy {
+    public enum MacOSContentCachingPeerPolicy
+    {
         /// <summary>Defaults to peers in local network.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

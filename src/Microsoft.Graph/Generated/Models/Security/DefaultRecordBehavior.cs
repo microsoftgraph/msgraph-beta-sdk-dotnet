@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum DefaultRecordBehavior {
+    public enum DefaultRecordBehavior
+    {
         [EnumMember(Value = "startLocked")]
         StartLocked,
         [EnumMember(Value = "startUnlocked")]

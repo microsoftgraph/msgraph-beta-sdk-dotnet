@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner Kiosk Mode managed home screen icon size.</summary>
-    public enum AndroidDeviceOwnerKioskModeIconSize {
+    public enum AndroidDeviceOwnerKioskModeIconSize
+    {
         /// <summary>Not configured; this value is ignored.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

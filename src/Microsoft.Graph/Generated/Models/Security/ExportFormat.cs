@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum ExportFormat {
+    public enum ExportFormat
+    {
         [EnumMember(Value = "pst")]
         Pst,
         [EnumMember(Value = "msg")]

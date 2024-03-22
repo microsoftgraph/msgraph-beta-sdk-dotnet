@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for the DeliveryOptimizationGroupIdOptionsType setting.</summary>
-    public enum DeliveryOptimizationGroupIdOptionsType {
+    public enum DeliveryOptimizationGroupIdOptionsType
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

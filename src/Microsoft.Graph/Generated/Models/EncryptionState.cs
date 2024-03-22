@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Encryption state</summary>
-    public enum EncryptionState {
+    public enum EncryptionState
+    {
         /// <summary>Not encrypted</summary>
         [EnumMember(Value = "notEncrypted")]
         NotEncrypted,

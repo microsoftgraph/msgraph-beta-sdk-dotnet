@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Firewall rule traffic directions.</summary>
-    public enum WindowsFirewallRuleTrafficDirectionType {
+    public enum WindowsFirewallRuleTrafficDirectionType
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for LocalSecurityOptionsMinimumSessionSecurity</summary>
-    public enum LocalSecurityOptionsMinimumSessionSecurity {
+    public enum LocalSecurityOptionsMinimumSessionSecurity
+    {
         /// <summary>Send LM &amp; NTLM responses</summary>
         [EnumMember(Value = "none")]
         None,

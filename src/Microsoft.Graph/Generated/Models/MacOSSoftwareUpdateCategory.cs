@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>MacOS Software Update Category</summary>
-    public enum MacOSSoftwareUpdateCategory {
+    public enum MacOSSoftwareUpdateCategory
+    {
         /// <summary>A critical update</summary>
         [EnumMember(Value = "critical")]
         Critical,

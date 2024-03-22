@@ -15,41 +15,53 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
     /// <summary>
     /// Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
     /// </summary>
-    public class SalesInvoicesRequestBuilder : BaseRequestBuilder {
+    public class SalesInvoicesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
+        public CountRequestBuilder Count
+        {
+            get => new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of salesInvoice</param>
         /// <returns>A <see cref="SalesInvoiceItemRequestBuilder"/></returns>
-        public SalesInvoiceItemRequestBuilder this[Guid position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("salesInvoice%2Did", position);
-            return new SalesInvoiceItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public SalesInvoiceItemRequestBuilder this[Guid position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("salesInvoice%2Did", position);
+                return new SalesInvoiceItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
         /// <param name="position">The unique identifier of salesInvoice</param>
         /// <returns>A <see cref="SalesInvoiceItemRequestBuilder"/></returns>
         [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public SalesInvoiceItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("salesInvoice%2Did", position);
-            return new SalesInvoiceItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public SalesInvoiceItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("salesInvoice%2Did", position);
+                return new SalesInvoiceItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SalesInvoicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesInvoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public SalesInvoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SalesInvoicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesInvoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public SalesInvoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesInvoices{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Get salesInvoices from financials
@@ -60,13 +72,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesInvoiceCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesInvoiceCollectionResponse?> GetAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SalesInvoiceCollectionResponse> GetAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesInvoiceCollectionResponse> GetAsync(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SalesInvoiceCollectionResponse>(requestInfo, SalesInvoiceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -78,10 +93,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -93,13 +110,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
         /// </summary>
         /// <returns>A <see cref="SalesInvoicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesInvoicesRequestBuilder WithUrl(string rawUrl) {
+        public SalesInvoicesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SalesInvoicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesInvoices from financials
         /// </summary>
-        public class SalesInvoicesRequestBuilderGetQueryParameters {
+        public class SalesInvoicesRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -164,7 +183,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesInvoicesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters> {
+        public class SalesInvoicesRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesInvoicesRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

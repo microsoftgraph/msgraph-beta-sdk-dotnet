@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum DeviceCategory {
+    public enum DeviceCategory
+    {
         [EnumMember(Value = "client")]
         Client,
         [EnumMember(Value = "branch")]

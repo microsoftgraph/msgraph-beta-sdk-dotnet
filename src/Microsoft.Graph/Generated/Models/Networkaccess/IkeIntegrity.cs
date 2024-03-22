@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum IkeIntegrity {
+    public enum IkeIntegrity
+    {
         [EnumMember(Value = "sha256")]
         Sha256,
         [EnumMember(Value = "sha384")]

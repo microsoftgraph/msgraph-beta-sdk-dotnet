@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>
-    public enum MobileAppDependencyType {
+    public enum MobileAppDependencyType
+    {
         /// <summary>Indicates that the child app should be detected before installing the parent app.</summary>
         [EnumMember(Value = "detect")]
         Detect,

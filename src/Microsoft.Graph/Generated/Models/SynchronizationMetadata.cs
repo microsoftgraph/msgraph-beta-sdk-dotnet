@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum SynchronizationMetadata {
+    public enum SynchronizationMetadata
+    {
         [EnumMember(Value = "galleryApplicationIdentifier")]
         GalleryApplicationIdentifier,
         [EnumMember(Value = "galleryApplicationKey")]

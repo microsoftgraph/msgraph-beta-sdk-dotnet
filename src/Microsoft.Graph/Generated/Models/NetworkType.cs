@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum NetworkType {
+    public enum NetworkType
+    {
         [EnumMember(Value = "intranet")]
         Intranet,
         [EnumMember(Value = "extranet")]

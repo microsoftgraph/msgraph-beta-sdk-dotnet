@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Update behavior options for macOS software updates.</summary>
-    public enum MacOSSoftwareUpdateBehavior {
+    public enum MacOSSoftwareUpdateBehavior
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

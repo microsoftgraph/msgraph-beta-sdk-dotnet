@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents an ADMX listBox element and an ADMX list element.
     /// </summary>
-    public class GroupPolicyPresentationListBox : GroupPolicyUploadedPresentation, IParsable {
+    public class GroupPolicyPresentationListBox : GroupPolicyUploadedPresentation, IParsable 
+    {
         /// <summary>If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.</summary>
         public bool? ExplicitValue {
             get { return BackingStore?.Get<bool?>("explicitValue"); }
@@ -31,7 +32,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="GroupPolicyPresentationListBox"/> and sets the default values.
         /// </summary>
-        public GroupPolicyPresentationListBox() : base() {
+        public GroupPolicyPresentationListBox() : base()
+        {
             OdataType = "#microsoft.graph.groupPolicyPresentationListBox";
         }
         /// <summary>
@@ -39,7 +41,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="GroupPolicyPresentationListBox"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyPresentationListBox CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new GroupPolicyPresentationListBox CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GroupPolicyPresentationListBox();
         }
@@ -47,8 +50,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"explicitValue", n => { ExplicitValue = n.GetBoolValue(); } },
                 {"valuePrefix", n => { ValuePrefix = n.GetStringValue(); } },
             };
@@ -57,7 +62,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("explicitValue", ExplicitValue);

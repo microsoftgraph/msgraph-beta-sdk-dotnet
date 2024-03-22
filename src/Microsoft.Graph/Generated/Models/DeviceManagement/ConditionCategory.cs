@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    public enum ConditionCategory {
+    public enum ConditionCategory
+    {
         [EnumMember(Value = "provisionFailures")]
         ProvisionFailures,
         [EnumMember(Value = "imageUploadFailures")]

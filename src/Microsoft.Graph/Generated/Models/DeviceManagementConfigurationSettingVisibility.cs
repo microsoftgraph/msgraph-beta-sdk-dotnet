@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported setting types</summary>
     [Flags]
-    public enum DeviceManagementConfigurationSettingVisibility {
+    public enum DeviceManagementConfigurationSettingVisibility
+    {
         /// <summary>Default. Not visible.</summary>
         [EnumMember(Value = "none")]
         None = 1,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the level of prevalence of the correlation group features in the anomaly. Possible values are: high, medium or low</summary>
-    public enum UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence {
+    public enum UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence
+    {
         /// <summary>Indicates that we have a high prevalence in the correlation between the anomaly and correlation group.</summary>
         [EnumMember(Value = "high")]
         High,
