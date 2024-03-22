@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum EducationSynchronizationProfileState {
+    public enum EducationSynchronizationProfileState
+    {
         [EnumMember(Value = "deleting")]
         Deleting,
         [EnumMember(Value = "deletionFailed")]

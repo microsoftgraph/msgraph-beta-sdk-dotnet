@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Determine the access level to specific Windows privacy data category.</summary>
-    public enum WindowsPrivacyDataAccessLevel {
+    public enum WindowsPrivacyDataAccessLevel
+    {
         /// <summary>No access level specified, no intents. Device may behave either as in UserInControl or ForceAllow. It may depend on the privacy data been accessed, Windows versions and other factors.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

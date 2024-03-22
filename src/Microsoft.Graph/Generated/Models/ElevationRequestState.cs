@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates state of elevation request</summary>
-    public enum ElevationRequestState {
+    public enum ElevationRequestState
+    {
         /// <summary>Default Value. Indicates that elevation request status is unavailable</summary>
         [EnumMember(Value = "none")]
         None,

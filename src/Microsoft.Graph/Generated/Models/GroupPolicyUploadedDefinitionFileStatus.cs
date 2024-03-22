@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of Group Policy uploaded definition file status.</summary>
-    public enum GroupPolicyUploadedDefinitionFileStatus {
+    public enum GroupPolicyUploadedDefinitionFileStatus
+    {
         /// <summary>Group Policy uploaded definition file invalid upload status.</summary>
         [EnumMember(Value = "none")]
         None,

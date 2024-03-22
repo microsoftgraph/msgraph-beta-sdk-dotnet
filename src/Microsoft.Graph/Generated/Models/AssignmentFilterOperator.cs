@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents the different type of operators which can be used to craft the AssignmentFilter rule.</summary>
-    public enum AssignmentFilterOperator {
+    public enum AssignmentFilterOperator
+    {
         /// <summary>NotSet.</summary>
         [EnumMember(Value = "notSet")]
         NotSet,

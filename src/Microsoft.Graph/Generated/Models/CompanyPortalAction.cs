@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Action on a device that can be executed in the Company Portal</summary>
-    public enum CompanyPortalAction {
+    public enum CompanyPortalAction
+    {
         /// <summary>Unknown device action</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

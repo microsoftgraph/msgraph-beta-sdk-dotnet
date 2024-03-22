@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Mac OS SCEP certificate profile.
     /// </summary>
-    public class MacOSScepCertificateProfile : MacOSCertificateProfileBase, IParsable {
+    public class MacOSScepCertificateProfile : MacOSCertificateProfileBase, IParsable 
+    {
         /// <summary>AllowAllAppsAccess setting</summary>
         public bool? AllowAllAppsAccess {
             get { return BackingStore?.Get<bool?>("allowAllAppsAccess"); }
@@ -135,7 +136,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="MacOSScepCertificateProfile"/> and sets the default values.
         /// </summary>
-        public MacOSScepCertificateProfile() : base() {
+        public MacOSScepCertificateProfile() : base()
+        {
             OdataType = "#microsoft.graph.macOSScepCertificateProfile";
         }
         /// <summary>
@@ -143,7 +145,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MacOSScepCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSScepCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MacOSScepCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSScepCertificateProfile();
         }
@@ -151,8 +154,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"allowAllAppsAccess", n => { AllowAllAppsAccess = n.GetBoolValue(); } },
                 {"certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
                 {"customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -171,7 +176,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowAllAppsAccess", AllowAllAppsAccess);

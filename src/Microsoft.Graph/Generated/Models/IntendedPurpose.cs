@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>PFX Import Options.</summary>
-    public enum IntendedPurpose {
+    public enum IntendedPurpose
+    {
         /// <summary>Unassigned</summary>
         [EnumMember(Value = "unassigned")]
         Unassigned,

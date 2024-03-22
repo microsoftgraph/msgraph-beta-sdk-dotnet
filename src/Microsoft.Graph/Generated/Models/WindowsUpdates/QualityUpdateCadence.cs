@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public enum QualityUpdateCadence {
+    public enum QualityUpdateCadence
+    {
         [EnumMember(Value = "monthly")]
         Monthly,
         [EnumMember(Value = "outOfBand")]

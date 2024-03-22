@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Apple network interface type.</summary>
-    public enum WiredNetworkInterface {
+    public enum WiredNetworkInterface
+    {
         /// <summary>Any Ethernet.</summary>
         [EnumMember(Value = "anyEthernet")]
         AnyEthernet,

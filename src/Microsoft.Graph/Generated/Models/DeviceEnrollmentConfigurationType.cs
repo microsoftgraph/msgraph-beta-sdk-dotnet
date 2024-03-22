@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Describes the TemplateFamily for the Template entity</summary>
-    public enum DeviceEnrollmentConfigurationType {
+    public enum DeviceEnrollmentConfigurationType
+    {
         /// <summary>Default. Set to unknown if the configuration type cannot be determined.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

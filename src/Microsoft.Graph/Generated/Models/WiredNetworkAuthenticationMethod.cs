@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wired Network authentication method.</summary>
-    public enum WiredNetworkAuthenticationMethod {
+    public enum WiredNetworkAuthenticationMethod
+    {
         /// <summary>Use an identity certificate for authentication.</summary>
         [EnumMember(Value = "certificate")]
         Certificate,

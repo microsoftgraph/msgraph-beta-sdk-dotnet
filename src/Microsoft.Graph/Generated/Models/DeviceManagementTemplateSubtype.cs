@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Template subtype</summary>
-    public enum DeviceManagementTemplateSubtype {
+    public enum DeviceManagementTemplateSubtype
+    {
         /// <summary>Template has no subtype</summary>
         [EnumMember(Value = "none")]
         None,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Remote actions Intune supports.</summary>
-    public enum RemoteAction {
+    public enum RemoteAction
+    {
         /// <summary>Indicate user initiates an unknown action.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

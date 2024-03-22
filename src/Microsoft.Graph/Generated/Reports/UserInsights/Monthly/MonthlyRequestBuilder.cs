@@ -22,56 +22,68 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
     /// <summary>
     /// Provides operations to manage the monthly property of the microsoft.graph.userInsightsRoot entity.
     /// </summary>
-    public class MonthlyRequestBuilder : BaseRequestBuilder {
+    public class MonthlyRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the activeUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public ActiveUsersRequestBuilder ActiveUsers { get =>
-            new ActiveUsersRequestBuilder(PathParameters, RequestAdapter);
+        public ActiveUsersRequestBuilder ActiveUsers
+        {
+            get => new ActiveUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public ActiveUsersBreakdownRequestBuilder ActiveUsersBreakdown { get =>
-            new ActiveUsersBreakdownRequestBuilder(PathParameters, RequestAdapter);
+        public ActiveUsersBreakdownRequestBuilder ActiveUsersBreakdown
+        {
+            get => new ActiveUsersBreakdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public AuthenticationsRequestBuilder Authentications { get =>
-            new AuthenticationsRequestBuilder(PathParameters, RequestAdapter);
+        public AuthenticationsRequestBuilder Authentications
+        {
+            get => new AuthenticationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inactiveUsers property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public InactiveUsersRequestBuilder InactiveUsers { get =>
-            new InactiveUsersRequestBuilder(PathParameters, RequestAdapter);
+        public InactiveUsersRequestBuilder InactiveUsers
+        {
+            get => new InactiveUsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inactiveUsersByApplication property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public InactiveUsersByApplicationRequestBuilder InactiveUsersByApplication { get =>
-            new InactiveUsersByApplicationRequestBuilder(PathParameters, RequestAdapter);
+        public InactiveUsersByApplicationRequestBuilder InactiveUsersByApplication
+        {
+            get => new InactiveUsersByApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mfaCompletions property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public MfaCompletionsRequestBuilder MfaCompletions { get =>
-            new MfaCompletionsRequestBuilder(PathParameters, RequestAdapter);
+        public MfaCompletionsRequestBuilder MfaCompletions
+        {
+            get => new MfaCompletionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the requests property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public RequestsRequestBuilder Requests { get =>
-            new RequestsRequestBuilder(PathParameters, RequestAdapter);
+        public RequestsRequestBuilder Requests
+        {
+            get => new RequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the signUps property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public SignUpsRequestBuilder SignUps { get =>
-            new SignUpsRequestBuilder(PathParameters, RequestAdapter);
+        public SignUpsRequestBuilder SignUps
+        {
+            get => new SignUpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the summary property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public SummaryRequestBuilder Summary { get =>
-            new SummaryRequestBuilder(PathParameters, RequestAdapter);
+        public SummaryRequestBuilder Summary
+        {
+            get => new SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="MonthlyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly{?%24expand,%24select}", pathParameters) {
+        public MonthlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MonthlyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly{?%24expand,%24select}", rawUrl) {
+        public MonthlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/userInsights/monthly{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete navigation property monthly for reports
@@ -81,13 +93,16 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -101,13 +116,16 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MonthlyUserInsightMetricsRoot?> GetAsync(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MonthlyUserInsightMetricsRoot?> GetAsync(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MonthlyUserInsightMetricsRoot> GetAsync(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MonthlyUserInsightMetricsRoot> GetAsync(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MonthlyUserInsightMetricsRoot>(requestInfo, MonthlyUserInsightMetricsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -122,14 +140,17 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MonthlyUserInsightMetricsRoot?> PatchAsync(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MonthlyUserInsightMetricsRoot?> PatchAsync(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MonthlyUserInsightMetricsRoot> PatchAsync(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MonthlyUserInsightMetricsRoot> PatchAsync(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MonthlyUserInsightMetricsRoot>(requestInfo, MonthlyUserInsightMetricsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -141,10 +162,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/reports/userInsights/monthly", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -158,10 +181,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MonthlyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -176,10 +201,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(MonthlyUserInsightMetricsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/reports/userInsights/monthly", PathParameters);
@@ -193,19 +220,22 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// </summary>
         /// <returns>A <see cref="MonthlyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MonthlyRequestBuilder WithUrl(string rawUrl) {
+        public MonthlyRequestBuilder WithUrl(string rawUrl)
+        {
             return new MonthlyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonthlyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MonthlyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.
         /// </summary>
-        public class MonthlyRequestBuilderGetQueryParameters {
+        public class MonthlyRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -231,13 +261,15 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonthlyRequestBuilderGetRequestConfiguration : RequestConfiguration<MonthlyRequestBuilderGetQueryParameters> {
+        public class MonthlyRequestBuilderGetRequestConfiguration : RequestConfiguration<MonthlyRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonthlyRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class MonthlyRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

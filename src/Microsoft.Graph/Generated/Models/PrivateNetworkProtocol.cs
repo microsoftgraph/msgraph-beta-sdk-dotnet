@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum PrivateNetworkProtocol {
+    public enum PrivateNetworkProtocol
+    {
         [EnumMember(Value = "tcp")]
         Tcp = 1,
         [EnumMember(Value = "udp")]

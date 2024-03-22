@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy {
     [Obsolete("This class is obsolete. Use SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse instead.")]
-    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable {
+    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="SummarizeDeviceRemoteConnectionWithSummarizeByResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SummarizeDeviceRemoteConnectionWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new SummarizeDeviceRemoteConnectionWithSummarizeByResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SummarizeDeviceRemoteConnectionWithSummarizeByResponse();
         }

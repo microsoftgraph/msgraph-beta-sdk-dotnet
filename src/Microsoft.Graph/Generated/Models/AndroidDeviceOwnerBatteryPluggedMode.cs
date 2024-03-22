@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner possible values for states of the device&apos;s plugged-in power modes.</summary>
-    public enum AndroidDeviceOwnerBatteryPluggedMode {
+    public enum AndroidDeviceOwnerBatteryPluggedMode
+    {
         /// <summary>Not configured; this value is ignored.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

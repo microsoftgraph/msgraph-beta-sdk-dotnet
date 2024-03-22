@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     [Flags]
-    public enum NotificationDestination {
+    public enum NotificationDestination
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "api")]

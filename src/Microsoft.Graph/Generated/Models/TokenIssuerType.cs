@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum TokenIssuerType {
+    public enum TokenIssuerType
+    {
         [EnumMember(Value = "AzureAD")]
         AzureAD,
         [EnumMember(Value = "ADFederationServices")]

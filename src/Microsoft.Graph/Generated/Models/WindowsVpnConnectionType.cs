@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Windows VPN connection type.</summary>
-    public enum WindowsVpnConnectionType {
+    public enum WindowsVpnConnectionType
+    {
         /// <summary>Pulse Secure.</summary>
         [EnumMember(Value = "pulseSecure")]
         PulseSecure,

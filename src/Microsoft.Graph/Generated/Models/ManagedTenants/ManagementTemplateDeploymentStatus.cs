@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public enum ManagementTemplateDeploymentStatus {
+    public enum ManagementTemplateDeploymentStatus
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "inProgress")]

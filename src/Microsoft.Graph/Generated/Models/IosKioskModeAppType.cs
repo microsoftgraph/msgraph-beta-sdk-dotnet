@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>App source options for iOS kiosk mode.</summary>
-    public enum IosKioskModeAppType {
+    public enum IosKioskModeAppType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

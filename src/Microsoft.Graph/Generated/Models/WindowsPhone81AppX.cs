@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties and inherited properties for Windows Phone 8.1 AppX Line Of Business apps. Inherits from graph.mobileLobApp. Will be deprecated in February 2023.
     /// </summary>
-    public class WindowsPhone81AppX : MobileLobApp, IParsable {
+    public class WindowsPhone81AppX : MobileLobApp, IParsable 
+    {
         /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? ApplicableArchitectures {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
@@ -115,7 +116,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsPhone81AppX"/> and sets the default values.
         /// </summary>
-        public WindowsPhone81AppX() : base() {
+        public WindowsPhone81AppX() : base()
+        {
             OdataType = "#microsoft.graph.windowsPhone81AppX";
         }
         /// <summary>
@@ -123,10 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsPhone81AppX"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsPhone81AppX CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsPhone81AppX CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.windowsPhone81AppXBundle" => new WindowsPhone81AppXBundle(),
                 _ => new WindowsPhone81AppX(),
             };
@@ -135,8 +139,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
                 {"identityName", n => { IdentityName = n.GetStringValue(); } },
                 {"identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
@@ -151,7 +157,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);

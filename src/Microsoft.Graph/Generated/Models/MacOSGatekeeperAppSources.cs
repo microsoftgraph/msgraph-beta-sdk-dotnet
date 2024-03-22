@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>App source options for macOS Gatekeeper.</summary>
-    public enum MacOSGatekeeperAppSources {
+    public enum MacOSGatekeeperAppSources
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

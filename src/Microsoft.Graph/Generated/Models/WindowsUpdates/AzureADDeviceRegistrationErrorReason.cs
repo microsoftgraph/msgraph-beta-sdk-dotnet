@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public enum AzureADDeviceRegistrationErrorReason {
+    public enum AzureADDeviceRegistrationErrorReason
+    {
         [EnumMember(Value = "invalidGlobalDeviceId")]
         InvalidGlobalDeviceId,
         [EnumMember(Value = "invalidAzureADDeviceId")]

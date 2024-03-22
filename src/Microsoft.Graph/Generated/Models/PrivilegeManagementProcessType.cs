@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the type of elevated process</summary>
-    public enum PrivilegeManagementProcessType {
+    public enum PrivilegeManagementProcessType
+    {
         /// <summary>Default. If the type was unknown on the client for some reasons</summary>
         [EnumMember(Value = "undefined")]
         Undefined,

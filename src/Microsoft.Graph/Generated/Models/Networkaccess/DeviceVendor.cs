@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum DeviceVendor {
+    public enum DeviceVendor
+    {
         [EnumMember(Value = "barracudaNetworks")]
         BarracudaNetworks,
         [EnumMember(Value = "checkPoint")]

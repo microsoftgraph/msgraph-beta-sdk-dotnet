@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported values for the padding scheme used by encryption provider.</summary>
-    public enum UserPfxPaddingScheme {
+    public enum UserPfxPaddingScheme
+    {
         /// <summary>Unknown padding Scheme.</summary>
         [EnumMember(Value = "none")]
         None,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum UsageStatus {
+    public enum UsageStatus
+    {
         [EnumMember(Value = "frequentlyUsed")]
         FrequentlyUsed,
         [EnumMember(Value = "rarelyUsed")]

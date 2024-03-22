@@ -5,8 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class AnalyzedEmail : Microsoft.Graph.Beta.Models.Entity, IParsable {
-        /// <summary>The alertIds property</summary>
+    public class AnalyzedEmail : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
+        /// <summary>A collection of values that contain the IDs of any alerts associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AlertIds {
@@ -20,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("alertIds", value); }
         }
 #endif
-        /// <summary>The attachments property</summary>
+        /// <summary>A collection of the attachments in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AnalyzedEmailAttachment>? Attachments {
@@ -34,12 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
-        /// <summary>The attachmentsCount property</summary>
+        /// <summary>The number of attachments in the email.</summary>
         public int? AttachmentsCount {
             get { return BackingStore?.Get<int?>("attachmentsCount"); }
             set { BackingStore?.Set("attachmentsCount", value); }
         }
-        /// <summary>The authenticationDetails property</summary>
+        /// <summary>The authentication details associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AnalyzedEmailAuthenticationDetail? AuthenticationDetails {
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("authenticationDetails", value); }
         }
 #endif
-        /// <summary>The bulkComplaintLevel property</summary>
+        /// <summary>The bulk complaint level of the email. A higher level is more likely to be spam.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BulkComplaintLevel {
@@ -67,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("bulkComplaintLevel", value); }
         }
 #endif
-        /// <summary>The contexts property</summary>
+        /// <summary>Provides context of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Contexts {
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("contexts", value); }
         }
 #endif
-        /// <summary>The detectionMethods property</summary>
+        /// <summary>The methods of detection used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DetectionMethods {
@@ -95,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectionMethods", value); }
         }
 #endif
-        /// <summary>The directionality property</summary>
+        /// <summary>The direction of the emails. The possible values are: unknown, inbound, outbound, intraOrg, unknownFutureValue.</summary>
         public AntispamDirectionality? Directionality {
             get { return BackingStore?.Get<AntispamDirectionality?>("directionality"); }
             set { BackingStore?.Set("directionality", value); }
         }
-        /// <summary>The distributionList property</summary>
+        /// <summary>The distribution list details to which the email was sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DistributionList {
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("distributionList", value); }
         }
 #endif
-        /// <summary>The emailClusterId property</summary>
+        /// <summary>The identifier for the group of similar emails clustered based on heuristic analysis of their content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailClusterId {
@@ -128,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("emailClusterId", value); }
         }
 #endif
-        /// <summary>The exchangeTransportRules property</summary>
+        /// <summary>The name of the Exchange transport rules (ETRs) associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AnalyzedEmailExchangeTransportRuleInfo>? ExchangeTransportRules {
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("exchangeTransportRules", value); }
         }
 #endif
-        /// <summary>The internetMessageId property</summary>
+        /// <summary>A public-facing identifier for the email that is sent. The message ID is in the format specified by RFC2822.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternetMessageId {
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("internetMessageId", value); }
         }
 #endif
-        /// <summary>The language property</summary>
+        /// <summary>The detected language of the email content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Language {
@@ -170,7 +171,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("language", value); }
         }
 #endif
-        /// <summary>The latestDelivery property</summary>
+        /// <summary>The latest delivery details of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AnalyzedEmailDeliveryDetail? LatestDelivery {
@@ -184,12 +185,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("latestDelivery", value); }
         }
 #endif
-        /// <summary>The loggedDateTime property</summary>
+        /// <summary>Date-time when the email record was logged.</summary>
         public DateTimeOffset? LoggedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("loggedDateTime"); }
             set { BackingStore?.Set("loggedDateTime", value); }
         }
-        /// <summary>The networkMessageId property</summary>
+        /// <summary>An internal identifier for the email generated by Microsoft 365.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkMessageId {
@@ -203,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("networkMessageId", value); }
         }
 #endif
-        /// <summary>The originalDelivery property</summary>
+        /// <summary>The original delivery details of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AnalyzedEmailDeliveryDetail? OriginalDelivery {
@@ -217,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("originalDelivery", value); }
         }
 #endif
-        /// <summary>The overrideSources property</summary>
+        /// <summary>An aggregated list of all overrides with source on email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OverrideSources {
@@ -231,7 +232,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("overrideSources", value); }
         }
 #endif
-        /// <summary>The phishConfidenceLevel property</summary>
+        /// <summary>The phish confidence level associated with the email</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhishConfidenceLevel {
@@ -245,7 +246,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("phishConfidenceLevel", value); }
         }
 #endif
-        /// <summary>The policy property</summary>
+        /// <summary>The action policy that took effect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Policy {
@@ -259,7 +260,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("policy", value); }
         }
 #endif
-        /// <summary>The policyAction property</summary>
+        /// <summary>The action taken on the email based on the configured policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyAction {
@@ -273,7 +274,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("policyAction", value); }
         }
 #endif
-        /// <summary>The recipientEmailAddresses property</summary>
+        /// <summary>Contains the email addresses of the recipients.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RecipientEmailAddresses {
@@ -287,7 +288,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("recipientEmailAddresses", value); }
         }
 #endif
-        /// <summary>The returnPath property</summary>
+        /// <summary>A field that indicates where and how bounced emails are processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReturnPath {
@@ -301,7 +302,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("returnPath", value); }
         }
 #endif
-        /// <summary>The senderDetail property</summary>
+        /// <summary>Sender details of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AnalyzedEmailSenderDetail? SenderDetail {
@@ -315,12 +316,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("senderDetail", value); }
         }
 #endif
-        /// <summary>The sizeInBytes property</summary>
+        /// <summary>Size of the email in bytes.</summary>
         public int? SizeInBytes {
             get { return BackingStore?.Get<int?>("sizeInBytes"); }
             set { BackingStore?.Set("sizeInBytes", value); }
         }
-        /// <summary>The spamConfidenceLevel property</summary>
+        /// <summary>Spam confidence of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SpamConfidenceLevel {
@@ -334,7 +335,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("spamConfidenceLevel", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>Subject of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject {
@@ -348,12 +349,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The threatType property</summary>
+        /// <summary>Indicates the threat types. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ThreatType?>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
-        /// <summary>The urls property</summary>
+        /// <summary>A collection of the URLs in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AnalyzedEmailUrl>? Urls {
@@ -367,7 +368,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("urls", value); }
         }
 #endif
-        /// <summary>The urlsCount property</summary>
+        /// <summary>The number of URLs in the email.</summary>
         public int? UrlsCount {
             get { return BackingStore?.Get<int?>("urlsCount"); }
             set { BackingStore?.Set("urlsCount", value); }
@@ -377,7 +378,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         /// <returns>A <see cref="AnalyzedEmail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AnalyzedEmail CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new AnalyzedEmail CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AnalyzedEmail();
         }
@@ -385,8 +387,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"alertIds", n => { AlertIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<AnalyzedEmailAttachment>(AnalyzedEmailAttachment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attachmentsCount", n => { AttachmentsCount = n.GetIntValue(); } },
@@ -423,7 +427,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("alertIds", AlertIds);

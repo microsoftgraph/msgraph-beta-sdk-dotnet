@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Wired Network Authentication Type Settings.</summary>
-    public enum WiredNetworkAuthenticationType {
+    public enum WiredNetworkAuthenticationType
+    {
         /// <summary>None</summary>
         [EnumMember(Value = "none")]
         None,

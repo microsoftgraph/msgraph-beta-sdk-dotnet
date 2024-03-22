@@ -20,48 +20,58 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
     /// <summary>
     /// Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.
     /// </summary>
-    public class EducationSynchronizationProfileItemRequestBuilder : BaseRequestBuilder {
+    public class EducationSynchronizationProfileItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
-        public ErrorsRequestBuilder Errors { get =>
-            new ErrorsRequestBuilder(PathParameters, RequestAdapter);
+        public ErrorsRequestBuilder Errors
+        {
+            get => new ErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the pause method.</summary>
-        public PauseRequestBuilder Pause { get =>
-            new PauseRequestBuilder(PathParameters, RequestAdapter);
+        public PauseRequestBuilder Pause
+        {
+            get => new PauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the profileStatus property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
-        public ProfileStatusRequestBuilder ProfileStatus { get =>
-            new ProfileStatusRequestBuilder(PathParameters, RequestAdapter);
+        public ProfileStatusRequestBuilder ProfileStatus
+        {
+            get => new ProfileStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reset method.</summary>
-        public ResetRequestBuilder Reset { get =>
-            new ResetRequestBuilder(PathParameters, RequestAdapter);
+        public ResetRequestBuilder Reset
+        {
+            get => new ResetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resume method.</summary>
-        public ResumeRequestBuilder Resume { get =>
-            new ResumeRequestBuilder(PathParameters, RequestAdapter);
+        public ResumeRequestBuilder Resume
+        {
+            get => new ResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the start method.</summary>
-        public StartRequestBuilder Start { get =>
-            new StartRequestBuilder(PathParameters, RequestAdapter);
+        public StartRequestBuilder Start
+        {
+            get => new StartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadUrl method.</summary>
-        public UploadUrlRequestBuilder UploadUrl { get =>
-            new UploadUrlRequestBuilder(PathParameters, RequestAdapter);
+        public UploadUrlRequestBuilder UploadUrl
+        {
+            get => new UploadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="EducationSynchronizationProfileItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationSynchronizationProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24expand,%24select}", pathParameters) {
+        public EducationSynchronizationProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="EducationSynchronizationProfileItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EducationSynchronizationProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24expand,%24select}", rawUrl) {
+        public EducationSynchronizationProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete a school data synchronization profile in the tenant based on the identifier.
@@ -72,13 +82,16 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -93,13 +106,16 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSynchronizationProfile?> GetAsync(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationProfile?> GetAsync(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EducationSynchronizationProfile> GetAsync(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationProfile> GetAsync(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, EducationSynchronizationProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -114,14 +130,17 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationSynchronizationProfile?> PatchAsync(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationProfile?> PatchAsync(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<EducationSynchronizationProfile> PatchAsync(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationProfile> PatchAsync(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, EducationSynchronizationProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -133,10 +152,12 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -150,10 +171,12 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -168,10 +191,12 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(EducationSynchronizationProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/education/synchronizationProfiles/{educationSynchronizationProfile%2Did}", PathParameters);
@@ -185,19 +210,22 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// </summary>
         /// <returns>A <see cref="EducationSynchronizationProfileItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationSynchronizationProfileItemRequestBuilder WithUrl(string rawUrl) {
+        public EducationSynchronizationProfileItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new EducationSynchronizationProfileItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationSynchronizationProfileItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EducationSynchronizationProfileItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Retrieve a school data synchronization profile in the tenant based on the identifier.
         /// </summary>
-        public class EducationSynchronizationProfileItemRequestBuilderGetQueryParameters {
+        public class EducationSynchronizationProfileItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,13 +251,15 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters> {
+        public class EducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationSynchronizationProfileItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationSynchronizationProfileItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class EducationSynchronizationProfileItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

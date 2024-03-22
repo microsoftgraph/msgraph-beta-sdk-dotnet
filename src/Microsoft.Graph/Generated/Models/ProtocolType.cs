@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum ProtocolType {
+    public enum ProtocolType
+    {
         [EnumMember(Value = "none")]
         None = 1,
         [EnumMember(Value = "oAuth2")]

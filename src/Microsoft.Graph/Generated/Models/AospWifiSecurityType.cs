@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.</summary>
-    public enum AospWifiSecurityType {
+    public enum AospWifiSecurityType
+    {
         /// <summary>No security type.</summary>
         [EnumMember(Value = "none")]
         None,

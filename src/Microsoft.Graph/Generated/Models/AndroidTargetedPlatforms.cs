@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.</summary>
     [Flags]
-    public enum AndroidTargetedPlatforms {
+    public enum AndroidTargetedPlatforms
+    {
         /// <summary>Indicates the Android targeted platform is Android Device Administrator.</summary>
         [EnumMember(Value = "androidDeviceAdministrator")]
         AndroidDeviceAdministrator = 1,

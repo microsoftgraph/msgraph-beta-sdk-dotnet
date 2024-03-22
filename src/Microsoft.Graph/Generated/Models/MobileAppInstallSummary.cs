@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class MobileAppInstallSummary : Entity, IParsable {
+    public class MobileAppInstallSummary : Entity, IParsable 
+    {
         /// <summary>Number of Devices that have failed to install this app.</summary>
         public int? FailedDeviceCount {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
@@ -64,7 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="MobileAppInstallSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new MobileAppInstallSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MobileAppInstallSummary();
         }
@@ -72,8 +74,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
                 {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
                 {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
@@ -90,19 +94,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("failedDeviceCount", FailedDeviceCount);
-            writer.WriteIntValue("failedUserCount", FailedUserCount);
-            writer.WriteIntValue("installedDeviceCount", InstalledDeviceCount);
-            writer.WriteIntValue("installedUserCount", InstalledUserCount);
-            writer.WriteIntValue("notApplicableDeviceCount", NotApplicableDeviceCount);
-            writer.WriteIntValue("notApplicableUserCount", NotApplicableUserCount);
-            writer.WriteIntValue("notInstalledDeviceCount", NotInstalledDeviceCount);
-            writer.WriteIntValue("notInstalledUserCount", NotInstalledUserCount);
-            writer.WriteIntValue("pendingInstallDeviceCount", PendingInstallDeviceCount);
-            writer.WriteIntValue("pendingInstallUserCount", PendingInstallUserCount);
         }
     }
 }

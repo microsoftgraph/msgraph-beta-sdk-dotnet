@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum MultiTenantOrganizationMemberRole {
+    public enum MultiTenantOrganizationMemberRole
+    {
         [EnumMember(Value = "owner")]
         Owner,
         [EnumMember(Value = "member")]

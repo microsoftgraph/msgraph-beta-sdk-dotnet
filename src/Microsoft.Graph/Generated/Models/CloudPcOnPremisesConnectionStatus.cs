@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcOnPremisesConnectionStatus {
+    public enum CloudPcOnPremisesConnectionStatus
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "running")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>What message will be displayed by Edge before switching to Internet Explorer.</summary>
-    public enum InternetExplorerMessageSetting {
+    public enum InternetExplorerMessageSetting
+    {
         /// <summary>Not configured.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

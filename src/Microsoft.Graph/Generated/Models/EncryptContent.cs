@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class EncryptContent : LabelActionBase, IParsable {
+    public class EncryptContent : LabelActionBase, IParsable 
+    {
         /// <summary>The encryptWith property</summary>
         public Microsoft.Graph.Beta.Models.EncryptWith? EncryptWith {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptWith?>("encryptWith"); }
@@ -14,7 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="EncryptContent"/> and sets the default values.
         /// </summary>
-        public EncryptContent() : base() {
+        public EncryptContent() : base()
+        {
             OdataType = "#microsoft.graph.encryptContent";
         }
         /// <summary>
@@ -22,10 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="EncryptContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EncryptContent CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new EncryptContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.encryptWithTemplate" => new EncryptWithTemplate(),
                 "#microsoft.graph.encryptWithUserDefinedRights" => new EncryptWithUserDefinedRights(),
                 _ => new EncryptContent(),
@@ -35,8 +39,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"encryptWith", n => { EncryptWith = n.GetEnumValue<EncryptWith>(); } },
             };
         }
@@ -44,7 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<EncryptWith>("encryptWith", EncryptWith);

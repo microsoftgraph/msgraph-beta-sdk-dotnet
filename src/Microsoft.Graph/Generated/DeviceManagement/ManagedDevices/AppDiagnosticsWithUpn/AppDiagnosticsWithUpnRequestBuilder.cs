@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
     /// <summary>
     /// Provides operations to call the appDiagnostics method.
     /// </summary>
-    public class AppDiagnosticsWithUpnRequestBuilder : BaseRequestBuilder {
+    public class AppDiagnosticsWithUpnRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AppDiagnosticsWithUpnRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
-        public AppDiagnosticsWithUpnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string upn = "") : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/appDiagnostics(upn='{upn}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public AppDiagnosticsWithUpnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string upn = "") : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/appDiagnostics(upn='{upn}'){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(upn)) PathParameters.Add("upn", upn);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppDiagnosticsWithUpnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/appDiagnostics(upn='{upn}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public AppDiagnosticsWithUpnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/managedDevices/appDiagnostics(upn='{upn}'){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function appDiagnostics
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppDiagnosticsWithUpnGetResponse?> GetAsAppDiagnosticsWithUpnGetResponseAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppDiagnosticsWithUpnGetResponse?> GetAsAppDiagnosticsWithUpnGetResponseAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AppDiagnosticsWithUpnGetResponse> GetAsAppDiagnosticsWithUpnGetResponseAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppDiagnosticsWithUpnGetResponse> GetAsAppDiagnosticsWithUpnGetResponseAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AppDiagnosticsWithUpnGetResponse>(requestInfo, AppDiagnosticsWithUpnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         [Obsolete("This method is obsolete. Use GetAsAppDiagnosticsWithUpnGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppDiagnosticsWithUpnResponse?> GetAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppDiagnosticsWithUpnResponse?> GetAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<AppDiagnosticsWithUpnResponse> GetAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppDiagnosticsWithUpnResponse> GetAsync(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AppDiagnosticsWithUpnResponse>(requestInfo, AppDiagnosticsWithUpnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         /// </summary>
         /// <returns>A <see cref="AppDiagnosticsWithUpnRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AppDiagnosticsWithUpnRequestBuilder WithUrl(string rawUrl) {
+        public AppDiagnosticsWithUpnRequestBuilder WithUrl(string rawUrl)
+        {
             return new AppDiagnosticsWithUpnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function appDiagnostics
         /// </summary>
-        public class AppDiagnosticsWithUpnRequestBuilderGetQueryParameters {
+        public class AppDiagnosticsWithUpnRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -133,7 +146,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AppDiagnosticsWithUpnRequestBuilderGetRequestConfiguration : RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters> {
+        public class AppDiagnosticsWithUpnRequestBuilderGetRequestConfiguration : RequestConfiguration<AppDiagnosticsWithUpnRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Action type on Configuration Manager client</summary>
-    public enum ConfigurationManagerActionType {
+    public enum ConfigurationManagerActionType
+    {
         /// <summary>Refresh machine policy on Configuration Manager client</summary>
         [EnumMember(Value = "refreshMachinePolicy")]
         RefreshMachinePolicy,

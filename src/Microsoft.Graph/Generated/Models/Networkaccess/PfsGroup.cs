@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum PfsGroup {
+    public enum PfsGroup
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "pfs1")]

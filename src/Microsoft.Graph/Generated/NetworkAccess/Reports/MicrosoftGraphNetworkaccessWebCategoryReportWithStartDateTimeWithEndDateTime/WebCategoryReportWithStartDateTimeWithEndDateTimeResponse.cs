@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessWebCategoryReportWithStartDateTimeWithEndDateTime {
     [Obsolete("This class is obsolete. Use WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse instead.")]
-    public class WebCategoryReportWithStartDateTimeWithEndDateTimeResponse : WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable {
+    public class WebCategoryReportWithStartDateTimeWithEndDateTimeResponse : WebCategoryReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="WebCategoryReportWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WebCategoryReportWithStartDateTimeWithEndDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WebCategoryReportWithStartDateTimeWithEndDateTimeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WebCategoryReportWithStartDateTimeWithEndDateTimeResponse();
         }

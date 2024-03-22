@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the status of the mobile app on the device.</summary>
-    public enum MobileAppIntent {
+    public enum MobileAppIntent
+    {
         /// <summary>Available</summary>
         [EnumMember(Value = "available")]
         Available,

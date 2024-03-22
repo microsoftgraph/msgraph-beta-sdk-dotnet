@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the type of content allowed to be cached by Apple&apos;s content caching service.</summary>
-    public enum MacOSContentCachingType {
+    public enum MacOSContentCachingType
+    {
         /// <summary>Default. Both user iCloud data and non-iCloud data will be cached.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

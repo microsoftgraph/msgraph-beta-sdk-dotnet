@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class UserExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class UserExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public int? DaysUntilForcedReboot {
             get { return BackingStore?.Get<int?>("daysUntilForcedReboot"); }
             set { BackingStore?.Set("daysUntilForcedReboot", value); }
+        }
+        /// <summary>The isHotpatchEnabled property</summary>
+        public bool? IsHotpatchEnabled {
+            get { return BackingStore?.Get<bool?>("isHotpatchEnabled"); }
+            set { BackingStore?.Set("isHotpatchEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,7 +47,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// Instantiates a new <see cref="UserExperienceSettings"/> and sets the default values.
         /// </summary>
-        public UserExperienceSettings() {
+        public UserExperienceSettings()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -50,7 +57,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         /// <returns>A <see cref="UserExperienceSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static UserExperienceSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UserExperienceSettings();
         }
@@ -58,9 +66,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
+                {"isHotpatchEnabled", n => { IsHotpatchEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"offerAsOptional", n => { OfferAsOptional = n.GetBoolValue(); } },
             };
@@ -69,9 +80,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("daysUntilForcedReboot", DaysUntilForcedReboot);
+            writer.WriteBoolValue("isHotpatchEnabled", IsHotpatchEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("offerAsOptional", OfferAsOptional);
             writer.WriteAdditionalData(AdditionalData);

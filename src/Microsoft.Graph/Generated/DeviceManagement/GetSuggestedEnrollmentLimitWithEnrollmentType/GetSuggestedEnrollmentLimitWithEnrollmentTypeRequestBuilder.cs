@@ -13,14 +13,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
     /// <summary>
     /// Provides operations to call the getSuggestedEnrollmentLimit method.
     /// </summary>
-    public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder : BaseRequestBuilder {
+    public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="enrollmentType">Usage: enrollmentType=&apos;{enrollmentType}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string enrollmentType = "") : base(requestAdapter, "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')", pathParameters) {
+        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string enrollmentType = "") : base(requestAdapter, "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(enrollmentType)) PathParameters.Add("enrollmentType", enrollmentType);
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')", rawUrl) {
+        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/getSuggestedEnrollmentLimit(enrollmentType='{enrollmentType}')", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getSuggestedEnrollmentLimit
@@ -39,13 +42,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SuggestedEnrollmentLimit?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SuggestedEnrollmentLimit?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SuggestedEnrollmentLimit> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SuggestedEnrollmentLimit> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SuggestedEnrollmentLimit>(requestInfo, SuggestedEnrollmentLimit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -72,14 +80,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithE
         /// </summary>
         /// <returns>A <see cref="GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder WithUrl(string rawUrl) {
+        public GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class GetSuggestedEnrollmentLimitWithEnrollmentTypeRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

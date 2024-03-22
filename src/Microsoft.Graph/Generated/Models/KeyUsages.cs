@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Key Usage Options.</summary>
     [Flags]
-    public enum KeyUsages {
+    public enum KeyUsages
+    {
         /// <summary>Key Encipherment Usage.</summary>
         [EnumMember(Value = "keyEncipherment")]
         KeyEncipherment = 1,

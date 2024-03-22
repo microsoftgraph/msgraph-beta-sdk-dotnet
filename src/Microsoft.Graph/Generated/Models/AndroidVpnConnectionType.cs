@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android VPN connection type.</summary>
-    public enum AndroidVpnConnectionType {
+    public enum AndroidVpnConnectionType
+    {
         /// <summary>Cisco AnyConnect.</summary>
         [EnumMember(Value = "ciscoAnyConnect")]
         CiscoAnyConnect,

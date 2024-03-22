@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Available settings for EAP-FAST Configuration.</summary>
-    public enum EapFastConfiguration {
+    public enum EapFastConfiguration
+    {
         /// <summary>Use EAP-FAST without Protected Access Credential (PAC).</summary>
         [EnumMember(Value = "noProtectedAccessCredential")]
         NoProtectedAccessCredential,

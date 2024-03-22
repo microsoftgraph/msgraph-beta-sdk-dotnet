@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public enum CveSeverityLevel {
+    public enum CveSeverityLevel
+    {
         [EnumMember(Value = "critical")]
         Critical,
         [EnumMember(Value = "important")]

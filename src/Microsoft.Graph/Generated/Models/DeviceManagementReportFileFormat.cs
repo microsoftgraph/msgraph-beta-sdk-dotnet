@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for the file format of a report.</summary>
-    public enum DeviceManagementReportFileFormat {
+    public enum DeviceManagementReportFileFormat
+    {
         /// <summary>CSV Format.</summary>
         [EnumMember(Value = "csv")]
         Csv,

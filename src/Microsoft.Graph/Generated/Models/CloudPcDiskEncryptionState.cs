@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcDiskEncryptionState {
+    public enum CloudPcDiskEncryptionState
+    {
         [EnumMember(Value = "notAvailable")]
         NotAvailable,
         [EnumMember(Value = "notEncrypted")]

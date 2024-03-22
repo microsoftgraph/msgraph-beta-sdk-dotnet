@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
     /// <summary>
     /// Provides operations to call the deleteTiIndicatorsByExternalId method.
     /// </summary>
-    public class DeleteTiIndicatorsByExternalIdRequestBuilder : BaseRequestBuilder {
+    public class DeleteTiIndicatorsByExternalIdRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="DeleteTiIndicatorsByExternalIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeleteTiIndicatorsByExternalIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/deleteTiIndicatorsByExternalId", pathParameters) {
+        public DeleteTiIndicatorsByExternalIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/deleteTiIndicatorsByExternalId", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="DeleteTiIndicatorsByExternalIdRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeleteTiIndicatorsByExternalIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/deleteTiIndicatorsByExternalId", rawUrl) {
+        public DeleteTiIndicatorsByExternalIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/tiIndicators/deleteTiIndicatorsByExternalId", rawUrl)
+        {
         }
         /// <summary>
         /// Delete multiple threat intelligence (TI) indicators in one request instead of multiple requests, when the request contains external IDs instead of IDs.
@@ -38,14 +41,17 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeleteTiIndicatorsByExternalIdPostResponse?> PostAsDeleteTiIndicatorsByExternalIdPostResponseAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsByExternalIdPostResponse?> PostAsDeleteTiIndicatorsByExternalIdPostResponseAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeleteTiIndicatorsByExternalIdPostResponse> PostAsDeleteTiIndicatorsByExternalIdPostResponseAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsByExternalIdPostResponse> PostAsDeleteTiIndicatorsByExternalIdPostResponseAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeleteTiIndicatorsByExternalIdPostResponse>(requestInfo, DeleteTiIndicatorsByExternalIdPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -62,14 +68,17 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         [Obsolete("This method is obsolete. Use PostAsDeleteTiIndicatorsByExternalIdPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeleteTiIndicatorsByExternalIdResponse?> PostAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsByExternalIdResponse?> PostAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<DeleteTiIndicatorsByExternalIdResponse> PostAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeleteTiIndicatorsByExternalIdResponse> PostAsync(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeleteTiIndicatorsByExternalIdResponse>(requestInfo, DeleteTiIndicatorsByExternalIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -82,10 +91,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeleteTiIndicatorsByExternalIdPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -99,14 +110,16 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         /// </summary>
         /// <returns>A <see cref="DeleteTiIndicatorsByExternalIdRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeleteTiIndicatorsByExternalIdRequestBuilder WithUrl(string rawUrl) {
+        public DeleteTiIndicatorsByExternalIdRequestBuilder WithUrl(string rawUrl)
+        {
             return new DeleteTiIndicatorsByExternalIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class DeleteTiIndicatorsByExternalIdRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The VPN action to take for a specific service.</summary>
-    public enum VpnServiceExceptionAction {
+    public enum VpnServiceExceptionAction
+    {
         /// <summary>Make all traffic from that service go through the VPN</summary>
         [EnumMember(Value = "forceTrafficViaVPN")]
         ForceTrafficViaVPN,

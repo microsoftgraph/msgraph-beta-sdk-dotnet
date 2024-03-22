@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of Group Policy operation.</summary>
-    public enum GroupPolicyOperationType {
+    public enum GroupPolicyOperationType
+    {
         /// <summary>Group Policy invalid operation type.</summary>
         [EnumMember(Value = "none")]
         None,

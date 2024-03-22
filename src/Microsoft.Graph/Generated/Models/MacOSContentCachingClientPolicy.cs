@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Determines which clients a content cache will serve.</summary>
-    public enum MacOSContentCachingClientPolicy {
+    public enum MacOSContentCachingClientPolicy
+    {
         /// <summary>Defaults to clients in local network.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

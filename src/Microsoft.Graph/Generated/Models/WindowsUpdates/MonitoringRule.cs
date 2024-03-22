@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
         public MonitoringAction? Action {
             get { return BackingStore?.Get<MonitoringAction?>("action"); }
@@ -46,7 +47,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>
         /// Instantiates a new <see cref="MonitoringRule"/> and sets the default values.
         /// </summary>
-        public MonitoringRule() {
+        public MonitoringRule()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -55,7 +57,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         /// <returns>A <see cref="MonitoringRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MonitoringRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MonitoringRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MonitoringRule();
         }
@@ -63,8 +66,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"action", n => { Action = n.GetEnumValue<MonitoringAction>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"signal", n => { Signal = n.GetEnumValue<MonitoringSignal>(); } },
@@ -75,7 +80,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<MonitoringAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);

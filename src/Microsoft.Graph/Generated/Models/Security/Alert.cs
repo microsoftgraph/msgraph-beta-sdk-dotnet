@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class Alert : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class Alert : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>The adversary or activity group that is associated with this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -18,6 +19,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public string ActorDisplayName {
             get { return BackingStore?.Get<string>("actorDisplayName"); }
             set { BackingStore?.Set("actorDisplayName", value); }
+        }
+#endif
+        /// <summary>A collection of other alert properties, including user-defined properties. Any custom details defined in the alert, and any dynamic content in the alert details, are stored here.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Dictionary? AdditionalDataProperty {
+            get { return BackingStore?.Get<Dictionary?>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
+        }
+#nullable restore
+#else
+        public Dictionary AdditionalDataProperty {
+            get { return BackingStore?.Get<Dictionary>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
         }
 #endif
         /// <summary>The ID of the policy that generated the alert, and populated when there is a specific policy that generated the alert, whether configured by a customer or a built-in policy.</summary>
@@ -346,7 +361,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         /// <returns>A <see cref="Alert"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Alert CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Alert CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Alert();
         }
@@ -354,9 +370,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"actorDisplayName", n => { ActorDisplayName = n.GetStringValue(); } },
+                {"additionalData", n => { AdditionalDataProperty = n.GetObjectValue<Dictionary>(Dictionary.CreateFromDiscriminatorValue); } },
                 {"alertPolicyId", n => { AlertPolicyId = n.GetStringValue(); } },
                 {"alertWebUrl", n => { AlertWebUrl = n.GetStringValue(); } },
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
@@ -393,10 +412,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("actorDisplayName", ActorDisplayName);
+            writer.WriteObjectValue<Dictionary>("additionalData", AdditionalDataProperty);
             writer.WriteStringValue("alertPolicyId", AlertPolicyId);
             writer.WriteStringValue("alertWebUrl", AlertWebUrl);
             writer.WriteStringValue("assignedTo", AssignedTo);

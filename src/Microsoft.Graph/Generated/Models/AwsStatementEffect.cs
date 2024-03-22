@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AwsStatementEffect {
+    public enum AwsStatementEffect
+    {
         [EnumMember(Value = "allow")]
         Allow,
         [EnumMember(Value = "deny")]

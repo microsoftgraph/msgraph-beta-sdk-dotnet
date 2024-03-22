@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values for monitoring file activity.</summary>
-    public enum DefenderRealtimeScanDirection {
+    public enum DefenderRealtimeScanDirection
+    {
         /// <summary>0 (default) – Monitor all files(bi-directional)</summary>
         [EnumMember(Value = "monitorAllFiles")]
         MonitorAllFiles,

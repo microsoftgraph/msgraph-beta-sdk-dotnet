@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum Platform {
+    public enum Platform
+    {
         /// <summary>Unknown device platform</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public enum ManagementParameterValueType {
+    public enum ManagementParameterValueType
+    {
         [EnumMember(Value = "string")]
         String,
         [EnumMember(Value = "integer")]

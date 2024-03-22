@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>System Update Types for Android Device Owner.</summary>
-    public enum AndroidDeviceOwnerSystemUpdateInstallType {
+    public enum AndroidDeviceOwnerSystemUpdateInstallType
+    {
         /// <summary>Device default behavior, which typically prompts the user to accept system updates.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

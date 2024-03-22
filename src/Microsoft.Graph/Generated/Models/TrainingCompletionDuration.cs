@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum TrainingCompletionDuration {
+    public enum TrainingCompletionDuration
+    {
         [EnumMember(Value = "week")]
         Week,
         [EnumMember(Value = "fortnite")]

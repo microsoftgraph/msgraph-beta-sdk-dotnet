@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.</summary>
-    public enum WindowsAutopilotDeviceRemediationState {
+    public enum WindowsAutopilotDeviceRemediationState
+    {
         /// <summary>Unknown status.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

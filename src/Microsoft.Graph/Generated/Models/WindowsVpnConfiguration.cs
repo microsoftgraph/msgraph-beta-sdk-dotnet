@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Windows VPN configuration profile.
     /// </summary>
-    public class WindowsVpnConfiguration : DeviceConfiguration, IParsable {
+    public class WindowsVpnConfiguration : DeviceConfiguration, IParsable 
+    {
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="WindowsVpnConfiguration"/> and sets the default values.
         /// </summary>
-        public WindowsVpnConfiguration() : base() {
+        public WindowsVpnConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.windowsVpnConfiguration";
         }
         /// <summary>
@@ -62,10 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="WindowsVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new WindowsVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.windows10VpnConfiguration" => new Windows10VpnConfiguration(),
                 "#microsoft.graph.windows81VpnConfiguration" => new Windows81VpnConfiguration(),
                 "#microsoft.graph.windowsPhone81VpnConfiguration" => new WindowsPhone81VpnConfiguration(),
@@ -76,8 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 {"customXml", n => { CustomXml = n.GetByteArrayValue(); } },
                 {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -87,7 +93,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("connectionName", ConnectionName);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-    public enum AndroidRequiredPasswordComplexity {
+    public enum AndroidRequiredPasswordComplexity
+    {
         /// <summary>Device default value, no password.</summary>
         [EnumMember(Value = "none")]
         None,

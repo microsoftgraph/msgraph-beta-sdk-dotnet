@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum OnboardingStatus {
+    public enum OnboardingStatus
+    {
         [EnumMember(Value = "offboarded")]
         Offboarded,
         [EnumMember(Value = "offboardingInProgress")]

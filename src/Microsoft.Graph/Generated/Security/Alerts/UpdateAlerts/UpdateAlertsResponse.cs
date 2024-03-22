@@ -6,13 +6,15 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
     [Obsolete("This class is obsolete. Use UpdateAlertsPostResponse instead.")]
-    public class UpdateAlertsResponse : UpdateAlertsPostResponse, IParsable {
+    public class UpdateAlertsResponse : UpdateAlertsPostResponse, IParsable 
+    {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="UpdateAlertsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UpdateAlertsResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new UpdateAlertsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UpdateAlertsResponse();
         }

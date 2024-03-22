@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Flag enum to determine whether to delay software updates for macOS.</summary>
     [Flags]
-    public enum MacOSSoftwareUpdateDelayPolicy {
+    public enum MacOSSoftwareUpdateDelayPolicy
+    {
         /// <summary>Software update delays will not be enforced.</summary>
         [EnumMember(Value = "none")]
         None = 1,

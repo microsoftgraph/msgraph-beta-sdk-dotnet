@@ -43,136 +43,168 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
     /// <summary>
     /// Provides operations to manage the collection of servicePrincipal entities.
     /// </summary>
-    public class ServicePrincipalItemRequestBuilder : BaseRequestBuilder {
+    public class ServicePrincipalItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to call the addTokenSigningCertificate method.</summary>
-        public AddTokenSigningCertificateRequestBuilder AddTokenSigningCertificate { get =>
-            new AddTokenSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
+        public AddTokenSigningCertificateRequestBuilder AddTokenSigningCertificate
+        {
+            get => new AddTokenSigningCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
-        public AppManagementPoliciesRequestBuilder AppManagementPolicies { get =>
-            new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public AppManagementPoliciesRequestBuilder AppManagementPolicies
+        {
+            get => new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignedTo property of the microsoft.graph.servicePrincipal entity.</summary>
-        public AppRoleAssignedToRequestBuilder AppRoleAssignedTo { get =>
-            new AppRoleAssignedToRequestBuilder(PathParameters, RequestAdapter);
+        public AppRoleAssignedToRequestBuilder AppRoleAssignedTo
+        {
+            get => new AppRoleAssignedToRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.servicePrincipal entity.</summary>
-        public AppRoleAssignmentsRequestBuilder AppRoleAssignments { get =>
-            new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        {
+            get => new AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
-            new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public CheckMemberGroupsRequestBuilder CheckMemberGroups
+        {
+            get => new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
-            new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public CheckMemberObjectsRequestBuilder CheckMemberObjects
+        {
+            get => new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
-        public ClaimsMappingPoliciesRequestBuilder ClaimsMappingPolicies { get =>
-            new ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public ClaimsMappingPoliciesRequestBuilder ClaimsMappingPolicies
+        {
+            get => new ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.</summary>
-        public CreatedObjectsRequestBuilder CreatedObjects { get =>
-            new CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public CreatedObjectsRequestBuilder CreatedObjects
+        {
+            get => new CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createPasswordSingleSignOnCredentials method.</summary>
-        public CreatePasswordSingleSignOnCredentialsRequestBuilder CreatePasswordSingleSignOnCredentials { get =>
-            new CreatePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public CreatePasswordSingleSignOnCredentialsRequestBuilder CreatePasswordSingleSignOnCredentials
+        {
+            get => new CreatePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.</summary>
-        public DelegatedPermissionClassificationsRequestBuilder DelegatedPermissionClassifications { get =>
-            new DelegatedPermissionClassificationsRequestBuilder(PathParameters, RequestAdapter);
+        public DelegatedPermissionClassificationsRequestBuilder DelegatedPermissionClassifications
+        {
+            get => new DelegatedPermissionClassificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
-        public DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials { get =>
-            new DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
+        {
+            get => new DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.servicePrincipal entity.</summary>
-        public EndpointsRequestBuilder Endpoints { get =>
-            new EndpointsRequestBuilder(PathParameters, RequestAdapter);
+        public EndpointsRequestBuilder Endpoints
+        {
+            get => new EndpointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federatedIdentityCredentials property of the microsoft.graph.servicePrincipal entity.</summary>
-        public FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials { get =>
-            new FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public FederatedIdentityCredentialsRequestBuilder FederatedIdentityCredentials
+        {
+            get => new FederatedIdentityCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
-            new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+        public GetMemberGroupsRequestBuilder GetMemberGroups
+        {
+            get => new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
-            new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public GetMemberObjectsRequestBuilder GetMemberObjects
+        {
+            get => new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
-        public GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials { get =>
-            new GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
+        {
+            get => new GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
-        public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies { get =>
-            new HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies
+        {
+            get => new HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the licenseDetails property of the microsoft.graph.servicePrincipal entity.</summary>
-        public LicenseDetailsRequestBuilder LicenseDetails { get =>
-            new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
+        public LicenseDetailsRequestBuilder LicenseDetails
+        {
+            get => new LicenseDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.servicePrincipal entity.</summary>
-        public MemberOfRequestBuilder MemberOf { get =>
-            new MemberOfRequestBuilder(PathParameters, RequestAdapter);
+        public MemberOfRequestBuilder MemberOf
+        {
+            get => new MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.servicePrincipal entity.</summary>
-        public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants { get =>
-            new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+        public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants
+        {
+            get => new Oauth2PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.</summary>
-        public OwnedObjectsRequestBuilder OwnedObjects { get =>
-            new OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        public OwnedObjectsRequestBuilder OwnedObjects
+        {
+            get => new OwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.</summary>
-        public OwnersRequestBuilder Owners { get =>
-            new OwnersRequestBuilder(PathParameters, RequestAdapter);
+        public OwnersRequestBuilder Owners
+        {
+            get => new OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteDesktopSecurityConfiguration property of the microsoft.graph.servicePrincipal entity.</summary>
-        public RemoteDesktopSecurityConfigurationRequestBuilder RemoteDesktopSecurityConfiguration { get =>
-            new RemoteDesktopSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        public RemoteDesktopSecurityConfigurationRequestBuilder RemoteDesktopSecurityConfiguration
+        {
+            get => new RemoteDesktopSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public RestoreRequestBuilder Restore { get =>
-            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        public RestoreRequestBuilder Restore
+        {
+            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the synchronization property of the microsoft.graph.servicePrincipal entity.</summary>
-        public SynchronizationRequestBuilder Synchronization { get =>
-            new SynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        public SynchronizationRequestBuilder Synchronization
+        {
+            get => new SynchronizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
-        public TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies { get =>
-            new TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies
+        {
+            get => new TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
-        public TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies { get =>
-            new TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
+        public TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies
+        {
+            get => new TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.servicePrincipal entity.</summary>
-        public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
-            new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
+        public TransitiveMemberOfRequestBuilder TransitiveMemberOf
+        {
+            get => new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updatePasswordSingleSignOnCredentials method.</summary>
-        public UpdatePasswordSingleSignOnCredentialsRequestBuilder UpdatePasswordSingleSignOnCredentials { get =>
-            new UpdatePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        public UpdatePasswordSingleSignOnCredentialsRequestBuilder UpdatePasswordSingleSignOnCredentials
+        {
+            get => new UpdatePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="ServicePrincipalItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24expand,%24select}", pathParameters) {
+        public ServicePrincipalItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ServicePrincipalItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24expand,%24select}", rawUrl) {
+        public ServicePrincipalItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Delete a servicePrincipal object.
@@ -183,13 +215,16 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -199,7 +234,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// </summary>
         /// <returns>A <see cref="FederatedIdentityCredentialsWithNameRequestBuilder"/></returns>
         /// <param name="name">Alternate key of federatedIdentityCredential</param>
-        public FederatedIdentityCredentialsWithNameRequestBuilder FederatedIdentityCredentialsWithName(string name) {
+        public FederatedIdentityCredentialsWithNameRequestBuilder FederatedIdentityCredentialsWithName(string name)
+        {
             if(string.IsNullOrEmpty(name)) throw new ArgumentNullException(nameof(name));
             return new FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
@@ -213,20 +249,23 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal?> GetAsync(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal?> GetAsync(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> GetAsync(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> GetAsync(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServicePrincipal>(requestInfo, Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of servicePrincipal object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-update?view=graph-rest-1.0" />
+        /// Create a new servicePrincipal object if it doesn&apos;t exist, or update the properties of an existing servicePrincipal object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServicePrincipal"/></returns>
         /// <param name="body">The request body</param>
@@ -235,14 +274,17 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal?> PatchAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal?> PatchAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> PatchAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ServicePrincipal> PatchAsync(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ServicePrincipal>(requestInfo, Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -254,10 +296,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -271,10 +315,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -282,17 +328,19 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of servicePrincipal object.
+        /// Create a new servicePrincipal object if it doesn&apos;t exist, or update the properties of an existing servicePrincipal object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.ServicePrincipal body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}", PathParameters);
@@ -306,19 +354,22 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ServicePrincipalItemRequestBuilder WithUrl(string rawUrl) {
+        public ServicePrincipalItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new ServicePrincipalItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ServicePrincipalItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a servicePrincipal object.
         /// </summary>
-        public class ServicePrincipalItemRequestBuilderGetQueryParameters {
+        public class ServicePrincipalItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -344,13 +395,15 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters> {
+        public class ServicePrincipalItemRequestBuilderGetRequestConfiguration : RequestConfiguration<ServicePrincipalItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class ServicePrincipalItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

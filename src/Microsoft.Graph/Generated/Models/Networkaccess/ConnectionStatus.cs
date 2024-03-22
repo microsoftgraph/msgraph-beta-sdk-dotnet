@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum ConnectionStatus {
+    public enum ConnectionStatus
+    {
         [EnumMember(Value = "open")]
         Open,
         [EnumMember(Value = "active")]

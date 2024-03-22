@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ActionSource {
+    public enum ActionSource
+    {
         [EnumMember(Value = "manual")]
         Manual,
         [EnumMember(Value = "automatic")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Android Device Owner policy required password type.</summary>
-    public enum AndroidDeviceOwnerRequiredPasswordType {
+    public enum AndroidDeviceOwnerRequiredPasswordType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "deviceDefault")]
         DeviceDefault,

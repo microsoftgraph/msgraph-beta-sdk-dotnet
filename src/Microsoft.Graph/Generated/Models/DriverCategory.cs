@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum type to represent which category a driver belongs to.</summary>
-    public enum DriverCategory {
+    public enum DriverCategory
+    {
         /// <summary>This indicates a driver is recommended by Microsoft.</summary>
         [EnumMember(Value = "recommended")]
         Recommended,

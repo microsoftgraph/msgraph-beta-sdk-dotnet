@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcDeviceImageStatusDetails {
+    public enum CloudPcDeviceImageStatusDetails
+    {
         [EnumMember(Value = "internalServerError")]
         InternalServerError,
         [EnumMember(Value = "sourceImageNotFound")]

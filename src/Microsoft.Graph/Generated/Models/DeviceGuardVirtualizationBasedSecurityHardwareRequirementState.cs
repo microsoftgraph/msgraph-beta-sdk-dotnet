@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum DeviceGuardVirtualizationBasedSecurityHardwareRequirementState {
+    public enum DeviceGuardVirtualizationBasedSecurityHardwareRequirementState
+    {
         /// <summary>System meets hardware configuration requirements</summary>
         [EnumMember(Value = "meetHardwareRequirements")]
         MeetHardwareRequirements,

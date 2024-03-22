@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum GcpEncryption {
+    public enum GcpEncryption
+    {
         [EnumMember(Value = "google")]
         Google,
         [EnumMember(Value = "customer")]

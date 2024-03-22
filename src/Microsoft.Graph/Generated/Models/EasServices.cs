@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Exchange Active Sync services.</summary>
     [Flags]
-    public enum EasServices {
+    public enum EasServices
+    {
         [EnumMember(Value = "none")]
         None = 1,
         /// <summary>Enables synchronization of calendars.</summary>

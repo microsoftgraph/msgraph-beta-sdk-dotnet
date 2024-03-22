@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum PolicyStatus {
+    public enum PolicyStatus
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "error")]

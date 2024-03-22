@@ -20,48 +20,58 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
     /// <summary>
     /// Provides operations to manage the salesQuotes property of the microsoft.graph.company entity.
     /// </summary>
-    public class SalesQuoteItemRequestBuilder : BaseRequestBuilder {
+    public class SalesQuoteItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the currency property of the microsoft.graph.salesQuote entity.</summary>
-        public CurrencyRequestBuilder Currency { get =>
-            new CurrencyRequestBuilder(PathParameters, RequestAdapter);
+        public CurrencyRequestBuilder Currency
+        {
+            get => new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customer property of the microsoft.graph.salesQuote entity.</summary>
-        public CustomerRequestBuilder Customer { get =>
-            new CustomerRequestBuilder(PathParameters, RequestAdapter);
+        public CustomerRequestBuilder Customer
+        {
+            get => new CustomerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the makeInvoice method.</summary>
-        public MakeInvoiceRequestBuilder MakeInvoice { get =>
-            new MakeInvoiceRequestBuilder(PathParameters, RequestAdapter);
+        public MakeInvoiceRequestBuilder MakeInvoice
+        {
+            get => new MakeInvoiceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentTerm property of the microsoft.graph.salesQuote entity.</summary>
-        public PaymentTermRequestBuilder PaymentTerm { get =>
-            new PaymentTermRequestBuilder(PathParameters, RequestAdapter);
+        public PaymentTermRequestBuilder PaymentTerm
+        {
+            get => new PaymentTermRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.</summary>
-        public SalesQuoteLinesRequestBuilder SalesQuoteLines { get =>
-            new SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
+        public SalesQuoteLinesRequestBuilder SalesQuoteLines
+        {
+            get => new SalesQuoteLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the send method.</summary>
-        public SendRequestBuilder Send { get =>
-            new SendRequestBuilder(PathParameters, RequestAdapter);
+        public SendRequestBuilder Send
+        {
+            get => new SendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shipmentMethod property of the microsoft.graph.salesQuote entity.</summary>
-        public ShipmentMethodRequestBuilder ShipmentMethod { get =>
-            new ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
+        public ShipmentMethodRequestBuilder ShipmentMethod
+        {
+            get => new ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="SalesQuoteItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesQuoteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}{?%24expand,%24select}", pathParameters) {
+        public SalesQuoteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SalesQuoteItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SalesQuoteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}{?%24expand,%24select}", rawUrl) {
+        public SalesQuoteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get salesQuotes from financials
@@ -72,13 +82,16 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesQuote?> GetAsync(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuote?> GetAsync(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SalesQuote> GetAsync(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuote> GetAsync(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SalesQuote>(requestInfo, SalesQuote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -93,14 +106,17 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesQuote?> PatchAsync(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuote?> PatchAsync(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SalesQuote> PatchAsync(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SalesQuote> PatchAsync(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SalesQuote>(requestInfo, SalesQuote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -112,10 +128,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -130,10 +148,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(SalesQuote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/financials/companies/{company%2Did}/salesQuotes/{salesQuote%2Did}", PathParameters);
@@ -147,13 +167,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// </summary>
         /// <returns>A <see cref="SalesQuoteItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesQuoteItemRequestBuilder WithUrl(string rawUrl) {
+        public SalesQuoteItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new SalesQuoteItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesQuotes from financials
         /// </summary>
-        public class SalesQuoteItemRequestBuilderGetQueryParameters {
+        public class SalesQuoteItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,13 +201,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesQuoteItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters> {
+        public class SalesQuoteItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesQuoteItemRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesQuoteItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class SalesQuoteItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

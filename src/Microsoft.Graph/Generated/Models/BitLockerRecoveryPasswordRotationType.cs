@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>BitLocker recovery password rotation type</summary>
-    public enum BitLockerRecoveryPasswordRotationType {
+    public enum BitLockerRecoveryPasswordRotationType
+    {
         /// <summary>Not configured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

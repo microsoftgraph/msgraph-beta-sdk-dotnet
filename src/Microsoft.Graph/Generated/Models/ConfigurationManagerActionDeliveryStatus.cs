@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Delivery state of Configuration Manager device action</summary>
-    public enum ConfigurationManagerActionDeliveryStatus {
+    public enum ConfigurationManagerActionDeliveryStatus
+    {
         /// <summary>Pending to deliver the action to ConfigurationManager</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

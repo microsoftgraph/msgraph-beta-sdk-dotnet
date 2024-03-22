@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>An enum type for wallpaper display location specifier.</summary>
-    public enum IosWallpaperDisplayLocation {
+    public enum IosWallpaperDisplayLocation
+    {
         /// <summary>No location specified for wallpaper display.</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

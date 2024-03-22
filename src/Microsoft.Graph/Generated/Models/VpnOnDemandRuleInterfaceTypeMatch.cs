@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
-    public enum VpnOnDemandRuleInterfaceTypeMatch {
+    public enum VpnOnDemandRuleInterfaceTypeMatch
+    {
         /// <summary>NotConfigured</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

@@ -18,29 +18,35 @@ namespace Microsoft.Graph.Beta.Solutions {
     /// <summary>
     /// Provides operations to manage the solutionsRoot singleton.
     /// </summary>
-    public class SolutionsRequestBuilder : BaseRequestBuilder {
+    public class SolutionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the bookingBusinesses property of the microsoft.graph.solutionsRoot entity.</summary>
-        public BookingBusinessesRequestBuilder BookingBusinesses { get =>
-            new BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
+        public BookingBusinessesRequestBuilder BookingBusinesses
+        {
+            get => new BookingBusinessesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the bookingCurrencies property of the microsoft.graph.solutionsRoot entity.</summary>
-        public BookingCurrenciesRequestBuilder BookingCurrencies { get =>
-            new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
+        public BookingCurrenciesRequestBuilder BookingCurrencies
+        {
+            get => new BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.</summary>
-        public BusinessScenariosRequestBuilder BusinessScenarios { get =>
-            new BusinessScenariosRequestBuilder(PathParameters, RequestAdapter);
+        public BusinessScenariosRequestBuilder BusinessScenarios
+        {
+            get => new BusinessScenariosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.</summary>
-        public VirtualEventsRequestBuilder VirtualEvents { get =>
-            new VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
+        public VirtualEventsRequestBuilder VirtualEvents
+        {
+            get => new VirtualEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.
         /// </summary>
         /// <returns>A <see cref="BusinessScenariosWithUniqueNameRequestBuilder"/></returns>
         /// <param name="uniqueName">Alternate key of businessScenario</param>
-        public BusinessScenariosWithUniqueNameRequestBuilder BusinessScenariosWithUniqueName(string uniqueName) {
+        public BusinessScenariosWithUniqueNameRequestBuilder BusinessScenariosWithUniqueName(string uniqueName)
+        {
             if(string.IsNullOrEmpty(uniqueName)) throw new ArgumentNullException(nameof(uniqueName));
             return new BusinessScenariosWithUniqueNameRequestBuilder(PathParameters, RequestAdapter, uniqueName);
         }
@@ -49,14 +55,16 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SolutionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions{?%24expand,%24select}", pathParameters) {
+        public SolutionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SolutionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SolutionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions{?%24expand,%24select}", rawUrl) {
+        public SolutionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get solutions
@@ -67,13 +75,16 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SolutionsRoot?> GetAsync(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot?> GetAsync(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SolutionsRoot> GetAsync(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot> GetAsync(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SolutionsRoot>(requestInfo, SolutionsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -88,14 +99,17 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SolutionsRoot?> PatchAsync(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot?> PatchAsync(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SolutionsRoot> PatchAsync(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SolutionsRoot> PatchAsync(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SolutionsRoot>(requestInfo, SolutionsRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -107,10 +121,12 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SolutionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -125,10 +141,12 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(SolutionsRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/solutions", PathParameters);
@@ -142,13 +160,15 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// </summary>
         /// <returns>A <see cref="SolutionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SolutionsRequestBuilder WithUrl(string rawUrl) {
+        public SolutionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new SolutionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get solutions
         /// </summary>
-        public class SolutionsRequestBuilderGetQueryParameters {
+        public class SolutionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,13 +194,15 @@ namespace Microsoft.Graph.Beta.Solutions {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SolutionsRequestBuilderGetRequestConfiguration : RequestConfiguration<SolutionsRequestBuilderGetQueryParameters> {
+        public class SolutionsRequestBuilderGetRequestConfiguration : RequestConfiguration<SolutionsRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SolutionsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class SolutionsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

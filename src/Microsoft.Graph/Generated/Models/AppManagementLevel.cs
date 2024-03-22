@@ -4,7 +4,8 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Management levels for apps</summary>
     [Flags]
-    public enum AppManagementLevel {
+    public enum AppManagementLevel
+    {
         /// <summary>Unspecified</summary>
         [EnumMember(Value = "unspecified")]
         Unspecified = 1,

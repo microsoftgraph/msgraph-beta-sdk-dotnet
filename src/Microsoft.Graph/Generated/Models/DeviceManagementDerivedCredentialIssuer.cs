@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported values for the derived credential issuer.</summary>
-    public enum DeviceManagementDerivedCredentialIssuer {
+    public enum DeviceManagementDerivedCredentialIssuer
+    {
         /// <summary>Intercede</summary>
         [EnumMember(Value = "intercede")]
         Intercede,

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum UnifiedRoleScheduleRequestActions {
+    public enum UnifiedRoleScheduleRequestActions
+    {
         [EnumMember(Value = "adminAssign")]
         AdminAssign,
         [EnumMember(Value = "adminUpdate")]

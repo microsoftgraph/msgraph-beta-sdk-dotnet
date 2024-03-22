@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
     /// <summary>
     /// Provides operations to call the retrieveOperationsRequiringApproval method.
     /// </summary>
-    public class RetrieveOperationsRequiringApprovalRequestBuilder : BaseRequestBuilder {
+    public class RetrieveOperationsRequiringApprovalRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RetrieveOperationsRequiringApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetrieveOperationsRequiringApprovalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveOperationsRequiringApproval(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public RetrieveOperationsRequiringApprovalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveOperationsRequiringApproval(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RetrieveOperationsRequiringApprovalRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetrieveOperationsRequiringApprovalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveOperationsRequiringApproval(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public RetrieveOperationsRequiringApprovalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/retrieveOperationsRequiringApproval(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function retrieveOperationsRequiringApproval
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RetrieveOperationsRequiringApprovalGetResponse?> GetAsRetrieveOperationsRequiringApprovalGetResponseAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetrieveOperationsRequiringApprovalGetResponse?> GetAsRetrieveOperationsRequiringApprovalGetResponseAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RetrieveOperationsRequiringApprovalGetResponse> GetAsRetrieveOperationsRequiringApprovalGetResponseAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetrieveOperationsRequiringApprovalGetResponse> GetAsRetrieveOperationsRequiringApprovalGetResponseAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RetrieveOperationsRequiringApprovalGetResponse>(requestInfo, RetrieveOperationsRequiringApprovalGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
         [Obsolete("This method is obsolete. Use GetAsRetrieveOperationsRequiringApprovalGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RetrieveOperationsRequiringApprovalResponse?> GetAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetrieveOperationsRequiringApprovalResponse?> GetAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RetrieveOperationsRequiringApprovalResponse> GetAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RetrieveOperationsRequiringApprovalResponse> GetAsync(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RetrieveOperationsRequiringApprovalResponse>(requestInfo, RetrieveOperationsRequiringApprovalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +101,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
         /// </summary>
         /// <returns>A <see cref="RetrieveOperationsRequiringApprovalRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RetrieveOperationsRequiringApprovalRequestBuilder WithUrl(string rawUrl) {
+        public RetrieveOperationsRequiringApprovalRequestBuilder WithUrl(string rawUrl)
+        {
             return new RetrieveOperationsRequiringApprovalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function retrieveOperationsRequiringApproval
         /// </summary>
-        public class RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters {
+        public class RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -131,7 +144,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.Retrie
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RetrieveOperationsRequiringApprovalRequestBuilderGetRequestConfiguration : RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters> {
+        public class RetrieveOperationsRequiringApprovalRequestBuilderGetRequestConfiguration : RequestConfiguration<RetrieveOperationsRequiringApprovalRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

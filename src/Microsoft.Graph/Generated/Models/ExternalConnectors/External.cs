@@ -7,7 +7,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    public class External : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class External : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>
         /// Instantiates a new <see cref="External"/> and sets the default values.
         /// </summary>
-        public External() {
+        public External()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         /// <returns>A <see cref="External"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static External CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static External CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new External();
         }
@@ -91,8 +94,10 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"authorizationSystems", n => { AuthorizationSystems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"connections", n => { Connections = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"industryData", n => { IndustryData = n.GetObjectValue<IndustryDataRoot>(IndustryDataRoot.CreateFromDiscriminatorValue); } },
@@ -103,7 +108,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystems", AuthorizationSystems);
             writer.WriteCollectionOfObjectValues<ExternalConnection>("connections", Connections);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Source of the action on the approval request.</summary>
-    public enum OperationApprovalSource {
+    public enum OperationApprovalSource
+    {
         /// <summary>Default. Indicates the source of the action on the approval request is unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

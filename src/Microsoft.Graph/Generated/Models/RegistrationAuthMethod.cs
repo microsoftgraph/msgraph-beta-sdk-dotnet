@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum RegistrationAuthMethod {
+    public enum RegistrationAuthMethod
+    {
         [EnumMember(Value = "email")]
         Email,
         [EnumMember(Value = "mobilePhone")]

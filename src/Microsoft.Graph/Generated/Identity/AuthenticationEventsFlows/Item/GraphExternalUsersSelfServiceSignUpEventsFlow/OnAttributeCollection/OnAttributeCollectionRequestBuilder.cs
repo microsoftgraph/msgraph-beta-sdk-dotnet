@@ -14,24 +14,28 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
     /// <summary>
     /// Builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\graph.externalUsersSelfServiceSignUpEventsFlow\onAttributeCollection
     /// </summary>
-    public class OnAttributeCollectionRequestBuilder : BaseRequestBuilder {
+    public class OnAttributeCollectionRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Casts the previous resource to onAttributeCollectionExternalUsersSelfServiceSignUp.</summary>
-        public GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilder GraphOnAttributeCollectionExternalUsersSelfServiceSignUp { get =>
-            new GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilder(PathParameters, RequestAdapter);
+        public GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilder GraphOnAttributeCollectionExternalUsersSelfServiceSignUp
+        {
+            get => new GraphOnAttributeCollectionExternalUsersSelfServiceSignUpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="OnAttributeCollectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnAttributeCollectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection{?%24expand,%24select}", pathParameters) {
+        public OnAttributeCollectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="OnAttributeCollectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OnAttributeCollectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection{?%24expand,%24select}", rawUrl) {
+        public OnAttributeCollectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/authenticationEventsFlows/{authenticationEventsFlow%2Did}/graph.externalUsersSelfServiceSignUpEventsFlow/onAttributeCollection{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The configuration for what to invoke when attributes are ready to be collected from the user.
@@ -42,13 +46,16 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OnAttributeCollectionHandler?> GetAsync(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnAttributeCollectionHandler?> GetAsync(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<OnAttributeCollectionHandler> GetAsync(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OnAttributeCollectionHandler> GetAsync(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<OnAttributeCollectionHandler>(requestInfo, OnAttributeCollectionHandler.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -60,10 +67,12 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,13 +84,15 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         /// </summary>
         /// <returns>A <see cref="OnAttributeCollectionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OnAttributeCollectionRequestBuilder WithUrl(string rawUrl) {
+        public OnAttributeCollectionRequestBuilder WithUrl(string rawUrl)
+        {
             return new OnAttributeCollectionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The configuration for what to invoke when attributes are ready to be collected from the user.
         /// </summary>
-        public class OnAttributeCollectionRequestBuilderGetQueryParameters {
+        public class OnAttributeCollectionRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +118,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OnAttributeCollectionRequestBuilderGetRequestConfiguration : RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters> {
+        public class OnAttributeCollectionRequestBuilderGetRequestConfiguration : RequestConfiguration<OnAttributeCollectionRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

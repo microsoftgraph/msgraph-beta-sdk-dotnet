@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    public enum TenantOnboardingStatus {
+    public enum TenantOnboardingStatus
+    {
         [EnumMember(Value = "ineligible")]
         Ineligible,
         [EnumMember(Value = "inProcess")]
@@ -13,5 +14,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         Inactive,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "disabled")]
+        Disabled,
     }
 }

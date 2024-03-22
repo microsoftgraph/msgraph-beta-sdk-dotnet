@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
-    public enum DisableUserEntityIdentifier {
+    public enum DisableUserEntityIdentifier
+    {
         [EnumMember(Value = "accountSid")]
         AccountSid = 1,
         [EnumMember(Value = "initiatingProcessAccountSid")]

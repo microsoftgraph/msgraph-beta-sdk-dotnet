@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>This enum represents associated assignment payload type</summary>
-    public enum AssociatedAssignmentPayloadType {
+    public enum AssociatedAssignmentPayloadType
+    {
         /// <summary>Invalid payload type</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

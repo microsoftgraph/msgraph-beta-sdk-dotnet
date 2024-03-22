@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Define the platform type for which the admin wants to create the device clean up rule</summary>
-    public enum DeviceCleanupRulePlatformType {
+    public enum DeviceCleanupRulePlatformType
+    {
         /// <summary>Default. Indicates that clean up rule is associated with all managed device platforms.</summary>
         [EnumMember(Value = "all")]
         All,

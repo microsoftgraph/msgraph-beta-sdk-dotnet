@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum TrafficForwardingType {
+    public enum TrafficForwardingType
+    {
         [EnumMember(Value = "m365")]
         M365,
         [EnumMember(Value = "internet")]

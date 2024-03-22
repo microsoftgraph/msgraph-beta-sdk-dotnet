@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
     /// <summary>
     /// Provides operations to call the summarizeDeviceResourcePerformance method.
     /// </summary>
-    public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder : BaseRequestBuilder {
+    public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = "") : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = "") : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(summarizeBy)) PathParameters.Add("summarizeBy", summarizeBy);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/userExperienceAnalyticsResourcePerformance/summarizeDeviceResourcePerformance(summarizeBy='{summarizeBy}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function summarizeDeviceResourcePerformance
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse?> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse?> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse> GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse>(requestInfo, SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         [Obsolete("This method is obsolete. Use GetAsSummarizeDeviceResourcePerformanceWithSummarizeByGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse?> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse?> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SummarizeDeviceResourcePerformanceWithSummarizeByResponse> GetAsync(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SummarizeDeviceResourcePerformanceWithSummarizeByResponse>(requestInfo, SummarizeDeviceResourcePerformanceWithSummarizeByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// </summary>
         /// <returns>A <see cref="SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder WithUrl(string rawUrl) {
+        public SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder WithUrl(string rawUrl)
+        {
             return new SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function summarizeDeviceResourcePerformance
         /// </summary>
-        public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters {
+        public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourceP
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration : RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters> {
+        public class SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetRequestConfiguration : RequestConfiguration<SummarizeDeviceResourcePerformanceWithSummarizeByRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

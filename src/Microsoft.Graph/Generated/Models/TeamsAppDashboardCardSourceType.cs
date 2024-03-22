@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum TeamsAppDashboardCardSourceType {
+    public enum TeamsAppDashboardCardSourceType
+    {
         [EnumMember(Value = "bot")]
         Bot,
         [EnumMember(Value = "unknownFutureValue")]

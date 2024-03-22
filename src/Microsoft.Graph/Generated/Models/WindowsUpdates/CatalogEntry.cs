@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    public class CatalogEntry : Microsoft.Graph.Beta.Models.Entity, IParsable {
+    public class CatalogEntry : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    {
         /// <summary>The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deployableUntilDateTime"); }
@@ -35,10 +36,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         /// <returns>A <see cref="CatalogEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new CatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
+            return mappingValue switch
+            {
                 "#microsoft.graph.windowsUpdates.driverUpdateCatalogEntry" => new DriverUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.featureUpdateCatalogEntry" => new FeatureUpdateCatalogEntry(),
                 "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry" => new QualityUpdateCatalogEntry(),
@@ -50,8 +53,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"deployableUntilDateTime", n => { DeployableUntilDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
@@ -61,7 +66,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("deployableUntilDateTime", DeployableUntilDateTime);

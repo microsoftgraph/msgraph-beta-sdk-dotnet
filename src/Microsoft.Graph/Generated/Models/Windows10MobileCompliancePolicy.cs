@@ -8,7 +8,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// This class contains compliance settings for Windows 10 Mobile.
     /// </summary>
-    public class Windows10MobileCompliancePolicy : DeviceCompliancePolicy, IParsable {
+    public class Windows10MobileCompliancePolicy : DeviceCompliancePolicy, IParsable 
+    {
         /// <summary>Require active firewall on Windows devices.</summary>
         public bool? ActiveFirewallRequired {
             get { return BackingStore?.Get<bool?>("activeFirewallRequired"); }
@@ -129,7 +130,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Windows10MobileCompliancePolicy"/> and sets the default values.
         /// </summary>
-        public Windows10MobileCompliancePolicy() : base() {
+        public Windows10MobileCompliancePolicy() : base()
+        {
             OdataType = "#microsoft.graph.windows10MobileCompliancePolicy";
         }
         /// <summary>
@@ -137,7 +139,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Windows10MobileCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10MobileCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Windows10MobileCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Windows10MobileCompliancePolicy();
         }
@@ -145,8 +148,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"activeFirewallRequired", n => { ActiveFirewallRequired = n.GetBoolValue(); } },
                 {"bitLockerEnabled", n => { BitLockerEnabled = n.GetBoolValue(); } },
                 {"codeIntegrityEnabled", n => { CodeIntegrityEnabled = n.GetBoolValue(); } },
@@ -171,7 +176,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("activeFirewallRequired", ActiveFirewallRequired);

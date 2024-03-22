@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Operator for rules.</summary>
-    public enum DeviceComplianceScriptRulOperator {
+    public enum DeviceComplianceScriptRulOperator
+    {
         /// <summary>None operator.</summary>
         [EnumMember(Value = "none")]
         None,

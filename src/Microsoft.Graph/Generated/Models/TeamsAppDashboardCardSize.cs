@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum TeamsAppDashboardCardSize {
+    public enum TeamsAppDashboardCardSize
+    {
         [EnumMember(Value = "medium")]
         Medium,
         [EnumMember(Value = "large")]

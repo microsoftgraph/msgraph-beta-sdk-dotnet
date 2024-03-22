@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum ThreatType {
+    public enum ThreatType
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "spam")]

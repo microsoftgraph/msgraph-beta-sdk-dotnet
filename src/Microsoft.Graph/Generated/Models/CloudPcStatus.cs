@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcStatus {
+    public enum CloudPcStatus
+    {
         [EnumMember(Value = "notProvisioned")]
         NotProvisioned,
         [EnumMember(Value = "provisioning")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Type of browsing data sent to Microsoft 365 analytics</summary>
-    public enum EdgeTelemetryMode {
+    public enum EdgeTelemetryMode
+    {
         /// <summary>Default – No telemetry data collected or sent</summary>
         [EnumMember(Value = "notConfigured")]
         NotConfigured,

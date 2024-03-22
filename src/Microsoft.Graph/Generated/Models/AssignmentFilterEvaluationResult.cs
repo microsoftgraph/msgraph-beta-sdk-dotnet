@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Supported evaluation results for filter.</summary>
-    public enum AssignmentFilterEvaluationResult {
+    public enum AssignmentFilterEvaluationResult
+    {
         /// <summary>Unknown.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

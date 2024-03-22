@@ -12,14 +12,16 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
     /// <summary>
     /// Provides operations to call the getAzureADApplicationSignInSummary method.
     /// </summary>
-    public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder : BaseRequestBuilder {
+    public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getAzureADApplicationSignInSummary(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters) {
+        public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = "") : base(requestAdapter, "{+baseurl}/reports/getAzureADApplicationSignInSummary(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        {
             if (!string.IsNullOrWhiteSpace(period)) PathParameters.Add("period", period);
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getAzureADApplicationSignInSummary(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl) {
+        public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/reports/getAzureADApplicationSignInSummary(period='{period}'){?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getAzureADApplicationSignInSummary
@@ -38,13 +41,16 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAzureADApplicationSignInSummaryWithPeriodGetResponse?> GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodGetResponse?> GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodGetResponse> GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponseAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodGetResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -59,13 +65,16 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         [Obsolete("This method is obsolete. Use GetAsGetAzureADApplicationSignInSummaryWithPeriodGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse?> GetAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetAzureADApplicationSignInSummaryWithPeriodResponse> GetAsync(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -77,10 +86,12 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -92,13 +103,15 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         /// </summary>
         /// <returns>A <see cref="GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder WithUrl(string rawUrl) {
+        public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getAzureADApplicationSignInSummary
         /// </summary>
-        public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters {
+        public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -163,7 +176,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters> {
+        public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

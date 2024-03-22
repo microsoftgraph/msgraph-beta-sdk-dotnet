@@ -9,7 +9,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>
     /// Represents the information about the property which is supported in crafting the rule of AssignmentFilter.
     /// </summary>
-    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IBackedModel, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
@@ -109,7 +110,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="AssignmentFilterSupportedProperty"/> and sets the default values.
         /// </summary>
-        public AssignmentFilterSupportedProperty() {
+        public AssignmentFilterSupportedProperty()
+        {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -118,7 +120,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="AssignmentFilterSupportedProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentFilterSupportedProperty CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AssignmentFilterSupportedProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AssignmentFilterSupportedProperty();
         }
@@ -126,8 +129,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"dataType", n => { DataType = n.GetStringValue(); } },
                 {"isCollection", n => { IsCollection = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -141,7 +146,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataType", DataType);
             writer.WriteBoolValue("isCollection", IsCollection);

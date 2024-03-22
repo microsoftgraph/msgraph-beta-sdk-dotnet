@@ -13,20 +13,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Child
     /// <summary>
     /// Provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.
     /// </summary>
-    public class GroupPolicyCategoryItemRequestBuilder : BaseRequestBuilder {
+    public class GroupPolicyCategoryItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GroupPolicyCategoryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupPolicyCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/children/{groupPolicyCategory%2Did1}{?%24expand,%24select}", pathParameters) {
+        public GroupPolicyCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/children/{groupPolicyCategory%2Did1}{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GroupPolicyCategoryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupPolicyCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/children/{groupPolicyCategory%2Did1}{?%24expand,%24select}", rawUrl) {
+        public GroupPolicyCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/groupPolicyCategories/{groupPolicyCategory%2Did}/children/{groupPolicyCategory%2Did1}{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// The children categories
@@ -37,13 +40,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Child
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GroupPolicyCategory?> GetAsync(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyCategory?> GetAsync(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GroupPolicyCategory> GetAsync(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GroupPolicyCategory> GetAsync(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GroupPolicyCategory>(requestInfo, GroupPolicyCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Child
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Child
         /// </summary>
         /// <returns>A <see cref="GroupPolicyCategoryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GroupPolicyCategoryItemRequestBuilder WithUrl(string rawUrl) {
+        public GroupPolicyCategoryItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new GroupPolicyCategoryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The children categories
         /// </summary>
-        public class GroupPolicyCategoryItemRequestBuilderGetQueryParameters {
+        public class GroupPolicyCategoryItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,7 +112,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Child
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupPolicyCategoryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters> {
+        public class GroupPolicyCategoryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GroupPolicyCategoryItemRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

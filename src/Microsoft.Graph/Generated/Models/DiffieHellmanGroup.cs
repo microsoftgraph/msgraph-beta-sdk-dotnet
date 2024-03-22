@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Diffie Hellman Group values for Windows10 VPN policies with IKEv2 connection type.</summary>
-    public enum DiffieHellmanGroup {
+    public enum DiffieHellmanGroup
+    {
         /// <summary>Group1</summary>
         [EnumMember(Value = "group1")]
         Group1,

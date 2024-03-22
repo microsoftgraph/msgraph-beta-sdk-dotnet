@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public enum EvidenceRole {
+    public enum EvidenceRole
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "contextual")]

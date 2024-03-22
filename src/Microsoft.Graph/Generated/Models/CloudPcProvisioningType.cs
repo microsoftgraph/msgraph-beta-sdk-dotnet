@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum CloudPcProvisioningType {
+    public enum CloudPcProvisioningType
+    {
         [EnumMember(Value = "dedicated")]
         Dedicated,
         [EnumMember(Value = "shared")]

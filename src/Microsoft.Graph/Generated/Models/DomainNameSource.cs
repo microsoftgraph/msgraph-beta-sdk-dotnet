@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Domainname source.</summary>
-    public enum DomainNameSource {
+    public enum DomainNameSource
+    {
         /// <summary>Full domain name.</summary>
         [EnumMember(Value = "fullDomainName")]
         FullDomainName,

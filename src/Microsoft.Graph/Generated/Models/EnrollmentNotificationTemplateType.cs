@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>This enum indicates the Template type for which the enrollment notification applies.</summary>
-    public enum EnrollmentNotificationTemplateType {
+    public enum EnrollmentNotificationTemplateType
+    {
         /// <summary>Email Notification</summary>
         [EnumMember(Value = "email")]
         Email,

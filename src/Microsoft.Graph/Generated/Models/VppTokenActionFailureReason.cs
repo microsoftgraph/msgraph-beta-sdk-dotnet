@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
-    public enum VppTokenActionFailureReason {
+    public enum VppTokenActionFailureReason
+    {
         /// <summary>None.</summary>
         [EnumMember(Value = "none")]
         None,

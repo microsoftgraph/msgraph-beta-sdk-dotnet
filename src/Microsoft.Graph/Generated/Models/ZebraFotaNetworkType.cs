@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Represents various network types for Zebra FOTA deployment.</summary>
-    public enum ZebraFotaNetworkType {
+    public enum ZebraFotaNetworkType
+    {
         /// <summary>The device will install the update regardless of current network type.</summary>
         [EnumMember(Value = "any")]
         Any,

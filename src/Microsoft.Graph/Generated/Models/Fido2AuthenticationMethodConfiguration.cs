@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
+    public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    {
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
         public bool? IsAttestationEnforced {
             get { return BackingStore?.Get<bool?>("isAttestationEnforced"); }
@@ -33,7 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Instantiates a new <see cref="Fido2AuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
-        public Fido2AuthenticationMethodConfiguration() : base() {
+        public Fido2AuthenticationMethodConfiguration() : base()
+        {
             OdataType = "#microsoft.graph.fido2AuthenticationMethodConfiguration";
         }
         /// <summary>
@@ -41,7 +43,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="Fido2AuthenticationMethodConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Fido2AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new Fido2AuthenticationMethodConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Fido2AuthenticationMethodConfiguration();
         }
@@ -49,8 +52,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
                 {"isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
                 {"keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Fido2KeyRestrictions>(Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
@@ -60,7 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isAttestationEnforced", IsAttestationEnforced);

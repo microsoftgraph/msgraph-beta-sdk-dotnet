@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public class CloudPcOrganizationSettings : Entity, IParsable {
+    public class CloudPcOrganizationSettings : Entity, IParsable 
+    {
         /// <summary>Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager (MEM). The default value is false.</summary>
         public bool? EnableMEMAutoEnroll {
             get { return BackingStore?.Get<bool?>("enableMEMAutoEnroll"); }
@@ -45,7 +46,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         /// <returns>A <see cref="CloudPcOrganizationSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcOrganizationSettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static new CloudPcOrganizationSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CloudPcOrganizationSettings();
         }
@@ -53,8 +55,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
                 {"enableMEMAutoEnroll", n => { EnableMEMAutoEnroll = n.GetBoolValue(); } },
                 {"enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
                 {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
@@ -66,7 +70,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer) {
+        public override void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("enableMEMAutoEnroll", EnableMEMAutoEnroll);

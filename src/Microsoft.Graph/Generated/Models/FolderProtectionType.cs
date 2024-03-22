@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Possible values of Folder Protection</summary>
-    public enum FolderProtectionType {
+    public enum FolderProtectionType
+    {
         /// <summary>Device default value, no intent.</summary>
         [EnumMember(Value = "userDefined")]
         UserDefined,

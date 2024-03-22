@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
-    public enum AwsSecurityToolWebServices {
+    public enum AwsSecurityToolWebServices
+    {
         [EnumMember(Value = "macie")]
         Macie = 1,
         [EnumMember(Value = "wafShield")]

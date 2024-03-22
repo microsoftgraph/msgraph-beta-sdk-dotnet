@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Mdm Support Status of the setting.</summary>
-    public enum MdmSupportedState {
+    public enum MdmSupportedState
+    {
         /// <summary>Mdm support status of the setting is not known.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

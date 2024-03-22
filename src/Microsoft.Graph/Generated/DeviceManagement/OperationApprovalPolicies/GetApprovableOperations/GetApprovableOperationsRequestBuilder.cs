@@ -12,20 +12,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.GetApp
     /// <summary>
     /// Provides operations to call the getApprovableOperations method.
     /// </summary>
-    public class GetApprovableOperationsRequestBuilder : BaseRequestBuilder {
+    public class GetApprovableOperationsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GetApprovableOperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetApprovableOperationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/getApprovableOperations(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters) {
+        public GetApprovableOperationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/getApprovableOperations(){?%24count,%24filter,%24search,%24skip,%24top}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GetApprovableOperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GetApprovableOperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/getApprovableOperations(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl) {
+        public GetApprovableOperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/operationApprovalPolicies/getApprovableOperations(){?%24count,%24filter,%24search,%24skip,%24top}", rawUrl)
+        {
         }
         /// <summary>
         /// Invoke function getApprovableOperations
@@ -36,13 +39,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.GetApp
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetApprovableOperationsGetResponse?> GetAsGetApprovableOperationsGetResponseAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApprovableOperationsGetResponse?> GetAsGetApprovableOperationsGetResponseAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetApprovableOperationsGetResponse> GetAsGetApprovableOperationsGetResponseAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApprovableOperationsGetResponse> GetAsGetApprovableOperationsGetResponseAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetApprovableOperationsGetResponse>(requestInfo, GetApprovableOperationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -57,13 +63,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.GetApp
         [Obsolete("This method is obsolete. Use GetAsGetApprovableOperationsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetApprovableOperationsResponse?> GetAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApprovableOperationsResponse?> GetAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GetApprovableOperationsResponse> GetAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GetApprovableOperationsResponse> GetAsync(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GetApprovableOperationsResponse>(requestInfo, GetApprovableOperationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -75,10 +84,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.GetApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -90,13 +101,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.GetApp
         /// </summary>
         /// <returns>A <see cref="GetApprovableOperationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetApprovableOperationsRequestBuilder WithUrl(string rawUrl) {
+        public GetApprovableOperationsRequestBuilder WithUrl(string rawUrl)
+        {
             return new GetApprovableOperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getApprovableOperations
         /// </summary>
-        public class GetApprovableOperationsRequestBuilderGetQueryParameters {
+        public class GetApprovableOperationsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
             public bool? Count { get; set; }
@@ -131,7 +144,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.GetApp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetApprovableOperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters> {
+        public class GetApprovableOperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetApprovableOperationsRequestBuilderGetQueryParameters> 
+        {
         }
     }
 }

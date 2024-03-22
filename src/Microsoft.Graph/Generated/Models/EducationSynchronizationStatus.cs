@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum EducationSynchronizationStatus {
+    public enum EducationSynchronizationStatus
+    {
         [EnumMember(Value = "paused")]
         Paused,
         [EnumMember(Value = "inProgress")]

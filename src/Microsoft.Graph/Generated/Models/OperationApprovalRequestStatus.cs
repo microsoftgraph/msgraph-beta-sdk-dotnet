@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request&apos;s expiration DateTime passes and the result is `expired`.</summary>
-    public enum OperationApprovalRequestStatus {
+    public enum OperationApprovalRequestStatus
+    {
         /// <summary>Default. Indicates that the request approval status is unknown, and that the status has not been assigned to the approval request.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,

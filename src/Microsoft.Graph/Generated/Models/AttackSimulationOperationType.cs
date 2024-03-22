@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum AttackSimulationOperationType {
+    public enum AttackSimulationOperationType
+    {
         [EnumMember(Value = "createSimualation")]
         CreateSimualation,
         [EnumMember(Value = "updateSimulation")]

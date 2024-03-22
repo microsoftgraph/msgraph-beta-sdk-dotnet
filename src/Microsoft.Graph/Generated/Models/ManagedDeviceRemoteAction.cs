@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
-    public enum ManagedDeviceRemoteAction {
+    public enum ManagedDeviceRemoteAction
+    {
         /// <summary>Name of the retire action.</summary>
         [EnumMember(Value = "retire")]
         Retire,

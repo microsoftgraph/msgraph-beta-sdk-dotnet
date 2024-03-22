@@ -24,64 +24,78 @@ namespace Microsoft.Graph.Beta.Admin {
     /// <summary>
     /// Provides operations to manage the admin singleton.
     /// </summary>
-    public class AdminRequestBuilder : BaseRequestBuilder {
+    public class AdminRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Provides operations to manage the appsAndServices property of the microsoft.graph.admin entity.</summary>
-        public AppsAndServicesRequestBuilder AppsAndServices { get =>
-            new AppsAndServicesRequestBuilder(PathParameters, RequestAdapter);
+        public AppsAndServicesRequestBuilder AppsAndServices
+        {
+            get => new AppsAndServicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dynamics property of the microsoft.graph.admin entity.</summary>
-        public DynamicsRequestBuilder Dynamics { get =>
-            new DynamicsRequestBuilder(PathParameters, RequestAdapter);
+        public DynamicsRequestBuilder Dynamics
+        {
+            get => new DynamicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the edge property of the microsoft.graph.admin entity.</summary>
-        public EdgeRequestBuilder Edge { get =>
-            new EdgeRequestBuilder(PathParameters, RequestAdapter);
+        public EdgeRequestBuilder Edge
+        {
+            get => new EdgeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forms property of the microsoft.graph.admin entity.</summary>
-        public FormsRequestBuilder Forms { get =>
-            new FormsRequestBuilder(PathParameters, RequestAdapter);
+        public FormsRequestBuilder Forms
+        {
+            get => new FormsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoft365Apps property of the microsoft.graph.admin entity.</summary>
-        public Microsoft365AppsRequestBuilder Microsoft365Apps { get =>
-            new Microsoft365AppsRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft365AppsRequestBuilder Microsoft365Apps
+        {
+            get => new Microsoft365AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the people property of the microsoft.graph.admin entity.</summary>
-        public PeopleRequestBuilder People { get =>
-            new PeopleRequestBuilder(PathParameters, RequestAdapter);
+        public PeopleRequestBuilder People
+        {
+            get => new PeopleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reportSettings property of the microsoft.graph.admin entity.</summary>
-        public ReportSettingsRequestBuilder ReportSettings { get =>
-            new ReportSettingsRequestBuilder(PathParameters, RequestAdapter);
+        public ReportSettingsRequestBuilder ReportSettings
+        {
+            get => new ReportSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceAnnouncement property of the microsoft.graph.admin entity.</summary>
-        public ServiceAnnouncementRequestBuilder ServiceAnnouncement { get =>
-            new ServiceAnnouncementRequestBuilder(PathParameters, RequestAdapter);
+        public ServiceAnnouncementRequestBuilder ServiceAnnouncement
+        {
+            get => new ServiceAnnouncementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharepoint property of the microsoft.graph.admin entity.</summary>
-        public SharepointRequestBuilder Sharepoint { get =>
-            new SharepointRequestBuilder(PathParameters, RequestAdapter);
+        public SharepointRequestBuilder Sharepoint
+        {
+            get => new SharepointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the todo property of the microsoft.graph.admin entity.</summary>
-        public TodoRequestBuilder Todo { get =>
-            new TodoRequestBuilder(PathParameters, RequestAdapter);
+        public TodoRequestBuilder Todo
+        {
+            get => new TodoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windows property of the microsoft.graph.admin entity.</summary>
-        public WindowsRequestBuilder Windows { get =>
-            new WindowsRequestBuilder(PathParameters, RequestAdapter);
+        public WindowsRequestBuilder Windows
+        {
+            get => new WindowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AdminRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdminRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin{?%24expand,%24select}", pathParameters) {
+        public AdminRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin{?%24expand,%24select}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AdminRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdminRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin{?%24expand,%24select}", rawUrl) {
+        public AdminRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin{?%24expand,%24select}", rawUrl)
+        {
         }
         /// <summary>
         /// Get admin
@@ -92,13 +106,16 @@ namespace Microsoft.Graph.Beta.Admin {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Admin?> GetAsync(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Admin?> GetAsync(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Admin> GetAsync(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Admin> GetAsync(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Admin>(requestInfo, Microsoft.Graph.Beta.Models.Admin.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -113,14 +130,17 @@ namespace Microsoft.Graph.Beta.Admin {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Admin?> PatchAsync(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Admin?> PatchAsync(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Admin> PatchAsync(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Admin> PatchAsync(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Admin>(requestInfo, Microsoft.Graph.Beta.Models.Admin.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -132,10 +152,12 @@ namespace Microsoft.Graph.Beta.Admin {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdminRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -150,10 +172,12 @@ namespace Microsoft.Graph.Beta.Admin {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Admin body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/admin", PathParameters);
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Beta.Admin {
         /// </summary>
         /// <returns>A <see cref="AdminRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AdminRequestBuilder WithUrl(string rawUrl) {
+        public AdminRequestBuilder WithUrl(string rawUrl)
+        {
             return new AdminRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get admin
         /// </summary>
-        public class AdminRequestBuilderGetQueryParameters {
+        public class AdminRequestBuilderGetQueryParameters 
+        {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,13 +225,15 @@ namespace Microsoft.Graph.Beta.Admin {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AdminRequestBuilderGetRequestConfiguration : RequestConfiguration<AdminRequestBuilderGetQueryParameters> {
+        public class AdminRequestBuilderGetRequestConfiguration : RequestConfiguration<AdminRequestBuilderGetQueryParameters> 
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AdminRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+        public class AdminRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        {
         }
     }
 }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
-    public enum DhGroup {
+    public enum DhGroup
+    {
         [EnumMember(Value = "dhGroup14")]
         DhGroup14,
         [EnumMember(Value = "dhGroup24")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>The current status of the Ndes Connector.</summary>
-    public enum NdesConnectorState {
+    public enum NdesConnectorState
+    {
         /// <summary>State not available yet for this connector.</summary>
         [EnumMember(Value = "none")]
         None,

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Indicates the type of return code.</summary>
-    public enum Win32LobAppReturnCodeType {
+    public enum Win32LobAppReturnCodeType
+    {
         /// <summary>Failed.</summary>
         [EnumMember(Value = "failed")]
         Failed,
