@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The date and time the app was created. This property is read-only.</summary>
+        /// <summary>The date and time the app was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The total number of dependencies the child app has. This property is read-only.</summary>
+        /// <summary>The total number of dependencies the child app has.</summary>
         public int? DependentAppCount {
             get { return BackingStore?.Get<int?>("dependentAppCount"); }
             set { BackingStore?.Set("dependentAppCount", value); }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("informationUrl", value); }
         }
 #endif
-        /// <summary>The value indicating whether the app is assigned to at least one group. This property is read-only.</summary>
+        /// <summary>The value indicating whether the app is assigned to at least one group.</summary>
         public bool? IsAssigned {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
             set { BackingStore?.Set("isAssigned", value); }
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("largeIcon", value); }
         }
 #endif
-        /// <summary>The date and time the app was last modified. This property is read-only.</summary>
+        /// <summary>The date and time the app was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
-        /// <summary>The set of direct relationships for this app.</summary>
+        /// <summary>List of relationships for this mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<MobileAppRelationship>? Relationships {
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }
             set { BackingStore?.Set("supersedingAppCount", value); }
         }
-        /// <summary>The upload state. Possible values are: 0 - Not Ready, 1 - Ready, 2 - Processing. This property is read-only.</summary>
+        /// <summary>The upload state.</summary>
         public int? UploadState {
             get { return BackingStore?.Get<int?>("uploadState"); }
             set { BackingStore?.Set("uploadState", value); }

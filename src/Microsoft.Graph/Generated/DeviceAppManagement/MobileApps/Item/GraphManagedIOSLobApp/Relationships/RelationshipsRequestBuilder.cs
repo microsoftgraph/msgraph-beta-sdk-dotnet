@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
         {
         }
         /// <summary>
-        /// The set of direct relationships for this app.
+        /// List of relationships for this mobile app.
         /// </summary>
         /// <returns>A <see cref="MobileAppRelationshipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
             return await RequestAdapter.SendAsync<MobileAppRelationship>(requestInfo, MobileAppRelationship.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of direct relationships for this app.
+        /// List of relationships for this mobile app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
             return new RelationshipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The set of direct relationships for this app.
+        /// List of relationships for this mobile app.
         /// </summary>
         public class RelationshipsRequestBuilderGetQueryParameters 
         {

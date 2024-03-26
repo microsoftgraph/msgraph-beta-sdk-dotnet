@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcAuditActivityResult?>("activityResult"); }
             set { BackingStore?.Set("activityResult", value); }
         }
-        /// <summary>The type of activity that was performed. Read-only.</summary>
+        /// <summary>The type of the activity that was performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActivityType {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("componentName", value); }
         }
 #endif
-        /// <summary>The client request identifier, used to correlate activity within the system. Read-only.</summary>
+        /// <summary>The client request ID that is used to correlate activity within the system. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CorrelationId {

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetByPathWithPath1.I
         {
         }
         /// <summary>
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can&apos;t be enumerated.
         /// </summary>
         /// <returns>A <see cref="BaseItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetByPathWithPath1.I
             return await RequestAdapter.SendAsync<BaseItemCollectionResponse>(requestInfo, BaseItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can&apos;t be enumerated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.GetByPathWithPath1.I
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can&apos;t be enumerated.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters 
         {

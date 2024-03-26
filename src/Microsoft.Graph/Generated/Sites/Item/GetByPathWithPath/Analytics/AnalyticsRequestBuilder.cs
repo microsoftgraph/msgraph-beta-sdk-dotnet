@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Analytics about the view activities that took place in this site.
+        /// Analytics about the view activities that took place on this site.
         /// </summary>
         /// <returns>A <see cref="ItemAnalytics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics {
             return requestInfo;
         }
         /// <summary>
-        /// Analytics about the view activities that took place in this site.
+        /// Analytics about the view activities that took place on this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.GetByPathWithPath.Analytics {
         {
         }
         /// <summary>
-        /// Analytics about the view activities that took place in this site.
+        /// Analytics about the view activities that took place on this site.
         /// </summary>
         public class AnalyticsRequestBuilderGetQueryParameters 
         {

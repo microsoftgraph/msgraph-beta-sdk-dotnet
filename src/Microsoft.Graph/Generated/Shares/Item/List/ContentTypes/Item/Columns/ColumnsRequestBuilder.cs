@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns {
         {
         }
         /// <summary>
-        /// The collection of column definitions for this contentType.
+        /// The collection of column definitions for this content type.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-list-columns?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of column definitions for this contentType.
+        /// The collection of column definitions for this content type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns {
             return new ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of column definitions for this contentType.
+        /// The collection of column definitions for this content type.
         /// </summary>
         public class ColumnsRequestBuilderGetQueryParameters 
         {

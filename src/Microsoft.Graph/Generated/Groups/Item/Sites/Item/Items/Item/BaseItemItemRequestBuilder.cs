@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Items.Item {
         {
         }
         /// <summary>
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can&apos;t be enumerated.
         /// </summary>
         /// <returns>A <see cref="BaseItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Items.Item {
             return await RequestAdapter.SendAsync<BaseItem>(requestInfo, BaseItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can&apos;t be enumerated.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Items.Item {
             return new BaseItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Used to address any item contained in this site. This collection cannot be enumerated.
+        /// Used to address any item contained in this site. This collection can&apos;t be enumerated.
         /// </summary>
         public class BaseItemItemRequestBuilderGetQueryParameters 
         {

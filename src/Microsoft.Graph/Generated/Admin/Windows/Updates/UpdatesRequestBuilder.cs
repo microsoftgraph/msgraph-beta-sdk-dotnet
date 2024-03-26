@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments;
+using Microsoft.Graph.Beta.Admin.Windows.Updates.Products;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets;
 using Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies;
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         public DeploymentsRequestBuilder Deployments
         {
             get => new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the products property of the microsoft.graph.adminWindowsUpdates entity.</summary>
+        public ProductsRequestBuilder Products
+        {
+            get => new ProductsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.adminWindowsUpdates entity.</summary>
         public ResourceConnectionsRequestBuilder ResourceConnections

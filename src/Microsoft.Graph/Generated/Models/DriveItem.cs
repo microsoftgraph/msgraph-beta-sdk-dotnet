@@ -91,6 +91,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("content", value); }
         }
 #endif
+        /// <summary>The content stream, if the item represents a file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public byte[]? ContentStream {
+            get { return BackingStore?.Get<byte[]?>("contentStream"); }
+            set { BackingStore?.Set("contentStream", value); }
+        }
+#nullable restore
+#else
+        public byte[] ContentStream {
+            get { return BackingStore?.Get<byte[]>("contentStream"); }
+            set { BackingStore?.Set("contentStream", value); }
+        }
+#endif
         /// <summary>An eTag for the content of the item. This eTag isn&apos;t changed if only the metadata is changed. Note This property isn&apos;t returned if the item is a folder. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -534,6 +548,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cTag", n => { CTag = n.GetStringValue(); } },
                 {"children", n => { Children = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"content", n => { Content = n.GetByteArrayValue(); } },
+                {"contentStream", n => { ContentStream = n.GetByteArrayValue(); } },
                 {"deleted", n => { Deleted = n.GetObjectValue<Microsoft.Graph.Beta.Models.Deleted>(Microsoft.Graph.Beta.Models.Deleted.CreateFromDiscriminatorValue); } },
                 {"file", n => { File = n.GetObjectValue<FileObject>(FileObject.CreateFromDiscriminatorValue); } },
                 {"fileSystemInfo", n => { FileSystemInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileSystemInfo>(Microsoft.Graph.Beta.Models.FileSystemInfo.CreateFromDiscriminatorValue); } },
@@ -579,6 +594,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Bundle>("bundle", Bundle);
             writer.WriteCollectionOfObjectValues<DriveItem>("children", Children);
             writer.WriteByteArrayValue("content", Content);
+            writer.WriteByteArrayValue("contentStream", ContentStream);
             writer.WriteStringValue("cTag", CTag);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Deleted>("deleted", Deleted);
             writer.WriteObjectValue<FileObject>("file", File);

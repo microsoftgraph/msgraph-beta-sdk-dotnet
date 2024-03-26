@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.Groups.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.Groups.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.Groups.Item.Conversations;
 using Microsoft.Graph.Beta.Groups.Item.CreatedOnBehalfOf;
+using Microsoft.Graph.Beta.Groups.Item.DeletePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Groups.Item.Drive;
 using Microsoft.Graph.Beta.Groups.Item.Drives;
 using Microsoft.Graph.Beta.Groups.Item.Endpoints;
@@ -18,6 +19,7 @@ using Microsoft.Graph.Beta.Groups.Item.Events;
 using Microsoft.Graph.Beta.Groups.Item.Extensions;
 using Microsoft.Graph.Beta.Groups.Item.GetMemberGroups;
 using Microsoft.Graph.Beta.Groups.Item.GetMemberObjects;
+using Microsoft.Graph.Beta.Groups.Item.GetPasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies;
 using Microsoft.Graph.Beta.Groups.Item.MemberOf;
 using Microsoft.Graph.Beta.Groups.Item.Members;
@@ -115,6 +117,11 @@ namespace Microsoft.Graph.Beta.Groups.Item {
         {
             get => new CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the deletePasswordSingleSignOnCredentials method.</summary>
+        public DeletePasswordSingleSignOnCredentialsRequestBuilder DeletePasswordSingleSignOnCredentials
+        {
+            get => new DeletePasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.group entity.</summary>
         public DriveRequestBuilder Drive
         {
@@ -154,6 +161,11 @@ namespace Microsoft.Graph.Beta.Groups.Item {
         public GetMemberObjectsRequestBuilder GetMemberObjects
         {
             get => new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getPasswordSingleSignOnCredentials method.</summary>
+        public GetPasswordSingleSignOnCredentialsRequestBuilder GetPasswordSingleSignOnCredentials
+        {
+            get => new GetPasswordSingleSignOnCredentialsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
         public GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies

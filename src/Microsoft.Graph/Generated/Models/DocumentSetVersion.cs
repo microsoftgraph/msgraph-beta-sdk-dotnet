@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("items", value); }
         }
 #endif
-        /// <summary>If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.</summary>
+        /// <summary>If true, minor versions of items are also captured; otherwise, only major versions are captured. The default value is false.</summary>
         public bool? ShouldCaptureMinorVersion {
             get { return BackingStore?.Get<bool?>("shouldCaptureMinorVersion"); }
             set { BackingStore?.Set("shouldCaptureMinorVersion", value); }

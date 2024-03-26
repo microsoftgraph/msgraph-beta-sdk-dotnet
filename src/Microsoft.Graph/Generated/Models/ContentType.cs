@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class ContentType : Entity, IParsable 
     {
-        /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
+        /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This contains all hub sites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type is applied to the lists in the enforced sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AssociatedHubsUrls {
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("baseTypes", value); }
         }
 #endif
-        /// <summary>The collection of columns that are required by this content type</summary>
+        /// <summary>The collection of columns that are required by this content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ColumnLink>? ColumnLinks {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("columnPositions", value); }
         }
 #endif
-        /// <summary>The collection of column definitions for this contentType.</summary>
+        /// <summary>The collection of column definitions for this content type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ColumnDefinition>? Columns {
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("parentId", value); }
         }
 #endif
-        /// <summary>If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.</summary>
+        /// <summary>If true, any changes made to the content type are pushed to inherited content types and lists that implement the content type.</summary>
         public bool? PropagateChanges {
             get { return BackingStore?.Get<bool?>("propagateChanges"); }
             set { BackingStore?.Set("propagateChanges", value); }

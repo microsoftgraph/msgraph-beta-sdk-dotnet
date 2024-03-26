@@ -7,6 +7,20 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class ProductRevision : Microsoft.Graph.Beta.Models.Entity, IParsable 
     {
+        /// <summary>The catalogEntry property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry? CatalogEntry {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry?>("catalogEntry"); }
+            set { BackingStore?.Set("catalogEntry", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CatalogEntry {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry"); }
+            set { BackingStore?.Set("catalogEntry", value); }
+        }
+#endif
         /// <summary>The display name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"knowledgeBaseArticle", n => { KnowledgeBaseArticle = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
                 {"osBuild", n => { OsBuild = n.GetObjectValue<BuildVersionDetails>(BuildVersionDetails.CreateFromDiscriminatorValue); } },
@@ -116,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry", CatalogEntry);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("knowledgeBaseArticle", KnowledgeBaseArticle);
             writer.WriteObjectValue<BuildVersionDetails>("osBuild", OsBuild);
