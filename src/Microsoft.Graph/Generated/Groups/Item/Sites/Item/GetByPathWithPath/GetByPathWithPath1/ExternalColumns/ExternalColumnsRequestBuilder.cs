@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetByPat
         {
         }
         /// <summary>
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetByPat
             return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetByPat
             return new ExternalColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         public class ExternalColumnsRequestBuilderGetQueryParameters 
         {

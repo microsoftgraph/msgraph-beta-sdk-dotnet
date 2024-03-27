@@ -7,6 +7,25 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcManagementGroupAssignmentTarget : CloudPcManagementAssignmentTarget, IParsable 
     {
+        /// <summary>The allotmentDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AllotmentDisplayName {
+            get { return BackingStore?.Get<string?>("allotmentDisplayName"); }
+            set { BackingStore?.Set("allotmentDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string AllotmentDisplayName {
+            get { return BackingStore?.Get<string>("allotmentDisplayName"); }
+            set { BackingStore?.Set("allotmentDisplayName", value); }
+        }
+#endif
+        /// <summary>The allotmentLicensesCount property</summary>
+        public int? AllotmentLicensesCount {
+            get { return BackingStore?.Get<int?>("allotmentLicensesCount"); }
+            set { BackingStore?.Set("allotmentLicensesCount", value); }
+        }
         /// <summary>The ID of the target group for the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +79,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"allotmentDisplayName", n => { AllotmentDisplayName = n.GetStringValue(); } },
+                {"allotmentLicensesCount", n => { AllotmentLicensesCount = n.GetIntValue(); } },
                 {"groupId", n => { GroupId = n.GetStringValue(); } },
                 {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
             };
@@ -72,6 +93,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("allotmentDisplayName", AllotmentDisplayName);
+            writer.WriteIntValue("allotmentLicensesCount", AllotmentLicensesCount);
             writer.WriteStringValue("groupId", GroupId);
             writer.WriteStringValue("servicePlanId", ServicePlanId);
         }

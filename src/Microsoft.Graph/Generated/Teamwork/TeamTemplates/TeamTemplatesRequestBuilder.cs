@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
         {
         }
         /// <summary>
-        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0" />
+        /// Get the list of teamTemplate objects that are available for a tenant. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TeamTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return await RequestAdapter.SendAsync<TeamTemplate>(requestInfo, TeamTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
+        /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return new TeamTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
+        /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         public class TeamTemplatesRequestBuilderGetQueryParameters 
         {

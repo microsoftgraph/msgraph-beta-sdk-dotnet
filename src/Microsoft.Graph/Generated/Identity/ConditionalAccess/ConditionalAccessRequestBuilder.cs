@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates;
@@ -31,6 +32,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         public AuthenticationStrengthsRequestBuilder AuthenticationStrengths
         {
             get => new AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the evaluate method.</summary>
+        public EvaluateRequestBuilder Evaluate
+        {
+            get => new EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public NamedLocationsRequestBuilder NamedLocations

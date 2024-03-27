@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Site : BaseItem, IParsable 
     {
-        /// <summary>Analytics about the view activities that took place in this site.</summary>
+        /// <summary>Analytics about the view activities that took place on this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemAnalytics? Analytics {
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("drives", value); }
         }
 #endif
-        /// <summary>The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.</summary>
+        /// <summary>The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ColumnDefinition>? ExternalColumns {
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isPersonalSite"); }
             set { BackingStore?.Set("isPersonalSite", value); }
         }
-        /// <summary>Used to address any item contained in this site. This collection cannot be enumerated.</summary>
+        /// <summary>Used to address any item contained in this site. This collection can&apos;t be enumerated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BaseItem>? Items {
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operations", value); }
         }
 #endif
-        /// <summary>The collection of pages in the baseSitePages list in this site.</summary>
+        /// <summary>The collection of pages in the baseSitePages list on this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BaseSitePage>? Pages {
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recycleBin", value); }
         }
 #endif
-        /// <summary>If present, indicates that this is the root site in the site collection. Read-only.</summary>
+        /// <summary>If present, provides the root site in the site collection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Root? Root {

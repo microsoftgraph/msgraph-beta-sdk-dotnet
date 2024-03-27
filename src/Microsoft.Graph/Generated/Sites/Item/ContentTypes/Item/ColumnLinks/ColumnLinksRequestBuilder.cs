@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks {
         {
         }
         /// <summary>
-        /// The collection of columns that are required by this content type
+        /// The collection of columns that are required by this content type.
         /// </summary>
         /// <returns>A <see cref="ColumnLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks {
             return await RequestAdapter.SendAsync<ColumnLink>(requestInfo, ColumnLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of columns that are required by this content type
+        /// The collection of columns that are required by this content type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.ColumnLinks {
             return new ColumnLinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of columns that are required by this content type
+        /// The collection of columns that are required by this content type.
         /// </summary>
         public class ColumnLinksRequestBuilderGetQueryParameters 
         {

@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.FilesFolder.Content;
+using Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PrimaryChannel.FilesFolder.ContentStream;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Primar
         public ContentRequestBuilder Content
         {
             get => new ContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the teamTemplateDefinition entity.</summary>
+        public ContentStreamRequestBuilder ContentStream
+        {
+            get => new ContentStreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="FilesFolderRequestBuilder"/> and sets the default values.

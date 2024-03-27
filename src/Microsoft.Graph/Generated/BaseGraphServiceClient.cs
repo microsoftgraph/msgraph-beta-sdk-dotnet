@@ -119,6 +119,7 @@ using Microsoft.Graph.Beta.TermStore;
 using Microsoft.Graph.Beta.ThreatSubmission;
 using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
+using Microsoft.Graph.Beta.Workplace;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Store;
 using Microsoft.Kiota.Abstractions;
@@ -701,6 +702,11 @@ namespace Microsoft.Graph.Beta {
         public UsersRequestBuilder Users
         {
             get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the workplace singleton.</summary>
+        public WorkplaceRequestBuilder Workplace
+        {
+            get => new WorkplaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to manage the collection of application entities.

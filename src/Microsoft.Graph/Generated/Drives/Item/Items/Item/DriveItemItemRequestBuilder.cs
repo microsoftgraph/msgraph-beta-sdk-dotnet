@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkout;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Children;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Content;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.ContentStream;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.CreateLink;
 using Microsoft.Graph.Beta.Drives.Item.Items.Item.CreateUploadSession;
@@ -80,6 +81,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
         public ContentRequestBuilder Content
         {
             get => new ContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the drive entity.</summary>
+        public ContentStreamRequestBuilder ContentStream
+        {
+            get => new ContentStreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copy method.</summary>
         public CopyRequestBuilder Copy

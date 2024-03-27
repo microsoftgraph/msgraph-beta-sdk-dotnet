@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
-        /// <summary>The healthCheckStatusDetails property</summary>
+        /// <summary>The details of the connection&apos;s health checks and the corresponding results. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetails. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcOnPremisesConnectionStatusDetails? HealthCheckStatusDetails {
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subnetId", value); }
         }
 #endif
-        /// <summary>The ID of the target Azure subscription that’s associated with your tenant.</summary>
+        /// <summary>The ID of the target Azure subscription associated with your tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId {
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
 #endif
-        /// <summary>Indicates resource location of the virtual target network. Read-only, computed value.</summary>
+        /// <summary>Indicates the resource location of the virtual target network. Read-only, computed value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VirtualNetworkLocation {

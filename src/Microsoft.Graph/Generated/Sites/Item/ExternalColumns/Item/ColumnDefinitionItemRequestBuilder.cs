@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ExternalColumns.Item {
         {
         }
         /// <summary>
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ExternalColumns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ExternalColumns.Item {
             return new ColumnDefinitionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.
+        /// The collection of column definitions available in the site that is referenced from the sites in the parent hierarchy of the current site.
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters 
         {

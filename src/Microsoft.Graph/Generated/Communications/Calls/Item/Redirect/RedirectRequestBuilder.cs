@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Redirect {
         {
         }
         /// <summary>
-        /// Redirect an incoming call that hasn&apos;t been answered or rejected yet. The terms &apos;redirecting&apos; and &apos;forwarding&apos; a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+        /// Redirect an incoming call that wasn&apos;t answered or rejected yet. The terms &apos;redirecting&apos; and &apos;forwarding&apos; a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Redirect {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Redirect an incoming call that hasn&apos;t been answered or rejected yet. The terms &apos;redirecting&apos; and &apos;forwarding&apos; a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
+        /// Redirect an incoming call that wasn&apos;t answered or rejected yet. The terms &apos;redirecting&apos; and &apos;forwarding&apos; a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

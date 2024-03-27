@@ -100,7 +100,12 @@ namespace Microsoft.Graph.Beta.Models {
         public static new ConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessPolicy();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.conditionalAccessWhatIfPolicy" => new ConditionalAccessWhatIfPolicy(),
+                _ => new ConditionalAccessPolicy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
