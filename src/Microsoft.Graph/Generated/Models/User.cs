@@ -855,6 +855,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("interests", value); }
         }
 #endif
+        /// <summary>The invitedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public DirectoryObject? InvitedBy {
+            get { return BackingStore?.Get<DirectoryObject?>("invitedBy"); }
+            set { BackingStore?.Set("invitedBy", value); }
+        }
+#nullable restore
+#else
+        public DirectoryObject InvitedBy {
+            get { return BackingStore?.Get<DirectoryObject>("invitedBy"); }
+            set { BackingStore?.Set("invitedBy", value); }
+        }
+#endif
         /// <summary>Indicates whether the user is pending an exchange mailbox license assignment.  Read-only.  Supports $filter (eq where true only).</summary>
         public bool? IsLicenseReconciliationNeeded {
             get { return BackingStore?.Get<bool?>("isLicenseReconciliationNeeded"); }
@@ -1964,7 +1978,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
-        /// <summary>A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?</summary>
+        /// <summary>A String value that can be used to classify user types in your directory. The possible values are Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Microsoft Entra ID?</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserType {
@@ -2096,6 +2110,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"informationProtection", n => { InformationProtection = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationProtection>(Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue); } },
                 {"insights", n => { Insights = n.GetObjectValue<ItemInsights>(ItemInsights.CreateFromDiscriminatorValue); } },
                 {"interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"invitedBy", n => { InvitedBy = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
                 {"isLicenseReconciliationNeeded", n => { IsLicenseReconciliationNeeded = n.GetBoolValue(); } },
                 {"isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 {"isResourceAccount", n => { IsResourceAccount = n.GetBoolValue(); } },
@@ -2259,6 +2274,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InformationProtection>("informationProtection", InformationProtection);
             writer.WriteObjectValue<ItemInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
+            writer.WriteObjectValue<DirectoryObject>("invitedBy", InvitedBy);
             writer.WriteBoolValue("isLicenseReconciliationNeeded", IsLicenseReconciliationNeeded);
             writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);

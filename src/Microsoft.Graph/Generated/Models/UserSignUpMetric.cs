@@ -8,16 +8,72 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class UserSignUpMetric : Entity, IParsable 
     {
+        /// <summary>The appId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#nullable restore
+#else
+        public string AppId {
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#endif
         /// <summary>The total number of users who signed up in the specified period. Supports $filter (eq).</summary>
         public long? Count {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
+        /// <summary>The country property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country {
+            get { return BackingStore?.Get<string?>("country"); }
+            set { BackingStore?.Set("country", value); }
+        }
+#nullable restore
+#else
+        public string Country {
+            get { return BackingStore?.Get<string>("country"); }
+            set { BackingStore?.Set("country", value); }
+        }
+#endif
         /// <summary>The date of the user insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
+        /// <summary>The identityProvider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityProvider {
+            get { return BackingStore?.Get<string?>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#nullable restore
+#else
+        public string IdentityProvider {
+            get { return BackingStore?.Get<string>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#endif
+        /// <summary>The language property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#nullable restore
+#else
+        public string Language {
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#endif
         /// <summary>The device plaform that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,8 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"appId", n => { AppId = n.GetStringValue(); } },
                 {"count", n => { Count = n.GetLongValue(); } },
+                {"country", n => { Country = n.GetStringValue(); } },
                 {"factDate", n => { FactDate = n.GetDateValue(); } },
+                {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
                 {"os", n => { Os = n.GetStringValue(); } },
             };
         }
@@ -63,8 +123,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("appId", AppId);
             writer.WriteLongValue("count", Count);
+            writer.WriteStringValue("country", Country);
             writer.WriteDateValue("factDate", FactDate);
+            writer.WriteStringValue("identityProvider", IdentityProvider);
+            writer.WriteStringValue("language", Language);
             writer.WriteStringValue("os", Os);
         }
     }

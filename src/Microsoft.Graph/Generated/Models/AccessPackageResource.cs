@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isPendingOnboarding"); }
             set { BackingStore?.Set("isPendingOnboarding", value); }
         }
-        /// <summary>The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group.</summary>
+        /// <summary>The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginId {
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup.</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem {

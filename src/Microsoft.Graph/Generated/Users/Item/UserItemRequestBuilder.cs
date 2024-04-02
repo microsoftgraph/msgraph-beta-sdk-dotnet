@@ -58,6 +58,7 @@ using Microsoft.Graph.Beta.Users.Item.InferenceClassification;
 using Microsoft.Graph.Beta.Users.Item.InformationProtection;
 using Microsoft.Graph.Beta.Users.Item.Insights;
 using Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens;
+using Microsoft.Graph.Beta.Users.Item.InvitedBy;
 using Microsoft.Graph.Beta.Users.Item.IsManagedAppUserBlocked;
 using Microsoft.Graph.Beta.Users.Item.JoinedGroups;
 using Microsoft.Graph.Beta.Users.Item.JoinedTeams;
@@ -391,6 +392,11 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public InvalidateAllRefreshTokensRequestBuilder InvalidateAllRefreshTokens
         {
             get => new InvalidateAllRefreshTokensRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the invitedBy property of the microsoft.graph.user entity.</summary>
+        public InvitedByRequestBuilder InvitedBy
+        {
+            get => new InvitedByRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isManagedAppUserBlocked method.</summary>
         public IsManagedAppUserBlockedRequestBuilder IsManagedAppUserBlocked

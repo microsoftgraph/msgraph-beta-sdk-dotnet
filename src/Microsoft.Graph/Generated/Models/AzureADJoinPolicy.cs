@@ -34,6 +34,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
             set { BackingStore?.Set("isAdminConfigurable", value); }
         }
+        /// <summary>The localAdmins property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public LocalAdminSettings? LocalAdmins {
+            get { return BackingStore?.Get<LocalAdminSettings?>("localAdmins"); }
+            set { BackingStore?.Set("localAdmins", value); }
+        }
+#nullable restore
+#else
+        public LocalAdminSettings LocalAdmins {
+            get { return BackingStore?.Get<LocalAdminSettings>("localAdmins"); }
+            set { BackingStore?.Set("localAdmins", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             {
                 {"allowedToJoin", n => { AllowedToJoin = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
                 {"isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
+                {"localAdmins", n => { LocalAdmins = n.GetObjectValue<LocalAdminSettings>(LocalAdminSettings.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<DeviceRegistrationMembership>("allowedToJoin", AllowedToJoin);
             writer.WriteBoolValue("isAdminConfigurable", IsAdminConfigurable);
+            writer.WriteObjectValue<LocalAdminSettings>("localAdmins", LocalAdmins);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

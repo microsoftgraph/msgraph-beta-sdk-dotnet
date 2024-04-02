@@ -27,11 +27,67 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("attemptsCount"); }
             set { BackingStore?.Set("attemptsCount", value); }
         }
+        /// <summary>The country property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Country {
+            get { return BackingStore?.Get<string?>("country"); }
+            set { BackingStore?.Set("country", value); }
+        }
+#nullable restore
+#else
+        public string Country {
+            get { return BackingStore?.Get<string>("country"); }
+            set { BackingStore?.Set("country", value); }
+        }
+#endif
         /// <summary>The date of the user insight.</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
+        /// <summary>The identityProvider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityProvider {
+            get { return BackingStore?.Get<string?>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#nullable restore
+#else
+        public string IdentityProvider {
+            get { return BackingStore?.Get<string>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#endif
+        /// <summary>The language property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#nullable restore
+#else
+        public string Language {
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#endif
+        /// <summary>The mfaFailures property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<MfaFailure>? MfaFailures {
+            get { return BackingStore?.Get<List<MfaFailure>?>("mfaFailures"); }
+            set { BackingStore?.Set("mfaFailures", value); }
+        }
+#nullable restore
+#else
+        public List<MfaFailure> MfaFailures {
+            get { return BackingStore?.Get<List<MfaFailure>>("mfaFailures"); }
+            set { BackingStore?.Set("mfaFailures", value); }
+        }
+#endif
         /// <summary>The MFA authentication method used by the customers. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +141,11 @@ namespace Microsoft.Graph.Beta.Models {
             {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"attemptsCount", n => { AttemptsCount = n.GetLongValue(); } },
+                {"country", n => { Country = n.GetStringValue(); } },
                 {"factDate", n => { FactDate = n.GetDateValue(); } },
+                {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
+                {"mfaFailures", n => { MfaFailures = n.GetCollectionOfObjectValues<MfaFailure>(MfaFailure.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mfaMethod", n => { MfaMethod = n.GetStringValue(); } },
                 {"os", n => { Os = n.GetStringValue(); } },
                 {"successCount", n => { SuccessCount = n.GetLongValue(); } },
@@ -101,7 +161,11 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
             writer.WriteLongValue("attemptsCount", AttemptsCount);
+            writer.WriteStringValue("country", Country);
             writer.WriteDateValue("factDate", FactDate);
+            writer.WriteStringValue("identityProvider", IdentityProvider);
+            writer.WriteStringValue("language", Language);
+            writer.WriteCollectionOfObjectValues<MfaFailure>("mfaFailures", MfaFailures);
             writer.WriteStringValue("mfaMethod", MfaMethod);
             writer.WriteStringValue("os", Os);
             writer.WriteLongValue("successCount", SuccessCount);

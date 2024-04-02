@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedMessageDeliveryCount property</summary>
+        /// <summary>The number of users to whom mails couldn&apos;t be delivered.</summary>
         public int? FailedMessageDeliveryCount {
             get { return BackingStore?.Get<int?>("failedMessageDeliveryCount"); }
             set { BackingStore?.Set("failedMessageDeliveryCount", value); }
@@ -34,12 +34,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The resolvedTargetsCount property</summary>
+        /// <summary>The number of users whose email address was successfully resolved from target users.</summary>
         public int? ResolvedTargetsCount {
             get { return BackingStore?.Get<int?>("resolvedTargetsCount"); }
             set { BackingStore?.Set("resolvedTargetsCount", value); }
         }
-        /// <summary>The successfulMessageDeliveryCount property</summary>
+        /// <summary>The number of users who received a mail while the training campaign was in the &apos;in progress&apos; state.</summary>
         public int? SuccessfulMessageDeliveryCount {
             get { return BackingStore?.Get<int?>("successfulMessageDeliveryCount"); }
             set { BackingStore?.Set("successfulMessageDeliveryCount", value); }

@@ -9,31 +9,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Item {
+namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.DispositionReviewStages.Item {
     /// <summary>
-    /// Provides operations to manage the subCategories property of the microsoft.graph.security.categoryTemplate entity.
+    /// Provides operations to manage the dispositionReviewStages property of the microsoft.graph.security.retentionLabel entity.
     /// </summary>
-    public class SubCategoryTemplateItemRequestBuilder : BaseRequestBuilder 
+    public class DispositionReviewStageStageNumberItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
-        /// Instantiates a new <see cref="SubCategoryTemplateItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="DispositionReviewStageStageNumberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubCategoryTemplateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}{?%24expand,%24select}", pathParameters)
+        public DispositionReviewStageStageNumberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2DstageNumber}{?%24expand,%24select}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubCategoryTemplateItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="DispositionReviewStageStageNumberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubCategoryTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}{?%24expand,%24select}", rawUrl)
+        public DispositionReviewStageStageNumberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2DstageNumber}{?%24expand,%24select}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete a subCategoryTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-categorytemplate-delete-subcategories?view=graph-rest-1.0" />
+        /// Delete navigation property dispositionReviewStages for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,20 +54,19 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a subCategoryTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-1.0" />
+        /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
-        /// <returns>A <see cref="SubCategoryTemplate"/></returns>
+        /// <returns>A <see cref="DispositionReviewStage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubCategoryTemplate?> GetAsync(Action<RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<DispositionReviewStage?> GetAsync(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubCategoryTemplate> GetAsync(Action<RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<DispositionReviewStage> GetAsync(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -76,23 +74,23 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
             {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<DispositionReviewStage>(requestInfo, DispositionReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property subCategories in security
+        /// Update the navigation property dispositionReviewStages in security
         /// </summary>
-        /// <returns>A <see cref="SubCategoryTemplate"/></returns>
+        /// <returns>A <see cref="DispositionReviewStage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubCategoryTemplate?> PatchAsync(SubCategoryTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<DispositionReviewStage?> PatchAsync(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubCategoryTemplate> PatchAsync(SubCategoryTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<DispositionReviewStage> PatchAsync(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -101,10 +99,10 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
             {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SubCategoryTemplate>(requestInfo, SubCategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<DispositionReviewStage>(requestInfo, DispositionReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a subCategoryTemplate object.
+        /// Delete navigation property dispositionReviewStages for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,23 +115,23 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2DstageNumber}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a subCategoryTemplate object.
+        /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -142,22 +140,22 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property subCategories in security
+        /// Update the navigation property dispositionReviewStages in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SubCategoryTemplate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SubCategoryTemplate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(DispositionReviewStage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/{subCategoryTemplate%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/security/labels/retentionLabels/{retentionLabel%2Did}/dispositionReviewStages/{dispositionReviewStage%2DstageNumber}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -166,23 +164,23 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SubCategoryTemplateItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="DispositionReviewStageStageNumberItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SubCategoryTemplateItemRequestBuilder WithUrl(string rawUrl)
+        public DispositionReviewStageStageNumberItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new SubCategoryTemplateItemRequestBuilder(rawUrl, RequestAdapter);
+            return new DispositionReviewStageStageNumberItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SubCategoryTemplateItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class DispositionReviewStageStageNumberItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a subCategoryTemplate object.
+        /// When action at the end of retention is chosen as &apos;dispositionReview&apos;, dispositionReviewStages specifies a sequential set of stages with at least one reviewer in each stage.
         /// </summary>
-        public class SubCategoryTemplateItemRequestBuilderGetQueryParameters 
+        public class DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -209,14 +207,14 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Ite
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SubCategoryTemplateItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SubCategoryTemplateItemRequestBuilderGetQueryParameters> 
+        public class DispositionReviewStageStageNumberItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DispositionReviewStageStageNumberItemRequestBuilderGetQueryParameters> 
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SubCategoryTemplateItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class DispositionReviewStageStageNumberItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
         {
         }
     }

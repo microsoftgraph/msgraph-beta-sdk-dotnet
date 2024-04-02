@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, and Troubleshoot.</summary>
+        /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, Troubleshoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcRemoteActionResult? LastRemoteActionResult {
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onPremisesConnectionName", value); }
         }
 #endif
-        /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, and unknownFutureValue.</summary>
+        /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.</summary>
         public CloudPcOperatingSystem? OsVersion {
             get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #endif
-        /// <summary>The power state of a Cloud PC. The possible values are: running, poweredOff and unknown. This property only supports shift work Cloud PCs.</summary>
+        /// <summary>The power state of a Cloud PC. The possible values are: running, poweredOff, unknown. This property only supports shift work Cloud PCs.</summary>
         public CloudPcPowerState? PowerState {
             get { return BackingStore?.Get<CloudPcPowerState?>("powerState"); }
             set { BackingStore?.Set("powerState", value); }
@@ -299,7 +299,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
-        /// <summary>The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, and unknownFutureValue.</summary>
+        /// <summary>The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.</summary>
         public CloudPcUserAccountType? UserAccountType {
             get { return BackingStore?.Get<CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }

@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("simulations", value); }
         }
 #endif
-        /// <summary>The trainingCampaigns property</summary>
+        /// <summary>Represents a training campaign in a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TrainingCampaign>? TrainingCampaigns {

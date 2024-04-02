@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("activeChecklistItemCount"); }
             set { BackingStore?.Set("activeChecklistItemCount", value); }
         }
-        /// <summary>The categories to which the task has been applied. See applied Categories for possible values.</summary>
+        /// <summary>The categories to which the task applies. See applied Categories for possible values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerAppliedCategories? AppliedCategories {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It is 28 characters long and case-sensitive. Format validation is done on the service.</summary>
+        /// <summary>Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It&apos;s 28 characters long and case-sensitive. Format validation is done on the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BucketId {
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationSource", value); }
         }
 #endif
-        /// <summary>Read-only. Nullable. Additional details about the task.</summary>
+        /// <summary>Read-only. Nullable. More details about the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerTaskDetails? Details {
@@ -211,12 +211,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
-        /// <summary>The isOnMyDay property</summary>
+        /// <summary>A Boolean value that indicates whether to show this task in the MyDay view. true to show the task. Otherwise, false.</summary>
         public bool? IsOnMyDay {
             get { return BackingStore?.Get<bool?>("isOnMyDay"); }
             set { BackingStore?.Set("isOnMyDay", value); }
         }
-        /// <summary>The isOnMyDayLastModifiedDate property</summary>
+        /// <summary>Read-only. The date on which task is added to or removed from MyDay.</summary>
         public Date? IsOnMyDayLastModifiedDate {
             get { return BackingStore?.Get<Date?>("isOnMyDayLastModifiedDate"); }
             set { BackingStore?.Set("isOnMyDayLastModifiedDate", value); }
@@ -259,7 +259,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
         }
-        /// <summary>Priority of the task. Valid range of values is between 0 and 10 (inclusive), with increasing value being lower priority (0 has the highest priority and 10 has the lowest priority).  Currently, Planner interprets values 0 and 1 as &apos;urgent&apos;, 2 and 3 and 4 as &apos;important&apos;, 5, 6, and 7 as &apos;medium&apos;, and 8, 9, and 10 as &apos;low&apos;.  Currently, Planner sets the value 1 for &apos;urgent&apos;, 3 for &apos;important&apos;, 5 for &apos;medium&apos;, and 9 for &apos;low&apos;.</summary>
+        /// <summary>The priority of the task. Valid values are between 0 and 10, inclusive. Larger values indicate lower priority. For example, 0 has the highest priority and 10 has the lowest priority. Currently, Planner interprets values 0 and 1 as &apos;urgent&apos;, 2 and 3 and 4 as &apos;important&apos;, 5, 6, and 7 as &apos;medium&apos;, and 8, 9, and 10 as &apos;low&apos;. Currently, Planner sets the value 1 for &apos;urgent&apos;, 3 for &apos;important&apos;, 5 for &apos;medium&apos;, and 9 for &apos;low&apos;.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }

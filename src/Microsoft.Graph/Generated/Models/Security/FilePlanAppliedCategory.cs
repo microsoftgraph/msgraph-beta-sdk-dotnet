@@ -5,17 +5,31 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class Department : FilePlanDescriptorBase, IParsable 
+    public class FilePlanAppliedCategory : FilePlanDescriptorBase, IParsable 
     {
+        /// <summary>The subcategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public FilePlanSubcategory? Subcategory {
+            get { return BackingStore?.Get<FilePlanSubcategory?>("subcategory"); }
+            set { BackingStore?.Set("subcategory", value); }
+        }
+#nullable restore
+#else
+        public FilePlanSubcategory Subcategory {
+            get { return BackingStore?.Get<FilePlanSubcategory>("subcategory"); }
+            set { BackingStore?.Set("subcategory", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Department"/></returns>
+        /// <returns>A <see cref="FilePlanAppliedCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Department CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new FilePlanAppliedCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Department();
+            return new FilePlanAppliedCategory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -25,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"subcategory", n => { Subcategory = n.GetObjectValue<FilePlanSubcategory>(FilePlanSubcategory.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -35,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<FilePlanSubcategory>("subcategory", Subcategory);
         }
     }
 }

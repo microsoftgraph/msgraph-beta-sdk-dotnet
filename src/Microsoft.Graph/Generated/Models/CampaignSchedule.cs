@@ -15,12 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The completionDateTime property</summary>
+        /// <summary>The date and time at which the campaign completed.</summary>
         public DateTimeOffset? CompletionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
-        /// <summary>The launchDateTime property</summary>
+        /// <summary>The date and time at which the campaign was launched.</summary>
         public DateTimeOffset? LaunchDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("launchDateTime"); }
             set { BackingStore?.Set("launchDateTime", value); }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The current state of the campaign. The possible values are: unknown, draft, inProgress, scheduled, completed, failed, cancelled, excluded, deleted, unknownFutureValue.</summary>
         public CampaignStatus? Status {
             get { return BackingStore?.Get<CampaignStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

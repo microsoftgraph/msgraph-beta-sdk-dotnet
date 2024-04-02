@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
         {
         }
         /// <summary>
-        /// Language specific details on a training.
+        /// Details about the language used in the training.
         /// </summary>
         /// <returns>A <see cref="TrainingLanguageDetailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             return await RequestAdapter.SendAsync<TrainingLanguageDetail>(requestInfo, TrainingLanguageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Language specific details on a training.
+        /// Details about the language used in the training.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Trainings.Item.Language
             return new LanguageDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Language specific details on a training.
+        /// Details about the language used in the training.
         /// </summary>
         public class LanguageDetailsRequestBuilderGetQueryParameters 
         {

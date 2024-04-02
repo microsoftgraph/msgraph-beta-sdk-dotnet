@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
-    public class Authority : FilePlanDescriptorBase, IParsable 
+    public class FilePlanAuthority : FilePlanDescriptorBase, IParsable 
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Authority"/></returns>
+        /// <returns>A <see cref="FilePlanAuthority"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Authority CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new FilePlanAuthority CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Authority();
+            return new FilePlanAuthority();
         }
         /// <summary>
         /// The deserialization information for the current model
