@@ -7,18 +7,18 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class CategoryTemplate : FilePlanDescriptorTemplate, IParsable 
     {
-        /// <summary>Represents all subcategories under a particular category.</summary>
+        /// <summary>The subcategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubCategoryTemplate>? SubCategories {
-            get { return BackingStore?.Get<List<SubCategoryTemplate>?>("subCategories"); }
-            set { BackingStore?.Set("subCategories", value); }
+        public List<SubcategoryTemplate>? Subcategories {
+            get { return BackingStore?.Get<List<SubcategoryTemplate>?>("subcategories"); }
+            set { BackingStore?.Set("subcategories", value); }
         }
 #nullable restore
 #else
-        public List<SubCategoryTemplate> SubCategories {
-            get { return BackingStore?.Get<List<SubCategoryTemplate>>("subCategories"); }
-            set { BackingStore?.Set("subCategories", value); }
+        public List<SubcategoryTemplate> Subcategories {
+            get { return BackingStore?.Get<List<SubcategoryTemplate>>("subcategories"); }
+            set { BackingStore?.Set("subcategories", value); }
         }
 #endif
         /// <summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"subCategories", n => { SubCategories = n.GetCollectionOfObjectValues<SubCategoryTemplate>(SubCategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"subcategories", n => { Subcategories = n.GetCollectionOfObjectValues<SubcategoryTemplate>(SubcategoryTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SubCategoryTemplate>("subCategories", SubCategories);
+            writer.WriteCollectionOfObjectValues<SubcategoryTemplate>("subcategories", Subcategories);
         }
     }
 }

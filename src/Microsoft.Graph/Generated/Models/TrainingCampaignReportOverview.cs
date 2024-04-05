@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The trainingModuleCompletion property</summary>
+        /// <summary>Aggregate data of training completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TrainingEventsContent? TrainingModuleCompletion {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trainingModuleCompletion", value); }
         }
 #endif
-        /// <summary>The trainingNotificationDeliveryStatus property</summary>
+        /// <summary>Aggregate data of training mail delivery over the course of the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TrainingNotificationDelivery? TrainingNotificationDeliveryStatus {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trainingNotificationDeliveryStatus", value); }
         }
 #endif
-        /// <summary>The userCompletionStatus property</summary>
+        /// <summary>Aggregate data of users training progress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UserTrainingCompletionSummary? UserCompletionStatus {

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class Connector : Entity, IParsable 
     {
-        /// <summary>The external IP address as detected by the the connector server. Read-only.</summary>
+        /// <summary>The external IP address as detected by the connector server. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalIp {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("externalIp", value); }
         }
 #endif
-        /// <summary>The machine name the connector is installed and running on.</summary>
+        /// <summary>The name of the computer on which the connector is installed and runs on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MachineName {
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ConnectorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The version of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version {

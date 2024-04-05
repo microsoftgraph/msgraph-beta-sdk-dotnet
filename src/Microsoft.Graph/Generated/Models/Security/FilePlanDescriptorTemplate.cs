@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 "#microsoft.graph.security.citationTemplate" => new CitationTemplate(),
                 "#microsoft.graph.security.departmentTemplate" => new DepartmentTemplate(),
                 "#microsoft.graph.security.filePlanReferenceTemplate" => new FilePlanReferenceTemplate(),
-                "#microsoft.graph.security.subCategoryTemplate" => new SubCategoryTemplate(),
+                "#microsoft.graph.security.subcategoryTemplate" => new SubcategoryTemplate(),
                 _ => new FilePlanDescriptorTemplate(),
             };
         }

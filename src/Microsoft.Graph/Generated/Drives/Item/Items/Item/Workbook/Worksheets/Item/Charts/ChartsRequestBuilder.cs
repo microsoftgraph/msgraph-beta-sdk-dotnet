@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         }
         /// <summary>
         /// Retrieve a list of chart objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-list-charts?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chart-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkbookChartCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Count {
+namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.Subcategories.Count {
     /// <summary>
     /// Provides operations to count the resources in the collection.
     /// </summary>
@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Cou
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/$count{?%24filter,%24search}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subcategories/$count{?%24filter,%24search}", pathParameters)
         {
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.SubCategories.Cou
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subCategories/$count{?%24filter,%24search}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/labels/categories/{categoryTemplate%2Did}/subcategories/$count{?%24filter,%24search}", rawUrl)
         {
         }
         /// <summary>

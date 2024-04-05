@@ -135,6 +135,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The level property</summary>
+        public Microsoft.Graph.Beta.Models.Level? Level {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Level?>("level"); }
+            set { BackingStore?.Set("level", value); }
+        }
         /// <summary>The number of pages of the learning content, for example, 9. Optional.</summary>
         public int? NumberOfPages {
             get { return BackingStore?.Get<int?>("numberOfPages"); }
@@ -227,6 +232,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
                 {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"level", n => { Level = n.GetEnumValue<Level>(); } },
                 {"numberOfPages", n => { NumberOfPages = n.GetIntValue(); } },
                 {"skillTags", n => { SkillTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"sourceName", n => { SourceName = n.GetStringValue(); } },
@@ -255,6 +261,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isSearchable", IsSearchable);
             writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<Level>("level", Level);
             writer.WriteIntValue("numberOfPages", NumberOfPages);
             writer.WriteCollectionOfPrimitiveValues<string>("skillTags", SkillTags);
             writer.WriteStringValue("sourceName", SourceName);

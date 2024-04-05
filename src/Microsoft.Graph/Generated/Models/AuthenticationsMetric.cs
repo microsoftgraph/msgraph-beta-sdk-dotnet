@@ -46,6 +46,34 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
+        /// <summary>The identityProvider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityProvider {
+            get { return BackingStore?.Get<string?>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#nullable restore
+#else
+        public string IdentityProvider {
+            get { return BackingStore?.Get<string>("identityProvider"); }
+            set { BackingStore?.Set("identityProvider", value); }
+        }
+#endif
+        /// <summary>The language property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#nullable restore
+#else
+        public string Language {
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#endif
         /// <summary>The platform for the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +115,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"attemptsCount", n => { AttemptsCount = n.GetLongValue(); } },
                 {"country", n => { Country = n.GetStringValue(); } },
                 {"factDate", n => { FactDate = n.GetDateValue(); } },
+                {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
                 {"os", n => { Os = n.GetStringValue(); } },
                 {"successCount", n => { SuccessCount = n.GetLongValue(); } },
             };
@@ -103,6 +133,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("attemptsCount", AttemptsCount);
             writer.WriteStringValue("country", Country);
             writer.WriteDateValue("factDate", FactDate);
+            writer.WriteStringValue("identityProvider", IdentityProvider);
+            writer.WriteStringValue("language", Language);
             writer.WriteStringValue("os", Os);
             writer.WriteLongValue("successCount", SuccessCount);
         }

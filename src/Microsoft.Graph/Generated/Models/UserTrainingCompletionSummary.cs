@@ -15,22 +15,22 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The completedUsersCount property</summary>
+        /// <summary>The number of users who completed all the trainings before the due date.</summary>
         public int? CompletedUsersCount {
             get { return BackingStore?.Get<int?>("completedUsersCount"); }
             set { BackingStore?.Set("completedUsersCount", value); }
         }
-        /// <summary>The inProgressUsersCount property</summary>
+        /// <summary>The number of users who started at least one training.</summary>
         public int? InProgressUsersCount {
             get { return BackingStore?.Get<int?>("inProgressUsersCount"); }
             set { BackingStore?.Set("inProgressUsersCount", value); }
         }
-        /// <summary>The notCompletedUsersCount property</summary>
+        /// <summary>The number of users who didn&apos;t complete all the trainings before the due date.</summary>
         public int? NotCompletedUsersCount {
             get { return BackingStore?.Get<int?>("notCompletedUsersCount"); }
             set { BackingStore?.Set("notCompletedUsersCount", value); }
         }
-        /// <summary>The notStartedUsersCount property</summary>
+        /// <summary>The number of users who didn&apos;t start any training.</summary>
         public int? NotStartedUsersCount {
             get { return BackingStore?.Get<int?>("notStartedUsersCount"); }
             set { BackingStore?.Set("notStartedUsersCount", value); }
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The previouslyAssignedUsersCount property</summary>
+        /// <summary>The number of users who are already assigned the same training.</summary>
         public int? PreviouslyAssignedUsersCount {
             get { return BackingStore?.Get<int?>("previouslyAssignedUsersCount"); }
             set { BackingStore?.Set("previouslyAssignedUsersCount", value); }

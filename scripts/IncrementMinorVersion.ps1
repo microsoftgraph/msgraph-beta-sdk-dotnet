@@ -15,7 +15,7 @@
 
 #>
 
-$fullFileName = $PWD.ToString() + "\src\Microsoft.Graph\Microsoft.Graph.Beta.csproj"
+$fullFileName = Join-Path $PWD.ToString() "src" "Microsoft.Graph" "Microsoft.Graph.Beta.csproj"
 
 # Read .csproj file as UTF-8
 $xmlDoc = New-Object -TypeName XML

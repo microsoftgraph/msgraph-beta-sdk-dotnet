@@ -36,10 +36,19 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
 #endif
         /// <summary>The sequence number for each stage of the disposition review.</summary>
-        public int? StageNumber {
-            get { return BackingStore?.Get<int?>("stageNumber"); }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StageNumber {
+            get { return BackingStore?.Get<string?>("stageNumber"); }
             set { BackingStore?.Set("stageNumber", value); }
         }
+#nullable restore
+#else
+        public string StageNumber {
+            get { return BackingStore?.Get<string>("stageNumber"); }
+            set { BackingStore?.Set("stageNumber", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"reviewersEmailAddresses", n => { ReviewersEmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"stageNumber", n => { StageNumber = n.GetIntValue(); } },
+                {"stageNumber", n => { StageNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             base.Serialize(writer);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("reviewersEmailAddresses", ReviewersEmailAddresses);
-            writer.WriteIntValue("stageNumber", StageNumber);
+            writer.WriteStringValue("stageNumber", StageNumber);
         }
     }
 }

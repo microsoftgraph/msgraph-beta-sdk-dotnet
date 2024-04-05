@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.appliedCategory" => new AppliedCategory(),
-                "#microsoft.graph.security.authority" => new Authority(),
-                "#microsoft.graph.security.citation" => new Citation(),
-                "#microsoft.graph.security.department" => new Department(),
+                "#microsoft.graph.security.filePlanAppliedCategory" => new FilePlanAppliedCategory(),
+                "#microsoft.graph.security.filePlanAuthority" => new FilePlanAuthority(),
+                "#microsoft.graph.security.filePlanCitation" => new FilePlanCitation(),
+                "#microsoft.graph.security.filePlanDepartment" => new FilePlanDepartment(),
                 "#microsoft.graph.security.filePlanReference" => new FilePlanReference(),
-                "#microsoft.graph.security.subCategory" => new SubCategory(),
+                "#microsoft.graph.security.filePlanSubcategory" => new FilePlanSubcategory(),
                 _ => new FilePlanDescriptorBase(),
             };
         }

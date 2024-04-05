@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class TrainingCampaign : Entity, IParsable 
     {
-        /// <summary>The campaignSchedule property</summary>
+        /// <summary>Details about the schedule and current status for a training campaign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.CampaignSchedule? CampaignSchedule {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("campaignSchedule", value); }
         }
 #endif
-        /// <summary>The createdBy property</summary>
+        /// <summary>Identity of the user who created the training campaign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? CreatedBy {
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time of creation of the training campaign.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Description of the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>Display name of the training campaign. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The endUserNotificationSetting property</summary>
+        /// <summary>Details about the end user notification setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.EndUserNotificationSetting? EndUserNotificationSetting {
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endUserNotificationSetting", value); }
         }
 #endif
-        /// <summary>The excludedAccountTarget property</summary>
+        /// <summary>Users excluded from the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AccountTargetContent? ExcludedAccountTarget {
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
 #endif
-        /// <summary>The includedAccountTarget property</summary>
+        /// <summary>Users targeted in the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AccountTargetContent? IncludedAccountTarget {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Identity of the user who most recently modified the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EmailIdentity? LastModifiedBy {
@@ -124,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Date and time of the most recent modification of the training campaign.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The report property</summary>
+        /// <summary>Report of the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public TrainingCampaignReport? Report {
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("report", value); }
         }
 #endif
-        /// <summary>The trainingSetting property</summary>
+        /// <summary>Details about the training settings for a training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.TrainingSetting? TrainingSetting {

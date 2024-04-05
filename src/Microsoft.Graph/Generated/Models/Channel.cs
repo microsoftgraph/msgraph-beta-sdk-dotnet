@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</summary>
+        /// <summary>Channel name as it appears to the user in Microsoft Teams. The maximum length is 50 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("filesFolder", value); }
         }
 #endif
-        /// <summary>The isArchived property</summary>
+        /// <summary>Indicates whether the channel is archived. Read-only.</summary>
         public bool? IsArchived {
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
+        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
         public ChannelMembershipType? MembershipType {
             get { return BackingStore?.Get<ChannelMembershipType?>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
 #endif
-        /// <summary>Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property will only be returned if it is specified in the $select clause of the Get channel method.</summary>
+        /// <summary>Contains summary information about the channel, including number of guests, members, owners, and an indicator for members from other tenants. The summary property is only returned if it appears in the $select clause of the Get channel method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ChannelSummary? Summary {
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>A hyperlink that will go to the channel in Microsoft Teams. This is the URL that you get when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
+        /// <summary>A hyperlink to the channel in Microsoft Teams. This URL is supplied when you right-click a channel in Microsoft Teams and select Get link to channel. This URL should be treated as an opaque blob, and not parsed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl {

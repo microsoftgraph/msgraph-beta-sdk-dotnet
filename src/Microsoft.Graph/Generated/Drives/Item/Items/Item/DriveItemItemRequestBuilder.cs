@@ -279,8 +279,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-move?view=graph-rest-1.0" />
+        /// Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s parentReference property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="body">The request body</param>
@@ -353,7 +353,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// To move a DriveItem to a new parent item, your app requests to update the parentReference of the DriveItem to move. This is a special case of the Update method.Your app can combine moving an item to a new container and updating other properties of the item into a single request. Items cannot be moved between Drives using this request.
+        /// Update the metadata for a DriveItem by ID or path. You can also use update to move an item to another parent by updating the item&apos;s parentReference property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
