@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
-    public class LanguageMetric : IAdditionalDataHolder, IBackedModel, IParsable 
+namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    public class ThirdPartyTokenDetails : IAdditionalDataHolder, IBackedModel, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -15,25 +15,16 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The count property</summary>
-        public long? Count {
-            get { return BackingStore?.Get<long?>("count"); }
-            set { BackingStore?.Set("count", value); }
+        /// <summary>The expirationDateTime property</summary>
+        public DateTimeOffset? ExpirationDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
+            set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The language property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Language {
-            get { return BackingStore?.Get<string?>("language"); }
-            set { BackingStore?.Set("language", value); }
+        /// <summary>The issuedAtDateTime property</summary>
+        public DateTimeOffset? IssuedAtDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("issuedAtDateTime"); }
+            set { BackingStore?.Set("issuedAtDateTime", value); }
         }
-#nullable restore
-#else
-        public string Language {
-            get { return BackingStore?.Get<string>("language"); }
-            set { BackingStore?.Set("language", value); }
-        }
-#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,10 +39,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The uniqueTokenIdentifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueTokenIdentifier {
+            get { return BackingStore?.Get<string?>("uniqueTokenIdentifier"); }
+            set { BackingStore?.Set("uniqueTokenIdentifier", value); }
+        }
+#nullable restore
+#else
+        public string UniqueTokenIdentifier {
+            get { return BackingStore?.Get<string>("uniqueTokenIdentifier"); }
+            set { BackingStore?.Set("uniqueTokenIdentifier", value); }
+        }
+#endif
+        /// <summary>The validFromDateTime property</summary>
+        public DateTimeOffset? ValidFromDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("validFromDateTime"); }
+            set { BackingStore?.Set("validFromDateTime", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="LanguageMetric"/> and sets the default values.
+        /// Instantiates a new <see cref="ThirdPartyTokenDetails"/> and sets the default values.
         /// </summary>
-        public LanguageMetric()
+        public ThirdPartyTokenDetails()
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
@@ -59,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LanguageMetric"/></returns>
+        /// <returns>A <see cref="ThirdPartyTokenDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LanguageMetric CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static ThirdPartyTokenDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LanguageMetric();
+            return new ThirdPartyTokenDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,9 +84,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"count", n => { Count = n.GetLongValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
+                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"issuedAtDateTime", n => { IssuedAtDateTime = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"uniqueTokenIdentifier", n => { UniqueTokenIdentifier = n.GetStringValue(); } },
+                {"validFromDateTime", n => { ValidFromDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -86,9 +98,11 @@ namespace Microsoft.Graph.Beta.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteLongValue("count", Count);
-            writer.WriteStringValue("language", Language);
+            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteDateTimeOffsetValue("issuedAtDateTime", IssuedAtDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("uniqueTokenIdentifier", UniqueTokenIdentifier);
+            writer.WriteDateTimeOffsetValue("validFromDateTime", ValidFromDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

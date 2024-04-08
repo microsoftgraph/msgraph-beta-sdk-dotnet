@@ -95,6 +95,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("processingRegion", value); }
         }
 #endif
+        /// <summary>The thirdPartyTokenDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails? ThirdPartyTokenDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails?>("thirdPartyTokenDetails"); }
+            set { BackingStore?.Set("thirdPartyTokenDetails", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails ThirdPartyTokenDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails>("thirdPartyTokenDetails"); }
+            set { BackingStore?.Set("thirdPartyTokenDetails", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="PrivateAccessDetails"/> and sets the default values.
         /// </summary>
@@ -128,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"connectorName", n => { ConnectorName = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingRegion", n => { ProcessingRegion = n.GetStringValue(); } },
+                {"thirdPartyTokenDetails", n => { ThirdPartyTokenDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails>(Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -144,6 +159,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteStringValue("connectorName", ConnectorName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("processingRegion", ProcessingRegion);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails>("thirdPartyTokenDetails", ThirdPartyTokenDetails);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

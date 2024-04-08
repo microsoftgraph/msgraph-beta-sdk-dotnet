@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
         {
         }
         /// <summary>
-        /// Delete a categoryTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-categories?view=graph-rest-1.0" />
+        /// Delete navigation property categories for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +109,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CategoryTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CategoryTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a categoryTemplate object.
+        /// Delete navigation property categories for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

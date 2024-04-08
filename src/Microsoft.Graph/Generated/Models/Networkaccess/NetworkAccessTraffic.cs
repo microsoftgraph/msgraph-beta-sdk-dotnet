@@ -67,6 +67,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#nullable restore
+#else
+        public string Description {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#endif
         /// <summary>Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -488,6 +502,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
                 {"connectionId", n => { ConnectionId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
                 {"destinationFQDN", n => { DestinationFQDN = n.GetStringValue(); } },
                 {"destinationIp", n => { DestinationIp = n.GetStringValue(); } },
                 {"destinationPort", n => { DestinationPort = n.GetIntValue(); } },
@@ -535,6 +550,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot", ApplicationSnapshot);
             writer.WriteStringValue("connectionId", ConnectionId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("destinationFQDN", DestinationFQDN);
             writer.WriteStringValue("destinationIp", DestinationIp);
             writer.WriteIntValue("destinationPort", DestinationPort);

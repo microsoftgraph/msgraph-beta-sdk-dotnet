@@ -80,8 +80,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights {
             return await RequestAdapter.SendAsync<InsightsSettings>(requestInfo, InsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property itemInsights in organization
         /// </summary>
         /// <returns>A <see cref="InsightsSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +146,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+        /// Update the navigation property itemInsights in organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

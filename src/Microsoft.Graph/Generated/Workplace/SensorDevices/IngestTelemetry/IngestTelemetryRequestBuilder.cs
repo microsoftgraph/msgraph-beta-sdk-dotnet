@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.IngestTelemetry {
         {
         }
         /// <summary>
-        /// Invoke action ingestTelemetry
+        /// Ingest sensor telemetry for a workplace sensor device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-ingesttelemetry?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.IngestTelemetry {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action ingestTelemetry
+        /// Ingest sensor telemetry for a workplace sensor device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

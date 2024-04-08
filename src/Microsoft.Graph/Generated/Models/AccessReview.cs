@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReview : Entity, IParsable 
     {
-        /// <summary>The business flow template identifier. Required on create.  This value is case sensitive.</summary>
+        /// <summary>The business flow template identifier. Required on create. This value is case sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BusinessFlowTemplateId {
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The DateTime when the review is scheduled to end. This must be at least one day later than the start date.  Required on create.</summary>
+        /// <summary>The DateTime when the review is scheduled to end. This must be at least one day later than the start date. Required on create.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The collection of access reviews instances past, present and future, if this object is a recurring access review.</summary>
+        /// <summary>The collection of access reviews instances past, present, and future, if this object is a recurring access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AccessReview>? Instances {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("myDecisions", value); }
         }
 #endif
-        /// <summary>The object for which the access reviews is reviewing the access rights assignments. This can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.</summary>
+        /// <summary>The object for which the access review is reviewing the access rights assignments. This identity can be the group for the review of memberships of users in a group, or the app for a review of assignments of users to an application. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Identity? ReviewedEntity {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
-        /// <summary>The relationship type of reviewer to the target object, one of self, delegated or entityOwners. Required on create.</summary>
+        /// <summary>The relationship type of reviewer to the target object, one of: self, delegated, entityOwners. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReviewerType {
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settings", value); }
         }
 #endif
-        /// <summary>The DateTime when the review is scheduled to be start.  This could be a date in the future.  Required on create.</summary>
+        /// <summary>The date and time when the review is scheduled to be start. This date can be in the future.  Required on create.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }

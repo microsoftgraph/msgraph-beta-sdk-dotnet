@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations.Item {
         {
         }
         /// <summary>
-        /// Delete a citationTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-citations?view=graph-rest-1.0" />
+        /// Delete navigation property citations for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +103,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.CitationTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.CitationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a citationTemplate object.
+        /// Delete navigation property citations for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

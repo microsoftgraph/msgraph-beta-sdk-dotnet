@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions;
 using Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings;
 using Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences;
+using Microsoft.Graph.Beta.Users.Item.Settings.Storage;
 using Microsoft.Graph.Beta.Users.Item.Settings.Windows;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -39,6 +40,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings {
         public ShiftPreferencesRequestBuilder ShiftPreferences
         {
             get => new ShiftPreferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the storage property of the microsoft.graph.userSettings entity.</summary>
+        public StorageRequestBuilder Storage
+        {
+            get => new StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windows property of the microsoft.graph.userSettings entity.</summary>
         public WindowsRequestBuilder Windows

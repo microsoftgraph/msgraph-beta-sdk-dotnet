@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("disabledForGroup", value); }
         }
 #endif
-        /// <summary>true if the specified type of insights is enabled for the organization; false if the specified type of insights is disabled for all users without exceptions. Default is true. Optional.</summary>
+        /// <summary>true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.</summary>
         public bool? IsEnabledInOrganization {
             get { return BackingStore?.Get<bool?>("isEnabledInOrganization"); }
             set { BackingStore?.Set("isEnabledInOrganization", value); }

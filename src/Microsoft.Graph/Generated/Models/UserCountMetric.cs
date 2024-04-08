@@ -18,18 +18,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The languages property</summary>
+        /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LanguageMetric>? Languages {
-            get { return BackingStore?.Get<List<LanguageMetric>?>("languages"); }
-            set { BackingStore?.Set("languages", value); }
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public List<LanguageMetric> Languages {
-            get { return BackingStore?.Get<List<LanguageMetric>>("languages"); }
-            set { BackingStore?.Set("languages", value); }
+        public string Language {
+            get { return BackingStore?.Get<string>("language"); }
+            set { BackingStore?.Set("language", value); }
         }
 #endif
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             {
                 {"count", n => { Count = n.GetLongValue(); } },
                 {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"languages", n => { Languages = n.GetCollectionOfObjectValues<LanguageMetric>(LanguageMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteLongValue("count", Count);
             writer.WriteDateValue("factDate", FactDate);
-            writer.WriteCollectionOfObjectValues<LanguageMetric>("languages", Languages);
+            writer.WriteStringValue("language", Language);
         }
     }
 }

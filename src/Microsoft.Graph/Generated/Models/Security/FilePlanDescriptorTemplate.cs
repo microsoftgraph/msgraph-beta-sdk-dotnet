@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class FilePlanDescriptorTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable 
     {
-        /// <summary>Represents the user who created the filePlanDescriptorTemplate column.</summary>
+        /// <summary>Represents the user who created the filePlanDescriptorTemplate column. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>Represents the date and time in which the filePlanDescriptorTemplate is created.</summary>
+        /// <summary>Represents the date and time in which the filePlanDescriptorTemplate is created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }

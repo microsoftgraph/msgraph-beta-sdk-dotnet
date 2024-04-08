@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("activeChecklistItemCount"); }
             set { BackingStore?.Set("activeChecklistItemCount", value); }
         }
-        /// <summary>The categories to which the task applies. See applied Categories for possible values.</summary>
+        /// <summary>The categories to which the task is applied. See plannerAppliedCategories resource type for possible values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerAppliedCategories? AppliedCategories {
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
-        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
+        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: checklistCompletion,formCompletion, approvalCompletion. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
         public PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements {
             get { return BackingStore?.Get<PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
             set { BackingStore?.Set("specifiedCompletionRequirements", value); }

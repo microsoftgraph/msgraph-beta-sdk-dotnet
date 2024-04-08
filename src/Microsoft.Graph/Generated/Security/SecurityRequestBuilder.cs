@@ -11,6 +11,7 @@ using Microsoft.Graph.Beta.Security.Collaboration;
 using Microsoft.Graph.Beta.Security.DomainSecurityProfiles;
 using Microsoft.Graph.Beta.Security.FileSecurityProfiles;
 using Microsoft.Graph.Beta.Security.HostSecurityProfiles;
+using Microsoft.Graph.Beta.Security.Identities;
 using Microsoft.Graph.Beta.Security.Incidents;
 using Microsoft.Graph.Beta.Security.InformationProtection;
 using Microsoft.Graph.Beta.Security.IpSecurityProfiles;
@@ -91,6 +92,11 @@ namespace Microsoft.Graph.Beta.Security {
         public HostSecurityProfilesRequestBuilder HostSecurityProfiles
         {
             get => new HostSecurityProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the identities property of the microsoft.graph.security entity.</summary>
+        public IdentitiesRequestBuilder Identities
+        {
+            get => new IdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incidents property of the microsoft.graph.security entity.</summary>
         public IncidentsRequestBuilder Incidents

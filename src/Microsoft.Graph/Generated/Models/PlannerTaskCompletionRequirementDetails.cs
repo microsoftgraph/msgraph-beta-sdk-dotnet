@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("checklistRequirement", value); }
         }
 #endif
-        /// <summary>The formsRequirement property</summary>
+        /// <summary>Information about the requirements for completing the forms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerFormsRequirement? FormsRequirement {

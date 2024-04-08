@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The query property</summary>
+        /// <summary>Represents unique identification for the  query. &apos;Asset ID&apos; for SharePoint Online and OneDrive for Business, &apos;keywords&apos; for Exchange Online.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("query", value); }
         }
 #endif
-        /// <summary>The queryType property</summary>
+        /// <summary>Represents the type of query associated with an event. &apos;files&apos; for SPO and ODB and &apos;messages&apos; for EXO.The possible values are: files, messages, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.QueryType? QueryType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.QueryType?>("queryType"); }
             set { BackingStore?.Set("queryType", value); }

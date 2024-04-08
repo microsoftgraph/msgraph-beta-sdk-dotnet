@@ -15,12 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The value of the sensor.</summary>
+        /// <summary>The value of the sensor can be true or false. Use it for sensors that report binary values, such as occupancy or heartbeat.</summary>
         public bool? BoolValue {
             get { return BackingStore?.Get<bool?>("boolValue"); }
             set { BackingStore?.Set("boolValue", value); }
         }
-        /// <summary>The unique identifier of the device.</summary>
+        /// <summary>The user-defined unique identifier of the device provided at the time of creation. Don&apos;t use the system generated identifier of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The value of the sensor.</summary>
+        /// <summary>The value of the sensor as an integer. Use it for sensors that report numerical values, such as people count.</summary>
         public int? IntValue {
             get { return BackingStore?.Get<int?>("intValue"); }
             set { BackingStore?.Set("intValue", value); }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The unique identifier of a sensor within the device. If the sensor Id is not provided, the sensorType will be used as sensorId.</summary>
+        /// <summary>The user-defined unique identifier of the sensor on the device. Optional. If the device has multiple sensors of the same type, the property must be provided to identify each sensor. If the device has unique sensor types, the property can be omitted. The default value is the sensor type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SensorId {
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WorkplaceSensorType?>("sensorType"); }
             set { BackingStore?.Set("sensorType", value); }
         }
-        /// <summary>The timestamp at which the sensor value was observed.</summary>
+        /// <summary>The date and time when the sensor measured and reported its value. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? Timestamp {
             get { return BackingStore?.Get<DateTimeOffset?>("timestamp"); }
             set { BackingStore?.Set("timestamp", value); }

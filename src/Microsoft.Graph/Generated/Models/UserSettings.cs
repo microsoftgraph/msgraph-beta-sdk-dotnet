@@ -73,6 +73,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shiftPreferences", value); }
         }
 #endif
+        /// <summary>The storage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UserStorage? Storage {
+            get { return BackingStore?.Get<UserStorage?>("storage"); }
+            set { BackingStore?.Set("storage", value); }
+        }
+#nullable restore
+#else
+        public UserStorage Storage {
+            get { return BackingStore?.Get<UserStorage>("storage"); }
+            set { BackingStore?.Set("storage", value); }
+        }
+#endif
         /// <summary>The Windows settings of the user stored in the cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"itemInsights", n => { ItemInsights = n.GetObjectValue<UserInsightsSettings>(UserInsightsSettings.CreateFromDiscriminatorValue); } },
                 {"regionalAndLanguageSettings", n => { RegionalAndLanguageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue); } },
                 {"shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>(Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
+                {"storage", n => { Storage = n.GetObjectValue<UserStorage>(UserStorage.CreateFromDiscriminatorValue); } },
                 {"windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -128,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<UserInsightsSettings>("itemInsights", ItemInsights);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>("regionalAndLanguageSettings", RegionalAndLanguageSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>("shiftPreferences", ShiftPreferences);
+            writer.WriteObjectValue<UserStorage>("storage", Storage);
             writer.WriteCollectionOfObjectValues<WindowsSetting>("windows", Windows);
         }
     }
