@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
         {
         }
         /// <summary>
-        /// Get the industryDataConnector resources from the dataConnector navigation property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-1.0" />
+        /// Get a list of the azureDataLakeConnector objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the industryDataConnector resources from the dataConnector navigation property.
+        /// Get a list of the azureDataLakeConnector objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/external/industryData/dataConnectors", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return new DataConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the industryDataConnector resources from the dataConnector navigation property.
+        /// Get a list of the azureDataLakeConnector objects and their properties.
         /// </summary>
         public class DataConnectorsRequestBuilderGetQueryParameters 
         {

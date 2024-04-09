@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// The collection of access reviews instances past, present, and future, if this object is a recurring access review.
         /// </summary>
         /// <returns>A <see cref="AccessReview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -157,13 +157,13 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// The collection of access reviews instances past, present, and future, if this object is a recurring access review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/accessReviews/{accessReview%2Did}/instances/{accessReview%2Did1}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         {
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// The collection of access reviews instances past, present, and future, if this object is a recurring access review.
         /// </summary>
         public class AccessReviewItemRequestBuilderGetQueryParameters 
         {

@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dueDate", value); }
         }
 #endif
-        /// <summary>The forms property</summary>
+        /// <summary>Rules and restrictions for forms. Allowed overrides are userCreated and applicationCreated. The following are the accepted values for the default rule and individual overrides: allow, add, addResponse, remove, update, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerFieldRules? Forms {

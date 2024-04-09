@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices {
         {
         }
         /// <summary>
-        /// Get sensorDevices from workplace
+        /// Get a list of all workplace sensor devices created for a tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplace-list-sensordevices?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDeviceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices {
             return await RequestAdapter.SendAsync<WorkplaceSensorDeviceCollectionResponse>(requestInfo, WorkplaceSensorDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to sensorDevices for workplace
+        /// Create a new workplace sensor device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplace-post-sensordevices?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensorDevices from workplace
+        /// Get a list of all workplace sensor devices created for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to sensorDevices for workplace
+        /// Create a new workplace sensor device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/workplace/sensorDevices", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices {
             return new SensorDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sensorDevices from workplace
+        /// Get a list of all workplace sensor devices created for a tenant.
         /// </summary>
         public class SensorDevicesRequestBuilderGetQueryParameters 
         {

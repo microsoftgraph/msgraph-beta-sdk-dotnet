@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return await RequestAdapter.SendAsync<ConversationCollectionResponse>(requestInfo, ConversationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-conversations?view=graph-rest-1.0" />
+        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-post-opentypeextension?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Conversation"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new conversation by including a thread and a post. Use reply thread or reply post to further post to that conversation.
+        /// Create an open extension (openTypeExtension object) and add custom properties in a new or existing instance of a resource. You can create an open extension in a resource instance and store custom data to it all in the same operation, except for specific resources. The table in the Permissions section lists the resources that support open extensions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/groups/{group%2Did}/conversations", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

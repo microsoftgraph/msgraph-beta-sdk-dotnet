@@ -55,8 +55,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an operationalInsightsConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-operationalinsightsconnection-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of a resourceConnection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-resourceconnection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ResourceConnection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,13 +117,13 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an operationalInsightsConnection object.
+        /// Read the properties and relationships of a resourceConnection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/admin/windows/updates/resourceConnections/{resourceConnection%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an operationalInsightsConnection object.
+        /// Read the properties and relationships of a resourceConnection object.
         /// </summary>
         public class ResourceConnectionItemRequestBuilderGetQueryParameters 
         {

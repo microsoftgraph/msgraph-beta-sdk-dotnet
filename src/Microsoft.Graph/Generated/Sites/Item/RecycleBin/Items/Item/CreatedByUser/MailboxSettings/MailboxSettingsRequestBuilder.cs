@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.Item.CreatedByUser.Ma
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/sites/{site%2Did}/recycleBin/items/{recycleBinItem%2Did}/createdByUser/mailboxSettings", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Pages.Item.CreatedByUser.MailboxSettin
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/sites/{site%2Did}/pages/{baseSitePage%2Did}/createdByUser/mailboxSettings", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

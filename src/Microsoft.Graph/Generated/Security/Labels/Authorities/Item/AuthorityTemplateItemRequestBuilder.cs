@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         {
         }
         /// <summary>
-        /// Delete a authorityTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-labelsroot-delete-authorities?view=graph-rest-1.0" />
+        /// Delete navigation property authorities for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +103,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.AuthorityTemplate>(requestInfo, Microsoft.Graph.Beta.Models.Security.AuthorityTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a authorityTemplate object.
+        /// Delete navigation property authorities for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +116,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -157,7 +156,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/security/labels/authorities/{authorityTemplate%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

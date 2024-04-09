@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The unique identifier of the device set by the user.</summary>
+        /// <summary>The user-defined unique identifier of the device provided at the time of creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId {
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The IPv4 Address of the device.</summary>
+        /// <summary>The IPv4 address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpV4Address {
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ipV4Address", value); }
         }
 #endif
-        /// <summary>The IPv6 Address of the device.</summary>
+        /// <summary>The IPv6 address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpV6Address {
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The unique identifier of the place where the device is located.</summary>
+        /// <summary>The unique identifier of the place where the device is located. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId {
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("placeId", value); }
         }
 #endif
-        /// <summary>A list of sensors associated with the device. Sensors can measure physical quantities such as temperature, humidity, occupancy,         etc.</summary>
+        /// <summary>A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<WorkplaceSensor>? Sensors {

@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions;
 using Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings;
 using Microsoft.Graph.Beta.Users.Item.Settings.ShiftPreferences;
+using Microsoft.Graph.Beta.Users.Item.Settings.Storage;
 using Microsoft.Graph.Beta.Users.Item.Settings.Windows;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -39,6 +40,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings {
         public ShiftPreferencesRequestBuilder ShiftPreferences
         {
             get => new ShiftPreferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the storage property of the microsoft.graph.userSettings entity.</summary>
+        public StorageRequestBuilder Storage
+        {
+            get => new StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windows property of the microsoft.graph.userSettings entity.</summary>
         public WindowsRequestBuilder Windows
@@ -145,7 +151,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/users/{user%2Did}/settings", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -185,7 +191,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/users/{user%2Did}/settings", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

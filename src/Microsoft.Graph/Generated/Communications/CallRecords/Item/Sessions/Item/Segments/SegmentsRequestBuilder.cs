@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Seg
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/communications/callRecords/{callRecord%2Did}/sessions/{session%2Did}/segments", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

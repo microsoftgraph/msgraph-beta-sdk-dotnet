@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,13 +123,13 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+        /// Read the properties and relationships of a customAuthenticationExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/identity/customAuthenticationExtensions/{customAuthenticationExtension%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+        /// Read the properties and relationships of a customAuthenticationExtension object.
         /// </summary>
         public class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters 
         {

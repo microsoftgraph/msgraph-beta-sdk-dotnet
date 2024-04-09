@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a group&apos;s conversation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-conversation?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of conversation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversation-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Conversation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,13 +98,13 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/groups/{group%2Did}/conversations/{conversation%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get a group&apos;s conversation object.
+        /// Retrieve the properties and relationships of conversation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item {
         {
         }
         /// <summary>
-        /// Get a group&apos;s conversation object.
+        /// Retrieve the properties and relationships of conversation object.
         /// </summary>
         public class ConversationItemRequestBuilderGetQueryParameters 
         {

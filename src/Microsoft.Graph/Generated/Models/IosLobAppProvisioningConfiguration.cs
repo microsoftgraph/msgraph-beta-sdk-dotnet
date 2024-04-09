@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class IosLobAppProvisioningConfiguration : Entity, IParsable 
     {
-        /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.</summary>
+        /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IosLobAppProvisioningConfigurationAssignment>? Assignments {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
+        /// <summary>Optional profile expiration date and time.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
