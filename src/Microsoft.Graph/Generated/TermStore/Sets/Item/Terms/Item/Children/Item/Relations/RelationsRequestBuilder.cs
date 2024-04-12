@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item.Terms.Item.Children.Item.Rela
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/termStore/sets/{set%2Did}/terms/{term%2Did}/children/{term%2Did1}/relations", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

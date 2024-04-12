@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.ContactFolders.Item.Contacts.Item.Extensions {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/me/contactFolders/{contactFolder%2Did}/contacts/{contact%2Did}/extensions", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         {
         }
         /// <summary>
-        /// The collection property of AppLogUploadRequest.
+        /// Indicates collection of App Log Upload Request.
         /// </summary>
         /// <returns>A <see cref="AppLogCollectionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
             return await RequestAdapter.SendAsync<AppLogCollectionRequest>(requestInfo, AppLogCollectionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection property of AppLogUploadRequest.
+        /// Indicates collection of App Log Upload Request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/users/{user%2Did}/mobileAppTroubleshootingEvents/{mobileAppTroubleshootingEvent%2Did}/appLogCollectionRequests", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MobileAppTroubleshootingEvents.Item.Ap
             return new AppLogCollectionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection property of AppLogUploadRequest.
+        /// Indicates collection of App Log Upload Request.
         /// </summary>
         public class AppLogCollectionRequestsRequestBuilderGetQueryParameters 
         {

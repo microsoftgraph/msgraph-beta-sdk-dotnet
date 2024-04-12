@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property sensorDevices for workplace
+        /// Delete a workplace sensor device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sensorDevices from workplace
+        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sensorDevices in workplace
+        /// Update the properties of a workplace sensor device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sensorDevices for workplace
+        /// Delete a workplace sensor device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,13 +118,13 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/workplace/sensorDevices/{workplaceSensorDevice%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get sensorDevices from workplace
+        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sensorDevices in workplace
+        /// Update the properties of a workplace sensor device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +158,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, "{+baseurl}/workplace/sensorDevices/{workplaceSensorDevice%2Did}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
         {
         }
         /// <summary>
-        /// Get sensorDevices from workplace
+        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
         /// </summary>
         public class WorkplaceSensorDeviceItemRequestBuilderGetQueryParameters 
         {

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("eventPropagationResults", value); }
         }
 #endif
-        /// <summary>Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.</summary>
+        /// <summary>The eventQueries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<EventQuery>? EventQueries {

@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.Item.Assignment
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/me/deviceEnrollmentConfigurations/{deviceEnrollmentConfiguration%2Did}/assignments", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

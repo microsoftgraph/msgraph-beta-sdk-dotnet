@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Unique string that defines the name for each file plan descriptor associated with a particular retention label.</summary>
+        /// <summary>Unique string that defines the name for the file plan descriptor associated with a particular retention label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {

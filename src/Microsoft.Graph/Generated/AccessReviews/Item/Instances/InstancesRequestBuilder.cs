@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances {
         {
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// The collection of access reviews instances past, present, and future, if this object is a recurring access review.
         /// </summary>
         /// <returns>A <see cref="AccessReviewCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances {
             return await RequestAdapter.SendAsync<AccessReview>(requestInfo, AccessReview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// The collection of access reviews instances past, present, and future, if this object is a recurring access review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/accessReviews/{accessReview%2Did}/instances", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances {
             return new InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// The collection of access reviews instances past, present, and future, if this object is a recurring access review.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters 
         {

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>Refers to the unique identifier representing Application Id in the Microsoft Entra ID.</summary>
+        /// <summary>Refers to the unique identifier representing application ID in the Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Refers to the unique identifier indicating Service Principal Id in Microsoft Entra ID for the corresponding App.</summary>
+        /// <summary>Refers to the unique identifier indicating service principal ID in Microsoft Entra ID for the corresponding App.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalId {

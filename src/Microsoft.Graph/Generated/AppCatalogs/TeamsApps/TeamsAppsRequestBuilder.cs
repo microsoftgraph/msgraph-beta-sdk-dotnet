@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps {
         {
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.It includes apps from the Microsoft Teams store, and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="TeamsAppCollectionResponse"/></returns>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamsApp>(requestInfo, Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.It includes apps from the Microsoft Teams store, and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps {
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/appCatalogs/teamsApps", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps {
             return new TeamsAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.It includes apps from the Microsoft Teams store, and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog. This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         public class TeamsAppsRequestBuilderGetQueryParameters 
         {

@@ -7,12 +7,12 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationSettingGroupCollectionDefinition : DeviceManagementConfigurationSettingGroupDefinition, IParsable 
     {
-        /// <summary>Maximum number of setting group count in the collection. Valid values 1 to 100</summary>
+        /// <summary>Maximum number of setting group count in the collection</summary>
         public int? MaximumCount {
             get { return BackingStore?.Get<int?>("maximumCount"); }
             set { BackingStore?.Set("maximumCount", value); }
         }
-        /// <summary>Minimum number of setting group count in the collection. Valid values 1 to 100</summary>
+        /// <summary>Minimum number of setting group count in the collection</summary>
         public int? MinimumCount {
             get { return BackingStore?.Get<int?>("minimumCount"); }
             set { BackingStore?.Set("minimumCount", value); }
