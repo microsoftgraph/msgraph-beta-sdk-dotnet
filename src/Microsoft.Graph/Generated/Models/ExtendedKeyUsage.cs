@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// The Custom Extended Key Usage definition
+    /// Complex type that represents the extended key usage of a certificate. This is shared complex type.
     /// </summary>
     public class ExtendedKeyUsage : IAdditionalDataHolder, IBackedModel, IParsable 
     {

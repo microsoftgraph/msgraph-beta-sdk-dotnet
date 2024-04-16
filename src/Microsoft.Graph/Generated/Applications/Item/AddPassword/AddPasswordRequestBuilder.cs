@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
         {
         }
         /// <summary>
-        /// Adds a strong password to an application.
+        /// Adds a strong password to an application. You can also add passwords while creating the application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PasswordCredential"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
             return await RequestAdapter.SendAsync<PasswordCredential>(requestInfo, PasswordCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a strong password to an application.
+        /// Adds a strong password to an application. You can also add passwords while creating the application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

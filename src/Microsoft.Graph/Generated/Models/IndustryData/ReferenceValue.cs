@@ -78,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
             {
                 "#microsoft.graph.industryData.identifierTypeReferenceValue" => new IdentifierTypeReferenceValue(),
                 "#microsoft.graph.industryData.roleReferenceValue" => new RoleReferenceValue(),
+                "#microsoft.graph.industryData.sectionRoleReferenceValue" => new SectionRoleReferenceValue(),
                 "#microsoft.graph.industryData.userMatchTargetReferenceValue" => new UserMatchTargetReferenceValue(),
                 "#microsoft.graph.industryData.yearReferenceValue" => new YearReferenceValue(),
                 _ => new ReferenceValue(),

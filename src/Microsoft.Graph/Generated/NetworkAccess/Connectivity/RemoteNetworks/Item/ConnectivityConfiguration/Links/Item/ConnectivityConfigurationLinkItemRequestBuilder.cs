@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Co
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <returns>A <see cref="ConnectivityConfigurationLink"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Co
             return requestInfo;
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Co
         {
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         public class ConnectivityConfigurationLinkItemRequestBuilderGetQueryParameters 
         {

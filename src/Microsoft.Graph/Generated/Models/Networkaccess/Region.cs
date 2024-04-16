@@ -66,9 +66,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         JapanEast,
         [EnumMember(Value = "japanWest")]
         JapanWest,
-        [EnumMember(Value = "unknownFutureValue")]
-        UnknownFutureValue,
         [EnumMember(Value = "koreaSouth")]
         KoreaSouth,
+        [EnumMember(Value = "italyNorth")]
+        ItalyNorth,
+        [EnumMember(Value = "franceSouth")]
+        FranceSouth,
+        [EnumMember(Value = "israelCentral")]
+        IsraelCentral,
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

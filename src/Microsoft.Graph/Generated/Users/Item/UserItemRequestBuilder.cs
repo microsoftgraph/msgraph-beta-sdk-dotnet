@@ -65,6 +65,7 @@ using Microsoft.Graph.Beta.Users.Item.JoinedTeams;
 using Microsoft.Graph.Beta.Users.Item.LicenseDetails;
 using Microsoft.Graph.Beta.Users.Item.MailFolders;
 using Microsoft.Graph.Beta.Users.Item.MailboxSettings;
+using Microsoft.Graph.Beta.Users.Item.ManagedAppLogCollectionRequests;
 using Microsoft.Graph.Beta.Users.Item.ManagedAppRegistrations;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices;
 using Microsoft.Graph.Beta.Users.Item.Manager;
@@ -427,6 +428,11 @@ namespace Microsoft.Graph.Beta.Users.Item {
         public MailFoldersRequestBuilder MailFolders
         {
             get => new MailFoldersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the managedAppLogCollectionRequests property of the microsoft.graph.user entity.</summary>
+        public ManagedAppLogCollectionRequestsRequestBuilder ManagedAppLogCollectionRequests
+        {
+            get => new ManagedAppLogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppRegistrations property of the microsoft.graph.user entity.</summary>
         public ManagedAppRegistrationsRequestBuilder ManagedAppRegistrations

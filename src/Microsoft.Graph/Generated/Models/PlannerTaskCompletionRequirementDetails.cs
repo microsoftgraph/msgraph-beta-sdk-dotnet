@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("AdditionalData"); }
             set { BackingStore?.Set("AdditionalData", value); }
         }
-        /// <summary>The approvalRequirement property</summary>
+        /// <summary>Information about the requirements of an approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerApprovalRequirement? ApprovalRequirement {

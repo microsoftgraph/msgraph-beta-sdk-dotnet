@@ -39,6 +39,7 @@ using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicySettingStateSu
 using Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSummary;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationDeviceStateSummaries;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedAppsViolations;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationUserStateSummaries;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations;
@@ -75,6 +76,8 @@ using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyDefinitions;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles;
 using Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles;
+using Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations;
+using Microsoft.Graph.Beta.DeviceManagement.HardwarePasswordInfo;
 using Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities;
 using Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities;
 using Microsoft.Graph.Beta.DeviceManagement.Intents;
@@ -398,6 +401,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         {
             get => new DeviceConfigurationDeviceStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the deviceConfigurationProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+        public DeviceConfigurationProfilesRequestBuilder DeviceConfigurationProfiles
+        {
+            get => new DeviceConfigurationProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the deviceConfigurationRestrictedAppsViolations property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceConfigurationRestrictedAppsViolationsRequestBuilder DeviceConfigurationRestrictedAppsViolations
         {
@@ -557,6 +565,16 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public GroupPolicyUploadedDefinitionFilesRequestBuilder GroupPolicyUploadedDefinitionFiles
         {
             get => new GroupPolicyUploadedDefinitionFilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hardwareConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
+        public HardwareConfigurationsRequestBuilder HardwareConfigurations
+        {
+            get => new HardwareConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the hardwarePasswordInfo property of the microsoft.graph.deviceManagement entity.</summary>
+        public HardwarePasswordInfoRequestBuilder HardwarePasswordInfo
+        {
+            get => new HardwarePasswordInfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the importedDeviceIdentities property of the microsoft.graph.deviceManagement entity.</summary>
         public ImportedDeviceIdentitiesRequestBuilder ImportedDeviceIdentities

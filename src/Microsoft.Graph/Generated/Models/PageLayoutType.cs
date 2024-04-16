@@ -12,5 +12,9 @@ namespace Microsoft.Graph.Beta.Models {
         Home,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "newsLink")]
+        NewsLink,
+        [EnumMember(Value = "videoNewsLink")]
+        VideoNewsLink,
     }
 }

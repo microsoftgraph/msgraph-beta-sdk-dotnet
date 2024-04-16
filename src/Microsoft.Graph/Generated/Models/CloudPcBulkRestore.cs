@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcBulkRestore : CloudPcBulkAction, IParsable 
     {
-        /// <summary>The restorePointDateTime property</summary>
+        /// <summary>The date and time point for the selected Cloud PCs to restore. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RestorePointDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
             set { BackingStore?.Set("restorePointDateTime", value); }

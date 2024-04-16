@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class Connectivity : Microsoft.Graph.Beta.Models.Entity, IParsable 
     {
-        /// <summary>Branches represent locations for connectivity.</summary>
+        /// <summary>Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<BranchSite>? Branches {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("branches", value); }
         }
 #endif
-        /// <summary>The remoteNetworks property</summary>
+        /// <summary>Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RemoteNetwork>? RemoteNetworks {

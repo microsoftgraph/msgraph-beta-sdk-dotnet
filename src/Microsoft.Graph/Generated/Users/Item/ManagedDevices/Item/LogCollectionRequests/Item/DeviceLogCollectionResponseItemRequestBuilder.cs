@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl;
+using Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.DownloadDeviceLogs;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         public CreateDownloadUrlRequestBuilder CreateDownloadUrl
         {
             get => new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the downloadDeviceLogs method.</summary>
+        public DownloadDeviceLogsRequestBuilder DownloadDeviceLogs
+        {
+            get => new DownloadDeviceLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="DeviceLogCollectionResponseItemRequestBuilder"/> and sets the default values.

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("auditEvents", value); }
         }
 #endif
-        /// <summary>The bulkActions property</summary>
+        /// <summary>Bulk actions applied to a Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CloudPcBulkAction>? BulkActions {

@@ -159,11 +159,13 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.driveItem" => new DriveItem(),
                 "#microsoft.graph.list" => new List(),
                 "#microsoft.graph.listItem" => new ListItem(),
+                "#microsoft.graph.newsLinkPage" => new NewsLinkPage(),
                 "#microsoft.graph.recycleBin" => new RecycleBin(),
                 "#microsoft.graph.recycleBinItem" => new RecycleBinItem(),
                 "#microsoft.graph.sharedDriveItem" => new SharedDriveItem(),
                 "#microsoft.graph.site" => new Site(),
                 "#microsoft.graph.sitePage" => new SitePage(),
+                "#microsoft.graph.videoNewsLinkPage" => new VideoNewsLinkPage(),
                 _ => new BaseItem(),
             };
         }

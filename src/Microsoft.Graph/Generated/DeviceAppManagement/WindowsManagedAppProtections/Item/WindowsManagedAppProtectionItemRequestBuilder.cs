@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.Item.Apps;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.Item.Assign;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.Item.Assignments;
+using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.Item.DeploymentSummary;
 using Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.Item.TargetApps;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
@@ -33,6 +34,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         public AssignmentsRequestBuilder Assignments
         {
             get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deploymentSummary property of the microsoft.graph.windowsManagedAppProtection entity.</summary>
+        public DeploymentSummaryRequestBuilder DeploymentSummary
+        {
+            get => new DeploymentSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the targetApps method.</summary>
         public TargetAppsRequestBuilder TargetApps

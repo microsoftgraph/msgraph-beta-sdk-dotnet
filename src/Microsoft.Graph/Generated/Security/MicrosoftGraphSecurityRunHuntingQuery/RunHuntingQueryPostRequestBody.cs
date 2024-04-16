@@ -29,6 +29,20 @@ namespace Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery {
             set { BackingStore?.Set("query", value); }
         }
 #endif
+        /// <summary>The timespan property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Timespan {
+            get { return BackingStore?.Get<string?>("timespan"); }
+            set { BackingStore?.Set("timespan", value); }
+        }
+#nullable restore
+#else
+        public string Timespan {
+            get { return BackingStore?.Get<string>("timespan"); }
+            set { BackingStore?.Set("timespan", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="RunHuntingQueryPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -56,6 +70,7 @@ namespace Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery {
             return new Dictionary<string, Action<IParseNode>>
             {
                 {"query", n => { Query = n.GetStringValue(); } },
+                {"timespan", n => { Timespan = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,6 +81,7 @@ namespace Microsoft.Graph.Beta.Security.MicrosoftGraphSecurityRunHuntingQuery {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("query", Query);
+            writer.WriteStringValue("timespan", Timespan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

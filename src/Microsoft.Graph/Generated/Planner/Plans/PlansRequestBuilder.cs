@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new plannerPlan.
+        /// Create a new plannerPlan object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlan"/></returns>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerPlan.
+        /// Create a new plannerPlan object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

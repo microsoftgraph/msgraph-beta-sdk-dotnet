@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
         {
         }
         /// <summary>
-        /// Get remoteNetworks from networkAccess
+        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         /// <returns>A <see cref="RemoteNetworkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
             return await RequestAdapter.SendAsync<RemoteNetworkCollectionResponse>(requestInfo, RemoteNetworkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to remoteNetworks for networkAccess
+        /// Create a new remote network.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-connectivity-post-remotenetworks?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="RemoteNetwork"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
             return await RequestAdapter.SendAsync<RemoteNetwork>(requestInfo, RemoteNetwork.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get remoteNetworks from networkAccess
+        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to remoteNetworks for networkAccess
+        /// Create a new remote network.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
             return new RemoteNetworksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get remoteNetworks from networkAccess
+        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         public class RemoteNetworksRequestBuilderGetQueryParameters 
         {

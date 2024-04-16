@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get remoteNetworks from networkAccess
+        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         /// <returns>A <see cref="RemoteNetwork"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get remoteNetworks from networkAccess
+        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item {
         {
         }
         /// <summary>
-        /// Get remoteNetworks from networkAccess
+        /// Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.
         /// </summary>
         public class RemoteNetworkItemRequestBuilderGetQueryParameters 
         {

@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowedIosDeviceModels", value); }
         }
 #endif
+        /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time).</summary>
+        public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut {
+            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
+            set { BackingStore?.Set("appActionIfAccountIsClockedOut", value); }
+        }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfIosDeviceModelNotAllowed"); }
@@ -48,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("apps", value); }
         }
 #endif
-        /// <summary>A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
+        /// <summary>A custom browser protocol to open weblink on iOS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserProtocol {
@@ -244,6 +249,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 {"allowedIosDeviceModels", n => { AllowedIosDeviceModels = n.GetStringValue(); } },
+                {"appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
                 {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -274,6 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("allowedIosDeviceModels", AllowedIosDeviceModels);
+            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAccountIsClockedOut", AppActionIfAccountIsClockedOut);
             writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfIosDeviceModelNotAllowed", AppActionIfIosDeviceModelNotAllowed);
             writer.WriteEnumValue<ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
             writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);

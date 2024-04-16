@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         {
         }
         /// <summary>
-        /// Delete an industryDataConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-delete?view=graph-rest-1.0" />
+        /// Delete an azureDataLakeConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an azureDataLakeConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an industryDataConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an azureDataLakeConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-1.0" />
+        /// Update the properties of an industryDataConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an industryDataConnector object.
+        /// Delete an azureDataLakeConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an azureDataLakeConnector object.
+        /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an azureDataLakeConnector object.
+        /// Update the properties of an industryDataConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an azureDataLakeConnector object.
+        /// Read the properties and relationships of an industryDataConnector object.
         /// </summary>
         public class IndustryDataConnectorItemRequestBuilderGetQueryParameters 
         {

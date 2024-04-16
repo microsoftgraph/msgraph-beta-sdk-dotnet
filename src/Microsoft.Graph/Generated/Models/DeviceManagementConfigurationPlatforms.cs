@@ -6,25 +6,25 @@ namespace Microsoft.Graph.Beta.Models {
     [Flags]
     public enum DeviceManagementConfigurationPlatforms
     {
-        /// <summary>Default. No platform type specified.</summary>
+        /// <summary>Indicates the settings contained in this configuration don&apos;t have a platform set.</summary>
         [EnumMember(Value = "none")]
         None = 1,
-        /// <summary>Settings for Android platform.</summary>
+        /// <summary>Indicates that the settings contained in associated configuration applies to the Android operating system. </summary>
         [EnumMember(Value = "android")]
         Android = 2,
-        /// <summary>Settings for iOS platform.</summary>
+        /// <summary>Indicates that the settings contained in associated configuration applies to the iOS operating system.</summary>
         [EnumMember(Value = "iOS")]
         IOS = 4,
-        /// <summary>Settings for MacOS platform.</summary>
+        /// <summary>Indicates that the settings contained in associated configuration applies to the MacOS operating system.</summary>
         [EnumMember(Value = "macOS")]
         MacOS = 8,
-        /// <summary>Windows 10 X.</summary>
+        /// <summary>Indicates that the settings contained in associated configuration applies to the Windows 10X operating system.</summary>
         [EnumMember(Value = "windows10X")]
         Windows10X = 16,
-        /// <summary>Settings for Windows 10 platform.</summary>
+        /// <summary>Indicates that the settings contained in associated configuration applies to the Windows 10 operating system.</summary>
         [EnumMember(Value = "windows10")]
         Windows10 = 32,
-        /// <summary>Settings for Linux platform.</summary>
+        /// <summary>Indicates that the settings contained in associated configuration applies to the Linux operating system.</summary>
         [EnumMember(Value = "linux")]
         Linux = 64,
         /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>

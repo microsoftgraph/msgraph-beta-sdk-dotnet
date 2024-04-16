@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerBasicApprovalAttachment : PlannerBaseApprovalAttachment, IParsable 
     {
-        /// <summary>The approvalId property</summary>
+        /// <summary>Read-only. The identifier of the approval in the approval service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApprovalId {

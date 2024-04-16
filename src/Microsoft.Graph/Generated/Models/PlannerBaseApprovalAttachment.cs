@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the approval. The possible values are: requested, approved, rejected, cancelled, unknownFutureValue. Read-only.</summary>
         public PlannerApprovalStatus? Status {
             get { return BackingStore?.Get<PlannerApprovalStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

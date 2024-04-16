@@ -35,6 +35,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
+        /// <summary>The location property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GeoLocation? Location {
+            get { return BackingStore?.Get<GeoLocation?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#nullable restore
+#else
+        public GeoLocation Location {
+            get { return BackingStore?.Get<GeoLocation>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#endif
         /// <summary>The stream property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             {
                 {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"location", n => { Location = n.GetObjectValue<GeoLocation>(GeoLocation.CreateFromDiscriminatorValue); } },
                 {"stream", n => { Stream = n.GetObjectValue<StreamObject>(StreamObject.CreateFromDiscriminatorValue); } },
             };
         }
@@ -89,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             base.Serialize(writer);
             writer.WriteStringValue("countryLetterCode", CountryLetterCode);
             writer.WriteStringValue("ipAddress", IpAddress);
+            writer.WriteObjectValue<GeoLocation>("location", Location);
             writer.WriteObjectValue<StreamObject>("stream", Stream);
         }
     }

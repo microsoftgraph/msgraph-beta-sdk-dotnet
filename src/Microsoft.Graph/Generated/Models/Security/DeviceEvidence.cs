@@ -64,6 +64,34 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("ipInterfaces", value); }
         }
 #endif
+        /// <summary>The lastExternalIpAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastExternalIpAddress {
+            get { return BackingStore?.Get<string?>("lastExternalIpAddress"); }
+            set { BackingStore?.Set("lastExternalIpAddress", value); }
+        }
+#nullable restore
+#else
+        public string LastExternalIpAddress {
+            get { return BackingStore?.Get<string>("lastExternalIpAddress"); }
+            set { BackingStore?.Set("lastExternalIpAddress", value); }
+        }
+#endif
+        /// <summary>The lastIpAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastIpAddress {
+            get { return BackingStore?.Get<string?>("lastIpAddress"); }
+            set { BackingStore?.Set("lastIpAddress", value); }
+        }
+#nullable restore
+#else
+        public string LastIpAddress {
+            get { return BackingStore?.Get<string>("lastIpAddress"); }
+            set { BackingStore?.Set("lastIpAddress", value); }
+        }
+#endif
         /// <summary>Users that were logged on the machine during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +227,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"healthStatus", n => { HealthStatus = n.GetEnumValue<DeviceHealthStatus>(); } },
                 {"ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"lastExternalIpAddress", n => { LastExternalIpAddress = n.GetStringValue(); } },
+                {"lastIpAddress", n => { LastIpAddress = n.GetStringValue(); } },
                 {"loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
                 {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
@@ -225,6 +255,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteEnumValue<DeviceHealthStatus>("healthStatus", HealthStatus);
             writer.WriteCollectionOfPrimitiveValues<string>("ipInterfaces", IpInterfaces);
+            writer.WriteStringValue("lastExternalIpAddress", LastExternalIpAddress);
+            writer.WriteStringValue("lastIpAddress", LastIpAddress);
             writer.WriteCollectionOfObjectValues<LoggedOnUser>("loggedOnUsers", LoggedOnUsers);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
             writer.WriteEnumValue<OnboardingStatus>("onboardingStatus", OnboardingStatus);

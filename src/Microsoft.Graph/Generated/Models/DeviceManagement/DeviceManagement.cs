@@ -622,6 +622,20 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
         }
 #endif
+        /// <summary>Profile Id of the object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>? DeviceConfigurationProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>?>("deviceConfigurationProfiles"); }
+            set { BackingStore?.Set("deviceConfigurationProfiles", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile> DeviceConfigurationProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>>("deviceConfigurationProfiles"); }
+            set { BackingStore?.Set("deviceConfigurationProfiles", value); }
+        }
+#endif
         /// <summary>Restricted apps violations for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -956,6 +970,34 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile> GroupPolicyUploadedDefinitionFiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>>("groupPolicyUploadedDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedDefinitionFiles", value); }
+        }
+#endif
+        /// <summary>The hardware configurations for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.HardwareConfiguration>? HardwareConfigurations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfiguration>?>("hardwareConfigurations"); }
+            set { BackingStore?.Set("hardwareConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.HardwareConfiguration> HardwareConfigurations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfiguration>>("hardwareConfigurations"); }
+            set { BackingStore?.Set("hardwareConfigurations", value); }
+        }
+#endif
+        /// <summary>The hardware password info for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>? HardwarePasswordInfo {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>?>("hardwarePasswordInfo"); }
+            set { BackingStore?.Set("hardwarePasswordInfo", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo> HardwarePasswordInfo {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>>("hardwarePasswordInfo"); }
+            set { BackingStore?.Set("hardwarePasswordInfo", value); }
         }
 #endif
         /// <summary>The imported device identities.</summary>
@@ -2568,6 +2610,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"deviceComplianceScripts", n => { DeviceComplianceScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScript>(Microsoft.Graph.Beta.Models.DeviceComplianceScript.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceConfigurationConflictSummary", n => { DeviceConfigurationConflictSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceConfigurationDeviceStateSummaries", n => { DeviceConfigurationDeviceStateSummaries = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary.CreateFromDiscriminatorValue); } },
+                {"deviceConfigurationProfiles", n => { DeviceConfigurationProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>(Microsoft.Graph.Beta.Models.DeviceConfigurationProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceConfigurationRestrictedAppsViolations", n => { DeviceConfigurationRestrictedAppsViolations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>(Microsoft.Graph.Beta.Models.RestrictedAppsViolation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceConfigurationUserStateSummaries", n => { DeviceConfigurationUserStateSummaries = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue); } },
                 {"deviceConfigurations", n => { DeviceConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2592,6 +2635,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"groupPolicyMigrationReports", n => { GroupPolicyMigrationReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"groupPolicyObjectFiles", n => { GroupPolicyObjectFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"groupPolicyUploadedDefinitionFiles", n => { GroupPolicyUploadedDefinitionFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"hardwareConfigurations", n => { HardwareConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfiguration>(Microsoft.Graph.Beta.Models.HardwareConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"hardwarePasswordInfo", n => { HardwarePasswordInfo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>(Microsoft.Graph.Beta.Models.HardwarePasswordInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"importedWindowsAutopilotDeviceIdentities", n => { ImportedWindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"intents", n => { Intents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntent>(Microsoft.Graph.Beta.Models.DeviceManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -2761,6 +2806,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScript>("deviceComplianceScripts", DeviceComplianceScripts);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>("deviceConfigurationConflictSummary", DeviceConfigurationConflictSummary);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries", DeviceConfigurationDeviceStateSummaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>("deviceConfigurationProfiles", DeviceConfigurationProfiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>("deviceConfigurationRestrictedAppsViolations", DeviceConfigurationRestrictedAppsViolations);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfiguration>("deviceConfigurations", DeviceConfigurations);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>("deviceConfigurationsAllManagedDeviceCertificateStates", DeviceConfigurationsAllManagedDeviceCertificateStates);
@@ -2785,6 +2831,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>("groupPolicyMigrationReports", GroupPolicyMigrationReports);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>("groupPolicyObjectFiles", GroupPolicyObjectFiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>("groupPolicyUploadedDefinitionFiles", GroupPolicyUploadedDefinitionFiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfiguration>("hardwareConfigurations", HardwareConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>("hardwarePasswordInfo", HardwarePasswordInfo);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>("importedDeviceIdentities", ImportedDeviceIdentities);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>("importedWindowsAutopilotDeviceIdentities", ImportedWindowsAutopilotDeviceIdentities);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntent>("intents", Intents);

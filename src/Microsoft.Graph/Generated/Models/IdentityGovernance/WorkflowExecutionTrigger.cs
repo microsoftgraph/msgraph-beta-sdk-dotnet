@@ -48,6 +48,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.identityGovernance.attributeChangeTrigger" => new AttributeChangeTrigger(),
+                "#microsoft.graph.identityGovernance.membershipChangeTrigger" => new MembershipChangeTrigger(),
                 "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger" => new TimeBasedAttributeTrigger(),
                 _ => new WorkflowExecutionTrigger(),
             };
