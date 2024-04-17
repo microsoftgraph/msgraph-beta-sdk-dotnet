@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskPropertyRule : PlannerPropertyRule, IParsable 
     {
-        /// <summary>Rules and restrictions for applied categories. This value does not currently support overrides. Accepted values for the default rule and individual overrides are allow, block.</summary>
+        /// <summary>Rules and restrictions for applied categories. This value doesn&apos;t currently support overrides. Accepted values for the default rule and individual overrides are allow, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerFieldRules? AppliedCategories {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #endif
-        /// <summary>The approvalAttachment property</summary>
+        /// <summary>Rules and restrictions for approval. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are: allow, add, remove, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerFieldRules? ApprovalAttachment {

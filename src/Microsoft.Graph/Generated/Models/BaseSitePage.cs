@@ -58,7 +58,9 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.newsLinkPage" => new NewsLinkPage(),
                 "#microsoft.graph.sitePage" => new SitePage(),
+                "#microsoft.graph.videoNewsLinkPage" => new VideoNewsLinkPage(),
                 _ => new BaseSitePage(),
             };
         }

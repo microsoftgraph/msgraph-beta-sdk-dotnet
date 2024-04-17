@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         {
         }
         /// <summary>
-        /// Delete navigation property deviceLinks for networkAccess
+        /// Removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-devicelink-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deviceLinks from networkAccess
+        /// Retrieves a specific device link associated with a remote network.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-devicelink-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DeviceLink"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property deviceLinks for networkAccess
+        /// Removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
             return requestInfo;
         }
         /// <summary>
-        /// Get deviceLinks from networkAccess
+        /// Retrieves a specific device link associated with a remote network.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         {
         }
         /// <summary>
-        /// Get deviceLinks from networkAccess
+        /// Retrieves a specific device link associated with a remote network.
         /// </summary>
         public class DeviceLinkItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Co
         {
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <returns>A <see cref="ConnectivityConfigurationLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Co
             return await RequestAdapter.SendAsync<ConnectivityConfigurationLink>(requestInfo, ConnectivityConfigurationLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Co
             return new LinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get links from networkAccess
+        /// List of connectivity configurations for deviceLink objects.
         /// </summary>
         public class LinksRequestBuilderGetQueryParameters 
         {

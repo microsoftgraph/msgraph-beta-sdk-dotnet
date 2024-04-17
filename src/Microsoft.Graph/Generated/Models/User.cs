@@ -1029,6 +1029,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mailNickname", value); }
         }
 #endif
+        /// <summary>Zero or more log collection requests triggered for the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ManagedAppLogCollectionRequest>? ManagedAppLogCollectionRequests {
+            get { return BackingStore?.Get<List<ManagedAppLogCollectionRequest>?>("managedAppLogCollectionRequests"); }
+            set { BackingStore?.Set("managedAppLogCollectionRequests", value); }
+        }
+#nullable restore
+#else
+        public List<ManagedAppLogCollectionRequest> ManagedAppLogCollectionRequests {
+            get { return BackingStore?.Get<List<ManagedAppLogCollectionRequest>>("managedAppLogCollectionRequests"); }
+            set { BackingStore?.Set("managedAppLogCollectionRequests", value); }
+        }
+#endif
         /// <summary>Zero or more managed app registrations that belong to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2125,6 +2139,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mailFolders", n => { MailFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
                 {"mailboxSettings", n => { MailboxSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.MailboxSettings>(Microsoft.Graph.Beta.Models.MailboxSettings.CreateFromDiscriminatorValue); } },
+                {"managedAppLogCollectionRequests", n => { ManagedAppLogCollectionRequests = n.GetCollectionOfObjectValues<ManagedAppLogCollectionRequest>(ManagedAppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedAppRegistrations", n => { ManagedAppRegistrations = n.GetCollectionOfObjectValues<ManagedAppRegistration>(ManagedAppRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"manager", n => { Manager = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
@@ -2289,6 +2304,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MailboxSettings>("mailboxSettings", MailboxSettings);
             writer.WriteCollectionOfObjectValues<MailFolder>("mailFolders", MailFolders);
             writer.WriteStringValue("mailNickname", MailNickname);
+            writer.WriteCollectionOfObjectValues<ManagedAppLogCollectionRequest>("managedAppLogCollectionRequests", ManagedAppLogCollectionRequests);
             writer.WriteCollectionOfObjectValues<ManagedAppRegistration>("managedAppRegistrations", ManagedAppRegistrations);
             writer.WriteCollectionOfObjectValues<ManagedDevice>("managedDevices", ManagedDevices);
             writer.WriteObjectValue<DirectoryObject>("manager", Manager);

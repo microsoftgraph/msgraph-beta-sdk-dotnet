@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Approve;
 using Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Deny;
 using Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.GetAllElevationRequests;
+using Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -32,6 +33,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item {
         public GetAllElevationRequestsRequestBuilder GetAllElevationRequests
         {
             get => new GetAllElevationRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the revoke method.</summary>
+        public RevokeRequestBuilder Revoke
+        {
+            get => new RevokeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="PrivilegeManagementElevationRequestItemRequestBuilder"/> and sets the default values.

@@ -8,5 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
         DelegatedAdminAccessAssignmentUpdate,
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
+        [EnumMember(Value = "delegatedAdminRelationshipUpdate")]
+        DelegatedAdminRelationshipUpdate,
     }
 }

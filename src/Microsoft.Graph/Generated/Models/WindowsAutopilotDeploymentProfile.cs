@@ -114,6 +114,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("extractHardwareHash"); }
             set { BackingStore?.Set("extractHardwareHash", value); }
         }
+        /// <summary>Indicates whether the profile supports the extraction of hardware hash values and registration of the device into Windows Autopilot. When TRUE, indicates if hardware extraction and Windows Autopilot registration will happen on the next successful check-in. When FALSE, hardware hash extraction and Windows Autopilot registration will not happen. Default value is FALSE. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.</summary>
+        public bool? HardwareHashExtractionEnabled {
+            get { return BackingStore?.Get<bool?>("hardwareHashExtractionEnabled"); }
+            set { BackingStore?.Set("hardwareHashExtractionEnabled", value); }
+        }
         /// <summary>Language configured on the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,6 +138,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The locale (language) to be used when configuring the device. E.g. en-US. The default value is os-default. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Locale {
+            get { return BackingStore?.Get<string?>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#nullable restore
+#else
+        public string Locale {
+            get { return BackingStore?.Get<string>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#endif
         /// <summary>AzureAD management app ID used during client device-based enrollment discovery</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +164,20 @@ namespace Microsoft.Graph.Beta.Models {
         public string ManagementServiceAppId {
             get { return BackingStore?.Get<string>("managementServiceAppId"); }
             set { BackingStore?.Set("managementServiceAppId", value); }
+        }
+#endif
+        /// <summary>The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting? OutOfBoxExperienceSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting?>("outOfBoxExperienceSetting"); }
+            set { BackingStore?.Set("outOfBoxExperienceSetting", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting OutOfBoxExperienceSetting {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting>("outOfBoxExperienceSetting"); }
+            set { BackingStore?.Set("outOfBoxExperienceSetting", value); }
         }
 #endif
         /// <summary>Out of box experience setting</summary>
@@ -161,6 +194,11 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("outOfBoxExperienceSettings", value); }
         }
 #endif
+        /// <summary>Indicates whether the user is allowed to use Windows Autopilot for pre-provisioned deployment mode during Out of Box experience (OOBE). When TRUE, indicates that Windows Autopilot for pre-provisioned deployment mode for OOBE is allowed to be used. When false, Windows Autopilot for pre-provisioned deployment mode for OOBE is not allowed. The default is FALSE.</summary>
+        public bool? PreprovisioningAllowed {
+            get { return BackingStore?.Get<bool?>("preprovisioningAllowed"); }
+            set { BackingStore?.Set("preprovisioningAllowed", value); }
+        }
         /// <summary>Scope tags for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,10 +247,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enableWhiteGlove", n => { EnableWhiteGlove = n.GetBoolValue(); } },
                 {"enrollmentStatusScreenSettings", n => { EnrollmentStatusScreenSettings = n.GetObjectValue<WindowsEnrollmentStatusScreenSettings>(WindowsEnrollmentStatusScreenSettings.CreateFromDiscriminatorValue); } },
                 {"extractHardwareHash", n => { ExtractHardwareHash = n.GetBoolValue(); } },
+                {"hardwareHashExtractionEnabled", n => { HardwareHashExtractionEnabled = n.GetBoolValue(); } },
                 {"language", n => { Language = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"locale", n => { Locale = n.GetStringValue(); } },
                 {"managementServiceAppId", n => { ManagementServiceAppId = n.GetStringValue(); } },
+                {"outOfBoxExperienceSetting", n => { OutOfBoxExperienceSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting>(Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting.CreateFromDiscriminatorValue); } },
                 {"outOfBoxExperienceSettings", n => { OutOfBoxExperienceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSettings>(Microsoft.Graph.Beta.Models.OutOfBoxExperienceSettings.CreateFromDiscriminatorValue); } },
+                {"preprovisioningAllowed", n => { PreprovisioningAllowed = n.GetBoolValue(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -234,10 +276,14 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("enableWhiteGlove", EnableWhiteGlove);
             writer.WriteObjectValue<WindowsEnrollmentStatusScreenSettings>("enrollmentStatusScreenSettings", EnrollmentStatusScreenSettings);
             writer.WriteBoolValue("extractHardwareHash", ExtractHardwareHash);
+            writer.WriteBoolValue("hardwareHashExtractionEnabled", HardwareHashExtractionEnabled);
             writer.WriteStringValue("language", Language);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("managementServiceAppId", ManagementServiceAppId);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting>("outOfBoxExperienceSetting", OutOfBoxExperienceSetting);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSettings>("outOfBoxExperienceSettings", OutOfBoxExperienceSettings);
+            writer.WriteBoolValue("preprovisioningAllowed", PreprovisioningAllowed);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }

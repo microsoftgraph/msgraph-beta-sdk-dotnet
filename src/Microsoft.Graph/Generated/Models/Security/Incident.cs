@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("redirectIncidentId", value); }
         }
 #endif
-        /// <summary>The resolvingComment property</summary>
+        /// <summary>User input that explains the resolution of the incident and the classification choice. This property contains free editable text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResolvingComment {

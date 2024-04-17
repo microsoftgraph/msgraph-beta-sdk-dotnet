@@ -63,6 +63,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
             set { BackingStore?.Set("deployedAppCount", value); }
         }
+        /// <summary>Navigation property to deployment summary of the configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
+        }
+#nullable restore
+#else
+        public ManagedAppPolicyDeploymentSummary DeploymentSummary {
+            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            set { BackingStore?.Set("deploymentSummary", value); }
+        }
+#endif
         /// <summary>When TRUE, indicates that the policy is deployed to some inclusion groups. When FALSE, indicates that the policy is not deployed to any inclusion groups. Default value is FALSE.</summary>
         public bool? IsAssigned {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
@@ -279,6 +293,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
+                {"deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 {"maximumAllowedDeviceThreatLevel", n => { MaximumAllowedDeviceThreatLevel = n.GetEnumValue<ManagedAppDeviceThreatLevel>(); } },
                 {"maximumRequiredOsVersion", n => { MaximumRequiredOsVersion = n.GetStringValue(); } },
@@ -313,6 +328,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
             writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
+            writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("isAssigned", IsAssigned);
             writer.WriteEnumValue<ManagedAppDeviceThreatLevel>("maximumAllowedDeviceThreatLevel", MaximumAllowedDeviceThreatLevel);
             writer.WriteStringValue("maximumRequiredOsVersion", MaximumRequiredOsVersion);

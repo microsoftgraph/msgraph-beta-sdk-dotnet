@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.External.IndustryData.DataConnectors;
 using Microsoft.Graph.Beta.External.IndustryData.InboundFlows;
 using Microsoft.Graph.Beta.External.IndustryData.Operations;
+using Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSets;
 using Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions;
 using Microsoft.Graph.Beta.External.IndustryData.RoleGroups;
 using Microsoft.Graph.Beta.External.IndustryData.Runs;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData {
         public OperationsRequestBuilder Operations
         {
             get => new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the outboundProvisioningFlowSets property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
+        public OutboundProvisioningFlowSetsRequestBuilder OutboundProvisioningFlowSets
+        {
+            get => new OutboundProvisioningFlowSetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the referenceDefinitions property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
         public ReferenceDefinitionsRequestBuilder ReferenceDefinitions

@@ -15,17 +15,17 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedCount property</summary>
+        /// <summary>The number of Cloud PCs where the action failed.</summary>
         public int? FailedCount {
             get { return BackingStore?.Get<int?>("failedCount"); }
             set { BackingStore?.Set("failedCount", value); }
         }
-        /// <summary>The inProgressCount property</summary>
+        /// <summary>The number of Cloud PCs where the action is in progress.</summary>
         public int? InProgressCount {
             get { return BackingStore?.Get<int?>("inProgressCount"); }
             set { BackingStore?.Set("inProgressCount", value); }
         }
-        /// <summary>The notSupportedCount property</summary>
+        /// <summary>The number of Cloud PCs where the action isn&apos;t supported.</summary>
         public int? NotSupportedCount {
             get { return BackingStore?.Get<int?>("notSupportedCount"); }
             set { BackingStore?.Set("notSupportedCount", value); }
@@ -44,12 +44,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The pendingCount property</summary>
+        /// <summary>The number of Cloud PCs where the action is pending.</summary>
         public int? PendingCount {
             get { return BackingStore?.Get<int?>("pendingCount"); }
             set { BackingStore?.Set("pendingCount", value); }
         }
-        /// <summary>The successfulCount property</summary>
+        /// <summary>The number of Cloud PCs where the action is successful.</summary>
         public int? SuccessfulCount {
             get { return BackingStore?.Get<int?>("successfulCount"); }
             set { BackingStore?.Set("successfulCount", value); }

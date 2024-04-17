@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #endif
-        /// <summary>The zoneRedundancyPreSharedKey property</summary>
+        /// <summary>Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneRedundancyPreSharedKey {

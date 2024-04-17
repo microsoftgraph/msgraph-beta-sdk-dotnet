@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcBulkResize : CloudPcBulkAction, IParsable 
     {
-        /// <summary>The targetServicePlanId property</summary>
+        /// <summary>The target service plan ID of the resize configuration with new vCPU and storage size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetServicePlanId {

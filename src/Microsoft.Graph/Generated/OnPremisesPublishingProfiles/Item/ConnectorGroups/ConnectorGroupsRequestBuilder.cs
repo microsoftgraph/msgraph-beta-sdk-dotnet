@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return await RequestAdapter.SendAsync<ConnectorGroupCollectionResponse>(requestInfo, ConnectorGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new connectorGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-post-connectorgroups?view=graph-rest-1.0" />
+        /// Create a connectorGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConnectorGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Create a new connectorGroup.
+        /// Create a connectorGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

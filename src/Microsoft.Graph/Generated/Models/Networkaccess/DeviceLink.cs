@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
     public class DeviceLink : Microsoft.Graph.Beta.Models.Entity, IParsable 
     {
-        /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a branch site. The possible values are:250,500,750,1000.</summary>
+        /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps? BandwidthCapacityInMbps {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps?>("bandwidthCapacityInMbps"); }
             set { BackingStore?.Set("bandwidthCapacityInMbps", value); }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.DeviceVendor?>("deviceVendor"); }
             set { BackingStore?.Set("deviceVendor", value); }
         }
-        /// <summary>Specifies the client IPv4 of the link</summary>
+        /// <summary>The public IP address of your CPE (customer premise equipment) device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IpAddress {

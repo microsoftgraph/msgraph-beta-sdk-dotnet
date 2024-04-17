@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The links property</summary>
+        /// <summary>List of connectivity configurations for deviceLink objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ConnectivityConfigurationLink>? Links {
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The remoteNetworkId property</summary>
+        /// <summary>Unique identifier or a specific reference assigned to a branchSite. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RemoteNetworkId {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
 #endif
-        /// <summary>The remoteNetworkName property</summary>
+        /// <summary>Display name assigned to a branchSite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RemoteNetworkName {

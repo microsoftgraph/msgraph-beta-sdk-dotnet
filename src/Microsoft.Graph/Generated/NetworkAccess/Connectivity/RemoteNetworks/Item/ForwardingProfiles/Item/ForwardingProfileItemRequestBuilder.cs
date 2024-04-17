@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get forwardingProfiles from networkAccess
+        /// Each forwarding profile associated with a remote network is specified. Supports $expand and $select.
         /// </summary>
         /// <returns>A <see cref="ForwardingProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
             return requestInfo;
         }
         /// <summary>
-        /// Get forwardingProfiles from networkAccess
+        /// Each forwarding profile associated with a remote network is specified. Supports $expand and $select.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.Fo
         {
         }
         /// <summary>
-        /// Get forwardingProfiles from networkAccess
+        /// Each forwarding profile associated with a remote network is specified. Supports $expand and $select.
         /// </summary>
         public class ForwardingProfileItemRequestBuilderGetQueryParameters 
         {

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTask : PlannerDelta, IParsable 
     {
-        /// <summary>Number of checklist items with value set to false, representing incomplete items.</summary>
+        /// <summary>The number of checklist items with value set to false, representing incomplete items.</summary>
         public int? ActiveChecklistItemCount {
             get { return BackingStore?.Get<int?>("activeChecklistItemCount"); }
             set { BackingStore?.Set("activeChecklistItemCount", value); }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedToTaskBoardFormat", value); }
         }
 #endif
-        /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
+        /// <summary>A hint that is used to order items of this type in a list view. For more information, see Using order hints in Planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssigneePriority {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>Bucket ID to which the task belongs. The bucket needs to be in the plan that the task is in. It&apos;s 28 characters long and case-sensitive. Format validation is done on the service.</summary>
+        /// <summary>Bucket ID to which the task belongs. The bucket needs to be in the same plan as the task. The value of the bucketId property is 28 characters long and case-sensitive. Format validation is done on the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BucketId {
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bucketTaskBoardFormat", value); }
         }
 #endif
-        /// <summary>Number of checklist items that are present on the task.</summary>
+        /// <summary>The number of checklist items that are present on the task.</summary>
         public int? ChecklistItemCount {
             get { return BackingStore?.Get<int?>("checklistItemCount"); }
             set { BackingStore?.Set("checklistItemCount", value); }
         }
-        /// <summary>Identity of the user that completed the task.</summary>
+        /// <summary>The identity of the user that completed the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? CompletedBy {
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("completedBy", value); }
         }
 #endif
-        /// <summary>Read-only. Date and time at which the &apos;percentComplete&apos; of the task is set to &apos;100&apos;. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Read-only. The date and time at which the &apos;percentComplete&apos; of the task is set to &apos;100&apos;. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>Thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.</summary>
+        /// <summary>The thread ID of the conversation on the task. This is the ID of the conversation thread object created in the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationThreadId {
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conversationThreadId", value); }
         }
 #endif
-        /// <summary>Identity of the user that created the task.</summary>
+        /// <summary>The identity of the user who created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public IdentitySet? CreatedBy {
@@ -163,12 +163,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Read-only. The date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Contains information about the origin of the task.</summary>
+        /// <summary>Information about the origin of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerTaskCreation? CreationSource {
@@ -196,12 +196,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("details", value); }
         }
 #endif
-        /// <summary>Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DueDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
-        /// <summary>Read-only. Value is true if the details object of the task has a nonempty description and false otherwise.</summary>
+        /// <summary>Read-only. This value is true if the details object of the task has a nonempty description. Otherwise,false.</summary>
         public bool? HasDescription {
             get { return BackingStore?.Get<bool?>("hasDescription"); }
             set { BackingStore?.Set("hasDescription", value); }
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("isOnMyDayLastModifiedDate"); }
             set { BackingStore?.Set("isOnMyDayLastModifiedDate", value); }
         }
-        /// <summary>Hint used to order items of this type in a list view. The format is defined as outlined here.</summary>
+        /// <summary>The hint used to order items of this type in a list view. For more information, see Using order hints in Plannern.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrderHint {
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("orderHint", value); }
         }
 #endif
-        /// <summary>Percentage of task completion. When set to 100, the task is considered completed.</summary>
+        /// <summary>The percentage of task completion. When set to 100, the task is completed.</summary>
         public int? PercentComplete {
             get { return BackingStore?.Get<int?>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
@@ -254,7 +254,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("planId", value); }
         }
 #endif
-        /// <summary>This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.</summary>
+        /// <summary>The type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference.</summary>
         public PlannerPreviewType? PreviewType {
             get { return BackingStore?.Get<PlannerPreviewType?>("previewType"); }
             set { BackingStore?.Set("previewType", value); }
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("referenceCount"); }
             set { BackingStore?.Set("referenceCount", value); }
         }
-        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: checklistCompletion,formCompletion, approvalCompletion. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list. Read-only. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
+        /// <summary>Indicates all the requirements specified on the plannerTask. Possible values are: none, checklistCompletion, unknownFutureValue, formCompletion, approvalCompletion. Read-only. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: formCompletion, approvalCompletion. The plannerTaskCompletionRequirementDetails in plannerTaskDetails has details of the requirements specified, if any.</summary>
         public PlannerTaskCompletionRequirements? SpecifiedCompletionRequirements {
             get { return BackingStore?.Get<PlannerTaskCompletionRequirements?>("specifiedCompletionRequirements"); }
             set { BackingStore?.Set("specifiedCompletionRequirements", value); }

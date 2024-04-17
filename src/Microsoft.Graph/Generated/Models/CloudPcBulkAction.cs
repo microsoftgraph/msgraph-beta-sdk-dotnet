@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcBulkAction : Entity, IParsable 
     {
-        /// <summary>The actionSummary property</summary>
+        /// <summary>Run summary of this bulk action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcBulkActionSummary? ActionSummary {
@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("cloudPcIds", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the bulk action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The scheduledDuringMaintenanceWindow property</summary>
+        /// <summary>Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.</summary>
         public bool? ScheduledDuringMaintenanceWindow {
             get { return BackingStore?.Get<bool?>("scheduledDuringMaintenanceWindow"); }
             set { BackingStore?.Set("scheduledDuringMaintenanceWindow", value); }

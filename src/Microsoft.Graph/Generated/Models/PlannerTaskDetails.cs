@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskDetails : PlannerDelta, IParsable 
     {
-        /// <summary>The approvalAttachment property</summary>
+        /// <summary>Detailed information about the approval that is attached to the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerBaseApprovalAttachment? ApprovalAttachment {
