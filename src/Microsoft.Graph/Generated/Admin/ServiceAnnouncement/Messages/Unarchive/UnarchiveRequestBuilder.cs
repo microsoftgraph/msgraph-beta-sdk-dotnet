@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
         }
         /// <summary>
         /// Unarchive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnarchivePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
         }
         /// <summary>
         /// Unarchive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unarchive?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnarchiveResponse"/></returns>
         /// <param name="body">The request body</param>

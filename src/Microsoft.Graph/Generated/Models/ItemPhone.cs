@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ItemPhone : ItemFacet, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Friendly name the user has assigned this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

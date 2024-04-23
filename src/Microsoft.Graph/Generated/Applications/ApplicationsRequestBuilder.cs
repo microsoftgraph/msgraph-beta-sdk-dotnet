@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Applications {
         }
         /// <summary>
         /// Get the list of applications in this organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ApplicationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Applications {
         }
         /// <summary>
         /// Create a new application object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Application"/></returns>
         /// <param name="body">The request body</param>

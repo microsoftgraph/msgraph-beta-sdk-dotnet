@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Tables.ItemAtWith
         }
         /// <summary>
         /// Gets the range object associated with the entire table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-range?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-range?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

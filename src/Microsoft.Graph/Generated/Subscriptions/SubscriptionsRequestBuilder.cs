@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
         }
         /// <summary>
         /// Retrieve a list of webhook subscriptions. The content of the response depends on the context in which the app is calling; for details, see the scenarios in the Permissions section.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SubscriptionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Subscriptions {
         }
         /// <summary>
         /// Subscribes a listener application to receive change notifications when the requested type of changes occur to the specified resource in Microsoft Graph. To identify the resources for which you can create subscriptions and the limitations on subscriptions, see Set up notifications for changes in resource data: Supported resources. Some resources support rich notifications, that is, notifications that include resource data. For more information about these resources, see Set up change notifications that include resource data: Supported resources.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscription-post-subscriptions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Subscription"/></returns>
         /// <param name="body">The request body</param>

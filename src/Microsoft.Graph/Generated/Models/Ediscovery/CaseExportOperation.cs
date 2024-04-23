@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    #pragma warning disable CS1591
     public class CaseExportOperation : CaseOperation, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The name of the Azure storage location where the export will be stored. This only applies to exports stored in your own Azure storage location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

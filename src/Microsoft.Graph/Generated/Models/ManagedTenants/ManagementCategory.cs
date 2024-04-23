@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public enum ManagementCategory
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "custom")]
+        #pragma warning disable CS1591
         Custom,
+        #pragma warning restore CS1591
         [EnumMember(Value = "devices")]
+        #pragma warning disable CS1591
         Devices,
+        #pragma warning restore CS1591
         [EnumMember(Value = "identity")]
+        #pragma warning disable CS1591
         Identity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "data")]
+        #pragma warning disable CS1591
         Data,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

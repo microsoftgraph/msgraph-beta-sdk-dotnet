@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ReferenceAttachmentProvider
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "other")]
+        #pragma warning disable CS1591
         Other,
+        #pragma warning restore CS1591
         [EnumMember(Value = "oneDriveBusiness")]
+        #pragma warning disable CS1591
         OneDriveBusiness,
+        #pragma warning restore CS1591
         [EnumMember(Value = "oneDriveConsumer")]
+        #pragma warning disable CS1591
         OneDriveConsumer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dropbox")]
+        #pragma warning disable CS1591
         Dropbox,
+        #pragma warning restore CS1591
     }
 }

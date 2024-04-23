@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class MeetingRegistrationBase : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies who can register for the meeting.</summary>
         public MeetingAudience? AllowedRegistrant {

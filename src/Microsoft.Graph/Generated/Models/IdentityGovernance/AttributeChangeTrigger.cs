@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public class AttributeChangeTrigger : WorkflowExecutionTrigger, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The trigger attribute being changed that triggers the workflowexecutiontrigger of a workflow.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

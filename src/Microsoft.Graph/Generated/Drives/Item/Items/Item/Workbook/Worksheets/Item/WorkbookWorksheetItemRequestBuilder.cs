@@ -95,8 +95,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
         {
         }
         /// <summary>
-        /// Deletes the worksheet from the workbook.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-delete?view=graph-rest-1.0" />
+        /// Delete navigation property worksheets for drives
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,8 +117,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of worksheet object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-get?view=graph-rest-1.0" />
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookWorksheet"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -142,8 +140,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return await RequestAdapter.SendAsync<WorkbookWorksheet>(requestInfo, WorkbookWorksheet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of worksheet object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheet-update?view=graph-rest-1.0" />
+        /// Update the navigation property worksheets in drives
         /// </summary>
         /// <returns>A <see cref="WorkbookWorksheet"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +175,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return new RangeWithAddressRequestBuilder(PathParameters, RequestAdapter, address);
         }
         /// <summary>
-        /// Deletes the worksheet from the workbook.
+        /// Delete navigation property worksheets for drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +194,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of worksheet object.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -216,7 +213,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of worksheet object.
+        /// Update the navigation property worksheets in drives
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -264,7 +261,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of worksheet object.
+        /// Represents a collection of worksheets associated with the workbook. Read-only.
         /// </summary>
         public class WorkbookWorksheetItemRequestBuilderGetQueryParameters 
         {

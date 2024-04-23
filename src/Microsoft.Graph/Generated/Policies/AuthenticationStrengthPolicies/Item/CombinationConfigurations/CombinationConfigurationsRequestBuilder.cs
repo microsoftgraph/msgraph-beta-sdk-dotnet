@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
         {
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-list-combinationconfigurations?view=graph-rest-1.0" />
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         /// <returns>A <see cref="AuthenticationCombinationConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfigurationCollectionResponse>(requestInfo, AuthenticationCombinationConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-post-combinationconfigurations?view=graph-rest-1.0" />
+        /// Create new navigation property to combinationConfigurations for policies
         /// </summary>
         /// <returns>A <see cref="AuthenticationCombinationConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             return await RequestAdapter.SendAsync<AuthenticationCombinationConfiguration>(requestInfo, AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             return requestInfo;
         }
         /// <summary>
-        /// Create a new authenticationCombinationConfiguration object which can be of one of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration
+        /// Create new navigation property to combinationConfigurations for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Comb
             return new CombinationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the authenticationCombinationConfiguration objects for an authentication strength policy. The objects can be of one or more of the following derived types:* fido2combinationConfigurations* x509certificatecombinationconfiguration authenticationCombinationConfiguration objects are supported only for custom authentication strengths.
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         public class CombinationConfigurationsRequestBuilderGetQueryParameters 
         {

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage {
         {
         }
         /// <summary>
-        /// Invoke function getAttackSimulationTrainingUserCoverage
+        /// List training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAttackSimulationTrainingUserCoverageGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage {
             return await RequestAdapter.SendAsync<GetAttackSimulationTrainingUserCoverageGetResponse>(requestInfo, GetAttackSimulationTrainingUserCoverageGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAttackSimulationTrainingUserCoverage
+        /// List training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getattacksimulationtrainingusercoverage?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAttackSimulationTrainingUserCoverageResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage {
             return await RequestAdapter.SendAsync<GetAttackSimulationTrainingUserCoverageResponse>(requestInfo, GetAttackSimulationTrainingUserCoverageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAttackSimulationTrainingUserCoverage
+        /// List training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage {
             return new GetAttackSimulationTrainingUserCoverageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAttackSimulationTrainingUserCoverage
+        /// List training coverage for each user of a tenant in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
         /// </summary>
         public class GetAttackSimulationTrainingUserCoverageRequestBuilderGetQueryParameters 
         {

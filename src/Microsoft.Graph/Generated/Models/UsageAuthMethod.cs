@@ -2,29 +2,53 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum UsageAuthMethod
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "email")]
+        #pragma warning disable CS1591
         Email,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mobileSMS")]
+        #pragma warning disable CS1591
         MobileSMS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mobileCall")]
+        #pragma warning disable CS1591
         MobileCall,
+        #pragma warning restore CS1591
         [EnumMember(Value = "officePhone")]
+        #pragma warning disable CS1591
         OfficePhone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "securityQuestion")]
+        #pragma warning disable CS1591
         SecurityQuestion,
+        #pragma warning restore CS1591
         [EnumMember(Value = "appNotification")]
+        #pragma warning disable CS1591
         AppNotification,
+        #pragma warning restore CS1591
         [EnumMember(Value = "appCode")]
+        #pragma warning disable CS1591
         AppCode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alternateMobileCall")]
+        #pragma warning disable CS1591
         AlternateMobileCall,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fido")]
+        #pragma warning disable CS1591
         Fido,
+        #pragma warning restore CS1591
         [EnumMember(Value = "appPassword")]
+        #pragma warning disable CS1591
         AppPassword,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

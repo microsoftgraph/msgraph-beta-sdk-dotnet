@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Drive : BaseItem, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The list of recent activities that took place under this drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -21,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activities", value); }
         }
 #endif
-        /// <summary>Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
+        /// <summary>Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<DriveItem>? Bundles {

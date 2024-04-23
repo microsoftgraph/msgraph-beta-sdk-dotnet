@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.SendReminder {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-sendreminder?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

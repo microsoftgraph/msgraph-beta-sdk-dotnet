@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
         {
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-subscriptions?view=graph-rest-1.0" />
+        /// List of commercial subscriptions that an organization has.
         /// </summary>
         /// <returns>A <see cref="CompanySubscriptionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
             return await RequestAdapter.SendAsync<CompanySubscription>(requestInfo, CompanySubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired.
+        /// List of commercial subscriptions that an organization has.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Subscriptions {
             return new SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of commercial subscriptions that an organization has acquired.
+        /// List of commercial subscriptions that an organization has.
         /// </summary>
         public class SubscriptionsRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         {
         }
         /// <summary>
-        /// List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+        /// A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
         /// </summary>
         /// <returns>A <see cref="HardwareConfigurationAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
             return await RequestAdapter.SendAsync<HardwareConfigurationAssignment>(requestInfo, HardwareConfigurationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+        /// A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
             return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+        /// A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters 
         {

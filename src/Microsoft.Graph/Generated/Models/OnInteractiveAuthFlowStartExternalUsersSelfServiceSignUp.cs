@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp : OnInteractiveAuthFlowStartHandler, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.</summary>
         public bool? IsSignUpAllowed {

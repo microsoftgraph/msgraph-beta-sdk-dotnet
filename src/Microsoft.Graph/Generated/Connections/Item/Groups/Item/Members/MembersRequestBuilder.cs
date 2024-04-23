@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members {
             return await RequestAdapter.SendAsync<IdentityCollectionResponse>(requestInfo, IdentityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new externalGroupMember object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroup-post-members?view=graph-rest-1.0" />
+        /// Create new navigation property to members for connections
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.Identity"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new externalGroupMember object.
+        /// Create new navigation property to members for connections
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

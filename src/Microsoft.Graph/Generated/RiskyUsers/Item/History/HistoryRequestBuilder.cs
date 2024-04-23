@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
         {
         }
         /// <summary>
-        /// Get the risk history of a riskyUser resource.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-list-history?view=graph-rest-1.0" />
+        /// Get history from riskyUsers
         /// </summary>
         /// <returns>A <see cref="RiskyUserHistoryItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
             return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the risk history of a riskyUser resource.
+        /// Get history from riskyUsers
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
             return new HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the risk history of a riskyUser resource.
+        /// Get history from riskyUsers
         /// </summary>
         public class HistoryRequestBuilderGetQueryParameters 
         {

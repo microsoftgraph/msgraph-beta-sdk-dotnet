@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
         }
         /// <summary>
-        /// Invoke function entitiesSummaries
+        /// Get the number of users, devices, and workloads per traffic type in a specified time period.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function entitiesSummaries
+        /// Get the number of users, devices, and workloads per traffic type in a specified time period.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-reports-entitiessummaries?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EntitiesSummariesWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<EntitiesSummariesWithStartDateTimeWithEndDateTimeResponse>(requestInfo, EntitiesSummariesWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function entitiesSummaries
+        /// Get the number of users, devices, and workloads per traffic type in a specified time period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return new MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function entitiesSummaries
+        /// Get the number of users, devices, and workloads per traffic type in a specified time period.
         /// </summary>
         public class MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 
         {

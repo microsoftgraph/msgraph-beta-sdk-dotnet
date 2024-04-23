@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
         }
         /// <summary>
         /// Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Microsoft Entra ID, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-uploadsecret?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TrustFrameworkKey"/></returns>
         /// <param name="body">The request body</param>

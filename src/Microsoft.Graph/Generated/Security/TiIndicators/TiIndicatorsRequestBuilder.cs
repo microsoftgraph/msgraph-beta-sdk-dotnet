@@ -75,8 +75,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         {
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicators-list?view=graph-rest-1.0" />
+        /// Get tiIndicators from security
         /// </summary>
         /// <returns>A <see cref="TiIndicatorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,8 +98,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicatorCollectionResponse>(requestInfo, TiIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new tiIndicator object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicators-post?view=graph-rest-1.0" />
+        /// Create new navigation property to tiIndicators for security
         /// </summary>
         /// <returns>A <see cref="TiIndicator"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects.
+        /// Get tiIndicators from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +142,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new tiIndicator object.
+        /// Create new navigation property to tiIndicators for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -175,7 +173,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return new TiIndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of tiIndicator objects.
+        /// Get tiIndicators from security
         /// </summary>
         public class TiIndicatorsRequestBuilderGetQueryParameters 
         {

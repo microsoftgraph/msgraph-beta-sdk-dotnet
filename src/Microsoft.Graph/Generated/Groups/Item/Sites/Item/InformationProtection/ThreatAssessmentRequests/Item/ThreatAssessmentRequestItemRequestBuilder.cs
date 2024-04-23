@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Thre
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/threatassessmentrequest-get?view=graph-rest-1.0" />
+        /// Get threatAssessmentRequests from groups
         /// </summary>
         /// <returns>A <see cref="ThreatAssessmentRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Thre
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
+        /// Get threatAssessmentRequests from groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Thre
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a specified threatAssessmentRequest object. A threat assessment request can be one of the following types:
+        /// Get threatAssessmentRequests from groups
         /// </summary>
         public class ThreatAssessmentRequestItemRequestBuilderGetQueryParameters 
         {

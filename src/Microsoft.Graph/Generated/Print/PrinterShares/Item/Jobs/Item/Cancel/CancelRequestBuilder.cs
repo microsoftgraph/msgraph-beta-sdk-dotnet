@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Cancel {
         }
         /// <summary>
         /// Cancel a print job. Print jobs can be canceled only on behalf of a user, using delegated permissions.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-cancel?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPe
         {
         }
         /// <summary>
-        /// Invoke function retrieveScopedPermissions
+        /// Get the permissions and corresponding scope IDs for which the authenticated user has access.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RetrieveScopedPermissionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPe
             return await RequestAdapter.SendAsync<RetrieveScopedPermissionsGetResponse>(requestInfo, RetrieveScopedPermissionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveScopedPermissions
+        /// Get the permissions and corresponding scope IDs for which the authenticated user has access.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-retrievescopedpermissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RetrieveScopedPermissionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPe
             return await RequestAdapter.SendAsync<RetrieveScopedPermissionsResponse>(requestInfo, RetrieveScopedPermissionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function retrieveScopedPermissions
+        /// Get the permissions and corresponding scope IDs for which the authenticated user has access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPe
             return new RetrieveScopedPermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function retrieveScopedPermissions
+        /// Get the permissions and corresponding scope IDs for which the authenticated user has access.
         /// </summary>
         public class RetrieveScopedPermissionsRequestBuilderGetQueryParameters 
         {

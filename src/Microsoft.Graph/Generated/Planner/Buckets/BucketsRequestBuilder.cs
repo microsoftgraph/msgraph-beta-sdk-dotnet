@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
         {
         }
         /// <summary>
-        /// Retrieve a list of plannerbucket objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-list-buckets?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified buckets
         /// </summary>
         /// <returns>A <see cref="PlannerBucketCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return await RequestAdapter.SendAsync<PlannerBucketCollectionResponse>(requestInfo, PlannerBucketCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new plannerBucket object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-buckets?view=graph-rest-1.0" />
+        /// Create new navigation property to buckets for planner
         /// </summary>
         /// <returns>A <see cref="PlannerBucket"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannerbucket objects.
+        /// Read-only. Nullable. Returns a collection of the specified buckets
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerBucket object.
+        /// Create new navigation property to buckets for planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return new BucketsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannerbucket objects.
+        /// Read-only. Nullable. Returns a collection of the specified buckets
         /// </summary>
         public class BucketsRequestBuilderGetQueryParameters 
         {

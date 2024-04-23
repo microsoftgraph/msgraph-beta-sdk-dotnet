@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Permission : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A format of yyyy-MM-ddTHH:mm:ssZ of DateTimeOffset indicates the expiration time of the permission. DateTime.MinValue indicates there&apos;s no expiration set for this permission. Optional.</summary>
         public DateTimeOffset? ExpirationDateTime {
@@ -129,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roles", value); }
         }
 #endif
-        /// <summary>A unique token that can be used to access this shared item via the [shares API][]. Read-only.</summary>
+        /// <summary>A unique token that can be used to access this shared item via the shares API. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShareId {

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Programs {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, list all the program objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProgramCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Programs {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, create a new program object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-create?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-create?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Program"/></returns>
         /// <param name="body">The request body</param>

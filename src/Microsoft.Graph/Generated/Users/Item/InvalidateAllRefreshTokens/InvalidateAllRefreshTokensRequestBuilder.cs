@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens {
         }
         /// <summary>
         /// Invalidates all of the user&apos;s refresh tokens issued to applications (as well as session cookies in a user&apos;s browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InvalidateAllRefreshTokensPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvalidateAllRefreshTokens {
         }
         /// <summary>
         /// Invalidates all of the user&apos;s refresh tokens issued to applications (as well as session cookies in a user&apos;s browser), by resetting the refreshTokensValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device.  This operation would prevent access to any of the organization&apos;s data accessed through applications on the device without the user first being required to sign in again. In fact, this operation would force the user to sign in again for all applications that they have previously consented to, independent of device. For developers, if the application attempts to redeem a delegated access token for this user by using an invalidated refresh token, the application will get an error. If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint, which will force the user to sign in.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-invalidateallrefreshtokens?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InvalidateAllRefreshTokensResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

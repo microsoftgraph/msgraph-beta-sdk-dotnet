@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CheckMemberGroups {
         }
         /// <summary>
         /// Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CheckMemberGroupsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CheckMemberGroups {
         }
         /// <summary>
         /// Check for membership in a specified list of group IDs, and return from that list those groups (identified by IDs) of which the specified user, group, service principal, organizational contact, device, or directory object is a member. This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CheckMemberGroupsResponse"/></returns>
         /// <param name="body">The request body</param>

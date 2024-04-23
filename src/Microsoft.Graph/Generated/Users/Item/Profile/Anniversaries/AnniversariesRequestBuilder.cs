@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Anniversaries {
         {
         }
         /// <summary>
-        /// Retrieve a list of personAnniversary objects for the given user from their profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-anniversaries?view=graph-rest-1.0" />
+        /// Represents the details of meaningful dates associated with a person.
         /// </summary>
         /// <returns>A <see cref="PersonAnnualEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Anniversaries {
             return await RequestAdapter.SendAsync<PersonAnnualEventCollectionResponse>(requestInfo, PersonAnnualEventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new personAnniversary object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-anniversaries?view=graph-rest-1.0" />
+        /// Create new navigation property to anniversaries for users
         /// </summary>
         /// <returns>A <see cref="PersonAnnualEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Anniversaries {
             return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, PersonAnnualEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of personAnniversary objects for the given user from their profile.
+        /// Represents the details of meaningful dates associated with a person.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Anniversaries {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new personAnniversary object in a user&apos;s profile.
+        /// Create new navigation property to anniversaries for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Anniversaries {
             return new AnniversariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of personAnniversary objects for the given user from their profile.
+        /// Represents the details of meaningful dates associated with a person.
         /// </summary>
         public class AnniversariesRequestBuilderGetQueryParameters 
         {

@@ -50,8 +50,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
         {
         }
         /// <summary>
-        /// Delete an agreement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-delete?view=graph-rest-1.0" />
+        /// Delete navigation property agreements for identityGovernance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -73,8 +72,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0" />
+        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="Agreement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -97,8 +95,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an agreement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-update?view=graph-rest-1.0" />
+        /// Update the navigation property agreements in identityGovernance
         /// </summary>
         /// <returns>A <see cref="Agreement"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return await RequestAdapter.SendAsync<Agreement>(requestInfo, Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an agreement object.
+        /// Delete navigation property agreements for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an agreement object.
+        /// Update the navigation property agreements in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
         {
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Microsoft Entra ID.
         /// </summary>
         public class AgreementItemRequestBuilderGetQueryParameters 
         {

@@ -68,8 +68,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
         {
         }
         /// <summary>
-        /// Delete a plannerPlan object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-delete?view=graph-rest-1.0" />
+        /// Delete navigation property plans for planner
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,8 +90,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerplan object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified plans
         /// </summary>
         /// <returns>A <see cref="PlannerPlan"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,8 +113,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a plannerPlan object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-update?view=graph-rest-1.0" />
+        /// Update the navigation property plans in planner
         /// </summary>
         /// <returns>A <see cref="PlannerPlan"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +138,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerPlan object.
+        /// Delete navigation property plans for planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +157,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerplan object.
+        /// Read-only. Nullable. Returns a collection of the specified plans
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +176,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a plannerPlan object.
+        /// Update the navigation property plans in planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -217,7 +214,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerplan object.
+        /// Read-only. Nullable. Returns a collection of the specified plans
         /// </summary>
         public class PlannerPlanItemRequestBuilderGetQueryParameters 
         {

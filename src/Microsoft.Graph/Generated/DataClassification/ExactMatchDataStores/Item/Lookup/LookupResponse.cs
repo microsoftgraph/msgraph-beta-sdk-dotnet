@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup {
     [Obsolete("This class is obsolete. Use LookupPostResponse instead.")]
+    #pragma warning disable CS1591
     public class LookupResponse : LookupPostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

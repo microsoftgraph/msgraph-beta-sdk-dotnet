@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum TeamworkDeviceActivityState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "busy")]
+        #pragma warning disable CS1591
         Busy,
+        #pragma warning restore CS1591
         [EnumMember(Value = "idle")]
+        #pragma warning disable CS1591
         Idle,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unavailable")]
+        #pragma warning disable CS1591
         Unavailable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

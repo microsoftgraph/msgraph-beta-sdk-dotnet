@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect {
         }
         /// <summary>
         /// Redirect an incoming call that wasn&apos;t answered or rejected yet. The terms &apos;redirecting&apos; and &apos;forwarding&apos; a call are used interchangeably. The bot is expected to redirect the call before the call times out. The current timeout value is 15 seconds.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-redirect?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

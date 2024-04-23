@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class HealthIssue : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Contains additional information about the issue, such as a list of items to fix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

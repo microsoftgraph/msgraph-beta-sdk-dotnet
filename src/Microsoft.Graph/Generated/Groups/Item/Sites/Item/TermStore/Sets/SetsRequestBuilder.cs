@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store.
         /// </summary>
         /// <returns>A <see cref="SetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets {
             return new SetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a set object.
+        /// Collection of all sets available in the term store.
         /// </summary>
         public class SetsRequestBuilderGetQueryParameters 
         {

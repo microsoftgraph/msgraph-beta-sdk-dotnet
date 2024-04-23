@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdevicehealth-get?view=graph-rest-1.0" />
+        /// The health properties of the device.
         /// </summary>
         /// <returns>A <see cref="TeamworkDeviceHealth"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             return requestInfo;
         }
         /// <summary>
-        /// Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
+        /// The health properties of the device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
         {
         }
         /// <summary>
-        /// Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
+        /// The health properties of the device.
         /// </summary>
         public class HealthRequestBuilderGetQueryParameters 
         {

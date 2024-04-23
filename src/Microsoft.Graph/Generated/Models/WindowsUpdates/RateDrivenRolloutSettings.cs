@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public class RateDrivenRolloutSettings : GradualRolloutSettings, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies the number of devices that are offered at the same time. When not set, all devices in the deployment are offered content at the same time.</summary>
         public int? DevicesPerOffer {

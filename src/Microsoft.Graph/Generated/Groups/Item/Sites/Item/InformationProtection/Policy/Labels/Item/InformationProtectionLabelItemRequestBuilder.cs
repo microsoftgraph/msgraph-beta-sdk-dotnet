@@ -55,8 +55,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Poli
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an informationProtectionLabel object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionlabel-get?view=graph-rest-1.0" />
+        /// Get labels from groups
         /// </summary>
         /// <returns>A <see cref="InformationProtectionLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +125,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Poli
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an informationProtectionLabel object.
+        /// Get labels from groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +185,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Poli
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an informationProtectionLabel object.
+        /// Get labels from groups
         /// </summary>
         public class InformationProtectionLabelItemRequestBuilderGetQueryParameters 
         {

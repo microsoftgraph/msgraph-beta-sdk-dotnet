@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public class ConditionalAccessPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates the date and time the conditional access policy was created.</summary>
         public DateTimeOffset? CreatedDateTime {

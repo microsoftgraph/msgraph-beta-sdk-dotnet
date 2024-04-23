@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class CredentialUserRegistrationCount : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Provides the count of users with accountEnabled set to true in the tenant.</summary>
         public long? TotalUserCount {

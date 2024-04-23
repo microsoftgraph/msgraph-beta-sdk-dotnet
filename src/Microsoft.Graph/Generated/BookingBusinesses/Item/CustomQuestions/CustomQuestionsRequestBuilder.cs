@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
         {
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list-customquestions?view=graph-rest-1.0" />
+        /// All custom questions of this business.
         /// </summary>
         /// <returns>A <see cref="BookingCustomQuestionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             return await RequestAdapter.SendAsync<BookingCustomQuestionCollectionResponse>(requestInfo, BookingCustomQuestionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new bookingCustomQuestion object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-post-customquestions?view=graph-rest-1.0" />
+        /// Create new navigation property to customQuestions for bookingBusinesses
         /// </summary>
         /// <returns>A <see cref="BookingCustomQuestion"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             return await RequestAdapter.SendAsync<BookingCustomQuestion>(requestInfo, BookingCustomQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
+        /// All custom questions of this business.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new bookingCustomQuestion object.
+        /// Create new navigation property to customQuestions for bookingBusinesses
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.CustomQuestions {
             return new CustomQuestionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the bookingCustomQuestion resources associated with a bookingBusiness.
+        /// All custom questions of this business.
         /// </summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters 
         {

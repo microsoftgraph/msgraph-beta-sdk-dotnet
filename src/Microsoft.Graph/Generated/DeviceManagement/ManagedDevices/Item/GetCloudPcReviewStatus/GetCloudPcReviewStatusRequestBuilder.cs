@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRe
         {
         }
         /// <summary>
-        /// Invoke function getCloudPcReviewStatus
+        /// Get the review status of a specific Cloud PC device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-getcloudpcreviewstatus?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcReviewStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRe
             return await RequestAdapter.SendAsync<CloudPcReviewStatus>(requestInfo, CloudPcReviewStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCloudPcReviewStatus
+        /// Get the review status of a specific Cloud PC device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

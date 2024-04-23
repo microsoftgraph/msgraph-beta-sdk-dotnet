@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
         {
         }
         /// <summary>
-        /// Deletes an itemPatent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-1.0" />
+        /// Delete navigation property patents for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an itemPatent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-get?view=graph-rest-1.0" />
+        /// Represents patents that a user has added to their profile.
         /// </summary>
         /// <returns>A <see cref="ItemPatent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an itemPatent object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-1.0" />
+        /// Update the navigation property patents in me
         /// </summary>
         /// <returns>A <see cref="ItemPatent"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an itemPatent object.
+        /// Delete navigation property patents for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an itemPatent object.
+        /// Represents patents that a user has added to their profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an itemPatent object.
+        /// Update the navigation property patents in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an itemPatent object.
+        /// Represents patents that a user has added to their profile.
         /// </summary>
         public class ItemPatentItemRequestBuilderGetQueryParameters 
         {

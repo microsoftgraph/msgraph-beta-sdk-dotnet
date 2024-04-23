@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Delta {
         }
         /// <summary>
         /// Get a set of mail folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls,you can query for incremental changes in the mail folders. This allows you to maintain and synchronizea local store of a user&apos;s mail folders without having to fetch all the mail folders of that mailbox from the server every time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Delta {
         }
         /// <summary>
         /// Get a set of mail folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for mail folders in a mailbox is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls,you can query for incremental changes in the mail folders. This allows you to maintain and synchronizea local store of a user&apos;s mail folders without having to fetch all the mail folders of that mailbox from the server every time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-delta?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

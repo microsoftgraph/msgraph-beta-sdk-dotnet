@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders {
         }
         /// <summary>
         /// The collection of child folders in the mailFolder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="MailFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders {
             return await RequestAdapter.SendAsync<MailFolderCollectionResponse>(requestInfo, MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0" />
+        /// Create new navigation property to childFolders for users
         /// </summary>
         /// <returns>A <see cref="MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.ChildFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
+        /// Create new navigation property to childFolders for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

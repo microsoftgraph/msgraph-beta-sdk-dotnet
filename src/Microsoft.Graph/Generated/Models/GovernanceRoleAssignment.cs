@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class GovernanceRoleAssignment : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The state of the assignment. The value can be Eligible for eligible assignment or Active if it&apos;s directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/regionalandlanguagesettings-get?view=graph-rest-1.0" />
+        /// The user&apos;s preferences for languages, regional locale and date/time formatting.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(requestInfo, Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update some or all of the properties of a regionalAndLanguageSettings object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/regionalandlanguagesettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property regionalAndLanguageSettings in users
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
+        /// The user&apos;s preferences for languages, regional locale and date/time formatting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update some or all of the properties of a regionalAndLanguageSettings object.
+        /// Update the navigation property regionalAndLanguageSettings in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.RegionalAndLanguageSettings {
         {
         }
         /// <summary>
-        /// Retrieve the properties of a user&apos;s regionalAndLanguageSettings.
+        /// The user&apos;s preferences for languages, regional locale and date/time formatting.
         /// </summary>
         public class RegionalAndLanguageSettingsRequestBuilderGetQueryParameters 
         {

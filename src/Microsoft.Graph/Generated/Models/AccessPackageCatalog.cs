@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AccessPackageCatalog : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

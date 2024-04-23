@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
         {
         }
         /// <summary>
-        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+        /// Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         /// <returns>A <see cref="DriveItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+        /// Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Bundles {
             return new BundlesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.
+        /// Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.
         /// </summary>
         public class BundlesRequestBuilderGetQueryParameters 
         {

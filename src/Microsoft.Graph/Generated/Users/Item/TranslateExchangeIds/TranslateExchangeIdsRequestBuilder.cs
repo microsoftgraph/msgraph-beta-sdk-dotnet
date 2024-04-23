@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TranslateExchangeIdsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TranslateExchangeIdsResponse"/></returns>
         /// <param name="body">The request body</param>

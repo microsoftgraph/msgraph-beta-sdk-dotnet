@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GetByIds {
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetByIdsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GetByIds {
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Some common uses for this function are to:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetByIdsResponse"/></returns>
         /// <param name="body">The request body</param>

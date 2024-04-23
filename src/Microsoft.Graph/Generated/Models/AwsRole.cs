@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AwsRole : AwsIdentity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The roleType property</summary>
         public AwsRoleType? RoleType {

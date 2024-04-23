@@ -3,23 +3,41 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum ProtocolType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "oAuth2")]
+        #pragma warning disable CS1591
         OAuth2 = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ropc")]
+        #pragma warning disable CS1591
         Ropc = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "wsFederation")]
+        #pragma warning disable CS1591
         WsFederation = 8,
+        #pragma warning restore CS1591
         [EnumMember(Value = "saml20")]
+        #pragma warning disable CS1591
         Saml20 = 16,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deviceCode")]
+        #pragma warning disable CS1591
         DeviceCode = 32,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 64,
+        #pragma warning restore CS1591
         [EnumMember(Value = "authenticationTransfer")]
+        #pragma warning disable CS1591
         AuthenticationTransfer = 128,
+        #pragma warning restore CS1591
     }
 }

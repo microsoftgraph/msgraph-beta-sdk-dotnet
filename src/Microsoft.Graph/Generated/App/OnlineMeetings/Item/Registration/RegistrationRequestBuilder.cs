@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         {
         }
         /// <summary>
-        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0" />
+        /// Delete navigation property registration for app
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0" />
+        /// The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
         /// </summary>
         /// <returns>A <see cref="MeetingRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0" />
+        /// Update the navigation property registration in app
         /// </summary>
         /// <returns>A <see cref="MeetingRegistration"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Delete navigation property registration for app
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+        /// Update the navigation property registration in app
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         {
         }
         /// <summary>
-        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// The registration that is enabled for an online meeting. One online meeting can only have one registration enabled.
         /// </summary>
         public class RegistrationRequestBuilderGetQueryParameters 
         {

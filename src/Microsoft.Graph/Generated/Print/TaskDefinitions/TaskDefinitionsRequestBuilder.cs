@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions {
         {
         }
         /// <summary>
-        /// Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-taskdefinitions?view=graph-rest-1.0" />
+        /// Get taskDefinitions from print
         /// </summary>
         /// <returns>A <see cref="PrintTaskDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions {
             return await RequestAdapter.SendAsync<PrintTaskDefinitionCollectionResponse>(requestInfo, PrintTaskDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-post-taskdefinitions?view=graph-rest-1.0" />
+        /// Create new navigation property to taskDefinitions for print
         /// </summary>
         /// <returns>A <see cref="PrintTaskDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions {
             return await RequestAdapter.SendAsync<PrintTaskDefinition>(requestInfo, PrintTaskDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// Get taskDefinitions from print
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new task definition. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// Create new navigation property to taskDefinitions for print
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions {
             return new TaskDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of task definitions that the requesting app defined in the tenant. For details about how to use this API to add pull printing support to Universal Print, see Extending Universal Print to support pull printing.
+        /// Get taskDefinitions from print
         /// </summary>
         public class TaskDefinitionsRequestBuilderGetQueryParameters 
         {

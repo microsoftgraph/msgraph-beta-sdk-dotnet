@@ -6,12 +6,20 @@ namespace Microsoft.Graph.Beta.Models {
     public enum AndroidManagedStoreAccountBindStatus
     {
         [EnumMember(Value = "notBound")]
+        #pragma warning disable CS1591
         NotBound,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bound")]
+        #pragma warning disable CS1591
         Bound,
+        #pragma warning restore CS1591
         [EnumMember(Value = "boundAndValidated")]
+        #pragma warning disable CS1591
         BoundAndValidated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unbinding")]
+        #pragma warning disable CS1591
         Unbinding,
+        #pragma warning restore CS1591
     }
 }

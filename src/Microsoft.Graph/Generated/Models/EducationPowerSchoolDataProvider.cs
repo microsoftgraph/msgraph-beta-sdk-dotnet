@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the source has multiple identifiers for a single student or teacher.</summary>
         public bool? AllowTeachersInMultipleSchools {

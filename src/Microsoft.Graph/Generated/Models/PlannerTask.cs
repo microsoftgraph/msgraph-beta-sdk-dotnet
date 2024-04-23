@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PlannerTask : PlannerDelta, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The number of checklist items with value set to false, representing incomplete items.</summary>
         public int? ActiveChecklistItemCount {

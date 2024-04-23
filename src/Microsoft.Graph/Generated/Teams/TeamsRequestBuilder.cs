@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Teams {
         }
         /// <summary>
         /// List all teams in an organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teams-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teams-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TeamCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Teams {
         }
         /// <summary>
         /// Create a new team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Team"/></returns>
         /// <param name="body">The request body</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class MultiTenantOrganizationMember : DirectoryObject, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Tenant ID of the tenant that added the tenant to the multitenant organization. Read-only.</summary>
         public Guid? AddedByTenantId {

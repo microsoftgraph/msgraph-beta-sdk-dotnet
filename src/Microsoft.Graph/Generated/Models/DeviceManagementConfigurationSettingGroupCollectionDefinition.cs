@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class DeviceManagementConfigurationSettingGroupCollectionDefinition : DeviceManagementConfigurationSettingGroupDefinition, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Maximum number of setting group count in the collection</summary>
         public int? MaximumCount {

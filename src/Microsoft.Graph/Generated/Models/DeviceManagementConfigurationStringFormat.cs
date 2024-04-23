@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum DeviceManagementConfigurationStringFormat
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates a string with no well-defined format expected.</summary>
         [EnumMember(Value = "none")]
@@ -35,7 +37,9 @@ namespace Microsoft.Graph.Beta.Models {
         [EnumMember(Value = "time")]
         Time,
         [EnumMember(Value = "binary")]
+        #pragma warning disable CS1591
         Binary,
+        #pragma warning restore CS1591
         /// <summary>Indicates a string that is expected to be a valid Regex string.</summary>
         [EnumMember(Value = "regEx")]
         RegEx,

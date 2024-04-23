@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class AnalyzedEmail : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A collection of values that contain the IDs of any alerts associated with the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Default
         {
         }
         /// <summary>
-        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userflowlanguageconfiguration-list-defaultpages?view=graph-rest-1.0" />
+        /// Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.
         /// </summary>
         /// <returns>A <see cref="UserFlowLanguagePageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Default
             return await RequestAdapter.SendAsync<UserFlowLanguagePage>(requestInfo, UserFlowLanguagePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
+        /// Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item.Default
             return new DefaultPagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the userFlowLanguagePage resources from the defaultPages navigation property. These contain the values shown to the user in a default user journey of a user flow.
+        /// Collection of pages with the default content to display in a user flow for a specified language. This collection doesn&apos;t allow any kind of modification.
         /// </summary>
         public class DefaultPagesRequestBuilderGetQueryParameters 
         {

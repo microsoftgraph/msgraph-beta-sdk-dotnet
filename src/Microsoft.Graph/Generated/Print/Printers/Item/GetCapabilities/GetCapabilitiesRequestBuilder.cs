@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities {
         {
         }
         /// <summary>
-        /// Invoke function getCapabilities
+        /// Get a list of capabilities for the printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-getcapabilities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrinterCapabilities"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.GetCapabilities {
             return await RequestAdapter.SendAsync<PrinterCapabilities>(requestInfo, PrinterCapabilities.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCapabilities
+        /// Get a list of capabilities for the printer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

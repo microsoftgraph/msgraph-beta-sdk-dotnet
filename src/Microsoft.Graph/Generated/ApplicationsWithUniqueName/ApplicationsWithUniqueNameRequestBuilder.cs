@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.ApplicationsWithUniqueName {
         }
         /// <summary>
         /// Deletes an application. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.ApplicationsWithUniqueName {
         }
         /// <summary>
         /// Get the properties and relationships of an application object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Application"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.ApplicationsWithUniqueName {
         }
         /// <summary>
         /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Application"/></returns>
         /// <param name="body">The request body</param>

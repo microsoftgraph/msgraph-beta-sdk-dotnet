@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class B2cAuthenticationMethodsPolicy : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The tenant admin can configure local accounts using email if the email and password authentication method is enabled.</summary>
         public bool? IsEmailPasswordAuthenticationEnabled {

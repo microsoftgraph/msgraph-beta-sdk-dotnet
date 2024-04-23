@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Copy {
         }
         /// <summary>
         /// Copy a mail folder and its contents to another mail folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MailFolder"/></returns>
         /// <param name="body">The request body</param>

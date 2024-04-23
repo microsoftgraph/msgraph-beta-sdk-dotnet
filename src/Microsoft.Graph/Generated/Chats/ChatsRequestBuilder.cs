@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Chats {
         }
         /// <summary>
         /// Retrieve the list of chats that the user is part of. This method supports federation. When a user ID is provided, the calling application must belong to the same tenant that the user belongs to.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ChatCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Chats {
         }
         /// <summary>
         /// Create a new chat object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Chat"/></returns>
         /// <param name="body">The request body</param>

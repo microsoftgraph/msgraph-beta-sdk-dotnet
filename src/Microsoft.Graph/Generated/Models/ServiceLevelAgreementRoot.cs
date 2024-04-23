@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ServiceLevelAgreementRoot : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

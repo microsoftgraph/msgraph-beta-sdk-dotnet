@@ -2,39 +2,73 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PersonRelationship
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "manager")]
+        #pragma warning disable CS1591
         Manager,
+        #pragma warning restore CS1591
         [EnumMember(Value = "colleague")]
+        #pragma warning disable CS1591
         Colleague,
+        #pragma warning restore CS1591
         [EnumMember(Value = "directReport")]
+        #pragma warning disable CS1591
         DirectReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dotLineReport")]
+        #pragma warning disable CS1591
         DotLineReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "assistant")]
+        #pragma warning disable CS1591
         Assistant,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dotLineManager")]
+        #pragma warning disable CS1591
         DotLineManager,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alternateContact")]
+        #pragma warning disable CS1591
         AlternateContact,
+        #pragma warning restore CS1591
         [EnumMember(Value = "friend")]
+        #pragma warning disable CS1591
         Friend,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spouse")]
+        #pragma warning disable CS1591
         Spouse,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sibling")]
+        #pragma warning disable CS1591
         Sibling,
+        #pragma warning restore CS1591
         [EnumMember(Value = "child")]
+        #pragma warning disable CS1591
         Child,
+        #pragma warning restore CS1591
         [EnumMember(Value = "parent")]
+        #pragma warning disable CS1591
         Parent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sponsor")]
+        #pragma warning disable CS1591
         Sponsor,
+        #pragma warning restore CS1591
         [EnumMember(Value = "emergencyContact")]
+        #pragma warning disable CS1591
         EmergencyContact,
+        #pragma warning restore CS1591
         [EnumMember(Value = "other")]
+        #pragma warning disable CS1591
         Other,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

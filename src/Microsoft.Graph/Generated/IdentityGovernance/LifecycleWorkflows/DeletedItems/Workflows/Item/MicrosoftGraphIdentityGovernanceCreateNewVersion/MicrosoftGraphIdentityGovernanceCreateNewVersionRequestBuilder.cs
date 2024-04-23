@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
         }
         /// <summary>
         /// Create a new version of the workflow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Workflow"/></returns>
         /// <param name="body">The request body</param>

@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Item.Attachmen
         }
         /// <summary>
         /// The zip file of all attachments for a message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceannouncement-list-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

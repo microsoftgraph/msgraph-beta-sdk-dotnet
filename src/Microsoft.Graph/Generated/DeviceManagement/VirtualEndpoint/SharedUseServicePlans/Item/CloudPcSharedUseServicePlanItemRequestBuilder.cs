@@ -55,8 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcSharedUseServicePlan object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcshareduseserviceplan-get?view=graph-rest-1.0" />
+        /// Get sharedUseServicePlans from deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcSharedUseServicePlan"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +125,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcSharedUseServicePlan object.
+        /// Get sharedUseServicePlans from deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +185,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseService
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a cloudPcSharedUseServicePlan object.
+        /// Get sharedUseServicePlans from deviceManagement
         /// </summary>
         public class CloudPcSharedUseServicePlanItemRequestBuilderGetQueryParameters 
         {

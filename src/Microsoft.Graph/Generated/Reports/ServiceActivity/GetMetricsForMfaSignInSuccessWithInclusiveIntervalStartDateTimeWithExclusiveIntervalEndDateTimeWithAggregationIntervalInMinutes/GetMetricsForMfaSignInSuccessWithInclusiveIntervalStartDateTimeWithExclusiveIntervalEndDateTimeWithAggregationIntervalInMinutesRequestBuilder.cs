@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuc
         {
         }
         /// <summary>
-        /// Invoke function getMetricsForMfaSignInSuccess
+        /// Get the number of times users successfully completed interactive MFA sign-ins using the Microsoft Entra MFA cloud service during a specified time period.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getmetricsformfasigninsuccess?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuc
             return await RequestAdapter.SendAsync<GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesGetResponse>(requestInfo, GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getMetricsForMfaSignInSuccess
+        /// Get the number of times users successfully completed interactive MFA sign-ins using the Microsoft Entra MFA cloud service during a specified time period.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceactivity-getmetricsformfasigninsuccess?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuc
             return await RequestAdapter.SendAsync<GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesResponse>(requestInfo, GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getMetricsForMfaSignInSuccess
+        /// Get the number of times users successfully completed interactive MFA sign-ins using the Microsoft Entra MFA cloud service during a specified time period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.Reports.ServiceActivity.GetMetricsForMfaSignInSuc
             return new GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getMetricsForMfaSignInSuccess
+        /// Get the number of times users successfully completed interactive MFA sign-ins using the Microsoft Entra MFA cloud service during a specified time period.
         /// </summary>
         public class GetMetricsForMfaSignInSuccessWithInclusiveIntervalStartDateTimeWithExclusiveIntervalEndDateTimeWithAggregationIntervalInMinutesRequestBuilderGetQueryParameters 
         {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
+    #pragma warning disable CS1591
     public class ReferenceDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The code value for the definition that must be unique within the referenceType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

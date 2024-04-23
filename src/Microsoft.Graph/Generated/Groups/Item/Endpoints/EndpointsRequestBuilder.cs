@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
         {
         }
         /// <summary>
-        /// Retrieve a list of endpoint objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-endpoints?view=graph-rest-1.0" />
+        /// Endpoints for the group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="EndpointCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
             return await RequestAdapter.SendAsync<Endpoint>(requestInfo, Endpoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of endpoint objects.
+        /// Endpoints for the group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Endpoints {
             return new EndpointsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of endpoint objects.
+        /// Endpoints for the group. Read-only. Nullable.
         /// </summary>
         public class EndpointsRequestBuilderGetQueryParameters 
         {

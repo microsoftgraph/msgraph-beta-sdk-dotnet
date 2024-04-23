@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
         {
         }
         /// <summary>
-        /// Get a list of the credentialUserRegistrationsSummary objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-credentialuserregistrationssummaries?view=graph-rest-1.0" />
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         /// <returns>A <see cref="CredentialUserRegistrationsSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             return await RequestAdapter.SendAsync<CredentialUserRegistrationsSummary>(requestInfo, CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the credentialUserRegistrationsSummary objects and their properties.
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             return new CredentialUserRegistrationsSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the credentialUserRegistrationsSummary objects and their properties.
+        /// Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.
         /// </summary>
         public class CredentialUserRegistrationsSummariesRequestBuilderGetQueryParameters 
         {

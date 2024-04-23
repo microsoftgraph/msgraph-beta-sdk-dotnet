@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Add {
         }
         /// <summary>
         /// Add a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you want to activate the newly added worksheet, call &apos;.activate() on it.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetcollection-add?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetcollection-add?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkbookWorksheet"/></returns>
         /// <param name="body">The request body</param>

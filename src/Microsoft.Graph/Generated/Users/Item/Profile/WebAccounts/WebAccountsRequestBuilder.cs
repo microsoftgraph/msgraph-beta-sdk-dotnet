@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts {
         {
         }
         /// <summary>
-        /// Retrieve a list of webAccounts objects from the user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-1.0" />
+        /// Represents web accounts the user has indicated they use or has added to their user profile.
         /// </summary>
         /// <returns>A <see cref="WebAccountCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts {
             return await RequestAdapter.SendAsync<WebAccountCollectionResponse>(requestInfo, WebAccountCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new webAccount object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-1.0" />
+        /// Create new navigation property to webAccounts for users
         /// </summary>
         /// <returns>A <see cref="WebAccount"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts {
             return await RequestAdapter.SendAsync<WebAccount>(requestInfo, WebAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of webAccounts objects from the user&apos;s profile.
+        /// Represents web accounts the user has indicated they use or has added to their user profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new webAccount object in a user&apos;s profile.
+        /// Create new navigation property to webAccounts for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.WebAccounts {
             return new WebAccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of webAccounts objects from the user&apos;s profile.
+        /// Represents web accounts the user has indicated they use or has added to their user profile.
         /// </summary>
         public class WebAccountsRequestBuilderGetQueryParameters 
         {

@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class EducationalActivity : ItemFacet, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The month and year the user graduated or completed the activity.</summary>
         public Date? CompletionMonthYear {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public class FilteringPolicyLink : PolicyLink, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date and time when the filtering Policy link was created.</summary>
         public DateTimeOffset? CreatedDateTime {

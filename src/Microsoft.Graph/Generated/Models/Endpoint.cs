@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Endpoint : DirectoryObject, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

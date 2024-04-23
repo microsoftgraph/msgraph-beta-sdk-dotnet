@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.CreateOrGet {
         }
         /// <summary>
         /// Create an onlineMeeting object with a custom specified external ID. If the external ID already exists, this API will return the onlineMeeting object with that external ID. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-createorget?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OnlineMeeting"/></returns>
         /// <param name="body">The request body</param>

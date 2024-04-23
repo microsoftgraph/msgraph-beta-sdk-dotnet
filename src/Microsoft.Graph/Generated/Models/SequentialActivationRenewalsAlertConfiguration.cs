@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class SequentialActivationRenewalsAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.</summary>
         public int? SequentialActivationCounterThreshold {

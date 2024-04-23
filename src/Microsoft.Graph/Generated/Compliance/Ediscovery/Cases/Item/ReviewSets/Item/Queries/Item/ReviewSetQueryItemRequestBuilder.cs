@@ -39,8 +39,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         {
         }
         /// <summary>
-        /// Delete a reviewSetQuery object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-delete?view=graph-rest-1.0" />
+        /// Delete navigation property queries for compliance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +62,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-get?view=graph-rest-1.0" />
+        /// Get queries from compliance
         /// </summary>
         /// <returns>A <see cref="ReviewSetQuery"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,8 +86,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return await RequestAdapter.SendAsync<ReviewSetQuery>(requestInfo, ReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an eDiscovery reviewSetQuery.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-update?view=graph-rest-1.0" />
+        /// Update the navigation property queries in compliance
         /// </summary>
         /// <returns>A <see cref="ReviewSetQuery"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +112,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return await RequestAdapter.SendAsync<ReviewSetQuery>(requestInfo, ReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a reviewSetQuery object.
+        /// Delete navigation property queries for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +132,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
+        /// Get queries from compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an eDiscovery reviewSetQuery.
+        /// Update the navigation property queries in compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -195,7 +192,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an eDiscovery reviewSetQuery object.
+        /// Get queries from compliance
         /// </summary>
         public class ReviewSetQueryItemRequestBuilderGetQueryParameters 
         {

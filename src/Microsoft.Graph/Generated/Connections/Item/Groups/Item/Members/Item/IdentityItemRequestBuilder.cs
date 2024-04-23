@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members.Item {
         {
         }
         /// <summary>
-        /// Delete an externalGroupMember object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalgroupmember-delete?view=graph-rest-1.0" />
+        /// Delete navigation property members for connections
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Identity>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Identity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an externalGroupMember object.
+        /// Delete navigation property members for connections
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

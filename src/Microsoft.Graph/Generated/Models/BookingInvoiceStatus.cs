@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum BookingInvoiceStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "draft")]
+        #pragma warning disable CS1591
         Draft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "reviewing")]
+        #pragma warning disable CS1591
         Reviewing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "open")]
+        #pragma warning disable CS1591
         Open,
+        #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
+        #pragma warning disable CS1591
         Canceled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "paid")]
+        #pragma warning disable CS1591
         Paid,
+        #pragma warning restore CS1591
         [EnumMember(Value = "corrective")]
+        #pragma warning disable CS1591
         Corrective,
+        #pragma warning restore CS1591
     }
 }

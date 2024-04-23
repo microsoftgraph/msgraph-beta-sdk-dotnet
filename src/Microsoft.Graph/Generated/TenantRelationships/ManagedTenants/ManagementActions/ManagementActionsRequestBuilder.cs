@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         {
         }
         /// <summary>
-        /// Get a list of the managementAction objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactions?view=graph-rest-1.0" />
+        /// The collection of baseline management actions across managed tenants.
         /// </summary>
         /// <returns>A <see cref="ManagementActionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return await RequestAdapter.SendAsync<ManagementAction>(requestInfo, ManagementAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the managementAction objects and their properties.
+        /// The collection of baseline management actions across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return new ManagementActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the managementAction objects and their properties.
+        /// The collection of baseline management actions across managed tenants.
         /// </summary>
         public class ManagementActionsRequestBuilderGetQueryParameters 
         {

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum MeetingRegistrantStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "registered")]
+        #pragma warning disable CS1591
         Registered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
+        #pragma warning disable CS1591
         Canceled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "processing")]
+        #pragma warning disable CS1591
         Processing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

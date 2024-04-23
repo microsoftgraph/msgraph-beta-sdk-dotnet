@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         {
         }
         /// <summary>
-        /// Retrieve a list of eDiscovery reviewSetQuery objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-list?view=graph-rest-1.0" />
+        /// Get queries from compliance
         /// </summary>
         /// <returns>A <see cref="ReviewSetQueryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return await RequestAdapter.SendAsync<ReviewSetQueryCollectionResponse>(requestInfo, ReviewSetQueryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new reviewSetQuery object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-reviewsetquery-post?view=graph-rest-1.0" />
+        /// Create new navigation property to queries for compliance
         /// </summary>
         /// <returns>A <see cref="ReviewSetQuery"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return await RequestAdapter.SendAsync<ReviewSetQuery>(requestInfo, ReviewSetQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of eDiscovery reviewSetQuery objects.
+        /// Get queries from compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Create a new reviewSetQuery object.
+        /// Create new navigation property to queries for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             return new QueriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of eDiscovery reviewSetQuery objects.
+        /// Get queries from compliance
         /// </summary>
         public class QueriesRequestBuilderGetQueryParameters 
         {

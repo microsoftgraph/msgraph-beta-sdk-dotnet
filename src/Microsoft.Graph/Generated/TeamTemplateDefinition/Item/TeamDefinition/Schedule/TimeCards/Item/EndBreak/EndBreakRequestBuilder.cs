@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         }
         /// <summary>
         /// End the open break in a specific timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-endbreak?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-endbreak?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeCard"/></returns>
         /// <param name="body">The request body</param>

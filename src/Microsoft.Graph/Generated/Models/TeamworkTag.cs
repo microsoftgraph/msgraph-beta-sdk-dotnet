@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class TeamworkTag : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Tag description as it appears to the user in Microsoft Teams. A teamworkTag can&apos;t have more than 200 teamworkTagMembers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

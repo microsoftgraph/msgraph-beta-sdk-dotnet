@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Restore {
         }
         /// <summary>
         /// Restore a driveItem that has been deleted and is currently in the recycle bin.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="body">The request body</param>

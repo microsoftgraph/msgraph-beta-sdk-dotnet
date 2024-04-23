@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class UnifiedRoleDefinition : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).</summary>
         public AllowedRolePrincipalTypes? AllowedPrincipalTypes {

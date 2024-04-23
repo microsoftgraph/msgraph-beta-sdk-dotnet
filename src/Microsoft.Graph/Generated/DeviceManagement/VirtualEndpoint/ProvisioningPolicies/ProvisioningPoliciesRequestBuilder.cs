@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
         }
         /// <summary>
-        /// List properties and relationships of the cloudPcProvisioningPolicy objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-provisioningpolicies?view=graph-rest-1.0" />
+        /// Cloud PC provisioning policy.
         /// </summary>
         /// <returns>A <see cref="CloudPcProvisioningPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +84,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicyCollectionResponse>(requestInfo, CloudPcProvisioningPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcProvisioningPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-provisioningpolicies?view=graph-rest-1.0" />
+        /// Create new navigation property to provisioningPolicies for deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcProvisioningPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +110,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return await RequestAdapter.SendAsync<CloudPcProvisioningPolicy>(requestInfo, CloudPcProvisioningPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the cloudPcProvisioningPolicy objects.
+        /// Cloud PC provisioning policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcProvisioningPolicy object.
+        /// Create new navigation property to provisioningPolicies for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -165,7 +163,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             return new ProvisioningPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the cloudPcProvisioningPolicy objects.
+        /// Cloud PC provisioning policy.
         /// </summary>
         public class ProvisioningPoliciesRequestBuilderGetQueryParameters 
         {

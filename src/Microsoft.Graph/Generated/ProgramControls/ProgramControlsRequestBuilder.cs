@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, list all the programControl objects, across all programs in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProgramControlCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.ProgramControls {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, create a new programControl object.  This links an access review to a program. Prior to making this request, the caller must have previously
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/programcontrol-create?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProgramControl"/></returns>
         /// <param name="body">The request body</param>

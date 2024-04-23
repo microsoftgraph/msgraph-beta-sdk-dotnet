@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors {
         {
         }
         /// <summary>
-        /// Retrieve a list of connector objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connector-list?view=graph-rest-1.0" />
+        /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors {
             return await RequestAdapter.SendAsync<Connector>(requestInfo, Connector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of connector objects.
+        /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors {
             return new ConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of connector objects.
+        /// List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         public class ConnectorsRequestBuilderGetQueryParameters 
         {

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Deactivat
         }
         /// <summary>
         /// Mark an assigned educationAssignment as inactive to signal that the assignment has no further action items for teachers and students. This action can only be performed by a teacher on assigned assignments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-deactivate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

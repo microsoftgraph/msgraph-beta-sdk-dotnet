@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookWorksheetProtection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetprotection-get?view=graph-rest-1.0" />
+        /// Returns sheet protection object for a worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="WorkbookWorksheetProtection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +133,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookWorksheetProtection object.
+        /// Returns sheet protection object for a worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.P
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of workbookWorksheetProtection object.
+        /// Returns sheet protection object for a worksheet. Read-only.
         /// </summary>
         public class ProtectionRequestBuilderGetQueryParameters 
         {

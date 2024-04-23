@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a collection of riskyUser objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RiskyUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

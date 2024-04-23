@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.GetPasswordSingleSignOnCre
         }
         /// <summary>
         /// Get a list of single sign-on credentials using a password for a user or group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-getpasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PasswordSingleSignOnCredentialSet"/></returns>
         /// <param name="body">The request body</param>

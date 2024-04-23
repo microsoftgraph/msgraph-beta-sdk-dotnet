@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class TeamsAppDefinition : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A collection of scopes where the Teams app can be installed. Possible values are:team—Indicates that the Teams app can be installed within a team and is authorized to access that team&apos;s data. groupChat—Indicates that the Teams app can be installed within a group chat and is authorized to access that group chat&apos;s data. personal—Indicates that the Teams app can be installed in the personal scope of a user and is authorized to access that user&apos;s data.</summary>
         public TeamsAppInstallationScopes? AllowedInstallationScopes {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public class DateDrivenRolloutSettings : GradualRolloutSettings, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime isn&apos;t set, all devices in the deployment are offered content at the same time.</summary>
         public DateTimeOffset? EndDateTime {

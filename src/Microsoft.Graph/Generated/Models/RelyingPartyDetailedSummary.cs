@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class RelyingPartyDetailedSummary : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
         public long? FailedSignInCount {

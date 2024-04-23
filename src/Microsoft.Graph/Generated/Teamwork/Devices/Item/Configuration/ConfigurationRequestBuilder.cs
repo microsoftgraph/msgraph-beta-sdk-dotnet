@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdeviceconfiguration-get?view=graph-rest-1.0" />
+        /// The configuration properties of the device.
         /// </summary>
         /// <returns>A <see cref="TeamworkDeviceConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
             return requestInfo;
         }
         /// <summary>
-        /// Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+        /// The configuration properties of the device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Configuration {
         {
         }
         /// <summary>
-        /// Get the configuration details of a Microsoft Teams-enabled device, including software versions, peripheral device configuration (for example, camera, display, microphone, and speaker), hardware configuration, and Microsoft Teams client configuration.
+        /// The configuration properties of the device.
         /// </summary>
         public class ConfigurationRequestBuilderGetQueryParameters 
         {

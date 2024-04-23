@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
         {
         }
         /// <summary>
-        /// Invoke function findByMethodMode
+        /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FindByMethodModeWithAuthenticationMethodModesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
             return await RequestAdapter.SendAsync<FindByMethodModeWithAuthenticationMethodModesGetResponse>(requestInfo, FindByMethodModeWithAuthenticationMethodModesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function findByMethodMode
+        /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FindByMethodModeWithAuthenticationMethodModesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
             return await RequestAdapter.SendAsync<FindByMethodModeWithAuthenticationMethodModesResponse>(requestInfo, FindByMethodModeWithAuthenticationMethodModesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function findByMethodMode
+        /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
             return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function findByMethodMode
+        /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
         /// </summary>
         public class FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters 
         {

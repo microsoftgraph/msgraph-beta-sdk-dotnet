@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Items.Item.CreateLink {
         }
         /// <summary>
         /// Create a sharing link for a listItem. The createLink action creates a new sharing link if the specified link type doesn&apos;t already exist for the calling application.If a sharing link of the specified type already exists for the app, this action returns the existing sharing link. listItem resources inherit sharing permissions from the list the item resides in.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-createlink?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>

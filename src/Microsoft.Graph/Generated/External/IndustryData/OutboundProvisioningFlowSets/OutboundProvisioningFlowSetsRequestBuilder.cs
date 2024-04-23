@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
         {
         }
         /// <summary>
-        /// Get a list of the outboundProvisioningFlowSet objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataroot-list-outboundprovisioningflowsets?view=graph-rest-1.0" />
+        /// Get outboundProvisioningFlowSets from external
         /// </summary>
         /// <returns>A <see cref="OutboundProvisioningFlowSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return await RequestAdapter.SendAsync<OutboundProvisioningFlowSet>(requestInfo, OutboundProvisioningFlowSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the outboundProvisioningFlowSet objects and their properties.
+        /// Get outboundProvisioningFlowSets from external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return new OutboundProvisioningFlowSetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the outboundProvisioningFlowSet objects and their properties.
+        /// Get outboundProvisioningFlowSets from external
         /// </summary>
         public class OutboundProvisioningFlowSetsRequestBuilderGetQueryParameters 
         {

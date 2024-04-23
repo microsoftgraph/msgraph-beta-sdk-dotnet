@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class CloudPcExportJob : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The date and time when the export job expires.</summary>
         public DateTimeOffset? ExpirationDateTime {

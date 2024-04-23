@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         {
         }
         /// <summary>
-        /// Removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete-devicelinks?view=graph-rest-1.0" />
+        /// Delete navigation property deviceLinks for networkAccess
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,8 +79,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the device link associated with a specific branch or remote network.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-devicelink-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceLinks in networkAccess
         /// </summary>
         /// <returns>A <see cref="DeviceLink"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes the link between the branch or remote network and the CPE device, effectively removing the connection and associated configuration between them.
+        /// Delete navigation property deviceLinks for networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +145,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return requestInfo;
         }
         /// <summary>
-        /// Update the device link associated with a specific branch or remote network.
+        /// Update the navigation property deviceLinks in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

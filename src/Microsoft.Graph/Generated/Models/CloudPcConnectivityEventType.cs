@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcConnectivityEventType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "userConnection")]
+        #pragma warning disable CS1591
         UserConnection,
+        #pragma warning restore CS1591
         [EnumMember(Value = "userTroubleshooting")]
+        #pragma warning disable CS1591
         UserTroubleshooting,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deviceHealthCheck")]
+        #pragma warning disable CS1591
         DeviceHealthCheck,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

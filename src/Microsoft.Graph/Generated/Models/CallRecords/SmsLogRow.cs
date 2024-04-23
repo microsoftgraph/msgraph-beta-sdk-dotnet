@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
+    #pragma warning disable CS1591
     public class SmsLogRow : CallLogRow, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Amount of money or cost of the SMS that is charged.</summary>
         public decimal? CallCharge {

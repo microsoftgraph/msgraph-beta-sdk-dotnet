@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.Storage.Quota.Services {
         {
         }
         /// <summary>
-        /// Get a list of serviceStorageQuotaBreakdown objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedstoragequota-list-services?view=graph-rest-1.0" />
+        /// The breakdown of services contributing to the user&apos;s quota usage.
         /// </summary>
         /// <returns>A <see cref="ServiceStorageQuotaBreakdownCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.Storage.Quota.Services {
             return await RequestAdapter.SendAsync<ServiceStorageQuotaBreakdown>(requestInfo, ServiceStorageQuotaBreakdown.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of serviceStorageQuotaBreakdown objects and their properties.
+        /// The breakdown of services contributing to the user&apos;s quota usage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.Storage.Quota.Services {
             return new ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of serviceStorageQuotaBreakdown objects and their properties.
+        /// The breakdown of services contributing to the user&apos;s quota usage.
         /// </summary>
         public class ServicesRequestBuilderGetQueryParameters 
         {

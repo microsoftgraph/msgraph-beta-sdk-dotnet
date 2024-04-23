@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum SiteAccessType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "block")]
+        #pragma warning disable CS1591
         Block,
+        #pragma warning restore CS1591
         [EnumMember(Value = "full")]
+        #pragma warning disable CS1591
         Full,
+        #pragma warning restore CS1591
         [EnumMember(Value = "limited")]
+        #pragma warning disable CS1591
         Limited,
+        #pragma warning restore CS1591
     }
 }

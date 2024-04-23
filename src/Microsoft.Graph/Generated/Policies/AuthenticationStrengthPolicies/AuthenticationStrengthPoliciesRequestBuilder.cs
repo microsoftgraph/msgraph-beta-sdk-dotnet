@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
-        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-list-policies?view=graph-rest-1.0" />
+        /// The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
         /// </summary>
         /// <returns>A <see cref="AuthenticationStrengthPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,8 +86,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicyCollectionResponse>(requestInfo, AuthenticationStrengthPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new custom authenticationStrengthPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthroot-post-policies?view=graph-rest-1.0" />
+        /// Create new navigation property to authenticationStrengthPolicies for policies
         /// </summary>
         /// <returns>A <see cref="AuthenticationStrengthPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -113,7 +111,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return await RequestAdapter.SendAsync<AuthenticationStrengthPolicy>(requestInfo, AuthenticationStrengthPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new custom authenticationStrengthPolicy object.
+        /// Create new navigation property to authenticationStrengthPolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +161,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
             return new AuthenticationStrengthPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.
         /// </summary>
         public class AuthenticationStrengthPoliciesRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
         {
         }
         /// <summary>
-        /// Get a list of the complianceChange objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-list-compliancechanges?view=graph-rest-1.0" />
+        /// Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
         /// </summary>
         /// <returns>A <see cref="ComplianceChangeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return await RequestAdapter.SendAsync<ComplianceChangeCollectionResponse>(requestInfo, ComplianceChangeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new contentApproval object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-post-compliancechanges-contentapproval?view=graph-rest-1.0" />
+        /// Create new navigation property to complianceChanges for admin
         /// </summary>
         /// <returns>A <see cref="ComplianceChange"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return await RequestAdapter.SendAsync<ComplianceChange>(requestInfo, ComplianceChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the complianceChange objects and their properties.
+        /// Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return requestInfo;
         }
         /// <summary>
-        /// Create a new contentApproval object.
+        /// Create new navigation property to complianceChanges for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return new ComplianceChangesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the complianceChange objects and their properties.
+        /// Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.
         /// </summary>
         public class ComplianceChangesRequestBuilderGetQueryParameters 
         {

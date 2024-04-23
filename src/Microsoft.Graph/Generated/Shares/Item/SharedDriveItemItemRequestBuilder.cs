@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shares-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/shares-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SharedDriveItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

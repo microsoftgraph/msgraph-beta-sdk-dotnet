@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class MeetingRegistrationQuestion : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Answer input type of the custom registration question.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {

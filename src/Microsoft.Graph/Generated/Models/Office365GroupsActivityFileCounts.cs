@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Office365GroupsActivityFileCounts : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The number of files that were viewed, edited, shared, or synced in the group&apos;s SharePoint document library.</summary>
         public long? Active {

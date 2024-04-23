@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PlannerTaskPropertyRule : PlannerPropertyRule, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Rules and restrictions for applied categories. This value doesn&apos;t currently support overrides. Accepted values for the default rule and individual overrides are allow, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

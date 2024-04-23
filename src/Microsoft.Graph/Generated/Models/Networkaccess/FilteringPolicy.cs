@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public class FilteringPolicy : Policy, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
         public FilteringPolicyAction? Action {

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
         {
         }
         /// <summary>
-        /// Delete a classGroupProvisioningFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-classgroupprovisioningflow-delete?view=graph-rest-1.0" />
+        /// Delete navigation property provisioningFlows for external
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an administrativeUnitProvisioningFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-administrativeunitprovisioningflow-get?view=graph-rest-1.0" />
+        /// A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
         /// </summary>
         /// <returns>A <see cref="ProvisioningFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return await RequestAdapter.SendAsync<ProvisioningFlow>(requestInfo, ProvisioningFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an administrativeUnitProvisioningFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-administrativeunitprovisioningflow-update?view=graph-rest-1.0" />
+        /// Update the navigation property provisioningFlows in external
         /// </summary>
         /// <returns>A <see cref="ProvisioningFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return await RequestAdapter.SendAsync<ProvisioningFlow>(requestInfo, ProvisioningFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a classGroupProvisioningFlow object.
+        /// Delete navigation property provisioningFlows for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an administrativeUnitProvisioningFlow object.
+        /// A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an administrativeUnitProvisioningFlow object.
+        /// Update the navigation property provisioningFlows in external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an administrativeUnitProvisioningFlow object.
+        /// A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
         /// </summary>
         public class ProvisioningFlowItemRequestBuilderGetQueryParameters 
         {

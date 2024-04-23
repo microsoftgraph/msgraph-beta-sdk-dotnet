@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Contracts {
         }
         /// <summary>
         /// Retrieve a list of contract objects associated to a partner tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contract-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contract-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ContractCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item.UploadClientCertifica
         }
         /// <summary>
         /// Upload a PKCS 12 format key (.pfx) to an API connector&apos;s authentication configuration. The input is a base-64 encoded value of the PKCS 12 certificate contents. This method returns an apiConnector.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityapiconnector-uploadclientcertificate?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityApiConnector"/></returns>
         /// <param name="body">The request body</param>

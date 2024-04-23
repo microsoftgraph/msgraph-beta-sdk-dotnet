@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum UserNewMessageRestriction
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "everyone")]
+        #pragma warning disable CS1591
         Everyone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "everyoneExceptGuests")]
+        #pragma warning disable CS1591
         EveryoneExceptGuests,
+        #pragma warning restore CS1591
         [EnumMember(Value = "moderators")]
+        #pragma warning disable CS1591
         Moderators,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum TeamworkDeviceHealthStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "offline")]
+        #pragma warning disable CS1591
         Offline,
+        #pragma warning restore CS1591
         [EnumMember(Value = "critical")]
+        #pragma warning disable CS1591
         Critical,
+        #pragma warning restore CS1591
         [EnumMember(Value = "nonUrgent")]
+        #pragma warning disable CS1591
         NonUrgent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "healthy")]
+        #pragma warning disable CS1591
         Healthy,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

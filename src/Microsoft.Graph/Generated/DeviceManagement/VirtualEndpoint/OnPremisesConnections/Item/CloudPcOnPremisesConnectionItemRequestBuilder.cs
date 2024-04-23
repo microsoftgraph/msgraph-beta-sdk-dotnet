@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         {
         }
         /// <summary>
-        /// Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You can&apos;t delete an Azure network connection when it&apos;s in use, as indicated by the inUse property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-delete?view=graph-rest-1.0" />
+        /// Delete navigation property onPremisesConnections for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOnPremisesConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-get?view=graph-rest-1.0" />
+        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
         /// </summary>
         /// <returns>A <see cref="CloudPcOnPremisesConnection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a cloudPcOnPremisesConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpconpremisesconnection-update?view=graph-rest-1.0" />
+        /// Update the navigation property onPremisesConnections in deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcOnPremisesConnection"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return await RequestAdapter.SendAsync<CloudPcOnPremisesConnection>(requestInfo, CloudPcOnPremisesConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific cloudPcOnPremisesConnection object. When you delete an Azure network connection, permissions to the service are removed from the specified Azure resources. You can&apos;t delete an Azure network connection when it&apos;s in use, as indicated by the inUse property.
+        /// Delete navigation property onPremisesConnections for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOnPremisesConnection object.
+        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a cloudPcOnPremisesConnection object.
+        /// Update the navigation property onPremisesConnections in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         {
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOnPremisesConnection object.
+        /// A defined collection of Azure resource information that can be used to establish on-premises network connectivity for Cloud PCs.
         /// </summary>
         public class CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters 
         {

@@ -56,8 +56,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
         {
         }
         /// <summary>
-        /// Get the list of callRecord objects and their properties. The results can be optionally filtered using the $filter query parameter on the startDateTime and participant id properties. Note that the listed call records don&apos;t include expandable relationships such as sessions and participants_v2. You can expand these relationships using Get callRecord for a specific record.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-cloudcommunications-list-callrecords?view=graph-rest-1.0" />
+        /// Get callRecords from communications
         /// </summary>
         /// <returns>A <see cref="CallRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -165,7 +164,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
             return await RequestAdapter.SendAsync<CallRecord>(requestInfo, CallRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of callRecord objects and their properties. The results can be optionally filtered using the $filter query parameter on the startDateTime and participant id properties. Note that the listed call records don&apos;t include expandable relationships such as sessions and participants_v2. You can expand these relationships using Get callRecord for a specific record.
+        /// Get callRecords from communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -215,7 +214,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords {
             return new CallRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of callRecord objects and their properties. The results can be optionally filtered using the $filter query parameter on the startDateTime and participant id properties. Note that the listed call records don&apos;t include expandable relationships such as sessions and participants_v2. You can expand these relationships using Get callRecord for a specific record.
+        /// Get callRecords from communications
         /// </summary>
         public class CallRecordsRequestBuilderGetQueryParameters 
         {

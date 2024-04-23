@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PermissionsDefinitionIdentityType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "user")]
+        #pragma warning disable CS1591
         User,
+        #pragma warning restore CS1591
         [EnumMember(Value = "role")]
+        #pragma warning disable CS1591
         Role,
+        #pragma warning restore CS1591
         [EnumMember(Value = "application")]
+        #pragma warning disable CS1591
         Application,
+        #pragma warning restore CS1591
         [EnumMember(Value = "managedIdentity")]
+        #pragma warning disable CS1591
         ManagedIdentity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "serviceAccount")]
+        #pragma warning disable CS1591
         ServiceAccount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

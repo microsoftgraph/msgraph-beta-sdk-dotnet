@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Domains {
         }
         /// <summary>
         /// Retrieve a list of domain objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DomainCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Domains {
         }
         /// <summary>
         /// Adds a domain to the tenant. Important: You cannot use an associated domain with your Microsoft Entra tenant until ownership is verified. See List verificationDnsRecords for details. Root domains require verification. For example, contoso.com requires verification. If a root domain is verified, subdomains of the root domain are automatically verified. For example, subdomain.contoso.com is automatically be verified if contoso.com has been verified.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-post-domains?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-post-domains?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Domain"/></returns>
         /// <param name="body">The request body</param>

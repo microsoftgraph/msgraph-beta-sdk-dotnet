@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum DiamondModel
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "adversary")]
+        #pragma warning disable CS1591
         Adversary,
+        #pragma warning restore CS1591
         [EnumMember(Value = "capability")]
+        #pragma warning disable CS1591
         Capability,
+        #pragma warning restore CS1591
         [EnumMember(Value = "infrastructure")]
+        #pragma warning disable CS1591
         Infrastructure,
+        #pragma warning restore CS1591
         [EnumMember(Value = "victim")]
+        #pragma warning disable CS1591
         Victim,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

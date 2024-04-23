@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public class TenantDetailedInformation : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

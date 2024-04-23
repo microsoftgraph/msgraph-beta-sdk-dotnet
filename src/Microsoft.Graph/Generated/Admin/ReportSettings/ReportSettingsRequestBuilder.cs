@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the tenant-level settings for Microsoft 365 reports.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminreportsettings-get?view=graph-rest-1.0" />
+        /// A container for administrative resources to manage reports.
         /// </summary>
         /// <returns>A <see cref="AdminReportSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
             return await RequestAdapter.SendAsync<AdminReportSettings>(requestInfo, AdminReportSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update tenant-level settings for Microsoft 365 reports.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminreportsettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property reportSettings in admin
         /// </summary>
         /// <returns>A <see cref="AdminReportSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Get the tenant-level settings for Microsoft 365 reports.
+        /// A container for administrative resources to manage reports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update tenant-level settings for Microsoft 365 reports.
+        /// Update the navigation property reportSettings in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Admin.ReportSettings {
         {
         }
         /// <summary>
-        /// Get the tenant-level settings for Microsoft 365 reports.
+        /// A container for administrative resources to manage reports.
         /// </summary>
         public class ReportSettingsRequestBuilderGetQueryParameters 
         {

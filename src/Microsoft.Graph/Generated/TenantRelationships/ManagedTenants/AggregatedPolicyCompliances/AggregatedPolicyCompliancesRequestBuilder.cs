@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
         {
         }
         /// <summary>
-        /// Get a list of the aggregatedPolicyCompliance objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-aggregatedpolicycompliances?view=graph-rest-1.0" />
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         /// <returns>A <see cref="AggregatedPolicyComplianceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             return await RequestAdapter.SendAsync<AggregatedPolicyCompliance>(requestInfo, AggregatedPolicyCompliance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the aggregatedPolicyCompliance objects and their properties.
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.AggregatedPoli
             return new AggregatedPolicyCompliancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the aggregatedPolicyCompliance objects and their properties.
+        /// Aggregate view of device compliance policies across managed tenants.
         /// </summary>
         public class AggregatedPolicyCompliancesRequestBuilderGetQueryParameters 
         {

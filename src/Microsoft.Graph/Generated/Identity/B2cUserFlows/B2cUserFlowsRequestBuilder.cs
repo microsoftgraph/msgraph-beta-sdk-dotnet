@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
         {
         }
         /// <summary>
-        /// Retrieve a list of b2cIdentityUserFlow objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-list-b2cuserflows?view=graph-rest-1.0" />
+        /// Represents entry point for B2C identity userflows.
         /// </summary>
         /// <returns>A <see cref="B2cIdentityUserFlowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlowCollectionResponse>(requestInfo, B2cIdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new b2cIdentityUserFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitycontainer-post-b2cuserflows?view=graph-rest-1.0" />
+        /// Create new navigation property to b2cUserFlows for identity
         /// </summary>
         /// <returns>A <see cref="B2cIdentityUserFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of b2cIdentityUserFlow objects.
+        /// Represents entry point for B2C identity userflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new b2cIdentityUserFlow object.
+        /// Create new navigation property to b2cUserFlows for identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows {
             return new B2cUserFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of b2cIdentityUserFlow objects.
+        /// Represents entry point for B2C identity userflows.
         /// </summary>
         public class B2cUserFlowsRequestBuilderGetQueryParameters 
         {

@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         {
         }
         /// <summary>
-        /// Delete a school data synchronization profile in the tenant based on the identifier.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-delete?view=graph-rest-1.0" />
+        /// Delete navigation property synchronizationProfiles for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,8 +96,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a school data synchronization profile in the tenant based on the identifier.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-get?view=graph-rest-1.0" />
+        /// Get synchronizationProfiles from education
         /// </summary>
         /// <returns>A <see cref="EducationSynchronizationProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -146,7 +144,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, EducationSynchronizationProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a school data synchronization profile in the tenant based on the identifier.
+        /// Delete navigation property synchronizationProfiles for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +163,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a school data synchronization profile in the tenant based on the identifier.
+        /// Get synchronizationProfiles from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -222,7 +220,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         {
         }
         /// <summary>
-        /// Retrieve a school data synchronization profile in the tenant based on the identifier.
+        /// Get synchronizationProfiles from education
         /// </summary>
         public class EducationSynchronizationProfileItemRequestBuilderGetQueryParameters 
         {

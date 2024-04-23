@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.Permissi
         {
         }
         /// <summary>
-        /// List the permissionsRequestChange objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissionsmanagement-list-permissionsrequestchanges?view=graph-rest-1.0" />
+        /// Represents a change event of the scheduledPermissionsRequest entity.
         /// </summary>
         /// <returns>A <see cref="PermissionsRequestChangeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.Permissi
             return await RequestAdapter.SendAsync<PermissionsRequestChange>(requestInfo, PermissionsRequestChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the permissionsRequestChange objects and their properties.
+        /// Represents a change event of the scheduledPermissionsRequest entity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.Permissi
             return new PermissionsRequestChangesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the permissionsRequestChange objects and their properties.
+        /// Represents a change event of the scheduledPermissionsRequest entity.
         /// </summary>
         public class PermissionsRequestChangesRequestBuilderGetQueryParameters 
         {

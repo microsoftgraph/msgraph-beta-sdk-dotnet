@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
         {
         }
         /// <summary>
-        /// Get a list of signIn objects. The list contains the user sign-ins for your Microsoft Entra tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Microsoft Entra ID default retention period are available.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/signin-list?view=graph-rest-1.0" />
+        /// Get signIns from auditLogs
         /// </summary>
         /// <returns>A <see cref="SignInCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
             return await RequestAdapter.SendAsync<SignIn>(requestInfo, SignIn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of signIn objects. The list contains the user sign-ins for your Microsoft Entra tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Microsoft Entra ID default retention period are available.
+        /// Get signIns from auditLogs
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +161,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
             return new SignInsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of signIn objects. The list contains the user sign-ins for your Microsoft Entra tenant. Sign-ins where a username and password are passed as part of authorization token, and successful federated sign-ins are currently included in the sign-in logs. The maximum and default page size is 1,000 objects and by default, the most recent sign-ins are returned first. Only sign-in events that occurred within the Microsoft Entra ID default retention period are available.
+        /// Get signIns from auditLogs
         /// </summary>
         public class SignInsRequestBuilderGetQueryParameters 
         {

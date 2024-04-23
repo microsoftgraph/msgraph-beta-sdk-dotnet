@@ -2,23 +2,41 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum SetupStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notRegisteredYet")]
+        #pragma warning disable CS1591
         NotRegisteredYet,
+        #pragma warning restore CS1591
         [EnumMember(Value = "registeredSetupNotStarted")]
+        #pragma warning disable CS1591
         RegisteredSetupNotStarted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "registeredSetupInProgress")]
+        #pragma warning disable CS1591
         RegisteredSetupInProgress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "registrationAndSetupCompleted")]
+        #pragma warning disable CS1591
         RegistrationAndSetupCompleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "registrationFailed")]
+        #pragma warning disable CS1591
         RegistrationFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "registrationTimedOut")]
+        #pragma warning disable CS1591
         RegistrationTimedOut,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled")]
+        #pragma warning disable CS1591
         Disabled,
+        #pragma warning restore CS1591
     }
 }

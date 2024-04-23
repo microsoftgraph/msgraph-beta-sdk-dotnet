@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item.Unpublish {
         }
         /// <summary>
         /// Make the scheduling page of this business not available to external customers. Set the isPublished property to false, and publicUrl property to null.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-unpublish?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

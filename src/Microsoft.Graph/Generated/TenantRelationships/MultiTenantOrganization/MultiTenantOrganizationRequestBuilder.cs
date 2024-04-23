@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         {
         }
         /// <summary>
-        /// Get properties of the multitenant organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
+        /// Defines an organization with more than one instance of Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MultiTenantOrganization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,8 +67,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0" />
+        /// Update the navigation property multiTenantOrganization in tenantRelationships
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MultiTenantOrganization"/></returns>
         /// <param name="body">The request body</param>
@@ -78,15 +76,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization?> PatchAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization?> PutAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization> PatchAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MultiTenantOrganization> PutAsync(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 {"XXX", ODataError.CreateFromDiscriminatorValue},
@@ -94,7 +92,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Beta.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get properties of the multitenant organization.
+        /// Defines an organization with more than one instance of Microsoft Entra ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,22 +111,22 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new multi-tenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multi-tenant organization. To allow for asynchronous processing, you must wait a minimum of 2 hours between creation and joining a multi-tenant organization.
+        /// Update the navigation property multiTenantOrganization in tenantRelationships
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(Microsoft.Graph.Beta.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -144,7 +142,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
             return new MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get properties of the multitenant organization.
+        /// Defines an organization with more than one instance of Microsoft Entra ID.
         /// </summary>
         public class MultiTenantOrganizationRequestBuilderGetQueryParameters 
         {
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MultiTenantOrganizationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class MultiTenantOrganizationRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
         {
         }
     }

@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts {
         {
         }
         /// <summary>
-        /// Invoke function getShifts
+        /// Get all shift objects across all teams to which a user is a direct member.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetShiftsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts {
             return await RequestAdapter.SendAsync<GetShiftsGetResponse>(requestInfo, GetShiftsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getShifts
+        /// Get all shift objects across all teams to which a user is a direct member.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetShiftsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts {
             return await RequestAdapter.SendAsync<GetShiftsResponse>(requestInfo, GetShiftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getShifts
+        /// Get all shift objects across all teams to which a user is a direct member.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts {
             return new GetShiftsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getShifts
+        /// Get all shift objects across all teams to which a user is a direct member.
         /// </summary>
         public class GetShiftsRequestBuilderGetQueryParameters 
         {

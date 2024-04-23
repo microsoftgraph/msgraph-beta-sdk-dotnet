@@ -31,8 +31,8 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission.Grant {
         {
         }
         /// <summary>
-        /// Grant users access to a link represented by a [permission][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
+        /// Grant users access to a link represented by a permission.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GrantPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission.Grant {
             return await RequestAdapter.SendAsync<GrantPostResponse>(requestInfo, GrantPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Grant users access to a link represented by a [permission][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
+        /// Grant users access to a link represented by a permission.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GrantResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Permission.Grant {
             return await RequestAdapter.SendAsync<GrantResponse>(requestInfo, GrantResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Grant users access to a link represented by a [permission][].
+        /// Grant users access to a link represented by a permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

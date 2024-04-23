@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         {
         }
         /// <summary>
-        /// Get the last addToReviewSetOperation object associated with a source collection. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-addtoreviewsetoperation?view=graph-rest-1.0" />
+        /// Adds the results of the sourceCollection to the specified reviewSet.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +56,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the last addToReviewSetOperation object associated with a source collection. 
+        /// Adds the results of the sourceCollection to the specified reviewSet.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +86,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return new AddToReviewSetOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the last addToReviewSetOperation object associated with a source collection. 
+        /// Adds the results of the sourceCollection to the specified reviewSet.
         /// </summary>
         public class AddToReviewSetOperationRequestBuilderGetQueryParameters 
         {

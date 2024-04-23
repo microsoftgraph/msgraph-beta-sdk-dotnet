@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         {
         }
         /// <summary>
-        /// Delete a group from the list of groups included in a mobile app management policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete-includedgroups?view=graph-rest-1.0" />
+        /// Delete ref of navigation property includedGroups for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0" />
+        /// Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add groups to be included in a mobile app management policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-post-includedgroups?view=graph-rest-1.0" />
+        /// Create new navigation property ref to includedGroups for policies
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +101,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a group from the list of groups included in a mobile app management policy.
+        /// Delete ref of navigation property includedGroups for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +120,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy.
+        /// Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +139,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             return requestInfo;
         }
         /// <summary>
-        /// Add groups to be included in a mobile app management policy.
+        /// Create new navigation property ref to includedGroups for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete a group from the list of groups included in a mobile app management policy.
+        /// Delete ref of navigation property includedGroups for policies
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         {
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy.
+        /// Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

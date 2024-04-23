@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class ApplyLabelAction : InformationProtectionAction, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The collection of actions that should be implemented by the caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

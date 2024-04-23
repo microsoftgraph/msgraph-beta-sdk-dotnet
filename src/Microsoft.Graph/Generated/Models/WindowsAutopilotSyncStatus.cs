@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum WindowsAutopilotSyncStatus
+    #pragma warning restore CS1591
     {
         /// <summary>Unknown sync status</summary>
         [EnumMember(Value = "unknown")]

@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid {
     [Obsolete("This class is obsolete. Use GetScopesForUserWithUseridGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetScopesForUserWithUseridResponse : GetScopesForUserWithUseridGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

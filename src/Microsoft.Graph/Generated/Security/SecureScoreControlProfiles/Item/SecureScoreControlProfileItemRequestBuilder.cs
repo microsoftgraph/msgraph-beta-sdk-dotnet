@@ -77,8 +77,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles.Item {
             return await RequestAdapter.SendAsync<SecureScoreControlProfile>(requestInfo, SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an editable secureScoreControlProfiles property within any integrated solution to change various properties, such as assignedTo or tenantNote.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securescorecontrolprofiles-update?view=graph-rest-1.0" />
+        /// Update the navigation property secureScoreControlProfiles in security
         /// </summary>
         /// <returns>A <see cref="SecureScoreControlProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -141,7 +140,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScoreControlProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an editable secureScoreControlProfiles property within any integrated solution to change various properties, such as assignedTo or tenantNote.
+        /// Update the navigation property secureScoreControlProfiles in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

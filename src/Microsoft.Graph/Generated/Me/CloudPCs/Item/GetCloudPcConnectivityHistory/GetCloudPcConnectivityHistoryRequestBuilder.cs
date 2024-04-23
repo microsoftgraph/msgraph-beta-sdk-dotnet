@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
         {
         }
         /// <summary>
-        /// Invoke function getCloudPcConnectivityHistory
+        /// Get the connectivity history of a specific Cloud PC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCloudPcConnectivityHistoryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
             return await RequestAdapter.SendAsync<GetCloudPcConnectivityHistoryGetResponse>(requestInfo, GetCloudPcConnectivityHistoryGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCloudPcConnectivityHistory
+        /// Get the connectivity history of a specific Cloud PC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getcloudpcconnectivityhistory?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCloudPcConnectivityHistoryResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
             return await RequestAdapter.SendAsync<GetCloudPcConnectivityHistoryResponse>(requestInfo, GetCloudPcConnectivityHistoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCloudPcConnectivityHistory
+        /// Get the connectivity history of a specific Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcConnectivityHistory {
             return new GetCloudPcConnectivityHistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getCloudPcConnectivityHistory
+        /// Get the connectivity history of a specific Cloud PC.
         /// </summary>
         public class GetCloudPcConnectivityHistoryRequestBuilderGetQueryParameters 
         {

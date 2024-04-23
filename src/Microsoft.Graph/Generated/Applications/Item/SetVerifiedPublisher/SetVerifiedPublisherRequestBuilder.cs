@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher {
         }
         /// <summary>
         /// Set the the verifiedPublisher on an application. For more information, including prerequisites to setting a verified publisher, see Publisher verification.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-setverifiedpublisher?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

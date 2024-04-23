@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-get?view=graph-rest-1.0" />
+        /// The Cloud PC organization settings for a tenant.
         /// </summary>
         /// <returns>A <see cref="CloudPcOrganizationSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             return await RequestAdapter.SendAsync<CloudPcOrganizationSettings>(requestInfo, CloudPcOrganizationSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the cloudPcOrganizationSettings object in a tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcorganizationsettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property organizationSettings in deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcOrganizationSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
+        /// The Cloud PC organization settings for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the cloudPcOrganizationSettings object in a tenant.
+        /// Update the navigation property organizationSettings in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
         {
         }
         /// <summary>
-        /// Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one cloudPcOrganizationSettings object.
+        /// The Cloud PC organization settings for a tenant.
         /// </summary>
         public class OrganizationSettingsRequestBuilderGetQueryParameters 
         {

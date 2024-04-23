@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
+    #pragma warning disable CS1591
     public class UserProvisioningFlow : ProvisioningFlow, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A boolean choice indicating whether unmatched users should be created or ignored.</summary>
         public bool? CreateUnmatchedUsers {

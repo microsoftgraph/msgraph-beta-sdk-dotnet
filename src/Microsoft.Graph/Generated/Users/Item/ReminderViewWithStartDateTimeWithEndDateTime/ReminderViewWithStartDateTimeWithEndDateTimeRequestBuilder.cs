@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
         {
         }
         /// <summary>
-        /// Invoke function reminderView
+        /// Return a list of event reminders in a user calendar within the specified start and end times.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ReminderViewWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
             return await RequestAdapter.SendAsync<ReminderViewWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, ReminderViewWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function reminderView
+        /// Return a list of event reminders in a user calendar within the specified start and end times.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-reminderview?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ReminderViewWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
             return await RequestAdapter.SendAsync<ReminderViewWithStartDateTimeWithEndDateTimeResponse>(requestInfo, ReminderViewWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function reminderView
+        /// Return a list of event reminders in a user calendar within the specified start and end times.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDa
             return new ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function reminderView
+        /// Return a list of event reminders in a user calendar within the specified start and end times.
         /// </summary>
         public class ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 
         {

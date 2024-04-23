@@ -78,7 +78,6 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.AdministrativeUnits.Item.Membe
         }
         /// <summary>
         /// Create new navigation property ref to members for directory
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

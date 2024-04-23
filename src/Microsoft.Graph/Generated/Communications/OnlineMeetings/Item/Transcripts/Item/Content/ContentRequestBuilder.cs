@@ -33,7 +33,6 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Transcripts.It
         }
         /// <summary>
         /// The content of the transcript. Read-only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-list-transcripts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

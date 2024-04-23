@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations {
         {
         }
         /// <summary>
-        /// Get a list of the operations that are running on a Microsoft Teams-enabled device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdeviceoperation-list?view=graph-rest-1.0" />
+        /// The async operations on the device.
         /// </summary>
         /// <returns>A <see cref="TeamworkDeviceOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations {
             return await RequestAdapter.SendAsync<TeamworkDeviceOperation>(requestInfo, TeamworkDeviceOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the operations that are running on a Microsoft Teams-enabled device.
+        /// The async operations on the device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the operations that are running on a Microsoft Teams-enabled device.
+        /// The async operations on the device.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-informationprotectionpolicysetting-get?view=graph-rest-1.0" />
+        /// Read the Microsoft Purview Information Protection policy settings for the user or organization.
         /// </summary>
         /// <returns>A <see cref="InformationProtectionPolicySetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
+        /// Read the Microsoft Purview Information Protection policy settings for the user or organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Me.Security.InformationProtection.LabelPolicySett
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an informationProtectionPolicySetting object. The settings exposed by this API should be used in applications to populate the moreInfoUrl property for Microsoft Purview Information Protection help, and indicate whether labeling is mandatory for the user and whether justification must be provided on downgrade.
+        /// Read the Microsoft Purview Information Protection policy settings for the user or organization.
         /// </summary>
         public class LabelPolicySettingsRequestBuilderGetQueryParameters 
         {

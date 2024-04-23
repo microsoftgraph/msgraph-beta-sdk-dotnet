@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum TimeCardState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "clockedIn")]
+        #pragma warning disable CS1591
         ClockedIn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "onBreak")]
+        #pragma warning disable CS1591
         OnBreak,
+        #pragma warning restore CS1591
         [EnumMember(Value = "clockedOut")]
+        #pragma warning disable CS1591
         ClockedOut,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

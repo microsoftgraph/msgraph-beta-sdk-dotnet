@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an educationGradingScheme object.
+        /// Get gradingSchemes from education
         /// </summary>
         /// <returns>A <see cref="EducationGradingSchemeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return await RequestAdapter.SendAsync<EducationGradingSchemeCollectionResponse>(requestInfo, EducationGradingSchemeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new educationGradingScheme object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationgradingscheme-post?view=graph-rest-1.0" />
+        /// Create new navigation property to gradingSchemes for education
         /// </summary>
         /// <returns>A <see cref="EducationGradingScheme"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return await RequestAdapter.SendAsync<EducationGradingScheme>(requestInfo, EducationGradingScheme.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationGradingScheme object.
+        /// Get gradingSchemes from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return requestInfo;
         }
         /// <summary>
-        /// Create a new educationGradingScheme object.
+        /// Create new navigation property to gradingSchemes for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return new GradingSchemesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationGradingScheme object.
+        /// Get gradingSchemes from education
         /// </summary>
         public class GradingSchemesRequestBuilderGetQueryParameters 
         {

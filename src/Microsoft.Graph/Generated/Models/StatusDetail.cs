@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum StatusDetail
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "submitted")]
+        #pragma warning disable CS1591
         Submitted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "approved")]
+        #pragma warning disable CS1591
         Approved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
+        #pragma warning disable CS1591
         Canceled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rejected")]
+        #pragma warning disable CS1591
         Rejected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

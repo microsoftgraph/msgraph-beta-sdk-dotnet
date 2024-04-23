@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
         {
         }
         /// <summary>
-        /// Retrieve the properties of a schema for an externalConnection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-get?view=graph-rest-1.0" />
+        /// Get schema from connections
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,8 +55,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create the schema for a Microsoft Search connection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-1.0" />
+        /// Update the navigation property schema in connections
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +80,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a schema for an externalConnection.
+        /// Get schema from connections
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Create the schema for a Microsoft Search connection.
+        /// Update the navigation property schema in connections
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Schema {
             return new SchemaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of a schema for an externalConnection.
+        /// Get schema from connections
         /// </summary>
         public class SchemaRequestBuilderGetQueryParameters 
         {

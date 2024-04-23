@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithPeriod {
+    #pragma warning disable CS1591
     public class GetOffice365GroupsActivityDetailWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

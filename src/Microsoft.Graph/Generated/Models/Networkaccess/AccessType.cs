@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public enum AccessType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "quickAccess")]
+        #pragma warning disable CS1591
         QuickAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "privateAccess")]
+        #pragma warning disable CS1591
         PrivateAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

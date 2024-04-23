@@ -52,7 +52,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts {
         }
         /// <summary>
         /// The shifts in the schedule.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-shifts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ShiftCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts {
             return await RequestAdapter.SendAsync<ShiftCollectionResponse>(requestInfo, ShiftCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-shifts?view=graph-rest-1.0" />
+        /// Create new navigation property to shifts for groups
         /// </summary>
         /// <returns>A <see cref="Shift"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.Shifts {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new shift instance in a schedule. The duration of a shift cannot be less than 1 minute or longer than 24 hours.
+        /// Create new navigation property to shifts for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

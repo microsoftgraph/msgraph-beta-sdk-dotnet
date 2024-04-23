@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
         }
         /// <summary>
         /// Retrieve a list of identityProviders objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityProviderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.IdentityProviders {
         }
         /// <summary>
         /// Create a new identityProvider object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprovider-post-identityproviders?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityProvider"/></returns>
         /// <param name="body">The request body</param>

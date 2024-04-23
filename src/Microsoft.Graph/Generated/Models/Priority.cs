@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum Priority
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "None")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "High")]
+        #pragma warning disable CS1591
         High,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Low")]
+        #pragma warning disable CS1591
         Low,
+        #pragma warning restore CS1591
     }
 }

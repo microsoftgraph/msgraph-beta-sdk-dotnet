@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Users {
         }
         /// <summary>
         /// Retrieve a list of user objects. This operation returns by default only a subset of the more commonly used properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation for the user and specify the properties in a $select OData query option.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users {
         }
         /// <summary>
         /// Create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties. This operation returns by default only a subset of the properties for each user. These default properties are noted in the Properties section. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="body">The request body</param>

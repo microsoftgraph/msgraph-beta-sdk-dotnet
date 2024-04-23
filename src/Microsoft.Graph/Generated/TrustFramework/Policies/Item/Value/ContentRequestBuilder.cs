@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item.Value {
         }
         /// <summary>
         /// Get media content for the navigation property policies from trustFramework
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

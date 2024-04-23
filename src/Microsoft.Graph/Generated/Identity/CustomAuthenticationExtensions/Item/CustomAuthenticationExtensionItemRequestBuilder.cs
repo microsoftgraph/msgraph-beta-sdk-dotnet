@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Delete a customAuthenticationExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-1.0" />
+        /// Delete navigation property customAuthenticationExtensions for identity
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventlistener-get?view=graph-rest-1.0" />
+        /// Get customAuthenticationExtensions from identity
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +108,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a customAuthenticationExtension object.
+        /// Delete navigation property customAuthenticationExtensions for identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+        /// Get customAuthenticationExtensions from identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an authenticationEventListener object. The @odata.type property in the response object indicates the type of the authenticationEventListener object.
+        /// Get customAuthenticationExtensions from identity
         /// </summary>
         public class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters 
         {

@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
         {
         }
         /// <summary>
-        /// Retrieve a collection of governanceResource that the requestor has access to.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/governanceresource-list?view=graph-rest-1.0" />
+        /// A collection of resources for the provider.
         /// </summary>
         /// <returns>A <see cref="GovernanceResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
             return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a collection of governanceResource that the requestor has access to.
+        /// A collection of resources for the provider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources {
             return new ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a collection of governanceResource that the requestor has access to.
+        /// A collection of resources for the provider.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters 
         {

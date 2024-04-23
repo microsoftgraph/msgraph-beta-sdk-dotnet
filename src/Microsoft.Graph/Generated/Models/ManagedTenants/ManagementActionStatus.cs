@@ -2,27 +2,49 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public enum ManagementActionStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "toAddress")]
+        #pragma warning disable CS1591
         ToAddress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "error")]
+        #pragma warning disable CS1591
         Error,
+        #pragma warning restore CS1591
         [EnumMember(Value = "timeOut")]
+        #pragma warning disable CS1591
         TimeOut,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inProgress")]
+        #pragma warning disable CS1591
         InProgress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "planned")]
+        #pragma warning disable CS1591
         Planned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resolvedBy3rdParty")]
+        #pragma warning disable CS1591
         ResolvedBy3rdParty,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resolvedThroughAlternateMitigation")]
+        #pragma warning disable CS1591
         ResolvedThroughAlternateMitigation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "riskAccepted")]
+        #pragma warning disable CS1591
         RiskAccepted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

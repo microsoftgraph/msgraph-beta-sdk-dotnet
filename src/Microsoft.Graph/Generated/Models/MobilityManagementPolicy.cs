@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class MobilityManagementPolicy : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>
         public PolicyScope? AppliesTo {

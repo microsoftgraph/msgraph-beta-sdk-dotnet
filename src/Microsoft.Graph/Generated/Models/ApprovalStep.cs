@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ApprovalStep : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the step is assigned to the calling user to review. Read-only.</summary>
         public bool? AssignedToMe {

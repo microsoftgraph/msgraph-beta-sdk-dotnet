@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-get?view=graph-rest-1.0" />
+        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.
             return await RequestAdapter.SendAsync<AccessReviewInstanceDecisionItem>(requestInfo, AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstancedecisionitem-update?view=graph-rest-1.0" />
+        /// Update the navigation property decisions in me
         /// </summary>
         /// <returns>A <see cref="AccessReviewInstanceDecisionItem"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Update access decisions, known as accessReviewInstanceDecisionItems, for which the user is the reviewer.
+        /// Update the navigation property decisions in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Beta.Me.PendingAccessReviewInstances.Item.Stages.Item.
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessReviewInstanceDecisionItem object.
+        /// Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.
         /// </summary>
         public class AccessReviewInstanceDecisionItemItemRequestBuilderGetQueryParameters 
         {

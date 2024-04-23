@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
         {
         }
         /// <summary>
-        /// Retrieve a list of trustFrameworkPolicies in the tenant/directory.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframework-list-trustframeworkpolicies?view=graph-rest-1.0" />
+        /// Get policies from trustFramework
         /// </summary>
         /// <returns>A <see cref="TrustFrameworkPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
             return await RequestAdapter.SendAsync<TrustFrameworkPolicy>(requestInfo, TrustFrameworkPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of trustFrameworkPolicies in the tenant/directory.
+        /// Get policies from trustFramework
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies {
             return new PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of trustFrameworkPolicies in the tenant/directory.
+        /// Get policies from trustFramework
         /// </summary>
         public class PoliciesRequestBuilderGetQueryParameters 
         {

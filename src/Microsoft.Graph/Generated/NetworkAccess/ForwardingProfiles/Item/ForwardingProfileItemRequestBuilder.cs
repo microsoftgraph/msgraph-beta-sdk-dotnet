@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-get?view=graph-rest-1.0" />
+        /// A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
         /// </summary>
         /// <returns>A <see cref="ForwardingProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,8 +89,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             return await RequestAdapter.SendAsync<ForwardingProfile>(requestInfo, ForwardingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an existing forwarding profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-update?view=graph-rest-1.0" />
+        /// Update the navigation property forwardingProfiles in networkAccess
         /// </summary>
         /// <returns>A <see cref="ForwardingProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding profile.
+        /// A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an existing forwarding profile.
+        /// Update the navigation property forwardingProfiles in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item {
         {
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding profile.
+        /// A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
         /// </summary>
         public class ForwardingProfileItemRequestBuilderGetQueryParameters 
         {

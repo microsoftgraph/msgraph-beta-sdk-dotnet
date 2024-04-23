@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcPowerState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "running")]
+        #pragma warning disable CS1591
         Running,
+        #pragma warning restore CS1591
         [EnumMember(Value = "poweredOff")]
+        #pragma warning disable CS1591
         PoweredOff,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

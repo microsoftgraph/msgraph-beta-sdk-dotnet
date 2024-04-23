@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageResourceEnvironment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageresourceenvironment-get?view=graph-rest-1.0" />
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageResourceEnvironment object.
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageResourceEnvironment object.
+        /// A reference to the geolocation environment in which a resource is located.
         /// </summary>
         public class AccessPackageResourceEnvironmentItemRequestBuilderGetQueryParameters 
         {

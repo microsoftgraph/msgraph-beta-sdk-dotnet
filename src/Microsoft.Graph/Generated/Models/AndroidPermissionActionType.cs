@@ -6,10 +6,16 @@ namespace Microsoft.Graph.Beta.Models {
     public enum AndroidPermissionActionType
     {
         [EnumMember(Value = "prompt")]
+        #pragma warning disable CS1591
         Prompt,
+        #pragma warning restore CS1591
         [EnumMember(Value = "autoGrant")]
+        #pragma warning disable CS1591
         AutoGrant,
+        #pragma warning restore CS1591
         [EnumMember(Value = "autoDeny")]
+        #pragma warning disable CS1591
         AutoDeny,
+        #pragma warning restore CS1591
     }
 }

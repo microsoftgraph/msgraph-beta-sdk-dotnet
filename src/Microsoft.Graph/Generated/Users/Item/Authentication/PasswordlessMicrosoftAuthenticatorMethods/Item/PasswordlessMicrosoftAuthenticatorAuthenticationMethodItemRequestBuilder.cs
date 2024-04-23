@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         {
         }
         /// <summary>
-        /// Deletes a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/passwordlessmicrosoftauthenticatorauthenticationmethod-delete?view=graph-rest-1.0" />
+        /// Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single Microsoft Authenticator Passwordless Phone Sign-in method object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/passwordlessmicrosoftauthenticatorauthenticationmethod-get?view=graph-rest-1.0" />
+        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="PasswordlessMicrosoftAuthenticatorAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +83,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
             return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method object.
+        /// Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single Microsoft Authenticator Passwordless Phone Sign-in method object.
+        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         {
         }
         /// <summary>
-        /// Retrieve a user&apos;s single Microsoft Authenticator Passwordless Phone Sign-in method object.
+        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
         /// </summary>
         public class PasswordlessMicrosoftAuthenticatorAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

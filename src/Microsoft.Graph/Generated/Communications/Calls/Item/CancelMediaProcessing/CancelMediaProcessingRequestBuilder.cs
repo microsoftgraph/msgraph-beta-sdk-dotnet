@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.CancelMediaProcessing {
         }
         /// <summary>
         /// Cancels processing for any in-progress media operations. Media operations refer to the IVR operations playPrompt and recordResponse, which are by default queued to process in order. The cancelMediaProcessing method cancels any operation that is in-process as well as operations that are queued. For example, this API can be used to clean up the IVR operation queue for a new media operation. However, it will not cancel a ubscribeToTone operation because it operates independent of any operation queue.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-cancelmediaprocessing?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CancelMediaProcessingOperation"/></returns>
         /// <param name="body">The request body</param>

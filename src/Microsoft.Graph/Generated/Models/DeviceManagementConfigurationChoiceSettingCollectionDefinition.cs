@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class DeviceManagementConfigurationChoiceSettingCollectionDefinition : DeviceManagementConfigurationChoiceSettingDefinition, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Maximum number of choices in the collection. Valid values 1 to 100</summary>
         public int? MaximumCount {

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AdminReportSettings : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>If set to true, all reports will conceal user information such as usernames, groups, and sites. If false, all reports will show identifiable information. This property represents a setting in the Microsoft 365 admin center. Required.</summary>
         public bool? DisplayConcealedNames {

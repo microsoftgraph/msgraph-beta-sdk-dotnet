@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
         {
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding policy.
+        /// A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.
         /// </summary>
         /// <returns>A <see cref="ForwardingPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
             return await RequestAdapter.SendAsync<ForwardingPolicy>(requestInfo, ForwardingPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding policy.
+        /// A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
             return new ForwardingPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve information about a specific forwarding policy.
+        /// A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.
         /// </summary>
         public class ForwardingPoliciesRequestBuilderGetQueryParameters 
         {

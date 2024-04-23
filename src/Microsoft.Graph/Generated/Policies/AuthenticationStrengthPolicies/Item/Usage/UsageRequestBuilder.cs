@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Usag
         {
         }
         /// <summary>
-        /// Invoke function usage
+        /// The usage function allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-usage?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AuthenticationStrengthUsage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Usag
             return await RequestAdapter.SendAsync<AuthenticationStrengthUsage>(requestInfo, AuthenticationStrengthUsage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function usage
+        /// The usage function allows the caller to see which Conditional Access policies reference a specified authentication strength policy. The policies are returned in two collections, one containing Conditional Access policies that require an MFA claim and the other containing Conditional Access policies that do not require such a claim. Policies in the former category are restricted in what kinds of changes may be made to them to prevent undermining the MFA requirement of those policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

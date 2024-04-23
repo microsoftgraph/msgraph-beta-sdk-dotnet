@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks {
         {
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-list-tasks?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified tasks
         /// </summary>
         /// <returns>A <see cref="PlannerTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks {
             return await RequestAdapter.SendAsync<PlannerTaskCollectionResponse>(requestInfo, PlannerTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new plannerTask.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-tasks?view=graph-rest-1.0" />
+        /// Create new navigation property to tasks for planner
         /// </summary>
         /// <returns>A <see cref="PlannerTask"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects.
+        /// Read-only. Nullable. Returns a collection of the specified tasks
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerTask.
+        /// Create new navigation property to tasks for planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.Planner.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of plannertask objects.
+        /// Read-only. Nullable. Returns a collection of the specified tasks
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

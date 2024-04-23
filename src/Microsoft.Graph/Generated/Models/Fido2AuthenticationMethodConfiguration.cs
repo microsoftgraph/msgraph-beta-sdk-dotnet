@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
         public bool? IsAttestationEnforced {

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.PlacesWithPlaceId {
         }
         /// <summary>
         /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the room, workspace, or roomList by specifying the id or emailAddress property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Place"/></returns>
         /// <param name="body">The request body</param>

@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
         {
         }
         /// <summary>
-        /// Delete a yearTimePeriodDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-delete?view=graph-rest-1.0" />
+        /// Delete navigation property years for external
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a yearTimePeriodDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-get?view=graph-rest-1.0" />
+        /// Set of years represented in the system.
         /// </summary>
         /// <returns>A <see cref="YearTimePeriodDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return await RequestAdapter.SendAsync<YearTimePeriodDefinition>(requestInfo, YearTimePeriodDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a yearTimePeriodDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-update?view=graph-rest-1.0" />
+        /// Update the navigation property years in external
         /// </summary>
         /// <returns>A <see cref="YearTimePeriodDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return await RequestAdapter.SendAsync<YearTimePeriodDefinition>(requestInfo, YearTimePeriodDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a yearTimePeriodDefinition object.
+        /// Delete navigation property years for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a yearTimePeriodDefinition object.
+        /// Set of years represented in the system.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a yearTimePeriodDefinition object.
+        /// Update the navigation property years in external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a yearTimePeriodDefinition object.
+        /// Set of years represented in the system.
         /// </summary>
         public class YearTimePeriodDefinitionItemRequestBuilderGetQueryParameters 
         {

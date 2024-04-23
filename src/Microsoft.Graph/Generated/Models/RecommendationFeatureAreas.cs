@@ -2,23 +2,41 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum RecommendationFeatureAreas
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "users")]
+        #pragma warning disable CS1591
         Users,
+        #pragma warning restore CS1591
         [EnumMember(Value = "groups")]
+        #pragma warning disable CS1591
         Groups,
+        #pragma warning restore CS1591
         [EnumMember(Value = "devices")]
+        #pragma warning disable CS1591
         Devices,
+        #pragma warning restore CS1591
         [EnumMember(Value = "applications")]
+        #pragma warning disable CS1591
         Applications,
+        #pragma warning restore CS1591
         [EnumMember(Value = "accessReviews")]
+        #pragma warning disable CS1591
         AccessReviews,
+        #pragma warning restore CS1591
         [EnumMember(Value = "conditionalAccess")]
+        #pragma warning disable CS1591
         ConditionalAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "governance")]
+        #pragma warning disable CS1591
         Governance,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

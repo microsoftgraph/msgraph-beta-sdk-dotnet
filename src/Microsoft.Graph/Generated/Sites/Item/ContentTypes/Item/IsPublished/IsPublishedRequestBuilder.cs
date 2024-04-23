@@ -32,6 +32,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.IsPublished {
         }
         /// <summary>
         /// Invoke function isPublished
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IsPublishedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,6 +56,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.IsPublished {
         }
         /// <summary>
         /// Invoke function isPublished
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IsPublishedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

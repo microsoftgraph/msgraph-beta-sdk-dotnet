@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PermissionGrantPolicy : PolicyBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("includes", value); }
         }
 #endif
-        /// <summary>The resource type the pre-approval policy applies to. Possible values: group for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.</summary>
+        /// <summary>The resource type the pre-approval policy applies to. Possible values: team for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.</summary>
         public Microsoft.Graph.Beta.Models.ResourceScopeType? ResourceScopeType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceScopeType?>("resourceScopeType"); }
             set { BackingStore?.Set("resourceScopeType", value); }

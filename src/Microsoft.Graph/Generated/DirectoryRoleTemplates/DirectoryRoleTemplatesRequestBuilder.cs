@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
         }
         /// <summary>
         /// Retrieve a list of directoryroletemplate objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryroletemplate-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryRoleTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

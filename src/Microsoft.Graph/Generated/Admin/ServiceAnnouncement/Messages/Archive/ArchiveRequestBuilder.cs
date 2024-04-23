@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Archive {
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ArchivePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Archive {
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ArchiveResponse"/></returns>
         /// <param name="body">The request body</param>

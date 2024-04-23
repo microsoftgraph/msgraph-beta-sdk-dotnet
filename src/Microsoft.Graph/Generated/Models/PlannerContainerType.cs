@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PlannerContainerType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "group")]
+        #pragma warning disable CS1591
         Group,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "roster")]
+        #pragma warning disable CS1591
         Roster,
+        #pragma warning restore CS1591
         [EnumMember(Value = "project")]
+        #pragma warning disable CS1591
         Project,
+        #pragma warning restore CS1591
         [EnumMember(Value = "driveItem")]
+        #pragma warning disable CS1591
         DriveItem,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user")]
+        #pragma warning disable CS1591
         User,
+        #pragma warning restore CS1591
     }
 }

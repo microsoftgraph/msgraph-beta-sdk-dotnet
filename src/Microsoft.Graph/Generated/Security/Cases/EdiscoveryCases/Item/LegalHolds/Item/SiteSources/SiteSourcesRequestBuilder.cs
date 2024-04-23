@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             return await RequestAdapter.SendAsync<SiteSourceCollectionResponse>(requestInfo, SiteSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new siteSource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryholdpolicy-post-sitesources?view=graph-rest-1.0" />
+        /// Create new navigation property to siteSources for security
         /// </summary>
         /// <returns>A <see cref="SiteSource"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             return requestInfo;
         }
         /// <summary>
-        /// Create a new siteSource object.
+        /// Create new navigation property to siteSources for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
         }
         /// <summary>
         /// Retrieve a list of administrativeUnit objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-administrativeunits?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AdministrativeUnitCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits {
         }
         /// <summary>
         /// Use this API to create a new administrativeUnit.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AdministrativeUnit"/></returns>
         /// <param name="body">The request body</param>

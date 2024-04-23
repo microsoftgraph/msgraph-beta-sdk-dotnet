@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public class UpdatableAssetGroup : UpdatableAsset, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Members of the group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

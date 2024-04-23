@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWith
         {
         }
         /// <summary>
-        /// Invoke function getProvisionedCloudPCs
+        /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWith
             return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getProvisionedCloudPCs
+        /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getprovisionedcloudpcs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWith
             return await RequestAdapter.SendAsync<GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse>(requestInfo, GetProvisionedCloudPCsWithGroupIdWithServicePlanIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getProvisionedCloudPCs
+        /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.GetProvisionedCloudPCsWithGroupIdWith
             return new GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getProvisionedCloudPCs
+        /// Get all provisioned Cloud PCs of a specific service plan for users under a Microsoft Entra user group.
         /// </summary>
         public class GetProvisionedCloudPCsWithGroupIdWithServicePlanIdRequestBuilderGetQueryParameters 
         {

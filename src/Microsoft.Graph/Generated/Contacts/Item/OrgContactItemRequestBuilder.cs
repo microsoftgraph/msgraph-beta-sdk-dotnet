@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Get the properties and relationships of an organizational contact object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OrgContact"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

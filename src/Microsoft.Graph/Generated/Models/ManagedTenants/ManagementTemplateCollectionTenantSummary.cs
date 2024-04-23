@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public class ManagementTemplateCollectionTenantSummary : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The completeStepsCount property</summary>
         public int? CompleteStepsCount {

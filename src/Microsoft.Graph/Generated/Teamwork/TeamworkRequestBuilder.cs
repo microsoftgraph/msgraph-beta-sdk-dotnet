@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Teamwork {
         }
         /// <summary>
         /// Get the properties and relationships of a teamwork object, such as the region of the organization and whether Microsoft Teams is enabled.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Teamwork"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

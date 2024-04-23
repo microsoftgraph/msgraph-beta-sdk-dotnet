@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
         {
         }
         /// <summary>
-        /// Get a list of the userSource objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-custodian-list-usersources?view=graph-rest-1.0" />
+        /// Data source entity for a the custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.
         /// </summary>
         /// <returns>A <see cref="UserSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return await RequestAdapter.SendAsync<UserSourceCollectionResponse>(requestInfo, UserSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new custodian userSource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-custodian-post-usersources?view=graph-rest-1.0" />
+        /// Create new navigation property to userSources for compliance
         /// </summary>
         /// <returns>A <see cref="UserSource"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return await RequestAdapter.SendAsync<UserSource>(requestInfo, UserSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the userSource objects and their properties.
+        /// Data source entity for a the custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Create a new custodian userSource object.
+        /// Create new navigation property to userSources for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return new UserSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the userSource objects and their properties.
+        /// Data source entity for a the custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.
         /// </summary>
         public class UserSourcesRequestBuilderGetQueryParameters 
         {

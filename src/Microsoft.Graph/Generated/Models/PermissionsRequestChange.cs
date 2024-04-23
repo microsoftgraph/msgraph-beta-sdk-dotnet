@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PermissionsRequestChange : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.</summary>
         public PermissionsRequestOccurrenceStatus? ActiveOccurrenceStatus {

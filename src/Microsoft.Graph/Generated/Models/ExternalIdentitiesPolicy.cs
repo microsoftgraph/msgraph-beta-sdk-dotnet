@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ExternalIdentitiesPolicy : PolicyBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Reserved for future use.</summary>
         public bool? AllowDeletedIdentitiesDataRemoval {

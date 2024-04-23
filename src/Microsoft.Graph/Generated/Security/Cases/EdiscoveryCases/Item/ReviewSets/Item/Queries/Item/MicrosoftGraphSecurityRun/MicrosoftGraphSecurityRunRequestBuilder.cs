@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         {
         }
         /// <summary>
-        /// Invoke function run
+        /// Run reviewset query to get the list of files.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-run?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RunGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return await RequestAdapter.SendAsync<RunGetResponse>(requestInfo, RunGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function run
+        /// Run reviewset query to get the list of files.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewsetquery-run?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RunResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return await RequestAdapter.SendAsync<RunResponse>(requestInfo, RunResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function run
+        /// Run reviewset query to get the list of files.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return new MicrosoftGraphSecurityRunRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function run
+        /// Run reviewset query to get the list of files.
         /// </summary>
         public class MicrosoftGraphSecurityRunRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
         {
         }
         /// <summary>
-        /// Retrieve a list of securityAction objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityactions-list?view=graph-rest-1.0" />
+        /// Get securityActions from security
         /// </summary>
         /// <returns>A <see cref="SecurityActionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return await RequestAdapter.SendAsync<SecurityActionCollectionResponse>(requestInfo, SecurityActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new securityAction object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityactions-post?view=graph-rest-1.0" />
+        /// Create new navigation property to securityActions for security
         /// </summary>
         /// <returns>A <see cref="SecurityAction"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return await RequestAdapter.SendAsync<SecurityAction>(requestInfo, SecurityAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of securityAction objects.
+        /// Get securityActions from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new securityAction object.
+        /// Create new navigation property to securityActions for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions {
             return new SecurityActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of securityAction objects.
+        /// Get securityActions from security
         /// </summary>
         public class SecurityActionsRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
         {
         }
         /// <summary>
-        /// In the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-listmydecisions?view=graph-rest-1.0" />
+        /// The collection of decisions for the caller, if the caller is a reviewer.
         /// </summary>
         /// <returns>A <see cref="AccessReviewDecisionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
             return await RequestAdapter.SendAsync<AccessReviewDecision>(requestInfo, AccessReviewDecision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
+        /// The collection of decisions for the caller, if the caller is a reviewer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.MyDecisions {
             return new MyDecisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In the Microsoft Entra access reviews feature, retrieve the decisions of an accessReview object for the calling user as reviewer.
+        /// The collection of decisions for the caller, if the caller is a reviewer.
         /// </summary>
         public class MyDecisionsRequestBuilderGetQueryParameters 
         {

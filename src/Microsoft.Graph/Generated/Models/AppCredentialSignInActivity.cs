@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AppCredentialSignInActivity : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The globally unique appId (also called client ID on the Microsoft Entra admin center) of the credential application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

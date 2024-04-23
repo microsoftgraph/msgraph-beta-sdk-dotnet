@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff {
         {
         }
         /// <summary>
-        /// Invoke function getTimesOff
+        /// Get all time off objects across all teams to which a user is a direct member.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetTimesOffGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff {
             return await RequestAdapter.SendAsync<GetTimesOffGetResponse>(requestInfo, GetTimesOffGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getTimesOff
+        /// Get all time off objects across all teams to which a user is a direct member.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-gettimesoff?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetTimesOffResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff {
             return await RequestAdapter.SendAsync<GetTimesOffResponse>(requestInfo, GetTimesOffResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getTimesOff
+        /// Get all time off objects across all teams to which a user is a direct member.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff {
             return new GetTimesOffRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getTimesOff
+        /// Get all time off objects across all teams to which a user is a direct member.
         /// </summary>
         public class GetTimesOffRequestBuilderGetQueryParameters 
         {

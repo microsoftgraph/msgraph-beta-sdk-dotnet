@@ -72,8 +72,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-callrecord-get?view=graph-rest-1.0" />
+        /// Get callRecords from communications
         /// </summary>
         /// <returns>A <see cref="CallRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +139,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord:
+        /// Get callRecords from communications
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -197,7 +196,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a callRecord object. There are two ways to get the id of a callRecord:
+        /// Get callRecords from communications
         /// </summary>
         public class CallRecordItemRequestBuilderGetQueryParameters 
         {

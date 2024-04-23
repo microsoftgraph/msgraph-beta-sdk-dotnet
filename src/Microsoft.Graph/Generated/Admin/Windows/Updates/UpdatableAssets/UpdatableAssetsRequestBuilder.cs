@@ -75,8 +75,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         {
         }
         /// <summary>
-        /// Get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-list-updatableassets?view=graph-rest-1.0" />
+        /// Assets registered with the deployment service that can receive updates.
         /// </summary>
         /// <returns>A <see cref="UpdatableAssetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,8 +98,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return await RequestAdapter.SendAsync<UpdatableAssetCollectionResponse>(requestInfo, UpdatableAssetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new updatableAssetGroup object. The updatableAssetGroup resource inherits from updatableAsset.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-post-updatableassets-updatableassetgroup?view=graph-rest-1.0" />
+        /// Create new navigation property to updatableAssets for admin
         /// </summary>
         /// <returns>A <see cref="UpdatableAsset"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
+        /// Assets registered with the deployment service that can receive updates.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +142,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new updatableAssetGroup object. The updatableAssetGroup resource inherits from updatableAsset.
+        /// Create new navigation property to updatableAssets for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -175,7 +173,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
             return new UpdatableAssetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of updatableAsset objects and their properties. Listing updatable assets returns updatableAsset resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
+        /// Assets registered with the deployment service that can receive updates.
         /// </summary>
         public class UpdatableAssetsRequestBuilderGetQueryParameters 
         {

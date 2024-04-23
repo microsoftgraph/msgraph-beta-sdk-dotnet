@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public class DeviceCompliancePolicySettingStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>
         public int? ConflictDeviceCount {

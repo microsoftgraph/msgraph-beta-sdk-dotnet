@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public enum RemoteNetworkStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "tunnelDisconnected")]
+        #pragma warning disable CS1591
         TunnelDisconnected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tunnelConnected")]
+        #pragma warning disable CS1591
         TunnelConnected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bgpDisconnected")]
+        #pragma warning disable CS1591
         BgpDisconnected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bgpConnected")]
+        #pragma warning disable CS1591
         BgpConnected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remoteNetworkAlive")]
+        #pragma warning disable CS1591
         RemoteNetworkAlive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

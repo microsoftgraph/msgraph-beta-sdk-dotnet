@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
         {
         }
         /// <summary>
-        /// Retrieve a list of forwarding profiles.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingprofiles?view=graph-rest-1.0" />
+        /// A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
         /// </summary>
         /// <returns>A <see cref="ForwardingProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
             return await RequestAdapter.SendAsync<ForwardingProfile>(requestInfo, ForwardingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of forwarding profiles.
+        /// A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles {
             return new ForwardingProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of forwarding profiles.
+        /// A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.
         /// </summary>
         public class ForwardingProfilesRequestBuilderGetQueryParameters 
         {

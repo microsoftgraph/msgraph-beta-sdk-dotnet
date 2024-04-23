@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public enum QualityUpdateClassification
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
         [EnumMember(Value = "security")]
+        #pragma warning disable CS1591
         Security,
+        #pragma warning restore CS1591
         [EnumMember(Value = "nonSecurity")]
+        #pragma warning disable CS1591
         NonSecurity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

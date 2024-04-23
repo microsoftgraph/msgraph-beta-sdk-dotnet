@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+        /// A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
         /// </summary>
         /// <returns>A <see cref="HardwareConfigurationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
             return requestInfo;
         }
         /// <summary>
-        /// List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+        /// A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         {
         }
         /// <summary>
-        /// List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.
+        /// A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.
         /// </summary>
         public class HardwareConfigurationAssignmentItemRequestBuilderGetQueryParameters 
         {

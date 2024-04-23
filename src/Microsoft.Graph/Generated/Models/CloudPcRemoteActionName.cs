@@ -2,35 +2,65 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcRemoteActionName
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "restart")]
+        #pragma warning disable CS1591
         Restart,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rename")]
+        #pragma warning disable CS1591
         Rename,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resize")]
+        #pragma warning disable CS1591
         Resize,
+        #pragma warning restore CS1591
         [EnumMember(Value = "restore")]
+        #pragma warning disable CS1591
         Restore,
+        #pragma warning restore CS1591
         [EnumMember(Value = "reprovision")]
+        #pragma warning disable CS1591
         Reprovision,
+        #pragma warning restore CS1591
         [EnumMember(Value = "changeUserAccountType")]
+        #pragma warning disable CS1591
         ChangeUserAccountType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "troubleshoot")]
+        #pragma warning disable CS1591
         Troubleshoot,
+        #pragma warning restore CS1591
         [EnumMember(Value = "placeUnderReview")]
+        #pragma warning disable CS1591
         PlaceUnderReview,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "createSnapshot")]
+        #pragma warning disable CS1591
         CreateSnapshot,
+        #pragma warning restore CS1591
         [EnumMember(Value = "powerOn")]
+        #pragma warning disable CS1591
         PowerOn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "powerOff")]
+        #pragma warning disable CS1591
         PowerOff,
+        #pragma warning restore CS1591
         [EnumMember(Value = "moveRegion")]
+        #pragma warning disable CS1591
         MoveRegion,
+        #pragma warning restore CS1591
     }
 }

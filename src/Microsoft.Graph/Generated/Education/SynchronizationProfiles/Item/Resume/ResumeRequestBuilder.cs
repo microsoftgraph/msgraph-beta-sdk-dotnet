@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Resume {
         }
         /// <summary>
         /// Resume the sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-resume?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

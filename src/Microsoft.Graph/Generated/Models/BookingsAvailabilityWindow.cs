@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class BookingsAvailabilityWindow : BookingsAvailability, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>End date of the availability window.</summary>
         public Date? EndDate {

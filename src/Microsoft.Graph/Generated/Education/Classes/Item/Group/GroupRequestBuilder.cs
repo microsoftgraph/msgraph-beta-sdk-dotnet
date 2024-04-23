@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
         {
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-get-group?view=graph-rest-1.0" />
+        /// Get group from education
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
+        /// Get group from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +89,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return new GroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the Microsoft 365 group that corresponds to this educationClass.
+        /// Get group from education
         /// </summary>
         public class GroupRequestBuilderGetQueryParameters 
         {

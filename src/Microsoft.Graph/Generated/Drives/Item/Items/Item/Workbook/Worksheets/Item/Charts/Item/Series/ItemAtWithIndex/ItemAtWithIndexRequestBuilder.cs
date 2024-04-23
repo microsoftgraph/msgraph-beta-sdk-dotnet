@@ -46,7 +46,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
         {
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Retrieves a series based on its position in the collection
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartseriescollection-itemat?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkbookChartSeries"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +70,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Worksheets.Item.C
             return await RequestAdapter.SendAsync<WorkbookChartSeries>(requestInfo, WorkbookChartSeries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function itemAt
+        /// Retrieves a series based on its position in the collection
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

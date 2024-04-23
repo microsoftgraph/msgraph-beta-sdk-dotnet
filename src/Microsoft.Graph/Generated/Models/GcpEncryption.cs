@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum GcpEncryption
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "google")]
+        #pragma warning disable CS1591
         Google,
+        #pragma warning restore CS1591
         [EnumMember(Value = "customer")]
+        #pragma warning disable CS1591
         Customer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

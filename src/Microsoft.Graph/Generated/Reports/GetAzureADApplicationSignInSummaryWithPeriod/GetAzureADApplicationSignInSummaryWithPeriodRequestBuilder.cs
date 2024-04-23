@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         {
         }
         /// <summary>
-        /// Invoke function getAzureADApplicationSignInSummary
+        /// Retrieve applicationSigninSummary objects within either the last seven or 30 days.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAzureADApplicationSignInSummaryWithPeriodGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
             return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodGetResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAzureADApplicationSignInSummary
+        /// Retrieve applicationSigninSummary objects within either the last seven or 30 days.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getazureadapplicationsigninsummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAzureADApplicationSignInSummaryWithPeriodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
             return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAzureADApplicationSignInSummary
+        /// Retrieve applicationSigninSummary objects within either the last seven or 30 days.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
             return new GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAzureADApplicationSignInSummary
+        /// Retrieve applicationSigninSummary objects within either the last seven or 30 days.
         /// </summary>
         public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters 
         {

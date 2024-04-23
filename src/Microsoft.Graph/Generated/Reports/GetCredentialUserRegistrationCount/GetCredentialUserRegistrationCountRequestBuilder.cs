@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCredentialUserRegistrationCountGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multifactor authentication (MFA) capabilities.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCredentialUserRegistrationCountResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss
         }
         /// <summary>
         /// Dismiss an impactedResources object and update its status to dismissed.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-dismiss?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ImpactedResource"/></returns>
         /// <param name="body">The request body</param>

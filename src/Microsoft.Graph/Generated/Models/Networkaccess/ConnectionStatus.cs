@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public enum ConnectionStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "open")]
+        #pragma warning disable CS1591
         Open,
+        #pragma warning restore CS1591
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "closed")]
+        #pragma warning disable CS1591
         Closed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

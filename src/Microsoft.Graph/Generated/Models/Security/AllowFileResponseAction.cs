@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class AllowFileResponseAction : ResponseAction, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Device groups to which the actions set in the custom detection rule are applied. More information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -62,8 +62,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilit
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityschedulerequests?view=graph-rest-1.0" />
+        /// Get roleEligibilityScheduleRequests from roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,8 +85,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilit
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequestCollectionResponse>(requestInfo, UnifiedRoleEligibilityScheduleRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-post-roleeligibilityschedulerequests?view=graph-rest-1.0" />
+        /// Create new navigation property to roleEligibilityScheduleRequests for roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +110,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilit
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleRequest>(requestInfo, UnifiedRoleEligibilityScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+        /// Get roleEligibilityScheduleRequests from roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +129,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilit
             return requestInfo;
         }
         /// <summary>
-        /// Create a new unifiedRoleEligibilityScheduleRequest object. This operation allows both admins and eligible users to add, revoke, or extend eligible assignments.
+        /// Create new navigation property to roleEligibilityScheduleRequests for roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +160,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleEligibilit
             return new RoleEligibilityScheduleRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the unifiedRoleEligibilityScheduleRequest objects and their properties.
+        /// Get roleEligibilityScheduleRequests from roleManagement
         /// </summary>
         public class RoleEligibilityScheduleRequestsRequestBuilderGetQueryParameters 
         {

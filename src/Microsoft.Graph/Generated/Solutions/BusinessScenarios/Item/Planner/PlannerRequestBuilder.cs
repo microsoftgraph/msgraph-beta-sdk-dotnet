@@ -78,8 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a businessScenarioPlanner object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenarioplanner-get?view=graph-rest-1.0" />
+        /// Planner content related to the scenario.
         /// </summary>
         /// <returns>A <see cref="BusinessScenarioPlanner"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -146,7 +145,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a businessScenarioPlanner object.
+        /// Planner content related to the scenario.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -203,7 +202,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a businessScenarioPlanner object.
+        /// Planner content related to the scenario.
         /// </summary>
         public class PlannerRequestBuilderGetQueryParameters 
         {

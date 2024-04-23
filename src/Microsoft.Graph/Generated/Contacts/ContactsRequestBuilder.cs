@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Contacts {
         }
         /// <summary>
         /// Get the list of organizational contacts for this organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OrgContactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

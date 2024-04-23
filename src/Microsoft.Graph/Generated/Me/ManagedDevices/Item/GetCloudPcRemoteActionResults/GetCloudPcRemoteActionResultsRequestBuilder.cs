@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcRemoteActionResu
         {
         }
         /// <summary>
-        /// Invoke function getCloudPcRemoteActionResults
+        /// Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCloudPcRemoteActionResultsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcRemoteActionResu
             return await RequestAdapter.SendAsync<GetCloudPcRemoteActionResultsGetResponse>(requestInfo, GetCloudPcRemoteActionResultsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCloudPcRemoteActionResults
+        /// Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-getcloudpcremoteactionresults?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCloudPcRemoteActionResultsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcRemoteActionResu
             return await RequestAdapter.SendAsync<GetCloudPcRemoteActionResultsResponse>(requestInfo, GetCloudPcRemoteActionResultsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCloudPcRemoteActionResults
+        /// Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcRemoteActionResu
             return new GetCloudPcRemoteActionResultsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getCloudPcRemoteActionResults
+        /// Check the Cloud PC-specified remote action results for a Cloud PC device. Cloud PC supports reprovision and resize remote actions.
         /// </summary>
         public class GetCloudPcRemoteActionResultsRequestBuilderGetQueryParameters 
         {

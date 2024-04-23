@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Me.LicenseDetails {
         {
         }
         /// <summary>
-        /// Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-licensedetails?view=graph-rest-1.0" />
+        /// Get licenseDetails from me
         /// </summary>
         /// <returns>A <see cref="LicenseDetailsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.LicenseDetails {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
+        /// Get licenseDetails from me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Beta.Me.LicenseDetails {
             return new LicenseDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of licenseDetails objects for enterprise users. This API returns details for licenses that are directly assigned and those transitively assigned through memberships in licensed groups.
+        /// Get licenseDetails from me
         /// </summary>
         public class LicenseDetailsRequestBuilderGetQueryParameters 
         {

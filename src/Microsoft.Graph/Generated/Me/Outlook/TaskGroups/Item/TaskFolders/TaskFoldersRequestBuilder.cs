@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item.TaskFolders {
         {
         }
         /// <summary>
-        /// Get Outlook task folders in a specific outlookTaskGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskgroup-list-taskfolders?view=graph-rest-1.0" />
+        /// The collection of task folders in the task group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an Outlook task folder under a specified outlookTaskGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskgroup-post-taskfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to taskFolders for me
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Outlook task folders in a specific outlookTaskGroup.
+        /// The collection of task folders in the task group. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item.TaskFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create an Outlook task folder under a specified outlookTaskGroup.
+        /// Create new navigation property to taskFolders for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item.TaskFolders {
             return new TaskFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Outlook task folders in a specific outlookTaskGroup.
+        /// The collection of task folders in the task group. Read-only. Nullable.
         /// </summary>
         public class TaskFoldersRequestBuilderGetQueryParameters 
         {

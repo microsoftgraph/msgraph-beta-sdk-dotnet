@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries {
     [Obsolete("This class is obsolete. Use GetHealthMetricTimeSeriesPostResponse instead.")]
+    #pragma warning disable CS1591
     public class GetHealthMetricTimeSeriesResponse : GetHealthMetricTimeSeriesPostResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

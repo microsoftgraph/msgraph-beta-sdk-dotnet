@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey {
         {
         }
         /// <summary>
-        /// Invoke function getActiveKey
+        /// Get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframeworkkeyset-getactivekey?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TrustFrameworkKey"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GetActiveKey {
             return await RequestAdapter.SendAsync<TrustFrameworkKey>(requestInfo, TrustFrameworkKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getActiveKey
+        /// Get the currently active trustFrameworkKey in a trustFrameworkKeySet. Only one key is active in the keyset at a time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

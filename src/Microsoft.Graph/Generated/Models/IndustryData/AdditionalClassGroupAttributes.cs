@@ -2,25 +2,45 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
+    #pragma warning disable CS1591
     public enum AdditionalClassGroupAttributes
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "courseTitle")]
+        #pragma warning disable CS1591
         CourseTitle,
+        #pragma warning restore CS1591
         [EnumMember(Value = "courseCode")]
+        #pragma warning disable CS1591
         CourseCode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "courseSubject")]
+        #pragma warning disable CS1591
         CourseSubject,
+        #pragma warning restore CS1591
         [EnumMember(Value = "courseGradeLevel")]
+        #pragma warning disable CS1591
         CourseGradeLevel,
+        #pragma warning restore CS1591
         [EnumMember(Value = "courseExternalId")]
+        #pragma warning disable CS1591
         CourseExternalId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "academicSessionTitle")]
+        #pragma warning disable CS1591
         AcademicSessionTitle,
+        #pragma warning restore CS1591
         [EnumMember(Value = "academicSessionExternalId")]
+        #pragma warning disable CS1591
         AcademicSessionExternalId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "classCode")]
+        #pragma warning disable CS1591
         ClassCode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

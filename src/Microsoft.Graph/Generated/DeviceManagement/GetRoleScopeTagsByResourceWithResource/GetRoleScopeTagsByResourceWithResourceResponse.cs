@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource {
     [Obsolete("This class is obsolete. Use GetRoleScopeTagsByResourceWithResourceGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetRoleScopeTagsByResourceWithResourceResponse : GetRoleScopeTagsByResourceWithResourceGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -3,17 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
+    #pragma warning disable CS1591
     public enum FileEntityIdentifier
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "sha1")]
+        #pragma warning disable CS1591
         Sha1 = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "initiatingProcessSHA1")]
+        #pragma warning disable CS1591
         InitiatingProcessSHA1 = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sha256")]
+        #pragma warning disable CS1591
         Sha256 = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "initiatingProcessSHA256")]
+        #pragma warning disable CS1591
         InitiatingProcessSHA256 = 8,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 16,
+        #pragma warning restore CS1591
     }
 }

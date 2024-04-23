@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems {
         {
         }
         /// <summary>
-        /// List the authorizationSystem objects onboarded to Permissions Management and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-external-list-authorizationsystems?view=graph-rest-1.0" />
+        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
         /// </summary>
         /// <returns>A <see cref="AuthorizationSystemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationSystem>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the authorizationSystem objects onboarded to Permissions Management and their properties.
+        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems {
             return new AuthorizationSystemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the authorizationSystem objects onboarded to Permissions Management and their properties.
+        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
         /// </summary>
         public class AuthorizationSystemsRequestBuilderGetQueryParameters 
         {

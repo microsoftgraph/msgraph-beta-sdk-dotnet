@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a adminForms object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminforms-get?view=graph-rest-1.0" />
+        /// Get forms from admin
         /// </summary>
         /// <returns>A <see cref="AdminForms"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             return await RequestAdapter.SendAsync<AdminForms>(requestInfo, AdminForms.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a adminForms object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminforms-update?view=graph-rest-1.0" />
+        /// Update the navigation property forms in admin
         /// </summary>
         /// <returns>A <see cref="AdminForms"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a adminForms object.
+        /// Get forms from admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a adminForms object.
+        /// Update the navigation property forms in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Admin.Forms {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a adminForms object.
+        /// Get forms from admin
         /// </summary>
         public class FormsRequestBuilderGetQueryParameters 
         {

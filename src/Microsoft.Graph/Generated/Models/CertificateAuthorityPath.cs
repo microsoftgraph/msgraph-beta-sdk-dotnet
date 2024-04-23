@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class CertificateAuthorityPath : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

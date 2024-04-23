@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
         }
         /// <summary>
         /// Validates the ownership of the domain.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Domain"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

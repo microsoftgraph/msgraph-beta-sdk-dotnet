@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a roleGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-rolegroup-get?view=graph-rest-1.0" />
+        /// Set of groups of individual roles that makes role-based admin simpler.
         /// </summary>
         /// <returns>A <see cref="RoleGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a roleGroup object.
+        /// Set of groups of individual roles that makes role-based admin simpler.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.RoleGroups.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a roleGroup object.
+        /// Set of groups of individual roles that makes role-based admin simpler.
         /// </summary>
         public class RoleGroupItemRequestBuilderGetQueryParameters 
         {

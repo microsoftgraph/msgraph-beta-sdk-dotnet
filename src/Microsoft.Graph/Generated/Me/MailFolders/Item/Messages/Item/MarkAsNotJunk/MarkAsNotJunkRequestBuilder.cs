@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.MarkAsNotJunk {
         }
         /// <summary>
         /// Mark a message as not junk. This API removes the sender from the list of blocked senders and moves the message to the Inbox folder, when moveToInbox is true.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-markasnotjunk?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="body">The request body</param>

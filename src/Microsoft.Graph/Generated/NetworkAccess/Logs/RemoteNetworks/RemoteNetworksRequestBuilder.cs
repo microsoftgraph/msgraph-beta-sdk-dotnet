@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks {
         {
         }
         /// <summary>
-        /// Retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-remotenetworkhealthstatusevent-list?view=graph-rest-1.0" />
+        /// A collection of remote network health events.
         /// </summary>
         /// <returns>A <see cref="RemoteNetworkHealthEventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks {
             return await RequestAdapter.SendAsync<RemoteNetworkHealthEvent>(requestInfo, RemoteNetworkHealthEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+        /// A collection of remote network health events.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.RemoteNetworks {
             return new RemoteNetworksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of remote network health status microsoft.graph.networkaccess.remoteNetworkHealthStatusEvent events, providing insights into the health and status of remote networks.
+        /// A collection of remote network health events.
         /// </summary>
         public class RemoteNetworksRequestBuilderGetQueryParameters 
         {

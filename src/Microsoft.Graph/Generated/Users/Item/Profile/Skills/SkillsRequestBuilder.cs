@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Skills {
         {
         }
         /// <summary>
-        /// Retrieve a list of skillProficiency objects in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-skills?view=graph-rest-1.0" />
+        /// Represents detailed information about skills associated with a user in various services.
         /// </summary>
         /// <returns>A <see cref="SkillProficiencyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Skills {
             return await RequestAdapter.SendAsync<SkillProficiencyCollectionResponse>(requestInfo, SkillProficiencyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new skillProficiency object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-skills?view=graph-rest-1.0" />
+        /// Create new navigation property to skills for users
         /// </summary>
         /// <returns>A <see cref="SkillProficiency"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Skills {
             return await RequestAdapter.SendAsync<SkillProficiency>(requestInfo, SkillProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of skillProficiency objects in a user&apos;s profile.
+        /// Represents detailed information about skills associated with a user in various services.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Skills {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new skillProficiency object in a user&apos;s profile.
+        /// Create new navigation property to skills for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Skills {
             return new SkillsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of skillProficiency objects in a user&apos;s profile.
+        /// Represents detailed information about skills associated with a user in various services.
         /// </summary>
         public class SkillsRequestBuilderGetQueryParameters 
         {

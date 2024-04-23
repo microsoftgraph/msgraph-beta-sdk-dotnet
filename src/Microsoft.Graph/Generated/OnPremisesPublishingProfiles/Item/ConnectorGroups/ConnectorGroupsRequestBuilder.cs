@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         {
         }
         /// <summary>
-        /// Retrieve a list of connectorGroup objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-list?view=graph-rest-1.0" />
+        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ConnectorGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return await RequestAdapter.SendAsync<ConnectorGroupCollectionResponse>(requestInfo, ConnectorGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a connectorGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-post?view=graph-rest-1.0" />
+        /// Create new navigation property to connectorGroups for onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConnectorGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectorGroup>(requestInfo, Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of connectorGroup objects.
+        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Create a connectorGroup object.
+        /// Create new navigation property to connectorGroups for onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return new ConnectorGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of connectorGroup objects.
+        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         public class ConnectorGroupsRequestBuilderGetQueryParameters 
         {

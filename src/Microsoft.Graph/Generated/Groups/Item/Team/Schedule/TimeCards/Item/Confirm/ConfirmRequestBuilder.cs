@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule.TimeCards.Item.Confirm 
         }
         /// <summary>
         /// Confirm a specific timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeCard"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Me.FindRoomLists {
         }
         /// <summary>
         /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FindRoomListsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.FindRoomLists {
         }
         /// <summary>
         /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-findroomlists?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FindRoomListsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

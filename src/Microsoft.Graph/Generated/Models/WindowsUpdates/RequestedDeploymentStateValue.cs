@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public enum RequestedDeploymentStateValue
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "paused")]
+        #pragma warning disable CS1591
         Paused,
+        #pragma warning restore CS1591
         [EnumMember(Value = "archived")]
+        #pragma warning disable CS1591
         Archived,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

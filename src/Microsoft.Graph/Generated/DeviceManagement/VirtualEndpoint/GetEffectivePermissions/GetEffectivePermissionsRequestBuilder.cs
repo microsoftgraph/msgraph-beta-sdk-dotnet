@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
         {
         }
         /// <summary>
-        /// Invoke function getEffectivePermissions
+        /// Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn&apos;t have access to.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetEffectivePermissionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
             return await RequestAdapter.SendAsync<GetEffectivePermissionsGetResponse>(requestInfo, GetEffectivePermissionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getEffectivePermissions
+        /// Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn&apos;t have access to.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-geteffectivepermissions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetEffectivePermissionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
             return await RequestAdapter.SendAsync<GetEffectivePermissionsResponse>(requestInfo, GetEffectivePermissionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getEffectivePermissions
+        /// Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn&apos;t have access to.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
             return new GetEffectivePermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getEffectivePermissions
+        /// Get the effective permissions of the currently authenticated user, helping UX hide or disable content that the current user doesn&apos;t have access to.
         /// </summary>
         public class GetEffectivePermissionsRequestBuilderGetQueryParameters 
         {

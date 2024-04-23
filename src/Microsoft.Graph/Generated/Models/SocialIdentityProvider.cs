@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class SocialIdentityProvider : IdentityProviderBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The client identifier for the application obtained when registering the application with the identity provider. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

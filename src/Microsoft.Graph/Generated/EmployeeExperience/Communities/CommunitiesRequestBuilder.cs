@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a community object.
+        /// A collection of communities in Viva Engage.
         /// </summary>
         /// <returns>A <see cref="CommunityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities {
             return await RequestAdapter.SendAsync<CommunityCollectionResponse>(requestInfo, CommunityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new community in Viva Engage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/employeeexperience-post-communities?view=graph-rest-1.0" />
+        /// Create new navigation property to communities for employeeExperience
         /// </summary>
         /// <returns>A <see cref="Community"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities {
             return await RequestAdapter.SendAsync<Community>(requestInfo, Community.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a community object.
+        /// A collection of communities in Viva Engage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new community in Viva Engage.
+        /// Create new navigation property to communities for employeeExperience
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities {
             return new CommunitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a community object.
+        /// A collection of communities in Viva Engage.
         /// </summary>
         public class CommunitiesRequestBuilderGetQueryParameters 
         {

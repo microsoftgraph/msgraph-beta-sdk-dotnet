@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks {
         {
         }
         /// <summary>
-        /// Get a list of the businessScenarioTask objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenarioplanner-list-tasks?view=graph-rest-1.0" />
+        /// The Planner tasks for the scenario.
         /// </summary>
         /// <returns>A <see cref="BusinessScenarioTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks {
             return await RequestAdapter.SendAsync<BusinessScenarioTaskCollectionResponse>(requestInfo, BusinessScenarioTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new businessScenarioTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenarioplanner-post-tasks?view=graph-rest-1.0" />
+        /// Create new navigation property to tasks for solutions
         /// </summary>
         /// <returns>A <see cref="BusinessScenarioTask"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks {
             return await RequestAdapter.SendAsync<BusinessScenarioTask>(requestInfo, BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the businessScenarioTask objects and their properties.
+        /// The Planner tasks for the scenario.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new businessScenarioTask object.
+        /// Create new navigation property to tasks for solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the businessScenarioTask objects and their properties.
+        /// The Planner tasks for the scenario.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

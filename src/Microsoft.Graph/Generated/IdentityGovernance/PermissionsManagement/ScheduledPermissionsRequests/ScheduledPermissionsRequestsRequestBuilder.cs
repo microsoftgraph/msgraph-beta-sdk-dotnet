@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.Schedule
             return await RequestAdapter.SendAsync<ScheduledPermissionsRequestCollectionResponse>(requestInfo, ScheduledPermissionsRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new scheduledPermissionsRequest object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissionsmanagement-post-scheduledpermissionsrequests?view=graph-rest-1.0" />
+        /// Create new navigation property to scheduledPermissionsRequests for identityGovernance
         /// </summary>
         /// <returns>A <see cref="ScheduledPermissionsRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +110,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsManagement.Schedule
             return requestInfo;
         }
         /// <summary>
-        /// Create a new scheduledPermissionsRequest object.
+        /// Create new navigation property to scheduledPermissionsRequests for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

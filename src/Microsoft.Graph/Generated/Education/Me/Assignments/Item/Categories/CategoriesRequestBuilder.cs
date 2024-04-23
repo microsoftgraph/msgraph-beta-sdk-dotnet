@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories {
         {
         }
         /// <summary>
-        /// List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
+        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories {
             return await RequestAdapter.SendAsync<EducationCategory>(requestInfo, EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +161,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories {
             return new CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all categories for an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// When set, enables users to easily find assignments of a given type.  Read-only. Nullable.
         /// </summary>
         public class CategoriesRequestBuilderGetQueryParameters 
         {

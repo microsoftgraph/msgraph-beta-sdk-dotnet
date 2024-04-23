@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
         {
         }
         /// <summary>
-        /// Delete an onPremisesAgentGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagentgroup-delete?view=graph-rest-1.0" />
+        /// Delete navigation property agentGroups for onPremisesPublishingProfiles
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgentGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagentgroup-get?view=graph-rest-1.0" />
+        /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnPremisesAgentGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an onPremisesAgentGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagentgroup-update?view=graph-rest-1.0" />
+        /// Update the navigation property agentGroups in onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="OnPremisesAgentGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return await RequestAdapter.SendAsync<OnPremisesAgentGroup>(requestInfo, OnPremisesAgentGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an onPremisesAgentGroup object.
+        /// Delete navigation property agentGroups for onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgentGroup object.
+        /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an onPremisesAgentGroup object.
+        /// Update the navigation property agentGroups in onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an onPremisesAgentGroup object.
+        /// List of existing onPremisesAgentGroup objects. Read-only. Nullable.
         /// </summary>
         public class OnPremisesAgentGroupItemRequestBuilderGetQueryParameters 
         {

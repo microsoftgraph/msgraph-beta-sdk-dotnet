@@ -3,17 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum AwsSecretInformationWebServices
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "secretsManager")]
+        #pragma warning disable CS1591
         SecretsManager = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "certificateAuthority")]
+        #pragma warning disable CS1591
         CertificateAuthority = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cloudHsm")]
+        #pragma warning disable CS1591
         CloudHsm = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "certificateManager")]
+        #pragma warning disable CS1591
         CertificateManager = 8,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 16,
+        #pragma warning restore CS1591
     }
 }

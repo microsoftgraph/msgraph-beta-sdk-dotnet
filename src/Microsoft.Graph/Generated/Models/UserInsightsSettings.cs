@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class UserInsightsSettings : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>true if user&apos;s itemInsights and meeting hours insights are enabled; false if user&apos;s itemInsights and meeting hours insights are disabled. Default is true. Optional.</summary>
         public bool? IsEnabled {

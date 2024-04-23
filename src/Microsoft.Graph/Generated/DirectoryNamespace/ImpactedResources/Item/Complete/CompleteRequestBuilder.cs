@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Complet
         }
         /// <summary>
         /// Complete an impactedResource object and update its status to completedByUser.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-complete?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ImpactedResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

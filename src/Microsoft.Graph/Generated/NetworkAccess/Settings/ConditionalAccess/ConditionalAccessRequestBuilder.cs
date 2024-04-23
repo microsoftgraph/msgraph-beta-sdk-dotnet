@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-get?view=graph-rest-1.0" />
+        /// Defines whether conditional access settings are enabled for traffic profiles. Each tenant has only one conditional access settings object.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-conditionalaccesssettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property conditionalAccess in networkAccess
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services.
+        /// Defines whether conditional access settings are enabled for traffic profiles. Each tenant has only one conditional access settings object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess {
             return requestInfo;
         }
         /// <summary>
-        /// Update the conditional access settings to include the preservation of the original source IP address in network traffic for accurate identification and tracking, as well as the establishment of scalable network connectivity through the Global Secure Access services.
+        /// Update the navigation property conditionalAccess in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ConditionalAccess {
         {
         }
         /// <summary>
-        /// Retrieve the conditional access settings, which include the preservation of the original source IP address in network traffic for accurate identification and tracking, and the establishment of scalable network connectivity through the Global Secure Access services.
+        /// Defines whether conditional access settings are enabled for traffic profiles. Each tenant has only one conditional access settings object.
         /// </summary>
         public class ConditionalAccessRequestBuilderGetQueryParameters 
         {

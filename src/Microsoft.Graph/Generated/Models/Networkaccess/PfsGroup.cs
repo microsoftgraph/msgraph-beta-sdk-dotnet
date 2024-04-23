@@ -2,27 +2,49 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public enum PfsGroup
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pfs1")]
+        #pragma warning disable CS1591
         Pfs1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pfs2")]
+        #pragma warning disable CS1591
         Pfs2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pfs14")]
+        #pragma warning disable CS1591
         Pfs14,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pfs24")]
+        #pragma warning disable CS1591
         Pfs24,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pfs2048")]
+        #pragma warning disable CS1591
         Pfs2048,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pfsmm")]
+        #pragma warning disable CS1591
         Pfsmm,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ecp256")]
+        #pragma warning disable CS1591
         Ecp256,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ecp384")]
+        #pragma warning disable CS1591
         Ecp384,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

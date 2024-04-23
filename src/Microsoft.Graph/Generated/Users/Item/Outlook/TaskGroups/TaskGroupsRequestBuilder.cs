@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
         {
         }
         /// <summary>
-        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-taskgroups?view=graph-rest-1.0" />
+        /// Get taskGroups from users
         /// </summary>
         /// <returns>A <see cref="OutlookTaskGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
             return await RequestAdapter.SendAsync<OutlookTaskGroupCollectionResponse>(requestInfo, OutlookTaskGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an Outlook task group in the user&apos;s mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-taskgroups?view=graph-rest-1.0" />
+        /// Create new navigation property to taskGroups for users
         /// </summary>
         /// <returns>A <see cref="OutlookTaskGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
             return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, OutlookTaskGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.
+        /// Get taskGroups from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
             return requestInfo;
         }
         /// <summary>
-        /// Create an Outlook task group in the user&apos;s mailbox.
+        /// Create new navigation property to taskGroups for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
             return new TaskGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the Outlook task groups in the user&apos;s mailbox. The response always includes the default task group My Tasks, and any other task groups that have been created in the mailbox.
+        /// Get taskGroups from users
         /// </summary>
         public class TaskGroupsRequestBuilderGetQueryParameters 
         {

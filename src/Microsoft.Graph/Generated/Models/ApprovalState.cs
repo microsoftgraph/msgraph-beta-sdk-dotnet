@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ApprovalState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
         [EnumMember(Value = "approved")]
+        #pragma warning disable CS1591
         Approved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "denied")]
+        #pragma warning disable CS1591
         Denied,
+        #pragma warning restore CS1591
         [EnumMember(Value = "aborted")]
+        #pragma warning disable CS1591
         Aborted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
+        #pragma warning disable CS1591
         Canceled,
+        #pragma warning restore CS1591
     }
 }

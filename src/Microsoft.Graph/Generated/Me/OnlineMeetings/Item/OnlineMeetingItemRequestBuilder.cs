@@ -104,8 +104,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
         {
         }
         /// <summary>
-        /// Delete an onlineMeeting object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-delete?view=graph-rest-1.0" />
+        /// Delete navigation property onlineMeetings for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,8 +149,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onlinemeeting-update?view=graph-rest-1.0" />
+        /// Update the navigation property onlineMeetings in me
         /// </summary>
         /// <returns>A <see cref="OnlineMeeting"/></returns>
         /// <param name="body">The request body</param>
@@ -176,7 +174,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
             return await RequestAdapter.SendAsync<OnlineMeeting>(requestInfo, OnlineMeeting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an onlineMeeting object.
+        /// Delete navigation property onlineMeetings for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -214,7 +212,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the specified onlineMeeting object. Please see Request body section for the list of properties that support updating.
+        /// Update the navigation property onlineMeetings in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

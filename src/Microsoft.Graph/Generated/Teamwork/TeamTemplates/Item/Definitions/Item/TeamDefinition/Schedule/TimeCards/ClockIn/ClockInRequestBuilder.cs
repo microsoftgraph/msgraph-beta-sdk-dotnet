@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         }
         /// <summary>
         /// Clock in to start a timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeCard"/></returns>
         /// <param name="body">The request body</param>

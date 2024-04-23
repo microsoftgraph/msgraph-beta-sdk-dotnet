@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
         {
         }
         /// <summary>
-        /// Delete an inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-1.0" />
+        /// Delete navigation property inboundFlows for external
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-1.0" />
+        /// Set of data import flow activities to bring data into the canonical store via a connector.
         /// </summary>
         /// <returns>A <see cref="InboundFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-1.0" />
+        /// Update the navigation property inboundFlows in external
         /// </summary>
         /// <returns>A <see cref="InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an inboundFileFlow object.
+        /// Delete navigation property inboundFlows for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFlow object.
+        /// Set of data import flow activities to bring data into the canonical store via a connector.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an inboundFileFlow object.
+        /// Update the navigation property inboundFlows in external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFlow object.
+        /// Set of data import flow activities to bring data into the canonical store via a connector.
         /// </summary>
         public class InboundFlowItemRequestBuilderGetQueryParameters 
         {

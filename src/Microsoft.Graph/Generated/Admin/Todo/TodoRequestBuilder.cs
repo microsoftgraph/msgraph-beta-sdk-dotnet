@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Admin.Todo {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a adminTodo object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/admintodo-get?view=graph-rest-1.0" />
+        /// Get todo from admin
         /// </summary>
         /// <returns>A <see cref="AdminTodo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Admin.Todo {
             return await RequestAdapter.SendAsync<AdminTodo>(requestInfo, AdminTodo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a adminTodo object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/admintodo-update?view=graph-rest-1.0" />
+        /// Update the navigation property todo in admin
         /// </summary>
         /// <returns>A <see cref="AdminTodo"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Admin.Todo {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a adminTodo object.
+        /// Get todo from admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.Todo {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a adminTodo object.
+        /// Update the navigation property todo in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Admin.Todo {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a adminTodo object.
+        /// Get todo from admin
         /// </summary>
         public class TodoRequestBuilderGetQueryParameters 
         {

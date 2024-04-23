@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PrivilegedSignupStatus : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The isRegistered property</summary>
         public bool? IsRegistered {

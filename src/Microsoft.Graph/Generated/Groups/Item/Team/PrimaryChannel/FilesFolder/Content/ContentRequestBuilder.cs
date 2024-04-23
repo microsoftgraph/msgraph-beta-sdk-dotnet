@@ -33,7 +33,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.FilesFolder.Conte
         }
         /// <summary>
         /// Get content for the navigation property filesFolder from groups
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-get-filesfolder?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AwsAccessKey : AwsIdentity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents the owner of the access key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

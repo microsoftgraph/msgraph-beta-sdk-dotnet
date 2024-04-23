@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
         {
         }
         /// <summary>
-        /// Get a list of the resourceConnection objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-list-resourceconnections?view=graph-rest-1.0" />
+        /// Service connections to external resources such as analytics workspaces.
         /// </summary>
         /// <returns>A <see cref="ResourceConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return await RequestAdapter.SendAsync<ResourceConnectionCollectionResponse>(requestInfo, ResourceConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new operationalInsightsConnection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-post-resourceconnections-operationalinsightsconnection?view=graph-rest-1.0" />
+        /// Create new navigation property to resourceConnections for admin
         /// </summary>
         /// <returns>A <see cref="ResourceConnection"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return await RequestAdapter.SendAsync<ResourceConnection>(requestInfo, ResourceConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the resourceConnection objects and their properties.
+        /// Service connections to external resources such as analytics workspaces.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new operationalInsightsConnection object.
+        /// Create new navigation property to resourceConnections for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.ResourceConnections {
             return new ResourceConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the resourceConnection objects and their properties.
+        /// Service connections to external resources such as analytics workspaces.
         /// </summary>
         public class ResourceConnectionsRequestBuilderGetQueryParameters 
         {

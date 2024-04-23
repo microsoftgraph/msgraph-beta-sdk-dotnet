@@ -2,25 +2,45 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum EducationSynchronizationStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "paused")]
+        #pragma warning disable CS1591
         Paused,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inProgress")]
+        #pragma warning disable CS1591
         InProgress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "success")]
+        #pragma warning disable CS1591
         Success,
+        #pragma warning restore CS1591
         [EnumMember(Value = "error")]
+        #pragma warning disable CS1591
         Error,
+        #pragma warning restore CS1591
         [EnumMember(Value = "validationError")]
+        #pragma warning disable CS1591
         ValidationError,
+        #pragma warning restore CS1591
         [EnumMember(Value = "quarantined")]
+        #pragma warning disable CS1591
         Quarantined,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "extracting")]
+        #pragma warning disable CS1591
         Extracting,
+        #pragma warning restore CS1591
         [EnumMember(Value = "validating")]
+        #pragma warning disable CS1591
         Validating,
+        #pragma warning restore CS1591
     }
 }

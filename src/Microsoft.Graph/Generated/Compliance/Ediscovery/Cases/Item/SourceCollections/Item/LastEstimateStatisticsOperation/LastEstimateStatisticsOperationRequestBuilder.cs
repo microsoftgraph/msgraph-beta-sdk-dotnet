@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         {
         }
         /// <summary>
-        /// Get the last estimateStatisticsOperation object associated with a source collection. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-lastestimatestatisticsoperation?view=graph-rest-1.0" />
+        /// The last estimate operation associated with the sourceCollection.
         /// </summary>
         /// <returns>A <see cref="EstimateStatisticsOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +56,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<EstimateStatisticsOperation>(requestInfo, EstimateStatisticsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the last estimateStatisticsOperation object associated with a source collection. 
+        /// The last estimate operation associated with the sourceCollection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +86,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return new LastEstimateStatisticsOperationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the last estimateStatisticsOperation object associated with a source collection. 
+        /// The last estimate operation associated with the sourceCollection.
         /// </summary>
         public class LastEstimateStatisticsOperationRequestBuilderGetQueryParameters 
         {

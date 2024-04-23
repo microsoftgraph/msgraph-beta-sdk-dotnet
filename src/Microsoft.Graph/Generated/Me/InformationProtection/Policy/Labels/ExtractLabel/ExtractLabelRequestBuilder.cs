@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.ExtractLab
         }
         /// <summary>
         /// Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/informationprotectionlabel-extractlabel?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InformationProtectionContentLabel"/></returns>
         /// <param name="body">The request body</param>

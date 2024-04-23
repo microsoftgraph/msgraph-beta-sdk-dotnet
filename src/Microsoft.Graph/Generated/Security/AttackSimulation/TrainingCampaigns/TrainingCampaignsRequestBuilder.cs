@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns {
         {
         }
         /// <summary>
-        /// Get a list of trainingCampaign objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-trainingcampaigns?view=graph-rest-1.0" />
+        /// Represents a training campaign in a tenant.
         /// </summary>
         /// <returns>A <see cref="TrainingCampaignCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns {
             return await RequestAdapter.SendAsync<TrainingCampaignCollectionResponse>(requestInfo, TrainingCampaignCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new trainingCampaign object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-post-trainingcampaigns?view=graph-rest-1.0" />
+        /// Create new navigation property to trainingCampaigns for security
         /// </summary>
         /// <returns>A <see cref="TrainingCampaign"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns {
             return await RequestAdapter.SendAsync<TrainingCampaign>(requestInfo, TrainingCampaign.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of trainingCampaign objects and their properties.
+        /// Represents a training campaign in a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new trainingCampaign object.
+        /// Create new navigation property to trainingCampaigns for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns {
             return new TrainingCampaignsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of trainingCampaign objects and their properties.
+        /// Represents a training campaign in a tenant.
         /// </summary>
         public class TrainingCampaignsRequestBuilderGetQueryParameters 
         {

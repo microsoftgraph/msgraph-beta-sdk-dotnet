@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
         {
         }
         /// <summary>
-        /// Delete columnDefinition
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-1.0" />
+        /// Delete navigation property columns for shares
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-1.0" />
+        /// The collection of column definitions for this content type.
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update columnDefinition
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-1.0" />
+        /// Update the navigation property columns in shares
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete columnDefinition
+        /// Delete navigation property columns for shares
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+        /// The collection of column definitions for this content type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update columnDefinition
+        /// Update the navigation property columns in shares
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.ContentTypes.Item.Columns.Item {
         {
         }
         /// <summary>
-        /// Retrieve the metadata for a [site][], [list][], or [contentType][] [column][columnDefinition].
+        /// The collection of column definitions for this content type.
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters 
         {

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsProtectionState object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-windowsprotectionstate-get?view=graph-rest-1.0" />
+        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.WindowsProtectionState"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsProtectionState object.
+        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a windowsProtectionState object.
+        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
         /// </summary>
         public class WindowsProtectionStateItemRequestBuilderGetQueryParameters 
         {

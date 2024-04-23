@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans {
         {
         }
         /// <summary>
-        /// Get the plannerPlans contained by the plannerRoster.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-list-plans?view=graph-rest-1.0" />
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the plannerPlans contained by the plannerRoster.
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans {
             return new PlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the plannerPlans contained by the plannerRoster.
+        /// Retrieves the plans contained by the plannerRoster.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters 
         {

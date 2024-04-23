@@ -7,7 +7,9 @@ namespace Microsoft.Graph.Beta.Models {
     public enum EasServices
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None = 1,
+        #pragma warning restore CS1591
         /// <summary>Enables synchronization of calendars.</summary>
         [EnumMember(Value = "calendars")]
         Calendars = 2,

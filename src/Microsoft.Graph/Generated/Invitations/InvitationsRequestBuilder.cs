@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Invitations {
         }
         /// <summary>
         /// Create a new invitation. The invitation adds an external user to the organization. The following options are available for creating an invitation:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/invitation-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Invitation"/></returns>
         /// <param name="body">The request body</param>

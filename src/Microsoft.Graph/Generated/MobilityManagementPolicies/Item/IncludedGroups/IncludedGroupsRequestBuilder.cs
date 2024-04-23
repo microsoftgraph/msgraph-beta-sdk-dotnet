@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups {
         {
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list-includedgroups?view=graph-rest-1.0" />
+        /// Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy.
+        /// Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups {
             return new IncludedGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of groups that are included in a mobile app management policy.
+        /// Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected
         /// </summary>
         public class IncludedGroupsRequestBuilderGetQueryParameters 
         {

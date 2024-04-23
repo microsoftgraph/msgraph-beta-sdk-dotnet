@@ -146,8 +146,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         {
         }
         /// <summary>
-        /// Deletes a profile object from a user&apos;s account.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-delete?view=graph-rest-1.0" />
+        /// Delete navigation property profile for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -169,8 +168,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-get?view=graph-rest-1.0" />
+        /// Represents properties that are descriptive of a user in a tenant.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Profile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -218,7 +216,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Profile>(requestInfo, Microsoft.Graph.Beta.Models.Profile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a profile object from a user&apos;s account.
+        /// Delete navigation property profile for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -237,7 +235,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile.
+        /// Represents properties that are descriptive of a user in a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -294,7 +292,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a profile object for a given user. The profile resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by profile.
+        /// Represents properties that are descriptive of a user in a tenant.
         /// </summary>
         public class ProfileRequestBuilderGetQueryParameters 
         {

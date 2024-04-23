@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
         {
         }
         /// <summary>
-        /// Delete an updatePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-delete?view=graph-rest-1.0" />
+        /// Delete navigation property updatePolicies for admin
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an updatePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-get?view=graph-rest-1.0" />
+        /// A collection of policies for approving the deployment of different content to an audience over time.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an updatePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatepolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property updatePolicies in admin
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an updatePolicy object.
+        /// Delete navigation property updatePolicies for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an updatePolicy object.
+        /// A collection of policies for approving the deployment of different content to an audience over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an updatePolicy object.
+        /// Update the navigation property updatePolicies in admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an updatePolicy object.
+        /// A collection of policies for approving the deployment of different content to an audience over time.
         /// </summary>
         public class UpdatePolicyItemRequestBuilderGetQueryParameters 
         {

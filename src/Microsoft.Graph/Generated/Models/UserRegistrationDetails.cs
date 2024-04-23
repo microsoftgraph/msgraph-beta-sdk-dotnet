@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class UserRegistrationDetails : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The method the user or admin selected as default for performing multifactor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
         public DefaultMfaMethodType? DefaultMfaMethod {

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Me.ChangePassword {
         }
         /// <summary>
         /// Enable the user to update their password. Any user can update their password without belonging to any administrator role.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

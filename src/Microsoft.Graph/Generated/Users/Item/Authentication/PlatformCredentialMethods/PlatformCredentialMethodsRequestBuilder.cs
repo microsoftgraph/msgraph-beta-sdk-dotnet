@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PlatformCredentialMetho
         {
         }
         /// <summary>
-        /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/platformcredentialauthenticationmethod-list?view=graph-rest-1.0" />
+        /// Get platformCredentialMethods from users
         /// </summary>
         /// <returns>A <see cref="PlatformCredentialAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PlatformCredentialMetho
             return await RequestAdapter.SendAsync<PlatformCredentialAuthenticationMethodCollectionResponse>(requestInfo, PlatformCredentialAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
+        /// Get platformCredentialMethods from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PlatformCredentialMetho
             return new PlatformCredentialMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the platformCredentialAuthenticationMethod objects and their properties.
+        /// Get platformCredentialMethods from users
         /// </summary>
         public class PlatformCredentialMethodsRequestBuilderGetQueryParameters 
         {

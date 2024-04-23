@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
         {
         }
         /// <summary>
-        /// Delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventsflow-delete?view=graph-rest-1.0" />
+        /// Delete navigation property authenticationEventsFlows for identity
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventsflow-get?view=graph-rest-1.0" />
+        /// Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
         /// </summary>
         /// <returns>A <see cref="AuthenticationEventsFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,8 +89,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventsFlow>(requestInfo, AuthenticationEventsFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationeventsflow-update?view=graph-rest-1.0" />
+        /// Update the navigation property authenticationEventsFlows in identity
         /// </summary>
         /// <returns>A <see cref="AuthenticationEventsFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +114,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
             return await RequestAdapter.SendAsync<AuthenticationEventsFlow>(requestInfo, AuthenticationEventsFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific authenticationEventsFlow resource by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+        /// Delete navigation property authenticationEventsFlows for identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +133,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+        /// Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an authenticationEventsFlow object. Only the externalUsersSelfServiceSignupEventsFlow object type is supported.
+        /// Update the navigation property authenticationEventsFlows in identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +190,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a specific authenticationEventsFlow object by ID. Only externalUsersSelfServiceSignupEventsFlow object types are available.
+        /// Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.
         /// </summary>
         public class AuthenticationEventsFlowItemRequestBuilderGetQueryParameters 
         {

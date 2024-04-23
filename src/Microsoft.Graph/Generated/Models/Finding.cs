@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Finding : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Defines when the finding was created.</summary>
         public DateTimeOffset? CreatedDateTime {

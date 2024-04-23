@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ExternalUsersSelfServiceSignUpEventsFlow : AuthenticationEventsFlow, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The configuration for what to invoke when attributes are ready to be collected from the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

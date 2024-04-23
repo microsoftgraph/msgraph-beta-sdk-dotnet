@@ -67,8 +67,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
         {
         }
         /// <summary>
-        /// Get a list of the noncustodialDataSource objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-list?view=graph-rest-1.0" />
+        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
         /// </summary>
         /// <returns>A <see cref="NoncustodialDataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,8 +91,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return await RequestAdapter.SendAsync<NoncustodialDataSourceCollectionResponse>(requestInfo, NoncustodialDataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new noncustodialDataSource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-noncustodialdatasource-post?view=graph-rest-1.0" />
+        /// Create new navigation property to noncustodialDataSources for compliance
         /// </summary>
         /// <returns>A <see cref="NoncustodialDataSource"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +117,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return await RequestAdapter.SendAsync<NoncustodialDataSource>(requestInfo, NoncustodialDataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the noncustodialDataSource objects and their properties.
+        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +137,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return requestInfo;
         }
         /// <summary>
-        /// Create a new noncustodialDataSource object.
+        /// Create new navigation property to noncustodialDataSources for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -172,7 +170,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return new NoncustodialDataSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the noncustodialDataSource objects and their properties.
+        /// Returns a list of case noncustodialDataSource objects for this case.  Nullable.
         /// </summary>
         public class NoncustodialDataSourcesRequestBuilderGetQueryParameters 
         {

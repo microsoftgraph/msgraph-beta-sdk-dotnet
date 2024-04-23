@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone 
         }
         /// <summary>
         /// Postpone action on a recommendation object to a specified future date and time by marking its status as postponed. On the date and time provided, Microsoft Entra ID will automatically update the status of the recommendation object to active again.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-postpone?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Recommendation"/></returns>
         /// <param name="body">The request body</param>
