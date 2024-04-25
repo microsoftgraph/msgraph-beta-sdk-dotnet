@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class EmailActivityStatistics : ActivityStatistics, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Total hours spent on email outside of working hours, which is based on the user&apos;s Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.</summary>
         public TimeSpan? AfterHours {

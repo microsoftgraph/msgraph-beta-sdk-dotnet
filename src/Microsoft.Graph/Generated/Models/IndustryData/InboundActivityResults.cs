@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData {
+    #pragma warning disable CS1591
     public class InboundActivityResults : IndustryDataActivityStatistics, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Number of errors encountered while processing the inbound flow.</summary>
         public int? Errors {

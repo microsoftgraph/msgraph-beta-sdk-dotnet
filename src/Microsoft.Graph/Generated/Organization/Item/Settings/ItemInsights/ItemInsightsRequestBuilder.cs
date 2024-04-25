@@ -55,8 +55,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationsettings-list-iteminsights?view=graph-rest-1.0" />
+        /// Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
         /// </summary>
         /// <returns>A <see cref="InsightsSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +125,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
+        /// Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +185,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights {
         {
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning item insights in an organization. To learn how to customize the privacy of item insights in an organization, see Customize item insights privacy. 
+        /// Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.
         /// </summary>
         public class ItemInsightsRequestBuilderGetQueryParameters 
         {

@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("locale", value); }
         }
 #endif
-        /// <summary>AzureAD management app ID used during client device-based enrollment discovery</summary>
+        /// <summary>The Entra management service App ID which gets used during client device-based enrollment discovery. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagementServiceAppId {

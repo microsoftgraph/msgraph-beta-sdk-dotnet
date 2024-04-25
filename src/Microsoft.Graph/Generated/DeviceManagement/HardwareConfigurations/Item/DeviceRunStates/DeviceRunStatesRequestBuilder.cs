@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Devi
         {
         }
         /// <summary>
-        /// List of run states for the hardware configuration across all devices
+        /// List of run states for the hardware configuration across all devices. Read-Only.
         /// </summary>
         /// <returns>A <see cref="HardwareConfigurationDeviceStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Devi
             return await RequestAdapter.SendAsync<HardwareConfigurationDeviceState>(requestInfo, HardwareConfigurationDeviceState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of run states for the hardware configuration across all devices
+        /// List of run states for the hardware configuration across all devices. Read-Only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Devi
             return new DeviceRunStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of run states for the hardware configuration across all devices
+        /// List of run states for the hardware configuration across all devices. Read-Only.
         /// </summary>
         public class DeviceRunStatesRequestBuilderGetQueryParameters 
         {

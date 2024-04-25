@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public enum ResourceConnectionState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "connected")]
+        #pragma warning disable CS1591
         Connected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notAuthorized")]
+        #pragma warning disable CS1591
         NotAuthorized,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notFound")]
+        #pragma warning disable CS1591
         NotFound,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

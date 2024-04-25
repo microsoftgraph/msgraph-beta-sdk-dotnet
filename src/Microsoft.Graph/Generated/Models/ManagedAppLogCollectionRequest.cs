@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The unique identifier of the app instance for which diagnostic was collected.</summary>
+        /// <summary>The unique identifier of the app instance for which diagnostic logs were collected. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagedAppRegistrationId {
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedAppRegistrationId", value); }
         }
 #endif
-        /// <summary>The user principal name associated with the request for the managed application log collection.</summary>
+        /// <summary>The user principal name associated with the request for the managed application log collection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestedBy {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
 #endif
-        /// <summary>The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs.</summary>
+        /// <summary>The collection of log upload results as reported by each component on the device. Such components can be the application itself, the Mobile Application Management (MAM) SDK, and other on-device components that are requested to upload diagnostic logs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ManagedAppLogUpload>? UploadedLogs {

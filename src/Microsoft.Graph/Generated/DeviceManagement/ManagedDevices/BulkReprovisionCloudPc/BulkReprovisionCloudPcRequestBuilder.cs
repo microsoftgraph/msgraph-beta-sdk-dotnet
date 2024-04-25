@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         }
         /// <summary>
         /// Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcBulkRemoteActionResult"/></returns>
         /// <param name="body">The request body</param>

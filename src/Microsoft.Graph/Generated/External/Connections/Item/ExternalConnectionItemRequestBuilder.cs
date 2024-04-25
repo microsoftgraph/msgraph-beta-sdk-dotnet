@@ -62,8 +62,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
         {
         }
         /// <summary>
-        /// Delete an externalConnection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-delete?view=graph-rest-1.0" />
+        /// Delete navigation property connections for external
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,8 +84,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an externalConnection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-get?view=graph-rest-1.0" />
+        /// Get connections from external
         /// </summary>
         /// <returns>A <see cref="ExternalConnection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,8 +107,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
             return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an externalConnection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-update?view=graph-rest-1.0" />
+        /// Update the navigation property connections in external
         /// </summary>
         /// <returns>A <see cref="ExternalConnection"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +132,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
             return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an externalConnection.
+        /// Delete navigation property connections for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +151,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an externalConnection.
+        /// Get connections from external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +170,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an externalConnection.
+        /// Update the navigation property connections in external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -211,7 +208,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an externalConnection.
+        /// Get connections from external
         /// </summary>
         public class ExternalConnectionItemRequestBuilderGetQueryParameters 
         {

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Reports.Partners.Billing.Usage.Billed.MicrosoftGr
         }
         /// <summary>
         /// Export the billed Azure usage data.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Operation"/></returns>
         /// <param name="body">The request body</param>

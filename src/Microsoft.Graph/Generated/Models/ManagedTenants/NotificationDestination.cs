@@ -3,17 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     [Flags]
+    #pragma warning disable CS1591
     public enum NotificationDestination
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "api")]
+        #pragma warning disable CS1591
         Api = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "email")]
+        #pragma warning disable CS1591
         Email = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sms")]
+        #pragma warning disable CS1591
         Sms = 8,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 16,
+        #pragma warning restore CS1591
     }
 }

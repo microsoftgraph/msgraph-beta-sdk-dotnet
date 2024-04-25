@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class TeamTemplateDefinition : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.</summary>
         public TeamTemplateAudience? Audience {

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetStatusMessage {
         }
         /// <summary>
         /// Set a presence status message for a user. An optional expiration date and time can be supplied.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

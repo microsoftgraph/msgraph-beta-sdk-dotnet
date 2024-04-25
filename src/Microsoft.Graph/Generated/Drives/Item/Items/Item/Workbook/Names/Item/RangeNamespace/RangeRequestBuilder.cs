@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.Item.RangeN
         }
         /// <summary>
         /// Returns the range object that is associated with the name. Throws an exception if the named item&apos;s type is not a range.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-range?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-range?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

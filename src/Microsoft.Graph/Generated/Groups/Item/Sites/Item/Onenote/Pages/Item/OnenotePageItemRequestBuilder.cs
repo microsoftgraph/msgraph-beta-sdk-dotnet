@@ -68,8 +68,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item {
         {
         }
         /// <summary>
-        /// Delete a OneNote page.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-1.0" />
+        /// Delete navigation property pages for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +138,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Onenote.Pages.Item {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a OneNote page.
+        /// Delete navigation property pages for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

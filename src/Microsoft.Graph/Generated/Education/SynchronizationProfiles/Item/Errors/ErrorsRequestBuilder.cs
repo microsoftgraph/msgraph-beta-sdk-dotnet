@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
         {
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationerrors-get?view=graph-rest-1.0" />
+        /// All errors associated with this synchronization profile.
         /// </summary>
         /// <returns>A <see cref="EducationSynchronizationErrorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
             return await RequestAdapter.SendAsync<EducationSynchronizationError>(requestInfo, EducationSynchronizationError.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+        /// All errors associated with this synchronization profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors {
             return new ErrorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the errors generated during validation and/or during a sync of a specific school data synchronization profile in the tenant.
+        /// All errors associated with this synchronization profile.
         /// </summary>
         public class ErrorsRequestBuilderGetQueryParameters 
         {

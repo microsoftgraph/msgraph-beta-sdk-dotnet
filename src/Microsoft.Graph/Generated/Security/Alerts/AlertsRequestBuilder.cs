@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts {
         {
         }
         /// <summary>
-        /// Retrieve a list of alert objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-list?view=graph-rest-1.0" />
+        /// Notifications for suspicious or potential security issues in a customer’s tenant.
         /// </summary>
         /// <returns>A <see cref="AlertCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of alert objects.
+        /// Notifications for suspicious or potential security issues in a customer’s tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts {
             return new AlertsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of alert objects.
+        /// Notifications for suspicious or potential security issues in a customer’s tenant.
         /// </summary>
         public class AlertsRequestBuilderGetQueryParameters 
         {

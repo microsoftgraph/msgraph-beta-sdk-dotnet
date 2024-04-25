@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
         {
         }
         /// <summary>
-        /// Get a list of deployment objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-list-deployments?view=graph-rest-1.0" />
+        /// Deployments created using the deployment service.
         /// </summary>
         /// <returns>A <see cref="DeploymentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
             return await RequestAdapter.SendAsync<DeploymentCollectionResponse>(requestInfo, DeploymentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deployment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/adminwindowsupdates-post-deployments?view=graph-rest-1.0" />
+        /// Create new navigation property to deployments for admin
         /// </summary>
         /// <returns>A <see cref="Deployment"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
             return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of deployment objects and their properties.
+        /// Deployments created using the deployment service.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deployment object.
+        /// Create new navigation property to deployments for admin
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments {
             return new DeploymentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of deployment objects and their properties.
+        /// Deployments created using the deployment service.
         /// </summary>
         public class DeploymentsRequestBuilderGetQueryParameters 
         {

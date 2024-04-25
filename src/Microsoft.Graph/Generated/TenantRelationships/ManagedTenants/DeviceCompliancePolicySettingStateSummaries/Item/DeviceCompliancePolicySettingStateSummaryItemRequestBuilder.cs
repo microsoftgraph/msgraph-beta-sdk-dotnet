@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0" />
+        /// Summary information for device compliance policy setting states across managed tenants.
         /// </summary>
         /// <returns>A <see cref="DeviceCompliancePolicySettingStateSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
+        /// Summary information for device compliance policy setting states across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a deviceCompliancePolicySettingStateSummary object.
+        /// Summary information for device compliance policy setting states across managed tenants.
         /// </summary>
         public class DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetQueryParameters 
         {

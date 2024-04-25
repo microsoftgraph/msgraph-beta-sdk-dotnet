@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
         {
         }
         /// <summary>
-        /// Retrieves a specific device link associated with a remote network.
+        /// Each unique CPE device associated with a remote network is specified. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="DeviceLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a specific device link associated with a remote network.
+        /// Each unique CPE device associated with a remote network is specified. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks.Item.De
             return new DeviceLinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a specific device link associated with a remote network.
+        /// Each unique CPE device associated with a remote network is specified. Supports $expand.
         /// </summary>
         public class DeviceLinksRequestBuilderGetQueryParameters 
         {

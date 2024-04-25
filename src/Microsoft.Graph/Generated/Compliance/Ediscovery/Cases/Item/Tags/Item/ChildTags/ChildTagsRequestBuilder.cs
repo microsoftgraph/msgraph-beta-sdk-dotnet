@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
         {
         }
         /// <summary>
-        /// Get a list of child tag objects associated with a tag.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-tag-childtags?view=graph-rest-1.0" />
+        /// Returns the tags that are a child of a tag.
         /// </summary>
         /// <returns>A <see cref="TagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
             return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of child tag objects associated with a tag.
+        /// Returns the tags that are a child of a tag.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +107,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
             return new ChildTagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of child tag objects associated with a tag.
+        /// Returns the tags that are a child of a tag.
         /// </summary>
         public class ChildTagsRequestBuilderGetQueryParameters 
         {

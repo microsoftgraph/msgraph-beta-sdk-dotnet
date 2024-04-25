@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of the specified team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Team"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Update the properties of the specified team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Team"/></returns>
         /// <param name="body">The request body</param>

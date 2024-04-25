@@ -78,8 +78,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibil
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an unifiedRoleEligibilitySchedule object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleeligibilityschedule-get?view=graph-rest-1.0" />
+        /// Get roleEligibilitySchedules from roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilitySchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -146,7 +145,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibil
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an unifiedRoleEligibilitySchedule object.
+        /// Get roleEligibilitySchedules from roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -203,7 +202,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleEligibil
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an unifiedRoleEligibilitySchedule object.
+        /// Get roleEligibilitySchedules from roleManagement
         /// </summary>
         public class UnifiedRoleEligibilityScheduleItemRequestBuilderGetQueryParameters 
         {

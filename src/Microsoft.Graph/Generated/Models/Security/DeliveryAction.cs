@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public enum DeliveryAction
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deliveredToJunk")]
+        #pragma warning disable CS1591
         DeliveredToJunk,
+        #pragma warning restore CS1591
         [EnumMember(Value = "delivered")]
+        #pragma warning disable CS1591
         Delivered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "blocked")]
+        #pragma warning disable CS1591
         Blocked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "replaced")]
+        #pragma warning disable CS1591
         Replaced,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

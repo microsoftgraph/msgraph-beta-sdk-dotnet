@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Delete a groupLifecyclePolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a groupLifecyclePolicies object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupLifecyclePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Update the properties of a groupLifecyclePolicygroupLifecyclePolicy resource type object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupLifecyclePolicy"/></returns>
         /// <param name="body">The request body</param>

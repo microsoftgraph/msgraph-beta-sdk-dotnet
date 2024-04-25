@@ -2,21 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ExpirationRequirement
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "rememberMultifactorAuthenticationOnTrustedDevices")]
+        #pragma warning disable CS1591
         RememberMultifactorAuthenticationOnTrustedDevices,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tenantTokenLifetimePolicy")]
+        #pragma warning disable CS1591
         TenantTokenLifetimePolicy,
+        #pragma warning restore CS1591
         [EnumMember(Value = "audienceTokenLifetimePolicy")]
+        #pragma warning disable CS1591
         AudienceTokenLifetimePolicy,
+        #pragma warning restore CS1591
         [EnumMember(Value = "signInFrequencyPeriodicReauthentication")]
+        #pragma warning disable CS1591
         SignInFrequencyPeriodicReauthentication,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ngcMfa")]
+        #pragma warning disable CS1591
         NgcMfa,
+        #pragma warning restore CS1591
         [EnumMember(Value = "signInFrequencyEveryTime")]
+        #pragma warning disable CS1591
         SignInFrequencyEveryTime,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

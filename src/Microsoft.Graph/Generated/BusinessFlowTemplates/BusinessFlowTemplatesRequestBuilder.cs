@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.BusinessFlowTemplates {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, list all the businessFlowTemplate objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessflowtemplate-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessflowtemplate-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BusinessFlowTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

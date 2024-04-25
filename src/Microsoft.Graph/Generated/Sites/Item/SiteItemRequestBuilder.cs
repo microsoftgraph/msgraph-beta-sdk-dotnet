@@ -167,8 +167,8 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return new GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
         }
         /// <summary>
-        /// Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-get?view=graph-rest-1.0" />
+        /// Retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Site"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Site>(requestInfo, Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
+        /// Retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -276,7 +276,7 @@ namespace Microsoft.Graph.Beta.Sites.Item {
             return new SiteItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve properties and relationships for a [site][] resource.A site resource represents a team site in SharePoint.
+        /// Retrieve properties and relationships for a site resource.A site resource represents a team site in SharePoint.
         /// </summary>
         public class SiteItemRequestBuilderGetQueryParameters 
         {

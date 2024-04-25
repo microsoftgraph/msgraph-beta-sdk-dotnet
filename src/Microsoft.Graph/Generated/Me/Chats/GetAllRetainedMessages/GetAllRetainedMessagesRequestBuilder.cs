@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
         {
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAllRetainedMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
             return await RequestAdapter.SendAsync<GetAllRetainedMessagesGetResponse>(requestInfo, GetAllRetainedMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAllRetainedMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
             return await RequestAdapter.SendAsync<GetAllRetainedMessagesResponse>(requestInfo, GetAllRetainedMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
             return new GetAllRetainedMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
         /// </summary>
         public class GetAllRetainedMessagesRequestBuilderGetQueryParameters 
         {

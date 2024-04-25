@@ -3,15 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum AllowedRolePrincipalTypes
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "user")]
+        #pragma warning disable CS1591
         User = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "servicePrincipal")]
+        #pragma warning disable CS1591
         ServicePrincipal = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "group")]
+        #pragma warning disable CS1591
         Group = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 8,
+        #pragma warning restore CS1591
     }
 }

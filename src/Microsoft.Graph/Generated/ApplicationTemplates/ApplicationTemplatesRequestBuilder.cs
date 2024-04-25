@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.ApplicationTemplates {
         }
         /// <summary>
         /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ApplicationTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

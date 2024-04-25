@@ -2,37 +2,69 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum DeviceManagementConfigurationWindowsSkus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsHome")]
+        #pragma warning disable CS1591
         WindowsHome,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsProfessional")]
+        #pragma warning disable CS1591
         WindowsProfessional,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsEnterprise")]
+        #pragma warning disable CS1591
         WindowsEnterprise,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsEducation")]
+        #pragma warning disable CS1591
         WindowsEducation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsMobile")]
+        #pragma warning disable CS1591
         WindowsMobile,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsMobileEnterprise")]
+        #pragma warning disable CS1591
         WindowsMobileEnterprise,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsTeamSurface")]
+        #pragma warning disable CS1591
         WindowsTeamSurface,
+        #pragma warning restore CS1591
         [EnumMember(Value = "iot")]
+        #pragma warning disable CS1591
         Iot,
+        #pragma warning restore CS1591
         [EnumMember(Value = "iotEnterprise")]
+        #pragma warning disable CS1591
         IotEnterprise,
+        #pragma warning restore CS1591
         [EnumMember(Value = "holoLens")]
+        #pragma warning disable CS1591
         HoloLens,
+        #pragma warning restore CS1591
         [EnumMember(Value = "holoLensEnterprise")]
+        #pragma warning disable CS1591
         HoloLensEnterprise,
+        #pragma warning restore CS1591
         [EnumMember(Value = "holographicForBusiness")]
+        #pragma warning disable CS1591
         HolographicForBusiness,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windowsMultiSession")]
+        #pragma warning disable CS1591
         WindowsMultiSession,
+        #pragma warning restore CS1591
         [EnumMember(Value = "surfaceHub")]
+        #pragma warning disable CS1591
         SurfaceHub,
+        #pragma warning restore CS1591
     }
 }

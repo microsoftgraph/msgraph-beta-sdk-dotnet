@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
         {
         }
         /// <summary>
-        /// Retrieve the properties of an authorizationPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authorizationpolicy-get?view=graph-rest-1.0" />
+        /// The policy that controls Microsoft Entra authorization settings.
         /// </summary>
         /// <returns>A <see cref="AuthorizationPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an authorizationPolicy object.
+        /// The policy that controls Microsoft Entra authorization settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy {
             return new AuthorizationPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of an authorizationPolicy object.
+        /// The policy that controls Microsoft Entra authorization settings.
         /// </summary>
         public class AuthorizationPolicyRequestBuilderGetQueryParameters 
         {

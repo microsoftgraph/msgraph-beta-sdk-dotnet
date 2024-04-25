@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
         }
         /// <summary>
         /// List all the groupLifecyclePolicies.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupLifecyclePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
         }
         /// <summary>
         /// Creates a new groupLifecyclePolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupLifecyclePolicy"/></returns>
         /// <param name="body">The request body</param>

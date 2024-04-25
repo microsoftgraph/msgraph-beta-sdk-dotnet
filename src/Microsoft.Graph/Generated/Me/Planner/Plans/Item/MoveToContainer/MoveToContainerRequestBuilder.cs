@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item.MoveToContainer {
         }
         /// <summary>
         /// Move a planner plan object from one planner plan container to another. Planner plans can only be moved from a user container to a group container.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-movetocontainer?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlan"/></returns>
         /// <param name="body">The request body</param>

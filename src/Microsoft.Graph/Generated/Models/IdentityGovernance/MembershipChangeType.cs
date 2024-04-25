@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public enum MembershipChangeType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "add")]
+        #pragma warning disable CS1591
         Add,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remove")]
+        #pragma warning disable CS1591
         Remove,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

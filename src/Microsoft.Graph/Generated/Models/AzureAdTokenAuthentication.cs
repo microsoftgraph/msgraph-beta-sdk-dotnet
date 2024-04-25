@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AzureAdTokenAuthentication : CustomExtensionAuthenticationConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The appID of the Microsoft Entra application to use to authenticate a logic app with a custom access package workflow extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

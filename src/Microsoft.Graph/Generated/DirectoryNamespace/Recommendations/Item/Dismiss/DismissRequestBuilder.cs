@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Dismiss {
         }
         /// <summary>
         /// Dismiss a recommendation object that you consider to be inapplicable to your tenant and update its status to dismissed .
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recommendation-dismiss?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Recommendation"/></returns>
         /// <param name="body">The request body</param>

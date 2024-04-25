@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Names.AddFormulaL
         }
         /// <summary>
         /// Adds a new name to the collection of the given scope using the user&apos;s locale for the formula.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-addformulalocal?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-addformulalocal?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkbookNamedItem"/></returns>
         /// <param name="body">The request body</param>

@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.User {
         {
         }
         /// <summary>
-        /// Retrieve the simple directory user that corresponds to this educationUser.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0" />
+        /// Get user from education
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +67,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.User {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the simple directory user that corresponds to this educationUser.
+        /// Get user from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +95,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.User {
             return new UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the simple directory user that corresponds to this educationUser.
+        /// Get user from education
         /// </summary>
         public class UserRequestBuilderGetQueryParameters 
         {

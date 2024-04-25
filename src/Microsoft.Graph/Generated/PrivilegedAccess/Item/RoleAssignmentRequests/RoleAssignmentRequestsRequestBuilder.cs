@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequestCollectionResponse>(requestInfo, GovernanceRoleAssignmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/governanceroleassignmentrequest-post?view=graph-rest-1.0" />
+        /// Create new navigation property to roleAssignmentRequests for privilegedAccess
         /// </summary>
         /// <returns>A <see cref="GovernanceRoleAssignmentRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
             return requestInfo;
         }
         /// <summary>
-        /// Create a role assignment request to represent the operation you want on a role assignment. The following table lists the operations.
+        /// Create new navigation property to roleAssignmentRequests for privilegedAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

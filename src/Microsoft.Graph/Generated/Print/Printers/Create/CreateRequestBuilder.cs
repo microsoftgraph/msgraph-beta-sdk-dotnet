@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Create {
         }
         /// <summary>
         /// Create (register) a printer with the Universal Print service. This is a long-running operation and as such, it returns a printerCreateOperation that can be used to track and verify the registration of the printer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printer-create?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

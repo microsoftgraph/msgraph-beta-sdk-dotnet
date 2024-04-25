@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PlannerPlanAccessLevel
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "readAccess")]
+        #pragma warning disable CS1591
         ReadAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "readWriteAccess")]
+        #pragma warning disable CS1591
         ReadWriteAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fullAccess")]
+        #pragma warning disable CS1591
         FullAccess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

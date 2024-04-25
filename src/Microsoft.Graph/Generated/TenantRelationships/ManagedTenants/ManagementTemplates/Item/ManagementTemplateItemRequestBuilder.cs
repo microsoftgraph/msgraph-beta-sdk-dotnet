@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a managementTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managementtemplate-get?view=graph-rest-1.0" />
+        /// The collection of baseline management templates across managed tenants.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +133,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a managementTemplate object.
+        /// The collection of baseline management templates across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a managementTemplate object.
+        /// The collection of baseline management templates across managed tenants.
         /// </summary>
         public class ManagementTemplateItemRequestBuilderGetQueryParameters 
         {

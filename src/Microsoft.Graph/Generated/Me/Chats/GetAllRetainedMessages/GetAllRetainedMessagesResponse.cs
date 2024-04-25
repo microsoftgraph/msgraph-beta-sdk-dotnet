@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
     [Obsolete("This class is obsolete. Use GetAllRetainedMessagesGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetAllRetainedMessagesResponse : GetAllRetainedMessagesGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

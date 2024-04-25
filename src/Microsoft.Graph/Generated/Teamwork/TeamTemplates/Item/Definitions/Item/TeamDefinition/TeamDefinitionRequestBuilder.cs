@@ -174,8 +174,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of the team associated with a teamTemplateDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-1.0" />
+        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Team"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -242,7 +241,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of the team associated with a teamTemplateDefinition object.
+        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -299,7 +298,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         {
         }
         /// <summary>
-        /// Get the properties of the team associated with a teamTemplateDefinition object.
+        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
         /// </summary>
         public class TeamDefinitionRequestBuilderGetQueryParameters 
         {

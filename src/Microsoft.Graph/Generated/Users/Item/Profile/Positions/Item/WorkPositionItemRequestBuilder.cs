@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
         {
         }
         /// <summary>
-        /// Delete a specific workPosition object from a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workposition-delete?view=graph-rest-1.0" />
+        /// Delete navigation property positions for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workposition-get?view=graph-rest-1.0" />
+        /// Represents detailed information about work positions associated with a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="WorkPosition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
             return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, WorkPosition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a workPosition object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workposition-update?view=graph-rest-1.0" />
+        /// Update the navigation property positions in users
         /// </summary>
         /// <returns>A <see cref="WorkPosition"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
             return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, WorkPosition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific workPosition object from a user&apos;s profile.
+        /// Delete navigation property positions for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile.
+        /// Represents detailed information about work positions associated with a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a workPosition object in a user&apos;s profile.
+        /// Update the navigation property positions in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Positions.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a workPosition object in a user&apos;s profile.
+        /// Represents detailed information about work positions associated with a user&apos;s profile.
         /// </summary>
         public class WorkPositionItemRequestBuilderGetQueryParameters 
         {

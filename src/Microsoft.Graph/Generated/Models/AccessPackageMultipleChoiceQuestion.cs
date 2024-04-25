@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates whether requestor can select multiple choices as their answer.</summary>
         public bool? AllowsMultipleSelection {

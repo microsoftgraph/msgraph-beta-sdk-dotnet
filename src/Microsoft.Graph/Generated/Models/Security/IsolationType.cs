@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public enum IsolationType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "full")]
+        #pragma warning disable CS1591
         Full,
+        #pragma warning restore CS1591
         [EnumMember(Value = "selective")]
+        #pragma warning disable CS1591
         Selective,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

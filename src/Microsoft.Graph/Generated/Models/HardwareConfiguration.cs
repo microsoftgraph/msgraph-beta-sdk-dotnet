@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class HardwareConfiguration : Entity, IParsable 
     {
-        /// <summary>List of the Azure AD user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported.</summary>
+        /// <summary>A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HardwareConfigurationAssignment>? Assignments {
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
-        /// <summary>File content of the hardware configuration</summary>
+        /// <summary>The file content contains custom hardware settings that will be applied to the assigned devices&apos; BIOS. Max allowed file size is 5KB. Represented as bytes. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? ConfigurationFileContent {
@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configurationFileContent", value); }
         }
 #endif
-        /// <summary>Timestamp of when the hardware configuration was created. This property is read-only.</summary>
+        /// <summary>The date and time  of when the BIOS configuration profile was created. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-Only. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Description of the hardware configuration</summary>
+        /// <summary>The description of the hardware configuration. Use this to provide context, purpose, applications, etc of the BIOS configuration profile for your organization&apos;s admins. Max length is 1000 characters. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description {
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>List of run states for the hardware configuration across all devices</summary>
+        /// <summary>List of run states for the hardware configuration across all devices. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HardwareConfigurationDeviceState>? DeviceRunStates {
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceRunStates", value); }
         }
 #endif
-        /// <summary>Name of the hardware configuration</summary>
+        /// <summary>The name of the hardware BIOS configuration profile. It serves as user-friendly name to identify hardware BIOS configuration profiles. Max length is 150 characters. Required. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName {
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>File name of the hardware configuration</summary>
+        /// <summary>The file name for the BIOS configuration profile&apos;s ConfigurationFileContent. Max length is 150 characters. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FileName {
@@ -104,17 +104,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HardwareConfigurationFormat?>("hardwareConfigurationFormat"); }
             set { BackingStore?.Set("hardwareConfigurationFormat", value); }
         }
-        /// <summary>Timestamp of when the hardware configuration was modified. This property is read-only.</summary>
+        /// <summary>The date and time  of when the BIOS configuration profile was last modified. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-Only. Read-Only. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>A value indicating whether per devcive pasword disabled</summary>
+        /// <summary>When TRUE, indicates whether the policy-assigned devices&apos; passwords are disabled. When FALSE, indicates they are enabled. Default is FALSE. Required.</summary>
         public bool? PerDevicePasswordDisabled {
             get { return BackingStore?.Get<bool?>("perDevicePasswordDisabled"); }
             set { BackingStore?.Set("perDevicePasswordDisabled", value); }
         }
-        /// <summary>List of Scope Tag IDs for the hardware configuration</summary>
+        /// <summary>A list of unique Scope Tag IDs associated with the hardware configuration. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RoleScopeTagIds {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
-        /// <summary>A summary of the results from an attempt to configure hardware settings</summary>
+        /// <summary>A summary of the results from an attempt to configure hardware settings. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public HardwareConfigurationRunSummary? RunSummary {
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("runSummary", value); }
         }
 #endif
-        /// <summary>List of run states for the hardware configuration across all users</summary>
+        /// <summary>List of run states for the hardware configuration across all users. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<HardwareConfigurationUserState>? UserRunStates {
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRunStates", value); }
         }
 #endif
-        /// <summary>Version of the hardware configuration (E.g. 1, 2, 3 ...)</summary>
+        /// <summary>The version of the hardware configuration (E.g. 1, 2, 3 ...). This is incremented after a change to the BIOS configuration profile&apos;s settings file name (FileName property), settings file content (ConfigurationFileContent property), or the PerDevicePasswordDisabled property. Read-Only.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }

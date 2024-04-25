@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Operations {
         {
         }
         /// <summary>
-        /// List all Teams async operations that ran or are running on the specified chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-list-operations?view=graph-rest-1.0" />
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="TeamsAsyncOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Operations {
             return await RequestAdapter.SendAsync<TeamsAsyncOperation>(requestInfo, TeamsAsyncOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all Teams async operations that ran or are running on the specified chat.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all Teams async operations that ran or are running on the specified chat.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.RunS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A summary of the results from an attempt to configure hardware settings
+        /// A summary of the results from an attempt to configure hardware settings. Read-Only.
         /// </summary>
         /// <returns>A <see cref="HardwareConfigurationRunSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.RunS
             return requestInfo;
         }
         /// <summary>
-        /// A summary of the results from an attempt to configure hardware settings
+        /// A summary of the results from an attempt to configure hardware settings. Read-Only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.RunS
         {
         }
         /// <summary>
-        /// A summary of the results from an attempt to configure hardware settings
+        /// A summary of the results from an attempt to configure hardware settings. Read-Only.
         /// </summary>
         public class RunSummaryRequestBuilderGetQueryParameters 
         {

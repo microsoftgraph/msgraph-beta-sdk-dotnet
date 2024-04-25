@@ -117,7 +117,6 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members {
         }
         /// <summary>
         /// Create new navigation property to members for administrativeUnits
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-post-members?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="body">The request body</param>

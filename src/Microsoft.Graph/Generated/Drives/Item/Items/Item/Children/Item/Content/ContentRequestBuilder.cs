@@ -33,7 +33,6 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item.Content {
         }
         /// <summary>
         /// Get content for the navigation property children from drives
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

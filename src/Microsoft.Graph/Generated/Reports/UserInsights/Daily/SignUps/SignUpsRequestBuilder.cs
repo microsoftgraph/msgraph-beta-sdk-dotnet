@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.SignUps {
         {
         }
         /// <summary>
-        /// Get a list of daily user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/dailyuserinsightmetricsroot-list-signups?view=graph-rest-1.0" />
+        /// Total sign-ups on apps registered in the tenant for a specified period.
         /// </summary>
         /// <returns>A <see cref="UserSignUpMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.SignUps {
             return await RequestAdapter.SendAsync<UserSignUpMetricCollectionResponse>(requestInfo, UserSignUpMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of daily user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Total sign-ups on apps registered in the tenant for a specified period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.SignUps {
             return new SignUpsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of daily user sign-ups on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Total sign-ups on apps registered in the tenant for a specified period.
         /// </summary>
         public class SignUpsRequestBuilderGetQueryParameters 
         {

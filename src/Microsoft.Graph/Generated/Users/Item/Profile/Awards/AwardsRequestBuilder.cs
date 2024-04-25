@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
         {
         }
         /// <summary>
-        /// Retrieve a list of personAward objects from a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-awards?view=graph-rest-1.0" />
+        /// Represents the details of awards or honors associated with a person.
         /// </summary>
         /// <returns>A <see cref="PersonAwardCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return await RequestAdapter.SendAsync<PersonAwardCollectionResponse>(requestInfo, PersonAwardCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new personAward object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-awards?view=graph-rest-1.0" />
+        /// Create new navigation property to awards for users
         /// </summary>
         /// <returns>A <see cref="PersonAward"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of personAward objects from a user&apos;s profile.
+        /// Represents the details of awards or honors associated with a person.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new personAward object in a user&apos;s profile.
+        /// Create new navigation property to awards for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards {
             return new AwardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of personAward objects from a user&apos;s profile.
+        /// Represents the details of awards or honors associated with a person.
         /// </summary>
         public class AwardsRequestBuilderGetQueryParameters 
         {

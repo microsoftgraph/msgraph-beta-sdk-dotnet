@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Education.Users {
         {
         }
         /// <summary>
-        /// Retrieve a list of user objects. These user objects will include education-specific properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationroot-list-users?view=graph-rest-1.0" />
+        /// Get users from education
         /// </summary>
         /// <returns>A <see cref="EducationUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Beta.Education.Users {
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationroot-post-users?view=graph-rest-1.0" />
+        /// Create new navigation property to users for education
         /// </summary>
         /// <returns>A <see cref="EducationUser"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Beta.Education.Users {
             return await RequestAdapter.SendAsync<EducationUser>(requestInfo, EducationUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of user objects. These user objects will include education-specific properties.
+        /// Get users from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Beta.Education.Users {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new user.
+        /// Create new navigation property to users for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.Education.Users {
             return new UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of user objects. These user objects will include education-specific properties.
+        /// Get users from education
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters 
         {

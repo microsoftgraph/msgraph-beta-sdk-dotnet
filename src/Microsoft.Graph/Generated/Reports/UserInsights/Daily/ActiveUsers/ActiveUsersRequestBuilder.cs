@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.ActiveUsers {
         {
         }
         /// <summary>
-        /// Get a list of daily active users on apps registered in your tenant configured for Microsoft Entra External ID for customers.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/dailyuserinsightmetricsroot-list-activeusers?view=graph-rest-1.0" />
+        /// Insights for active users on apps registered in the tenant for a specified period.
         /// </summary>
         /// <returns>A <see cref="ActiveUsersMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.ActiveUsers {
             return await RequestAdapter.SendAsync<ActiveUsersMetricCollectionResponse>(requestInfo, ActiveUsersMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of daily active users on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Insights for active users on apps registered in the tenant for a specified period.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.ActiveUsers {
             return new ActiveUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of daily active users on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Insights for active users on apps registered in the tenant for a specified period.
         /// </summary>
         public class ActiveUsersRequestBuilderGetQueryParameters 
         {

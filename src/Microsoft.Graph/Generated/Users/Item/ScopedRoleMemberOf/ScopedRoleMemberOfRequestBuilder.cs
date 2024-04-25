@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf {
         {
         }
         /// <summary>
-        /// Retrieve a list of scopedRoleMembership for the user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-scopedrolememberof?view=graph-rest-1.0" />
+        /// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ScopedRoleMembershipCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf {
             return await RequestAdapter.SendAsync<ScopedRoleMembership>(requestInfo, ScopedRoleMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of scopedRoleMembership for the user.
+        /// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf {
             return new ScopedRoleMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of scopedRoleMembership for the user.
+        /// The scoped-role administrative unit memberships for this user. Read-only. Nullable.
         /// </summary>
         public class ScopedRoleMemberOfRequestBuilderGetQueryParameters 
         {

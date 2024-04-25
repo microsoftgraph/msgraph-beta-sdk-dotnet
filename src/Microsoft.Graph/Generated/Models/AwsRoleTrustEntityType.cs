@@ -3,19 +3,33 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum AwsRoleTrustEntityType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "service")]
+        #pragma warning disable CS1591
         Service = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sso")]
+        #pragma warning disable CS1591
         Sso = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "crossAccount")]
+        #pragma warning disable CS1591
         CrossAccount = 8,
+        #pragma warning restore CS1591
         [EnumMember(Value = "webIdentity")]
+        #pragma warning disable CS1591
         WebIdentity = 16,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 32,
+        #pragma warning restore CS1591
     }
 }

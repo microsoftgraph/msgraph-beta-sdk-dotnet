@@ -2,35 +2,65 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "notProvisioned")]
+        #pragma warning disable CS1591
         NotProvisioned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "provisioning")]
+        #pragma warning disable CS1591
         Provisioning,
+        #pragma warning restore CS1591
         [EnumMember(Value = "provisioned")]
+        #pragma warning disable CS1591
         Provisioned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inGracePeriod")]
+        #pragma warning disable CS1591
         InGracePeriod,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deprovisioning")]
+        #pragma warning disable CS1591
         Deprovisioning,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "provisionedWithWarnings")]
+        #pragma warning disable CS1591
         ProvisionedWithWarnings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resizing")]
+        #pragma warning disable CS1591
         Resizing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "restoring")]
+        #pragma warning disable CS1591
         Restoring,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pendingProvision")]
+        #pragma warning disable CS1591
         PendingProvision,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "movingRegion")]
+        #pragma warning disable CS1591
         MovingRegion,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resizePendingLicense")]
+        #pragma warning disable CS1591
         ResizePendingLicense,
+        #pragma warning restore CS1591
         [EnumMember(Value = "updatingSingleSignOn")]
+        #pragma warning disable CS1591
         UpdatingSingleSignOn,
+        #pragma warning restore CS1591
     }
 }

@@ -39,8 +39,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
         {
         }
         /// <summary>
-        /// Delete a siteSource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sitesource-delete?view=graph-rest-1.0" />
+        /// Delete navigation property siteSources for compliance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +62,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a siteSource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sitesource-get?view=graph-rest-1.0" />
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         /// <returns>A <see cref="SiteSource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +112,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return await RequestAdapter.SendAsync<SiteSource>(requestInfo, SiteSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a siteSource object.
+        /// Delete navigation property siteSources for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +132,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a siteSource object.
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +192,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item.
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a siteSource object.
+        /// Data source entity for SharePoint sites associated with the custodian.
         /// </summary>
         public class SiteSourceItemRequestBuilderGetQueryParameters 
         {

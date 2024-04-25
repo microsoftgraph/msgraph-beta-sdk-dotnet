@@ -3,15 +3,25 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum TeamsAppInstallationScopes
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "team")]
+        #pragma warning disable CS1591
         Team = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "groupChat")]
+        #pragma warning disable CS1591
         GroupChat = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "personal")]
+        #pragma warning disable CS1591
         Personal = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 8,
+        #pragma warning restore CS1591
     }
 }

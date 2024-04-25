@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.</summary>
         public MicrosoftAuthenticatorAuthenticationMethodClientAppName? ClientAppName {

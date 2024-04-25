@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an engagementAsyncOperation to track a long-running operation request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/engagementasyncoperation-get?view=graph-rest-1.0" />
+        /// A collection of long-running, asynchronous operations related to Viva Engage.
         /// </summary>
         /// <returns>A <see cref="EngagementAsyncOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get an engagementAsyncOperation to track a long-running operation request.
+        /// A collection of long-running, asynchronous operations related to Viva Engage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations.Item
         {
         }
         /// <summary>
-        /// Get an engagementAsyncOperation to track a long-running operation request.
+        /// A collection of long-running, asynchronous operations related to Viva Engage.
         /// </summary>
         public class EngagementAsyncOperationItemRequestBuilderGetQueryParameters 
         {

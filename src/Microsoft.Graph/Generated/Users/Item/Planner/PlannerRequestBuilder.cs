@@ -96,8 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0" />
+        /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="PlannerUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +120,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         }
         /// <summary>
         /// Update the navigation property planner in users
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="PlannerUser"/></returns>
         /// <param name="body">The request body</param>
@@ -165,7 +163,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -222,7 +220,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Selective Planner services available to the user. Read-only. Nullable.
         /// </summary>
         public class PlannerRequestBuilderGetQueryParameters 
         {

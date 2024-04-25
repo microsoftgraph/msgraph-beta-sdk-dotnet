@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object.
+        /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
         /// <returns>A <see cref="PlannerRosterCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return await RequestAdapter.SendAsync<PlannerRosterCollectionResponse>(requestInfo, PlannerRosterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new plannerRoster object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-rosters?view=graph-rest-1.0" />
+        /// Create new navigation property to rosters for planner
         /// </summary>
         /// <returns>A <see cref="PlannerRoster"/></returns>
         /// <param name="body">The request body</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return await RequestAdapter.SendAsync<PlannerRoster>(requestInfo, PlannerRoster.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object.
+        /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +118,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new plannerRoster object.
+        /// Create new navigation property to rosters for planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters {
             return new RostersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object.
+        /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
         public class RostersRequestBuilderGetQueryParameters 
         {

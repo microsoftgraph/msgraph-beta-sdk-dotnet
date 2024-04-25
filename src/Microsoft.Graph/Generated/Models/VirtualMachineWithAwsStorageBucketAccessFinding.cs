@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class VirtualMachineWithAwsStorageBucketAccessFinding : Finding, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The total number of storage buckets that the EC2 instance can access using the role.</summary>
         public int? AccessibleCount {

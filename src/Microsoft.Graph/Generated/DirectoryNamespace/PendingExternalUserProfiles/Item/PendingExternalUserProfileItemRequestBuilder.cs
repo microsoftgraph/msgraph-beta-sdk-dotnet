@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
         {
         }
         /// <summary>
-        /// Delete a pendingExternalUserProfile object. Note: To permanently delete the pendingExternalUserProfile, follow permanently delete an item. To restore a pendingExternalUserProfile, follow restore a deleted item.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-delete-pendingexternaluserprofiles?view=graph-rest-1.0" />
+        /// Delete navigation property pendingExternalUserProfiles for directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a specific pendingExternalUserProfile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/pendingexternaluserprofile-get?view=graph-rest-1.0" />
+        /// Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
         /// </summary>
         /// <returns>A <see cref="PendingExternalUserProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
             return await RequestAdapter.SendAsync<PendingExternalUserProfile>(requestInfo, PendingExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a pendingExternalUserProfile object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/pendingexternaluserprofile-update?view=graph-rest-1.0" />
+        /// Update the navigation property pendingExternalUserProfiles in directory
         /// </summary>
         /// <returns>A <see cref="PendingExternalUserProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
             return await RequestAdapter.SendAsync<PendingExternalUserProfile>(requestInfo, PendingExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a pendingExternalUserProfile object. Note: To permanently delete the pendingExternalUserProfile, follow permanently delete an item. To restore a pendingExternalUserProfile, follow restore a deleted item.
+        /// Delete navigation property pendingExternalUserProfiles for directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a specific pendingExternalUserProfile.
+        /// Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a pendingExternalUserProfile object.
+        /// Update the navigation property pendingExternalUserProfiles in directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles.It
         {
         }
         /// <summary>
-        /// Retrieve the properties of a specific pendingExternalUserProfile.
+        /// Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
         /// </summary>
         public class PendingExternalUserProfileItemRequestBuilderGetQueryParameters 
         {

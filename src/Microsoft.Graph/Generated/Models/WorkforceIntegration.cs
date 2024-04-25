@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class WorkforceIntegration : ChangeTrackedEntity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>API version for the callback URL. Start with 1.</summary>
         public int? ApiVersion {

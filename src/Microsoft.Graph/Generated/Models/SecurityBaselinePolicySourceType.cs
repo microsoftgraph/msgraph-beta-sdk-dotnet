@@ -6,8 +6,12 @@ namespace Microsoft.Graph.Beta.Models {
     public enum SecurityBaselinePolicySourceType
     {
         [EnumMember(Value = "deviceConfiguration")]
+        #pragma warning disable CS1591
         DeviceConfiguration,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deviceIntent")]
+        #pragma warning disable CS1591
         DeviceIntent,
+        #pragma warning restore CS1591
     }
 }

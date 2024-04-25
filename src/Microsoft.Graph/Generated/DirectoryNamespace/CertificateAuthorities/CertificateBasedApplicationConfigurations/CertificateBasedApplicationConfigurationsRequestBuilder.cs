@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         {
         }
         /// <summary>
-        /// Get a list of certificateBasedApplicationConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthoritypath-list-certificatebasedapplicationconfigurations?view=graph-rest-1.0" />
+        /// Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
         /// </summary>
         /// <returns>A <see cref="CertificateBasedApplicationConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return await RequestAdapter.SendAsync<CertificateBasedApplicationConfiguration>(requestInfo, CertificateBasedApplicationConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of certificateBasedApplicationConfiguration objects.
+        /// Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return new CertificateBasedApplicationConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of certificateBasedApplicationConfiguration objects.
+        /// Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.
         /// </summary>
         public class CertificateBasedApplicationConfigurationsRequestBuilderGetQueryParameters 
         {

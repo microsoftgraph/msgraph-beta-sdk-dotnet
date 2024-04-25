@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a continuousAccessEvaluationPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/continuousaccessevaluationpolicy-get?view=graph-rest-1.0" />
+        /// Represents entry point for continuous access evaluation policy.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a continuousAccessEvaluationPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/continuousaccessevaluationpolicy-update?view=graph-rest-1.0" />
+        /// Update the navigation property continuousAccessEvaluationPolicy in identity
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a continuousAccessEvaluationPolicy object.
+        /// Represents entry point for continuous access evaluation policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a continuousAccessEvaluationPolicy object.
+        /// Update the navigation property continuousAccessEvaluationPolicy in identity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a continuousAccessEvaluationPolicy object.
+        /// Represents entry point for continuous access evaluation policy.
         /// </summary>
         public class ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
         }
         /// <summary>
         /// Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won&apos;t start. If the response contains only warnings, synchronization starts.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="StartPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
         }
         /// <summary>
         /// Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won&apos;t start. If the response contains only warnings, synchronization starts.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="StartResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

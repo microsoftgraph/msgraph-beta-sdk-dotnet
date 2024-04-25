@@ -3,17 +3,29 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
     [Flags]
+    #pragma warning disable CS1591
     public enum MarkUserAsCompromisedEntityIdentifier
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "accountObjectId")]
+        #pragma warning disable CS1591
         AccountObjectId = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "initiatingProcessAccountObjectId")]
+        #pragma warning disable CS1591
         InitiatingProcessAccountObjectId = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "servicePrincipalId")]
+        #pragma warning disable CS1591
         ServicePrincipalId = 4,
+        #pragma warning restore CS1591
         [EnumMember(Value = "recipientObjectId")]
+        #pragma warning disable CS1591
         RecipientObjectId = 8,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 16,
+        #pragma warning restore CS1591
     }
 }

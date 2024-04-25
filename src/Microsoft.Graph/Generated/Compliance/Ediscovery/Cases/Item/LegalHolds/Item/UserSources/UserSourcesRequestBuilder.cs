@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
         {
         }
         /// <summary>
-        /// Get the list of userSource objects associated with a legal hold.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-usersources?view=graph-rest-1.0" />
+        /// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
         /// </summary>
         /// <returns>A <see cref="UserSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return await RequestAdapter.SendAsync<UserSourceCollectionResponse>(requestInfo, UserSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a userSource to a legalHold object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-usersources?view=graph-rest-1.0" />
+        /// Create new navigation property to userSources for compliance
         /// </summary>
         /// <returns>A <see cref="UserSource"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return await RequestAdapter.SendAsync<UserSource>(requestInfo, UserSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of userSource objects associated with a legal hold.
+        /// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Adds a userSource to a legalHold object.
+        /// Create new navigation property to userSources for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return new UserSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of userSource objects associated with a legal hold.
+        /// Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.
         /// </summary>
         public class UserSourcesRequestBuilderGetQueryParameters 
         {

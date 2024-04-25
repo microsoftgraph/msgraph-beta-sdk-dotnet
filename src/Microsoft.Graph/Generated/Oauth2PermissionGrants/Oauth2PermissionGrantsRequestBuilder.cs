@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants {
         }
         /// <summary>
         /// Retrieve a list of oAuth2PermissionGrant objects, representing delegated permissions which have been granted for client applications to access APIs on behalf of signed-in users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/oauth2permissiongrant-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OAuth2PermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants {
         }
         /// <summary>
         /// Create a delegated permission grant, represented by an oAuth2PermissionGrant object. A delegated permission grant authorizes a client service principal (representing a client application) to access a resource service principal (representing an API), on behalf of a signed-in user, for the level of access limited by the delegated permissions which were granted.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/oauth2permissiongrant-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OAuth2PermissionGrant"/></returns>
         /// <param name="body">The request body</param>

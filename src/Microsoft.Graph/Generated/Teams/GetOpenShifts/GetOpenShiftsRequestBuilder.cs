@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         {
         }
         /// <summary>
-        /// Invoke function getOpenShifts
+        /// Get all openShift objects across all teams a user is a direct member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetOpenShiftsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
             return await RequestAdapter.SendAsync<GetOpenShiftsGetResponse>(requestInfo, GetOpenShiftsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getOpenShifts
+        /// Get all openShift objects across all teams a user is a direct member of.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getopenshifts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetOpenShiftsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
             return await RequestAdapter.SendAsync<GetOpenShiftsResponse>(requestInfo, GetOpenShiftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getOpenShifts
+        /// Get all openShift objects across all teams a user is a direct member of.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
             return new GetOpenShiftsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getOpenShifts
+        /// Get all openShift objects across all teams a user is a direct member of.
         /// </summary>
         public class GetOpenShiftsRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo {
         {
         }
         /// <summary>
-        /// Invoke function getCloudPcLaunchInfo
+        /// Get the cloudPCLaunchInfo for the signed-in user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getcloudpclaunchinfo?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcLaunchInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.GetCloudPcLaunchInfo {
             return await RequestAdapter.SendAsync<CloudPcLaunchInfo>(requestInfo, CloudPcLaunchInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCloudPcLaunchInfo
+        /// Get the cloudPCLaunchInfo for the signed-in user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

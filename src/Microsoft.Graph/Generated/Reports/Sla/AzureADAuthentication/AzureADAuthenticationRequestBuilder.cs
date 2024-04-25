@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant&apos;s actual performance against this commitment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/azureadauthentication-get?view=graph-rest-1.0" />
+        /// Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureADAuthentication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant&apos;s actual performance against this commitment.
+        /// Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Reports.Sla.AzureADAuthentication {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an azureADAuthentication object to find the level of Microsoft Entra authentication availability for your tenant. The Microsoft Entra service Level Agreement (SLA) commits to at least 99.99% authentication availability, as described in Microsoft Entra SLA performance. This object provides you with your tenant&apos;s actual performance against this commitment.
+        /// Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.
         /// </summary>
         public class AzureADAuthenticationRequestBuilderGetQueryParameters 
         {

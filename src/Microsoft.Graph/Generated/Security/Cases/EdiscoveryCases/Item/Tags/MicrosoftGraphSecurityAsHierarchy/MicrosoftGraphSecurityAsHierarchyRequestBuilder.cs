@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Microsof
         {
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AsHierarchyGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Microsof
             return await RequestAdapter.SendAsync<AsHierarchyGetResponse>(requestInfo, AsHierarchyGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AsHierarchyResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Microsof
             return await RequestAdapter.SendAsync<AsHierarchyResponse>(requestInfo, AsHierarchyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Microsof
             return new MicrosoftGraphSecurityAsHierarchyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function asHierarchy
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
         public class MicrosoftGraphSecurityAsHierarchyRequestBuilderGetQueryParameters 
         {

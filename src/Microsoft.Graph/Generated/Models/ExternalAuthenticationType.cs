@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ExternalAuthenticationType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "passthru")]
+        #pragma warning disable CS1591
         Passthru,
+        #pragma warning restore CS1591
         [EnumMember(Value = "aadPreAuthentication")]
+        #pragma warning disable CS1591
         AadPreAuthentication,
+        #pragma warning restore CS1591
     }
 }

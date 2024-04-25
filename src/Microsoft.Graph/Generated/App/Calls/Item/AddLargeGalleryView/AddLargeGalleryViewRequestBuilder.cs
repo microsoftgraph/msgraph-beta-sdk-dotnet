@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.AddLargeGalleryView {
         }
         /// <summary>
         /// Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-addlargegalleryview?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AddLargeGalleryViewOperation"/></returns>
         /// <param name="body">The request body</param>

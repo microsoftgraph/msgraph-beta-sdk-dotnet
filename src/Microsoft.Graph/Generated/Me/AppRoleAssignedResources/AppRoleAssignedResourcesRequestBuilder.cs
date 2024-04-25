@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
         {
         }
         /// <summary>
-        /// Get the service principals to which the user has an app role assignment either directly or through group membership.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-approleassignedresources?view=graph-rest-1.0" />
+        /// Get appRoleAssignedResources from me
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
             return await RequestAdapter.SendAsync<ServicePrincipalCollectionResponse>(requestInfo, ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the service principals to which the user has an app role assignment either directly or through group membership.
+        /// Get appRoleAssignedResources from me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.AppRoleAssignedResources {
             return new AppRoleAssignedResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the service principals to which the user has an app role assignment either directly or through group membership.
+        /// Get appRoleAssignedResources from me
         /// </summary>
         public class AppRoleAssignedResourcesRequestBuilderGetQueryParameters 
         {

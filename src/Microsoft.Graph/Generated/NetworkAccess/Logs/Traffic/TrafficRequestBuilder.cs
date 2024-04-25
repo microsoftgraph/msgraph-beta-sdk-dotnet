@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
         {
         }
         /// <summary>
-        /// Get a list of log events for traffic routed through the Global Secure Access services.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-logs-list-traffic?view=graph-rest-1.0" />
+        /// A network access traffic log entry that contains comprehensive information about network traffic events.
         /// </summary>
         /// <returns>A <see cref="NetworkAccessTrafficCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
             return await RequestAdapter.SendAsync<NetworkAccessTraffic>(requestInfo, NetworkAccessTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of log events for traffic routed through the Global Secure Access services.
+        /// A network access traffic log entry that contains comprehensive information about network traffic events.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Logs.Traffic {
             return new TrafficRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of log events for traffic routed through the Global Secure Access services.
+        /// A network access traffic log entry that contains comprehensive information about network traffic events.
         /// </summary>
         public class TrafficRequestBuilderGetQueryParameters 
         {

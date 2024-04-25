@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses {
         {
         }
         /// <summary>
-        /// Get the itemAddress resources from the addresses navigation property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-addresses?view=graph-rest-1.0" />
+        /// Represents details of addresses associated with the user.
         /// </summary>
         /// <returns>A <see cref="ItemAddressCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses {
             return await RequestAdapter.SendAsync<ItemAddressCollectionResponse>(requestInfo, ItemAddressCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new itemAddress object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-addresses?view=graph-rest-1.0" />
+        /// Create new navigation property to addresses for users
         /// </summary>
         /// <returns>A <see cref="ItemAddress"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses {
             return await RequestAdapter.SendAsync<ItemAddress>(requestInfo, ItemAddress.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the itemAddress resources from the addresses navigation property.
+        /// Represents details of addresses associated with the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new itemAddress object in a user&apos;s profile.
+        /// Create new navigation property to addresses for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses {
             return new AddressesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the itemAddress resources from the addresses navigation property.
+        /// Represents details of addresses associated with the user.
         /// </summary>
         public class AddressesRequestBuilderGetQueryParameters 
         {

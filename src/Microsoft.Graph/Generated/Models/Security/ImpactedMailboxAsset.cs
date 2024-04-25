@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class ImpactedMailboxAsset : ImpactedAsset, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The identifier property</summary>
         public MailboxAssetIdentifier? Identifier {

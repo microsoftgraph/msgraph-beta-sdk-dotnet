@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         }
         /// <summary>
         /// Applies a management action against a specific managed tenant. By performing this operation the appropriate configurations will be made and policies created. As example when applying the require multifactor authentication for admins management action creates a Microsoft Entra Conditional Access policy that requires multifactor authentication for all users that have been assigned an administrative directory role.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managementaction-apply?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ManagementActionDeploymentStatus"/></returns>
         /// <param name="body">The request body</param>

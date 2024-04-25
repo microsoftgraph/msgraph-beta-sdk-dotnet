@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class OnAttributeCollectionStartCustomExtensionHandler : OnAttributeCollectionStartHandler, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Configuration regarding properties of the custom extension that are can be overwritten per event listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

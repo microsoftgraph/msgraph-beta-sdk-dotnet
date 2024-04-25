@@ -6,9 +6,11 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ActiveUsersBreakdownMetric : Entity, IParsable 
+    #pragma warning restore CS1591
     {
-        /// <summary>The ID of the Microsoft Entra application.</summary>
+        /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId {
@@ -22,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>Name of the application users authenticated to.</summary>
+        /// <summary>The appName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppName {
@@ -36,17 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appName", value); }
         }
 #endif
-        /// <summary>The total number of users who made at least one authentication request within the specified time period.</summary>
+        /// <summary>The count property</summary>
         public long? Count {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
-        /// <summary>The date of the insight.</summary>
+        /// <summary>The factDate property</summary>
         public Date? FactDate {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
-        /// <summary>The platform for the device that the customers used. Supports $filter (eq).</summary>
+        /// <summary>The os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Os {

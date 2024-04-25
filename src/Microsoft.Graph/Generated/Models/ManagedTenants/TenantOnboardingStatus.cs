@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public enum TenantOnboardingStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ineligible")]
+        #pragma warning disable CS1591
         Ineligible,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inProcess")]
+        #pragma warning disable CS1591
         InProcess,
+        #pragma warning restore CS1591
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inactive")]
+        #pragma warning disable CS1591
         Inactive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled")]
+        #pragma warning disable CS1591
         Disabled,
+        #pragma warning restore CS1591
     }
 }

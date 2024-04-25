@@ -42,7 +42,9 @@ namespace Microsoft.Graph.Beta.Models {
         [EnumMember(Value = "microsoft365ManagedMdm")]
         Microsoft365ManagedMdm,
         [EnumMember(Value = "msSense")]
+        #pragma warning disable CS1591
         MsSense,
+        #pragma warning restore CS1591
         /// <summary>This device is managed by Intune&apos;s MDM for AOSP (Android Open Source Project) devices</summary>
         [EnumMember(Value = "intuneAosp")]
         IntuneAosp,

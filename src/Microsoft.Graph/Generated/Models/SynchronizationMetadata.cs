@@ -2,25 +2,45 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum SynchronizationMetadata
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "galleryApplicationIdentifier")]
+        #pragma warning disable CS1591
         GalleryApplicationIdentifier,
+        #pragma warning restore CS1591
         [EnumMember(Value = "galleryApplicationKey")]
+        #pragma warning disable CS1591
         GalleryApplicationKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "isOAuthEnabled")]
+        #pragma warning disable CS1591
         IsOAuthEnabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "IsSynchronizationAgentAssignmentRequired")]
+        #pragma warning disable CS1591
         IsSynchronizationAgentAssignmentRequired,
+        #pragma warning restore CS1591
         [EnumMember(Value = "isSynchronizationAgentRequired")]
+        #pragma warning disable CS1591
         IsSynchronizationAgentRequired,
+        #pragma warning restore CS1591
         [EnumMember(Value = "isSynchronizationInPreview")]
+        #pragma warning disable CS1591
         IsSynchronizationInPreview,
+        #pragma warning restore CS1591
         [EnumMember(Value = "oAuthSettings")]
+        #pragma warning disable CS1591
         OAuthSettings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "synchronizationLearnMoreIbizaFwLink")]
+        #pragma warning disable CS1591
         SynchronizationLearnMoreIbizaFwLink,
+        #pragma warning restore CS1591
         [EnumMember(Value = "configurationFields")]
+        #pragma warning disable CS1591
         ConfigurationFields,
+        #pragma warning restore CS1591
     }
 }

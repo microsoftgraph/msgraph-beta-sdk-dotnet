@@ -2,7 +2,9 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ImportedDeviceIdentityType
+    #pragma warning restore CS1591
     {
         /// <summary>Unknown value of importedDeviceIdentityType.</summary>
         [EnumMember(Value = "unknown")]

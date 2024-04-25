@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public class FilteringProfile : Profile, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

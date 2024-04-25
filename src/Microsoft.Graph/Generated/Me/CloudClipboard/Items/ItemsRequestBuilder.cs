@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Me.CloudClipboard.Items {
         {
         }
         /// <summary>
-        /// Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn&apos;t support using another user&apos;s credentials to get a cloudClipboardItem for a user. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudclipboardroot-list-items?view=graph-rest-1.0" />
+        /// Represents a collection of Cloud Clipboard items.
         /// </summary>
         /// <returns>A <see cref="CloudClipboardItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.CloudClipboard.Items {
             return await RequestAdapter.SendAsync<CloudClipboardItem>(requestInfo, CloudClipboardItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn&apos;t support using another user&apos;s credentials to get a cloudClipboardItem for a user. 
+        /// Represents a collection of Cloud Clipboard items.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Me.CloudClipboard.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn&apos;t support using another user&apos;s credentials to get a cloudClipboardItem for a user. 
+        /// Represents a collection of Cloud Clipboard items.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters 
         {

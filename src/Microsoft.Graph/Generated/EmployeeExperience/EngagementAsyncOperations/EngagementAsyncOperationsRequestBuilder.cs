@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations {
         {
         }
         /// <summary>
-        /// Get an engagementAsyncOperation to track a long-running operation request.
+        /// A collection of long-running, asynchronous operations related to Viva Engage.
         /// </summary>
         /// <returns>A <see cref="EngagementAsyncOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations {
             return await RequestAdapter.SendAsync<EngagementAsyncOperation>(requestInfo, EngagementAsyncOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an engagementAsyncOperation to track a long-running operation request.
+        /// A collection of long-running, asynchronous operations related to Viva Engage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.EngagementAsyncOperations {
             return new EngagementAsyncOperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get an engagementAsyncOperation to track a long-running operation request.
+        /// A collection of long-running, asynchronous operations related to Viva Engage.
         /// </summary>
         public class EngagementAsyncOperationsRequestBuilderGetQueryParameters 
         {

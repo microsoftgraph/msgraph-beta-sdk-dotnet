@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AuthorizationSystem : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

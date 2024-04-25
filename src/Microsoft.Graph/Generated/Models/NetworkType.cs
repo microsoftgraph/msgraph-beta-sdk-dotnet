@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum NetworkType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "intranet")]
+        #pragma warning disable CS1591
         Intranet,
+        #pragma warning restore CS1591
         [EnumMember(Value = "extranet")]
+        #pragma warning disable CS1591
         Extranet,
+        #pragma warning restore CS1591
         [EnumMember(Value = "namedNetwork")]
+        #pragma warning disable CS1591
         NamedNetwork,
+        #pragma warning restore CS1591
         [EnumMember(Value = "trusted")]
+        #pragma warning disable CS1591
         Trusted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "trustedNamedLocation")]
+        #pragma warning disable CS1591
         TrustedNamedLocation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

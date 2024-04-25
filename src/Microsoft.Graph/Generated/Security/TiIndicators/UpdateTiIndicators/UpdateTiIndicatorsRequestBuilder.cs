@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
         }
         /// <summary>
         /// Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UpdateTiIndicatorsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
         }
         /// <summary>
         /// Update multiple threat intelligence (TI) indicators in one request instead of multiple requests.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-updatetiindicators?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UpdateTiIndicatorsResponse"/></returns>
         /// <param name="body">The request body</param>

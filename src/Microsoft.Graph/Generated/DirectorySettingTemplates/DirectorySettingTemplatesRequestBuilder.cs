@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
         }
         /// <summary>
         /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available directorySettingTemplates objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectorySettingTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

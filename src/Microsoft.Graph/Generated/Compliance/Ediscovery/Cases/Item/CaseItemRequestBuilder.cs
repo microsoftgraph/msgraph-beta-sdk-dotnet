@@ -102,8 +102,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         {
         }
         /// <summary>
-        /// Delete a case object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-delete?view=graph-rest-1.0" />
+        /// Delete navigation property cases for compliance
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,8 +125,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a case object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-get?view=graph-rest-1.0" />
+        /// Get cases from compliance
         /// </summary>
         /// <returns>A <see cref="Case"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -151,8 +149,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a case object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-update?view=graph-rest-1.0" />
+        /// Update the navigation property cases in compliance
         /// </summary>
         /// <returns>A <see cref="Case"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +175,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a case object.
+        /// Delete navigation property cases for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -198,7 +195,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a case object.
+        /// Get cases from compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -218,7 +215,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a case object.
+        /// Update the navigation property cases in compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -258,7 +255,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a case object.
+        /// Get cases from compliance
         /// </summary>
         public class CaseItemRequestBuilderGetQueryParameters 
         {

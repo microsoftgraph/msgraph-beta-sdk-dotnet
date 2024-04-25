@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Participants_v2 {
         {
         }
         /// <summary>
-        /// Get the list of participant objects associated with a callRecord.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-callrecord-list-participants_v2?view=graph-rest-1.0" />
+        /// List of distinct participants in the call.
         /// </summary>
         /// <returns>A <see cref="ParticipantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Participants_v2 {
             return await RequestAdapter.SendAsync<Participant>(requestInfo, Participant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of participant objects associated with a callRecord.
+        /// List of distinct participants in the call.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Participants_v2 {
             return new Participants_v2RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of participant objects associated with a callRecord.
+        /// List of distinct participants in the call.
         /// </summary>
         public class Participants_v2RequestBuilderGetQueryParameters 
         {

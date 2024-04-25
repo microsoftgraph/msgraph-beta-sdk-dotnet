@@ -2,39 +2,73 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcReportName
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "remoteConnectionHistoricalReports")]
+        #pragma warning disable CS1591
         RemoteConnectionHistoricalReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dailyAggregatedRemoteConnectionReports")]
+        #pragma warning disable CS1591
         DailyAggregatedRemoteConnectionReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "totalAggregatedRemoteConnectionReports")]
+        #pragma warning disable CS1591
         TotalAggregatedRemoteConnectionReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sharedUseLicenseUsageReport")]
+        #pragma warning disable CS1591
         SharedUseLicenseUsageReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sharedUseLicenseUsageRealTimeReport")]
+        #pragma warning disable CS1591
         SharedUseLicenseUsageRealTimeReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "noLicenseAvailableConnectivityFailureReport")]
+        #pragma warning disable CS1591
         NoLicenseAvailableConnectivityFailureReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "frontlineLicenseUsageReport")]
+        #pragma warning disable CS1591
         FrontlineLicenseUsageReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "frontlineLicenseUsageRealTimeReport")]
+        #pragma warning disable CS1591
         FrontlineLicenseUsageRealTimeReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remoteConnectionQualityReports")]
+        #pragma warning disable CS1591
         RemoteConnectionQualityReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inaccessibleCloudPcReports")]
+        #pragma warning disable CS1591
         InaccessibleCloudPcReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rawRemoteConnectionReports")]
+        #pragma warning disable CS1591
         RawRemoteConnectionReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cloudPcUsageCategoryReports")]
+        #pragma warning disable CS1591
         CloudPcUsageCategoryReports,
+        #pragma warning restore CS1591
         [EnumMember(Value = "crossRegionDisasterRecoveryReport")]
+        #pragma warning disable CS1591
         CrossRegionDisasterRecoveryReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "performanceTrendReport")]
+        #pragma warning disable CS1591
         PerformanceTrendReport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inaccessibleCloudPcTrendReport")]
+        #pragma warning disable CS1591
         InaccessibleCloudPcTrendReport,
+        #pragma warning restore CS1591
     }
 }

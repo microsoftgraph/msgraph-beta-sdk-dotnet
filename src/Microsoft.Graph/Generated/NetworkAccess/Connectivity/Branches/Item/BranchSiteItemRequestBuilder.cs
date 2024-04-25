@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
         {
         }
         /// <summary>
-        /// Delete a specific branch.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-delete?view=graph-rest-1.0" />
+        /// Delete navigation property branches for networkAccess
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,8 +76,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve information about a specific branch.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-get?view=graph-rest-1.0" />
+        /// Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
         /// </summary>
         /// <returns>A <see cref="BranchSite"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,8 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the configuration or properties of a specific branch.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-update?view=graph-rest-1.0" />
+        /// Update the navigation property branches in networkAccess
         /// </summary>
         /// <returns>A <see cref="BranchSite"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +126,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific branch.
+        /// Delete navigation property branches for networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve information about a specific branch.
+        /// Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -169,7 +166,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the configuration or properties of a specific branch.
+        /// Update the navigation property branches in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -209,7 +206,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item {
         {
         }
         /// <summary>
-        /// Retrieve information about a specific branch.
+        /// Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
         /// </summary>
         public class BranchSiteItemRequestBuilderGetQueryParameters 
         {

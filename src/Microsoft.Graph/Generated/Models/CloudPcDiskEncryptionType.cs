@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcDiskEncryptionType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "platformManagedKey")]
+        #pragma warning disable CS1591
         PlatformManagedKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "customerManagedKey")]
+        #pragma warning disable CS1591
         CustomerManagedKey,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

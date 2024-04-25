@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
         {
         }
         /// <summary>
-        /// Invoke function getSupportedCloudPcRemoteActions
+        /// Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetSupportedCloudPcRemoteActionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
             return await RequestAdapter.SendAsync<GetSupportedCloudPcRemoteActionsGetResponse>(requestInfo, GetSupportedCloudPcRemoteActionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSupportedCloudPcRemoteActions
+        /// Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-getsupportedcloudpcremoteactions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetSupportedCloudPcRemoteActionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
             return await RequestAdapter.SendAsync<GetSupportedCloudPcRemoteActionsResponse>(requestInfo, GetSupportedCloudPcRemoteActionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSupportedCloudPcRemoteActions
+        /// Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
             return new GetSupportedCloudPcRemoteActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getSupportedCloudPcRemoteActions
+        /// Get a list of supported Cloud PC remote actions for a specific Cloud PC device, including the action names and capabilities.
         /// </summary>
         public class GetSupportedCloudPcRemoteActionsRequestBuilderGetQueryParameters 
         {

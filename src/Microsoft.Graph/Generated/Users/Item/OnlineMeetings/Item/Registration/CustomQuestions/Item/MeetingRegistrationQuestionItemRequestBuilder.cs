@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         {
         }
         /// <summary>
-        /// Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistrationquestion-delete?view=graph-rest-1.0" />
+        /// Delete navigation property customQuestions for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistrationquestion-get?view=graph-rest-1.0" />
+        /// Custom registration questions.
         /// </summary>
         /// <returns>A <see cref="MeetingRegistrationQuestion"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingregistrationquestion-update?view=graph-rest-1.0" />
+        /// Update the navigation property customQuestions in users
         /// </summary>
         /// <returns>A <see cref="MeetingRegistrationQuestion"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a custom registration question from a meetingRegistration object on behalf of the organizer.
+        /// Delete navigation property customQuestions for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             return requestInfo;
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Custom registration questions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             return requestInfo;
         }
         /// <summary>
-        /// Update a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Update the navigation property customQuestions in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
         {
         }
         /// <summary>
-        /// Get a custom registration question associated with a meetingRegistration object on behalf of the organizer.
+        /// Custom registration questions.
         /// </summary>
         public class MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters 
         {

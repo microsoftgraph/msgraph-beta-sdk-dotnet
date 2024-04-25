@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum RegistrationStatusType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "registered")]
+        #pragma warning disable CS1591
         Registered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "enabled")]
+        #pragma warning disable CS1591
         Enabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "capable")]
+        #pragma warning disable CS1591
         Capable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mfaRegistered")]
+        #pragma warning disable CS1591
         MfaRegistered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

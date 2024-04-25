@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AccessPackageResourceAttributeQuestion : AccessPackageResourceAttributeSource, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The question asked in order to get the value of the attribute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

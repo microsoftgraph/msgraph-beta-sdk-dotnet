@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class VerifiableCredentialRetrieved : VerifiableCredentialRequirementStatus, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The specific date and time that the presentation request will expire and a new one will need to be generated.</summary>
         public DateTimeOffset? ExpiryDateTime {

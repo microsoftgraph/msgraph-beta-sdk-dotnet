@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationsignindetailedsummary-get?view=graph-rest-1.0" />
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an applicationSignInDetailedSummary object.
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         public class ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParameters 
         {

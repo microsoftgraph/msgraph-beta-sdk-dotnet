@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Move {
         }
         /// <summary>
         /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-move?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-move?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="body">The request body</param>

@@ -2,27 +2,49 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public enum MailboxAssetIdentifier
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "accountUpn")]
+        #pragma warning disable CS1591
         AccountUpn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fileOwnerUpn")]
+        #pragma warning disable CS1591
         FileOwnerUpn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "initiatingProcessAccountUpn")]
+        #pragma warning disable CS1591
         InitiatingProcessAccountUpn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "lastModifyingAccountUpn")]
+        #pragma warning disable CS1591
         LastModifyingAccountUpn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "targetAccountUpn")]
+        #pragma warning disable CS1591
         TargetAccountUpn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "senderFromAddress")]
+        #pragma warning disable CS1591
         SenderFromAddress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "senderDisplayName")]
+        #pragma warning disable CS1591
         SenderDisplayName,
+        #pragma warning restore CS1591
         [EnumMember(Value = "recipientEmailAddress")]
+        #pragma warning disable CS1591
         RecipientEmailAddress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "senderMailFromAddress")]
+        #pragma warning disable CS1591
         SenderMailFromAddress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

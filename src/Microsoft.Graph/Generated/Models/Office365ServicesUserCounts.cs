@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Office365ServicesUserCounts : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The number of active users on Exchange. Any user who can read and send email is considered an active user.</summary>
         public long? ExchangeActive {

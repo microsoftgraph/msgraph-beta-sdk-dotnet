@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
         {
         }
         /// <summary>
-        /// Delete a plannerRoster object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-delete?view=graph-rest-1.0" />
+        /// Delete navigation property rosters for planner
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-get?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
         /// <returns>A <see cref="PlannerRoster"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +114,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             return await RequestAdapter.SendAsync<PlannerRoster>(requestInfo, PlannerRoster.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a plannerRoster object.
+        /// Delete navigation property rosters for planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object.
+        /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerRoster object.
+        /// Read-only. Nullable. Returns a collection of the specified rosters
         /// </summary>
         public class PlannerRosterItemRequestBuilderGetQueryParameters 
         {

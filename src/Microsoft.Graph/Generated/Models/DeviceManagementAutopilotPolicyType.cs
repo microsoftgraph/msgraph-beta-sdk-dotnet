@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum DeviceManagementAutopilotPolicyType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "application")]
+        #pragma warning disable CS1591
         Application,
+        #pragma warning restore CS1591
         [EnumMember(Value = "appModel")]
+        #pragma warning disable CS1591
         AppModel,
+        #pragma warning restore CS1591
         [EnumMember(Value = "configurationPolicy")]
+        #pragma warning disable CS1591
         ConfigurationPolicy,
+        #pragma warning restore CS1591
     }
 }

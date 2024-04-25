@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a governanceRoleSetting.
+        /// A collection of role settings for the provider.
         /// </summary>
         /// <returns>A <see cref="GovernanceRoleSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
             return await RequestAdapter.SendAsync<GovernanceRoleSetting>(requestInfo, GovernanceRoleSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a governanceRoleSetting.
+        /// A collection of role settings for the provider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings {
             return new RoleSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a governanceRoleSetting.
+        /// A collection of role settings for the provider.
         /// </summary>
         public class RoleSettingsRequestBuilderGetQueryParameters 
         {

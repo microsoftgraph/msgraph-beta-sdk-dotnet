@@ -89,8 +89,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item {
             return await RequestAdapter.SendAsync<FilteringProfile>(requestInfo, FilteringProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a filteringProfile object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-filteringprofile-update?view=graph-rest-1.0" />
+        /// Update the navigation property filteringProfiles in networkAccess
         /// </summary>
         /// <returns>A <see cref="FilteringProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +152,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a filteringProfile object.
+        /// Update the navigation property filteringProfiles in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

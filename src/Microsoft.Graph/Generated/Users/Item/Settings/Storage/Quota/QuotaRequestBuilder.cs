@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.Storage.Quota {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a unifiedStorageQuota object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedstoragequota-get?view=graph-rest-1.0" />
+        /// Get quota from users
         /// </summary>
         /// <returns>A <see cref="UnifiedStorageQuota"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.Storage.Quota {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a unifiedStorageQuota object.
+        /// Get quota from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.Storage.Quota {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a unifiedStorageQuota object.
+        /// Get quota from users
         /// </summary>
         public class QuotaRequestBuilderGetQueryParameters 
         {

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationsettings-list-contactinsights?view=graph-rest-1.0" />
+        /// Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user&apos;s contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
         /// </summary>
         /// <returns>A <see cref="InsightsSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             return await RequestAdapter.SendAsync<InsightsSettings>(requestInfo, InsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/insightssettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property contactInsights in organization
         /// </summary>
         /// <returns>A <see cref="InsightsSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+        /// Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user&apos;s contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
+        /// Update the navigation property contactInsights in organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
         {
         }
         /// <summary>
-        /// Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
+        /// Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user&apos;s contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.
         /// </summary>
         public class ContactInsightsRequestBuilderGetQueryParameters 
         {

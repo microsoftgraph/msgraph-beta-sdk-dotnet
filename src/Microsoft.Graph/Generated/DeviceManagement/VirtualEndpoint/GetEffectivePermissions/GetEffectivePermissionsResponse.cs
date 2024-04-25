@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions {
     [Obsolete("This class is obsolete. Use GetEffectivePermissionsGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetEffectivePermissionsResponse : GetEffectivePermissionsGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

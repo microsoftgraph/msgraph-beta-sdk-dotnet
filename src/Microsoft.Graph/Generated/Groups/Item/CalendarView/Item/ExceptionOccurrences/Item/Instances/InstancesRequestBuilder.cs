@@ -58,7 +58,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.CalendarView.Item.ExceptionOccurrence
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but doesn&apos;t include occurrences that have been canceled from the series. Navigation property. Read-only. Nullable.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-list-instances?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="EventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

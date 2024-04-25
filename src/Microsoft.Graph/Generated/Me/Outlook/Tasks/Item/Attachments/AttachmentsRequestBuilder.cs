@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments {
         {
         }
         /// <summary>
-        /// Get a list of attachment objects attached to an Outlook task.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktask-list-attachments?view=graph-rest-1.0" />
+        /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="AttachmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +84,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments {
             return await RequestAdapter.SendAsync<AttachmentCollectionResponse>(requestInfo, AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktask-post-attachments?view=graph-rest-1.0" />
+        /// Create new navigation property to attachments for me
         /// </summary>
         /// <returns>A <see cref="Attachment"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +110,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments {
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of attachment objects attached to an Outlook task.
+        /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +130,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to add an attachment to an outlookTask. The attachment can be a file (of fileAttachment type) or Outlook item (itemAttachment type).
+        /// Create new navigation property to attachments for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -165,7 +163,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item.Attachments {
             return new AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of attachment objects attached to an Outlook task.
+        /// The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.
         /// </summary>
         public class AttachmentsRequestBuilderGetQueryParameters 
         {

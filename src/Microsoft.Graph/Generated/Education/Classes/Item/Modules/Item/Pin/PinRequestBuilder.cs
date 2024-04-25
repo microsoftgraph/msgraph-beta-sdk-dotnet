@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Modules.Item.Pin {
         }
         /// <summary>
         /// Pin an educationModule in the class work list. This action sets the isPinned property to true for an educationModule. Only teachers can perform this action and only one module at a time can be pinned in the class work list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-pin?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationModule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

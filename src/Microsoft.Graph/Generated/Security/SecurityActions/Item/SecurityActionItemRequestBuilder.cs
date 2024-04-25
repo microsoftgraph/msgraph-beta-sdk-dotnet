@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a securityAction object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityaction-get?view=graph-rest-1.0" />
+        /// Get securityActions from security
         /// </summary>
         /// <returns>A <see cref="SecurityAction"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a securityAction object.
+        /// Get securityActions from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a securityAction object.
+        /// Get securityActions from security
         /// </summary>
         public class SecurityActionItemRequestBuilderGetQueryParameters 
         {

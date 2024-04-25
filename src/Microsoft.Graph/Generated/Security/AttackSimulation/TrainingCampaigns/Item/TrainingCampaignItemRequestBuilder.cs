@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
         {
         }
         /// <summary>
-        /// Delete a trainingCampaign object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-delete-trainingcampaigns?view=graph-rest-1.0" />
+        /// Delete navigation property trainingCampaigns for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a trainingCampaign object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trainingcampaign-get?view=graph-rest-1.0" />
+        /// Represents a training campaign in a tenant.
         /// </summary>
         /// <returns>A <see cref="TrainingCampaign"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
             return await RequestAdapter.SendAsync<TrainingCampaign>(requestInfo, TrainingCampaign.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a trainingCampaign object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trainingcampaign-update?view=graph-rest-1.0" />
+        /// Update the navigation property trainingCampaigns in security
         /// </summary>
         /// <returns>A <see cref="TrainingCampaign"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
             return await RequestAdapter.SendAsync<TrainingCampaign>(requestInfo, TrainingCampaign.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a trainingCampaign object.
+        /// Delete navigation property trainingCampaigns for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a trainingCampaign object.
+        /// Represents a training campaign in a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a trainingCampaign object.
+        /// Update the navigation property trainingCampaigns in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.TrainingCampaigns.Item 
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a trainingCampaign object.
+        /// Represents a training campaign in a tenant.
         /// </summary>
         public class TrainingCampaignItemRequestBuilderGetQueryParameters 
         {

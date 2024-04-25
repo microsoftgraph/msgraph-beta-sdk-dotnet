@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a citationTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-citationtemplate-get?view=graph-rest-1.0" />
+        /// The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.CitationTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a citationTemplate object.
+        /// The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Citations.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a citationTemplate object.
+        /// The specific rule or regulation created by a jurisdiction used to determine whether certain labels and content should be retained or deleted.
         /// </summary>
         public class CitationTemplateItemRequestBuilderGetQueryParameters 
         {

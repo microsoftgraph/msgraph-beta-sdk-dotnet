@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ConnectorGroupRegion
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "nam")]
+        #pragma warning disable CS1591
         Nam,
+        #pragma warning restore CS1591
         [EnumMember(Value = "eur")]
+        #pragma warning disable CS1591
         Eur,
+        #pragma warning restore CS1591
         [EnumMember(Value = "aus")]
+        #pragma warning disable CS1591
         Aus,
+        #pragma warning restore CS1591
         [EnumMember(Value = "asia")]
+        #pragma warning disable CS1591
         Asia,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ind")]
+        #pragma warning disable CS1591
         Ind,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans {
         {
         }
         /// <summary>
-        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-1.0" />
+        /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
+        /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RosterPlans {
             return new RosterPlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
+        /// Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.
         /// </summary>
         public class RosterPlansRequestBuilderGetQueryParameters 
         {

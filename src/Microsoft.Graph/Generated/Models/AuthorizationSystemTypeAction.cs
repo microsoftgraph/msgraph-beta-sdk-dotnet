@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AuthorizationSystemTypeAction : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The type of action allowed in the authorization system&apos;s service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).</summary>
         public AuthorizationSystemActionType? ActionType {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
         {
         }
         /// <summary>
-        /// List the recent activities that took place on an item or under a hierarchy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/activities-list?view=graph-rest-1.0" />
+        /// The list of recent activities that took place under this drive.
         /// </summary>
         /// <returns>A <see cref="ItemActivityOLDCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
             return await RequestAdapter.SendAsync<ItemActivityOLD>(requestInfo, ItemActivityOLD.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the recent activities that took place on an item or under a hierarchy.
+        /// The list of recent activities that took place under this drive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Activities {
             return new ActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the recent activities that took place on an item or under a hierarchy.
+        /// The list of recent activities that took place under this drive.
         /// </summary>
         public class ActivitiesRequestBuilderGetQueryParameters 
         {

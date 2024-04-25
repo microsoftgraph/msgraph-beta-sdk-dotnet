@@ -75,8 +75,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
         {
         }
         /// <summary>
-        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0" />
+        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +98,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +126,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             return new OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         public class OwnedObjectsRequestBuilderGetQueryParameters 
         {

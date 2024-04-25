@@ -66,8 +66,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         {
         }
         /// <summary>
-        /// Delete a connectorGroup. All connectors and applications must be removed from the connector group before a connector group can be deleted.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-delete?view=graph-rest-1.0" />
+        /// Delete navigation property connectorGroups for onPremisesPublishingProfiles
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,8 +88,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a connectorGroup.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-get?view=graph-rest-1.0" />
+        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConnectorGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,8 +111,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectorGroup>(requestInfo, Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a connectorGroup object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-update?view=graph-rest-1.0" />
+        /// Update the navigation property connectorGroups in onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConnectorGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -139,7 +136,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ConnectorGroup>(requestInfo, Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a connectorGroup. All connectors and applications must be removed from the connector group before a connector group can be deleted.
+        /// Delete navigation property connectorGroups for onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +155,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a connectorGroup.
+        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -177,7 +174,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a connectorGroup object.
+        /// Update the navigation property connectorGroups in onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -215,7 +212,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
         {
         }
         /// <summary>
-        /// Retrieve the properties of a connectorGroup.
+        /// List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.
         /// </summary>
         public class ConnectorGroupItemRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         }
         /// <summary>
         /// Update the rules within a forwarding policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-updatepolicyrules?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicy-updatepolicyrules?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

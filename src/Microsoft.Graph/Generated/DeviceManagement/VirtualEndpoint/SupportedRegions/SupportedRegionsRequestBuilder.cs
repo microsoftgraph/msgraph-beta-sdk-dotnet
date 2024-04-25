@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
         {
         }
         /// <summary>
-        /// List the supported regions that are available for creating Cloud PC connections.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-supportedregions?view=graph-rest-1.0" />
+        /// Cloud PC supported regions.
         /// </summary>
         /// <returns>A <see cref="CloudPcSupportedRegionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             return await RequestAdapter.SendAsync<CloudPcSupportedRegion>(requestInfo, CloudPcSupportedRegion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the supported regions that are available for creating Cloud PC connections.
+        /// Cloud PC supported regions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             return new SupportedRegionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the supported regions that are available for creating Cloud PC connections.
+        /// Cloud PC supported regions.
         /// </summary>
         public class SupportedRegionsRequestBuilderGetQueryParameters 
         {

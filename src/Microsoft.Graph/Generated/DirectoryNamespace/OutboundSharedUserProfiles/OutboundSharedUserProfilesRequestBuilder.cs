@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
         {
         }
         /// <summary>
-        /// Retrieve the properties of all outboundSharedUserProfiles.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-1.0" />
+        /// Get outboundSharedUserProfiles from directory
         /// </summary>
         /// <returns>A <see cref="OutboundSharedUserProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
             return await RequestAdapter.SendAsync<OutboundSharedUserProfile>(requestInfo, OutboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of all outboundSharedUserProfiles.
+        /// Get outboundSharedUserProfiles from directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles {
             return new OutboundSharedUserProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of all outboundSharedUserProfiles.
+        /// Get outboundSharedUserProfiles from directory
         /// </summary>
         public class OutboundSharedUserProfilesRequestBuilderGetQueryParameters 
         {

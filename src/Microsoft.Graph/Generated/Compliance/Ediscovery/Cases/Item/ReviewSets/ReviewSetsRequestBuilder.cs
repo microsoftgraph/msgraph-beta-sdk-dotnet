@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a reviewSet object.
+        /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ReviewSetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,8 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
             return await RequestAdapter.SendAsync<ReviewSetCollectionResponse>(requestInfo, ReviewSetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-reviewsets?view=graph-rest-1.0" />
+        /// Create new navigation property to reviewSets for compliance
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a reviewSet object.
+        /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +123,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new reviewSet object. The request body contains the display name of the review set, which is the only writable property.
+        /// Create new navigation property to reviewSets for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets {
             return new ReviewSetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a reviewSet object.
+        /// Returns a list of reviewSet objects in the case. Read-only. Nullable.
         /// </summary>
         public class ReviewSetsRequestBuilderGetQueryParameters 
         {

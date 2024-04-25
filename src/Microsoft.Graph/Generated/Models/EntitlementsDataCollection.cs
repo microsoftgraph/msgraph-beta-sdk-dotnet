@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class EntitlementsDataCollection : EntitlementsDataCollectionInfo, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Last transformation time of entitlements.</summary>
         public DateTimeOffset? LastCollectionDateTime {

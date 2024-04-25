@@ -32,8 +32,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy {
         {
         }
         /// <summary>
-        /// Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0" />
+        /// Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Asynchronously creates a copy of an [driveItem][item-resource] (including any children), under a new parent item or with a new name.
+        /// Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

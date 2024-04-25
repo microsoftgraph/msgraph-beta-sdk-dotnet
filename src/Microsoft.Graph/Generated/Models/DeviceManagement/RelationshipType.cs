@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+    #pragma warning disable CS1591
     public enum RelationshipType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "and")]
+        #pragma warning disable CS1591
         And,
+        #pragma warning restore CS1591
         [EnumMember(Value = "or")]
+        #pragma warning disable CS1591
         Or,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

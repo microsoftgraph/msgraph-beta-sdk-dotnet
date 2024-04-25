@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the specified Teams async operation that ran or is running on a specific resource.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsasyncoperation-get?view=graph-rest-1.0" />
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="TeamsAsyncOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the specified Teams async operation that ran or is running on a specific resource.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Operations.Item {
         {
         }
         /// <summary>
-        /// Get the specified Teams async operation that ran or is running on a specific resource.
+        /// A collection of all the Teams async operations that ran or are running on the chat. Nullable.
         /// </summary>
         public class TeamsAsyncOperationItemRequestBuilderGetQueryParameters 
         {

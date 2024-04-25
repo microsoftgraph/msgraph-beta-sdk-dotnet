@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum TranslationBehavior
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "Ask")]
+        #pragma warning disable CS1591
         Ask,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Yes")]
+        #pragma warning disable CS1591
         Yes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "No")]
+        #pragma warning disable CS1591
         No,
+        #pragma warning restore CS1591
     }
 }

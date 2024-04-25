@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class UrlThreatSubmission : ThreatSubmission, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Denotes the webUrl that needs to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -39,8 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
         {
         }
         /// <summary>
-        /// Delete the specified Outlook task folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskfolder-delete?view=graph-rest-1.0" />
+        /// Delete navigation property taskFolders for users
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,8 +62,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of the specified Outlook task folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskfolder-get?view=graph-rest-1.0" />
+        /// Get taskFolders from users
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,8 +86,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, &apos;Tasks&apos;.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskfolder-update?view=graph-rest-1.0" />
+        /// Update the navigation property taskFolders in users
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +112,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the specified Outlook task folder.
+        /// Delete navigation property taskFolders for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +132,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of the specified Outlook task folder.
+        /// Get taskFolders from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +152,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the writable properties of an Outlook task folder. You cannot change the name property value of the default task folder, &apos;Tasks&apos;.
+        /// Update the navigation property taskFolders in users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -195,7 +192,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of the specified Outlook task folder.
+        /// Get taskFolders from users
         /// </summary>
         public class OutlookTaskFolderItemRequestBuilderGetQueryParameters 
         {

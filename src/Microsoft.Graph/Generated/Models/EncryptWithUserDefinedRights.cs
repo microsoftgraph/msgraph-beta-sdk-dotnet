@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class EncryptWithUserDefinedRights : EncryptContent, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The allowAdHocPermissions property</summary>
         public bool? AllowAdHocPermissions {

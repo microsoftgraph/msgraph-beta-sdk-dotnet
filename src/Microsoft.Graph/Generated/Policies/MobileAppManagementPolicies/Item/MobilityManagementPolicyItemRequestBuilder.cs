@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Delete a mobilityManagementPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-delete?view=graph-rest-1.0" />
+        /// Delete navigation property mobileAppManagementPolicies for policies
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a mobilityManagementPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-get?view=graph-rest-1.0" />
+        /// The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
         /// </summary>
         /// <returns>A <see cref="MobilityManagementPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,8 +83,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a mobilityManagementPolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-update?view=graph-rest-1.0" />
+        /// Update the navigation property mobileAppManagementPolicies in policies
         /// </summary>
         /// <returns>A <see cref="MobilityManagementPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +108,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a mobilityManagementPolicy object.
+        /// Delete navigation property mobileAppManagementPolicies for policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +127,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a mobilityManagementPolicy object.
+        /// The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +146,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a mobilityManagementPolicy object.
+        /// Update the navigation property mobileAppManagementPolicies in policies
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +184,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a mobilityManagementPolicy object.
+        /// The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
         /// </summary>
         public class MobilityManagementPolicyItemRequestBuilderGetQueryParameters 
         {

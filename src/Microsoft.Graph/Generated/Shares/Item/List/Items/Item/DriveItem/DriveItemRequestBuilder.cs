@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.DriveItem {
         {
         }
         /// <summary>
-        /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+        /// For document libraries, the driveItem relationship exposes the listItem as a driveItem
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.DriveItem {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+        /// For document libraries, the driveItem relationship exposes the listItem as a driveItem
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.List.Items.Item.DriveItem {
             return new DriveItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// For document libraries, the driveItem relationship exposes the listItem as a [driveItem][]
+        /// For document libraries, the driveItem relationship exposes the listItem as a driveItem
         /// </summary>
         public class DriveItemRequestBuilderGetQueryParameters 
         {

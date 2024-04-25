@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Office365GroupsActivityCounts : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The number of emails received by Group mailboxes.</summary>
         public long? ExchangeEmailsReceived {

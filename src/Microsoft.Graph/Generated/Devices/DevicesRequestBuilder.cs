@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Devices {
         }
         /// <summary>
         /// Retrieve a list of devices registered in the directory.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeviceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Devices {
         }
         /// <summary>
         /// Create a new device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/device-post-devices?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Device"/></returns>
         /// <param name="body">The request body</param>

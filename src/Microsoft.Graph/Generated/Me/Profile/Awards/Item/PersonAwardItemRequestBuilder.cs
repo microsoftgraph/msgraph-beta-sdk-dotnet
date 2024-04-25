@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
         {
         }
         /// <summary>
-        /// Deletes a personAward object from a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-1.0" />
+        /// Delete navigation property awards for me
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-get?view=graph-rest-1.0" />
+        /// Represents the details of awards or honors associated with a person.
         /// </summary>
         /// <returns>A <see cref="PersonAward"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a personAward object from a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-1.0" />
+        /// Update the navigation property awards in me
         /// </summary>
         /// <returns>A <see cref="PersonAward"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a personAward object from a user&apos;s profile.
+        /// Delete navigation property awards for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
+        /// Represents the details of awards or honors associated with a person.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a personAward object from a user&apos;s profile.
+        /// Update the navigation property awards in me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
+        /// Represents the details of awards or honors associated with a person.
         /// </summary>
         public class PersonAwardItemRequestBuilderGetQueryParameters 
         {

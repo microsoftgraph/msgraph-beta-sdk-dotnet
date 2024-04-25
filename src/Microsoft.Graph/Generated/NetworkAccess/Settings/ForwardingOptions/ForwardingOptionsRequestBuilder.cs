@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the forwarding options for the tenant, with a specific focus on the &apos;skipDnsLookupState&apos; flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-get?view=graph-rest-1.0" />
+        /// Get forwardingOptions from networkAccess
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// the forwarding options for the tenant, with a specific focus on the skipDnsLookupState flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingoptions-update?view=graph-rest-1.0" />
+        /// Update the navigation property forwardingOptions in networkAccess
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingOptions"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the forwarding options for the tenant, with a specific focus on the &apos;skipDnsLookupState&apos; flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
+        /// Get forwardingOptions from networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
             return requestInfo;
         }
         /// <summary>
-        /// the forwarding options for the tenant, with a specific focus on the skipDnsLookupState flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
+        /// Update the navigation property forwardingOptions in networkAccess
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.ForwardingOptions {
         {
         }
         /// <summary>
-        /// Retrieve the forwarding options for the tenant, with a specific focus on the &apos;skipDnsLookupState&apos; flag. This flag determines whether DNS lookup will be skipped, allowing Microsoft 365 traffic to be forwarded directly to the Front Door using the client-resolved destination.
+        /// Get forwardingOptions from networkAccess
         /// </summary>
         public class ForwardingOptionsRequestBuilderGetQueryParameters 
         {

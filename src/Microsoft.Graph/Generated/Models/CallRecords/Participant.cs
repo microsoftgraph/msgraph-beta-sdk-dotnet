@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
+    #pragma warning disable CS1591
     public class Participant : ParticipantBase, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="Participant"/> and sets the default values.

@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
         {
         }
         /// <summary>
-        /// Get the list of siteSource objecs associated with a legal hold.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-list-sitesources?view=graph-rest-1.0" />
+        /// Data source entity for SharePoint sites associated with the legal hold.
         /// </summary>
         /// <returns>A <see cref="SiteSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return await RequestAdapter.SendAsync<SiteSourceCollectionResponse>(requestInfo, SiteSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a siteSource to a legalHold object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-post-sitesources?view=graph-rest-1.0" />
+        /// Create new navigation property to siteSources for compliance
         /// </summary>
         /// <returns>A <see cref="SiteSource"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return await RequestAdapter.SendAsync<SiteSource>(requestInfo, SiteSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of siteSource objecs associated with a legal hold.
+        /// Data source entity for SharePoint sites associated with the legal hold.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Adds a siteSource to a legalHold object.
+        /// Create new navigation property to siteSources for compliance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item.
             return new SiteSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of siteSource objecs associated with a legal hold.
+        /// Data source entity for SharePoint sites associated with the legal hold.
         /// </summary>
         public class SiteSourcesRequestBuilderGetQueryParameters 
         {

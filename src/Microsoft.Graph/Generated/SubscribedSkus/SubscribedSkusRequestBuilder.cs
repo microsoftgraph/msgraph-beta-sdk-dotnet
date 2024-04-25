@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus {
         }
         /// <summary>
         /// Get the list of commercial subscriptions that an organization has acquired. For the mapping of license names as displayed on the Microsoft Entra admin center or the Microsoft 365 admin center against their Microsoft Graph skuId and skuPartNumber properties, see Product names and service plan identifiers for licensing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subscribedsku-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SubscribedSkuCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

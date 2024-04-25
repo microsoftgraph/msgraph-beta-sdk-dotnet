@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a authorityTemplate object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-authoritytemplate-get?view=graph-rest-1.0" />
+        /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AuthorityTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a authorityTemplate object.
+        /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Authorities.Item {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a authorityTemplate object.
+        /// Specifies the underlying authority that describes the type of content to be retained and its retention schedule.
         /// </summary>
         public class AuthorityTemplateItemRequestBuilderGetQueryParameters 
         {

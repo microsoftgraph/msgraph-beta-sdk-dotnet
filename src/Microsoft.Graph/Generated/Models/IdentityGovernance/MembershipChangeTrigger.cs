@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    #pragma warning disable CS1591
     public class MembershipChangeTrigger : WorkflowExecutionTrigger, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The changeType property</summary>
         public MembershipChangeType? ChangeType {

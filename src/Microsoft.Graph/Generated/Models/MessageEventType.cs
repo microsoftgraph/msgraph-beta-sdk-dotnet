@@ -2,51 +2,97 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum MessageEventType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "received")]
+        #pragma warning disable CS1591
         Received,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sent")]
+        #pragma warning disable CS1591
         Sent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "delivered")]
+        #pragma warning disable CS1591
         Delivered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "processingFailed")]
+        #pragma warning disable CS1591
         ProcessingFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "distributionGroupExpanded")]
+        #pragma warning disable CS1591
         DistributionGroupExpanded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "submitted")]
+        #pragma warning disable CS1591
         Submitted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "delayed")]
+        #pragma warning disable CS1591
         Delayed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "redirected")]
+        #pragma warning disable CS1591
         Redirected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resolved")]
+        #pragma warning disable CS1591
         Resolved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dropped")]
+        #pragma warning disable CS1591
         Dropped,
+        #pragma warning restore CS1591
         [EnumMember(Value = "recipientsAdded")]
+        #pragma warning disable CS1591
         RecipientsAdded,
+        #pragma warning restore CS1591
         [EnumMember(Value = "malwareDetected")]
+        #pragma warning disable CS1591
         MalwareDetected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "malwareDetectedInMessage")]
+        #pragma warning disable CS1591
         MalwareDetectedInMessage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "malwareDetectedInAttachment")]
+        #pragma warning disable CS1591
         MalwareDetectedInAttachment,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ttZapped")]
+        #pragma warning disable CS1591
         TtZapped,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ttDelivered")]
+        #pragma warning disable CS1591
         TtDelivered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spamDetected")]
+        #pragma warning disable CS1591
         SpamDetected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "transportRuleTriggered")]
+        #pragma warning disable CS1591
         TransportRuleTriggered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dlpRuleTriggered")]
+        #pragma warning disable CS1591
         DlpRuleTriggered,
+        #pragma warning restore CS1591
         [EnumMember(Value = "journaled")]
+        #pragma warning disable CS1591
         Journaled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

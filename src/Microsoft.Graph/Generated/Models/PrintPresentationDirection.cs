@@ -2,23 +2,41 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PrintPresentationDirection
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "clockwiseFromTopLeft")]
+        #pragma warning disable CS1591
         ClockwiseFromTopLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "counterClockwiseFromTopLeft")]
+        #pragma warning disable CS1591
         CounterClockwiseFromTopLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "counterClockwiseFromTopRight")]
+        #pragma warning disable CS1591
         CounterClockwiseFromTopRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "clockwiseFromTopRight")]
+        #pragma warning disable CS1591
         ClockwiseFromTopRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "counterClockwiseFromBottomLeft")]
+        #pragma warning disable CS1591
         CounterClockwiseFromBottomLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "clockwiseFromBottomLeft")]
+        #pragma warning disable CS1591
         ClockwiseFromBottomLeft,
+        #pragma warning restore CS1591
         [EnumMember(Value = "counterClockwiseFromBottomRight")]
+        #pragma warning disable CS1591
         CounterClockwiseFromBottomRight,
+        #pragma warning restore CS1591
         [EnumMember(Value = "clockwiseFromBottomRight")]
+        #pragma warning disable CS1591
         ClockwiseFromBottomRight,
+        #pragma warning restore CS1591
     }
 }

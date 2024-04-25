@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a teamTemplateDefinition object.
+        /// A generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         /// <returns>A <see cref="TeamTemplateDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamTemplateDefinition>(requestInfo, Microsoft.Graph.Beta.Models.TeamTemplateDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a teamTemplateDefinition object.
+        /// A generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions {
             return new DefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a teamTemplateDefinition object.
+        /// A generic representation of a team template definition for a team with a specific structure and configuration.
         /// </summary>
         public class DefinitionsRequestBuilderGetQueryParameters 
         {

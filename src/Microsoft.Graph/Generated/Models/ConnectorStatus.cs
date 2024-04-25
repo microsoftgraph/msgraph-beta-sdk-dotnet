@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ConnectorStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "inactive")]
+        #pragma warning disable CS1591
         Inactive,
+        #pragma warning restore CS1591
     }
 }

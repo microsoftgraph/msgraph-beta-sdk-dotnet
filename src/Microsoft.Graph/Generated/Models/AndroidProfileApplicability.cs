@@ -6,10 +6,16 @@ namespace Microsoft.Graph.Beta.Models {
     public enum AndroidProfileApplicability
     {
         [EnumMember(Value = "default")]
+        #pragma warning disable CS1591
         Default,
+        #pragma warning restore CS1591
         [EnumMember(Value = "androidWorkProfile")]
+        #pragma warning disable CS1591
         AndroidWorkProfile,
+        #pragma warning restore CS1591
         [EnumMember(Value = "androidDeviceOwner")]
+        #pragma warning disable CS1591
         AndroidDeviceOwner,
+        #pragma warning restore CS1591
     }
 }

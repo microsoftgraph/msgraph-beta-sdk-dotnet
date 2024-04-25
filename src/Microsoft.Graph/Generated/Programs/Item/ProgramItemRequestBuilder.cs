@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, delete a program object. Do not delete a program which still has programControl linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-delete?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
         }
         /// <summary>
         /// In the Microsoft Entra access reviews feature, update an existing program object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Program"/></returns>
         /// <param name="body">The request body</param>

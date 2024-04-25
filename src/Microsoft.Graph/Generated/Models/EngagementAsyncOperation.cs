@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class EngagementAsyncOperation : LongRunningOperation, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The type of the long-running operation. The possible values are: createCommunity, unknownFutureValue.</summary>
         public EngagementAsyncOperationType? OperationType {

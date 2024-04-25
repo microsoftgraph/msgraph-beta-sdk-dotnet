@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public class AzureADDevice : UpdatableAsset, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

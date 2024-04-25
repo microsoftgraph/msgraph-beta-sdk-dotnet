@@ -56,8 +56,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         {
         }
         /// <summary>
-        /// Delete a businessScenarioTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenarioplanner-delete-tasks?view=graph-rest-1.0" />
+        /// Delete navigation property tasks for solutions
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,8 +78,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a businessScenarioTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenariotask-get?view=graph-rest-1.0" />
+        /// The Planner tasks for the scenario.
         /// </summary>
         /// <returns>A <see cref="BusinessScenarioTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,8 +101,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return await RequestAdapter.SendAsync<BusinessScenarioTask>(requestInfo, BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a businessScenarioTask object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenariotask-update?view=graph-rest-1.0" />
+        /// Update the navigation property tasks in solutions
         /// </summary>
         /// <returns>A <see cref="BusinessScenarioTask"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +126,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return await RequestAdapter.SendAsync<BusinessScenarioTask>(requestInfo, BusinessScenarioTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a businessScenarioTask object.
+        /// Delete navigation property tasks for solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +145,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a businessScenarioTask object.
+        /// The Planner tasks for the scenario.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +164,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a businessScenarioTask object.
+        /// Update the navigation property tasks in solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -205,7 +202,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a businessScenarioTask object.
+        /// The Planner tasks for the scenario.
         /// </summary>
         public class BusinessScenarioTaskItemRequestBuilderGetQueryParameters 
         {

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
         }
         /// <summary>
         /// Initiate a reset for the password associated with a password authentication method object. This can only be done by an administrator with appropriate permissions and can&apos;t be performed on a user&apos;s own account. This flow writes the new password to Microsoft Entra ID and pushes it to on-premises Active Directory if configured using password writeback. The admin can either provide a new password or have the system generate one. The user is prompted to change their password on their next sign in. This reset is a long-running operation and will return a Location header with a link where the caller can periodically check for the status of the reset operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethod-resetpassword?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PasswordResetResponse"/></returns>
         /// <param name="body">The request body</param>

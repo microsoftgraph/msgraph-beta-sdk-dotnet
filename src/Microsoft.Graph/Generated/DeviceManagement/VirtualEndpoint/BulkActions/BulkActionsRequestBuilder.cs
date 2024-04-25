@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
         {
         }
         /// <summary>
-        /// Get a list of the cloudPcBulkAction objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-bulkactions?view=graph-rest-1.0" />
+        /// Bulk actions applied to a Cloud PC.
         /// </summary>
         /// <returns>A <see cref="CloudPcBulkActionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
             return await RequestAdapter.SendAsync<CloudPcBulkActionCollectionResponse>(requestInfo, CloudPcBulkActionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcBulkAction object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-bulkactions?view=graph-rest-1.0" />
+        /// Create new navigation property to bulkActions for deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcBulkAction"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
             return await RequestAdapter.SendAsync<CloudPcBulkAction>(requestInfo, CloudPcBulkAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the cloudPcBulkAction objects and their properties.
+        /// Bulk actions applied to a Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcBulkAction object.
+        /// Create new navigation property to bulkActions for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions {
             return new BulkActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the cloudPcBulkAction objects and their properties.
+        /// Bulk actions applied to a Cloud PC.
         /// </summary>
         public class BulkActionsRequestBuilderGetQueryParameters 
         {

@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
         {
         }
         /// <summary>
-        /// Retrieve a list of users at a school.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0" />
+        /// Users in the school. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +80,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of users at a school.
+        /// Users in the school. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +108,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
             return new UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of users at a school.
+        /// Users in the school. Nullable.
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters 
         {

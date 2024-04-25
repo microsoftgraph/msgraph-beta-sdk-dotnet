@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum DataCollectionStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "online")]
+        #pragma warning disable CS1591
         Online,
+        #pragma warning restore CS1591
         [EnumMember(Value = "offline")]
+        #pragma warning disable CS1591
         Offline,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

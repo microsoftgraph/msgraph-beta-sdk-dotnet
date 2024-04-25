@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.Me.Contacts {
         {
         }
         /// <summary>
-        /// Get contacts in the user&apos;s mailbox. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-contacts?view=graph-rest-1.0" />
+        /// The user&apos;s contacts. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="ContactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Beta.Me.Contacts {
             return await RequestAdapter.SendAsync<ContactCollectionResponse>(requestInfo, ContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-contacts?view=graph-rest-1.0" />
+        /// Create new navigation property to contacts for me
         /// </summary>
         /// <returns>A <see cref="Contact"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Contacts {
             return await RequestAdapter.SendAsync<Contact>(requestInfo, Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get contacts in the user&apos;s mailbox. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
+        /// The user&apos;s contacts. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Contacts {
             return requestInfo;
         }
         /// <summary>
-        /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
+        /// Create new navigation property to contacts for me
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.Me.Contacts {
             return new ContactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get contacts in the user&apos;s mailbox. There are two scenarios where an app can get contacts in another user&apos;s contact folder:
+        /// The user&apos;s contacts. Read-only. Nullable.
         /// </summary>
         public class ContactsRequestBuilderGetQueryParameters 
         {

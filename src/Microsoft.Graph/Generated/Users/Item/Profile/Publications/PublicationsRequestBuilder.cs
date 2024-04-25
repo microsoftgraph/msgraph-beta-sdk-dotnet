@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
         {
         }
         /// <summary>
-        /// Retrieve a list of itemPublication objects from a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-publications?view=graph-rest-1.0" />
+        /// Represents details of any publications a user has added to their profile.
         /// </summary>
         /// <returns>A <see cref="ItemPublicationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
             return await RequestAdapter.SendAsync<ItemPublicationCollectionResponse>(requestInfo, ItemPublicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new itemPublication object in a user&apos;s profile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-publications?view=graph-rest-1.0" />
+        /// Create new navigation property to publications for users
         /// </summary>
         /// <returns>A <see cref="ItemPublication"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
             return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of itemPublication objects from a user&apos;s profile.
+        /// Represents details of any publications a user has added to their profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new itemPublication object in a user&apos;s profile.
+        /// Create new navigation property to publications for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications {
             return new PublicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of itemPublication objects from a user&apos;s profile.
+        /// Represents details of any publications a user has added to their profile.
         /// </summary>
         public class PublicationsRequestBuilderGetQueryParameters 
         {

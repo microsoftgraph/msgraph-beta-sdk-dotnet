@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PrivilegedAccessScheduleInstance : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>When the schedule instance ends, and is required.</summary>
         public DateTimeOffset? EndDateTime {

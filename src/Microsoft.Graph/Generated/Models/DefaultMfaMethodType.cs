@@ -2,21 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum DefaultMfaMethodType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mobilePhone")]
+        #pragma warning disable CS1591
         MobilePhone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "alternateMobilePhone")]
+        #pragma warning disable CS1591
         AlternateMobilePhone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "officePhone")]
+        #pragma warning disable CS1591
         OfficePhone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftAuthenticatorPush")]
+        #pragma warning disable CS1591
         MicrosoftAuthenticatorPush,
+        #pragma warning restore CS1591
         [EnumMember(Value = "softwareOneTimePasscode")]
+        #pragma warning disable CS1591
         SoftwareOneTimePasscode,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

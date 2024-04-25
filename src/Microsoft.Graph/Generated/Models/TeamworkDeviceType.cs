@@ -2,29 +2,53 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum TeamworkDeviceType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ipPhone")]
+        #pragma warning disable CS1591
         IpPhone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "teamsRoom")]
+        #pragma warning disable CS1591
         TeamsRoom,
+        #pragma warning restore CS1591
         [EnumMember(Value = "surfaceHub")]
+        #pragma warning disable CS1591
         SurfaceHub,
+        #pragma warning restore CS1591
         [EnumMember(Value = "collaborationBar")]
+        #pragma warning disable CS1591
         CollaborationBar,
+        #pragma warning restore CS1591
         [EnumMember(Value = "teamsDisplay")]
+        #pragma warning disable CS1591
         TeamsDisplay,
+        #pragma warning restore CS1591
         [EnumMember(Value = "touchConsole")]
+        #pragma warning disable CS1591
         TouchConsole,
+        #pragma warning restore CS1591
         [EnumMember(Value = "lowCostPhone")]
+        #pragma warning disable CS1591
         LowCostPhone,
+        #pragma warning restore CS1591
         [EnumMember(Value = "teamsPanel")]
+        #pragma warning disable CS1591
         TeamsPanel,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sip")]
+        #pragma warning disable CS1591
         Sip,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

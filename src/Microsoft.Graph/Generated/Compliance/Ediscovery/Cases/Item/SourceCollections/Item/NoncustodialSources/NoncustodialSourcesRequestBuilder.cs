@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         {
         }
         /// <summary>
-        /// Get a list of noncustodialDataSource associated with a sourceCollection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-noncustodialsources?view=graph-rest-1.0" />
+        /// noncustodialDataSource sources that are included in the sourceCollection
         /// </summary>
         /// <returns>A <see cref="NoncustodialDataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<NoncustodialDataSourceCollectionResponse>(requestInfo, NoncustodialDataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of noncustodialDataSource associated with a sourceCollection.
+        /// noncustodialDataSource sources that are included in the sourceCollection
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +107,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return new NoncustodialSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of noncustodialDataSource associated with a sourceCollection.
+        /// noncustodialDataSource sources that are included in the sourceCollection
         /// </summary>
         public class NoncustodialSourcesRequestBuilderGetQueryParameters 
         {

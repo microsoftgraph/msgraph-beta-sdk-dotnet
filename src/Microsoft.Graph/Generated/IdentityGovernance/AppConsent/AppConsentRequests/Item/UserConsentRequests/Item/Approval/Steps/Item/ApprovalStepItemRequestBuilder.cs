@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStep object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-get?view=graph-rest-1.0" />
+        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
         /// </summary>
         /// <returns>A <see cref="ApprovalStep"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Apply approve or deny decision on an approvalStep object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approvalstep-update?view=graph-rest-1.0" />
+        /// Update the navigation property steps in identityGovernance
         /// </summary>
         /// <returns>A <see cref="ApprovalStep"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStep object.
+        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             return requestInfo;
         }
         /// <summary>
-        /// Apply approve or deny decision on an approvalStep object.
+        /// Update the navigation property steps in identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         {
         }
         /// <summary>
-        /// Retrieve the properties of an approvalStep object.
+        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
         /// </summary>
         public class ApprovalStepItemRequestBuilderGetQueryParameters 
         {

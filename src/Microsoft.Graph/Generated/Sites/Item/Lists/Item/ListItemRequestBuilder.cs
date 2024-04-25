@@ -108,8 +108,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of richLongRunningOperations associated with a list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0" />
+        /// The collection of lists under this site.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.List"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -176,7 +175,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the list of richLongRunningOperations associated with a list.
+        /// The collection of lists under this site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -233,7 +232,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item {
         {
         }
         /// <summary>
-        /// Get the list of richLongRunningOperations associated with a list.
+        /// The collection of lists under this site.
         /// </summary>
         public class ListItemRequestBuilderGetQueryParameters 
         {

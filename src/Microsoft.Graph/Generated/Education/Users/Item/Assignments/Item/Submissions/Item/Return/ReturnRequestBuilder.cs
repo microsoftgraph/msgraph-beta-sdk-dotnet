@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments.Item.Submissions
         }
         /// <summary>
         /// Make the grade and feedback associated with this submission available to the student. This will change the status of the submission from &apos;submitted&apos; to &apos;returned&apos; and indicates that feedback is provided or grading is done. This action can only be done by the teacher.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsubmission-return?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationSubmission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

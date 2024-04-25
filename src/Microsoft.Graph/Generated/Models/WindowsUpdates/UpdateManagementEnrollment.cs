@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public class UpdateManagementEnrollment : UpdatableAssetEnrollment, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The updateCategory property</summary>
         public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory {

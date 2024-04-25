@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a password authentication method object. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/passwordauthenticationmethod-get?view=graph-rest-1.0" />
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="PasswordAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods.Item {
             return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a password authentication method object. 
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +83,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods.Item {
             return new PasswordAuthenticationMethodItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a password authentication method object. 
+        /// Represents the details of the password authentication method registered to a user for authentication.
         /// </summary>
         public class PasswordAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

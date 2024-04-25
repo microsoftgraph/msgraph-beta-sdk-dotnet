@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         {
         }
         /// <summary>
-        /// Get a list of additional dataSource objects associated with a source collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-additionalsources?view=graph-rest-1.0" />
+        /// Adds an additional source to the sourceCollection.
         /// </summary>
         /// <returns>A <see cref="DataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of additional dataSource objects associated with a source collection.
+        /// Adds an additional source to the sourceCollection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return new AdditionalSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of additional dataSource objects associated with a source collection.
+        /// Adds an additional source to the sourceCollection.
         /// </summary>
         public class AdditionalSourcesRequestBuilderGetQueryParameters 
         {

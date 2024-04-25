@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdeviceoperation-get?view=graph-rest-1.0" />
+        /// The async operations on the device.
         /// </summary>
         /// <returns>A <see cref="TeamworkDeviceOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
+        /// The async operations on the device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +178,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Operations.Item {
         {
         }
         /// <summary>
-        /// Get the details of an async, long-running operation on a Microsoft Teams-enabled device.
+        /// The async operations on the device.
         /// </summary>
         public class TeamworkDeviceOperationItemRequestBuilderGetQueryParameters 
         {

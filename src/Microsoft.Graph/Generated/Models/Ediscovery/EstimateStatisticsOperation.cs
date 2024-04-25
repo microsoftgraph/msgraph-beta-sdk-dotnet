@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    #pragma warning disable CS1591
     public class EstimateStatisticsOperation : CaseOperation, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The estimated count of items for the sourceCollection that matched the content query.</summary>
         public long? IndexedItemCount {

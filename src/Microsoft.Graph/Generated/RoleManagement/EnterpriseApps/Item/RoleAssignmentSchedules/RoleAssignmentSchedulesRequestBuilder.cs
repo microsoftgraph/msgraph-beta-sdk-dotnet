@@ -62,8 +62,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignment
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get the schedules for active role assignment operations.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentschedules?view=graph-rest-1.0" />
+        /// Get roleAssignmentSchedules from roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentScheduleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +110,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignment
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentSchedule>(requestInfo, UnifiedRoleAssignmentSchedule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the schedules for active role assignment operations.
+        /// Get roleAssignmentSchedules from roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +160,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleAssignment
             return new RoleAssignmentSchedulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the schedules for active role assignment operations.
+        /// Get roleAssignmentSchedules from roleManagement
         /// </summary>
         public class RoleAssignmentSchedulesRequestBuilderGetQueryParameters 
         {

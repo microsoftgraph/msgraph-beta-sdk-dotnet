@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
         {
         }
         /// <summary>
-        /// Get the list of plannerRosterMembers from a plannerRoster.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-list-members?view=graph-rest-1.0" />
+        /// Retrieves the members of the plannerRoster.
         /// </summary>
         /// <returns>A <see cref="PlannerRosterMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return await RequestAdapter.SendAsync<PlannerRosterMemberCollectionResponse>(requestInfo, PlannerRosterMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a member to the plannerRoster object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerroster-post-members?view=graph-rest-1.0" />
+        /// Create new navigation property to members for planner
         /// </summary>
         /// <returns>A <see cref="PlannerRosterMember"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return await RequestAdapter.SendAsync<PlannerRosterMember>(requestInfo, PlannerRosterMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of plannerRosterMembers from a plannerRoster.
+        /// Retrieves the members of the plannerRoster.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Add a member to the plannerRoster object.
+        /// Create new navigation property to members for planner
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of plannerRosterMembers from a plannerRoster.
+        /// Retrieves the members of the plannerRoster.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

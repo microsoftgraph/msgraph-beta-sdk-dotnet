@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.MicrosoftGraphInd
         {
         }
         /// <summary>
-        /// Invoke function getStatistics
+        /// Get statistics for an industryDataRun.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydatarun-getstatistics?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataRunStatistics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item.MicrosoftGraphInd
             return await RequestAdapter.SendAsync<IndustryDataRunStatistics>(requestInfo, IndustryDataRunStatistics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getStatistics
+        /// Get statistics for an industryDataRun.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess {
+    #pragma warning disable CS1591
     public class RelatedThreatIntelligence : RelatedResource, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The threatCount property</summary>
         public long? ThreatCount {

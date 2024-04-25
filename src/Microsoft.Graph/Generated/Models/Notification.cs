@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class Notification : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Sets how long (in seconds) this notification content stays in each platform&apos;s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user&apos;s Windows Action Center.</summary>
         public int? DisplayTimeToLive {

@@ -37,7 +37,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
         {
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
             return await RequestAdapter.SendAsync<GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse>(requestInfo, GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemactivity-getbyinterval?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
             return await RequestAdapter.SendAsync<GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse>(requestInfo, GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.GetActivitiesByIntervalWit
             return new GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getActivitiesByInterval
+        /// Get itemActivityStats for the activities that took place under this resource within the specified time interval. Analytics aggregates might not be available for all action types.
         /// </summary>
         public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetQueryParameters 
         {

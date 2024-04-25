@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
         {
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-list-checklistitems?view=graph-rest-1.0" />
+        /// A collection of smaller subtasks linked to the more complex parent task.
         /// </summary>
         /// <returns>A <see cref="ChecklistItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             return await RequestAdapter.SendAsync<ChecklistItemCollectionResponse>(requestInfo, ChecklistItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new checklistItem object as a subtask in a bigger todoTask.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-post-checklistitems?view=graph-rest-1.0" />
+        /// Create new navigation property to checklistItems for users
         /// </summary>
         /// <returns>A <see cref="ChecklistItem"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             return await RequestAdapter.SendAsync<ChecklistItem>(requestInfo, ChecklistItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
+        /// A collection of smaller subtasks linked to the more complex parent task.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             return requestInfo;
         }
         /// <summary>
-        /// Create a new checklistItem object as a subtask in a bigger todoTask.
+        /// Create new navigation property to checklistItems for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item.ChecklistIt
             return new ChecklistItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the checklistItem resources associated to the checklistItems navigation property of a todoTask.
+        /// A collection of smaller subtasks linked to the more complex parent task.
         /// </summary>
         public class ChecklistItemsRequestBuilderGetQueryParameters 
         {

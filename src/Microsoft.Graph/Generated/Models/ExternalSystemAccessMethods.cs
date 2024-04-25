@@ -3,13 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
     [Flags]
+    #pragma warning disable CS1591
     public enum ExternalSystemAccessMethods
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "direct")]
+        #pragma warning disable CS1591
         Direct = 1,
+        #pragma warning restore CS1591
         [EnumMember(Value = "roleChaining")]
+        #pragma warning disable CS1591
         RoleChaining = 2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue = 4,
+        #pragma warning restore CS1591
     }
 }

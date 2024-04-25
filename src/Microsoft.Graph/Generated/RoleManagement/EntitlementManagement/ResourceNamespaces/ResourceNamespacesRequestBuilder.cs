@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         {
         }
         /// <summary>
-        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-1.0" />
+        /// Get resourceNamespaces from roleManagement
         /// </summary>
         /// <returns>A <see cref="UnifiedRbacResourceNamespaceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
+        /// Get resourceNamespaces from roleManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             return new ResourceNamespacesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
+        /// Get resourceNamespaces from roleManagement
         /// </summary>
         public class ResourceNamespacesRequestBuilderGetQueryParameters 
         {

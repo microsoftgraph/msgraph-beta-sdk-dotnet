@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         {
         }
         /// <summary>
-        /// Get a list of the managementActionTenantDeploymentStatus objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementactiontenantdeploymentstatuses?view=graph-rest-1.0" />
+        /// The tenant level status of management actions across managed tenants.
         /// </summary>
         /// <returns>A <see cref="ManagementActionTenantDeploymentStatusCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return await RequestAdapter.SendAsync<ManagementActionTenantDeploymentStatus>(requestInfo, ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the managementActionTenantDeploymentStatus objects and their properties.
+        /// The tenant level status of management actions across managed tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return new ManagementActionTenantDeploymentStatusesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the managementActionTenantDeploymentStatus objects and their properties.
+        /// The tenant level status of management actions across managed tenants.
         /// </summary>
         public class ManagementActionTenantDeploymentStatusesRequestBuilderGetQueryParameters 
         {

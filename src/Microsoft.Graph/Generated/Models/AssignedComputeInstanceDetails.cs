@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AssignedComputeInstanceDetails : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Represents a set of S3 buckets accessed by this EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

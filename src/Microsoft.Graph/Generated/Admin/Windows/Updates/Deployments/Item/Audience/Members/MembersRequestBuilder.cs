@@ -75,8 +75,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         {
         }
         /// <summary>
-        /// List the updatableAsset resources that are members of a deploymentAudience.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-members?view=graph-rest-1.0" />
+        /// Specifies the assets to include in the audience.
         /// </summary>
         /// <returns>A <see cref="UpdatableAssetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +123,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the updatableAsset resources that are members of a deploymentAudience.
+        /// Specifies the assets to include in the audience.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -174,7 +173,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the updatableAsset resources that are members of a deploymentAudience.
+        /// Specifies the assets to include in the audience.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

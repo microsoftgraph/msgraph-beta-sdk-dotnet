@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Ou
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a Teams app icon associated with a specific definition of an app.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamsappicon-get?view=graph-rest-1.0" />
+        /// The outline version of the Teams app&apos;s icon.
         /// </summary>
         /// <returns>A <see cref="TeamsAppIcon"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Ou
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a Teams app icon associated with a specific definition of an app.
+        /// The outline version of the Teams app&apos;s icon.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +184,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Ou
         {
         }
         /// <summary>
-        /// Retrieve a Teams app icon associated with a specific definition of an app.
+        /// The outline version of the Teams app&apos;s icon.
         /// </summary>
         public class OutlineIconRequestBuilderGetQueryParameters 
         {

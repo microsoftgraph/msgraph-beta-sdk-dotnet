@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public enum DeploymentStateReasonValue
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "scheduledByOfferWindow")]
+        #pragma warning disable CS1591
         ScheduledByOfferWindow,
+        #pragma warning restore CS1591
         [EnumMember(Value = "offeringByRequest")]
+        #pragma warning disable CS1591
         OfferingByRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pausedByRequest")]
+        #pragma warning disable CS1591
         PausedByRequest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pausedByMonitoring")]
+        #pragma warning disable CS1591
         PausedByMonitoring,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "faultedByContentOutdated")]
+        #pragma warning disable CS1591
         FaultedByContentOutdated,
+        #pragma warning restore CS1591
     }
 }

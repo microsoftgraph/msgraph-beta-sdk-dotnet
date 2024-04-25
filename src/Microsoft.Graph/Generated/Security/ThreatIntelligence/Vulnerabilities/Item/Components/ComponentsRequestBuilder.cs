@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
         {
         }
         /// <summary>
-        /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-vulnerability-list-components?view=graph-rest-1.0" />
+        /// Components related to this vulnerability article.
         /// </summary>
         /// <returns>A <see cref="VulnerabilityComponentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
             return await RequestAdapter.SendAsync<VulnerabilityComponent>(requestInfo, VulnerabilityComponent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
+        /// Components related to this vulnerability article.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatIntelligence.Vulnerabilities.Item.
             return new ComponentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of vulnerabilityComponent objects related to a known vulnerability.
+        /// Components related to this vulnerability article.
         /// </summary>
         public class ComponentsRequestBuilderGetQueryParameters 
         {

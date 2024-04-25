@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
         {
         }
         /// <summary>
-        /// Invoke function roleSchedules
+        /// Retrieve both roleAssignmentSchedules and roleEligibilitySchedules.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-roleschedules?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
             return await RequestAdapter.SendAsync<RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdGetResponse>(requestInfo, RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function roleSchedules
+        /// Retrieve both roleAssignmentSchedules and roleEligibilitySchedules.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-roleschedules?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +80,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
             return await RequestAdapter.SendAsync<RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse>(requestInfo, RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function roleSchedules
+        /// Retrieve both roleAssignmentSchedules and roleEligibilitySchedules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +108,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleSchedulesdi
             return new RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function roleSchedules
+        /// Retrieve both roleAssignmentSchedules and roleEligibilitySchedules.
         /// </summary>
         public class RoleSchedulesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdRequestBuilderGetQueryParameters 
         {

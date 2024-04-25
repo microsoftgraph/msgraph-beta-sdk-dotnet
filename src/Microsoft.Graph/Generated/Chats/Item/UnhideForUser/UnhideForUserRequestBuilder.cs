@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.UnhideForUser {
         }
         /// <summary>
         /// Unhide a chat for a user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-unhideforuser?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

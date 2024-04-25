@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class StaleSignInAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The number of days to look back from current timestamp within which the account hasn&apos;t signed in.</summary>
         public TimeSpan? Duration {

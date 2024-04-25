@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes.Item.CopyToDef
         }
         /// <summary>
         /// Invoke action copyToDefaultContentLocation
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AwsAuthorizationSystemResource : AuthorizationSystemResource, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The service associated with the resource in an AWS authorization system. This is auto-expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -6,11 +6,17 @@ namespace Microsoft.Graph.Beta.Models {
     public enum AndroidDeviceOwnerEnrollmentMode
     {
         [EnumMember(Value = "corporateOwnedDedicatedDevice")]
+        #pragma warning disable CS1591
         CorporateOwnedDedicatedDevice,
+        #pragma warning restore CS1591
         [EnumMember(Value = "corporateOwnedFullyManaged")]
+        #pragma warning disable CS1591
         CorporateOwnedFullyManaged,
+        #pragma warning restore CS1591
         [EnumMember(Value = "corporateOwnedWorkProfile")]
+        #pragma warning disable CS1591
         CorporateOwnedWorkProfile,
+        #pragma warning restore CS1591
         /// <summary>Corporate owned, userless Android Open Source Project (AOSP) device, without Google Mobile Services.</summary>
         [EnumMember(Value = "corporateOwnedAOSPUserlessDevice")]
         CorporateOwnedAOSPUserlessDevice,

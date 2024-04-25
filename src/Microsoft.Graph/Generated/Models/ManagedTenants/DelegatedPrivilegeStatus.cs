@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    #pragma warning disable CS1591
     public enum DelegatedPrivilegeStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "delegatedAdminPrivileges")]
+        #pragma warning disable CS1591
         DelegatedAdminPrivileges,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "granularDelegatedAdminPrivileges")]
+        #pragma warning disable CS1591
         GranularDelegatedAdminPrivileges,
+        #pragma warning restore CS1591
         [EnumMember(Value = "delegatedAndGranularDelegetedAdminPrivileges")]
+        #pragma warning disable CS1591
         DelegatedAndGranularDelegetedAdminPrivileges,
+        #pragma warning restore CS1591
     }
 }

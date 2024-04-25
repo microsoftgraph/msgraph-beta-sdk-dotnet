@@ -58,8 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         {
         }
         /// <summary>
-        /// Get a list of cloudPcSnapshot objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-snapshots?view=graph-rest-1.0" />
+        /// Cloud PC snapshots.
         /// </summary>
         /// <returns>A <see cref="CloudPcSnapshotCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +116,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
             return await RequestAdapter.SendAsync<CloudPcSnapshot>(requestInfo, CloudPcSnapshot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of cloudPcSnapshot objects and their properties.
+        /// Cloud PC snapshots.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +166,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
             return new SnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of cloudPcSnapshot objects and their properties.
+        /// Cloud PC snapshots.
         /// </summary>
         public class SnapshotsRequestBuilderGetQueryParameters 
         {

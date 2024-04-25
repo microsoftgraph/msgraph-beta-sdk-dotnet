@@ -2,21 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PermissionsRequestOccurrenceStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "grantingFailed")]
+        #pragma warning disable CS1591
         GrantingFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "granted")]
+        #pragma warning disable CS1591
         Granted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "granting")]
+        #pragma warning disable CS1591
         Granting,
+        #pragma warning restore CS1591
         [EnumMember(Value = "revoked")]
+        #pragma warning disable CS1591
         Revoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "revoking")]
+        #pragma warning disable CS1591
         Revoking,
+        #pragma warning restore CS1591
         [EnumMember(Value = "revokingFailed")]
+        #pragma warning disable CS1591
         RevokingFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

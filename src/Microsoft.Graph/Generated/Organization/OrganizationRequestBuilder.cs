@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Organization {
         }
         /// <summary>
         /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OrganizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

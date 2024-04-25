@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public enum AzureADDeviceRegistrationErrorReason
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "invalidGlobalDeviceId")]
+        #pragma warning disable CS1591
         InvalidGlobalDeviceId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "invalidAzureADDeviceId")]
+        #pragma warning disable CS1591
         InvalidAzureADDeviceId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "missingTrustType")]
+        #pragma warning disable CS1591
         MissingTrustType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "invalidAzureADJoin")]
+        #pragma warning disable CS1591
         InvalidAzureADJoin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

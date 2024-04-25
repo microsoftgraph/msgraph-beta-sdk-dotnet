@@ -60,8 +60,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerPlanConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfiguration-get?view=graph-rest-1.0" />
+        /// The configuration of Planner plans that will be created for the scenario.
         /// </summary>
         /// <returns>A <see cref="PlannerPlanConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +83,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return await RequestAdapter.SendAsync<PlannerPlanConfiguration>(requestInfo, PlannerPlanConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a plannerPlanConfiguration object for a businessScenario.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplanconfiguration-update?view=graph-rest-1.0" />
+        /// Update the navigation property planConfiguration in solutions
         /// </summary>
         /// <returns>A <see cref="PlannerPlanConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerPlanConfiguration object.
+        /// The configuration of Planner plans that will be created for the scenario.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +146,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a plannerPlanConfiguration object for a businessScenario.
+        /// Update the navigation property planConfiguration in solutions
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a plannerPlanConfiguration object.
+        /// The configuration of Planner plans that will be created for the scenario.
         /// </summary>
         public class PlanConfigurationRequestBuilderGetQueryParameters 
         {

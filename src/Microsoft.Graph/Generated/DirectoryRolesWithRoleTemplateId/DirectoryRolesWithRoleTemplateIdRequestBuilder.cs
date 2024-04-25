@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DirectoryRolesWithRoleTemplateId {
         }
         /// <summary>
         /// Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the directoryRole with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Microsoft Entra admin center. For details, see Role template IDs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryrole-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryRole"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class AddWatermarkAction : InformationProtectionAction, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Color of the font to use for the watermark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

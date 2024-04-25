@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class OnAttributeCollectionStartCustomExtension : CustomAuthenticationExtension, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="OnAttributeCollectionStartCustomExtension"/> and sets the default values.

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents {
         {
         }
         /// <summary>
-        /// Retrieve a list of onPremisesAgent objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onpremisesagent-list?view=graph-rest-1.0" />
+        /// List of existing onPremisesAgent objects. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OnPremisesAgentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents {
             return await RequestAdapter.SendAsync<OnPremisesAgent>(requestInfo, OnPremisesAgent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of onPremisesAgent objects.
+        /// List of existing onPremisesAgent objects. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents {
             return new AgentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of onPremisesAgent objects.
+        /// List of existing onPremisesAgent objects. Read-only. Nullable.
         /// </summary>
         public class AgentsRequestBuilderGetQueryParameters 
         {

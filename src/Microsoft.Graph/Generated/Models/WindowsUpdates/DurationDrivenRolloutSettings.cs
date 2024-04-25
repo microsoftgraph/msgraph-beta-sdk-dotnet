@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public class DurationDrivenRolloutSettings : GradualRolloutSettings, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The target duration of the rollout. Given durationBetweenOffers and durationUntilDeploymentEnd, the system will automatically calculate how many devices are in each offering.</summary>
         public TimeSpan? DurationUntilDeploymentEnd {

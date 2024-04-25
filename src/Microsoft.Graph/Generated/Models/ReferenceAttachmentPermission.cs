@@ -2,21 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ReferenceAttachmentPermission
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "other")]
+        #pragma warning disable CS1591
         Other,
+        #pragma warning restore CS1591
         [EnumMember(Value = "view")]
+        #pragma warning disable CS1591
         View,
+        #pragma warning restore CS1591
         [EnumMember(Value = "edit")]
+        #pragma warning disable CS1591
         Edit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "anonymousView")]
+        #pragma warning disable CS1591
         AnonymousView,
+        #pragma warning restore CS1591
         [EnumMember(Value = "anonymousEdit")]
+        #pragma warning disable CS1591
         AnonymousEdit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organizationView")]
+        #pragma warning disable CS1591
         OrganizationView,
+        #pragma warning restore CS1591
         [EnumMember(Value = "organizationEdit")]
+        #pragma warning disable CS1591
         OrganizationEdit,
+        #pragma warning restore CS1591
     }
 }

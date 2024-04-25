@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
         {
         }
         /// <summary>
-        /// Delete an externalUserProfile object. Note: To permanently delete the externalUserProfile, follow permanently delete an item. To restore an externalUserProfile, follow restore a deleted item.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-delete-externaluserprofiles?view=graph-rest-1.0" />
+        /// Delete navigation property externalUserProfiles for directory
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of a specific externalUserProfile.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externaluserprofile-get?view=graph-rest-1.0" />
+        /// Collection of external user profiles that represent collaborators in the directory.
         /// </summary>
         /// <returns>A <see cref="ExternalUserProfile"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
             return await RequestAdapter.SendAsync<ExternalUserProfile>(requestInfo, ExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a externalUserProfile object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externaluserprofile-update?view=graph-rest-1.0" />
+        /// Update the navigation property externalUserProfiles in directory
         /// </summary>
         /// <returns>A <see cref="ExternalUserProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
             return await RequestAdapter.SendAsync<ExternalUserProfile>(requestInfo, ExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an externalUserProfile object. Note: To permanently delete the externalUserProfile, follow permanently delete an item. To restore an externalUserProfile, follow restore a deleted item.
+        /// Delete navigation property externalUserProfiles for directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a specific externalUserProfile.
+        /// Collection of external user profiles that represent collaborators in the directory.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a externalUserProfile object.
+        /// Update the navigation property externalUserProfiles in directory
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties of a specific externalUserProfile.
+        /// Collection of external user profiles that represent collaborators in the directory.
         /// </summary>
         public class ExternalUserProfileItemRequestBuilderGetQueryParameters 
         {

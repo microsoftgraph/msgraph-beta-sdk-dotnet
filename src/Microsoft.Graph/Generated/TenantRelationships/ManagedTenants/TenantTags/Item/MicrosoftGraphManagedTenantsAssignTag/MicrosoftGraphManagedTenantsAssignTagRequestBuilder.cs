@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         }
         /// <summary>
         /// Assign the tenant tag to the specified managed tenants.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-assigntag?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantTag"/></returns>
         /// <param name="body">The request body</param>

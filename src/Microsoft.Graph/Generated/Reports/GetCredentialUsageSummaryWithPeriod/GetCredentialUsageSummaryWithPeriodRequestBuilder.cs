@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
         {
         }
         /// <summary>
-        /// Invoke function getCredentialUsageSummary
+        /// Report the current state of how many users in your organization used the self-service password reset capabilities.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCredentialUsageSummaryWithPeriodGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
             return await RequestAdapter.SendAsync<GetCredentialUsageSummaryWithPeriodGetResponse>(requestInfo, GetCredentialUsageSummaryWithPeriodGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCredentialUsageSummary
+        /// Report the current state of how many users in your organization used the self-service password reset capabilities.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getcredentialusagesummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetCredentialUsageSummaryWithPeriodResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
             return await RequestAdapter.SendAsync<GetCredentialUsageSummaryWithPeriodResponse>(requestInfo, GetCredentialUsageSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getCredentialUsageSummary
+        /// Report the current state of how many users in your organization used the self-service password reset capabilities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
             return new GetCredentialUsageSummaryWithPeriodRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getCredentialUsageSummary
+        /// Report the current state of how many users in your organization used the self-service password reset capabilities.
         /// </summary>
         public class GetCredentialUsageSummaryWithPeriodRequestBuilderGetQueryParameters 
         {

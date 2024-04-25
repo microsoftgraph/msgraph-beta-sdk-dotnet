@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
         {
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-list-taskfolders?view=graph-rest-1.0" />
+        /// Get taskFolders from users
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolderCollectionResponse>(requestInfo, OutlookTaskFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-post-taskfolders?view=graph-rest-1.0" />
+        /// Create new navigation property to taskFolders for users
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +103,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get taskFolders from users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
             return requestInfo;
         }
         /// <summary>
-        /// Create a task folder in the default task group (My Tasks) of the user&apos;s mailbox.
+        /// Create new navigation property to taskFolders for users
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +156,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
             return new TaskFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the Outlook task folders in the user&apos;s mailbox.
+        /// Get taskFolders from users
         /// </summary>
         public class TaskFoldersRequestBuilderGetQueryParameters 
         {

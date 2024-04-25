@@ -32,7 +32,6 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item.AppDefinitions.Item.Co
         }
         /// <summary>
         /// Get media content for the navigation property hostedContent from appCatalogs
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkhostedcontent-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum CloudPcOperatingSystem
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "windows10")]
+        #pragma warning disable CS1591
         Windows10,
+        #pragma warning restore CS1591
         [EnumMember(Value = "windows11")]
+        #pragma warning disable CS1591
         Windows11,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

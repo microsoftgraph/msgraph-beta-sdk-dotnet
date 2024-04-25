@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Me.UsageRights {
         {
         }
         /// <summary>
-        /// Retrieve a list of usageRight objects for a given user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-usagerights?view=graph-rest-1.0" />
+        /// Represents the usage rights a user has been granted.
         /// </summary>
         /// <returns>A <see cref="UsageRightCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.UsageRights {
             return await RequestAdapter.SendAsync<UsageRight>(requestInfo, UsageRight.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of usageRight objects for a given user.
+        /// Represents the usage rights a user has been granted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Me.UsageRights {
             return new UsageRightsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of usageRight objects for a given user.
+        /// Represents the usage rights a user has been granted.
         /// </summary>
         public class UsageRightsRequestBuilderGetQueryParameters 
         {

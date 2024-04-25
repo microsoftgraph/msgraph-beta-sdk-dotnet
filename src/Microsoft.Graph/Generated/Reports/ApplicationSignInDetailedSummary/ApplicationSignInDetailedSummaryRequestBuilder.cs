@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
         {
         }
         /// <summary>
-        /// Retrieve the applicationSignInDetailedSummary objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-applicationsignindetailedsummary?view=graph-rest-1.0" />
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         /// <returns>A <see cref="ApplicationSignInDetailedSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(requestInfo, Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the applicationSignInDetailedSummary objects.
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary {
             return new ApplicationSignInDetailedSummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the applicationSignInDetailedSummary objects.
+        /// Represents a detailed summary of an application sign-in.
         /// </summary>
         public class ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters 
         {

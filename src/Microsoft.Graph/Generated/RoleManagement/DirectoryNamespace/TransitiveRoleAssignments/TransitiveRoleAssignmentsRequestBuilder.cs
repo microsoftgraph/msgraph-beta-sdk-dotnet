@@ -52,7 +52,6 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.TransitiveRoleA
         }
         /// <summary>
         /// Get transitiveRoleAssignments from roleManagement
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-transitiveroleassignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

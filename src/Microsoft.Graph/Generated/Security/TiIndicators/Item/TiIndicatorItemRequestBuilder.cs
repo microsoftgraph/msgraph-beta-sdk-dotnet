@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
         {
         }
         /// <summary>
-        /// Delete a tiIndicator object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-delete?view=graph-rest-1.0" />
+        /// Delete navigation property tiIndicators for security
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a tiIndicator object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-get?view=graph-rest-1.0" />
+        /// Get tiIndicators from security
         /// </summary>
         /// <returns>A <see cref="TiIndicator"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,8 +77,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a tiIndicator object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-update?view=graph-rest-1.0" />
+        /// Update the navigation property tiIndicators in security
         /// </summary>
         /// <returns>A <see cref="TiIndicator"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +102,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a tiIndicator object.
+        /// Delete navigation property tiIndicators for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +121,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a tiIndicator object.
+        /// Get tiIndicators from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +140,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a tiIndicator object.
+        /// Update the navigation property tiIndicators in security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -181,7 +178,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.Item {
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a tiIndicator object.
+        /// Get tiIndicators from security
         /// </summary>
         public class TiIndicatorItemRequestBuilderGetQueryParameters 
         {

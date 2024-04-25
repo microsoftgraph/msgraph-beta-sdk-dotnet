@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions {
         {
         }
         /// <summary>
-        /// Get a list of the referenceDefinition objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-referencedefinition-list?view=graph-rest-1.0" />
+        /// Set of user modifiable system picker types.
         /// </summary>
         /// <returns>A <see cref="ReferenceDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions {
             return await RequestAdapter.SendAsync<ReferenceDefinition>(requestInfo, ReferenceDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the referenceDefinition objects and their properties.
+        /// Set of user modifiable system picker types.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.ReferenceDefinitions {
             return new ReferenceDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the referenceDefinition objects and their properties.
+        /// Set of user modifiable system picker types.
         /// </summary>
         public class ReferenceDefinitionsRequestBuilderGetQueryParameters 
         {

@@ -33,7 +33,6 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetByPat
         }
         /// <summary>
         /// The collection of content types defined for this site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-contenttypes?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="ContentTypeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,8 +55,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetByPat
             return await RequestAdapter.SendAsync<ContentTypeCollectionResponse>(requestInfo, ContentTypeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new [contentType][] for a [site][].
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-post-contenttypes?view=graph-rest-1.0" />
+        /// Create new navigation property to contentTypes for groups
         /// </summary>
         /// <returns>A <see cref="ContentType"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath.GetByPat
             return requestInfo;
         }
         /// <summary>
-        /// Create a new [contentType][] for a [site][].
+        /// Create new navigation property to contentTypes for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

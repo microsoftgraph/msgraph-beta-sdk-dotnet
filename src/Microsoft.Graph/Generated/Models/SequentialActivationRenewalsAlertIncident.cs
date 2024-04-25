@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class SequentialActivationRenewalsAlertIncident : UnifiedRoleManagementAlertIncident, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The length of sequential activation of the same role.</summary>
         public int? ActivationCount {

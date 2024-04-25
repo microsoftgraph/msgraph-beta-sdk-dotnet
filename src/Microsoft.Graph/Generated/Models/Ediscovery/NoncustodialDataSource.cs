@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    #pragma warning disable CS1591
     public class NoncustodialDataSource : DataSourceContainer, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Indicates if hold is applied to noncustodial data source (such as mailbox or site).</summary>
         public bool? ApplyHoldToSource {

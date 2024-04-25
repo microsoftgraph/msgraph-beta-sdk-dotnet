@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
         {
         }
         /// <summary>
-        /// Delete a workplace sensor device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-delete?view=graph-rest-1.0" />
+        /// Delete navigation property sensorDevices for workplace
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,8 +56,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-get?view=graph-rest-1.0" />
+        /// A collection of sensor devices.
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +79,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a workplace sensor device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-update?view=graph-rest-1.0" />
+        /// Update the navigation property sensorDevices in workplace
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +104,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a workplace sensor device.
+        /// Delete navigation property sensorDevices for workplace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +123,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+        /// A collection of sensor devices.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +142,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a workplace sensor device.
+        /// Update the navigation property sensorDevices in workplace
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -183,7 +180,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId {
         {
         }
         /// <summary>
-        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+        /// A collection of sensor devices.
         /// </summary>
         public class SensorDevicesWithDeviceIdRequestBuilderGetQueryParameters 
         {

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum GcpAccessType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "public")]
+        #pragma warning disable CS1591
         Public,
+        #pragma warning restore CS1591
         [EnumMember(Value = "subjectToObjectAcls")]
+        #pragma warning disable CS1591
         SubjectToObjectAcls,
+        #pragma warning restore CS1591
         [EnumMember(Value = "private")]
+        #pragma warning disable CS1591
         Private,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

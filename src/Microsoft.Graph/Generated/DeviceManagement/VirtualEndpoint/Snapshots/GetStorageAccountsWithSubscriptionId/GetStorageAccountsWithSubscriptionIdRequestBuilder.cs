@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
         {
         }
         /// <summary>
-        /// Invoke function getStorageAccounts
+        /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetStorageAccountsWithSubscriptionIdGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
             return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdGetResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getStorageAccounts
+        /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcsnapshot-getstorageaccounts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetStorageAccountsWithSubscriptionIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
             return await RequestAdapter.SendAsync<GetStorageAccountsWithSubscriptionIdResponse>(requestInfo, GetStorageAccountsWithSubscriptionIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getStorageAccounts
+        /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSto
             return new GetStorageAccountsWithSubscriptionIdRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getStorageAccounts
+        /// List all storage accounts cloudPcForensicStorageAccount that can be used to store a snapshot or snapshots of a Cloud PC for forensic analysis.
         /// </summary>
         public class GetStorageAccountsWithSubscriptionIdRequestBuilderGetQueryParameters 
         {

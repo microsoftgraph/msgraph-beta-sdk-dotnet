@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class PermissionGrantConditionSet : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.</summary>
         public bool? CertifiedClientApplicationsOnly {

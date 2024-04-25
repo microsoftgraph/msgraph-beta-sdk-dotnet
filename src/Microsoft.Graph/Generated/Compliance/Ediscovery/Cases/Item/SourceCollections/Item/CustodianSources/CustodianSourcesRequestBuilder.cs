@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         {
         }
         /// <summary>
-        /// Get the list of dataSource objects associated with a source collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-sourcecollection-list-custodiansources?view=graph-rest-1.0" />
+        /// Custodian sources that are included in the sourceCollection.
         /// </summary>
         /// <returns>A <see cref="DataSourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +77,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<DataSourceCollectionResponse>(requestInfo, DataSourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of dataSource objects associated with a source collection.
+        /// Custodian sources that are included in the sourceCollection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +107,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return new CustodianSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of dataSource objects associated with a source collection.
+        /// Custodian sources that are included in the sourceCollection.
         /// </summary>
         public class CustodianSourcesRequestBuilderGetQueryParameters 
         {

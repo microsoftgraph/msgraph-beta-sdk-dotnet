@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
         {
         }
         /// <summary>
-        /// Delete an educationGradingScheme object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationgradingscheme-delete?view=graph-rest-1.0" />
+        /// Delete navigation property gradingSchemes for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationGradingScheme object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationgradingscheme-get?view=graph-rest-1.0" />
+        /// Get gradingSchemes from education
         /// </summary>
         /// <returns>A <see cref="EducationGradingScheme"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return await RequestAdapter.SendAsync<EducationGradingScheme>(requestInfo, EducationGradingScheme.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an educationGradingScheme object.
+        /// Delete navigation property gradingSchemes for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an educationGradingScheme object.
+        /// Get gradingSchemes from education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings.Grading
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an educationGradingScheme object.
+        /// Get gradingSchemes from education
         /// </summary>
         public class EducationGradingSchemeItemRequestBuilderGetQueryParameters 
         {

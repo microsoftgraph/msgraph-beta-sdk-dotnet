@@ -32,8 +32,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Tags.I
         {
         }
         /// <summary>
-        /// Delete a member from a standard tag in a team.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-delete?view=graph-rest-1.0" />
+        /// Delete navigation property members for teamTemplateDefinition
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,8 +54,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Tags.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of a member of a standard tag in a team. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworktagmember-get?view=graph-rest-1.0" />
+        /// Users assigned to the tag.
         /// </summary>
         /// <returns>A <see cref="TeamworkTagMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Tags.I
             return await RequestAdapter.SendAsync<TeamworkTagMember>(requestInfo, TeamworkTagMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a member from a standard tag in a team.
+        /// Delete navigation property members for teamTemplateDefinition
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Tags.I
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of a member of a standard tag in a team. 
+        /// Users assigned to the tag.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Tags.I
         {
         }
         /// <summary>
-        /// Get the properties and relationships of a member of a standard tag in a team. 
+        /// Users assigned to the tag.
         /// </summary>
         public class TeamworkTagMemberItemRequestBuilderGetQueryParameters 
         {

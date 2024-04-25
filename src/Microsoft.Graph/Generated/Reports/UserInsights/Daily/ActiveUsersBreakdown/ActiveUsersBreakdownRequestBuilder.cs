@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.ActiveUsersBreakdown {
         {
         }
         /// <summary>
-        /// Get a list of daily activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/dailyuserinsightmetricsroot-list-activeusersbreakdown?view=graph-rest-1.0" />
+        /// Get activeUsersBreakdown from reports
         /// </summary>
         /// <returns>A <see cref="ActiveUsersBreakdownMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +77,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.ActiveUsersBreakdown {
             return await RequestAdapter.SendAsync<ActiveUsersBreakdownMetricCollectionResponse>(requestInfo, ActiveUsersBreakdownMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of daily activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Get activeUsersBreakdown from reports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +107,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.ActiveUsersBreakdown {
             return new ActiveUsersBreakdownRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of daily activeUsersBreakdown objects on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Get activeUsersBreakdown from reports
         /// </summary>
         public class ActiveUsersBreakdownRequestBuilderGetQueryParameters 
         {

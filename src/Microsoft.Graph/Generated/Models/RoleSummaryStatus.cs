@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum RoleSummaryStatus
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "ok")]
+        #pragma warning disable CS1591
         Ok,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bad")]
+        #pragma warning disable CS1591
         Bad,
+        #pragma warning restore CS1591
     }
 }

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organizationsettings-list-microsoftapplicationdataaccess?view=graph-rest-1.0" />
+        /// Get microsoftApplicationDataAccess from organization
         /// </summary>
         /// <returns>A <see cref="MicrosoftApplicationDataAccessSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
             return await RequestAdapter.SendAsync<MicrosoftApplicationDataAccessSettings>(requestInfo, MicrosoftApplicationDataAccessSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/microsoftapplicationdataaccesssettings-update?view=graph-rest-1.0" />
+        /// Update the navigation property microsoftApplicationDataAccess in organization
         /// </summary>
         /// <returns>A <see cref="MicrosoftApplicationDataAccessSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
             return requestInfo;
         }
         /// <summary>
-        /// Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+        /// Get microsoftApplicationDataAccess from organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +140,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
             return requestInfo;
         }
         /// <summary>
-        /// Update the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+        /// Update the navigation property microsoftApplicationDataAccess in organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +178,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDa
         {
         }
         /// <summary>
-        /// Get the settings in a microsoftApplicationDataAccessSettings object that specify access from Microsoft applications to Microsoft 365 user data in an organization.
+        /// Get microsoftApplicationDataAccess from organization
         /// </summary>
         public class MicrosoftApplicationDataAccessRequestBuilderGetQueryParameters 
         {

@@ -104,8 +104,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
         {
         }
         /// <summary>
-        /// Delete an event object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-event?view=graph-rest-1.0" />
+        /// Delete navigation property events for groups
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,8 +126,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an event object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get-event?view=graph-rest-1.0" />
+        /// The group&apos;s events.
         /// </summary>
         /// <returns>A <see cref="Event"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -151,8 +149,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an event object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-update-event?view=graph-rest-1.0" />
+        /// Update the navigation property events in groups
         /// </summary>
         /// <returns>A <see cref="Event"/></returns>
         /// <param name="body">The request body</param>
@@ -177,7 +174,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an event object.
+        /// Delete navigation property events for groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +193,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get an event object.
+        /// The group&apos;s events.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -215,7 +212,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update an event object.
+        /// Update the navigation property events in groups
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -253,7 +250,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item {
         {
         }
         /// <summary>
-        /// Get an event object.
+        /// The group&apos;s events.
         /// </summary>
         public class EventItemRequestBuilderGetQueryParameters 
         {

@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.Records {
         {
         }
         /// <summary>
-        /// Get a list of the auditLogRecord objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-auditlogquery-list-records?view=graph-rest-1.0" />
+        /// An individual audit log record.
         /// </summary>
         /// <returns>A <see cref="AuditLogRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.Records {
             return await RequestAdapter.SendAsync<AuditLogRecord>(requestInfo, AuditLogRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the auditLogRecord objects and their properties.
+        /// An individual audit log record.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries.Item.Records {
             return new RecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the auditLogRecord objects and their properties.
+        /// An individual audit log record.
         /// </summary>
         public class RecordsRequestBuilderGetQueryParameters 
         {

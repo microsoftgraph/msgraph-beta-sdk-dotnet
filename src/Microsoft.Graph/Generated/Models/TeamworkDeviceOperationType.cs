@@ -2,23 +2,41 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum TeamworkDeviceOperationType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "deviceRestart")]
+        #pragma warning disable CS1591
         DeviceRestart,
+        #pragma warning restore CS1591
         [EnumMember(Value = "configUpdate")]
+        #pragma warning disable CS1591
         ConfigUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deviceDiagnostics")]
+        #pragma warning disable CS1591
         DeviceDiagnostics,
+        #pragma warning restore CS1591
         [EnumMember(Value = "softwareUpdate")]
+        #pragma warning disable CS1591
         SoftwareUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deviceManagementAgentConfigUpdate")]
+        #pragma warning disable CS1591
         DeviceManagementAgentConfigUpdate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remoteLogin")]
+        #pragma warning disable CS1591
         RemoteLogin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remoteLogout")]
+        #pragma warning disable CS1591
         RemoteLogout,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

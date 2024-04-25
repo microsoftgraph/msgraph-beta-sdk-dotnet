@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AddFooter : MarkContent, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The alignment property</summary>
         public Microsoft.Graph.Beta.Models.Alignment? Alignment {

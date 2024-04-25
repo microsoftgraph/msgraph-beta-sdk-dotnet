@@ -2,21 +2,37 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum ActionState
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
+        #pragma warning disable CS1591
         Canceled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "done")]
+        #pragma warning disable CS1591
         Done,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notSupported")]
+        #pragma warning disable CS1591
         NotSupported,
+        #pragma warning restore CS1591
     }
 }

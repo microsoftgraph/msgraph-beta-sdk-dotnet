@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years {
         {
         }
         /// <summary>
-        /// Get a list of the yearTimePeriodDefinition objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-list?view=graph-rest-1.0" />
+        /// Set of years represented in the system.
         /// </summary>
         /// <returns>A <see cref="YearTimePeriodDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years {
             return await RequestAdapter.SendAsync<YearTimePeriodDefinitionCollectionResponse>(requestInfo, YearTimePeriodDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new yearTimePeriodDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-yeartimeperioddefinition-post?view=graph-rest-1.0" />
+        /// Create new navigation property to years for external
         /// </summary>
         /// <returns>A <see cref="YearTimePeriodDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years {
             return await RequestAdapter.SendAsync<YearTimePeriodDefinition>(requestInfo, YearTimePeriodDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the yearTimePeriodDefinition objects and their properties.
+        /// Set of years represented in the system.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new yearTimePeriodDefinition object.
+        /// Create new navigation property to years for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Years {
             return new YearsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the yearTimePeriodDefinition objects and their properties.
+        /// Set of years represented in the system.
         /// </summary>
         public class YearsRequestBuilderGetQueryParameters 
         {

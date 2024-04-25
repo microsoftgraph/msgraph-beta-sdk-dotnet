@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         }
         /// <summary>
         /// Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetPasswordSingleSignOnCredentialsPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         }
         /// <summary>
         /// Get the list of password-based single sign-on credentials for a given user. This API returns the encrypted passwords as null or empty strings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getpasswordsinglesignoncredentials?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetPasswordSingleSignOnCredentialsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

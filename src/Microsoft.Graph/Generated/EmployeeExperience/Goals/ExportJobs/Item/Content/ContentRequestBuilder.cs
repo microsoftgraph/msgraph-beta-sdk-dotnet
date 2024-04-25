@@ -33,7 +33,6 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals.ExportJobs.Item.Content 
         }
         /// <summary>
         /// The content of the goalsExportJob.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/goals-list-exportjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

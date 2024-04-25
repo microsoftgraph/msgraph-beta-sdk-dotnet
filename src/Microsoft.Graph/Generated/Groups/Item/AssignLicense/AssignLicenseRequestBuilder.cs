@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.AssignLicense {
         }
         /// <summary>
         /// Add or remove licenses on the group. Licenses assigned to the group will be assigned to all users in the group. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Group"/></returns>
         /// <param name="body">The request body</param>

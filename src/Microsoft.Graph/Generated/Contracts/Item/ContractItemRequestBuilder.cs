@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Contracts.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of contract object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contract-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contract-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Contract"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

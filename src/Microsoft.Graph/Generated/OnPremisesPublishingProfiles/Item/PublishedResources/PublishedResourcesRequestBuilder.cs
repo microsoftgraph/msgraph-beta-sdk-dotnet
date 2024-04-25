@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
         {
         }
         /// <summary>
-        /// Retrieve a list of publishedResource objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/publishedresource-list?view=graph-rest-1.0" />
+        /// List of existing publishedResource objects. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="PublishedResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return await RequestAdapter.SendAsync<PublishedResourceCollectionResponse>(requestInfo, PublishedResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new publishedResource object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/publishedresource-post?view=graph-rest-1.0" />
+        /// Create new navigation property to publishedResources for onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="PublishedResource"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, PublishedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of publishedResource objects.
+        /// List of existing publishedResource objects. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return requestInfo;
         }
         /// <summary>
-        /// Create a new publishedResource object.
+        /// Create new navigation property to publishedResources for onPremisesPublishingProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return new PublishedResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of publishedResource objects.
+        /// List of existing publishedResource objects. Read-only. Nullable.
         /// </summary>
         public class PublishedResourcesRequestBuilderGetQueryParameters 
         {

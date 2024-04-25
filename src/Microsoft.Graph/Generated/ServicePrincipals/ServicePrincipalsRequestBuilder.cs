@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
         }
         /// <summary>
         /// Retrieve a list of servicePrincipal objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals {
         }
         /// <summary>
         /// Create a new servicePrincipal object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServicePrincipal"/></returns>
         /// <param name="body">The request body</param>

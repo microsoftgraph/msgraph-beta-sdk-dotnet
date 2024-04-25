@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
         {
         }
         /// <summary>
-        /// Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from catalogEntry. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-catalog-list-entries?view=graph-rest-1.0" />
+        /// Lists the content that you can approve for deployment. Read-only.
         /// </summary>
         /// <returns>A <see cref="CatalogEntryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from catalogEntry. 
+        /// Lists the content that you can approve for deployment. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries {
             return new EntriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of catalogEntry resources from the catalog. Currently, this operation returns entries of the featureUpdateCatalogEntry or qualityUpdateCatalog types, inherited from catalogEntry. 
+        /// Lists the content that you can approve for deployment. Read-only.
         /// </summary>
         public class EntriesRequestBuilderGetQueryParameters 
         {

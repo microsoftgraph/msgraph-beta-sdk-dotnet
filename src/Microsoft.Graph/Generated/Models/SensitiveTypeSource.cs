@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum SensitiveTypeSource
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "outOfBox")]
+        #pragma warning disable CS1591
         OutOfBox,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tenant")]
+        #pragma warning disable CS1591
         Tenant,
+        #pragma warning restore CS1591
     }
 }

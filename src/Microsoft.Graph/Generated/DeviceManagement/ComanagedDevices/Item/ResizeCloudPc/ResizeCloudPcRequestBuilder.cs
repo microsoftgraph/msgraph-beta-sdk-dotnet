@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeClou
         }
         /// <summary>
         /// Upgrade or downgrade an existing Cloud PC to another configuration with a new virtual CPU (vCPU) and storage size.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/manageddevice-resizecloudpc?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

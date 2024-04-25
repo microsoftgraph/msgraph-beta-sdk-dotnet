@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.AcquireAccessTo
         }
         /// <summary>
         /// Acquire an OAuth Access token to authorize the Microsoft Entra provisioning service to provision users into an application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-acquireaccesstoken?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

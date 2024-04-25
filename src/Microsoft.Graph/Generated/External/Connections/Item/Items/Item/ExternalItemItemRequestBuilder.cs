@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item {
         {
         }
         /// <summary>
-        /// Delete an externalitem.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-delete?view=graph-rest-1.0" />
+        /// Delete navigation property items for external
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,8 +66,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn&apos;t intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-get?view=graph-rest-1.0" />
+        /// Get items from external
         /// </summary>
         /// <returns>A <see cref="ExternalItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +114,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item {
             return await RequestAdapter.SendAsync<ExternalItem>(requestInfo, ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an externalitem.
+        /// Delete navigation property items for external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +133,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn&apos;t intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
+        /// Get items from external
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +190,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item {
         {
         }
         /// <summary>
-        /// Get the properties and relationships of an externalitem object. This API is provided for diagnostic purposes only. It isn&apos;t intended to be used for any other purpose. Repeated requests to this API might result in 429 HTTP errors.
+        /// Get items from external
         /// </summary>
         public class ExternalItemItemRequestBuilderGetQueryParameters 
         {

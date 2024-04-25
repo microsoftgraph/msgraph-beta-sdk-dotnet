@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         {
         }
         /// <summary>
-        /// Delete a cloudPcDeviceImage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcdeviceimage-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceImages for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a specific cloudPcDeviceImage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcdeviceimage-get?view=graph-rest-1.0" />
+        /// The image resource on Cloud PC.
         /// </summary>
         /// <returns>A <see cref="CloudPcDeviceImage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +108,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             return await RequestAdapter.SendAsync<CloudPcDeviceImage>(requestInfo, CloudPcDeviceImage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a cloudPcDeviceImage object.
+        /// Delete navigation property deviceImages for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a specific cloudPcDeviceImage object.
+        /// The image resource on Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a specific cloudPcDeviceImage object.
+        /// The image resource on Cloud PC.
         /// </summary>
         public class CloudPcDeviceImageItemRequestBuilderGetQueryParameters 
         {

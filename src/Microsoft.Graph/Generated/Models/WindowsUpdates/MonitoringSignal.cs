@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+    #pragma warning disable CS1591
     public enum MonitoringSignal
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "rollback")]
+        #pragma warning disable CS1591
         Rollback,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ineligible")]
+        #pragma warning disable CS1591
         Ineligible,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

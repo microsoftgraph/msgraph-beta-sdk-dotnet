@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
         }
         /// <summary>
-        /// Invoke function transactionSummaries
+        /// Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-reports-transactionsummaries?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse>(requestInfo, TransactionSummariesWithStartDateTimeWithEndDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function transactionSummaries
+        /// Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-reports-transactionsummaries?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TransactionSummariesWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<TransactionSummariesWithStartDateTimeWithEndDateTimeResponse>(requestInfo, TransactionSummariesWithStartDateTimeWithEndDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function transactionSummaries
+        /// Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return new MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function transactionSummaries
+        /// Get the total number of transactions and the number of blocked transactions, grouped by traffic type.
         /// </summary>
         public class MicrosoftGraphNetworkaccessTransactionSummariesWithStartDateTimeWithEndDateTimeRequestBuilderGetQueryParameters 
         {

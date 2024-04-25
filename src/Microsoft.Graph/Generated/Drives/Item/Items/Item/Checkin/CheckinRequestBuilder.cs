@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Checkin {
         }
         /// <summary>
         /// Check in a checked out driveItem resource, which makes the version of the document available to others.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-checkin?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models.Security {
+    #pragma warning disable CS1591
     public class SubmissionUserIdentity : Microsoft.Graph.Beta.Models.Identity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The email of user who is making the submission when logged in (delegated token case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources.Item {
         {
         }
         /// <summary>
-        /// Delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers can&apos;t remove resources that are marked as &apos;distributeToStudents&apos;.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentresource-delete?view=graph-rest-1.0" />
+        /// Delete navigation property resources for education
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,8 +60,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentresource-get?view=graph-rest-1.0" />
+        /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +108,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources.Item {
             return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific educationAssignmentResource attached to an assignment. Only teachers in the class can remove a resource. After an assignment has been published to students, teachers can&apos;t remove resources that are marked as &apos;distributeToStudents&apos;.
+        /// Delete navigation property resources for education
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +127,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -186,7 +184,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Resources.Item {
         {
         }
         /// <summary>
-        /// Get the properties of an education assignment resource associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
+        /// Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.
         /// </summary>
         public class EducationAssignmentResourceItemRequestBuilderGetQueryParameters 
         {

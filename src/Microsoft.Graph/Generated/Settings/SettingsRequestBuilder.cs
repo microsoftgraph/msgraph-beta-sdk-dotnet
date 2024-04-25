@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Settings {
         }
         /// <summary>
         /// Retrieve a list of tenant-level or group-specific group settings objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-settings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectorySettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Settings {
         }
         /// <summary>
         /// Create a new setting based on the templates available in directorySettingTemplates. These settings can be at the tenant-level or at the group level. Group settings apply to only Microsoft 365 groups. The template named Group.Unified can be used to configure tenant-wide Microsoft 365 group settings, while the template named Group.Unified.Guest can be used to configure group-specific settings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-post-settings?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectorySetting"/></returns>
         /// <param name="body">The request body</param>

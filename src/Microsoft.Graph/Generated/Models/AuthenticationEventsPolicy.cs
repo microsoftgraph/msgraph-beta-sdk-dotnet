@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class AuthenticationEventsPolicy : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A list of applicable actions to be taken on sign-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

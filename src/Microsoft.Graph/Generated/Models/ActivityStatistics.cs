@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class ActivityStatistics : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.</summary>
         public AnalyticsActivityType? Activity {

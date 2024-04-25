@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DataPolicyOperations.Item {
         }
         /// <summary>
         /// Retrieve the properties of the dataPolicyOperation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/datapolicyoperation-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/datapolicyoperation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DataPolicyOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

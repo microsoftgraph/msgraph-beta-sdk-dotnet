@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
         {
         }
         /// <summary>
-        /// Get a list of the unifiedRoleManagementAlert objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rolemanagementalert-list-alerts?view=graph-rest-1.0" />
+        /// Represents the alert entity.
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleManagementAlertCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -106,7 +105,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlert>(requestInfo, UnifiedRoleManagementAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the unifiedRoleManagementAlert objects and their properties.
+        /// Represents the alert entity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.Alerts {
             return new AlertsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the unifiedRoleManagementAlert objects and their properties.
+        /// Represents the alert entity.
         /// </summary>
         public class AlertsRequestBuilderGetQueryParameters 
         {

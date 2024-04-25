@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
         {
         }
         /// <summary>
-        /// Invoke function getKnownIssuesByTimeRange
+        /// Get known issues related to a particular product based on a specified timeframe in the past.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
             return await RequestAdapter.SendAsync<GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse>(requestInfo, GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getKnownIssuesByTimeRange
+        /// Get known issues related to a particular product based on a specified timeframe in the past.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-product-getknownissuesbytimerange?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
             return await RequestAdapter.SendAsync<GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponse>(requestInfo, GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getKnownIssuesByTimeRange
+        /// Get known issues related to a particular product based on a specified timeframe in the past.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
             return new MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getKnownIssuesByTimeRange
+        /// Get known issues related to a particular product based on a specified timeframe in the past.
         /// </summary>
         public class MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveRequestBuilderGetQueryParameters 
         {

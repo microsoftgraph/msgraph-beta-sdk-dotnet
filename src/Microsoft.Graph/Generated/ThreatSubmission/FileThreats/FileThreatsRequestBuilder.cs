@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.FileThreats {
         {
         }
         /// <summary>
-        /// Get a list of the fileThreatSubmission objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-filethreatsubmission-list?view=graph-rest-1.0" />
+        /// Get fileThreats from threatSubmission
         /// </summary>
         /// <returns>A <see cref="FileThreatSubmissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +99,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.FileThreats {
             return await RequestAdapter.SendAsync<FileThreatSubmission>(requestInfo, FileThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the fileThreatSubmission objects and their properties.
+        /// Get fileThreats from threatSubmission
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -150,7 +149,7 @@ namespace Microsoft.Graph.Beta.ThreatSubmission.FileThreats {
             return new FileThreatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the fileThreatSubmission objects and their properties.
+        /// Get fileThreats from threatSubmission
         /// </summary>
         public class FileThreatsRequestBuilderGetQueryParameters 
         {

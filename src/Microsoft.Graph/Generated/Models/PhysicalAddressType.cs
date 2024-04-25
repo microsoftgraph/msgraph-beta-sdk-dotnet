@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum PhysicalAddressType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "home")]
+        #pragma warning disable CS1591
         Home,
+        #pragma warning restore CS1591
         [EnumMember(Value = "business")]
+        #pragma warning disable CS1591
         Business,
+        #pragma warning restore CS1591
         [EnumMember(Value = "other")]
+        #pragma warning disable CS1591
         Other,
+        #pragma warning restore CS1591
     }
 }

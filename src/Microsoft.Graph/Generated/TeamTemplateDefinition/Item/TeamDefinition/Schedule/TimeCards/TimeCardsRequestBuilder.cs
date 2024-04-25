@@ -57,8 +57,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         {
         }
         /// <summary>
-        /// Retrieve a list of timeCard entries in a schedule.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0" />
+        /// The time cards in the schedule.
         /// </summary>
         /// <returns>A <see cref="TimeCardCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,8 +80,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return await RequestAdapter.SendAsync<TimeCardCollectionResponse>(requestInfo, TimeCardCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a timeCard instance in a schedule.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-post?view=graph-rest-1.0" />
+        /// Create new navigation property to timeCards for teamTemplateDefinition
         /// </summary>
         /// <returns>A <see cref="TimeCard"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +105,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of timeCard entries in a schedule.
+        /// The time cards in the schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +124,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return requestInfo;
         }
         /// <summary>
-        /// Create a timeCard instance in a schedule.
+        /// Create new navigation property to timeCards for teamTemplateDefinition
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -157,7 +155,7 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
             return new TimeCardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of timeCard entries in a schedule.
+        /// The time cards in the schedule.
         /// </summary>
         public class TimeCardsRequestBuilderGetQueryParameters 
         {

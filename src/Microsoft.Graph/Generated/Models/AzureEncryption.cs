@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public enum AzureEncryption
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "microsoftStorage")]
+        #pragma warning disable CS1591
         MicrosoftStorage,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftKeyVault")]
+        #pragma warning disable CS1591
         MicrosoftKeyVault,
+        #pragma warning restore CS1591
         [EnumMember(Value = "customer")]
+        #pragma warning disable CS1591
         Customer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
+        #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
     }
 }

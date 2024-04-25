@@ -6,7 +6,9 @@ using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
     [Obsolete("This class is obsolete. Use GetOffice365ActiveUserDetailWithPeriodGetResponse instead.")]
+    #pragma warning disable CS1591
     public class GetOffice365ActiveUserDetailWithPeriodResponse : GetOffice365ActiveUserDetailWithPeriodGetResponse, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

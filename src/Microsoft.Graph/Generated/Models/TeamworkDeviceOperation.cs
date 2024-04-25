@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace Microsoft.Graph.Beta.Models {
+    #pragma warning disable CS1591
     public class TeamworkDeviceOperation : Entity, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).</summary>
         public DateTimeOffset? CompletedDateTime {

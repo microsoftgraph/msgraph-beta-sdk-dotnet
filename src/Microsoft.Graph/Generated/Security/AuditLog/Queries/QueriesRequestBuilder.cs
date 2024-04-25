@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries {
         {
         }
         /// <summary>
-        /// Get a list of auditLogQuery objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-auditcoreroot-list-auditlogqueries?view=graph-rest-1.0" />
+        /// Get queries from security
         /// </summary>
         /// <returns>A <see cref="AuditLogQueryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries {
             return await RequestAdapter.SendAsync<AuditLogQueryCollectionResponse>(requestInfo, AuditLogQueryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new auditLogQuery object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-auditcoreroot-post-auditlogqueries?view=graph-rest-1.0" />
+        /// Create new navigation property to queries for security
         /// </summary>
         /// <returns>A <see cref="AuditLogQuery"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries {
             return await RequestAdapter.SendAsync<AuditLogQuery>(requestInfo, AuditLogQuery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of auditLogQuery objects and their properties.
+        /// Get queries from security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new auditLogQuery object.
+        /// Create new navigation property to queries for security
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.Security.AuditLog.Queries {
             return new QueriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of auditLogQuery objects and their properties.
+        /// Get queries from security
         /// </summary>
         public class QueriesRequestBuilderGetQueryParameters 
         {

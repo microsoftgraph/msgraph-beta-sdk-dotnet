@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Favorite {
         }
         /// <summary>
         /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FavoritePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Favorite {
         }
         /// <summary>
         /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FavoriteResponse"/></returns>
         /// <param name="body">The request body</param>

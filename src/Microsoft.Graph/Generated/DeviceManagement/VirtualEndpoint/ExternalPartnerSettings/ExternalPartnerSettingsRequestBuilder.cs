@@ -51,8 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
         {
         }
         /// <summary>
-        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-list-externalpartnersettings?view=graph-rest-1.0" />
+        /// The external partner settings on a Cloud PC.
         /// </summary>
         /// <returns>A <see cref="CloudPcExternalPartnerSettingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,8 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return await RequestAdapter.SendAsync<CloudPcExternalPartnerSettingCollectionResponse>(requestInfo, CloudPcExternalPartnerSettingCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new cloudPcExternalPartnerSetting object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualendpoint-post-externalpartnersettings?view=graph-rest-1.0" />
+        /// Create new navigation property to externalPartnerSettings for deviceManagement
         /// </summary>
         /// <returns>A <see cref="CloudPcExternalPartnerSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return await RequestAdapter.SendAsync<CloudPcExternalPartnerSetting>(requestInfo, CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+        /// The external partner settings on a Cloud PC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +118,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return requestInfo;
         }
         /// <summary>
-        /// Create a new cloudPcExternalPartnerSetting object.
+        /// Create new navigation property to externalPartnerSettings for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +149,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return new ExternalPartnerSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the cloudPcExternalPartnerSetting objects and their properties.
+        /// The external partner settings on a Cloud PC.
         /// </summary>
         public class ExternalPartnerSettingsRequestBuilderGetQueryParameters 
         {
