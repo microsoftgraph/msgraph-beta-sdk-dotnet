@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("all", value); }
         }
 #endif
-        /// <summary>A collection that contains the references to the plans that the user has marked as favorites.</summary>
+        /// <summary>A collection that contains the references to the plans that the user marked as favorites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerFavoritePlanReferenceCollection? FavoritePlanReferences {
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("favoritePlans", value); }
         }
 #endif
-        /// <summary>The myDayTasks property</summary>
+        /// <summary>Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PlannerTask>? MyDayTasks {
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("plans", value); }
         }
 #endif
-        /// <summary>A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.</summary>
+        /// <summary>A collection that contains references to the plans that the user recently viewed in apps that support recent plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public PlannerRecentPlanReferenceCollection? RecentPlanReferences {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recentPlanReferences", value); }
         }
 #endif
-        /// <summary>Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.</summary>
+        /// <summary>Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<PlannerPlan>? RecentPlans {

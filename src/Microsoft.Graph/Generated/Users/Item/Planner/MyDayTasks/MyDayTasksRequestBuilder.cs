@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.MyDayTasks {
         {
         }
         /// <summary>
-        /// Get myDayTasks from users
+        /// Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
         /// </summary>
         /// <returns>A <see cref="PlannerTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.MyDayTasks {
             return await RequestAdapter.SendAsync<PlannerTaskCollectionResponse>(requestInfo, PlannerTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get myDayTasks from users
+        /// Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.MyDayTasks {
             return new MyDayTasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get myDayTasks from users
+        /// Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
         /// </summary>
         public class MyDayTasksRequestBuilderGetQueryParameters 
         {

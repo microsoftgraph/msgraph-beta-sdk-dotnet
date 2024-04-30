@@ -9,6 +9,34 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class TenantCustomizedInformation : Microsoft.Graph.Beta.Models.Entity, IParsable 
     #pragma warning restore CS1591
     {
+        /// <summary>Describes the relationship between the Managed Services Provider and the managed tenant; for example, Managed, Co-managed, Licensing. The maximum length is 250 characters. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BusinessRelationship {
+            get { return BackingStore?.Get<string?>("businessRelationship"); }
+            set { BackingStore?.Set("businessRelationship", value); }
+        }
+#nullable restore
+#else
+        public string BusinessRelationship {
+            get { return BackingStore?.Get<string>("businessRelationship"); }
+            set { BackingStore?.Set("businessRelationship", value); }
+        }
+#endif
+        /// <summary>Contains the compliance requirements for the customer tenant; for example, HIPPA, NIST, CMMC. The maximum length is 250 characters per compliance requirement. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ComplianceRequirements {
+            get { return BackingStore?.Get<List<string>?>("complianceRequirements"); }
+            set { BackingStore?.Set("complianceRequirements", value); }
+        }
+#nullable restore
+#else
+        public List<string> ComplianceRequirements {
+            get { return BackingStore?.Get<List<string>>("complianceRequirements"); }
+            set { BackingStore?.Set("complianceRequirements", value); }
+        }
+#endif
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,6 +63,53 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>This is the Managed Services Plans for the customer tenant that the Managed Services Provider manages. The maximum length is 250 characters per managed service plan. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ManagedServicesPlans {
+            get { return BackingStore?.Get<List<string>?>("managedServicesPlans"); }
+            set { BackingStore?.Set("managedServicesPlans", value); }
+        }
+#nullable restore
+#else
+        public List<string> ManagedServicesPlans {
+            get { return BackingStore?.Get<List<string>>("managedServicesPlans"); }
+            set { BackingStore?.Set("managedServicesPlans", value); }
+        }
+#endif
+        /// <summary>A field for the Managed Services Provider technician to input custom text to share notes between technicians within the Managed Service Providers. The maximum length is 5000 characters. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Note {
+            get { return BackingStore?.Get<string?>("note"); }
+            set { BackingStore?.Set("note", value); }
+        }
+#nullable restore
+#else
+        public string Note {
+            get { return BackingStore?.Get<string>("note"); }
+            set { BackingStore?.Set("note", value); }
+        }
+#endif
+        /// <summary>The date on which the note field of this entity was last modified. Optional.</summary>
+        public DateTimeOffset? NoteLastModifiedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("noteLastModifiedDateTime"); }
+            set { BackingStore?.Set("noteLastModifiedDateTime", value); }
+        }
+        /// <summary>The list of Entra user IDs for users in the Managed Services Provider that manage the relationship with the managed tenant. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PartnerRelationshipManagerUserIds {
+            get { return BackingStore?.Get<List<string>?>("partnerRelationshipManagerUserIds"); }
+            set { BackingStore?.Set("partnerRelationshipManagerUserIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> PartnerRelationshipManagerUserIds {
+            get { return BackingStore?.Get<List<string>>("partnerRelationshipManagerUserIds"); }
+            set { BackingStore?.Set("partnerRelationshipManagerUserIds", value); }
         }
 #endif
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.</summary>
@@ -83,8 +158,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"businessRelationship", n => { BusinessRelationship = n.GetStringValue(); } },
+                {"complianceRequirements", n => { ComplianceRequirements = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"contacts", n => { Contacts = n.GetCollectionOfObjectValues<TenantContactInformation>(TenantContactInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"managedServicesPlans", n => { ManagedServicesPlans = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"note", n => { Note = n.GetStringValue(); } },
+                {"noteLastModifiedDateTime", n => { NoteLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"partnerRelationshipManagerUserIds", n => { PartnerRelationshipManagerUserIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"website", n => { Website = n.GetStringValue(); } },
             };
@@ -97,8 +178,14 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("businessRelationship", BusinessRelationship);
+            writer.WriteCollectionOfPrimitiveValues<string>("complianceRequirements", ComplianceRequirements);
             writer.WriteCollectionOfObjectValues<TenantContactInformation>("contacts", Contacts);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfPrimitiveValues<string>("managedServicesPlans", ManagedServicesPlans);
+            writer.WriteStringValue("note", Note);
+            writer.WriteDateTimeOffsetValue("noteLastModifiedDateTime", NoteLastModifiedDateTime);
+            writer.WriteCollectionOfPrimitiveValues<string>("partnerRelationshipManagerUserIds", PartnerRelationshipManagerUserIds);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("website", Website);
         }

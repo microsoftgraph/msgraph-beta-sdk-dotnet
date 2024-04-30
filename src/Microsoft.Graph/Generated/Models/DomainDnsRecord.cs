@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsRecord : Entity, IParsable 
     #pragma warning restore CS1591
     {
-        /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
+        /// <summary>If false, the customer must configure this record at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
         public bool? IsOptional {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("label", value); }
         }
 #endif
-        /// <summary>Indicates what type of DNS record this entity represents. The value can be one of the following: CName, Mx, Srv, Txt.</summary>
+        /// <summary>Indicates what type of DNS record this entity represents. The value can be one of the following values: CName, Mx, Srv, Txt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecordType {

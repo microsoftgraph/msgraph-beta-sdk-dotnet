@@ -23,6 +23,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("aadDeviceId", value); }
         }
 #endif
+        /// <summary>The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AllotmentDisplayName {
+            get { return BackingStore?.Get<string?>("allotmentDisplayName"); }
+            set { BackingStore?.Set("allotmentDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string AllotmentDisplayName {
+            get { return BackingStore?.Get<string>("allotmentDisplayName"); }
+            set { BackingStore?.Set("allotmentDisplayName", value); }
+        }
+#endif
         /// <summary>The connectionSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -339,6 +353,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 {"aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
+                {"allotmentDisplayName", n => { AllotmentDisplayName = n.GetStringValue(); } },
                 {"connectionSettings", n => { ConnectionSettings = n.GetObjectValue<CloudPcConnectionSettings>(CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
                 {"connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
                 {"disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<CloudPcDisasterRecoveryCapability>(CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
@@ -377,6 +392,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
+            writer.WriteStringValue("allotmentDisplayName", AllotmentDisplayName);
             writer.WriteObjectValue<CloudPcConnectionSettings>("connectionSettings", ConnectionSettings);
             writer.WriteObjectValue<CloudPcConnectivityResult>("connectivityResult", ConnectivityResult);
             writer.WriteObjectValue<CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability", DisasterRecoveryCapability);
