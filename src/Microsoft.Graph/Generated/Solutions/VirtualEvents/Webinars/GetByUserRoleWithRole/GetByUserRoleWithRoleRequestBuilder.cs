@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserRoleWit
         {
         }
         /// <summary>
-        /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+        /// Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetByUserRoleWithRoleGetResponse"/></returns>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserRoleWit
             return await RequestAdapter.SendAsync<GetByUserRoleWithRoleGetResponse>(requestInfo, GetByUserRoleWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+        /// Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-getbyuserrole?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetByUserRoleWithRoleResponse"/></returns>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserRoleWit
             return await RequestAdapter.SendAsync<GetByUserRoleWithRoleResponse>(requestInfo, GetByUserRoleWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+        /// Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.GetByUserRoleWit
             return new GetByUserRoleWithRoleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a virtualEventWebinar collection where the signed-in user is either the organizer or a coorganizer.
+        /// Get a list of virtualEventWebinar objects where the signed-in user is either the organizer or a coorganizer.
         /// </summary>
         public class GetByUserRoleWithRoleRequestBuilderGetQueryParameters 
         {

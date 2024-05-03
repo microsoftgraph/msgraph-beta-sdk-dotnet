@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models {
     public class VirtualEventTownhall : VirtualEvent, IParsable 
     #pragma warning restore CS1591
     {
-        /// <summary>The audience property</summary>
+        /// <summary>The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.</summary>
         public MeetingAudience? Audience {
             get { return BackingStore?.Get<MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
-        /// <summary>The coOrganizers property</summary>
+        /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CommunicationsUserIdentity>? CoOrganizers {
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
-        /// <summary>The invitedAttendees property</summary>
+        /// <summary>The attendees invited to the town hall. The supported identites are: communicationsUserIdentity and communicationsGuestIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Identity>? InvitedAttendees {
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #endif
-        /// <summary>The isInviteOnly property</summary>
+        /// <summary>Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.</summary>
         public bool? IsInviteOnly {
             get { return BackingStore?.Get<bool?>("isInviteOnly"); }
             set { BackingStore?.Set("isInviteOnly", value); }

@@ -59,6 +59,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The registrationCampaign property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<KeyValue>? RegistrationCampaign {
+            get { return BackingStore?.Get<List<KeyValue>?>("registrationCampaign"); }
+            set { BackingStore?.Set("registrationCampaign", value); }
+        }
+#nullable restore
+#else
+        public List<KeyValue> RegistrationCampaign {
+            get { return BackingStore?.Get<List<KeyValue>>("registrationCampaign"); }
+            set { BackingStore?.Set("registrationCampaign", value); }
+        }
+#endif
+        /// <summary>The registrationCampaignRelativeUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationCampaignRelativeUrl {
+            get { return BackingStore?.Get<string?>("registrationCampaignRelativeUrl"); }
+            set { BackingStore?.Set("registrationCampaignRelativeUrl", value); }
+        }
+#nullable restore
+#else
+        public string RegistrationCampaignRelativeUrl {
+            get { return BackingStore?.Get<string>("registrationCampaignRelativeUrl"); }
+            set { BackingStore?.Set("registrationCampaignRelativeUrl", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="ContentCustomization"/> and sets the default values.
         /// </summary>
@@ -88,6 +116,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"attributeCollection", n => { AttributeCollection = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attributeCollectionRelativeUrl", n => { AttributeCollectionRelativeUrl = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"registrationCampaign", n => { RegistrationCampaign = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"registrationCampaignRelativeUrl", n => { RegistrationCampaignRelativeUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -100,6 +130,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<KeyValue>("attributeCollection", AttributeCollection);
             writer.WriteStringValue("attributeCollectionRelativeUrl", AttributeCollectionRelativeUrl);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<KeyValue>("registrationCampaign", RegistrationCampaign);
+            writer.WriteStringValue("registrationCampaignRelativeUrl", RegistrationCampaignRelativeUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

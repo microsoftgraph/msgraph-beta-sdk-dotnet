@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+        /// Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+        /// Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
             return new RecentPlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.
+        /// Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
         /// </summary>
         public class RecentPlansRequestBuilderGetQueryParameters 
         {

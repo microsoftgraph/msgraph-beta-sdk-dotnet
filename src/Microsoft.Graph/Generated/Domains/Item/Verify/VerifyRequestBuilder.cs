@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
         {
         }
         /// <summary>
-        /// Validates the ownership of the domain.
+        /// Validate the ownership of a domain.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Domain"/></returns>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Verify {
             return await RequestAdapter.SendAsync<Domain>(requestInfo, Domain.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validates the ownership of the domain.
+        /// Validate the ownership of a domain.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
