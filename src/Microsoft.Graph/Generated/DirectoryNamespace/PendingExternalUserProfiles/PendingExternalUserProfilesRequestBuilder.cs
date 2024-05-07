@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles {
         {
         }
         /// <summary>
-        /// Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+        /// Retrieve the properties of all pendingExternalUserProfiles.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-pendingexternaluserprofile?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PendingExternalUserProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles {
             return await RequestAdapter.SendAsync<PendingExternalUserProfileCollectionResponse>(requestInfo, PendingExternalUserProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to pendingExternalUserProfiles for directory
+        /// Create a new pendingExternalUserProfile object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-pendingexternaluserprofile?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PendingExternalUserProfile"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles {
             return await RequestAdapter.SendAsync<PendingExternalUserProfile>(requestInfo, PendingExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+        /// Retrieve the properties of all pendingExternalUserProfiles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to pendingExternalUserProfiles for directory
+        /// Create a new pendingExternalUserProfile object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.PendingExternalUserProfiles {
             return new PendingExternalUserProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of pending external user profiles representing collaborators in the directory that are unredeemed.
+        /// Retrieve the properties of all pendingExternalUserProfiles.
         /// </summary>
         public class PendingExternalUserProfilesRequestBuilderGetQueryParameters 
         {

@@ -3,8 +3,8 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Count;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.CreateOrGet;
-using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.GetAllRecordings;
-using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.GetAllTranscripts;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -31,14 +31,14 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings {
             get => new CreateOrGetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllRecordings method.</summary>
-        public GetAllRecordingsRequestBuilder GetAllRecordings
+        public GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime
         {
-            get => new GetAllRecordingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new GetAllRecordingsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllTranscripts method.</summary>
-        public GetAllTranscriptsRequestBuilder GetAllTranscripts
+        public GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTime
         {
-            get => new GetAllTranscriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new GetAllTranscriptsmeetingOrganizerUserIdMeetingOrganizerUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of onlineMeeting</param>

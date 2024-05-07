@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities {
         {
         }
         /// <summary>
-        /// Represents a collection of sign-in activities of application credentials.
+        /// Get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-appcredentialsigninactivities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AppCredentialSignInActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities {
             return await RequestAdapter.SendAsync<AppCredentialSignInActivity>(requestInfo, AppCredentialSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a collection of sign-in activities of application credentials.
+        /// Get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Reports.AppCredentialSignInActivities {
             return new AppCredentialSignInActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents a collection of sign-in activities of application credentials.
+        /// Get a list of appCredentialSignInActivity objects that contains recent activity of application credentials.
         /// </summary>
         public class AppCredentialSignInActivitiesRequestBuilderGetQueryParameters 
         {

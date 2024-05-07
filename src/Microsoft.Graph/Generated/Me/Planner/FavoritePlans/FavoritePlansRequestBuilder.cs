@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Planner.FavoritePlans {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-favoriteplans?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.FavoritePlans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.FavoritePlans {
             return new FavoritePlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.
+        /// Retrieve a list of plannerPlans that are marked as favorite by a user. You can mark a plan as favorite by updating the plannerUser resource.
         /// </summary>
         public class FavoritePlansRequestBuilderGetQueryParameters 
         {

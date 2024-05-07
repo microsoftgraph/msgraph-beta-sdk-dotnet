@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// The groups whose members are ineligible to be assigned this access package.
+        /// Retrieve a list of the group objects marked as incompatible on an accessPackage.  
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-incompatiblegroups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The groups whose members are ineligible to be assigned this access package.
+        /// Retrieve a list of the group objects marked as incompatible on an accessPackage.  
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new IncompatibleGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The groups whose members are ineligible to be assigned this access package.
+        /// Retrieve a list of the group objects marked as incompatible on an accessPackage.  
         /// </summary>
         public class IncompatibleGroupsRequestBuilderGetQueryParameters 
         {

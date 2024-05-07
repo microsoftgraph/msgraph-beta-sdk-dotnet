@@ -104,7 +104,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property events for me
+        /// Removes the specified event from the containing calendar.  If the event is a meeting, deleting the event on the organizer&apos;s calendar sends a cancellation message to the meeting attendees.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user&apos;s events. The default is to show events under the Default Calendar. Read-only. Nullable.
+        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Event"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -149,7 +151,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property events in me
+        /// Update the properties of the event object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Event"/></returns>
         /// <param name="body">The request body</param>
@@ -174,7 +177,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property events for me
+        /// Removes the specified event from the containing calendar.  If the event is a meeting, deleting the event on the organizer&apos;s calendar sends a cancellation message to the meeting attendees.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s events. The default is to show events under the Default Calendar. Read-only. Nullable.
+        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -212,7 +215,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property events in me
+        /// Update the properties of the event object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -250,7 +253,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item {
         {
         }
         /// <summary>
-        /// The user&apos;s events. The default is to show events under the Default Calendar. Read-only. Nullable.
+        /// Get the properties and relationships of the specified event object. An app can get an event in another user&apos;s calendar if: Because the event resource supports extensions, you can also use the GET operation to get custom properties and extension data in an event instance.
         /// </summary>
         public class EventItemRequestBuilderGetQueryParameters 
         {

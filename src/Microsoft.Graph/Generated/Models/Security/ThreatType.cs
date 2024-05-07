@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models.Security {
         #pragma warning disable CS1591
         Malware,
         #pragma warning restore CS1591
-        [EnumMember(Value = "phishing")]
+        [EnumMember(Value = "phish")]
         #pragma warning disable CS1591
-        Phishing,
+        Phish,
         #pragma warning restore CS1591
         [EnumMember(Value = "none")]
         #pragma warning disable CS1591

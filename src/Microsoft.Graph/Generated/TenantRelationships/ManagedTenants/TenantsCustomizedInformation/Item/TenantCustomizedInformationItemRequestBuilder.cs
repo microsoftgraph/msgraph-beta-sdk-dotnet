@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of tenant level customized information across managed tenants.
+        /// Read the properties and relationships of a tenantCustomizedInformation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantCustomizedInformation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             return await RequestAdapter.SendAsync<TenantCustomizedInformation>(requestInfo, TenantCustomizedInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tenantsCustomizedInformation in tenantRelationships
+        /// Update the properties of a tenantCustomizedInformation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenantcustomizedinformation-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantCustomizedInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             return requestInfo;
         }
         /// <summary>
-        /// The collection of tenant level customized information across managed tenants.
+        /// Read the properties and relationships of a tenantCustomizedInformation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tenantsCustomizedInformation in tenantRelationships
+        /// Update the properties of a tenantCustomizedInformation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsCustomi
         {
         }
         /// <summary>
-        /// The collection of tenant level customized information across managed tenants.
+        /// Read the properties and relationships of a tenantCustomizedInformation object.
         /// </summary>
         public class TenantCustomizedInformationItemRequestBuilderGetQueryParameters 
         {

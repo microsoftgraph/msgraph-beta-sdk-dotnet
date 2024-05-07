@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
         {
         }
         /// <summary>
-        /// List of the recycleBinItems deleted by a user.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RecycleBinItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
             return await RequestAdapter.SendAsync<RecycleBinItem>(requestInfo, RecycleBinItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of the recycleBinItems deleted by a user.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of the recycleBinItems deleted by a user.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters 
         {

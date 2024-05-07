@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get roleEligibilityScheduleInstances from roleManagement
+        /// Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleeligibilityscheduleinstances?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleEligibilityScheduleInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             return await RequestAdapter.SendAsync<UnifiedRoleEligibilityScheduleInstance>(requestInfo, UnifiedRoleEligibilityScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get roleEligibilityScheduleInstances from roleManagement
+        /// Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             return new RoleEligibilityScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get roleEligibilityScheduleInstances from roleManagement
+        /// Get a list of the unifiedRoleEligibilityScheduleInstance objects and their properties.
         /// </summary>
         public class RoleEligibilityScheduleInstancesRequestBuilderGetQueryParameters 
         {

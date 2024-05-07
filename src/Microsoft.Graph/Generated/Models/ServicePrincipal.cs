@@ -178,6 +178,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #endif
+        /// <summary>The claimsPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CustomClaimsPolicy? ClaimsPolicy {
+            get { return BackingStore?.Get<CustomClaimsPolicy?>("claimsPolicy"); }
+            set { BackingStore?.Set("claimsPolicy", value); }
+        }
+#nullable restore
+#else
+        public CustomClaimsPolicy ClaimsPolicy {
+            get { return BackingStore?.Get<CustomClaimsPolicy>("claimsPolicy"); }
+            set { BackingStore?.Set("claimsPolicy", value); }
+        }
+#endif
         /// <summary>Directory objects created by this service principal. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -801,6 +815,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<AppRole>(AppRole.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 {"claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<ClaimsMappingPolicy>(ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"claimsPolicy", n => { ClaimsPolicy = n.GetObjectValue<CustomClaimsPolicy>(CustomClaimsPolicy.CreateFromDiscriminatorValue); } },
                 {"createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<CustomSecurityAttributeValue>(CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 {"delegatedPermissionClassifications", n => { DelegatedPermissionClassifications = n.GetCollectionOfObjectValues<DelegatedPermissionClassification>(DelegatedPermissionClassification.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -868,6 +883,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
             writer.WriteCollectionOfObjectValues<AppRole>("appRoles", AppRoles);
             writer.WriteCollectionOfObjectValues<ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
+            writer.WriteObjectValue<CustomClaimsPolicy>("claimsPolicy", ClaimsPolicy);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteObjectValue<CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
             writer.WriteCollectionOfObjectValues<DelegatedPermissionClassification>("delegatedPermissionClassifications", DelegatedPermissionClassifications);

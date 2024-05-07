@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get softwareOathMethods from me
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/softwareoathauthenticationmethod-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SoftwareOathAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +97,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get softwareOathMethods from me
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +132,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods.Item {
         {
         }
         /// <summary>
-        /// Get softwareOathMethods from me
+        /// Retrieve a user&apos;s single Software OATH token authentication method object and its properties.
         /// </summary>
         public class SoftwareOathAuthenticationMethodItemRequestBuilderGetQueryParameters 
         {

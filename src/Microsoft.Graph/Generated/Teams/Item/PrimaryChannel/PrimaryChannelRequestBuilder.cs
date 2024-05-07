@@ -120,7 +120,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The general channel for the team.
+        /// Get the default channel, General, of a team.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-get-primarychannel?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Channel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -187,7 +188,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
             return requestInfo;
         }
         /// <summary>
-        /// The general channel for the team.
+        /// Get the default channel, General, of a team.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -244,7 +245,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         {
         }
         /// <summary>
-        /// The general channel for the team.
+        /// Get the default channel, General, of a team.
         /// </summary>
         public class PrimaryChannelRequestBuilderGetQueryParameters 
         {

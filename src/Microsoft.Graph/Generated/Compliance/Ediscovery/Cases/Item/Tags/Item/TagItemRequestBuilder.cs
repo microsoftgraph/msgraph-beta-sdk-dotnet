@@ -46,7 +46,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property tags for compliance
+        /// Delete a tag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-tag-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +70,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Read the properties and relationships of a tag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-tag-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Tag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +95,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tags in compliance
+        /// Update the properties of a tag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-tag-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Tag"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +122,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tags for compliance
+        /// Delete a tag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Read the properties and relationships of a tag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +162,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tags in compliance
+        /// Update the properties of a tag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +202,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item {
         {
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Read the properties and relationships of a tag object.
         /// </summary>
         public class TagItemRequestBuilderGetQueryParameters 
         {

@@ -9,6 +9,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class CloudPcOverview : Microsoft.Graph.Beta.Models.Entity, IParsable 
     #pragma warning restore CS1591
     {
+        /// <summary>The total number of cloud PC devices that have the Frontline SKU. Optional. Read-only.</summary>
+        public int? FrontlineLicensesCount {
+            get { return BackingStore?.Get<int?>("frontlineLicensesCount"); }
+            set { BackingStore?.Set("frontlineLicensesCount", value); }
+        }
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
@@ -145,6 +150,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                {"frontlineLicensesCount", n => { FrontlineLicensesCount = n.GetIntValue(); } },
                 {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"numberOfCloudPcConnectionStatusFailed", n => { NumberOfCloudPcConnectionStatusFailed = n.GetIntValue(); } },
                 {"numberOfCloudPcConnectionStatusPassed", n => { NumberOfCloudPcConnectionStatusPassed = n.GetIntValue(); } },
@@ -175,6 +181,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("frontlineLicensesCount", FrontlineLicensesCount);
             writer.WriteDateTimeOffsetValue("lastRefreshedDateTime", LastRefreshedDateTime);
             writer.WriteIntValue("numberOfCloudPcConnectionStatusFailed", NumberOfCloudPcConnectionStatusFailed);
             writer.WriteIntValue("numberOfCloudPcConnectionStatusPassed", NumberOfCloudPcConnectionStatusPassed);

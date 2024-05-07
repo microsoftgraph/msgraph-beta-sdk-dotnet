@@ -84,7 +84,8 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get presences from communications
+        /// Get a user&apos;s presence information.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Presence"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get presences from communications
+        /// Get a user&apos;s presence information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +209,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item {
         {
         }
         /// <summary>
-        /// Get presences from communications
+        /// Get a user&apos;s presence information.
         /// </summary>
         public class PresenceItemRequestBuilderGetQueryParameters 
         {

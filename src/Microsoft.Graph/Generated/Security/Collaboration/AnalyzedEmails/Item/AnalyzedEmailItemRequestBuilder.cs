@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Contains metadata for analyzed emails.
+        /// Read the properties and relationships of an analyzedEmail object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-analyzedemail-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AnalyzedEmail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Contains metadata for analyzed emails.
+        /// Read the properties and relationships of an analyzedEmail object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.Item {
         {
         }
         /// <summary>
-        /// Contains metadata for analyzed emails.
+        /// Read the properties and relationships of an analyzedEmail object.
         /// </summary>
         public class AnalyzedEmailItemRequestBuilderGetQueryParameters 
         {

@@ -96,7 +96,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The Teams devices provisioned for the tenant.
+        /// Get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that&apos;s enabled for Teams.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamworkdevice-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TeamworkDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -163,7 +164,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The Teams devices provisioned for the tenant.
+        /// Get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that&apos;s enabled for Teams.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -220,7 +221,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         {
         }
         /// <summary>
-        /// The Teams devices provisioned for the tenant.
+        /// Get the properties of a Microsoft Teams-enabled device. For example, you can use this method to get the device type, hardware detail, activity state, and health status information for a device that&apos;s enabled for Teams.
         /// </summary>
         public class TeamworkDeviceItemRequestBuilderGetQueryParameters 
         {

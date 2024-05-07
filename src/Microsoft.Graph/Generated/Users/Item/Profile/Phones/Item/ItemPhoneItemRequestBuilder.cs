@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property phones for users
+        /// Delete an itemPhone object from the user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemphone-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
             return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, ItemPhone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property phones in users
+        /// Update the properties of an itemPhone object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemphone-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPhone"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
             return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, ItemPhone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property phones for users
+        /// Delete an itemPhone object from the user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Phones.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property phones in users
+        /// Update the properties of an itemPhone object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

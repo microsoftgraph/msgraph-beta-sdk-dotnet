@@ -68,7 +68,8 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Pages.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property pages for me
+        /// Delete a OneNote page.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +139,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Pages.Item {
             return await RequestAdapter.SendAsync<OnenotePage>(requestInfo, OnenotePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property pages for me
+        /// Delete a OneNote page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

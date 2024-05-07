@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property publications for me
+        /// Deletes an itemPublication object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempublication-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents details of any publications a user has added to their profile.
+        /// Read the properties and relationships of an itemPublication object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempublication-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPublication"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
             return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property publications for me
+        /// Deletes an itemPublication object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents details of any publications a user has added to their profile.
+        /// Read the properties and relationships of an itemPublication object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Publications.Item {
         {
         }
         /// <summary>
-        /// Represents details of any publications a user has added to their profile.
+        /// Read the properties and relationships of an itemPublication object in a user&apos;s profile.
         /// </summary>
         public class ItemPublicationItemRequestBuilderGetQueryParameters 
         {

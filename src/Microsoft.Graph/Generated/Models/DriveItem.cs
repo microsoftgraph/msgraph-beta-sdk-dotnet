@@ -490,6 +490,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("video", value); }
         }
 #endif
+        /// <summary>Returns information specific to the calling user for this drive item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public DriveItemViewpoint? Viewpoint {
+            get { return BackingStore?.Get<DriveItemViewpoint?>("viewpoint"); }
+            set { BackingStore?.Set("viewpoint", value); }
+        }
+#nullable restore
+#else
+        public DriveItemViewpoint Viewpoint {
+            get { return BackingStore?.Get<DriveItemViewpoint>("viewpoint"); }
+            set { BackingStore?.Set("viewpoint", value); }
+        }
+#endif
         /// <summary>WebDAV compatible URL for the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -578,6 +592,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"thumbnails", n => { Thumbnails = n.GetCollectionOfObjectValues<ThumbnailSet>(ThumbnailSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"versions", n => { Versions = n.GetCollectionOfObjectValues<DriveItemVersion>(DriveItemVersion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"video", n => { Video = n.GetObjectValue<Microsoft.Graph.Beta.Models.Video>(Microsoft.Graph.Beta.Models.Video.CreateFromDiscriminatorValue); } },
+                {"viewpoint", n => { Viewpoint = n.GetObjectValue<DriveItemViewpoint>(DriveItemViewpoint.CreateFromDiscriminatorValue); } },
                 {"webDavUrl", n => { WebDavUrl = n.GetStringValue(); } },
                 {"workbook", n => { Workbook = n.GetObjectValue<Microsoft.Graph.Beta.Models.Workbook>(Microsoft.Graph.Beta.Models.Workbook.CreateFromDiscriminatorValue); } },
             };
@@ -625,6 +640,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ThumbnailSet>("thumbnails", Thumbnails);
             writer.WriteCollectionOfObjectValues<DriveItemVersion>("versions", Versions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Video>("video", Video);
+            writer.WriteObjectValue<DriveItemViewpoint>("viewpoint", Viewpoint);
             writer.WriteStringValue("webDavUrl", WebDavUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Workbook>("workbook", Workbook);
         }

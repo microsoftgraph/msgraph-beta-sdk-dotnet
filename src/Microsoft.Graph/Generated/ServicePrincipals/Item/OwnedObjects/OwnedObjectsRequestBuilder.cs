@@ -75,7 +75,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
         {
         }
         /// <summary>
-        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,7 +99,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             return new OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
         /// </summary>
         public class OwnedObjectsRequestBuilderGetQueryParameters 
         {

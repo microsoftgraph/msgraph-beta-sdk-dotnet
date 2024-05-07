@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
         {
         }
         /// <summary>
-        /// Set of data import flow activities to bring data into the canonical store via a connector.
+        /// Get a list of the inboundFileFlow objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InboundFlowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlowCollectionResponse>(requestInfo, InboundFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to inboundFlows for external
+        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set of data import flow activities to bring data into the canonical store via a connector.
+        /// Get a list of the inboundFileFlow objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to inboundFlows for external
+        /// Create a new inboundFlow object. The following prerequisite resources are required when you create an inboundFlow:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows {
             return new InboundFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Set of data import flow activities to bring data into the canonical store via a connector.
+        /// Get a list of the inboundFileFlow objects and their properties.
         /// </summary>
         public class InboundFlowsRequestBuilderGetQueryParameters 
         {

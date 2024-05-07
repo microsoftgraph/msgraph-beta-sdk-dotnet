@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups {
         {
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Read the properties and relationships of a term store group object.
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Read the properties and relationships of a term store group object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Groups {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Read the properties and relationships of a term store group object.
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters 
         {

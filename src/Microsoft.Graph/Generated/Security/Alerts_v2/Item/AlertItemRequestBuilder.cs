@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of alerts in Microsoft 365 Defender.
+        /// Get the properties and relationships of an alert object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.Alert"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +84,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Security.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property alerts_v2 in security
+        /// Update the properties of an alert object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.Alert"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of alerts in Microsoft 365 Defender.
+        /// Get the properties and relationships of an alert object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +148,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property alerts_v2 in security
+        /// Update the properties of an alert object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +186,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
         {
         }
         /// <summary>
-        /// A collection of alerts in Microsoft 365 Defender.
+        /// Get the properties and relationships of an alert object.
         /// </summary>
         public class AlertItemRequestBuilderGetQueryParameters 
         {

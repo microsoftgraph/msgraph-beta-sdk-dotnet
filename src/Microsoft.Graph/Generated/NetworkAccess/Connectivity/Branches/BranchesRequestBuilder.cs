@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
         {
         }
         /// <summary>
-        /// Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+        /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-connectivity-list-branches?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BranchSiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return await RequestAdapter.SendAsync<BranchSiteCollectionResponse>(requestInfo, BranchSiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to branches for networkAccess
+        /// Create a new branch.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-connectivity-post-branches?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BranchSite"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +105,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return await RequestAdapter.SendAsync<BranchSite>(requestInfo, BranchSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+        /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to branches for networkAccess
+        /// Create a new branch.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +158,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches {
             return new BranchesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.
+        /// Retrieve a list of branches within a tenant connected to the Global Secure Access services.
         /// </summary>
         public class BranchesRequestBuilderGetQueryParameters 
         {

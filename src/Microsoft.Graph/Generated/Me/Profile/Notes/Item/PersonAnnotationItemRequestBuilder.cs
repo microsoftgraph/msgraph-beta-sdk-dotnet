@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents notes that a user has added to their profile.
+        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personannotation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAnnotation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents notes that a user has added to their profile.
+        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes.Item {
         {
         }
         /// <summary>
-        /// Represents notes that a user has added to their profile.
+        /// Read the properties and relationships of a personAnnotation object from a user&apos;s profile.
         /// </summary>
         public class PersonAnnotationItemRequestBuilderGetQueryParameters 
         {

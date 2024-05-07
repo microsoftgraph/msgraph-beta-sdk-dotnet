@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
         {
         }
         /// <summary>
-        /// Delete navigation property sites for admin
+        /// Delete a browserSite from a browserSiteList.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersitelist-delete-sites?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of sites defined for the site list.
+        /// Get a browserSite that resides on a browserSiteList.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersite-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BrowserSite"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
             return await RequestAdapter.SendAsync<BrowserSite>(requestInfo, BrowserSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sites in admin
+        /// Update the properties of a browserSite object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/browsersite-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BrowserSite"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
             return await RequestAdapter.SendAsync<BrowserSite>(requestInfo, BrowserSite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sites for admin
+        /// Delete a browserSite from a browserSiteList.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
             return requestInfo;
         }
         /// <summary>
-        /// A collection of sites defined for the site list.
+        /// Get a browserSite that resides on a browserSiteList.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sites in admin
+        /// Update the properties of a browserSite object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Admin.Edge.InternetExplorerMode.SiteLists.Item.Si
         {
         }
         /// <summary>
-        /// A collection of sites defined for the site list.
+        /// Get a browserSite that resides on a browserSiteList.
         /// </summary>
         public class BrowserSiteItemRequestBuilderGetQueryParameters 
         {

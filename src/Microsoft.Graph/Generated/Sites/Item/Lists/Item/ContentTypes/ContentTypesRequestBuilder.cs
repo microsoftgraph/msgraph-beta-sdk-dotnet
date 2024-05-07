@@ -70,6 +70,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.ContentTypes {
         }
         /// <summary>
         /// The collection of content types present in this list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ContentTypeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

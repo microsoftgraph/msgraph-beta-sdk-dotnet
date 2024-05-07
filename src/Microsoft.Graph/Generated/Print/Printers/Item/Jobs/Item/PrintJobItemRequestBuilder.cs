@@ -102,7 +102,8 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get jobs from print
+        /// Retrieve the properties and relationships of a print job.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrintJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -125,7 +126,8 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item {
             return await RequestAdapter.SendAsync<PrintJob>(requestInfo, PrintJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property jobs in print
+        /// Update a print job. Only the configuration property can be updated. Updating a print job will only succeed if a printTask in a processing state, started by a trigger that the requesting app created, is associated with the print job. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrintJob"/></returns>
         /// <param name="body">The request body</param>
@@ -169,7 +171,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get jobs from print
+        /// Retrieve the properties and relationships of a print job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +190,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property jobs in print
+        /// Update a print job. Only the configuration property can be updated. Updating a print job will only succeed if a printTask in a processing state, started by a trigger that the requesting app created, is associated with the print job. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -226,7 +228,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item {
         {
         }
         /// <summary>
-        /// Get jobs from print
+        /// Retrieve the properties and relationships of a print job.
         /// </summary>
         public class PrintJobItemRequestBuilderGetQueryParameters 
         {

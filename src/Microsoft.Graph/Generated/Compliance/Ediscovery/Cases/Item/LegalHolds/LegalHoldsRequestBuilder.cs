@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
         {
         }
         /// <summary>
-        /// Returns a list of case legalHold objects for this case.  Nullable.
+        /// Read the properties and relationships of a legalHold object.
         /// </summary>
         /// <returns>A <see cref="LegalHoldCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
             return await RequestAdapter.SendAsync<LegalHold>(requestInfo, LegalHold.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of case legalHold objects for this case.  Nullable.
+        /// Read the properties and relationships of a legalHold object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds {
             return new LegalHoldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of case legalHold objects for this case.  Nullable.
+        /// Read the properties and relationships of a legalHold object.
         /// </summary>
         public class LegalHoldsRequestBuilderGetQueryParameters 
         {

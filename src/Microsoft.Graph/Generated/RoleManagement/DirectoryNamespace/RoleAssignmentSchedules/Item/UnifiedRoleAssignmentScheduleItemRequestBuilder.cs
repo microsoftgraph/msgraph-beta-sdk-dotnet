@@ -84,7 +84,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get roleAssignmentSchedules from roleManagement
+        /// Retrieve the schedule for an active role assignment operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentschedule-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentSchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return requestInfo;
         }
         /// <summary>
-        /// Get roleAssignmentSchedules from roleManagement
+        /// Retrieve the schedule for an active role assignment operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +209,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
         {
         }
         /// <summary>
-        /// Get roleAssignmentSchedules from roleManagement
+        /// Retrieve the schedule for an active role assignment operation.
         /// </summary>
         public class UnifiedRoleAssignmentScheduleItemRequestBuilderGetQueryParameters 
         {

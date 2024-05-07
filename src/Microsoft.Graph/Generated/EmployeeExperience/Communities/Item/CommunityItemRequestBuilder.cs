@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of communities in Viva Engage.
+        /// Read the properties and relationships of a community object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/community-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Community"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,7 +134,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of communities in Viva Engage.
+        /// Read the properties and relationships of a community object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +191,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Communities.Item {
         {
         }
         /// <summary>
-        /// A collection of communities in Viva Engage.
+        /// Read the properties and relationships of a community object.
         /// </summary>
         public class CommunityItemRequestBuilderGetQueryParameters 
         {

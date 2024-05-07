@@ -61,7 +61,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Photo {
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property photo in teams
+        /// Update the photo for the specified contact, group, team, or user in a tenant. The size of the photo you can update to is limited to 4 MB. You can use either PATCH or PUT for this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProfilePhoto"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Photo {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property photo in teams
+        /// Update the photo for the specified contact, group, team, or user in a tenant. The size of the photo you can update to is limited to 4 MB. You can use either PATCH or PUT for this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

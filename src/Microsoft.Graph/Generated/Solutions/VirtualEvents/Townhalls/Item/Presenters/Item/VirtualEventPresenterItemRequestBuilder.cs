@@ -39,7 +39,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         {
         }
         /// <summary>
-        /// Delete navigation property presenters for solutions
+        /// Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventpresenter-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -61,7 +62,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The virtual event presenters.
+        /// Read the properties and relationships of a virtualEventPresenter object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventpresenter-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventPresenter"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -119,7 +121,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             return new SessionsWithJoinWebUrlRequestBuilder(PathParameters, RequestAdapter, joinWebUrl);
         }
         /// <summary>
-        /// Delete navigation property presenters for solutions
+        /// Delete a virtualEventPresenter from a virtual event. Currently the supported virtual event type is virtualEventTownhall.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +140,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             return requestInfo;
         }
         /// <summary>
-        /// The virtual event presenters.
+        /// Read the properties and relationships of a virtualEventPresenter object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -195,7 +197,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         {
         }
         /// <summary>
-        /// The virtual event presenters.
+        /// Read the properties and relationships of a virtualEventPresenter object.
         /// </summary>
         public class VirtualEventPresenterItemRequestBuilderGetQueryParameters 
         {

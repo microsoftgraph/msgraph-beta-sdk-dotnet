@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item.AppliesT
         {
         }
         /// <summary>
-        /// Get appliesTo from policies
+        /// Get a list of directoryObject objects that a homeRealmDiscoveryPolicy object has been applied to. The homeRealmDiscoveryPolicy can only be applied to servicePrincipal resources.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/homerealmdiscoverypolicy-list-appliesto?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item.AppliesT
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get appliesTo from policies
+        /// Get a list of directoryObject objects that a homeRealmDiscoveryPolicy object has been applied to. The homeRealmDiscoveryPolicy can only be applied to servicePrincipal resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.Item.AppliesT
             return new AppliesToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get appliesTo from policies
+        /// Get a list of directoryObject objects that a homeRealmDiscoveryPolicy object has been applied to. The homeRealmDiscoveryPolicy can only be applied to servicePrincipal resources.
         /// </summary>
         public class AppliesToRequestBuilderGetQueryParameters 
         {

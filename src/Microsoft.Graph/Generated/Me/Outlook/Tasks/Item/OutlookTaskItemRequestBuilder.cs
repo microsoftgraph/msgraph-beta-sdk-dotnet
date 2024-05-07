@@ -46,7 +46,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property tasks for me
+        /// Delete the specified Outlook task in the user&apos;s mailbox.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktask-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +70,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tasks from me
+        /// Get the properties and relationships of an Outlook task in the user&apos;s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktask-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OutlookTask"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +95,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
             return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, OutlookTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tasks in me
+        /// Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktask-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OutlookTask"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
             return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, OutlookTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tasks for me
+        /// Delete the specified Outlook task in the user&apos;s mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get tasks from me
+        /// Get the properties and relationships of an Outlook task in the user&apos;s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +162,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tasks in me
+        /// Change writable properties of an Outlook task. The completedDateTime property can be set by the complete action, or explicitly by a PATCH operation. If you use PATCH to set completedDateTime, make sure you set status to completed as well. By default, this operation (and the POST, GET, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +202,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.Tasks.Item {
         {
         }
         /// <summary>
-        /// Get tasks from me
+        /// Get the properties and relationships of an Outlook task in the user&apos;s mailbox. By default, this operation (and the POST, PATCH, and complete task operations) returns date-related properties in UTC. You can use the Prefer: outlook.timezone header to have all the date-related properties in the response represented in a time zone different than UTC.
         /// </summary>
         public class OutlookTaskItemRequestBuilderGetQueryParameters 
         {

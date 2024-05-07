@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property b2cUserFlows for identity
+        /// Delete a b2cIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +79,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Retrieve the properties and relationships of a b2cUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="B2cIdentityUserFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +103,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property b2cUserFlows in identity
+        /// Update the properties of a b2cIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="B2cIdentityUserFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +129,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property b2cUserFlows for identity
+        /// Delete a b2cIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +148,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Retrieve the properties and relationships of a b2cUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +167,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property b2cUserFlows in identity
+        /// Update the properties of a b2cIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -202,7 +205,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item {
         {
         }
         /// <summary>
-        /// Represents entry point for B2C identity userflows.
+        /// Retrieve the properties and relationships of a b2cUserFlow object.
         /// </summary>
         public class B2cIdentityUserFlowItemRequestBuilderGetQueryParameters 
         {

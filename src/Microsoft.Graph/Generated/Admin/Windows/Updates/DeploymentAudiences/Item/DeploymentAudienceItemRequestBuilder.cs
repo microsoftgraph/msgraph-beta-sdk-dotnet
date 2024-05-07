@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property deploymentAudiences for admin
+        /// Delete a deploymentAudience object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +85,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The set of updatableAsset resources to which a deployment can apply.
+        /// Read the properties and relationships of a deploymentAudience object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeploymentAudience"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +134,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item {
             return await RequestAdapter.SendAsync<DeploymentAudience>(requestInfo, DeploymentAudience.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property deploymentAudiences for admin
+        /// Delete a deploymentAudience object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +153,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The set of updatableAsset resources to which a deployment can apply.
+        /// Read the properties and relationships of a deploymentAudience object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +210,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item {
         {
         }
         /// <summary>
-        /// The set of updatableAsset resources to which a deployment can apply.
+        /// Read the properties and relationships of a deploymentAudience object.
         /// </summary>
         public class DeploymentAudienceItemRequestBuilderGetQueryParameters 
         {

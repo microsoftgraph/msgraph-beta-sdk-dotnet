@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Beta.Me.OwnedDevices {
         {
         }
         /// <summary>
-        /// Devices owned by the user. Read-only. Nullable. Supports $expand.
+        /// Get the list of devices that are owned by the user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-owneddevices?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Me.OwnedDevices {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Devices owned by the user. Read-only. Nullable. Supports $expand.
+        /// Get the list of devices that are owned by the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.OwnedDevices {
             return new OwnedDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Devices owned by the user. Read-only. Nullable. Supports $expand.
+        /// Get the list of devices that are owned by the user.
         /// </summary>
         public class OwnedDevicesRequestBuilderGetQueryParameters 
         {

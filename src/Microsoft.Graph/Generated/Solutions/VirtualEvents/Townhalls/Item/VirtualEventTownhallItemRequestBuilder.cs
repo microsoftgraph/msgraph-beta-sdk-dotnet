@@ -67,7 +67,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get townhalls from solutions
+        /// Read the properties and relationships of a virtualEventTownhall object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventtownhall-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventTownhall"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -90,7 +91,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item {
             return await RequestAdapter.SendAsync<VirtualEventTownhall>(requestInfo, VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property townhalls in solutions
+        /// Update the properties of a virtualEventTownhall object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventTownhall"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +146,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get townhalls from solutions
+        /// Read the properties and relationships of a virtualEventTownhall object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +165,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property townhalls in solutions
+        /// Update the properties of a virtualEventTownhall object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -201,7 +203,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item {
         {
         }
         /// <summary>
-        /// Get townhalls from solutions
+        /// Read the properties and relationships of a virtualEventTownhall object.
         /// </summary>
         public class VirtualEventTownhallItemRequestBuilderGetQueryParameters 
         {

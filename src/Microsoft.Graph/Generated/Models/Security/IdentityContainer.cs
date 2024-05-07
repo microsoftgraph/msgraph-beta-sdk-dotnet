@@ -23,6 +23,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
+        /// <summary>The sensors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Sensor>? Sensors {
+            get { return BackingStore?.Get<List<Sensor>?>("sensors"); }
+            set { BackingStore?.Set("sensors", value); }
+        }
+#nullable restore
+#else
+        public List<Sensor> Sensors {
+            get { return BackingStore?.Get<List<Sensor>>("sensors"); }
+            set { BackingStore?.Set("sensors", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 {"healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<HealthIssue>(HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sensors", n => { Sensors = n.GetCollectionOfObjectValues<Sensor>(Sensor.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -53,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<HealthIssue>("healthIssues", HealthIssues);
+            writer.WriteCollectionOfObjectValues<Sensor>("sensors", Sensors);
         }
     }
 }

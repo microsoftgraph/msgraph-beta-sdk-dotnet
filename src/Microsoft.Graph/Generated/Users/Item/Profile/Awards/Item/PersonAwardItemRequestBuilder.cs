@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property awards for users
+        /// Deletes a personAward object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property awards in users
+        /// Update the properties of a personAward object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAward"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
             return await RequestAdapter.SendAsync<PersonAward>(requestInfo, PersonAward.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property awards for users
+        /// Deletes a personAward object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Awards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property awards in users
+        /// Update the properties of a personAward object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

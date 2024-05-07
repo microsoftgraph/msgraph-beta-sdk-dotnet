@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Retrieve information about a specific link between a forwarding policy and a forwarding profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicylink-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PolicyLink"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +84,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
             return await RequestAdapter.SendAsync<PolicyLink>(requestInfo, PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property policies in networkAccess
+        /// Update an existing forwarding policy link to modify the association between a forwarding policy and a forwarding profile. This operation allows for linking or unlinking them as needed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingpolicylink-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PolicyLink"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
             return requestInfo;
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Retrieve information about a specific link between a forwarding policy and a forwarding profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +148,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property policies in networkAccess
+        /// Update an existing forwarding policy link to modify the association between a forwarding policy and a forwarding profile. This operation allows for linking or unlinking them as needed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +186,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies.It
         {
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Retrieve information about a specific link between a forwarding policy and a forwarding profile.
         /// </summary>
         public class PolicyLinkItemRequestBuilderGetQueryParameters 
         {

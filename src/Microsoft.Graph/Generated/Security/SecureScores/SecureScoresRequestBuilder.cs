@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
         {
         }
         /// <summary>
-        /// Measurements of tenants’ security posture to help protect them from threats.
+        /// Retrieve the properties and relationships of a secureScores object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securescores-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SecureScoreCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
             return await RequestAdapter.SendAsync<SecureScore>(requestInfo, SecureScore.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Measurements of tenants’ security posture to help protect them from threats.
+        /// Retrieve the properties and relationships of a secureScores object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
             return new SecureScoresRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Measurements of tenants’ security posture to help protect them from threats.
+        /// Retrieve the properties and relationships of a secureScores object.
         /// </summary>
         public class SecureScoresRequestBuilderGetQueryParameters 
         {

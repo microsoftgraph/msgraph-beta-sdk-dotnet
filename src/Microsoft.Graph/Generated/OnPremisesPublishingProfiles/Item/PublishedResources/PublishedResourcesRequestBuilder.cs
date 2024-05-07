@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
         {
         }
         /// <summary>
-        /// List of existing publishedResource objects. Read-only. Nullable.
+        /// Retrieve a list of publishedResource objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/publishedresource-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PublishedResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return await RequestAdapter.SendAsync<PublishedResource>(requestInfo, PublishedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of existing publishedResource objects. Read-only. Nullable.
+        /// Retrieve a list of publishedResource objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResour
             return new PublishedResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of existing publishedResource objects. Read-only. Nullable.
+        /// Retrieve a list of publishedResource objects.
         /// </summary>
         public class PublishedResourcesRequestBuilderGetQueryParameters 
         {

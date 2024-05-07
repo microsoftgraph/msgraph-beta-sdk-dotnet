@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property anniversaries for me
+        /// Delete a personAnniversary object from the user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personanniversary-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the details of meaningful dates associated with a person.
+        /// Retrieve the properties and relationships of a personAnniversary object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personanniversary-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAnnualEvent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, PersonAnnualEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property anniversaries in me
+        /// Update the properties of a personAnniversary object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personanniversary-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAnnualEvent"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             return await RequestAdapter.SendAsync<PersonAnnualEvent>(requestInfo, PersonAnnualEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property anniversaries for me
+        /// Delete a personAnniversary object from the user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the details of meaningful dates associated with a person.
+        /// Retrieve the properties and relationships of a personAnniversary object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property anniversaries in me
+        /// Update the properties of a personAnniversary object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Anniversaries.Item {
         {
         }
         /// <summary>
-        /// Represents the details of meaningful dates associated with a person.
+        /// Retrieve the properties and relationships of a personAnniversary object in a user&apos;s profile.
         /// </summary>
         public class PersonAnnualEventItemRequestBuilderGetQueryParameters 
         {

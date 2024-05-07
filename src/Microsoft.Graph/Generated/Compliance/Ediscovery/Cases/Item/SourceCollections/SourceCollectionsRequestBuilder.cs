@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
         {
         }
         /// <summary>
-        /// Returns a list of sourceCollection objects associated with this case.
+        /// Get the list of sourceCollections from a case object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list-sourcecollections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SourceCollectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<SourceCollectionCollectionResponse>(requestInfo, SourceCollectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to sourceCollections for compliance
+        /// Create a new sourceCollection object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-sourcecollections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SourceCollection"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +105,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return await RequestAdapter.SendAsync<SourceCollection>(requestInfo, SourceCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of sourceCollection objects associated with this case.
+        /// Get the list of sourceCollections from a case object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to sourceCollections for compliance
+        /// Create a new sourceCollection object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +158,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return new SourceCollectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of sourceCollection objects associated with this case.
+        /// Get the list of sourceCollections from a case object.
         /// </summary>
         public class SourceCollectionsRequestBuilderGetQueryParameters 
         {

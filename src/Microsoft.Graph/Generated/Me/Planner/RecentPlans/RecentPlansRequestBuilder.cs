@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
+        /// Retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-recentplans?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
+        /// Retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.RecentPlans {
             return new RecentPlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.
+        /// Retrieve a list of plannerPlans recently viewed by a user. You can update recently viewed plans by updating the plannerUser resource.
         /// </summary>
         public class RecentPlansRequestBuilderGetQueryParameters 
         {

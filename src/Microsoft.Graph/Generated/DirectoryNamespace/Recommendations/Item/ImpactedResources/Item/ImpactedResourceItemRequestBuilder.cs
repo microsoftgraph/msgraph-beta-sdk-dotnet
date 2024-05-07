@@ -78,7 +78,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of directory objects associated with the recommendation.
+        /// Read the properties and relationships of an impactedResource object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/impactedresource-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ImpactedResource"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
             return requestInfo;
         }
         /// <summary>
-        /// The list of directory objects associated with the recommendation.
+        /// Read the properties and relationships of an impactedResource object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +203,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.ImpactedR
         {
         }
         /// <summary>
-        /// The list of directory objects associated with the recommendation.
+        /// Read the properties and relationships of an impactedResource object.
         /// </summary>
         public class ImpactedResourceItemRequestBuilderGetQueryParameters 
         {

@@ -2,7 +2,6 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsers;
-using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.ActiveUsersBreakdown;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsers;
 using Microsoft.Graph.Beta.Reports.UserInsights.Monthly.InactiveUsersByApplication;
@@ -28,11 +27,6 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly {
         public ActiveUsersRequestBuilder ActiveUsers
         {
             get => new ActiveUsersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the activeUsersBreakdown property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
-        public ActiveUsersBreakdownRequestBuilder ActiveUsersBreakdown
-        {
-            get => new ActiveUsersBreakdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
         public AuthenticationsRequestBuilder Authentications

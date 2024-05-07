@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals.ExportJobs {
         {
         }
         /// <summary>
-        /// Represents a collection of goals export jobs for Viva Goals.
+        /// Get a list of goalsExportJob objects and their properties in a Viva Goals organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/goals-list-exportjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GoalsExportJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals.ExportJobs {
             return await RequestAdapter.SendAsync<GoalsExportJobCollectionResponse>(requestInfo, GoalsExportJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to exportJobs for employeeExperience
+        /// Create a new goalsExportJob object in a Viva Goals organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/goals-post-exportjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GoalsExportJob"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals.ExportJobs {
             return await RequestAdapter.SendAsync<GoalsExportJob>(requestInfo, GoalsExportJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a collection of goals export jobs for Viva Goals.
+        /// Get a list of goalsExportJob objects and their properties in a Viva Goals organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals.ExportJobs {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to exportJobs for employeeExperience
+        /// Create a new goalsExportJob object in a Viva Goals organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.Goals.ExportJobs {
             return new ExportJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents a collection of goals export jobs for Viva Goals.
+        /// Get a list of goalsExportJob objects and their properties in a Viva Goals organization.
         /// </summary>
         public class ExportJobsRequestBuilderGetQueryParameters 
         {

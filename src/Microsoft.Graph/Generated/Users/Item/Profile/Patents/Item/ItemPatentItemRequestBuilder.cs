@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property patents for users
+        /// Deletes an itemPatent object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property patents in users
+        /// Update the properties of an itemPatent object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPatent"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property patents for users
+        /// Deletes an itemPatent object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property patents in users
+        /// Update the properties of an itemPatent object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

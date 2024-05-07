@@ -44,7 +44,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
         {
         }
         /// <summary>
-        /// Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+        /// Read the properties and relationships of an industryDataRun object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydatarun-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataRun"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +68,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
             return await RequestAdapter.SendAsync<IndustryDataRun>(requestInfo, IndustryDataRun.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+        /// Read the properties and relationships of an industryDataRun object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +96,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs.Item {
             return new IndustryDataRunItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+        /// Read the properties and relationships of an industryDataRun object.
         /// </summary>
         public class IndustryDataRunItemRequestBuilderGetQueryParameters 
         {

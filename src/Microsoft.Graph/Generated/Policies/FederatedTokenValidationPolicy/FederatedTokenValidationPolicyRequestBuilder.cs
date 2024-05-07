@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a policy to control enabling or disabling validation of federation authentication tokens.
+        /// Get a list of the federatedTokenValidationPolicy objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policyroot-list-federatedtokenvalidationpolicy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property federatedTokenValidationPolicy in policies
+        /// Update the properties of a federatedTokenValidationPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a policy to control enabling or disabling validation of federation authentication tokens.
+        /// Get a list of the federatedTokenValidationPolicy objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property federatedTokenValidationPolicy in policies
+        /// Update the properties of a federatedTokenValidationPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy {
         {
         }
         /// <summary>
-        /// Represents a policy to control enabling or disabling validation of federation authentication tokens.
+        /// Get a list of the federatedTokenValidationPolicy objects and their properties.
         /// </summary>
         public class FederatedTokenValidationPolicyRequestBuilderGetQueryParameters 
         {

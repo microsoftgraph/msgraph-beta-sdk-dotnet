@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies {
         {
         }
         /// <summary>
-        /// The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+        /// Get a list of the mobilityManagementPolicy objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobileappmanagementpolicies-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MobilityManagementPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+        /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies {
             return new MobileAppManagementPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.
+        /// Get a list of the mobilityManagementPolicy objects and their properties.
         /// </summary>
         public class MobileAppManagementPoliciesRequestBuilderGetQueryParameters 
         {

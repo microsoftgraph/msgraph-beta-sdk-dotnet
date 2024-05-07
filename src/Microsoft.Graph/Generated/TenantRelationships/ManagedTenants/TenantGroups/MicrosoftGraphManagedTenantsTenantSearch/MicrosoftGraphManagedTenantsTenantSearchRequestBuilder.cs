@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.M
         {
         }
         /// <summary>
-        /// Invoke action tenantSearch
+        /// Searches for the specified managed tenants across tenant groups.
         /// </summary>
         /// <returns>A <see cref="TenantSearchPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.M
             return await RequestAdapter.SendAsync<TenantSearchPostResponse>(requestInfo, TenantSearchPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action tenantSearch
+        /// Searches for the specified managed tenants across tenant groups.
         /// </summary>
         /// <returns>A <see cref="TenantSearchResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.M
             return await RequestAdapter.SendAsync<TenantSearchResponse>(requestInfo, TenantSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action tenantSearch
+        /// Searches for the specified managed tenants across tenant groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

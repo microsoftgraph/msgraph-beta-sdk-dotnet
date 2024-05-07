@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Drives {
         {
         }
         /// <summary>
-        /// A collection of drives available for this user. Read-only.
+        /// Retrieve the list of drive resources available for a target user, group, or site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DriveCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.Drives {
             return await RequestAdapter.SendAsync<DriveCollectionResponse>(requestInfo, DriveCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of drives available for this user. Read-only.
+        /// Retrieve the list of drive resources available for a target user, group, or site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Drives {
             return new DrivesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of drives available for this user. Read-only.
+        /// Retrieve the list of drive resources available for a target user, group, or site.
         /// </summary>
         public class DrivesRequestBuilderGetQueryParameters 
         {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Tasks {
         {
         }
         /// <summary>
-        /// Collection of tasks in the plan. Read-only. Nullable.
+        /// Retrieve a list of plannerTask objects associated with a plannerPlan object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-list-tasks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Tasks {
             return await RequestAdapter.SendAsync<PlannerTask>(requestInfo, PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of tasks in the plan. Read-only. Nullable.
+        /// Retrieve a list of plannerTask objects associated with a plannerPlan object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Tasks {
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of tasks in the plan. Read-only. Nullable.
+        /// Retrieve a list of plannerTask objects associated with a plannerPlan object.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

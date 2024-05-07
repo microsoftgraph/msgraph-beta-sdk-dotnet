@@ -68,7 +68,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item {
         {
         }
         /// <summary>
-        /// Get posts from groups
+        /// Get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/post-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Post"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -116,7 +117,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Post>(requestInfo, Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get posts from groups
+        /// Get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +167,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item {
             return new PostItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get posts from groups
+        /// Get the properties and relationships of a post in a specified thread. You can specify both the parentconversation and the thread, or, you can specify the thread without referencing the parent conversation. Since the post resource supports extensions, you can also use the GET operation to get custom properties and extension data in a post instance.
         /// </summary>
         public class PostItemRequestBuilderGetQueryParameters 
         {

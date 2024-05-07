@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
         {
         }
         /// <summary>
-        /// Represents detailed information about work positions associated with a user&apos;s profile.
+        /// Retrieve a list of workPosition objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-positions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkPositionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
             return await RequestAdapter.SendAsync<WorkPositionCollectionResponse>(requestInfo, WorkPositionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to positions for me
+        /// Use this API to create a new workPosition in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-positions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkPosition"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
             return await RequestAdapter.SendAsync<WorkPosition>(requestInfo, WorkPosition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about work positions associated with a user&apos;s profile.
+        /// Retrieve a list of workPosition objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to positions for me
+        /// Use this API to create a new workPosition in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Positions {
             return new PositionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents detailed information about work positions associated with a user&apos;s profile.
+        /// Retrieve a list of workPosition objects from a user&apos;s profile.
         /// </summary>
         public class PositionsRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
         {
         }
         /// <summary>
-        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/passwordlessmicrosoftauthenticatorauthenticationmethod-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
             return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
             return new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method objects and their properties.
         /// </summary>
         public class PasswordlessMicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters 
         {

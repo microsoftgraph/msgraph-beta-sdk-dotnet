@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
         {
         }
         /// <summary>
-        /// Insights for all user requests on apps registered in the tenant for a specified period.
+        /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-requests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserRequestsMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
             return await RequestAdapter.SendAsync<UserRequestsMetricCollectionResponse>(requestInfo, UserRequestsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Insights for all user requests on apps registered in the tenant for a specified period.
+        /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Requests {
             return new RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Insights for all user requests on apps registered in the tenant for a specified period.
+        /// Get a list of monthly user requests on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         public class RequestsRequestBuilderGetQueryParameters 
         {

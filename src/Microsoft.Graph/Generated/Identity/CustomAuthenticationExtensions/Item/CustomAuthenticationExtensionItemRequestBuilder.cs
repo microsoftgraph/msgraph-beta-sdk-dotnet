@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property customAuthenticationExtensions for identity
+        /// Delete a customAuthenticationExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get customAuthenticationExtensions from identity
+        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomAuthenticationExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             return await RequestAdapter.SendAsync<CustomAuthenticationExtension>(requestInfo, CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property customAuthenticationExtensions for identity
+        /// Delete a customAuthenticationExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get customAuthenticationExtensions from identity
+        /// Read the properties and relationships of a customAuthenticationExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +186,7 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.Item {
         {
         }
         /// <summary>
-        /// Get customAuthenticationExtensions from identity
+        /// Read the properties and relationships of a customAuthenticationExtension object.
         /// </summary>
         public class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters 
         {

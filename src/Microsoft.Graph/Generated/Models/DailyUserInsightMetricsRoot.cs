@@ -23,20 +23,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeUsers", value); }
         }
 #endif
-        /// <summary>The activeUsersBreakdown property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<ActiveUsersBreakdownMetric>? ActiveUsersBreakdown {
-            get { return BackingStore?.Get<List<ActiveUsersBreakdownMetric>?>("activeUsersBreakdown"); }
-            set { BackingStore?.Set("activeUsersBreakdown", value); }
-        }
-#nullable restore
-#else
-        public List<ActiveUsersBreakdownMetric> ActiveUsersBreakdown {
-            get { return BackingStore?.Get<List<ActiveUsersBreakdownMetric>>("activeUsersBreakdown"); }
-            set { BackingStore?.Set("activeUsersBreakdown", value); }
-        }
-#endif
         /// <summary>Insights for authentications on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +140,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 {"activeUsers", n => { ActiveUsers = n.GetCollectionOfObjectValues<ActiveUsersMetric>(ActiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"activeUsersBreakdown", n => { ActiveUsersBreakdown = n.GetCollectionOfObjectValues<ActiveUsersBreakdownMetric>(ActiveUsersBreakdownMetric.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authentications", n => { Authentications = n.GetCollectionOfObjectValues<AuthenticationsMetric>(AuthenticationsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<DailyInactiveUsersMetric>(DailyInactiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<DailyInactiveUsersByApplicationMetric>(DailyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -173,7 +158,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<ActiveUsersMetric>("activeUsers", ActiveUsers);
-            writer.WriteCollectionOfObjectValues<ActiveUsersBreakdownMetric>("activeUsersBreakdown", ActiveUsersBreakdown);
             writer.WriteCollectionOfObjectValues<AuthenticationsMetric>("authentications", Authentications);
             writer.WriteCollectionOfObjectValues<DailyInactiveUsersMetric>("inactiveUsers", InactiveUsers);
             writer.WriteCollectionOfObjectValues<DailyInactiveUsersByApplicationMetric>("inactiveUsersByApplication", InactiveUsersByApplication);

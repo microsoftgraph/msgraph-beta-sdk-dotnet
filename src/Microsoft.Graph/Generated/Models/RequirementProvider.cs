@@ -90,5 +90,13 @@ namespace Microsoft.Graph.Beta.Models {
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "scopeBasedAuthRequirementPolicy")]
+        #pragma warning disable CS1591
+        ScopeBasedAuthRequirementPolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "authenticationStrengths")]
+        #pragma warning disable CS1591
+        AuthenticationStrengths,
+        #pragma warning restore CS1591
     }
 }

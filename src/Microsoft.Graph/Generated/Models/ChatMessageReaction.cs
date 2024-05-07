@@ -12,12 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -36,7 +36,21 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Supported values are like, angry, sad, laugh, heart, surprised.</summary>
+        /// <summary>The hosted content URL for the custom reaction type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReactionContentUrl {
+            get { return BackingStore?.Get<string?>("reactionContentUrl"); }
+            set { BackingStore?.Set("reactionContentUrl", value); }
+        }
+#nullable restore
+#else
+        public string ReactionContentUrl {
+            get { return BackingStore?.Get<string>("reactionContentUrl"); }
+            set { BackingStore?.Set("reactionContentUrl", value); }
+        }
+#endif
+        /// <summary>Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReactionType {
@@ -92,6 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"reactionContentUrl", n => { ReactionContentUrl = n.GetStringValue(); } },
                 {"reactionType", n => { ReactionType = n.GetStringValue(); } },
                 {"user", n => { User = n.GetObjectValue<ChatMessageReactionIdentitySet>(ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
             };
@@ -105,6 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("reactionContentUrl", ReactionContentUrl);
             writer.WriteStringValue("reactionType", ReactionType);
             writer.WriteObjectValue<ChatMessageReactionIdentitySet>("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
         {
         }
         /// <summary>
-        /// A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+        /// Get a list of the provisioningFlow objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-outboundprovisioningflowset-list-provisioningflows?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProvisioningFlowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return await RequestAdapter.SendAsync<ProvisioningFlow>(requestInfo, ProvisioningFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+        /// Get a list of the provisioningFlow objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.OutboundProvisioningFlowSet
             return new ProvisioningFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.
+        /// Get a list of the provisioningFlow objects and their properties.
         /// </summary>
         public class ProvisioningFlowsRequestBuilderGetQueryParameters 
         {

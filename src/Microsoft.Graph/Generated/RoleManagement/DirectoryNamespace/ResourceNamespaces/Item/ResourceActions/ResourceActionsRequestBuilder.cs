@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
         {
         }
         /// <summary>
-        /// Operations that an authorized principal is allowed to perform.
+        /// Get a list of the unifiedRbacResourceAction objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacresourcenamespace-list-resourceactions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRbacResourceActionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
             return await RequestAdapter.SendAsync<UnifiedRbacResourceAction>(requestInfo, UnifiedRbacResourceAction.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Operations that an authorized principal is allowed to perform.
+        /// Get a list of the unifiedRbacResourceAction objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
             return new ResourceActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Operations that an authorized principal is allowed to perform.
+        /// Get a list of the unifiedRbacResourceAction objects and their properties.
         /// </summary>
         public class ResourceActionsRequestBuilderGetQueryParameters 
         {

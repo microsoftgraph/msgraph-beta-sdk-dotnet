@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property sourceSystems for external
+        /// Delete a sourceSystemDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set of source definitions that represents real-world external systems.
+        /// Read the properties and relationships of a sourceSystemDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SourceSystemDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
             return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sourceSystems in external
+        /// Update the properties of a sourceSystemDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SourceSystemDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
             return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sourceSystems for external
+        /// Delete a sourceSystemDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Set of source definitions that represents real-world external systems.
+        /// Read the properties and relationships of a sourceSystemDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sourceSystems in external
+        /// Update the properties of a sourceSystemDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item {
         {
         }
         /// <summary>
-        /// Set of source definitions that represents real-world external systems.
+        /// Read the properties and relationships of a sourceSystemDefinition object.
         /// </summary>
         public class SourceSystemDefinitionItemRequestBuilderGetQueryParameters 
         {

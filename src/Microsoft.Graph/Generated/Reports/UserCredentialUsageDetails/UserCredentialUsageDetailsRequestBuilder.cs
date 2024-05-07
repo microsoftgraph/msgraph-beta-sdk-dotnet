@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
         {
         }
         /// <summary>
-        /// Represents the self-service password reset (SSPR) usage for a given tenant.
+        /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserCredentialUsageDetailsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the self-service password reset (SSPR) usage for a given tenant.
+        /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails {
             return new UserCredentialUsageDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the self-service password reset (SSPR) usage for a given tenant.
+        /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
         /// </summary>
         public class UserCredentialUsageDetailsRequestBuilderGetQueryParameters 
         {

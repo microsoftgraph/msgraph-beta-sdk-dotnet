@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property addresses for users
+        /// Deletes an itemAddress object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemaddress-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
             return await RequestAdapter.SendAsync<ItemAddress>(requestInfo, ItemAddress.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property addresses in users
+        /// Update the properties of an itemAddress object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemaddress-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemAddress"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
             return await RequestAdapter.SendAsync<ItemAddress>(requestInfo, ItemAddress.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property addresses for users
+        /// Deletes an itemAddress object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property addresses in users
+        /// Update the properties of an itemAddress object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

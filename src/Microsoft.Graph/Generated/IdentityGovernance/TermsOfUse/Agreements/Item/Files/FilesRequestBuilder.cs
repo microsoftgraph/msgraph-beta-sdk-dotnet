@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item.Fil
             return await RequestAdapter.SendAsync<AgreementFileLocalizationCollectionResponse>(requestInfo, AgreementFileLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to files for identityGovernance
+        /// Create a new localized agreement file.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-post-files?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AgreementFileLocalization"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item.Fil
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to files for identityGovernance
+        /// Create a new localized agreement file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

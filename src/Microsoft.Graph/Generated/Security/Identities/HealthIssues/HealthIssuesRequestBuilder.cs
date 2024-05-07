@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues {
         {
         }
         /// <summary>
-        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+        /// Get a list of health issue objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identitycontainer-list-healthissues?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="HealthIssueCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues {
             return await RequestAdapter.SendAsync<HealthIssue>(requestInfo, HealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+        /// Get a list of health issue objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues {
             return new HealthIssuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+        /// Get a list of health issue objects and their properties.
         /// </summary>
         public class HealthIssuesRequestBuilderGetQueryParameters 
         {

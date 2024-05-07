@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property sets for termStore
+        /// Delete a set object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +79,8 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of all sets available in the term store.
+        /// Read the properties and relationships of a set object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermStore.Set"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +103,8 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sets in termStore
+        /// Update the properties of a set object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-set-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermStore.Set"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +129,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Set>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Set.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sets for termStore
+        /// Delete a set object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +148,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Collection of all sets available in the term store.
+        /// Read the properties and relationships of a set object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +167,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sets in termStore
+        /// Update the properties of a set object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -202,7 +205,7 @@ namespace Microsoft.Graph.Beta.TermStore.Sets.Item {
         {
         }
         /// <summary>
-        /// Collection of all sets available in the term store.
+        /// Read the properties and relationships of a set object.
         /// </summary>
         public class SetItemRequestBuilderGetQueryParameters 
         {

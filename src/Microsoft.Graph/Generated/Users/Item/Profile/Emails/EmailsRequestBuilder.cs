@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails {
         {
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve the properties and relationships of an itemEmail object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="ItemEmailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails {
             return await RequestAdapter.SendAsync<ItemEmail>(requestInfo, ItemEmail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve the properties and relationships of an itemEmail object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails {
             return new EmailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve the properties and relationships of an itemEmail object in a user&apos;s profile.
         /// </summary>
         public class EmailsRequestBuilderGetQueryParameters 
         {

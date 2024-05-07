@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails {
         {
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve a list of itemEmail objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-emails?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemEmailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails {
             return await RequestAdapter.SendAsync<ItemEmailCollectionResponse>(requestInfo, ItemEmailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to emails for me
+        /// Create a new itemEmail object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-emails?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemEmail"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails {
             return await RequestAdapter.SendAsync<ItemEmail>(requestInfo, ItemEmail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve a list of itemEmail objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to emails for me
+        /// Create a new itemEmail object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails {
             return new EmailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve a list of itemEmail objects from a user&apos;s profile.
         /// </summary>
         public class EmailsRequestBuilderGetQueryParameters 
         {

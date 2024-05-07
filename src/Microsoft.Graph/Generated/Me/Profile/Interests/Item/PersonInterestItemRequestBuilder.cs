@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property interests for me
+        /// Deletes a personInterest object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personinterest-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides detailed information about interests the user has associated with themselves in various services.
+        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personinterest-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonInterest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property interests in me
+        /// Update the properties of a personInterest object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personinterest-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonInterest"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property interests for me
+        /// Deletes a personInterest object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Provides detailed information about interests the user has associated with themselves in various services.
+        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property interests in me
+        /// Update the properties of a personInterest object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests.Item {
         {
         }
         /// <summary>
-        /// Provides detailed information about interests the user has associated with themselves in various services.
+        /// Retrieve the properties and relationships of a personInterest object in a user&apos;s profile.
         /// </summary>
         public class PersonInterestItemRequestBuilderGetQueryParameters 
         {

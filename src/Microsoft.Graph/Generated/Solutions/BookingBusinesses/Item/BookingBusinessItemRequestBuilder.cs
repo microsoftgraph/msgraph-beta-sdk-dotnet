@@ -86,7 +86,8 @@ namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property bookingBusinesses for solutions
+        /// Delete a bookingBusiness object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item {
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property bookingBusinesses for solutions
+        /// Delete a bookingBusiness object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

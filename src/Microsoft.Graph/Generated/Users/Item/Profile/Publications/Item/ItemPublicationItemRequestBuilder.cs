@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             return await RequestAdapter.SendAsync<ItemPublication>(requestInfo, ItemPublication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property publications in users
+        /// Update the properties of an itemPublication object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempublication-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPublication"/></returns>
         /// <param name="body">The request body</param>
@@ -140,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Publications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property publications in users
+        /// Update the properties of an itemPublication object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

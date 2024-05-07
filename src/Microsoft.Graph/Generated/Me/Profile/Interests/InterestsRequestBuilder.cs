@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
         {
         }
         /// <summary>
-        /// Provides detailed information about interests the user has associated with themselves in various services.
+        /// Retrieve a list of personInterest objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-interests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonInterestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
             return await RequestAdapter.SendAsync<PersonInterestCollectionResponse>(requestInfo, PersonInterestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to interests for me
+        /// Create a new personInterest.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-interests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonInterest"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
             return await RequestAdapter.SendAsync<PersonInterest>(requestInfo, PersonInterest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides detailed information about interests the user has associated with themselves in various services.
+        /// Retrieve a list of personInterest objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to interests for me
+        /// Create a new personInterest.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Interests {
             return new InterestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Provides detailed information about interests the user has associated with themselves in various services.
+        /// Retrieve a list of personInterest objects from a user&apos;s profile.
         /// </summary>
         public class InterestsRequestBuilderGetQueryParameters 
         {

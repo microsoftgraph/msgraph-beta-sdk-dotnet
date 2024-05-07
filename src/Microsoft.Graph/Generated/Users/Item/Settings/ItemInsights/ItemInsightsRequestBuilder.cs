@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             return await RequestAdapter.SendAsync<UserInsightsSettings>(requestInfo, UserInsightsSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property itemInsights in users
+        /// Update the privacy settings for itemInsights and meeting hours insights of a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userinsightssettings-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserInsightsSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -140,7 +141,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ItemInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property itemInsights in users
+        /// Update the privacy settings for itemInsights and meeting hours insights of a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

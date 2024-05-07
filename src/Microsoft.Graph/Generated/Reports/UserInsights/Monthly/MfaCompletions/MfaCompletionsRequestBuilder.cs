@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions {
         {
         }
         /// <summary>
-        /// Insights for MFA usage on apps registered in the tenant for a specified period.
+        /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-mfacompletions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MfaCompletionMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions {
             return await RequestAdapter.SendAsync<MfaCompletionMetricCollectionResponse>(requestInfo, MfaCompletionMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Insights for MFA usage on apps registered in the tenant for a specified period.
+        /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.MfaCompletions {
             return new MfaCompletionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Insights for MFA usage on apps registered in the tenant for a specified period.
+        /// Get a list of monthly MFA completions on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         public class MfaCompletionsRequestBuilderGetQueryParameters 
         {

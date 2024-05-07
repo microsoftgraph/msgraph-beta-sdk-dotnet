@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.People {
         {
         }
         /// <summary>
-        /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
+        /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-people?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.People {
             return await RequestAdapter.SendAsync<PersonCollectionResponse>(requestInfo, PersonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
+        /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.People {
             return new PeopleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration, and business relationships. A person aggregates information from mail, contacts, and social networks.
+        /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
         /// </summary>
         public class PeopleRequestBuilderGetQueryParameters 
         {

@@ -75,7 +75,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         {
         }
         /// <summary>
-        /// Read the Microsoft Purview Information Protection labels for the user or organization.
+        /// Get a list of sensitivityLabel objects associated with a user or organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-informationprotection-list-sensitivitylabels?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SensitivityLabelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the Microsoft Purview Information Protection labels for the user or organization.
+        /// Get a list of sensitivityLabel objects associated with a user or organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +174,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             return new SensitivityLabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the Microsoft Purview Information Protection labels for the user or organization.
+        /// Get a list of sensitivityLabel objects associated with a user or organization.
         /// </summary>
         public class SensitivityLabelsRequestBuilderGetQueryParameters 
         {

@@ -2,6 +2,7 @@
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Graph.Beta.Security.Identities.HealthIssues;
+using Microsoft.Graph.Beta.Security.Identities.Sensors;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Beta.Security.Identities {
         public HealthIssuesRequestBuilder HealthIssues
         {
             get => new HealthIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.</summary>
+        public SensorsRequestBuilder Sensors
+        {
+            get => new SensorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="IdentitiesRequestBuilder"/> and sets the default values.

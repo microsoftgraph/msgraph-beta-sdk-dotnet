@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get emailThreats from security
+        /// Read the properties and relationships of an emailThreatSubmission object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-emailthreatsubmission-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EmailThreatSubmission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get emailThreats from security
+        /// Read the properties and relationships of an emailThreatSubmission object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats.Item {
         {
         }
         /// <summary>
-        /// Get emailThreats from security
+        /// Read the properties and relationships of an emailThreatSubmission object.
         /// </summary>
         public class EmailThreatSubmissionItemRequestBuilderGetQueryParameters 
         {

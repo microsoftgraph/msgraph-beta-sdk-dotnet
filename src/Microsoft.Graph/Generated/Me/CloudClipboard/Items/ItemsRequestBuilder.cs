@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.CloudClipboard.Items {
         {
         }
         /// <summary>
-        /// Represents a collection of Cloud Clipboard items.
+        /// Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn&apos;t support using another user&apos;s credentials to get a cloudClipboardItem for a user. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudclipboardroot-list-items?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudClipboardItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.CloudClipboard.Items {
             return await RequestAdapter.SendAsync<CloudClipboardItem>(requestInfo, CloudClipboardItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a collection of Cloud Clipboard items.
+        /// Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn&apos;t support using another user&apos;s credentials to get a cloudClipboardItem for a user. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.CloudClipboard.Items {
             return new ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents a collection of Cloud Clipboard items.
+        /// Get a list of the cloudClipboardItem objects and their properties for a user. This API only allows you to get cloudClipboardItem objects for: This API doesn&apos;t support using another user&apos;s credentials to get a cloudClipboardItem for a user. 
         /// </summary>
         public class ItemsRequestBuilderGetQueryParameters 
         {

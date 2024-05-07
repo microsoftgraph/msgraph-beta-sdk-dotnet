@@ -44,7 +44,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
         {
         }
         /// <summary>
-        /// Delete navigation property userSettings for deviceManagement
+        /// Delete a cloudPcUserSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcusersetting-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cloud PC user settings.
+        /// Read the properties and relationships of a cloudPcUserSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcusersetting-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcUserSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             return await RequestAdapter.SendAsync<CloudPcUserSetting>(requestInfo, CloudPcUserSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property userSettings in deviceManagement
+        /// Update the properties of a cloudPcUserSetting object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcusersetting-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcUserSetting"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             return await RequestAdapter.SendAsync<CloudPcUserSetting>(requestInfo, CloudPcUserSetting.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property userSettings for deviceManagement
+        /// Delete a cloudPcUserSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC user settings.
+        /// Read the properties and relationships of a cloudPcUserSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property userSettings in deviceManagement
+        /// Update the properties of a cloudPcUserSetting object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
         {
         }
         /// <summary>
-        /// Cloud PC user settings.
+        /// Read the properties and relationships of a cloudPcUserSetting object.
         /// </summary>
         public class CloudPcUserSettingItemRequestBuilderGetQueryParameters 
         {

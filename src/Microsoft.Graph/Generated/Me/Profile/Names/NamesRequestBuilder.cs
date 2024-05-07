@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
         {
         }
         /// <summary>
-        /// Represents the names a user has added to their profile.
+        /// Retrieve a list of personName objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-names?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonNameCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return await RequestAdapter.SendAsync<PersonNameCollectionResponse>(requestInfo, PersonNameCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to names for me
+        /// Use this API to create a new personName object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-names?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonName"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return await RequestAdapter.SendAsync<PersonName>(requestInfo, PersonName.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the names a user has added to their profile.
+        /// Retrieve a list of personName objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to names for me
+        /// Use this API to create a new personName object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Names {
             return new NamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the names a user has added to their profile.
+        /// Retrieve a list of personName objects from a user&apos;s profile.
         /// </summary>
         public class NamesRequestBuilderGetQueryParameters 
         {

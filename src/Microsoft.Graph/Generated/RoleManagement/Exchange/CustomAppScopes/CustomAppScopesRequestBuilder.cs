@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
         {
         }
         /// <summary>
-        /// Workload-specific scope object that represents the resources for which the principal has been granted access.
+        /// Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacapplication-list-customappscopes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomAppScopeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
             return await RequestAdapter.SendAsync<CustomAppScopeCollectionResponse>(requestInfo, CustomAppScopeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customAppScopes for roleManagement
+        /// Create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedrbacapplication-post-customappscope?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomAppScope"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
             return await RequestAdapter.SendAsync<CustomAppScope>(requestInfo, CustomAppScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Workload-specific scope object that represents the resources for which the principal has been granted access.
+        /// Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customAppScopes for roleManagement
+        /// Create a new customAppScope object for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Exchange.CustomAppScopes {
             return new CustomAppScopesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Workload-specific scope object that represents the resources for which the principal has been granted access.
+        /// Get a list of customAppScope objects for an RBAC provider. Currently only the Exchange Online RBAC provider is supported.
         /// </summary>
         public class CustomAppScopesRequestBuilderGetQueryParameters 
         {

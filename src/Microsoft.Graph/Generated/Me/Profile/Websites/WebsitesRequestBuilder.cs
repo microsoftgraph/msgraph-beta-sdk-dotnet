@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
         {
         }
         /// <summary>
-        /// Represents detailed information about websites associated with a user in various services.
+        /// Retrieve a list of personWebsite objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-websites?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonWebsiteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return await RequestAdapter.SendAsync<PersonWebsiteCollectionResponse>(requestInfo, PersonWebsiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to websites for me
+        /// Create a new personWebsite object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-websites?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonWebsite"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, PersonWebsite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about websites associated with a user in various services.
+        /// Retrieve a list of personWebsite objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to websites for me
+        /// Create a new personWebsite object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites {
             return new WebsitesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents detailed information about websites associated with a user in various services.
+        /// Retrieve a list of personWebsite objects from a user&apos;s profile.
         /// </summary>
         public class WebsitesRequestBuilderGetQueryParameters 
         {

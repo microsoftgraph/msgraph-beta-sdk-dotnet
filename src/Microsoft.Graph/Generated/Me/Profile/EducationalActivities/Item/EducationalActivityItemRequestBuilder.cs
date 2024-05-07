@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property educationalActivities for me
+        /// Delete an educationalActivity object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationalactivity-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+        /// Retrieve the properties and relationships of an educationalActivity object from a users profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationalactivity-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationalActivity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
             return await RequestAdapter.SendAsync<EducationalActivity>(requestInfo, EducationalActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property educationalActivities in me
+        /// Update the properties of an educationalActivity object within a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationalactivity-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationalActivity"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
             return await RequestAdapter.SendAsync<EducationalActivity>(requestInfo, EducationalActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property educationalActivities for me
+        /// Delete an educationalActivity object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+        /// Retrieve the properties and relationships of an educationalActivity object from a users profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property educationalActivities in me
+        /// Update the properties of an educationalActivity object within a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.EducationalActivities.Item {
         {
         }
         /// <summary>
-        /// Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.
+        /// Retrieve the properties and relationships of an educationalActivity object from a users profile.
         /// </summary>
         public class EducationalActivityItemRequestBuilderGetQueryParameters 
         {

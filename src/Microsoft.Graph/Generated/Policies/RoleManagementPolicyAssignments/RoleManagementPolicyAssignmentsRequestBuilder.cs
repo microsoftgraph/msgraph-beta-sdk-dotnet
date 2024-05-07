@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
         {
         }
         /// <summary>
-        /// Represents the role management policy assignments.
+        /// Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/policyroot-list-rolemanagementpolicyassignments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleManagementPolicyAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
             return await RequestAdapter.SendAsync<UnifiedRoleManagementPolicyAssignment>(requestInfo, UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the role management policy assignments.
+        /// Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
             return new RoleManagementPolicyAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the role management policy assignments.
+        /// Get the details of all role management policy assignments made in PIM for Microsoft Entra roles and PIM for groups.
         /// </summary>
         public class RoleManagementPolicyAssignmentsRequestBuilderGetQueryParameters 
         {

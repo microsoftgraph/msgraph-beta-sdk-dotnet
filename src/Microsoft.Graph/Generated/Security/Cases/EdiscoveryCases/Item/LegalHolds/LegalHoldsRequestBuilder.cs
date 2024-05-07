@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds {
         {
         }
         /// <summary>
-        /// Returns a list of case eDiscoveryHoldPolicy objects for this case.
+        /// Get a list of the ediscoveryHoldPolicy objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-list-legalholds?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EdiscoveryHoldPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds {
             return await RequestAdapter.SendAsync<EdiscoveryHoldPolicyCollectionResponse>(requestInfo, EdiscoveryHoldPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to legalHolds for security
+        /// Create a new ediscoveryHoldPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-post-legalholds?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EdiscoveryHoldPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds {
             return await RequestAdapter.SendAsync<EdiscoveryHoldPolicy>(requestInfo, EdiscoveryHoldPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of case eDiscoveryHoldPolicy objects for this case.
+        /// Get a list of the ediscoveryHoldPolicy objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to legalHolds for security
+        /// Create a new ediscoveryHoldPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds {
             return new LegalHoldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of case eDiscoveryHoldPolicy objects for this case.
+        /// Get a list of the ediscoveryHoldPolicy objects and their properties.
         /// </summary>
         public class LegalHoldsRequestBuilderGetQueryParameters 
         {

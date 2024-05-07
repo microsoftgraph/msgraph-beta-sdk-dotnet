@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
         {
         }
         /// <summary>
-        /// Get urlThreats from security
+        /// Get a list of the urlThreatSubmission objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-urlthreatsubmission-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UrlThreatSubmissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
             return await RequestAdapter.SendAsync<UrlThreatSubmissionCollectionResponse>(requestInfo, UrlThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to urlThreats for security
+        /// Create a new urlThreatSubmission object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-urlthreatsubmission-post-urlthreats?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UrlThreatSubmission"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
             return await RequestAdapter.SendAsync<UrlThreatSubmission>(requestInfo, UrlThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get urlThreats from security
+        /// Get a list of the urlThreatSubmission objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to urlThreats for security
+        /// Create a new urlThreatSubmission object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.UrlThreats {
             return new UrlThreatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get urlThreats from security
+        /// Get a list of the urlThreatSubmission objects and their properties.
         /// </summary>
         public class UrlThreatsRequestBuilderGetQueryParameters 
         {

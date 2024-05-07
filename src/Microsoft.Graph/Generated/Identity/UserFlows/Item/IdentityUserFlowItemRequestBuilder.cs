@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property userFlows for identity
+        /// Delete an existing userFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve the properties and associations for an userFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property userFlows for identity
+        /// Delete an existing userFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +127,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve the properties and associations for an userFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +187,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
         {
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve the properties and associations for an userFlow object.
         /// </summary>
         public class IdentityUserFlowItemRequestBuilderGetQueryParameters 
         {

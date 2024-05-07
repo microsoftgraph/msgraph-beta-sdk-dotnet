@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods {
         {
         }
         /// <summary>
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PasswordAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods {
             return await RequestAdapter.SendAsync<PasswordAuthenticationMethod>(requestInfo, PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordMethods {
             return new PasswordMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the details of the password authentication method registered to a user for authentication.
+        /// Retrieve a list of password authentication method objects. This API returns exactly one object, as a user can have exactly one password.
         /// </summary>
         public class PasswordMethodsRequestBuilderGetQueryParameters 
         {

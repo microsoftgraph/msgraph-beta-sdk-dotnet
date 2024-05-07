@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.MeetingAttendanceReport {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get meetingAttendanceReport from me
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. Each time an online meeting ends, an attendance report is generated for that session.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingAttendanceReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.MeetingAttendanceReport {
             return requestInfo;
         }
         /// <summary>
-        /// Get meetingAttendanceReport from me
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. Each time an online meeting ends, an attendance report is generated for that session.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.MeetingAttendanceReport {
         {
         }
         /// <summary>
-        /// Get meetingAttendanceReport from me
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. Each time an online meeting ends, an attendance report is generated for that session.
         /// </summary>
         public class MeetingAttendanceReportRequestBuilderGetQueryParameters 
         {

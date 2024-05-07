@@ -72,7 +72,8 @@ namespace Microsoft.Graph.Beta.Admin.People {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a setting to control people-related admin settings in the tenant.
+        /// Retrieve the properties and relationships of a peopleAdminSettings object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/peopleadminsettings-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PeopleAdminSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.Admin.People {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a setting to control people-related admin settings in the tenant.
+        /// Retrieve the properties and relationships of a peopleAdminSettings object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Beta.Admin.People {
         {
         }
         /// <summary>
-        /// Represents a setting to control people-related admin settings in the tenant.
+        /// Retrieve the properties and relationships of a peopleAdminSettings object.
         /// </summary>
         public class PeopleRequestBuilderGetQueryParameters 
         {

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Front-line service plans for a Cloud PC.
+        /// Get the properties and relationships of a cloudPcFrontLineServicePlan object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcfrontlineserviceplan-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcFrontLineServicePlan"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
             return requestInfo;
         }
         /// <summary>
-        /// Front-line service plans for a Cloud PC.
+        /// Get the properties and relationships of a cloudPcFrontLineServicePlan object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.FrontLineService
         {
         }
         /// <summary>
-        /// Front-line service plans for a Cloud PC.
+        /// Get the properties and relationships of a cloudPcFrontLineServicePlan object.
         /// </summary>
         public class CloudPcFrontLineServicePlanItemRequestBuilderGetQueryParameters 
         {

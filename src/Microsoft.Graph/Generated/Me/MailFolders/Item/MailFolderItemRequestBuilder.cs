@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MailFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}{?%24expand,%24select,includeHiddenFolders*}", pathParameters)
+        public MailFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}{?%24expand,%24select}", pathParameters)
         {
         }
         /// <summary>
@@ -64,11 +64,12 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MailFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}{?%24expand,%24select,includeHiddenFolders*}", rawUrl)
+        public MailFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/mailFolders/{mailFolder%2Did}{?%24expand,%24select}", rawUrl)
         {
         }
         /// <summary>
-        /// Delete navigation property mailFolders for me
+        /// Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +91,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user&apos;s mail folders. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a message folder object. The following list shows the two existing scenarios where an app can get another user&apos;s mail folder:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MailFolder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +115,8 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property mailFolders in me
+        /// Update the properties of mailFolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -138,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return await RequestAdapter.SendAsync<MailFolder>(requestInfo, MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mailFolders for me
+        /// Delete the specified mailFolder. The folder can be a mailSearchFolder. You can specify a mail folder by its folder ID, or by its well-known folder name, if one exists.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +160,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s mail folders. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a message folder object. The following list shows the two existing scenarios where an app can get another user&apos;s mail folder:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -176,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property mailFolders in me
+        /// Update the properties of mailFolder object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -214,7 +217,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
         {
         }
         /// <summary>
-        /// The user&apos;s mail folders. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a message folder object. The following list shows the two existing scenarios where an app can get another user&apos;s mail folder:
         /// </summary>
         public class MailFolderItemRequestBuilderGetQueryParameters 
         {
@@ -227,16 +230,6 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
-#endif
-            /// <summary>Include Hidden Folders</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("includeHiddenFolders")]
-            public string? IncludeHiddenFolders { get; set; }
-#nullable restore
-#else
-            [QueryParameter("includeHiddenFolders")]
-            public string IncludeHiddenFolders { get; set; }
 #endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

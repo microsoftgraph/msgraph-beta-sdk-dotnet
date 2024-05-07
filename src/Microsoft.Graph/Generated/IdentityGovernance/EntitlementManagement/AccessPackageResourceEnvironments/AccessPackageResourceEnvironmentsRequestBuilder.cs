@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// A reference to the geolocation environment in which a resource is located.
+        /// Retrieve a list of accessPackageResourceEnvironment objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-list-accesspackageresourceenvironment?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageResourceEnvironmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A reference to the geolocation environment in which a resource is located.
+        /// Retrieve a list of accessPackageResourceEnvironment objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new AccessPackageResourceEnvironmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A reference to the geolocation environment in which a resource is located.
+        /// Retrieve a list of accessPackageResourceEnvironment objects and their properties.
         /// </summary>
         public class AccessPackageResourceEnvironmentsRequestBuilderGetQueryParameters 
         {

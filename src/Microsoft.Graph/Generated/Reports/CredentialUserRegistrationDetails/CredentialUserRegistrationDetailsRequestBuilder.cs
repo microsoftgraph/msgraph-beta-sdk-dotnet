@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
         {
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-credentialuserregistrationdetails?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CredentialUserRegistrationDetailsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +104,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails>(requestInfo, Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails {
             return new CredentialUserRegistrationDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Details of the usage of self-service password reset and multifactor authentication (MFA) for all registered users.
+        /// Get a list of credentialUserRegistrationDetails objects for a given tenant.
         /// </summary>
         public class CredentialUserRegistrationDetailsRequestBuilderGetQueryParameters 
         {

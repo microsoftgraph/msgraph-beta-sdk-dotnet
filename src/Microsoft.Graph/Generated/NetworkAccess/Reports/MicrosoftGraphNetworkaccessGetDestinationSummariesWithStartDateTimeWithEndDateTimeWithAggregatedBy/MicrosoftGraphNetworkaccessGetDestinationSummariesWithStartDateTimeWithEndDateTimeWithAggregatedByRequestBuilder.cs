@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
         }
         /// <summary>
-        /// Invoke function getDestinationSummaries
+        /// Get counts of the visits to the top destination aggregations.
         /// </summary>
         /// <returns>A <see cref="GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse>(requestInfo, GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDestinationSummaries
+        /// Get counts of the visits to the top destination aggregations.
         /// </summary>
         /// <returns>A <see cref="GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return await RequestAdapter.SendAsync<GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse>(requestInfo, GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getDestinationSummaries
+        /// Get counts of the visits to the top destination aggregations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
             return new MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getDestinationSummaries
+        /// Get counts of the visits to the top destination aggregations.
         /// </summary>
         public class MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByRequestBuilderGetQueryParameters 
         {

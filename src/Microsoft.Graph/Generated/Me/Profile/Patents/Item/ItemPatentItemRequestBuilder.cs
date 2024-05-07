@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents patents that a user has added to their profile.
+        /// Read the properties and relationships of an itemPatent object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itempatent-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPatent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents patents that a user has added to their profile.
+        /// Read the properties and relationships of an itemPatent object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents.Item {
         {
         }
         /// <summary>
-        /// Represents patents that a user has added to their profile.
+        /// Read the properties and relationships of an itemPatent object.
         /// </summary>
         public class ItemPatentItemRequestBuilderGetQueryParameters 
         {

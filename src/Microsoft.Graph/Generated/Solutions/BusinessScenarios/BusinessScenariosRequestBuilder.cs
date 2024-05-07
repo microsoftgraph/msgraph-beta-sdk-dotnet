@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
         {
         }
         /// <summary>
-        /// Get businessScenarios from solutions
+        /// Get a list of all businessScenario objects in an organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-list-businessscenarios?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BusinessScenarioCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return await RequestAdapter.SendAsync<BusinessScenarioCollectionResponse>(requestInfo, BusinessScenarioCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to businessScenarios for solutions
+        /// Create a new businessScenario object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/solutionsroot-post-businessscenarios?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BusinessScenario"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get businessScenarios from solutions
+        /// Get a list of all businessScenario objects in an organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to businessScenarios for solutions
+        /// Create a new businessScenario object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios {
             return new BusinessScenariosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get businessScenarios from solutions
+        /// Get a list of all businessScenario objects in an organization.
         /// </summary>
         public class BusinessScenariosRequestBuilderGetQueryParameters 
         {

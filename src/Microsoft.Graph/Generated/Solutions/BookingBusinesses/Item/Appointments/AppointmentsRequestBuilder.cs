@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item.Appointments {
         {
         }
         /// <summary>
-        /// All the appointments of this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
         /// </summary>
         /// <returns>A <see cref="BookingAppointmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item.Appointments {
             return await RequestAdapter.SendAsync<BookingAppointment>(requestInfo, BookingAppointment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All the appointments of this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Solutions.BookingBusinesses.Item.Appointments {
             return new AppointmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All the appointments of this business. Read-only. Nullable.
+        /// Get the properties and relationships of a bookingAppointment object in the specified bookingBusiness. The start and end properties are always returned in UTC.
         /// </summary>
         public class AppointmentsRequestBuilderGetQueryParameters 
         {

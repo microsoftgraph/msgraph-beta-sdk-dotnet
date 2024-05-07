@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Resource that enables administrators to manage directory-level access review policies in their tenant.
+        /// Read the properties and relationships of an accessReviewPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property policy in identityGovernance
+        /// Update the properties of an accessReviewPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
             return requestInfo;
         }
         /// <summary>
-        /// Resource that enables administrators to manage directory-level access review policies in their tenant.
+        /// Read the properties and relationships of an accessReviewPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property policy in identityGovernance
+        /// Update the properties of an accessReviewPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Policy {
         {
         }
         /// <summary>
-        /// Resource that enables administrators to manage directory-level access review policies in their tenant.
+        /// Read the properties and relationships of an accessReviewPolicy object.
         /// </summary>
         public class PolicyRequestBuilderGetQueryParameters 
         {

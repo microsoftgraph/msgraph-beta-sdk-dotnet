@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
         {
         }
         /// <summary>
-        /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+        /// Get a list of the tenantGroup objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantgroups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
             return await RequestAdapter.SendAsync<TenantGroup>(requestInfo, TenantGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+        /// Get a list of the tenantGroup objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups {
             return new TenantGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of a logical grouping of managed tenants used by the multi-tenant management platform.
+        /// Get a list of the tenantGroup objects and their properties.
         /// </summary>
         public class TenantGroupsRequestBuilderGetQueryParameters 
         {

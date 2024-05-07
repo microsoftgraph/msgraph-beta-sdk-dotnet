@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones {
         {
         }
         /// <summary>
-        /// Represents detailed information about phone numbers associated with a user in various services.
+        /// Retrieve a list of itemPhone objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-phones?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPhoneCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones {
             return await RequestAdapter.SendAsync<ItemPhoneCollectionResponse>(requestInfo, ItemPhoneCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to phones for me
+        /// Use this API to create a new itemPhone object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-phones?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPhone"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones {
             return await RequestAdapter.SendAsync<ItemPhone>(requestInfo, ItemPhone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about phone numbers associated with a user in various services.
+        /// Retrieve a list of itemPhone objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to phones for me
+        /// Use this API to create a new itemPhone object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones {
             return new PhonesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents detailed information about phone numbers associated with a user in various services.
+        /// Retrieve a list of itemPhone objects from a user&apos;s profile.
         /// </summary>
         public class PhonesRequestBuilderGetQueryParameters 
         {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Print.Printers {
         {
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the list of printers that are registered in the tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/print-list-printers?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrinterCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Printer>(requestInfo, Microsoft.Graph.Beta.Models.Printer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the list of printers that are registered in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Print.Printers {
             return new PrintersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of printers registered in the tenant.
+        /// Retrieve the list of printers that are registered in the tenant.
         /// </summary>
         public class PrintersRequestBuilderGetQueryParameters 
         {

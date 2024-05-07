@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup.Ref {
             return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the ref of navigation property connectorGroup in applications
+        /// Assign a connectorGroup to an application.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectorgroup-post-applications?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.ConnectorGroup.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Update the ref of navigation property connectorGroup in applications
+        /// Assign a connectorGroup to an application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

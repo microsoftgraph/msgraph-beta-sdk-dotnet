@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property certifications for users
+        /// Deletes a personCertification object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personcertification-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications.Item {
             return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property certifications in users
+        /// Update the properties of a personCertification object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personcertification-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonCertification"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications.Item {
             return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property certifications for users
+        /// Deletes a personCertification object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Certifications.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property certifications in users
+        /// Update the properties of a personCertification object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

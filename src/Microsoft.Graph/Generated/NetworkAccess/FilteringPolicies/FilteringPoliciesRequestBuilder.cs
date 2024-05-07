@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies {
         {
         }
         /// <summary>
-        /// A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+        /// Get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-filteringpolicies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FilteringPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies {
             return await RequestAdapter.SendAsync<FilteringPolicy>(requestInfo, FilteringPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+        /// Get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies {
             return new FilteringPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+        /// Get a list of the microsoft.graph.networkaccess.filteringPolicy objects and their properties.
         /// </summary>
         public class FilteringPoliciesRequestBuilderGetQueryParameters 
         {

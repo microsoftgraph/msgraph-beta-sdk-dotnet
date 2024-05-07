@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
     public class SecurityActionItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Provides operations to call the cancelSecurityAction method.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public CancelSecurityActionRequestBuilder CancelSecurityAction
         {
             get => new CancelSecurityActionRequestBuilder(PathParameters, RequestAdapter);
@@ -43,6 +44,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,12 +62,14 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get securityActions from security
+        /// Retrieve the properties and relationships of a securityAction object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityaction-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SecurityAction"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<SecurityAction?> GetAsync(Action<RequestConfiguration<SecurityActionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -90,6 +94,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<SecurityAction?> PatchAsync(SecurityAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,6 +117,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -127,10 +133,11 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get securityActions from security
+        /// Retrieve the properties and relationships of a securityAction object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityActionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -151,6 +158,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(SecurityAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -172,6 +180,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         /// </summary>
         /// <returns>A <see cref="SecurityActionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public SecurityActionItemRequestBuilder WithUrl(string rawUrl)
         {
             return new SecurityActionItemRequestBuilder(rawUrl, RequestAdapter);
@@ -184,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
         {
         }
         /// <summary>
-        /// Get securityActions from security
+        /// Retrieve the properties and relationships of a securityAction object.
         /// </summary>
         public class SecurityActionItemRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
         {
         }
         /// <summary>
-        /// The collection of baseline management intents across managed tenants.
+        /// Get a list of the managementIntent objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementintents?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ManagementIntentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
             return await RequestAdapter.SendAsync<ManagementIntent>(requestInfo, ManagementIntent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of baseline management intents across managed tenants.
+        /// Get a list of the managementIntent objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementInte
             return new ManagementIntentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of baseline management intents across managed tenants.
+        /// Get a list of the managementIntent objects and their properties.
         /// </summary>
         public class ManagementIntentsRequestBuilderGetQueryParameters 
         {

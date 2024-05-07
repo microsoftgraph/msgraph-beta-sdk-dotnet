@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByPrinter {
         }
         /// <summary>
         /// Retrieve a list of monthly print usage summaries, grouped by printer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyprinter?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrintUsageByPrinterCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
