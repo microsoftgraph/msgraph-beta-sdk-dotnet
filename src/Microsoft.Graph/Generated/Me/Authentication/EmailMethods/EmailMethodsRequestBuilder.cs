@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods {
         {
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-emailmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EmailAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethod>(requestInfo, EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.EmailMethods {
             return new EmailMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
         /// </summary>
         public class EmailMethodsRequestBuilderGetQueryParameters 
         {

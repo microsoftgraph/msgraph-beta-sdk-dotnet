@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles {
         {
         }
         /// <summary>
-        /// A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+        /// Retrieve the properties of all inboundSharedUserProfiles.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-inboundshareduserprofiles?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InboundSharedUserProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles {
             return await RequestAdapter.SendAsync<InboundSharedUserProfile>(requestInfo, InboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+        /// Retrieve the properties of all inboundSharedUserProfiles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.InboundSharedUserProfiles {
             return new InboundSharedUserProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.
+        /// Retrieve the properties of all inboundSharedUserProfiles.
         /// </summary>
         public class InboundSharedUserProfilesRequestBuilderGetQueryParameters 
         {

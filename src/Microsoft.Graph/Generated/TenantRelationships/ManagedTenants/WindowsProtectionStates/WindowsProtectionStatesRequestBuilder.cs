@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
         {
         }
         /// <summary>
-        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+        /// Get a list of the windowsProtectionState objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-windowsprotectionstates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WindowsProtectionStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.WindowsProtectionState>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+        /// Get a list of the windowsProtectionState objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             return new WindowsProtectionStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.
+        /// Get a list of the windowsProtectionState objects and their properties.
         /// </summary>
         public class WindowsProtectionStatesRequestBuilderGetQueryParameters 
         {

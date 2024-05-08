@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Programs.Item.Controls {
         {
         }
         /// <summary>
-        /// Controls associated with the program.
+        /// In the Microsoft Entra access reviews feature, list all the programControl objects, linked to a particular program.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/program-listcontrols?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProgramControlCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Programs.Item.Controls {
             return await RequestAdapter.SendAsync<ProgramControl>(requestInfo, ProgramControl.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Controls associated with the program.
+        /// In the Microsoft Entra access reviews feature, list all the programControl objects, linked to a particular program.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Programs.Item.Controls {
             return new ControlsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Controls associated with the program.
+        /// In the Microsoft Entra access reviews feature, list all the programControl objects, linked to a particular program.
         /// </summary>
         public class ControlsRequestBuilderGetQueryParameters 
         {

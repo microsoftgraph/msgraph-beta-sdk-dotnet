@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         {
         }
         /// <summary>
-        /// Get identityProviders from identity
+        /// Get the identity providers that are defined for an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object type.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onauthenticationmethodloadstartexternalusersselfservicesignup-list-identityproviders?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityProviderBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get identityProviders from identity
+        /// Get the identity providers that are defined for an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return new IdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get identityProviders from identity
+        /// Get the identity providers that are defined for an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object type.
         /// </summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters 
         {

@@ -39,5 +39,9 @@ namespace Microsoft.Graph.Beta.Models {
         #pragma warning disable CS1591
         AuthenticationTransfer = 128,
         #pragma warning restore CS1591
+        [EnumMember(Value = "nativeAuth")]
+        #pragma warning disable CS1591
+        NativeAuth = 256,
+        #pragma warning restore CS1591
     }
 }

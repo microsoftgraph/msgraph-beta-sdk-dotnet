@@ -8,6 +8,7 @@ using Microsoft.Graph.Beta.ServicePrincipals.Item.AppRoleAssignments;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CheckMemberGroups;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CheckMemberObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsMappingPolicies;
+using Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatePasswordSingleSignOnCredentials;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects;
 using Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassifications;
@@ -79,6 +80,11 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
         public ClaimsMappingPoliciesRequestBuilder ClaimsMappingPolicies
         {
             get => new ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the claimsPolicy property of the microsoft.graph.servicePrincipal entity.</summary>
+        public ClaimsPolicyRequestBuilder ClaimsPolicy
+        {
+            get => new ClaimsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.</summary>
         public CreatedObjectsRequestBuilder CreatedObjects

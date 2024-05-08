@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByUser {
         }
         /// <summary>
         /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-dailyprintusagebyuser?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrintUsageByUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

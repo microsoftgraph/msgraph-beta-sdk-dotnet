@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
         {
         }
         /// <summary>
-        /// Each forwarding profile associated with a branch site is specified. Supports $expand.
+        /// Retrieve a list of traffic forwarding profiles associated with a branch.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-forwardingprofiles?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ForwardingProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +104,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
             return await RequestAdapter.SendAsync<ForwardingProfile>(requestInfo, ForwardingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Each forwarding profile associated with a branch site is specified. Supports $expand.
+        /// Retrieve a list of traffic forwarding profiles associated with a branch.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.Forwardi
             return new ForwardingProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Each forwarding profile associated with a branch site is specified. Supports $expand.
+        /// Retrieve a list of traffic forwarding profiles associated with a branch.
         /// </summary>
         public class ForwardingProfilesRequestBuilderGetQueryParameters 
         {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified plans
+        /// Get a list of plannerPlan objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-list-plans?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlanCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to plans for planner
+        /// Create a new plannerPlan object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planner-post-plans?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerPlan"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
             return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified plans
+        /// Get a list of plannerPlan objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to plans for planner
+        /// Create a new plannerPlan object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans {
             return new PlansRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns a collection of the specified plans
+        /// Get a list of plannerPlan objects.
         /// </summary>
         public class PlansRequestBuilderGetQueryParameters 
         {

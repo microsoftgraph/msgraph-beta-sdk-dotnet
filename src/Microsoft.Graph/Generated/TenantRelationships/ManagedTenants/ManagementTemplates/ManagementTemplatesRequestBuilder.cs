@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         {
         }
         /// <summary>
-        /// The collection of baseline management templates across managed tenants.
+        /// Get a list of the managementTemplate objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-managementtemplates?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ManagementTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(requestInfo, Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of baseline management templates across managed tenants.
+        /// Get a list of the managementTemplate objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             return new ManagementTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of baseline management templates across managed tenants.
+        /// Get a list of the managementTemplate objects and their properties.
         /// </summary>
         public class ManagementTemplatesRequestBuilderGetQueryParameters 
         {

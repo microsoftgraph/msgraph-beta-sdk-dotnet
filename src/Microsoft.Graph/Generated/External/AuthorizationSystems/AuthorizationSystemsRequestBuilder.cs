@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems {
         {
         }
         /// <summary>
-        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+        /// List the authorizationSystem objects onboarded to Permissions Management and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-external-list-authorizationsystems?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AuthorizationSystemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthorizationSystem>(requestInfo, Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+        /// List the authorizationSystem objects onboarded to Permissions Management and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.External.AuthorizationSystems {
             return new AuthorizationSystemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.
+        /// List the authorizationSystem objects onboarded to Permissions Management and their properties.
         /// </summary>
         public class AuthorizationSystemsRequestBuilderGetQueryParameters 
         {

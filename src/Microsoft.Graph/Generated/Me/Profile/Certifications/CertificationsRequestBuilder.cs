@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications {
         {
         }
         /// <summary>
-        /// Represents the details of certifications associated with a person.
+        /// Retrieve a list of personCertification objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-certifications?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonCertificationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications {
             return await RequestAdapter.SendAsync<PersonCertificationCollectionResponse>(requestInfo, PersonCertificationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to certifications for me
+        /// Create a new personCertification object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-certifications?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonCertification"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications {
             return await RequestAdapter.SendAsync<PersonCertification>(requestInfo, PersonCertification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the details of certifications associated with a person.
+        /// Retrieve a list of personCertification objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to certifications for me
+        /// Create a new personCertification object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Certifications {
             return new CertificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the details of certifications associated with a person.
+        /// Retrieve a list of personCertification objects from a user&apos;s profile.
         /// </summary>
         public class CertificationsRequestBuilderGetQueryParameters 
         {

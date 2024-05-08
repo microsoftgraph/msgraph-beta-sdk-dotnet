@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods {
         {
         }
         /// <summary>
-        /// Get softwareOathMethods from me
+        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-softwareoathmethods?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SoftwareOathAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods {
             return await RequestAdapter.SendAsync<SoftwareOathAuthenticationMethodCollectionResponse>(requestInfo, SoftwareOathAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get softwareOathMethods from me
+        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SoftwareOathMethods {
             return new SoftwareOathMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get softwareOathMethods from me
+        /// Retrieve a list of a user&apos;s software OATH token authentication method objects and their properties.
         /// </summary>
         public class SoftwareOathMethodsRequestBuilderGetQueryParameters 
         {

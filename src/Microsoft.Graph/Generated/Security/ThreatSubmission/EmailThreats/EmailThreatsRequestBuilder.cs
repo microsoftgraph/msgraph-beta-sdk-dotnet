@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
         {
         }
         /// <summary>
-        /// Get emailThreats from security
+        /// Get a list of the emailThreatSubmission objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-emailthreatsubmission-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EmailThreatSubmissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
             return await RequestAdapter.SendAsync<EmailThreatSubmissionCollectionResponse>(requestInfo, EmailThreatSubmissionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to emailThreats for security
+        /// Create a new emailThreatSubmission object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-emailthreatsubmission-post-emailthreats?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EmailThreatSubmission"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
             return await RequestAdapter.SendAsync<EmailThreatSubmission>(requestInfo, EmailThreatSubmission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get emailThreats from security
+        /// Get a list of the emailThreatSubmission objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to emailThreats for security
+        /// Create a new emailThreatSubmission object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreats {
             return new EmailThreatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get emailThreats from security
+        /// Get a list of the emailThreatSubmission objects and their properties.
         /// </summary>
         public class EmailThreatsRequestBuilderGetQueryParameters 
         {

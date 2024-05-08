@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
         {
         }
         /// <summary>
-        /// Delete navigation property tenants for tenantRelationships
+        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-delete-tenants?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// Get a tenant and its properties in the multi-tenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationmember-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MultiTenantOrganizationMember"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return await RequestAdapter.SendAsync<MultiTenantOrganizationMember>(requestInfo, MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tenants for tenantRelationships
+        /// Remove a tenant from a multitenant organization. A tenant can be removed in the following scenarios: To allow for asynchronous processing, you must wait for up to 2 hours before removal of a tenant is completed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
             return requestInfo;
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.MultiTenantOrganization.Tenan
         {
         }
         /// <summary>
-        /// Defines tenants added to a multitenant organization.
+        /// Get a tenant and its properties in the multi-tenant organization.
         /// </summary>
         public class MultiTenantOrganizationMemberItemRequestBuilderGetQueryParameters 
         {

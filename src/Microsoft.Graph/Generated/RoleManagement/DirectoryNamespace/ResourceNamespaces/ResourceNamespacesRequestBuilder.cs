@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
         {
         }
         /// <summary>
-        /// Get resourceNamespaces from roleManagement
+        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRbacResourceNamespaceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
             return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get resourceNamespaces from roleManagement
+        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.ResourceNamespa
             return new ResourceNamespacesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get resourceNamespaces from roleManagement
+        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
         /// </summary>
         public class ResourceNamespacesRequestBuilderGetQueryParameters 
         {

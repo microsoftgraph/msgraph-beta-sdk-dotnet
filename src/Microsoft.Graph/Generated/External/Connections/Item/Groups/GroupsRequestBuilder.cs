@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups {
             return await RequestAdapter.SendAsync<ExternalGroupCollectionResponse>(requestInfo, ExternalGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to groups for external
+        /// Create a new externalGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-post-groups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ExternalGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to groups for external
+        /// Create a new externalGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

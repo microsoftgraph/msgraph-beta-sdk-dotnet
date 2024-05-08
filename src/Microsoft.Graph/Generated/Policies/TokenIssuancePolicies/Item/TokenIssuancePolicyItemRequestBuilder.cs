@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property tokenIssuancePolicies for policies
+        /// Delete a tokenIssuancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
+        /// Retrieve the properties and relationships of a tokenIssuancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TokenIssuancePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tokenIssuancePolicies in policies
+        /// Update the properties of a tokenIssuancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tokenissuancepolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TokenIssuancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return await RequestAdapter.SendAsync<TokenIssuancePolicy>(requestInfo, TokenIssuancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tokenIssuancePolicies for policies
+        /// Delete a tokenIssuancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
+        /// Retrieve the properties and relationships of a tokenIssuancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tokenIssuancePolicies in policies
+        /// Update the properties of a tokenIssuancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.Item {
         {
         }
         /// <summary>
-        /// The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.
+        /// Retrieve the properties and relationships of a tokenIssuancePolicy object.
         /// </summary>
         public class TokenIssuancePolicyItemRequestBuilderGetQueryParameters 
         {

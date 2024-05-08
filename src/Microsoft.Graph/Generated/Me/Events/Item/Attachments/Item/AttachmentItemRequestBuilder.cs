@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property attachments for me
+        /// Delete an attachment from a user calendar event, message, Outlook task, or post.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Attachment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item {
             return await RequestAdapter.SendAsync<Attachment>(requestInfo, Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property attachments for me
+        /// Delete an attachment from a user calendar event, message, Outlook task, or post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +98,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.Events.Item.Attachments.Item {
         {
         }
         /// <summary>
-        /// The collection of FileAttachment, ItemAttachment, and referenceAttachment attachments for the event. Navigation property. Read-only. Nullable.
+        /// Read the properties, relationships, or raw contents of an attachment that is attached to a user event, message, Outlook task, or group post. An attachment can be one of the following types: All these types of attachments are derived from the attachment resource.
         /// </summary>
         public class AttachmentItemRequestBuilderGetQueryParameters 
         {

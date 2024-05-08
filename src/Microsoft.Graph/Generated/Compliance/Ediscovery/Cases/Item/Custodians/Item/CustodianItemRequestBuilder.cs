@@ -118,7 +118,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of case custodian objects for this case.  Nullable.
+        /// Read the properties and relationships of a custodian object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-custodian-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.Custodian"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -142,7 +143,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item 
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.Custodian>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.Custodian.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property custodians in compliance
+        /// Update the properties of a custodian object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-custodian-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.Custodian"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +190,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of case custodian objects for this case.  Nullable.
+        /// Read the properties and relationships of a custodian object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -208,7 +210,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property custodians in compliance
+        /// Update the properties of a custodian object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -248,7 +250,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Custodians.Item 
         {
         }
         /// <summary>
-        /// Returns a list of case custodian objects for this case.  Nullable.
+        /// Read the properties and relationships of a custodian object.
         /// </summary>
         public class CustodianItemRequestBuilderGetQueryParameters 
         {

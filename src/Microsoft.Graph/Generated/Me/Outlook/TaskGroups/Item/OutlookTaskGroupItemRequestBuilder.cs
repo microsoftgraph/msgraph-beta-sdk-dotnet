@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get taskGroups from me
+        /// Get the properties and relationships of the specified Outlook task group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskgroup-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OutlookTaskGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +133,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get taskGroups from me
+        /// Get the properties and relationships of the specified Outlook task group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -192,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item {
         {
         }
         /// <summary>
-        /// Get taskGroups from me
+        /// Get the properties and relationships of the specified Outlook task group.
         /// </summary>
         public class OutlookTaskGroupItemRequestBuilderGetQueryParameters 
         {

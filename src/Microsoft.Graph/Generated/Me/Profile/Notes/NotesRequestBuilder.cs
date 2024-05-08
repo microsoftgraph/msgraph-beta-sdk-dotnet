@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
         {
         }
         /// <summary>
-        /// Represents notes that a user has added to their profile.
+        /// Retrieve a list of personAnnotation objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-notes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAnnotationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
             return await RequestAdapter.SendAsync<PersonAnnotationCollectionResponse>(requestInfo, PersonAnnotationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to notes for me
+        /// Create a new personAnnotation object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-notes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAnnotation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
             return await RequestAdapter.SendAsync<PersonAnnotation>(requestInfo, PersonAnnotation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents notes that a user has added to their profile.
+        /// Retrieve a list of personAnnotation objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to notes for me
+        /// Create a new personAnnotation object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Notes {
             return new NotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents notes that a user has added to their profile.
+        /// Retrieve a list of personAnnotation objects from a user&apos;s profile.
         /// </summary>
         public class NotesRequestBuilderGetQueryParameters 
         {

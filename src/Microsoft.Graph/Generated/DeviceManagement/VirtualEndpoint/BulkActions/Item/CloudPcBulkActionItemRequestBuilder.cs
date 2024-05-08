@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Bulk actions applied to a Cloud PC.
+        /// Read the properties and relationships of a cloudPcBulkAction object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcbulkaction-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcBulkAction"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Bulk actions applied to a Cloud PC.
+        /// Read the properties and relationships of a cloudPcBulkAction object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.BulkActions.Item
         {
         }
         /// <summary>
-        /// Bulk actions applied to a Cloud PC.
+        /// Read the properties and relationships of a cloudPcBulkAction object.
         /// </summary>
         public class CloudPcBulkActionItemRequestBuilderGetQueryParameters 
         {

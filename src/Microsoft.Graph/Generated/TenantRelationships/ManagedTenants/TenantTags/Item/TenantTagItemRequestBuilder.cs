@@ -44,7 +44,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         {
         }
         /// <summary>
-        /// Delete navigation property tenantTags for tenantRelationships
+        /// Delete a tenantTag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -66,7 +67,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of tenant tags across managed tenants.
+        /// Read the properties and relationships of a tenantTag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantTag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +91,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             return await RequestAdapter.SendAsync<TenantTag>(requestInfo, TenantTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tenantTags in tenantRelationships
+        /// Update the properties of a tenantTag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-tenanttag-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantTag"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             return await RequestAdapter.SendAsync<TenantTag>(requestInfo, TenantTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property tenantTags for tenantRelationships
+        /// Delete a tenantTag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             return requestInfo;
         }
         /// <summary>
-        /// The collection of tenant tags across managed tenants.
+        /// Read the properties and relationships of a tenantTag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +155,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tenantTags in tenantRelationships
+        /// Update the properties of a tenantTag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags.Ite
         {
         }
         /// <summary>
-        /// The collection of tenant tags across managed tenants.
+        /// Read the properties and relationships of a tenantTag object.
         /// </summary>
         public class TenantTagItemRequestBuilderGetQueryParameters 
         {

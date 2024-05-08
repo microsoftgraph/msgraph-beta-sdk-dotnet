@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents {
         {
         }
         /// <summary>
-        /// Represents patents that a user has added to their profile.
+        /// Retrieve a list of itemPatent objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-patents?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPatentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents {
             return await RequestAdapter.SendAsync<ItemPatentCollectionResponse>(requestInfo, ItemPatentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to patents for me
+        /// Create a new itemPatent object within a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-patents?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPatent"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents {
             return await RequestAdapter.SendAsync<ItemPatent>(requestInfo, ItemPatent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents patents that a user has added to their profile.
+        /// Retrieve a list of itemPatent objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to patents for me
+        /// Create a new itemPatent object within a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Patents {
             return new PatentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents patents that a user has added to their profile.
+        /// Retrieve a list of itemPatent objects from a user&apos;s profile.
         /// </summary>
         public class PatentsRequestBuilderGetQueryParameters 
         {

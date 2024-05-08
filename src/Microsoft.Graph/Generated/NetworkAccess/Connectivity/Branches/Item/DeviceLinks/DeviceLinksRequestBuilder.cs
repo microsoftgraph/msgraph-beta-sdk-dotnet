@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
         {
         }
         /// <summary>
-        /// Each unique CPE device associated with a branch is specified. Supports $expand.
+        /// Retrieve a list of device links associated with a specific branch.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-list-devicelinks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeviceLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return await RequestAdapter.SendAsync<DeviceLinkCollectionResponse>(requestInfo, DeviceLinkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to deviceLinks for networkAccess
+        /// Create a branch site with associated device links.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-branchsite-post-devicelinks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeviceLink"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +105,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return await RequestAdapter.SendAsync<DeviceLink>(requestInfo, DeviceLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Each unique CPE device associated with a branch is specified. Supports $expand.
+        /// Retrieve a list of device links associated with a specific branch.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to deviceLinks for networkAccess
+        /// Create a branch site with associated device links.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +158,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.Branches.Item.DeviceLi
             return new DeviceLinksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Each unique CPE device associated with a branch is specified. Supports $expand.
+        /// Retrieve a list of device links associated with a specific branch.
         /// </summary>
         public class DeviceLinksRequestBuilderGetQueryParameters 
         {

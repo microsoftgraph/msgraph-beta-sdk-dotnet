@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The policy that contains directory-level access review settings.
+        /// Read the properties and relationships of an accessReviewPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewpolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property accessReviewPolicy in policies
+        /// Update the properties of an accessReviewPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewpolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The policy that contains directory-level access review settings.
+        /// Read the properties and relationships of an accessReviewPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property accessReviewPolicy in policies
+        /// Update the properties of an accessReviewPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Policies.AccessReviewPolicy {
         {
         }
         /// <summary>
-        /// The policy that contains directory-level access review settings.
+        /// Read the properties and relationships of an accessReviewPolicy object.
         /// </summary>
         public class AccessReviewPolicyRequestBuilderGetQueryParameters 
         {

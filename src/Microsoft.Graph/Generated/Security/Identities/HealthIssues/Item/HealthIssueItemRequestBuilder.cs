@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+        /// Read the properties and relationships of a healthIssue object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-healthissue-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="HealthIssue"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues.Item {
             return await RequestAdapter.SendAsync<HealthIssue>(requestInfo, HealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property healthIssues in security
+        /// Update the properties of a healthIssue object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-healthissue-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="HealthIssue"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+        /// Read the properties and relationships of a healthIssue object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property healthIssues in security
+        /// Update the properties of a healthIssue object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Security.Identities.HealthIssues.Item {
         {
         }
         /// <summary>
-        /// Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.
+        /// Read the properties and relationships of a healthIssue object.
         /// </summary>
         public class HealthIssueItemRequestBuilderGetQueryParameters 
         {

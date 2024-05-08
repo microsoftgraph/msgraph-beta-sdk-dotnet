@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons {
         }
         /// <summary>
         /// The set of reasons for a time off in the schedule.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-list-timeoffreasons?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeOffReasonCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons {
             return await RequestAdapter.SendAsync<TimeOffReasonCollectionResponse>(requestInfo, TimeOffReasonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to timeOffReasons for teams
+        /// Create a new timeOffReason.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedule-post-timeoffreasons?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeOffReason"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeOffReasons {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to timeOffReasons for teams
+        /// Create a new timeOffReason.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

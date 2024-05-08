@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
         {
         }
         /// <summary>
-        /// All users in the class. Nullable.
+        /// Retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// All users in the class. Nullable.
+        /// Retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// All users in the class. Nullable.
+        /// Retrieve the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

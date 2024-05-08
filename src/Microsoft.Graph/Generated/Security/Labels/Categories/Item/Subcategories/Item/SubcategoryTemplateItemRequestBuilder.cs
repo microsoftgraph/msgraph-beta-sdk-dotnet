@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.Subcategories.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get subcategories from security
+        /// Read the properties and relationships of a subcategoryTemplate object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-subcategorytemplate-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SubcategoryTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.Subcategories.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get subcategories from security
+        /// Read the properties and relationships of a subcategoryTemplate object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.Categories.Item.Subcategories.Ite
         {
         }
         /// <summary>
-        /// Get subcategories from security
+        /// Read the properties and relationships of a subcategoryTemplate object.
         /// </summary>
         public class SubcategoryTemplateItemRequestBuilderGetQueryParameters 
         {

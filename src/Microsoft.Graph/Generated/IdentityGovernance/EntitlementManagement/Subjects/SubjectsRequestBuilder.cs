@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
         {
         }
         /// <summary>
-        /// Represents the subjects within entitlement management.
+        /// Get the properties of an existing accessPackageSubject object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagesubject-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageSubjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageSubject>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the subjects within entitlement management.
+        /// Get the properties of an existing accessPackageSubject object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return new SubjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the subjects within entitlement management.
+        /// Get the properties of an existing accessPackageSubject object.
         /// </summary>
         public class SubjectsRequestBuilderGetQueryParameters 
         {

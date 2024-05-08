@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.UserCount {
         {
         }
         /// <summary>
-        /// Insights for total users on apps registered in the tenant for a specified period.
+        /// Get a list of daily user count on apps registered in your tenant configured for Microsoft Entra External ID for customers.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/dailyuserinsightmetricsroot-list-usercount?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserCountMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.UserCount {
             return await RequestAdapter.SendAsync<UserCountMetricCollectionResponse>(requestInfo, UserCountMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Insights for total users on apps registered in the tenant for a specified period.
+        /// Get a list of daily user count on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.UserCount {
             return new UserCountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Insights for total users on apps registered in the tenant for a specified period.
+        /// Get a list of daily user count on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// </summary>
         public class UserCountRequestBuilderGetQueryParameters 
         {

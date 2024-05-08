@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles {
         {
         }
         /// <summary>
-        /// Get synchronizationProfiles from education
+        /// Retrieve the collection of school data synchronization profiles in the tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationSynchronizationProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles {
             return await RequestAdapter.SendAsync<EducationSynchronizationProfile>(requestInfo, EducationSynchronizationProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get synchronizationProfiles from education
+        /// Retrieve the collection of school data synchronization profiles in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles {
             return new SynchronizationProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get synchronizationProfiles from education
+        /// Retrieve the collection of school data synchronization profiles in the tenant.
         /// </summary>
         public class SynchronizationProfilesRequestBuilderGetQueryParameters 
         {

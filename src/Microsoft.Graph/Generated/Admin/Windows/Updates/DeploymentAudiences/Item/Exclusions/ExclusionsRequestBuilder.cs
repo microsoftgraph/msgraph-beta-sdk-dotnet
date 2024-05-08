@@ -75,7 +75,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         {
         }
         /// <summary>
-        /// Specifies the assets to exclude from the audience.
+        /// List the updatableAsset resources that are excluded from a deploymentAudience.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-deploymentaudience-list-exclusions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UpdatableAssetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
             return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies the assets to exclude from the audience.
+        /// List the updatableAsset resources that are excluded from a deploymentAudience.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +174,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
             return new ExclusionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Specifies the assets to exclude from the audience.
+        /// List the updatableAsset resources that are excluded from a deploymentAudience.
         /// </summary>
         public class ExclusionsRequestBuilderGetQueryParameters 
         {

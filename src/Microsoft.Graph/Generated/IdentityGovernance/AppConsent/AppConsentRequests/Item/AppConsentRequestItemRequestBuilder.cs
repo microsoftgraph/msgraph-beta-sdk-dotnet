@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+        /// Read the properties and relationships of an appConsentRequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/appconsentrequest-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AppConsentRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             return requestInfo;
         }
         /// <summary>
-        /// A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+        /// Read the properties and relationships of an appConsentRequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
         {
         }
         /// <summary>
-        /// A collection of appConsentRequest objects representing apps for which admin consent has been requested by one or more users.
+        /// Read the properties and relationships of an appConsentRequest object.
         /// </summary>
         public class AppConsentRequestItemRequestBuilderGetQueryParameters 
         {

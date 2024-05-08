@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
         {
         }
         /// <summary>
-        /// The collection of alert rules.
+        /// Get a list of the alertRule objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicemanagement-alertrule-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AlertRuleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return await RequestAdapter.SendAsync<AlertRuleCollectionResponse>(requestInfo, AlertRuleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to alertRules for deviceManagement
+        /// Create an alertRule object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicemanagement-alertrule-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of alert rules.
+        /// Get a list of the alertRule objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to alertRules for deviceManagement
+        /// Create an alertRule object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRules {
             return new AlertRulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of alert rules.
+        /// Get a list of the alertRule objects and their properties.
         /// </summary>
         public class AlertRulesRequestBuilderGetQueryParameters 
         {

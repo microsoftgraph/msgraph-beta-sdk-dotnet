@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TermStore.Groups {
         {
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Get the list of group objects of a store
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-list-groups?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.TermStore.Groups {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to groups for termStore
+        /// Create a new group object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/termstore-group-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TermStore.Group"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TermStore.Group>(requestInfo, Microsoft.Graph.Beta.Models.TermStore.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Get the list of group objects of a store
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to groups for termStore
+        /// Create a new group object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.TermStore.Groups {
             return new GroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of all groups available in the term store.
+        /// Get the list of group objects of a store
         /// </summary>
         public class GroupsRequestBuilderGetQueryParameters 
         {

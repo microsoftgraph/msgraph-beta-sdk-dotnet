@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
         {
         }
         /// <summary>
-        /// The collection tenant level detailed information across managed tenants.
+        /// Get a list of the tenantDetailedInformation objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenantsdetailedinformation?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantDetailedInformationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
             return await RequestAdapter.SendAsync<TenantDetailedInformation>(requestInfo, TenantDetailedInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection tenant level detailed information across managed tenants.
+        /// Get a list of the tenantDetailedInformation objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantsDetaile
             return new TenantsDetailedInformationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection tenant level detailed information across managed tenants.
+        /// Get a list of the tenantDetailedInformation objects and their properties.
         /// </summary>
         public class TenantsDetailedInformationRequestBuilderGetQueryParameters 
         {

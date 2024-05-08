@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
         {
         }
         /// <summary>
-        /// Invoke action enrollAssets
+        /// Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action enrollAssets
+        /// Enroll updatableAsset resources in update management by the deployment service. You can enroll an azureADDevice resource in update management, but may not enroll an updatableAssetGroup in update management. Enrolling a Microsoft Entra device in update management automatically creates an azureADDevice object if it does not already exist. You can also use the method enrollAssetsById to enroll assets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

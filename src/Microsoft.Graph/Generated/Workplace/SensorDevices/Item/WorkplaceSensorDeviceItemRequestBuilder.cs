@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property sensorDevices for workplace
+        /// Delete a workplace sensor device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of sensor devices.
+        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sensorDevices in workplace
+        /// Update the properties of a workplace sensor device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workplacesensordevice-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return await RequestAdapter.SendAsync<WorkplaceSensorDevice>(requestInfo, WorkplaceSensorDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property sensorDevices for workplace
+        /// Delete a workplace sensor device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of sensor devices.
+        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sensorDevices in workplace
+        /// Update the properties of a workplace sensor device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.Item {
         {
         }
         /// <summary>
-        /// A collection of sensor devices.
+        /// Get the properties of a workplace sensor device, including tags, MAC address, sensors, and more.
         /// </summary>
         public class WorkplaceSensorDeviceItemRequestBuilderGetQueryParameters 
         {

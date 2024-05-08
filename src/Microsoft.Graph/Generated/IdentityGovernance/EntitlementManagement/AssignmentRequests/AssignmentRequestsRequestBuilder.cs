@@ -65,7 +65,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Represents access package assignment requests created by or on behalf of a user.
+        /// In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-list-assignmentrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageAssignmentRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +90,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return await RequestAdapter.SendAsync<AccessPackageAssignmentRequestCollectionResponse>(requestInfo, AccessPackageAssignmentRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to assignmentRequests for identityGovernance
+        /// In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/entitlementmanagement-post-assignmentrequests?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageAssignmentRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -115,7 +117,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return await RequestAdapter.SendAsync<AccessPackageAssignmentRequest>(requestInfo, AccessPackageAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents access package assignment requests created by or on behalf of a user.
+        /// In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +137,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to assignmentRequests for identityGovernance
+        /// In Microsoft Entra Entitlement Management, create a new accessPackageAssignmentRequest object.  This operation is used to assign a user to an access package, update the assignment, or to remove an access package assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -168,7 +170,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return new AssignmentRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents access package assignment requests created by or on behalf of a user.
+        /// In Microsoft Entra entitlement management, retrieve a list of accessPackageAssignmentRequest objects.  The resulting list includes all the assignment requests, current and well as expired, that the caller has access to read, across all catalogs and access packages.
         /// </summary>
         public class AssignmentRequestsRequestBuilderGetQueryParameters 
         {

@@ -18,5 +18,13 @@ namespace Microsoft.Graph.Beta.Models {
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "sharedByUser")]
+        #pragma warning disable CS1591
+        SharedByUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "sharedByEntraGroup")]
+        #pragma warning disable CS1591
+        SharedByEntraGroup,
+        #pragma warning restore CS1591
     }
 }

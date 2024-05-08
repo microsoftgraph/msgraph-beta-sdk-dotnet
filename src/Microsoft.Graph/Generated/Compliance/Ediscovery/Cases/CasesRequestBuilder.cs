@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
         {
         }
         /// <summary>
-        /// Get cases from compliance
+        /// Retrieve a list of case objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return await RequestAdapter.SendAsync<CaseCollectionResponse>(requestInfo, CaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to cases for compliance
+        /// Create a new case object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Case"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +105,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return await RequestAdapter.SendAsync<Case>(requestInfo, Case.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get cases from compliance
+        /// Retrieve a list of case objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to cases for compliance
+        /// Create a new case object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +158,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases {
             return new CasesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get cases from compliance
+        /// Retrieve a list of case objects.
         /// </summary>
         public class CasesRequestBuilderGetQueryParameters 
         {

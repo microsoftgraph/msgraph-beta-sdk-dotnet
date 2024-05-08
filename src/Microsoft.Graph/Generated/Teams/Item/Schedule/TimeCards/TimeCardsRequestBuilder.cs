@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
         {
         }
         /// <summary>
-        /// The time cards in the schedule.
+        /// Retrieve a list of timeCard entries in a schedule.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeCardCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             return await RequestAdapter.SendAsync<TimeCardCollectionResponse>(requestInfo, TimeCardCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to timeCards for teams
+        /// Create a timeCard instance in a schedule.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TimeCard"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The time cards in the schedule.
+        /// Retrieve a list of timeCard entries in a schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to timeCards for teams
+        /// Create a timeCard instance in a schedule.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             return new TimeCardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The time cards in the schedule.
+        /// Retrieve a list of timeCard entries in a schedule.
         /// </summary>
         public class TimeCardsRequestBuilderGetQueryParameters 
         {

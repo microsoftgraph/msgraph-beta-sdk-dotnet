@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
         {
         }
         /// <summary>
-        /// Set of ephemeral operations that the system runs currently. Read-only.
+        /// Get a list of long-running file validation operations and their statuses.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="LongRunningOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
             return await RequestAdapter.SendAsync<LongRunningOperation>(requestInfo, LongRunningOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set of ephemeral operations that the system runs currently. Read-only.
+        /// Get a list of long-running file validation operations and their statuses.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations {
             return new OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Set of ephemeral operations that the system runs currently. Read-only.
+        /// Get a list of long-running file validation operations and their statuses.
         /// </summary>
         public class OperationsRequestBuilderGetQueryParameters 
         {

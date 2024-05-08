@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// Delete navigation property accessPackageCatalogs for identityGovernance
+        /// Delete an accessPackageCatalog.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -97,7 +98,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A container of access packages.
+        /// Retrieve the properties and relationships of an accessPackageCatalog object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageCatalog"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +123,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property accessPackageCatalogs in identityGovernance
+        /// Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagecatalog-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageCatalog"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property accessPackageCatalogs for identityGovernance
+        /// Delete an accessPackageCatalog.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -167,7 +170,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// A container of access packages.
+        /// Retrieve the properties and relationships of an accessPackageCatalog object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +190,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property accessPackageCatalogs in identityGovernance
+        /// Update an existing accessPackageCatalog object to change one or more of its properties, such as the display name or description.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -227,7 +230,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// A container of access packages.
+        /// Retrieve the properties and relationships of an accessPackageCatalog object.
         /// </summary>
         public class AccessPackageCatalogItemRequestBuilderGetQueryParameters 
         {

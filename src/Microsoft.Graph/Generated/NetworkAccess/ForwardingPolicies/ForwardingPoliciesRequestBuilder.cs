@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
         {
         }
         /// <summary>
-        /// A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.
+        /// Retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-networkaccessroot-list-forwardingpolicies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ForwardingPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
             return await RequestAdapter.SendAsync<ForwardingPolicy>(requestInfo, ForwardingPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.
+        /// Retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies {
             return new ForwardingPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.
+        /// Retrieve a list of forwarding policies associated with a specific traffic forwarding profile.
         /// </summary>
         public class ForwardingPoliciesRequestBuilderGetQueryParameters 
         {

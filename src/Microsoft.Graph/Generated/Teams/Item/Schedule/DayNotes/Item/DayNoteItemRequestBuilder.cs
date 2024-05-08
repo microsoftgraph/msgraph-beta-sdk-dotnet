@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Item {
             return await RequestAdapter.SendAsync<DayNote>(requestInfo, DayNote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property dayNotes in teams
+        /// Update the properties of a day note.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/daynote-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DayNote"/></returns>
         /// <param name="body">The request body</param>
@@ -140,7 +141,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property dayNotes in teams
+        /// Update the properties of a day note.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

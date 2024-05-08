@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         {
         }
         /// <summary>
-        /// Get attributes from identity
+        /// Get an identityUserFlowAttribute collection associated with an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the attributes that are collected from the user during the authentication experience that&apos;s defined by the user flow.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-list-attributes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlowAttributeCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return await RequestAdapter.SendAsync<IdentityUserFlowAttributeCollectionResponse>(requestInfo, IdentityUserFlowAttributeCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get attributes from identity
+        /// Get an identityUserFlowAttribute collection associated with an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the attributes that are collected from the user during the authentication experience that&apos;s defined by the user flow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return new AttributesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get attributes from identity
+        /// Get an identityUserFlowAttribute collection associated with an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the attributes that are collected from the user during the authentication experience that&apos;s defined by the user flow.
         /// </summary>
         public class AttributesRequestBuilderGetQueryParameters 
         {

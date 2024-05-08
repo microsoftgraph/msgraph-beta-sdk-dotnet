@@ -18,6 +18,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
     public class FileSecurityProfilesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public CountRequestBuilder Count
         {
             get => new CountRequestBuilder(PathParameters, RequestAdapter);
@@ -25,6 +26,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
         /// <summary>Provides operations to manage the fileSecurityProfiles property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of fileSecurityProfile</param>
         /// <returns>A <see cref="FileSecurityProfileItemRequestBuilder"/></returns>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public FileSecurityProfileItemRequestBuilder this[string position]
         {
             get
@@ -57,6 +59,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<FileSecurityProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<FileSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,6 +84,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<FileSecurityProfile?> PostAsync(FileSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -103,6 +107,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FileSecurityProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -123,6 +128,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(FileSecurityProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -144,6 +150,7 @@ namespace Microsoft.Graph.Beta.Security.FileSecurityProfiles {
         /// </summary>
         /// <returns>A <see cref="FileSecurityProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public FileSecurityProfilesRequestBuilder WithUrl(string rawUrl)
         {
             return new FileSecurityProfilesRequestBuilder(rawUrl, RequestAdapter);

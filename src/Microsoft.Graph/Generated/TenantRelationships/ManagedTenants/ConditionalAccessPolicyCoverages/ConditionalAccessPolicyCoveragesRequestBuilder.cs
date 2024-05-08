@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
         {
         }
         /// <summary>
-        /// Aggregate view of conditional access policy coverage across managed tenants.
+        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-conditionalaccesspolicycoverages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessPolicyCoverageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             return await RequestAdapter.SendAsync<ConditionalAccessPolicyCoverage>(requestInfo, ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Aggregate view of conditional access policy coverage across managed tenants.
+        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             return new ConditionalAccessPolicyCoveragesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Aggregate view of conditional access policy coverage across managed tenants.
+        /// Get a list of the conditionalAccessPolicyCoverage objects and their properties. Use this operation to list Microsoft Entra Conditional Access policy coverage for all tenants that are being managed by the multi-tenant management platform.
         /// </summary>
         public class ConditionalAccessPolicyCoveragesRequestBuilderGetQueryParameters 
         {

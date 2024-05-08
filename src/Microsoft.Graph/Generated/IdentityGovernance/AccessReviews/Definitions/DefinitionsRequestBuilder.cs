@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Represents the template and scheduling for an access review.
+        /// Retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-list-definitions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessReviewScheduleDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -85,7 +86,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinitionCollectionResponse>(requestInfo, AccessReviewScheduleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to definitions for identityGovernance
+        /// Create a new accessReviewScheduleDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-post-definitions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessReviewScheduleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             return await RequestAdapter.SendAsync<AccessReviewScheduleDefinition>(requestInfo, AccessReviewScheduleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the template and scheduling for an access review.
+        /// Retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +131,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to definitions for identityGovernance
+        /// Create a new accessReviewScheduleDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +162,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions {
             return new DefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the template and scheduling for an access review.
+        /// Retrieve the accessReviewScheduleDefinition objects. A list of zero or more accessReviewScheduleDefinition objects are returned, including all of their nested properties, for each access review series created. This does not include the associated accessReviewInstance objects.
         /// </summary>
         public class DefinitionsRequestBuilderGetQueryParameters 
         {

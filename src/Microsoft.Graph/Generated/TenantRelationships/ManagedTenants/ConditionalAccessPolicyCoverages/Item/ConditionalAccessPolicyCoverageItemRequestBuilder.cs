@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Aggregate view of conditional access policy coverage across managed tenants.
+        /// Read the properties and relationships of a conditionalAccessPolicyCoverage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-conditionalaccesspolicycoverage-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ConditionalAccessPolicyCoverage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
             return requestInfo;
         }
         /// <summary>
-        /// Aggregate view of conditional access policy coverage across managed tenants.
+        /// Read the properties and relationships of a conditionalAccessPolicyCoverage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ConditionalAcc
         {
         }
         /// <summary>
-        /// Aggregate view of conditional access policy coverage across managed tenants.
+        /// Read the properties and relationships of a conditionalAccessPolicyCoverage object.
         /// </summary>
         public class ConditionalAccessPolicyCoverageItemRequestBuilderGetQueryParameters 
         {

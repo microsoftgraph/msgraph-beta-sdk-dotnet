@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.AcceptedSenders.Item.Ref {
         {
         }
         /// <summary>
-        /// Delete ref of navigation property acceptedSenders for groups
+        /// Remove a user or group from the accepted-senders list of the specified group.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delete-acceptedsenders?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.AcceptedSenders.Item.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property acceptedSenders for groups
+        /// Remove a user or group from the accepted-senders list of the specified group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

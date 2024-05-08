@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
         {
         }
         /// <summary>
-        /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+        /// In the Microsoft Entra access reviews feature, retrieve the reviewers of an accessReview object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-listreviewers?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessReviewReviewerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return await RequestAdapter.SendAsync<AccessReviewReviewerCollectionResponse>(requestInfo, AccessReviewReviewerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to reviewers for accessReviews
+        /// In the Microsoft Entra access reviews feature, update an existing accessReview object to add another user as a reviewer.  This operation is only permitted for an access review that isn&apos;t yet completed, and only for an access review where the reviewers are explicitly specified. This operation isn&apos;t permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreview-addreviewer?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessReviewReviewer"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return await RequestAdapter.SendAsync<AccessReviewReviewer>(requestInfo, AccessReviewReviewer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+        /// In the Microsoft Entra access reviews feature, retrieve the reviewers of an accessReview object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to reviewers for accessReviews
+        /// In the Microsoft Entra access reviews feature, update an existing accessReview object to add another user as a reviewer.  This operation is only permitted for an access review that isn&apos;t yet completed, and only for an access review where the reviewers are explicitly specified. This operation isn&apos;t permitted for an access review in which users review their own access, and not intended for an access review in which the group owners are assigned as the reviewers. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Reviewers {
             return new ReviewersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of reviewers for an access review, if access review reviewerType is of type delegated.
+        /// In the Microsoft Entra access reviews feature, retrieve the reviewers of an accessReview object.
         /// </summary>
         public class ReviewersRequestBuilderGetQueryParameters 
         {

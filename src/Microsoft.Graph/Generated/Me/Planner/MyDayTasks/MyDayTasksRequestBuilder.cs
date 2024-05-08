@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Planner.MyDayTasks {
         {
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
+        /// Retrieve a list of plannerTask objects to be shown in the user&apos;s My Day view within Planner. This method returns the list of tasks that the user added to the My Day view or that are due today.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-list-mydaytasks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.MyDayTasks {
             return await RequestAdapter.SendAsync<PlannerTaskCollectionResponse>(requestInfo, PlannerTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
+        /// Retrieve a list of plannerTask objects to be shown in the user&apos;s My Day view within Planner. This method returns the list of tasks that the user added to the My Day view or that are due today.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.MyDayTasks {
             return new MyDayTasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.
+        /// Retrieve a list of plannerTask objects to be shown in the user&apos;s My Day view within Planner. This method returns the list of tasks that the user added to the My Day view or that are due today.
         /// </summary>
         public class MyDayTasksRequestBuilderGetQueryParameters 
         {

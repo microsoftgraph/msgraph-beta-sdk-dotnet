@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Education.Schools {
         {
         }
         /// <summary>
-        /// Get schools from education
+        /// Retrieve a list of all school objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationroot-list-schools?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationSchoolCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Beta.Education.Schools {
             return await RequestAdapter.SendAsync<EducationSchoolCollectionResponse>(requestInfo, EducationSchoolCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to schools for education
+        /// Create a school.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationroot-post-schools?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationSchool"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Education.Schools {
             return await RequestAdapter.SendAsync<EducationSchool>(requestInfo, EducationSchool.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get schools from education
+        /// Retrieve a list of all school objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.Education.Schools {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to schools for education
+        /// Create a school.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +157,7 @@ namespace Microsoft.Graph.Beta.Education.Schools {
             return new SchoolsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get schools from education
+        /// Retrieve a list of all school objects.
         /// </summary>
         public class SchoolsRequestBuilderGetQueryParameters 
         {

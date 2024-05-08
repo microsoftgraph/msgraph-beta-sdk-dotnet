@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
         {
         }
         /// <summary>
-        /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+        /// Retrieve the list of sessions associated with a callRecord object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecords-callrecord-list-sessions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
             return await RequestAdapter.SendAsync<Session>(requestInfo, Session.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+        /// Retrieve the list of sessions associated with a callRecord object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions {
             return new SessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of sessions involved in the call. Peer-to-peer calls typically only have one session, whereas group calls typically have at least one session per participant. Read-only. Nullable.
+        /// Retrieve the list of sessions associated with a callRecord object.
         /// </summary>
         public class SessionsRequestBuilderGetQueryParameters 
         {

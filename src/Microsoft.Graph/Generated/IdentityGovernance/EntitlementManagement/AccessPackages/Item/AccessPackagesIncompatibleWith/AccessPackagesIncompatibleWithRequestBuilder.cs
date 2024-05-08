@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// The access packages that are incompatible with this package. Read-only.
+        /// Retrieve a list of the accessPackage objects marked a specified accessPackage as incompatible.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-accesspackagesincompatiblewith?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AccessPackageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<AccessPackageCollectionResponse>(requestInfo, AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The access packages that are incompatible with this package. Read-only.
+        /// Retrieve a list of the accessPackage objects marked a specified accessPackage as incompatible.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new AccessPackagesIncompatibleWithRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The access packages that are incompatible with this package. Read-only.
+        /// Retrieve a list of the accessPackage objects marked a specified accessPackage as incompatible.
         /// </summary>
         public class AccessPackagesIncompatibleWithRequestBuilderGetQueryParameters 
         {

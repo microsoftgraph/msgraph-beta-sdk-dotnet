@@ -12,12 +12,12 @@ namespace Microsoft.Graph.Beta.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>RSA Key - private exponent. Field can&apos;t be read back.</summary>
+        /// <summary>RSA Key - private exponent. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? D {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("d", value); }
         }
 #endif
-        /// <summary>RSA Key - first exponent. Field can&apos;t be read back.</summary>
+        /// <summary>RSA Key - first exponent. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dp {
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dp", value); }
         }
 #endif
-        /// <summary>RSA Key - second exponent. Field can&apos;t be read back.</summary>
+        /// <summary>RSA Key - second exponent. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dq {
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dq", value); }
         }
 #endif
-        /// <summary>RSA Key - public exponent</summary>
+        /// <summary>RSA Key - public exponent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? E {
@@ -73,12 +73,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("e", value); }
         }
 #endif
-        /// <summary>This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
+        /// <summary>This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.</summary>
         public long? Exp {
             get { return BackingStore?.Get<long?>("exp"); }
             set { BackingStore?.Set("exp", value); }
         }
-        /// <summary>Symmetric Key for oct key type. Field can&apos;t be read back.</summary>
+        /// <summary>Symmetric Key for oct key type. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? K {
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kid", value); }
         }
 #endif
-        /// <summary>The kty (key type) parameter identifies the cryptographic algorithm family used with the key, The valid values are rsa, oct.</summary>
+        /// <summary>The kty (key type) parameter identifies the cryptographic algorithm family used with the key. The valid values are rsa, oct.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Kty {
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kty", value); }
         }
 #endif
-        /// <summary>RSA Key - modulus</summary>
+        /// <summary>RSA Key - modulus.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N {
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("n", value); }
         }
 #endif
-        /// <summary>This value is a NumericDate as defined in RFC 7519 (A JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.)</summary>
+        /// <summary>This value is a NumericDate as defined in RFC 7519. That is, a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date/time, ignoring leap seconds.</summary>
         public long? Nbf {
             get { return BackingStore?.Get<long?>("nbf"); }
             set { BackingStore?.Set("nbf", value); }
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>RSA Key - first prime. Field can&apos;t be read back.</summary>
+        /// <summary>RSA Key - first prime. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? P {
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("p", value); }
         }
 #endif
-        /// <summary>RSA Key - second prime. Field can&apos;t be read back.</summary>
+        /// <summary>RSA Key - second prime. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Q {
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("q", value); }
         }
 #endif
-        /// <summary>RSA Key - Coefficient. Field can&apos;t be read back.</summary>
+        /// <summary>RSA Key - Coefficient. The field isn&apos;t readable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Qi {
@@ -195,7 +195,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("qi", value); }
         }
 #endif
-        /// <summary>The use (public key use) parameter identifies the intended use of the public key.  The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption)</summary>
+        /// <summary>Status of the key. The possible values are: enabled, disabled, unknownFutureValue.</summary>
+        public TrustFrameworkKeyStatus? Status {
+            get { return BackingStore?.Get<TrustFrameworkKeyStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>The use (public key use) parameter identifies the intended use of the public key. The use parameter is employed to indicate whether a public key is used for encrypting data or verifying the signature on data. Possible values are: sig (signature), enc (encryption).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Use {
@@ -209,7 +214,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("use", value); }
         }
 #endif
-        /// <summary>The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates RFC 5280.</summary>
+        /// <summary>The x5c (X.509 certificate chain) parameter contains a chain of one or more PKIX certificates. For more information, see RFC 5280.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? X5c {
@@ -223,7 +228,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("x5c", value); }
         }
 #endif
-        /// <summary>The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate RFC 5280.</summary>
+        /// <summary>The x5t (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (also known as digest) of the DER encoding of an X.509 certificate. For more information, see RFC 5280.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? X5t {
@@ -277,6 +282,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"p", n => { P = n.GetStringValue(); } },
                 {"q", n => { Q = n.GetStringValue(); } },
                 {"qi", n => { Qi = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<TrustFrameworkKeyStatus>(); } },
                 {"use", n => { Use = n.GetStringValue(); } },
                 {"x5c", n => { X5c = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"x5t", n => { X5t = n.GetStringValue(); } },
@@ -303,6 +309,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("p", P);
             writer.WriteStringValue("q", Q);
             writer.WriteStringValue("qi", Qi);
+            writer.WriteEnumValue<TrustFrameworkKeyStatus>("status", Status);
             writer.WriteStringValue("use", Use);
             writer.WriteCollectionOfPrimitiveValues<string>("x5c", X5c);
             writer.WriteStringValue("x5t", X5t);

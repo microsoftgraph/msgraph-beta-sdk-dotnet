@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
         {
         }
         /// <summary>
-        /// Directory objects created by this service principal. Read-only. Nullable.
+        /// Retrieve a list of directoryobject objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory objects created by this service principal. Read-only. Nullable.
+        /// Retrieve a list of directoryobject objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
             return new CreatedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory objects created by this service principal. Read-only. Nullable.
+        /// Retrieve a list of directoryobject objects.
         /// </summary>
         public class CreatedObjectsRequestBuilderGetQueryParameters 
         {

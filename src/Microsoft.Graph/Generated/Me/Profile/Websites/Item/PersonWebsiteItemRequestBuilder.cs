@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property websites for me
+        /// Deletes a personWebsite object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personwebsite-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about websites associated with a user in various services.
+        /// Retrieve the properties and relationships of a personWebsite object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personwebsite-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonWebsite"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
             return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, PersonWebsite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property websites in me
+        /// Update the properties of personWebsite object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personwebsite-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonWebsite"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
             return await RequestAdapter.SendAsync<PersonWebsite>(requestInfo, PersonWebsite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property websites for me
+        /// Deletes a personWebsite object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents detailed information about websites associated with a user in various services.
+        /// Retrieve the properties and relationships of a personWebsite object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property websites in me
+        /// Update the properties of personWebsite object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Websites.Item {
         {
         }
         /// <summary>
-        /// Represents detailed information about websites associated with a user in various services.
+        /// Retrieve the properties and relationships of a personWebsite object from a user&apos;s profile.
         /// </summary>
         public class PersonWebsiteItemRequestBuilderGetQueryParameters 
         {

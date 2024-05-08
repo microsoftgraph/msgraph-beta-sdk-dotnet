@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcCrossCloudGovernmentOrganizationMapping"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             return requestInfo;
         }
         /// <summary>
-        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
         {
         }
         /// <summary>
-        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
         /// </summary>
         public class CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters 
         {

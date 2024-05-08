@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
         {
         }
         /// <summary>
-        /// Represents a collection of sign-in activities of service principals.
+        /// Get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-serviceprincipalsigninactivities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ServicePrincipalSignInActivityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
             return await RequestAdapter.SendAsync<ServicePrincipalSignInActivity>(requestInfo, ServicePrincipalSignInActivity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents a collection of sign-in activities of service principals.
+        /// Get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Reports.ServicePrincipalSignInActivities {
             return new ServicePrincipalSignInActivitiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents a collection of sign-in activities of service principals.
+        /// Get a list of servicePrincipalSignInActivity objects that contains sign-in activity information for service principals in a Microsoft Entra tenant. You can use a service principal as a client or resource. A service principal supports delegated or app-only authentication context.
         /// </summary>
         public class ServicePrincipalSignInActivitiesRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
         {
         }
         /// <summary>
-        /// The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.
+        /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rolemanagementalert-list-alertconfigurations?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleManagementAlertConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return await RequestAdapter.SendAsync<UnifiedRoleManagementAlertConfiguration>(requestInfo, UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.
+        /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.RoleManagementAlerts.AlertConf
             return new AlertConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.
+        /// Get a list of the alert configurations. The alert configurations are a collection of following types that are derived from the unifiedRoleManagementAlertConfiguration object:
         /// </summary>
         public class AlertConfigurationsRequestBuilderGetQueryParameters 
         {

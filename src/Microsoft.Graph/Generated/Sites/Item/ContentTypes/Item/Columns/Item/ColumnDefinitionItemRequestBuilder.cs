@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property columns for sites
+        /// Delete columnDefinition
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of column definitions for this content type.
+        /// Retrieve the metadata for a site, list, or contentType column.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property columns in sites
+        /// Update columnDefinition
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/columndefinition-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property columns for sites
+        /// Delete columnDefinition
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of column definitions for this content type.
+        /// Retrieve the metadata for a site, list, or contentType column.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property columns in sites
+        /// Update columnDefinition
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.ContentTypes.Item.Columns.Item {
         {
         }
         /// <summary>
-        /// The collection of column definitions for this content type.
+        /// Retrieve the metadata for a site, list, or contentType column.
         /// </summary>
         public class ColumnDefinitionItemRequestBuilderGetQueryParameters 
         {

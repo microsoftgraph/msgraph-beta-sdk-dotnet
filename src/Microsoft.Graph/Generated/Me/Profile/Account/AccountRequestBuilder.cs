@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
         {
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieves properties related to the user&apos;s accounts from the profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-accounts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserAccountInformationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return await RequestAdapter.SendAsync<UserAccountInformationCollectionResponse>(requestInfo, UserAccountInformationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to account for me
+        /// Create a new userAccountInformation object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-accounts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserAccountInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return await RequestAdapter.SendAsync<UserAccountInformation>(requestInfo, UserAccountInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieves properties related to the user&apos;s accounts from the profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to account for me
+        /// Create a new userAccountInformation object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account {
             return new AccountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieves properties related to the user&apos;s accounts from the profile.
         /// </summary>
         public class AccountRequestBuilderGetQueryParameters 
         {

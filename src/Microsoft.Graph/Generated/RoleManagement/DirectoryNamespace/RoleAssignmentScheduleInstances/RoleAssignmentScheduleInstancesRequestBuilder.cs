@@ -62,7 +62,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Get roleAssignmentScheduleInstances from roleManagement
+        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplication-list-roleassignmentscheduleinstances?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentScheduleInstanceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +111,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentScheduleInstance>(requestInfo, UnifiedRoleAssignmentScheduleInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get roleAssignmentScheduleInstances from roleManagement
+        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +161,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleAssignmentS
             return new RoleAssignmentScheduleInstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get roleAssignmentScheduleInstances from roleManagement
+        /// Get the instances of active role assignments in your tenant. The active assignments include those made through assignments and activation requests, and directly through the role assignments API.
         /// </summary>
         public class RoleAssignmentScheduleInstancesRequestBuilderGetQueryParameters 
         {

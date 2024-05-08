@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get signIns from auditLogs
+        /// Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/signin-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SignIn"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get signIns from auditLogs
+        /// Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.Item {
         {
         }
         /// <summary>
-        /// Get signIns from auditLogs
+        /// Get a signIn object that contains a specific user sign-in event for your tenant that includes sign-ins where a user is asked to enter a username or password, and session tokens.
         /// </summary>
         public class SignInItemRequestBuilderGetQueryParameters 
         {

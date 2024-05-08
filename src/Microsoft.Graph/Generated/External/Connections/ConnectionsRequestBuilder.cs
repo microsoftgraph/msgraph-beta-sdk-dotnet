@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.External.Connections {
         {
         }
         /// <summary>
-        /// Get connections from external
+        /// Retrieve a list of externalConnections.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ExternalConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.External.Connections {
             return await RequestAdapter.SendAsync<ExternalConnectionCollectionResponse>(requestInfo, ExternalConnectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to connections for external
+        /// Create a new externalConnection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-external-post-connections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ExternalConnection"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.External.Connections {
             return await RequestAdapter.SendAsync<ExternalConnection>(requestInfo, ExternalConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get connections from external
+        /// Retrieve a list of externalConnections.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.External.Connections {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to connections for external
+        /// Create a new externalConnection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.External.Connections {
             return new ConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get connections from external
+        /// Retrieve a list of externalConnections.
         /// </summary>
         public class ConnectionsRequestBuilderGetQueryParameters 
         {

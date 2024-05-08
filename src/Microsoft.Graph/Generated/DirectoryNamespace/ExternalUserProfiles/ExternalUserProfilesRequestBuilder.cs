@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
         {
         }
         /// <summary>
-        /// Collection of external user profiles that represent collaborators in the directory.
+        /// Retrieve the properties of all externalUserProfiles
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-externaluserprofiles?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ExternalUserProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
             return await RequestAdapter.SendAsync<ExternalUserProfile>(requestInfo, ExternalUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of external user profiles that represent collaborators in the directory.
+        /// Retrieve the properties of all externalUserProfiles
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ExternalUserProfiles {
             return new ExternalUserProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of external user profiles that represent collaborators in the directory.
+        /// Retrieve the properties of all externalUserProfiles
         /// </summary>
         public class ExternalUserProfilesRequestBuilderGetQueryParameters 
         {

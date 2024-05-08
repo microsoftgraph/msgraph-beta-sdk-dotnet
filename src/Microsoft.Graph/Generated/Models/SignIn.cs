@@ -225,6 +225,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClientCredentialType?>("clientCredentialType"); }
             set { BackingStore?.Set("clientCredentialType", value); }
         }
+        /// <summary>A list that indicates the audience that was evaluated by Conditional Access during a sign-in event.  Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ConditionalAccessAudience>? ConditionalAccessAudiences {
+            get { return BackingStore?.Get<List<ConditionalAccessAudience>?>("conditionalAccessAudiences"); }
+            set { BackingStore?.Set("conditionalAccessAudiences", value); }
+        }
+#nullable restore
+#else
+        public List<ConditionalAccessAudience> ConditionalAccessAudiences {
+            get { return BackingStore?.Get<List<ConditionalAccessAudience>>("conditionalAccessAudiences"); }
+            set { BackingStore?.Set("conditionalAccessAudiences", value); }
+        }
+#endif
         /// <summary>The status of the conditional access policy triggered. Possible values: success, failure, notApplied, or unknownFutureValue.  Supports $filter (eq).</summary>
         public Microsoft.Graph.Beta.Models.ConditionalAccessStatus? ConditionalAccessStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessStatus?>("conditionalAccessStatus"); }
@@ -287,6 +301,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("flaggedForReview"); }
             set { BackingStore?.Set("flaggedForReview", value); }
         }
+        /// <summary>The Global Secure Access IP address that the sign-in was initiated from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GlobalSecureAccessIpAddress {
+            get { return BackingStore?.Get<string?>("globalSecureAccessIpAddress"); }
+            set { BackingStore?.Set("globalSecureAccessIpAddress", value); }
+        }
+#nullable restore
+#else
+        public string GlobalSecureAccessIpAddress {
+            get { return BackingStore?.Get<string>("globalSecureAccessIpAddress"); }
+            set { BackingStore?.Set("globalSecureAccessIpAddress", value); }
+        }
+#endif
         /// <summary>The tenant identifier of the user initiating the sign-in. Not applicable in Managed Identity or service principal sign ins.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -357,6 +385,11 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? IsTenantRestricted {
             get { return BackingStore?.Get<bool?>("isTenantRestricted"); }
             set { BackingStore?.Set("isTenantRestricted", value); }
+        }
+        /// <summary>Indicates whether a user came through Global Secure Access service.</summary>
+        public bool? IsThroughGlobalSecureAccess {
+            get { return BackingStore?.Get<bool?>("isThroughGlobalSecureAccess"); }
+            set { BackingStore?.Set("isThroughGlobalSecureAccess", value); }
         }
         /// <summary>The city, state, and two letter country code from where the sign-in occurred.  Supports $filter (eq, startsWith) on city, state, and countryOrRegion properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -794,6 +827,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"azureResourceId", n => { AzureResourceId = n.GetStringValue(); } },
                 {"clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
                 {"clientCredentialType", n => { ClientCredentialType = n.GetEnumValue<ClientCredentialType>(); } },
+                {"conditionalAccessAudiences", n => { ConditionalAccessAudiences = n.GetCollectionOfObjectValues<ConditionalAccessAudience>(ConditionalAccessAudience.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<ConditionalAccessStatus>(); } },
                 {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -801,6 +835,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceDetail", n => { DeviceDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceDetail>(Microsoft.Graph.Beta.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
                 {"federatedCredentialId", n => { FederatedCredentialId = n.GetStringValue(); } },
                 {"flaggedForReview", n => { FlaggedForReview = n.GetBoolValue(); } },
+                {"globalSecureAccessIpAddress", n => { GlobalSecureAccessIpAddress = n.GetStringValue(); } },
                 {"homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
                 {"homeTenantName", n => { HomeTenantName = n.GetStringValue(); } },
                 {"incomingTokenType", n => { IncomingTokenType = n.GetEnumValue<IncomingTokenType>(); } },
@@ -808,6 +843,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"ipAddressFromResourceProvider", n => { IpAddressFromResourceProvider = n.GetStringValue(); } },
                 {"isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
                 {"isTenantRestricted", n => { IsTenantRestricted = n.GetBoolValue(); } },
+                {"isThroughGlobalSecureAccess", n => { IsThroughGlobalSecureAccess = n.GetBoolValue(); } },
                 {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
                 {"managedServiceIdentity", n => { ManagedServiceIdentity = n.GetObjectValue<ManagedIdentity>(ManagedIdentity.CreateFromDiscriminatorValue); } },
                 {"mfaDetail", n => { MfaDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>(Microsoft.Graph.Beta.Models.MfaDetail.CreateFromDiscriminatorValue); } },
@@ -871,6 +907,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("azureResourceId", AzureResourceId);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
             writer.WriteEnumValue<ClientCredentialType>("clientCredentialType", ClientCredentialType);
+            writer.WriteCollectionOfObjectValues<ConditionalAccessAudience>("conditionalAccessAudiences", ConditionalAccessAudiences);
             writer.WriteEnumValue<ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
@@ -878,6 +915,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceDetail>("deviceDetail", DeviceDetail);
             writer.WriteStringValue("federatedCredentialId", FederatedCredentialId);
             writer.WriteBoolValue("flaggedForReview", FlaggedForReview);
+            writer.WriteStringValue("globalSecureAccessIpAddress", GlobalSecureAccessIpAddress);
             writer.WriteStringValue("homeTenantId", HomeTenantId);
             writer.WriteStringValue("homeTenantName", HomeTenantName);
             writer.WriteEnumValue<IncomingTokenType>("incomingTokenType", IncomingTokenType);
@@ -885,6 +923,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("ipAddressFromResourceProvider", IpAddressFromResourceProvider);
             writer.WriteBoolValue("isInteractive", IsInteractive);
             writer.WriteBoolValue("isTenantRestricted", IsTenantRestricted);
+            writer.WriteBoolValue("isThroughGlobalSecureAccess", IsThroughGlobalSecureAccess);
             writer.WriteObjectValue<SignInLocation>("location", Location);
             writer.WriteObjectValue<ManagedIdentity>("managedServiceIdentity", ManagedServiceIdentity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>("mfaDetail", MfaDetail);

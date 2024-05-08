@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
         {
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve a list of userflows.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlowCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return await RequestAdapter.SendAsync<IdentityUserFlowCollectionResponse>(requestInfo, IdentityUserFlowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to userFlows for identity
+        /// Create a new userFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflow-post-userflows?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IdentityUserFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -103,7 +105,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return await RequestAdapter.SendAsync<IdentityUserFlow>(requestInfo, IdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve a list of userflows.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to userFlows for identity
+        /// Create a new userFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +158,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows {
             return new UserFlowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get userFlows from identity
+        /// Retrieve a list of userflows.
         /// </summary>
         public class UserFlowsRequestBuilderGetQueryParameters 
         {

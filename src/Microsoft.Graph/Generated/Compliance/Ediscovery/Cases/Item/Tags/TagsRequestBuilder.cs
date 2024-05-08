@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
         {
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Retrieve a list of tag objects from an eDiscovery case.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-list-tags?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +85,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return await RequestAdapter.SendAsync<TagCollectionResponse>(requestInfo, TagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tags for compliance
+        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-case-post-tags?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Tag"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return await RequestAdapter.SendAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tags for compliance
+        /// Create a new tag for the specified case.  The tags are used in review sets while reviewing content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +165,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags {
             return new TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of tag objects associated to this case.
+        /// Retrieve a list of tag objects from an eDiscovery case.
         /// </summary>
         public class TagsRequestBuilderGetQueryParameters 
         {

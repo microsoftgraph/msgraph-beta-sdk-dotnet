@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
         {
         }
         /// <summary>
-        /// Summary information for device compliance policy setting states across managed tenants.
+        /// Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-devicecompliancepolicysettingstatesummary?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeviceCompliancePolicySettingStateSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             return await RequestAdapter.SendAsync<DeviceCompliancePolicySettingStateSummary>(requestInfo, DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Summary information for device compliance policy setting states across managed tenants.
+        /// Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceComplian
             return new DeviceCompliancePolicySettingStateSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Summary information for device compliance policy setting states across managed tenants.
+        /// Get a list of the deviceCompliancePolicySettingStateSummary objects and their properties.
         /// </summary>
         public class DeviceCompliancePolicySettingStateSummariesRequestBuilderGetQueryParameters 
         {

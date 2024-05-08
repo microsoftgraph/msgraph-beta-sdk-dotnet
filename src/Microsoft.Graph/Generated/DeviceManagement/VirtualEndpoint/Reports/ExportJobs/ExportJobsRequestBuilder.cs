@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJo
         {
         }
         /// <summary>
-        /// The export jobs created for downloading reports.
+        /// Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
         /// </summary>
         /// <returns>A <see cref="CloudPcExportJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJo
             return await RequestAdapter.SendAsync<CloudPcExportJobCollectionResponse>(requestInfo, CloudPcExportJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to exportJobs for deviceManagement
+        /// Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcreports-post-exportjobs?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcExportJob"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJo
             return await RequestAdapter.SendAsync<CloudPcExportJob>(requestInfo, CloudPcExportJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The export jobs created for downloading reports.
+        /// Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJo
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to exportJobs for deviceManagement
+        /// Create a new cloudPcExportJob resource to initiate downloading the entire or specified portion of a report. Use the GET cloudPcExportJob operation to verify the exportJobStatus property of the cloudPcExportJob resource. When the property result is completed, the report has finished downloading to the location specified by the exportUrl property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.ExportJo
             return new ExportJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The export jobs created for downloading reports.
+        /// Read the properties and relationships of a cloudPcExportJob object. You can download a report by first creating a new cloudPcExportJob resource to initiate downloading. Use this GET operation to verify the exportJobStatus property of the cloudPcExportJob resource. The property becomes completed when the report finishes downloading in the location specified by the exportUrl property.
         /// </summary>
         public class ExportJobsRequestBuilderGetQueryParameters 
         {

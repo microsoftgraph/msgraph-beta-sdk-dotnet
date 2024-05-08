@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
         {
         }
         /// <summary>
-        /// Delete ref of navigation property includedGroups for policies
+        /// Delete a group from the list of groups included in a mobile device management policy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-delete-includedgroups?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property includedGroups for policies
+        /// Delete a group from the list of groups included in a mobile device management policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the status of the Global Secure Access services for the tenant.
+        /// Retrieve the onboarding status of a specific tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-tenantstatus-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the status of the Global Secure Access services for the tenant.
+        /// Retrieve the onboarding status of a specific tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.TenantStatus {
         {
         }
         /// <summary>
-        /// Represents the status of the Global Secure Access services for the tenant.
+        /// Retrieve the onboarding status of a specific tenant.
         /// </summary>
         public class TenantStatusRequestBuilderGetQueryParameters 
         {

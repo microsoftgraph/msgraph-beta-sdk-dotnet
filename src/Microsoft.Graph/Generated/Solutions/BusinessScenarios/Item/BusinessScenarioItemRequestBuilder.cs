@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property businessScenarios for solutions
+        /// Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenario-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get businessScenarios from solutions
+        /// Read the properties and relationships of a businessScenario object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenario-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BusinessScenario"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
             return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property businessScenarios in solutions
+        /// Update the properties of a businessScenario object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/businessscenario-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="BusinessScenario"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
             return await RequestAdapter.SendAsync<BusinessScenario>(requestInfo, BusinessScenario.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property businessScenarios for solutions
+        /// Delete a businessScenario object. The deletion of a scenario causes all data associated with the scenario to be deleted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get businessScenarios from solutions
+        /// Read the properties and relationships of a businessScenario object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property businessScenarios in solutions
+        /// Update the properties of a businessScenario object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item {
         {
         }
         /// <summary>
-        /// Get businessScenarios from solutions
+        /// Read the properties and relationships of a businessScenario object.
         /// </summary>
         public class BusinessScenarioItemRequestBuilderGetQueryParameters 
         {

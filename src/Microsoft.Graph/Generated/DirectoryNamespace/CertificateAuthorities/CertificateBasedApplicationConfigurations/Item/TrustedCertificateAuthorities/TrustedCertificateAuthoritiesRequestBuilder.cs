@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         {
         }
         /// <summary>
-        /// Collection of trusted certificate authorities.
+        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
         /// </summary>
         /// <returns>A <see cref="CertificateAuthorityAsEntityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return await RequestAdapter.SendAsync<CertificateAuthorityAsEntity>(requestInfo, CertificateAuthorityAsEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of trusted certificate authorities.
+        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return new TrustedCertificateAuthoritiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of trusted certificate authorities.
+        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
         /// </summary>
         public class TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters 
         {

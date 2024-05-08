@@ -56,7 +56,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property updatableAssets for admin
+        /// Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-azureaddevice-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +79,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assets registered with the deployment service that can receive updates.
+        /// Read the properties and relationships of an updatableAssetGroup object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-updatableassetgroup-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UpdatableAsset"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +128,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             return await RequestAdapter.SendAsync<UpdatableAsset>(requestInfo, UpdatableAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property updatableAssets for admin
+        /// Delete an azureADDevice object. When a Microsoft Entra device is deleted, it is unregistered from the deployment service and automatically unenrolled from management by the service for all update categories, as well as removed from every deploymentAudience and updatableAssetGroup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +147,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Assets registered with the deployment service that can receive updates.
+        /// Read the properties and relationships of an updatableAssetGroup object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +204,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
         {
         }
         /// <summary>
-        /// Assets registered with the deployment service that can receive updates.
+        /// Read the properties and relationships of an updatableAssetGroup object.
         /// </summary>
         public class UpdatableAssetItemRequestBuilderGetQueryParameters 
         {

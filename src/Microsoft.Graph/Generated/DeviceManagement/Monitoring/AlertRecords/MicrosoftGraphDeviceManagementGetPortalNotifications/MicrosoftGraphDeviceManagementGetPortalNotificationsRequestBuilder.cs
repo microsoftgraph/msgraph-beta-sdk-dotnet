@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
         {
         }
         /// <summary>
-        /// Invoke function getPortalNotifications
+        /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
         /// </summary>
         /// <returns>A <see cref="GetPortalNotificationsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
             return await RequestAdapter.SendAsync<GetPortalNotificationsGetResponse>(requestInfo, GetPortalNotificationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getPortalNotifications
+        /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
         /// </summary>
         /// <returns>A <see cref="GetPortalNotificationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
             return await RequestAdapter.SendAsync<GetPortalNotificationsResponse>(requestInfo, GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getPortalNotifications
+        /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Microsof
             return new MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getPortalNotifications
+        /// Get a list of all notifications that one or more users can access, from the Microsoft Endpoint Manager admin center.
         /// </summary>
         public class MicrosoftGraphDeviceManagementGetPortalNotificationsRequestBuilderGetQueryParameters 
         {

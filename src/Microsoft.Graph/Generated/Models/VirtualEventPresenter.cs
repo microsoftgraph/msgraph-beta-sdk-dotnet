@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>Identity information of the presenter. The supported identites are: communicationsGuestIdentity and communicationsUserIdentity.</summary>
+        /// <summary>Identity information of the presenter. The supported identities are: communicationsGuestIdentity and communicationsUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Identity? Identity {

@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments {
         {
         }
         /// <summary>
-        /// List of assignments for the user. Nullable.
+        /// Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all of a student&apos;s or teacher&apos;s assignments in a single call, rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationuser-list-assignments?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments {
             return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of assignments for the user. Nullable.
+        /// Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all of a student&apos;s or teacher&apos;s assignments in a single call, rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.Assignments {
             return new AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of assignments for the user. Nullable.
+        /// Returns a list of assignments assigned to a user for all classes. Only teachers, students, and applications with application permissions can perform this operation. This utility namespace allows a caller to find all of a student&apos;s or teacher&apos;s assignments in a single call, rather than having to request assignments from each class. The assignment list contains what is needed to get the detailed information for the assignment from within the class namespace. All other operations on the assignment should use the class namespace.
         /// </summary>
         public class AssignmentsRequestBuilderGetQueryParameters 
         {

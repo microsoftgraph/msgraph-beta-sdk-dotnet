@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of records of alert events.
+        /// Read the properties and relationships of an alertRecord object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/devicemanagement-alertrecord-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AlertRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of records of alert events.
+        /// Read the properties and relationships of an alertRecord object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.Item {
         {
         }
         /// <summary>
-        /// The collection of records of alert events.
+        /// Read the properties and relationships of an alertRecord object.
         /// </summary>
         public class AlertRecordItemRequestBuilderGetQueryParameters 
         {

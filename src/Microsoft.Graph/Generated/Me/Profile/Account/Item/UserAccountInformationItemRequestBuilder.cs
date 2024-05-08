@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property account for me
+        /// Delete an userAccountInformation object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/useraccountinformation-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieve the properties and relationships of an userAccountInformation object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/useraccountinformation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserAccountInformation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
             return await RequestAdapter.SendAsync<UserAccountInformation>(requestInfo, UserAccountInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property account in me
+        /// Update the properties of an userAccountInformation object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/useraccountinformation-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UserAccountInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
             return await RequestAdapter.SendAsync<UserAccountInformation>(requestInfo, UserAccountInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property account for me
+        /// Delete an userAccountInformation object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieve the properties and relationships of an userAccountInformation object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property account in me
+        /// Update the properties of an userAccountInformation object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Account.Item {
         {
         }
         /// <summary>
-        /// Get account from me
+        /// Retrieve the properties and relationships of an userAccountInformation object in a user&apos;s profile.
         /// </summary>
         public class UserAccountInformationItemRequestBuilderGetQueryParameters 
         {

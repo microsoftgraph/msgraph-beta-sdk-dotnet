@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveReports {
         {
         }
         /// <summary>
-        /// The transitive reports for a contact. Read-only.
+        /// Retrieve a count of transitive reports for an organizational contact.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-get-transitivereports?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveReports {
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The transitive reports for a contact. Read-only.
+        /// Retrieve a count of transitive reports for an organizational contact.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveReports {
             return new TransitiveReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The transitive reports for a contact. Read-only.
+        /// Retrieve a count of transitive reports for an organizational contact.
         /// </summary>
         public class TransitiveReportsRequestBuilderGetQueryParameters 
         {

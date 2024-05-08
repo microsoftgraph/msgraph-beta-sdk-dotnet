@@ -23,6 +23,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("consentedPermissionSet", value); }
         }
 #endif
+        /// <summary>The scopeInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public TeamsAppInstallationScopeInfo? ScopeInfo {
+            get { return BackingStore?.Get<TeamsAppInstallationScopeInfo?>("scopeInfo"); }
+            set { BackingStore?.Set("scopeInfo", value); }
+        }
+#nullable restore
+#else
+        public TeamsAppInstallationScopeInfo ScopeInfo {
+            get { return BackingStore?.Get<TeamsAppInstallationScopeInfo>("scopeInfo"); }
+            set { BackingStore?.Set("scopeInfo", value); }
+        }
+#endif
         /// <summary>The app that is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 {"consentedPermissionSet", n => { ConsentedPermissionSet = n.GetObjectValue<TeamsAppPermissionSet>(TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
+                {"scopeInfo", n => { ScopeInfo = n.GetObjectValue<TeamsAppInstallationScopeInfo>(TeamsAppInstallationScopeInfo.CreateFromDiscriminatorValue); } },
                 {"teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue); } },
                 {"teamsAppDefinition", n => { TeamsAppDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDefinition>(Microsoft.Graph.Beta.Models.TeamsAppDefinition.CreateFromDiscriminatorValue); } },
             };
@@ -88,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<TeamsAppPermissionSet>("consentedPermissionSet", ConsentedPermissionSet);
+            writer.WriteObjectValue<TeamsAppInstallationScopeInfo>("scopeInfo", ScopeInfo);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp", TeamsApp);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppDefinition>("teamsAppDefinition", TeamsAppDefinition);
         }

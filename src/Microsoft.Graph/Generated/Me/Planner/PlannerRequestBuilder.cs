@@ -96,7 +96,8 @@ namespace Microsoft.Graph.Beta.Me.Planner {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Selective Planner services available to the user. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -119,7 +120,8 @@ namespace Microsoft.Graph.Beta.Me.Planner {
             return await RequestAdapter.SendAsync<PlannerUser>(requestInfo, PlannerUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property planner in me
+        /// Update the properties of a plannerUser object. You can use this operation to add or remove plans from a user&apos;s favorite plans list, and to indicate which plans the user has recently viewed.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/planneruser-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerUser"/></returns>
         /// <param name="body">The request body</param>
@@ -163,7 +165,7 @@ namespace Microsoft.Graph.Beta.Me.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Selective Planner services available to the user. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Planner {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property planner in me
+        /// Update the properties of a plannerUser object. You can use this operation to add or remove plans from a user&apos;s favorite plans list, and to indicate which plans the user has recently viewed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -220,7 +222,7 @@ namespace Microsoft.Graph.Beta.Me.Planner {
         {
         }
         /// <summary>
-        /// Selective Planner services available to the user. Read-only. Nullable.
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
         /// </summary>
         public class PlannerRequestBuilderGetQueryParameters 
         {

@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
             return requestInfo;
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.FeatureRolloutPolicies.Item.Ap
         {
         }
         /// <summary>
-        /// Nullable. Specifies a list of directoryObjects that feature is enabled for.
+        /// Nullable. Specifies a list of directoryObject resources that feature is enabled for.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Insights.Trending {
         {
         }
         /// <summary>
-        /// Access this property from the derived type itemInsights.
+        /// Calculated insight that includes a list of documents trending around the user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/insights-list-trending?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TrendingCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Trending {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Trending>(requestInfo, Microsoft.Graph.Beta.Models.Trending.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Access this property from the derived type itemInsights.
+        /// Calculated insight that includes a list of documents trending around the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Me.Insights.Trending {
             return new TrendingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Access this property from the derived type itemInsights.
+        /// Calculated insight that includes a list of documents trending around the user.
         /// </summary>
         public class TrendingRequestBuilderGetQueryParameters 
         {

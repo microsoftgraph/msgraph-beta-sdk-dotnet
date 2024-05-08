@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
         {
         }
         /// <summary>
-        /// Delete ref of navigation property identityProviders for identity
+        /// Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-delete-identityproviders?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -55,7 +56,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get ref of identityProviders from identity
+        /// Get the identity providers in a b2cIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-list-identityproviders?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +81,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property ref to identityProviders for identity
+        /// Add identity providers in a b2cIdentityUserFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-post-identityproviders?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +107,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property identityProviders for identity
+        /// Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Get ref of identityProviders from identity
+        /// Get the identity providers in a b2cIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +147,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to identityProviders for identity
+        /// Add identity providers in a b2cIdentityUserFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -177,7 +180,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete ref of navigation property identityProviders for identity
+        /// Delete an identity provider from a b2cIdentityUserFlow object. For more information about identity providers available for user flows, see the identityProviders API reference.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -200,7 +203,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Ref 
         {
         }
         /// <summary>
-        /// Get ref of identityProviders from identity
+        /// Get the identity providers in a b2cIdentityUserFlow object.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

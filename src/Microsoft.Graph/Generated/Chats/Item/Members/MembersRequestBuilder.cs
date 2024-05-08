@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Members {
         {
         }
         /// <summary>
-        /// A collection of all the members in the chat. Nullable.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         /// <returns>A <see cref="ConversationMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,8 @@ namespace Microsoft.Graph.Beta.Chats.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMemberCollectionResponse>(requestInfo, ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to members for chats
+        /// Add a conversationMember to a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ConversationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Members {
             return await RequestAdapter.SendAsync<ConversationMember>(requestInfo, ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of all the members in the chat. Nullable.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Members {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to members for chats
+        /// Add a conversationMember to a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Chats.Item.Members {
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of all the members in the chat. Nullable.
+        /// Retrieve a conversationMember from a chat.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

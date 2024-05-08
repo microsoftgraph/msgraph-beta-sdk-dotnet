@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.Permi
         {
         }
         /// <summary>
-        /// Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
+        /// Get a list of the permissionsCreepIndexDistribution objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permissionsanalytics-list-permissionscreepindexdistributions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PermissionsCreepIndexDistributionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.Permi
             return await RequestAdapter.SendAsync<PermissionsCreepIndexDistribution>(requestInfo, PermissionsCreepIndexDistribution.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
+        /// Get a list of the permissionsCreepIndexDistribution objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.PermissionsAnalytics.Aws.Permi
             return new PermissionsCreepIndexDistributionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).
+        /// Get a list of the permissionsCreepIndexDistribution objects and their properties.
         /// </summary>
         public class PermissionsCreepIndexDistributionsRequestBuilderGetQueryParameters 
         {

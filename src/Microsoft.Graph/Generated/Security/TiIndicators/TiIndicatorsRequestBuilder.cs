@@ -22,26 +22,31 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
     public class TiIndicatorsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public CountRequestBuilder Count
         {
             get => new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicators method.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public DeleteTiIndicatorsRequestBuilder DeleteTiIndicators
         {
             get => new DeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public DeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId
         {
             get => new DeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the submitTiIndicators method.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public SubmitTiIndicatorsRequestBuilder SubmitTiIndicators
         {
             get => new SubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateTiIndicators method.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public UpdateTiIndicatorsRequestBuilder UpdateTiIndicators
         {
             get => new UpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of tiIndicator</param>
         /// <returns>A <see cref="TiIndicatorItemRequestBuilder"/></returns>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public TiIndicatorItemRequestBuilder this[string position]
         {
             get
@@ -75,12 +81,14 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         {
         }
         /// <summary>
-        /// Get tiIndicators from security
+        /// Retrieve a list of tiIndicator objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicators-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TiIndicatorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<TiIndicatorCollectionResponse?> GetAsync(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,13 +106,15 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicatorCollectionResponse>(requestInfo, TiIndicatorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tiIndicators for security
+        /// Create a new tiIndicator object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicators-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TiIndicator"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<TiIndicator?> PostAsync(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -123,10 +133,11 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return await RequestAdapter.SendAsync<TiIndicator>(requestInfo, TiIndicator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tiIndicators from security
+        /// Retrieve a list of tiIndicator objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TiIndicatorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -142,11 +153,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tiIndicators for security
+        /// Create a new tiIndicator object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(TiIndicator body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -168,12 +180,13 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         /// </summary>
         /// <returns>A <see cref="TiIndicatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
         public TiIndicatorsRequestBuilder WithUrl(string rawUrl)
         {
             return new TiIndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get tiIndicators from security
+        /// Retrieve a list of tiIndicator objects.
         /// </summary>
         public class TiIndicatorsRequestBuilderGetQueryParameters 
         {

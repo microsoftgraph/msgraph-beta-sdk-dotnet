@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about phone numbers associated with a user in various services.
+        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itemphone-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemPhone"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents detailed information about phone numbers associated with a user in various services.
+        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Phones.Item {
         {
         }
         /// <summary>
-        /// Represents detailed information about phone numbers associated with a user in various services.
+        /// Retrieve the properties and relationships of an itemPhone object in a user&apos;s profile.
         /// </summary>
         public class ItemPhoneItemRequestBuilderGetQueryParameters 
         {

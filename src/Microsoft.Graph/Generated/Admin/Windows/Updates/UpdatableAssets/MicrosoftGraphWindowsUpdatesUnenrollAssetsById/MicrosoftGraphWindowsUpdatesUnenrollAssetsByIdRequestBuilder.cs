@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
         {
         }
         /// <summary>
-        /// Invoke action unenrollAssetsById
+        /// Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.MicrosoftGr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action unenrollAssetsById
+        /// Unenroll updatableAsset resources of the same type from update management by the deployment service. You can also use the method unenrollAssets to unenroll assets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -276,18 +276,18 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("policyAction", value); }
         }
 #endif
-        /// <summary>Contains the email addresses of the recipients.</summary>
+        /// <summary>Contains the email address of the recipient.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RecipientEmailAddresses {
-            get { return BackingStore?.Get<List<string>?>("recipientEmailAddresses"); }
-            set { BackingStore?.Set("recipientEmailAddresses", value); }
+        public string? RecipientEmailAddress {
+            get { return BackingStore?.Get<string?>("recipientEmailAddress"); }
+            set { BackingStore?.Set("recipientEmailAddress", value); }
         }
 #nullable restore
 #else
-        public List<string> RecipientEmailAddresses {
-            get { return BackingStore?.Get<List<string>>("recipientEmailAddresses"); }
-            set { BackingStore?.Set("recipientEmailAddresses", value); }
+        public string RecipientEmailAddress {
+            get { return BackingStore?.Get<string>("recipientEmailAddress"); }
+            set { BackingStore?.Set("recipientEmailAddress", value); }
         }
 #endif
         /// <summary>A field that indicates where and how bounced emails are processed.</summary>
@@ -351,11 +351,20 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>Indicates the threat types. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ThreatType?>("threatType"); }
-            set { BackingStore?.Set("threatType", value); }
+        /// <summary>Indicates the threat types. The possible values are: unknown, spam, malware, phish, none, unknownFutureValue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ThreatType?>? ThreatTypes {
+            get { return BackingStore?.Get<List<ThreatType?>?>("threatTypes"); }
+            set { BackingStore?.Set("threatTypes", value); }
         }
+#nullable restore
+#else
+        public List<ThreatType?> ThreatTypes {
+            get { return BackingStore?.Get<List<ThreatType?>>("threatTypes"); }
+            set { BackingStore?.Set("threatTypes", value); }
+        }
+#endif
         /// <summary>A collection of the URLs in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -414,13 +423,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"phishConfidenceLevel", n => { PhishConfidenceLevel = n.GetStringValue(); } },
                 {"policy", n => { Policy = n.GetStringValue(); } },
                 {"policyAction", n => { PolicyAction = n.GetStringValue(); } },
-                {"recipientEmailAddresses", n => { RecipientEmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
                 {"returnPath", n => { ReturnPath = n.GetStringValue(); } },
                 {"senderDetail", n => { SenderDetail = n.GetObjectValue<AnalyzedEmailSenderDetail>(AnalyzedEmailSenderDetail.CreateFromDiscriminatorValue); } },
                 {"sizeInBytes", n => { SizeInBytes = n.GetIntValue(); } },
                 {"spamConfidenceLevel", n => { SpamConfidenceLevel = n.GetStringValue(); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
-                {"threatType", n => { ThreatType = n.GetEnumValue<ThreatType>(); } },
+                {"threatTypes", n => { ThreatTypes = n.GetCollectionOfEnumValues<ThreatType>()?.ToList(); } },
                 {"urls", n => { Urls = n.GetCollectionOfObjectValues<AnalyzedEmailUrl>(AnalyzedEmailUrl.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"urlsCount", n => { UrlsCount = n.GetIntValue(); } },
             };
@@ -454,13 +463,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("phishConfidenceLevel", PhishConfidenceLevel);
             writer.WriteStringValue("policy", Policy);
             writer.WriteStringValue("policyAction", PolicyAction);
-            writer.WriteCollectionOfPrimitiveValues<string>("recipientEmailAddresses", RecipientEmailAddresses);
+            writer.WriteStringValue("recipientEmailAddress", RecipientEmailAddress);
             writer.WriteStringValue("returnPath", ReturnPath);
             writer.WriteObjectValue<AnalyzedEmailSenderDetail>("senderDetail", SenderDetail);
             writer.WriteIntValue("sizeInBytes", SizeInBytes);
             writer.WriteStringValue("spamConfidenceLevel", SpamConfidenceLevel);
             writer.WriteStringValue("subject", Subject);
-            writer.WriteEnumValue<ThreatType>("threatType", ThreatType);
+            writer.WriteCollectionOfEnumValues<ThreatType>("threatTypes", ThreatTypes);
             writer.WriteCollectionOfObjectValues<AnalyzedEmailUrl>("urls", Urls);
             writer.WriteIntValue("urlsCount", UrlsCount);
         }

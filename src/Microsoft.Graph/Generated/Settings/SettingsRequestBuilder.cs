@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Settings {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings{?%24count,%24expand,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Settings {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings{?%24count,%24expand,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/settings{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
@@ -167,6 +167,16 @@ namespace Microsoft.Graph.Beta.Settings {
 #else
             [QueryParameter("%24expand")]
             public string[] Expand { get; set; }
+#endif
+            /// <summary>Filter items by property values</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24filter")]
+            public string? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
 #endif
             /// <summary>Order items by property values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Quota {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get quota from external
+        /// Retrieve the properties and relationships of a connectionQuota object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-connectionquota-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ConnectionQuota"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Quota {
             return requestInfo;
         }
         /// <summary>
-        /// Get quota from external
+        /// Retrieve the properties and relationships of a connectionQuota object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Quota {
         {
         }
         /// <summary>
-        /// Get quota from external
+        /// Retrieve the properties and relationships of a connectionQuota object.
         /// </summary>
         public class QuotaRequestBuilderGetQueryParameters 
         {

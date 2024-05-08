@@ -55,7 +55,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomCalloutExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +80,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<CustomCalloutExtension>(requestInfo, CustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property accessPackageCustomWorkflowExtensions in identityGovernance
+        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomCalloutExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -125,7 +127,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +147,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property accessPackageCustomWorkflowExtensions in identityGovernance
+        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +187,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// The attributes of a logic app, which can be called at various stages of an access package request and assignment cycle.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         public class CustomCalloutExtensionItemRequestBuilderGetQueryParameters 
         {

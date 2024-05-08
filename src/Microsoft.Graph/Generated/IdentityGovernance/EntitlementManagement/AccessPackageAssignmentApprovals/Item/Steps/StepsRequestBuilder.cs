@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
+        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/approval-list-steps?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ApprovalStepCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return await RequestAdapter.SendAsync<ApprovalStep>(requestInfo, ApprovalStep.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
+        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return new StepsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Used to represent the decision associated with a single step in the approval process configured in approvalStage.
+        /// List the approvalStep objects associated with an approval. This API request is made by an approver in the following scenarios:
         /// </summary>
         public class StepsRequestBuilderGetQueryParameters 
         {

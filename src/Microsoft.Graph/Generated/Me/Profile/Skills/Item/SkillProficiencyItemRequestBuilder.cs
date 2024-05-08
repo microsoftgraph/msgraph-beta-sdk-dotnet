@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property skills for me
+        /// Delete a skillProficiency object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/skillproficiency-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about skills associated with a user in various services.
+        /// Retrieve the properties and relationships of a skillproficiency object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/skillproficiency-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SkillProficiency"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             return await RequestAdapter.SendAsync<SkillProficiency>(requestInfo, SkillProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property skills in me
+        /// Update the properties of a skillProficiency object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/skillproficiency-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="SkillProficiency"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             return await RequestAdapter.SendAsync<SkillProficiency>(requestInfo, SkillProficiency.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property skills for me
+        /// Delete a skillProficiency object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents detailed information about skills associated with a user in various services.
+        /// Retrieve the properties and relationships of a skillproficiency object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property skills in me
+        /// Update the properties of a skillProficiency object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Skills.Item {
         {
         }
         /// <summary>
-        /// Represents detailed information about skills associated with a user in various services.
+        /// Retrieve the properties and relationships of a skillproficiency object in a user&apos;s profile.
         /// </summary>
         public class SkillProficiencyItemRequestBuilderGetQueryParameters 
         {

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
+        /// Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalidentitiespolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>(requestInfo, Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property externalIdentitiesPolicy in policies
+        /// Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalidentitiespolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
+        /// Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property externalIdentitiesPolicy in policies
+        /// Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
         {
         }
         /// <summary>
-        /// Represents the tenant-wide policy that controls whether guests can leave a Microsoft Entra tenant via self-service controls.
+        /// Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave a Microsoft Entra tenant via self-service controls.
         /// </summary>
         public class ExternalIdentitiesPolicyRequestBuilderGetQueryParameters 
         {

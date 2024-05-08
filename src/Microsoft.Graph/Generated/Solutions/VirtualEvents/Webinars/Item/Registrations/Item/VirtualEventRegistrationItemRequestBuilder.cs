@@ -61,7 +61,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Registration records of the webinar.
+        /// Get the properties and relationships of a virtualEventRegistration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventregistration-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventRegistration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -138,7 +139,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
             return requestInfo;
         }
         /// <summary>
-        /// Registration records of the webinar.
+        /// Get the properties and relationships of a virtualEventRegistration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -195,7 +196,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Registratio
         {
         }
         /// <summary>
-        /// Registration records of the webinar.
+        /// Get the properties and relationships of a virtualEventRegistration object.
         /// </summary>
         public class VirtualEventRegistrationItemRequestBuilderGetQueryParameters 
         {

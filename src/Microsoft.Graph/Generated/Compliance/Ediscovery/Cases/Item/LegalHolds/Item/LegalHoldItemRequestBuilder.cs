@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
         {
         }
         /// <summary>
-        /// Delete navigation property legalHolds for compliance
+        /// Delete a legalHold object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +77,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of case legalHold objects for this case.  Nullable.
+        /// Read the properties and relationships of a legalHold object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="LegalHold"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,7 +102,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             return await RequestAdapter.SendAsync<LegalHold>(requestInfo, LegalHold.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property legalHolds in compliance
+        /// Update the properties of a legalHold object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ediscovery-legalhold-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="LegalHold"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +129,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             return await RequestAdapter.SendAsync<LegalHold>(requestInfo, LegalHold.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property legalHolds for compliance
+        /// Delete a legalHold object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Returns a list of case legalHold objects for this case.  Nullable.
+        /// Read the properties and relationships of a legalHold object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -166,7 +169,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property legalHolds in compliance
+        /// Update the properties of a legalHold object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -206,7 +209,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
         {
         }
         /// <summary>
-        /// Returns a list of case legalHold objects for this case.  Nullable.
+        /// Read the properties and relationships of a legalHold object.
         /// </summary>
         public class LegalHoldItemRequestBuilderGetQueryParameters 
         {

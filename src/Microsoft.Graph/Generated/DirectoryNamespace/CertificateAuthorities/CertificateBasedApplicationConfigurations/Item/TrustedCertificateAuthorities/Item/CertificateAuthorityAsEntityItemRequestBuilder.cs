@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         {
         }
         /// <summary>
-        /// Delete navigation property trustedCertificateAuthorities for directory
+        /// Delete a certificateAuthorityAsEntity object. You can&apos;t delete all items in the collection because this collection requires at least one object that is a root authority to always persist.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthorityasentity-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of trusted certificate authorities.
+        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthorityasentity-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CertificateAuthorityAsEntity"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return await RequestAdapter.SendAsync<CertificateAuthorityAsEntity>(requestInfo, CertificateAuthorityAsEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property trustedCertificateAuthorities in directory
+        /// Update the properties of a certificateAuthorityAsEntity object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificateauthorityasentity-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CertificateAuthorityAsEntity"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return await RequestAdapter.SendAsync<CertificateAuthorityAsEntity>(requestInfo, CertificateAuthorityAsEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property trustedCertificateAuthorities for directory
+        /// Delete a certificateAuthorityAsEntity object. You can&apos;t delete all items in the collection because this collection requires at least one object that is a root authority to always persist.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return requestInfo;
         }
         /// <summary>
-        /// Collection of trusted certificate authorities.
+        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property trustedCertificateAuthorities in directory
+        /// Update the properties of a certificateAuthorityAsEntity object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         {
         }
         /// <summary>
-        /// Collection of trusted certificate authorities.
+        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
         /// </summary>
         public class CertificateAuthorityAsEntityItemRequestBuilderGetQueryParameters 
         {

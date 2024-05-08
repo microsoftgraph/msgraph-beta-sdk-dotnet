@@ -83,7 +83,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageSubject>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property subjects in identityGovernance
+        /// Update an existing accessPackageSubject object to change the subject lifecycle.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagesubject-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageSubject"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +147,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Subjects
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property subjects in identityGovernance
+        /// Update an existing accessPackageSubject object to change the subject lifecycle.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

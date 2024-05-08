@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property mobileDeviceManagementPolicies for policies
+        /// Delete a mobilityManagementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -60,7 +61,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mobileDeviceManagementPolicies from policies
+        /// Read the properties and relationships of a mobilityManagementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MobilityManagementPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property mobileDeviceManagementPolicies in policies
+        /// Update the properties of a mobilityManagementPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mobiledevicemanagementpolicies-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="MobilityManagementPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +111,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             return await RequestAdapter.SendAsync<MobilityManagementPolicy>(requestInfo, MobilityManagementPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mobileDeviceManagementPolicies for policies
+        /// Delete a mobilityManagementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +130,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get mobileDeviceManagementPolicies from policies
+        /// Read the properties and relationships of a mobilityManagementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +149,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property mobileDeviceManagementPolicies in policies
+        /// Update the properties of a mobilityManagementPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +187,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item {
         {
         }
         /// <summary>
-        /// Get mobileDeviceManagementPolicies from policies
+        /// Read the properties and relationships of a mobilityManagementPolicy object.
         /// </summary>
         public class MobilityManagementPolicyItemRequestBuilderGetQueryParameters 
         {

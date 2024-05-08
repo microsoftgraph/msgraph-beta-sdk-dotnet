@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The analyzedEmails property</summary>
@@ -33,20 +33,6 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         public List<AnalyzedEmail> AnalyzedEmails {
             get { return BackingStore?.Get<List<AnalyzedEmail>>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
-        }
-#endif
-        /// <summary>The approverUpn property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ApproverUpn {
-            get { return BackingStore?.Get<string?>("approverUpn"); }
-            set { BackingStore?.Set("approverUpn", value); }
-        }
-#nullable restore
-#else
-        public string ApproverUpn {
-            get { return BackingStore?.Get<string>("approverUpn"); }
-            set { BackingStore?.Set("approverUpn", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
@@ -117,7 +103,6 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
             {
                 {"action", n => { Action = n.GetEnumValue<RemediationAction>(); } },
                 {"analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"approverUpn", n => { ApproverUpn = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"remediateSendersCopy", n => { RemediateSendersCopy = n.GetBoolValue(); } },
@@ -133,7 +118,6 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RemediationAction>("action", Action);
             writer.WriteCollectionOfObjectValues<AnalyzedEmail>("analyzedEmails", AnalyzedEmails);
-            writer.WriteStringValue("approverUpn", ApproverUpn);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("remediateSendersCopy", RemediateSendersCopy);

@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
         {
         }
         /// <summary>
-        /// The collection of cloud PC connections across managed tenants.
+        /// Get a list of the cloudPcConnection objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcconnections?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcConnectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
             return await RequestAdapter.SendAsync<CloudPcConnection>(requestInfo, CloudPcConnection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of cloud PC connections across managed tenants.
+        /// Get a list of the cloudPcConnection objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcConnect
             return new CloudPcConnectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of cloud PC connections across managed tenants.
+        /// Get a list of the cloudPcConnection objects and their properties.
         /// </summary>
         public class CloudPcConnectionsRequestBuilderGetQueryParameters 
         {

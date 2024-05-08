@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants {
         {
         }
         /// <summary>
-        /// The collection of tenants associated with the managing entity.
+        /// Get a list of the tenant objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenants?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants {
             return await RequestAdapter.SendAsync<Tenant>(requestInfo, Tenant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of tenants associated with the managing entity.
+        /// Get a list of the tenant objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.Tenants {
             return new TenantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of tenants associated with the managing entity.
+        /// Get a list of the tenant objects and their properties.
         /// </summary>
         public class TenantsRequestBuilderGetQueryParameters 
         {

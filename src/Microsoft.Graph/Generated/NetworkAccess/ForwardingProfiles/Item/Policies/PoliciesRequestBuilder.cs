@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies {
         {
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Retrieve a list of forwarding policy links that are associated with a specific forwarding profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-forwardingprofile-list-policies?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PolicyLinkCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies {
             return await RequestAdapter.SendAsync<PolicyLink>(requestInfo, PolicyLink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Retrieve a list of forwarding policy links that are associated with a specific forwarding profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.Item.Policies {
             return new PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Traffic forwarding policies associated with this profile.
+        /// Retrieve a list of forwarding policy links that are associated with a specific forwarding profile.
         /// </summary>
         public class PoliciesRequestBuilderGetQueryParameters 
         {

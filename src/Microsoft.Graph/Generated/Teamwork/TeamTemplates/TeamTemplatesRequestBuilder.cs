@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
         {
         }
         /// <summary>
-        /// The templates associated with a team.
+        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TeamTemplateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return await RequestAdapter.SendAsync<TeamTemplate>(requestInfo, TeamTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The templates associated with a team.
+        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return new TeamTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The templates associated with a team.
+        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
         /// </summary>
         public class TeamTemplatesRequestBuilderGetQueryParameters 
         {

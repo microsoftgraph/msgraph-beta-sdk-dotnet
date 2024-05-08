@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByUser.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Retrieve a user&apos;s usage summary for a particular time period. See the printUsageByUser documentation for descriptions of each of the endpoints.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printusagebyuser-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PrintUsageByUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByUser.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Retrieve a user&apos;s usage summary for a particular time period. See the printUsageByUser documentation for descriptions of each of the endpoints.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Reports.DailyPrintUsageByUser.Item {
         {
         }
         /// <summary>
-        /// Retrieve a list of daily print usage summaries, grouped by user.
+        /// Retrieve a user&apos;s usage summary for a particular time period. See the printUsageByUser documentation for descriptions of each of the endpoints.
         /// </summary>
         public class PrintUsageByUserItemRequestBuilderGetQueryParameters 
         {

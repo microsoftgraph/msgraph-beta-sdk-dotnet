@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects {
         {
         }
         /// <summary>
-        /// Represents detailed information about projects associated with a user.
+        /// Retrieve a list of projectParticipation objects from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-projects?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProjectParticipationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects {
             return await RequestAdapter.SendAsync<ProjectParticipationCollectionResponse>(requestInfo, ProjectParticipationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to projects for me
+        /// Use this API to create a new projectParticipation object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-projects?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProjectParticipation"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects {
             return await RequestAdapter.SendAsync<ProjectParticipation>(requestInfo, ProjectParticipation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about projects associated with a user.
+        /// Retrieve a list of projectParticipation objects from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to projects for me
+        /// Use this API to create a new projectParticipation object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects {
             return new ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents detailed information about projects associated with a user.
+        /// Retrieve a list of projectParticipation objects from a user&apos;s profile.
         /// </summary>
         public class ProjectsRequestBuilderGetQueryParameters 
         {

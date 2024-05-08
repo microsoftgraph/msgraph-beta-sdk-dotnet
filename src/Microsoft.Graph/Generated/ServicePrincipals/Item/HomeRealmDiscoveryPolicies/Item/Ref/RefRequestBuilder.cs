@@ -31,7 +31,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
         {
         }
         /// <summary>
-        /// Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
+        /// Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete-homerealmdiscoverypolicies?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property homeRealmDiscoveryPolicies for servicePrincipals
+        /// Remove a homeRealmDiscoveryPolicy from a servicePrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

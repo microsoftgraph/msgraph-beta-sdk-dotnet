@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Me.Photo {
         {
         }
         /// <summary>
-        /// Delete navigation property photo for me
+        /// Delete the photo for the signed-in user or the specified group. 
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,8 @@ namespace Microsoft.Graph.Beta.Me.Photo {
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property photo in me
+        /// Update the photo for the specified contact, group, team, or user in a tenant. The size of the photo you can update to is limited to 4 MB. You can use either PATCH or PUT for this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profilephoto-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ProfilePhoto"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +110,7 @@ namespace Microsoft.Graph.Beta.Me.Photo {
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property photo for me
+        /// Delete the photo for the signed-in user or the specified group. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +148,7 @@ namespace Microsoft.Graph.Beta.Me.Photo {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property photo in me
+        /// Update the photo for the specified contact, group, team, or user in a tenant. The size of the photo you can update to is limited to 4 MB. You can use either PATCH or PUT for this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

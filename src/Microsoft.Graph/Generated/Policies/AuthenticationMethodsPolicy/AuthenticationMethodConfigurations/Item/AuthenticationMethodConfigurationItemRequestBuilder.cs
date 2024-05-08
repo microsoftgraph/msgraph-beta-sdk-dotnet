@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
         {
         }
         /// <summary>
-        /// Delete navigation property authenticationMethodConfigurations for policies
+        /// Delete an externalAuthenticationMethodConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalauthenticationmethodconfiguration-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalauthenticationmethodconfiguration-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AuthenticationMethodConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property authenticationMethodConfigurations in policies
+        /// Update the properties of an externalAuthenticationMethodConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalauthenticationmethodconfiguration-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="AuthenticationMethodConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +105,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property authenticationMethodConfigurations for policies
+        /// Delete an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +124,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             return requestInfo;
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +143,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property authenticationMethodConfigurations in policies
+        /// Update the properties of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +181,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
         {
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         public class AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters 
         {

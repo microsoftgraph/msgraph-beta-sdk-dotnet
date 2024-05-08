@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
         {
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="AuthenticationMethodConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             return await RequestAdapter.SendAsync<AuthenticationMethodConfiguration>(requestInfo, AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.Authenticati
             return new AuthenticationMethodConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         public class AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters 
         {

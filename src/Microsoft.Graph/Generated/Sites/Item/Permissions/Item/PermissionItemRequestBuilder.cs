@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The permissions associated with the site. Nullable.
+        /// Retrieve the properties and relationships of a permission object on a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-get-permission?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +90,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Permission>(requestInfo, Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property permissions in sites
+        /// Update the permission object on a site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-update-permission?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Permission"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +135,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The permissions associated with the site. Nullable.
+        /// Retrieve the properties and relationships of a permission object on a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property permissions in sites
+        /// Update the permission object on a site.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +192,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item {
         {
         }
         /// <summary>
-        /// The permissions associated with the site. Nullable.
+        /// Retrieve the properties and relationships of a permission object on a site.
         /// </summary>
         public class PermissionItemRequestBuilderGetQueryParameters 
         {

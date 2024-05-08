@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.IndustryData;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.Networkaccess;
+using Microsoft.Graph.Beta.Models.Partner.Security;
 using Microsoft.Graph.Beta.Models.Partners.Billing;
 using Microsoft.Graph.Beta.Models.Partners;
 using Microsoft.Graph.Beta.Models.Search;
@@ -27,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -107,7 +108,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.accessReviewSet" => new AccessReviewSet(),
                 "#microsoft.graph.accessReviewStage" => new AccessReviewStage(),
                 "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile" => new ActiveDirectoryWindowsAutopilotDeploymentProfile(),
-                "#microsoft.graph.activeUsersBreakdownMetric" => new ActiveUsersBreakdownMetric(),
                 "#microsoft.graph.activeUsersMetric" => new ActiveUsersMetric(),
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.activityHistoryItem" => new ActivityHistoryItem(),
@@ -439,6 +439,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.customAppScope" => new CustomAppScope(),
                 "#microsoft.graph.customAuthenticationExtension" => new CustomAuthenticationExtension(),
                 "#microsoft.graph.customCalloutExtension" => new CustomCalloutExtension(),
+                "#microsoft.graph.customClaimsPolicy" => new CustomClaimsPolicy(),
                 "#microsoft.graph.customExtensionHandler" => new CustomExtensionHandler(),
                 "#microsoft.graph.customExtensionStageSetting" => new CustomExtensionStageSetting(),
                 "#microsoft.graph.customSecurityAttributeAudit" => new CustomSecurityAttributeAudit(),
@@ -708,6 +709,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.extension" => new Extension(),
                 "#microsoft.graph.extensionProperty" => new ExtensionProperty(),
                 "#microsoft.graph.external" => new External(),
+                "#microsoft.graph.externalAuthenticationMethodConfiguration" => new ExternalAuthenticationMethodConfiguration(),
                 "#microsoft.graph.externalConnection" => new ExternalConnection(),
                 "#microsoft.graph.externalConnectors.connectionOperation" => new Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation(),
                 "#microsoft.graph.externalConnectors.connectionQuota" => new ConnectionQuota(),
@@ -1227,6 +1229,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.participant" => new Participant(),
                 "#microsoft.graph.participantJoiningNotification" => new ParticipantJoiningNotification(),
                 "#microsoft.graph.participantLeftNotification" => new ParticipantLeftNotification(),
+                "#microsoft.graph.partner.security.partnerSecurity" => new PartnerSecurity(),
+                "#microsoft.graph.partner.security.partnerSecurityAlert" => new PartnerSecurityAlert(),
                 "#microsoft.graph.partners" => new Microsoft.Graph.Beta.Models.Partners.Partners(),
                 "#microsoft.graph.partners.billing.azureUsage" => new AzureUsage(),
                 "#microsoft.graph.partners.billing.billedReconciliation" => new BilledReconciliation(),
@@ -1486,6 +1490,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.security.intelligenceProfileIndicator" => new IntelligenceProfileIndicator(),
                 "#microsoft.graph.security.ipAddress" => new Microsoft.Graph.Beta.Models.Security.IpAddress(),
                 "#microsoft.graph.security.labelsRoot" => new LabelsRoot(),
+                "#microsoft.graph.security.networkAdapter" => new NetworkAdapter(),
                 "#microsoft.graph.security.passiveDnsRecord" => new PassiveDnsRecord(),
                 "#microsoft.graph.security.policyBase" => new Microsoft.Graph.Beta.Models.Security.PolicyBase(),
                 "#microsoft.graph.security.protectionRule" => new ProtectionRule(),
@@ -1496,6 +1501,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.security.search" => new Microsoft.Graph.Beta.Models.Security.Search(),
                 "#microsoft.graph.security.security" => new Microsoft.Graph.Beta.Models.Security.Security(),
                 "#microsoft.graph.security.sensitivityLabel" => new Microsoft.Graph.Beta.Models.Security.SensitivityLabel(),
+                "#microsoft.graph.security.sensor" => new Sensor(),
                 "#microsoft.graph.security.siteSource" => new Microsoft.Graph.Beta.Models.Security.SiteSource(),
                 "#microsoft.graph.security.sslCertificate" => new Microsoft.Graph.Beta.Models.Security.SslCertificate(),
                 "#microsoft.graph.security.subcategoryTemplate" => new SubcategoryTemplate(),

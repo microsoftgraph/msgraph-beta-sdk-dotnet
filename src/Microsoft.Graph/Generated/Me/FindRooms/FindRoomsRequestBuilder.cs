@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Me.FindRooms {
         {
         }
         /// <summary>
-        /// Invoke function findRooms
+        /// Get the emailAddress objects that represent all the meeting rooms in the user&apos;s tenant or in a specific room list. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. You can getup to the first 100 rooms in the tenant.
         /// </summary>
         /// <returns>A <see cref="FindRoomsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Me.FindRooms {
             return await RequestAdapter.SendAsync<FindRoomsGetResponse>(requestInfo, FindRoomsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function findRooms
+        /// Get the emailAddress objects that represent all the meeting rooms in the user&apos;s tenant or in a specific room list. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. You can getup to the first 100 rooms in the tenant.
         /// </summary>
         /// <returns>A <see cref="FindRoomsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Me.FindRooms {
             return await RequestAdapter.SendAsync<FindRoomsResponse>(requestInfo, FindRoomsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function findRooms
+        /// Get the emailAddress objects that represent all the meeting rooms in the user&apos;s tenant or in a specific room list. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. You can getup to the first 100 rooms in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.FindRooms {
             return new FindRoomsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function findRooms
+        /// Get the emailAddress objects that represent all the meeting rooms in the user&apos;s tenant or in a specific room list. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list. You can getup to the first 100 rooms in the tenant.
         /// </summary>
         public class FindRoomsRequestBuilderGetQueryParameters 
         {

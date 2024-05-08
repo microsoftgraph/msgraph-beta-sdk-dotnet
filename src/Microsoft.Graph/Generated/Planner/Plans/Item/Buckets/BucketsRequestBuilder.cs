@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets {
         {
         }
         /// <summary>
-        /// Collection of buckets in the plan. Read-only. Nullable.
+        /// Retrieve a list of plannerBucket objects contained by a plannerPlan object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannerplan-list-buckets?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PlannerBucketCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets {
             return await RequestAdapter.SendAsync<PlannerBucket>(requestInfo, PlannerBucket.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of buckets in the plan. Read-only. Nullable.
+        /// Retrieve a list of plannerBucket objects contained by a plannerPlan object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets {
             return new BucketsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Collection of buckets in the plan. Read-only. Nullable.
+        /// Retrieve a list of plannerBucket objects contained by a plannerPlan object.
         /// </summary>
         public class BucketsRequestBuilderGetQueryParameters 
         {

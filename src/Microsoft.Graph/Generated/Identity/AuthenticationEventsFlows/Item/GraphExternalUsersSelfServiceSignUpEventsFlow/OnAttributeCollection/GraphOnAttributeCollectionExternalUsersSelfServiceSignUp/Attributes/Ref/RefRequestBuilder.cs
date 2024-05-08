@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         {
         }
         /// <summary>
-        /// Delete ref of navigation property attributes for identity
+        /// Remove an attribute from an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. After this step, PATCH the user flow to remove the attribute from the attribute collection step.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-delete-attributes?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -54,7 +55,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get ref of attributes from identity
+        /// Get an identityUserFlowAttribute collection associated with an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the attributes that are collected from the user during the authentication experience that&apos;s defined by the user flow.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-list-attributes?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +79,8 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return await RequestAdapter.SendAsync<StringCollectionResponse>(requestInfo, StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property ref to attributes for identity
+        /// Add an attribute to an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. Prior to this step, PATCH the user flow to add the attribute to the attribute collection step (to determine how it will be displayed).
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onattributecollectionexternalusersselfservicesignup-post-attributes?view=graph-rest-beta" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +104,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete ref of navigation property attributes for identity
+        /// Remove an attribute from an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. After this step, PATCH the user flow to remove the attribute from the attribute collection step.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +123,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return requestInfo;
         }
         /// <summary>
-        /// Get ref of attributes from identity
+        /// Get an identityUserFlowAttribute collection associated with an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the attributes that are collected from the user during the authentication experience that&apos;s defined by the user flow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +142,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property ref to attributes for identity
+        /// Add an attribute to an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. Prior to this step, PATCH the user flow to add the attribute to the attribute collection step (to determine how it will be displayed).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +173,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return new RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Delete ref of navigation property attributes for identity
+        /// Remove an attribute from an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. You can add both custom and built-in attributes to a user flow. After this step, PATCH the user flow to remove the attribute from the attribute collection step.
         /// </summary>
         public class RefRequestBuilderDeleteQueryParameters 
         {
@@ -193,7 +196,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         {
         }
         /// <summary>
-        /// Get ref of attributes from identity
+        /// Get an identityUserFlowAttribute collection associated with an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the attributes that are collected from the user during the authentication experience that&apos;s defined by the user flow.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters 
         {

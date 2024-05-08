@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs {
         {
         }
         /// <summary>
-        /// Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+        /// Get a list of the industryDataRun objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydatarun-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataRunCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs {
             return await RequestAdapter.SendAsync<IndustryDataRunCollectionResponse>(requestInfo, IndustryDataRunCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+        /// Get a list of the industryDataRun objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Runs {
             return new RunsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Set of ephemeral runs which present the point-in-time that diagnostic state of activities performed by the system. Read-only.
+        /// Get a list of the industryDataRun objects and their properties.
         /// </summary>
         public class RunsRequestBuilderGetQueryParameters 
         {

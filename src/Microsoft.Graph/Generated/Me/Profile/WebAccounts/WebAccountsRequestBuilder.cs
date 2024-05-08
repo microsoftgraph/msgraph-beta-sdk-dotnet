@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
         {
         }
         /// <summary>
-        /// Represents web accounts the user has indicated they use or has added to their user profile.
+        /// Retrieve a list of webAccounts objects from the user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-list-webaccounts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WebAccountCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
             return await RequestAdapter.SendAsync<WebAccountCollectionResponse>(requestInfo, WebAccountCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to webAccounts for me
+        /// Create a new webAccount object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/profile-post-webaccounts?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="WebAccount"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
             return await RequestAdapter.SendAsync<WebAccount>(requestInfo, WebAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents web accounts the user has indicated they use or has added to their user profile.
+        /// Retrieve a list of webAccounts objects from the user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to webAccounts for me
+        /// Create a new webAccount object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.WebAccounts {
             return new WebAccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents web accounts the user has indicated they use or has added to their user profile.
+        /// Retrieve a list of webAccounts objects from the user&apos;s profile.
         /// </summary>
         public class WebAccountsRequestBuilderGetQueryParameters 
         {

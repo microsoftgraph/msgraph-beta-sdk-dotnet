@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags {
         {
         }
         /// <summary>
-        /// The collection of tenant tags across managed tenants.
+        /// Get a list of the tenantTag objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-tenanttags?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantTagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags {
             return await RequestAdapter.SendAsync<TenantTagCollectionResponse>(requestInfo, TenantTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to tenantTags for tenantRelationships
+        /// Create a new tenantTag object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-post-tenanttags?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TenantTag"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags {
             return await RequestAdapter.SendAsync<TenantTag>(requestInfo, TenantTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of tenant tags across managed tenants.
+        /// Get a list of the tenantTag objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to tenantTags for tenantRelationships
+        /// Create a new tenantTag object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantTags {
             return new TenantTagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of tenant tags across managed tenants.
+        /// Get a list of the tenantTag objects and their properties.
         /// </summary>
         public class TenantTagsRequestBuilderGetQueryParameters 
         {

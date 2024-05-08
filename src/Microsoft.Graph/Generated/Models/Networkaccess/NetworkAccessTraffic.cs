@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
-            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? throw new InvalidOperationException("AdditionalData can not be null"); }
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.</summary>
@@ -473,6 +473,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
+        /// <summary>The vendorNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? VendorNames {
+            get { return BackingStore?.Get<List<string>?>("vendorNames"); }
+            set { BackingStore?.Set("vendorNames", value); }
+        }
+#nullable restore
+#else
+        public List<string> VendorNames {
+            get { return BackingStore?.Get<List<string>>("vendorNames"); }
+            set { BackingStore?.Set("vendorNames", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="NetworkAccessTraffic"/> and sets the default values.
         /// </summary>
@@ -538,6 +552,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
                 {"transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"vendorNames", n => { VendorNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -586,6 +601,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
             writer.WriteEnumValue<NetworkingProtocol>("transportProtocol", TransportProtocol);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
+            writer.WriteCollectionOfPrimitiveValues<string>("vendorNames", VendorNames);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

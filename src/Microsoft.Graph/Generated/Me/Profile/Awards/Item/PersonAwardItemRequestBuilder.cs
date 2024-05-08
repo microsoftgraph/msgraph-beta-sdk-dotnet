@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/personaward-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="PersonAward"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Awards.Item {
         {
         }
         /// <summary>
-        /// Represents the details of awards or honors associated with a person.
+        /// Read the properties and relationships of a personAward object from a user&apos;s profile.
         /// </summary>
         public class PersonAwardItemRequestBuilderGetQueryParameters 
         {

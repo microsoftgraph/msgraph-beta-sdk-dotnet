@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
         {
         }
         /// <summary>
-        /// Overview of cloud PC information across managed tenants.
+        /// Get a list of the cloudPcOverview objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managedtenant-list-cloudpcsoverview?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcOverviewCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             return await RequestAdapter.SendAsync<CloudPcOverview>(requestInfo, CloudPcOverview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Overview of cloud PC information across managed tenants.
+        /// Get a list of the cloudPcOverview objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcsOvervi
             return new CloudPcsOverviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Overview of cloud PC information across managed tenants.
+        /// Get a list of the cloudPcOverview objects and their properties.
         /// </summary>
         public class CloudPcsOverviewRequestBuilderGetQueryParameters 
         {

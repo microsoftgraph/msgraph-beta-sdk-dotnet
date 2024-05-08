@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set of ephemeral operations that the system runs currently. Read-only.
+        /// Read the properties and relationships of a fileValidateOperation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-filevalidateoperation-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="LongRunningOperation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Set of ephemeral operations that the system runs currently. Read-only.
+        /// Read the properties and relationships of a fileValidateOperation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.Operations.Item {
         {
         }
         /// <summary>
-        /// Set of ephemeral operations that the system runs currently. Read-only.
+        /// Read the properties and relationships of a fileValidateOperation object.
         /// </summary>
         public class LongRunningOperationItemRequestBuilderGetQueryParameters 
         {

@@ -32,7 +32,8 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails.Item {
         {
         }
         /// <summary>
-        /// Delete navigation property emails for me
+        /// Delete an itemEmail object from a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itememail-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Emails.Item {
             return await RequestAdapter.SendAsync<ItemEmail>(requestInfo, ItemEmail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property emails for me
+        /// Delete an itemEmail object from a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

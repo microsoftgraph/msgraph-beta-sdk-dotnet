@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
         {
         }
         /// <summary>
-        /// A collection of deleted teams.
+        /// Get a list of the deletedTeam objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-list-deletedteams?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DeletedTeamCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
             return await RequestAdapter.SendAsync<DeletedTeam>(requestInfo, DeletedTeam.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A collection of deleted teams.
+        /// Get a list of the deletedTeam objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
             return new DeletedTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A collection of deleted teams.
+        /// Get a list of the deletedTeam objects and their properties.
         /// </summary>
         public class DeletedTeamsRequestBuilderGetQueryParameters 
         {

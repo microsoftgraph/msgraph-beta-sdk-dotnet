@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
         {
         }
         /// <summary>
-        /// List of recommended improvements to improve tenant posture.
+        /// Get a list of the recommendation objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-recommendation?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RecommendationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
             return await RequestAdapter.SendAsync<Recommendation>(requestInfo, Recommendation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of recommended improvements to improve tenant posture.
+        /// Get a list of the recommendation objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations {
             return new RecommendationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of recommended improvements to improve tenant posture.
+        /// Get a list of the recommendation objects and their properties.
         /// </summary>
         public class RecommendationsRequestBuilderGetQueryParameters 
         {

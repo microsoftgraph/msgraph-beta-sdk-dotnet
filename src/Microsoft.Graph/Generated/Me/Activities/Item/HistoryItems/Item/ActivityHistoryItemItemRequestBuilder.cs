@@ -83,7 +83,8 @@ namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item {
             return await RequestAdapter.SendAsync<ActivityHistoryItem>(requestInfo, ActivityHistoryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property historyItems in me
+        /// Delete an existing history item for an existing user activity.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-delete-historyitem?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ActivityHistoryItem"/></returns>
         /// <param name="body">The request body</param>
@@ -146,7 +147,7 @@ namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property historyItems in me
+        /// Delete an existing history item for an existing user activity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

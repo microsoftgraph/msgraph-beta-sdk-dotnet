@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
         {
         }
         /// <summary>
-        /// Invoke function getSmsLog
+        /// Get the log of a sent/received SMS as a collection of smsLogRow entries.
         /// </summary>
         /// <returns>A <see cref="GetSmsLogWithFromDateTimeWithToDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
             return await RequestAdapter.SendAsync<GetSmsLogWithFromDateTimeWithToDateTimeGetResponse>(requestInfo, GetSmsLogWithFromDateTimeWithToDateTimeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSmsLog
+        /// Get the log of a sent/received SMS as a collection of smsLogRow entries.
         /// </summary>
         /// <returns>A <see cref="GetSmsLogWithFromDateTimeWithToDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
             return await RequestAdapter.SendAsync<GetSmsLogWithFromDateTimeWithToDateTimeResponse>(requestInfo, GetSmsLogWithFromDateTimeWithToDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getSmsLog
+        /// Get the log of a sent/received SMS as a collection of smsLogRow entries.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
             return new MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getSmsLog
+        /// Get the log of a sent/received SMS as a collection of smsLogRow entries.
         /// </summary>
         public class MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters 
         {

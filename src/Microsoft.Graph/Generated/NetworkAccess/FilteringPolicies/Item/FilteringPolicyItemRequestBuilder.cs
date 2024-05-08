@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+        /// Get a filteringPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-filteringpolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FilteringPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +128,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+        /// Get a filteringPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.Item {
         {
         }
         /// <summary>
-        /// A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.
+        /// Get a filteringPolicy object.
         /// </summary>
         public class FilteringPolicyItemRequestBuilderGetQueryParameters 
         {

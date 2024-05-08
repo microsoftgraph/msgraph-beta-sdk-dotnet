@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles {
         {
         }
         /// <summary>
-        /// A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+        /// Get a list of the filteringProfile objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-filteringprofile-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="FilteringProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles {
             return await RequestAdapter.SendAsync<FilteringProfile>(requestInfo, FilteringProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+        /// Get a list of the filteringProfile objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles {
             return new FilteringProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.
+        /// Get a list of the filteringProfile objects and their properties.
         /// </summary>
         public class FilteringProfilesRequestBuilderGetQueryParameters 
         {

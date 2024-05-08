@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Defines whether the tenant restrictions cross-tenant access settings are enabled for traffic profiles. Each tenant has only one cross-tenant access settings object.
+        /// Retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-crosstenantaccesssettings-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CrossTenantAccessSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess {
             return await RequestAdapter.SendAsync<CrossTenantAccessSettings>(requestInfo, CrossTenantAccessSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property crossTenantAccess in networkAccess
+        /// Update the cross-tenant access settings to include network packet tagging for enforcing Tenant Restrictions Policies (TRv2 Policies) that prevent data exfiltration to external tenants.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-crosstenantaccesssettings-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CrossTenantAccessSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess {
             return requestInfo;
         }
         /// <summary>
-        /// Defines whether the tenant restrictions cross-tenant access settings are enabled for traffic profiles. Each tenant has only one cross-tenant access settings object.
+        /// Retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property crossTenantAccess in networkAccess
+        /// Update the cross-tenant access settings to include network packet tagging for enforcing Tenant Restrictions Policies (TRv2 Policies) that prevent data exfiltration to external tenants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Settings.CrossTenantAccess {
         {
         }
         /// <summary>
-        /// Defines whether the tenant restrictions cross-tenant access settings are enabled for traffic profiles. Each tenant has only one cross-tenant access settings object.
+        /// Retrieve the cross-tenant access settings, which include network packet tagging to enforce Tenant Restrictions Policies (TRv2 Policies) aimed at preventing data exfiltration to external tenants.
         /// </summary>
         public class CrossTenantAccessRequestBuilderGetQueryParameters 
         {

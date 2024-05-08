@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
         {
         }
         /// <summary>
-        /// Get keySets from trustFramework
+        /// Retrieve a list of trustFrameworkKeySets.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframework-list-keysets?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TrustFrameworkKeySetCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySetCollectionResponse>(requestInfo, TrustFrameworkKeySetCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to keySets for trustFramework
+        /// Create a new trustFrameworkKeySet. The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/trustframework-post-keysets?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="TrustFrameworkKeySet"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return await RequestAdapter.SendAsync<TrustFrameworkKeySet>(requestInfo, TrustFrameworkKeySet.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get keySets from trustFramework
+        /// Retrieve a list of trustFrameworkKeySets.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to keySets for trustFramework
+        /// Create a new trustFrameworkKeySet. The ID of the trustFrameworkKeySet is expected in the create request; however, it can be modified by the service. The modified ID will be available in the response and in the location header.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +151,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets {
             return new KeySetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get keySets from trustFramework
+        /// Retrieve a list of trustFrameworkKeySets.
         /// </summary>
         public class KeySetsRequestBuilderGetQueryParameters 
         {

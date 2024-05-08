@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of cloud PC devices across managed tenants.
+        /// Read the properties and relationships of a cloudPcDevice object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-cloudpcdevice-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CloudPcDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
             return requestInfo;
         }
         /// <summary>
-        /// The collection of cloud PC devices across managed tenants.
+        /// Read the properties and relationships of a cloudPcDevice object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CloudPcDevices
         {
         }
         /// <summary>
-        /// The collection of cloud PC devices across managed tenants.
+        /// Read the properties and relationships of a cloudPcDevice object.
         /// </summary>
         public class CloudPcDeviceItemRequestBuilderGetQueryParameters 
         {

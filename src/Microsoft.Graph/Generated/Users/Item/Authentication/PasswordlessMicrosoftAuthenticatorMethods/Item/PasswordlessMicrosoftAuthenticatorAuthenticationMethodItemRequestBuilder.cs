@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
         {
         }
         /// <summary>
-        /// Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
+        /// Deletes a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/passwordlessmicrosoftauthenticatorauthenticationmethod-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.PasswordlessMicrosoftAu
             return await RequestAdapter.SendAsync<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>(requestInfo, PasswordlessMicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property passwordlessMicrosoftAuthenticatorMethods for users
+        /// Deletes a user&apos;s Microsoft Authenticator Passwordless Phone Sign-in method object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

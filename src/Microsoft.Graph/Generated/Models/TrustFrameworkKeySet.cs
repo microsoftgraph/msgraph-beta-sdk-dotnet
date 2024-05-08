@@ -23,6 +23,20 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keys", value); }
         }
 #endif
+        /// <summary>A collection of the keys.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<TrustFrameworkKey_v2>? KeysV2 {
+            get { return BackingStore?.Get<List<TrustFrameworkKey_v2>?>("keys_v2"); }
+            set { BackingStore?.Set("keys_v2", value); }
+        }
+#nullable restore
+#else
+        public List<TrustFrameworkKey_v2> KeysV2 {
+            get { return BackingStore?.Get<List<TrustFrameworkKey_v2>>("keys_v2"); }
+            set { BackingStore?.Set("keys_v2", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 {"keys", n => { Keys = n.GetCollectionOfObjectValues<TrustFrameworkKey>(TrustFrameworkKey.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"keys_v2", n => { KeysV2 = n.GetCollectionOfObjectValues<TrustFrameworkKey_v2>(TrustFrameworkKey_v2.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -53,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<TrustFrameworkKey>("keys", Keys);
+            writer.WriteCollectionOfObjectValues<TrustFrameworkKey_v2>("keys_v2", KeysV2);
         }
     }
 }

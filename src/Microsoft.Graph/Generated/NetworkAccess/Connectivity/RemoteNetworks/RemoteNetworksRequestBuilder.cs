@@ -74,7 +74,8 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
             return await RequestAdapter.SendAsync<RemoteNetworkCollectionResponse>(requestInfo, RemoteNetworkCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to remoteNetworks for networkAccess
+        /// Create a new remote network.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/networkaccess-connectivity-post-remotenetworks?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RemoteNetwork"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Connectivity.RemoteNetworks {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to remoteNetworks for networkAccess
+        /// Create a new remote network.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

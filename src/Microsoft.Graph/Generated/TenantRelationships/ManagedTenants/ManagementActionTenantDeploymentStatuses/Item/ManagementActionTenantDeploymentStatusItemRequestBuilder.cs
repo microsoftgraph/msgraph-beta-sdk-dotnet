@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The tenant level status of management actions across managed tenants.
+        /// Read the properties and relationships of a managementActionTenantDeploymentStatus object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/managedtenants-managementactiontenantdeploymentstatus-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ManagementActionTenantDeploymentStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return requestInfo;
         }
         /// <summary>
-        /// The tenant level status of management actions across managed tenants.
+        /// Read the properties and relationships of a managementActionTenantDeploymentStatus object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -178,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         {
         }
         /// <summary>
-        /// The tenant level status of management actions across managed tenants.
+        /// Read the properties and relationships of a managementActionTenantDeploymentStatus object.
         /// </summary>
         public class ManagementActionTenantDeploymentStatusItemRequestBuilderGetQueryParameters 
         {

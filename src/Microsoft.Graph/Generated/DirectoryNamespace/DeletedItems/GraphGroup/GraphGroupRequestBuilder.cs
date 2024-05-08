@@ -38,7 +38,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GraphGroup {
         {
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GraphGroup {
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.GraphGroup {
             return new GraphGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.group in the microsoft.graph.directoryObject collection
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, externalUserProfile, group, administrative unit, pendingExternalUserProfile, and user resources.
         /// </summary>
         public class GraphGroupRequestBuilderGetQueryParameters 
         {

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Columns {
         }
         /// <summary>
         /// The collection of column definitions reusable across lists under this site.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-list-columns?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +75,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Columns {
             return await RequestAdapter.SendAsync<ColumnDefinitionCollectionResponse>(requestInfo, ColumnDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to columns for sites
+        /// Create columnDefinition for a site
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-post-columns?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ColumnDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +120,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to columns for sites
+        /// Create columnDefinition for a site
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

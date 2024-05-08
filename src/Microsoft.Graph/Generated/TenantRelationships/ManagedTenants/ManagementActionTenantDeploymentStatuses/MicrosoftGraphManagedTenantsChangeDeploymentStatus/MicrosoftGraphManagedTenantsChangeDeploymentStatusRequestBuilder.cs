@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         {
         }
         /// <summary>
-        /// Invoke action changeDeploymentStatus
+        /// Changes the tenant level deployment status for the management action. This information is used to provide insights into what management actions are in a specific state. As example there might be a plan to apply the require multi-factor authentication for admins, so it would be ideal to change the status to planned to reflect the appropriate status.
         /// </summary>
         /// <returns>A <see cref="ManagementActionDeploymentStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             return await RequestAdapter.SendAsync<ManagementActionDeploymentStatus>(requestInfo, ManagementActionDeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action changeDeploymentStatus
+        /// Changes the tenant level deployment status for the management action. This information is used to provide insights into what management actions are in a specific state. As example there might be a plan to apply the require multi-factor authentication for admins, so it would be ideal to change the status to planned to reflect the appropriate status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

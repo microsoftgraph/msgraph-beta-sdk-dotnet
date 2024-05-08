@@ -72,7 +72,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Specifies class-level assignments settings.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +96,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return await RequestAdapter.SendAsync<EducationAssignmentSettings>(requestInfo, EducationAssignmentSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property assignmentSettings in education
+        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignmentsettings-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EducationAssignmentSettings"/></returns>
         /// <param name="body">The request body</param>
@@ -139,7 +141,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Specifies class-level assignments settings.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +160,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property assignmentSettings in education
+        /// Update the properties of an educationAssignmentSettings object. Only teachers can update these settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -196,7 +198,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
         {
         }
         /// <summary>
-        /// Specifies class-level assignments settings.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// </summary>
         public class AssignmentSettingsRequestBuilderGetQueryParameters 
         {

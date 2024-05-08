@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve the properties and relationships of an itemEmail object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itememail-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemEmail"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             return await RequestAdapter.SendAsync<ItemEmail>(requestInfo, ItemEmail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property emails in users
+        /// Update the properties of an itemEmail object in a user&apos;s profile.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/itememail-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ItemEmail"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve the properties and relationships of an itemEmail object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +142,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property emails in users
+        /// Update the properties of an itemEmail object in a user&apos;s profile.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Emails.Item {
         {
         }
         /// <summary>
-        /// Represents detailed information about email addresses associated with the user.
+        /// Retrieve the properties and relationships of an itemEmail object in a user&apos;s profile.
         /// </summary>
         public class ItemEmailItemRequestBuilderGetQueryParameters 
         {

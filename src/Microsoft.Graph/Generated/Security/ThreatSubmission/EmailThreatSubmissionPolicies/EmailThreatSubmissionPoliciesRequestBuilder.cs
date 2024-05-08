@@ -51,7 +51,8 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
         {
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-emailthreatsubmissionpolicy-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="EmailThreatSubmissionPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             return await RequestAdapter.SendAsync<EmailThreatSubmissionPolicy>(requestInfo, EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +150,7 @@ namespace Microsoft.Graph.Beta.Security.ThreatSubmission.EmailThreatSubmissionPo
             return new EmailThreatSubmissionPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get emailThreatSubmissionPolicies from security
+        /// Get a list of the emailThreatSubmissionPolicy objects and their properties.
         /// </summary>
         public class EmailThreatSubmissionPoliciesRequestBuilderGetQueryParameters 
         {
