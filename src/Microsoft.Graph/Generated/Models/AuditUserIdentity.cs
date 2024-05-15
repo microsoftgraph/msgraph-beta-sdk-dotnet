@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuditUserIdentity : UserIdentity, IParsable 
+    public class AuditUserIdentity : UserIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomeTenantId {
+        public string? HomeTenantId
+        {
             get { return BackingStore?.Get<string?>("homeTenantId"); }
             set { BackingStore?.Set("homeTenantId", value); }
         }
 #nullable restore
 #else
-        public string HomeTenantId {
+        public string HomeTenantId
+        {
             get { return BackingStore?.Get<string>("homeTenantId"); }
             set { BackingStore?.Set("homeTenantId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Microsoft Entra ID to show the tenant content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HomeTenantName {
+        public string? HomeTenantName
+        {
             get { return BackingStore?.Get<string?>("homeTenantName"); }
             set { BackingStore?.Set("homeTenantName", value); }
         }
 #nullable restore
 #else
-        public string HomeTenantName {
+        public string HomeTenantName
+        {
             get { return BackingStore?.Get<string>("homeTenantName"); }
             set { BackingStore?.Set("homeTenantName", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
-                {"homeTenantName", n => { HomeTenantName = n.GetStringValue(); } },
+                { "homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
+                { "homeTenantName", n => { HomeTenantName = n.GetStringValue(); } },
             };
         }
         /// <summary>

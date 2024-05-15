@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable 
+    public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable
     {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
         /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647</summary>
-        public int? EstimatedRuntimeInMinutes {
+        public int? EstimatedRuntimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("estimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("estimatedRuntimeInMinutes", value); }
         }
         /// <summary>The datetime for the instance of runtime history.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuntimeDateTime {
+        public string? RuntimeDateTime
+        {
             get { return BackingStore?.Get<string?>("runtimeDateTime"); }
             set { BackingStore?.Set("runtimeDateTime", value); }
         }
 #nullable restore
 #else
-        public string RuntimeDateTime {
+        public string RuntimeDateTime
+        {
             get { return BackingStore?.Get<string>("runtimeDateTime"); }
             set { BackingStore?.Set("runtimeDateTime", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"estimatedRuntimeInMinutes", n => { EstimatedRuntimeInMinutes = n.GetIntValue(); } },
-                {"runtimeDateTime", n => { RuntimeDateTime = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "estimatedRuntimeInMinutes", n => { EstimatedRuntimeInMinutes = n.GetIntValue(); } },
+                { "runtimeDateTime", n => { RuntimeDateTime = n.GetStringValue(); } },
             };
         }
         /// <summary>

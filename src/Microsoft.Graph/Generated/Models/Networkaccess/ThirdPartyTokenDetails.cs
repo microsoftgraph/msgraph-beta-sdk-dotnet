@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class ThirdPartyTokenDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ThirdPartyTokenDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expirationDateTime property</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The issuedAtDateTime property</summary>
-        public DateTimeOffset? IssuedAtDateTime {
+        public DateTimeOffset? IssuedAtDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("issuedAtDateTime"); }
             set { BackingStore?.Set("issuedAtDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,19 +50,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The uniqueTokenIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueTokenIdentifier {
+        public string? UniqueTokenIdentifier
+        {
             get { return BackingStore?.Get<string?>("uniqueTokenIdentifier"); }
             set { BackingStore?.Set("uniqueTokenIdentifier", value); }
         }
 #nullable restore
 #else
-        public string UniqueTokenIdentifier {
+        public string UniqueTokenIdentifier
+        {
             get { return BackingStore?.Get<string>("uniqueTokenIdentifier"); }
             set { BackingStore?.Set("uniqueTokenIdentifier", value); }
         }
 #endif
         /// <summary>The validFromDateTime property</summary>
-        public DateTimeOffset? ValidFromDateTime {
+        public DateTimeOffset? ValidFromDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("validFromDateTime"); }
             set { BackingStore?.Set("validFromDateTime", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"issuedAtDateTime", n => { IssuedAtDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"uniqueTokenIdentifier", n => { UniqueTokenIdentifier = n.GetStringValue(); } },
-                {"validFromDateTime", n => { ValidFromDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "issuedAtDateTime", n => { IssuedAtDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "uniqueTokenIdentifier", n => { UniqueTokenIdentifier = n.GetStringValue(); } },
+                { "validFromDateTime", n => { ValidFromDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class DetonationDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DetonationDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The time of detonation.</summary>
-        public DateTimeOffset? AnalysisDateTime {
+        public DateTimeOffset? AnalysisDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("analysisDateTime"); }
             set { BackingStore?.Set("analysisDateTime", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The chain of detonation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.DetonationChain? DetonationChain {
+        public Microsoft.Graph.Beta.Models.Security.DetonationChain? DetonationChain
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationChain?>("detonationChain"); }
             set { BackingStore?.Set("detonationChain", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.DetonationChain DetonationChain {
+        public Microsoft.Graph.Beta.Models.Security.DetonationChain DetonationChain
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationChain>("detonationChain"); }
             set { BackingStore?.Set("detonationChain", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>All observables in the detonation tree.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.DetonationObservables? DetonationObservables {
+        public Microsoft.Graph.Beta.Models.Security.DetonationObservables? DetonationObservables
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationObservables?>("detonationObservables"); }
             set { BackingStore?.Set("detonationObservables", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.DetonationObservables DetonationObservables {
+        public Microsoft.Graph.Beta.Models.Security.DetonationObservables DetonationObservables
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationObservables>("detonationObservables"); }
             set { BackingStore?.Set("detonationObservables", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The verdict of the detonation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetonationVerdict {
+        public string? DetonationVerdict
+        {
             get { return BackingStore?.Get<string?>("detonationVerdict"); }
             set { BackingStore?.Set("detonationVerdict", value); }
         }
 #nullable restore
 #else
-        public string DetonationVerdict {
+        public string DetonationVerdict
+        {
             get { return BackingStore?.Get<string>("detonationVerdict"); }
             set { BackingStore?.Set("detonationVerdict", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The reason for the verdict of the detonation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetonationVerdictReason {
+        public string? DetonationVerdictReason
+        {
             get { return BackingStore?.Get<string?>("detonationVerdictReason"); }
             set { BackingStore?.Set("detonationVerdictReason", value); }
         }
 #nullable restore
 #else
-        public string DetonationVerdictReason {
+        public string DetonationVerdictReason
+        {
             get { return BackingStore?.Get<string>("detonationVerdictReason"); }
             set { BackingStore?.Set("detonationVerdictReason", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"analysisDateTime", n => { AnalysisDateTime = n.GetDateTimeOffsetValue(); } },
-                {"detonationChain", n => { DetonationChain = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationChain>(Microsoft.Graph.Beta.Models.Security.DetonationChain.CreateFromDiscriminatorValue); } },
-                {"detonationObservables", n => { DetonationObservables = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationObservables>(Microsoft.Graph.Beta.Models.Security.DetonationObservables.CreateFromDiscriminatorValue); } },
-                {"detonationVerdict", n => { DetonationVerdict = n.GetStringValue(); } },
-                {"detonationVerdictReason", n => { DetonationVerdictReason = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "analysisDateTime", n => { AnalysisDateTime = n.GetDateTimeOffsetValue(); } },
+                { "detonationChain", n => { DetonationChain = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationChain>(Microsoft.Graph.Beta.Models.Security.DetonationChain.CreateFromDiscriminatorValue); } },
+                { "detonationObservables", n => { DetonationObservables = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationObservables>(Microsoft.Graph.Beta.Models.Security.DetonationObservables.CreateFromDiscriminatorValue); } },
+                { "detonationVerdict", n => { DetonationVerdict = n.GetStringValue(); } },
+                { "detonationVerdictReason", n => { DetonationVerdictReason = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

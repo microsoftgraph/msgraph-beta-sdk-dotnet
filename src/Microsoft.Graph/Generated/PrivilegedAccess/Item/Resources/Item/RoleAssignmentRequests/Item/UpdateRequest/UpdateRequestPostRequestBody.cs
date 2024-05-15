@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.UpdateRequest {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.UpdateRequest
+{
     #pragma warning disable CS1591
-    public class UpdateRequestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateRequestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignmentState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentState {
+        public string? AssignmentState
+        {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
 #nullable restore
 #else
-        public string AssignmentState {
+        public string AssignmentState
+        {
             get { return BackingStore?.Get<string>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <summary>The decision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Decision {
+        public string? Decision
+        {
             get { return BackingStore?.Get<string?>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
 #nullable restore
 #else
-        public string Decision {
+        public string Decision
+        {
             get { return BackingStore?.Get<string>("decision"); }
             set { BackingStore?.Set("decision", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSchedule? Schedule {
+        public GovernanceSchedule? Schedule
+        {
             get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public GovernanceSchedule Schedule {
+        public GovernanceSchedule Schedule
+        {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
-                {"decision", n => { Decision = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                { "assignmentState", n => { AssignmentState = n.GetStringValue(); } },
+                { "decision", n => { Decision = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

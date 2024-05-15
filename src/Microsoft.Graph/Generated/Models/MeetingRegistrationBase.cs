@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingRegistrationBase : Entity, IParsable 
+    public class MeetingRegistrationBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies who can register for the meeting.</summary>
-        public MeetingAudience? AllowedRegistrant {
+        public MeetingAudience? AllowedRegistrant
+        {
             get { return BackingStore?.Get<MeetingAudience?>("allowedRegistrant"); }
             set { BackingStore?.Set("allowedRegistrant", value); }
         }
         /// <summary>Registrants of the online meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingRegistrantBase>? Registrants {
+        public List<MeetingRegistrantBase>? Registrants
+        {
             get { return BackingStore?.Get<List<MeetingRegistrantBase>?>("registrants"); }
             set { BackingStore?.Set("registrants", value); }
         }
 #nullable restore
 #else
-        public List<MeetingRegistrantBase> Registrants {
+        public List<MeetingRegistrantBase> Registrants
+        {
             get { return BackingStore?.Get<List<MeetingRegistrantBase>>("registrants"); }
             set { BackingStore?.Set("registrants", value); }
         }
@@ -52,8 +56,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedRegistrant", n => { AllowedRegistrant = n.GetEnumValue<MeetingAudience>(); } },
-                {"registrants", n => { Registrants = n.GetCollectionOfObjectValues<MeetingRegistrantBase>(MeetingRegistrantBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowedRegistrant", n => { AllowedRegistrant = n.GetEnumValue<MeetingAudience>(); } },
+                { "registrants", n => { Registrants = n.GetCollectionOfObjectValues<MeetingRegistrantBase>(MeetingRegistrantBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

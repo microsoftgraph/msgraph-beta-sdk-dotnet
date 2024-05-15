@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RemoteNetworkHealthEvent : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class RemoteNetworkHealthEvent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of BGP routes advertised through tunnel.</summary>
-        public int? BgpRoutesAdvertisedCount {
+        public int? BgpRoutesAdvertisedCount
+        {
             get { return BackingStore?.Get<int?>("bgpRoutesAdvertisedCount"); }
             set { BackingStore?.Set("bgpRoutesAdvertisedCount", value); }
         }
         /// <summary>The time of the original event generation in UTC. Supports $filter (ge, le) and $orderby.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -36,57 +41,66 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The IP address of the destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationIp {
+        public string? DestinationIp
+        {
             get { return BackingStore?.Get<string?>("destinationIp"); }
             set { BackingStore?.Set("destinationIp", value); }
         }
 #nullable restore
 #else
-        public string DestinationIp {
+        public string DestinationIp
+        {
             get { return BackingStore?.Get<string>("destinationIp"); }
             set { BackingStore?.Set("destinationIp", value); }
         }
 #endif
         /// <summary>The number of bytes sent from the destination to the source.</summary>
-        public long? ReceivedBytes {
+        public long? ReceivedBytes
+        {
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
         /// <summary>A unique identifier for each remoteNetwork site. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteNetworkId {
+        public string? RemoteNetworkId
+        {
             get { return BackingStore?.Get<string?>("remoteNetworkId"); }
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
 #nullable restore
 #else
-        public string RemoteNetworkId {
+        public string RemoteNetworkId
+        {
             get { return BackingStore?.Get<string>("remoteNetworkId"); }
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
 #endif
         /// <summary>The number of bytes sent from the source to the destination for the connection or session.</summary>
-        public long? SentBytes {
+        public long? SentBytes
+        {
             get { return BackingStore?.Get<long?>("sentBytes"); }
             set { BackingStore?.Set("sentBytes", value); }
         }
         /// <summary>The public IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceIp {
+        public string? SourceIp
+        {
             get { return BackingStore?.Get<string?>("sourceIp"); }
             set { BackingStore?.Set("sourceIp", value); }
         }
 #nullable restore
 #else
-        public string SourceIp {
+        public string SourceIp
+        {
             get { return BackingStore?.Get<string>("sourceIp"); }
             set { BackingStore?.Set("sourceIp", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public RemoteNetworkStatus? Status {
+        public RemoteNetworkStatus? Status
+        {
             get { return BackingStore?.Get<RemoteNetworkStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -108,15 +122,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bgpRoutesAdvertisedCount", n => { BgpRoutesAdvertisedCount = n.GetIntValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"destinationIp", n => { DestinationIp = n.GetStringValue(); } },
-                {"receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
-                {"remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
-                {"sentBytes", n => { SentBytes = n.GetLongValue(); } },
-                {"sourceIp", n => { SourceIp = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<RemoteNetworkStatus>(); } },
+                { "bgpRoutesAdvertisedCount", n => { BgpRoutesAdvertisedCount = n.GetIntValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "destinationIp", n => { DestinationIp = n.GetStringValue(); } },
+                { "receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
+                { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
+                { "sentBytes", n => { SentBytes = n.GetLongValue(); } },
+                { "sourceIp", n => { SourceIp = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<RemoteNetworkStatus>(); } },
             };
         }
         /// <summary>

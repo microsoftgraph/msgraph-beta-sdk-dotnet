@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The deviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The enrollmentProfileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrollmentProfileName {
+        public string? EnrollmentProfileName
+        {
             get { return BackingStore?.Get<string?>("enrollmentProfileName"); }
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
 #nullable restore
 #else
-        public string EnrollmentProfileName {
+        public string EnrollmentProfileName
+        {
             get { return BackingStore?.Get<string>("enrollmentProfileName"); }
             set { BackingStore?.Set("enrollmentProfileName", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute1 {
+        public string? ExtensionAttribute1
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute1"); }
             set { BackingStore?.Set("extensionAttribute1", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute1 {
+        public string ExtensionAttribute1
+        {
             get { return BackingStore?.Get<string>("extensionAttribute1"); }
             set { BackingStore?.Set("extensionAttribute1", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute10 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute10 {
+        public string? ExtensionAttribute10
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute10"); }
             set { BackingStore?.Set("extensionAttribute10", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute10 {
+        public string ExtensionAttribute10
+        {
             get { return BackingStore?.Get<string>("extensionAttribute10"); }
             set { BackingStore?.Set("extensionAttribute10", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute11 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute11 {
+        public string? ExtensionAttribute11
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute11"); }
             set { BackingStore?.Set("extensionAttribute11", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute11 {
+        public string ExtensionAttribute11
+        {
             get { return BackingStore?.Get<string>("extensionAttribute11"); }
             set { BackingStore?.Set("extensionAttribute11", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute12 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute12 {
+        public string? ExtensionAttribute12
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute12"); }
             set { BackingStore?.Set("extensionAttribute12", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute12 {
+        public string ExtensionAttribute12
+        {
             get { return BackingStore?.Get<string>("extensionAttribute12"); }
             set { BackingStore?.Set("extensionAttribute12", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute13 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute13 {
+        public string? ExtensionAttribute13
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute13"); }
             set { BackingStore?.Set("extensionAttribute13", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute13 {
+        public string ExtensionAttribute13
+        {
             get { return BackingStore?.Get<string>("extensionAttribute13"); }
             set { BackingStore?.Set("extensionAttribute13", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute14 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute14 {
+        public string? ExtensionAttribute14
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute14"); }
             set { BackingStore?.Set("extensionAttribute14", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute14 {
+        public string ExtensionAttribute14
+        {
             get { return BackingStore?.Get<string>("extensionAttribute14"); }
             set { BackingStore?.Set("extensionAttribute14", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute15 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute15 {
+        public string? ExtensionAttribute15
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute15"); }
             set { BackingStore?.Set("extensionAttribute15", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute15 {
+        public string ExtensionAttribute15
+        {
             get { return BackingStore?.Get<string>("extensionAttribute15"); }
             set { BackingStore?.Set("extensionAttribute15", value); }
         }
@@ -160,13 +182,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute2 {
+        public string? ExtensionAttribute2
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute2"); }
             set { BackingStore?.Set("extensionAttribute2", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute2 {
+        public string ExtensionAttribute2
+        {
             get { return BackingStore?.Get<string>("extensionAttribute2"); }
             set { BackingStore?.Set("extensionAttribute2", value); }
         }
@@ -174,13 +198,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute3 {
+        public string? ExtensionAttribute3
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute3"); }
             set { BackingStore?.Set("extensionAttribute3", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute3 {
+        public string ExtensionAttribute3
+        {
             get { return BackingStore?.Get<string>("extensionAttribute3"); }
             set { BackingStore?.Set("extensionAttribute3", value); }
         }
@@ -188,13 +214,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute4 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute4 {
+        public string? ExtensionAttribute4
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute4"); }
             set { BackingStore?.Set("extensionAttribute4", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute4 {
+        public string ExtensionAttribute4
+        {
             get { return BackingStore?.Get<string>("extensionAttribute4"); }
             set { BackingStore?.Set("extensionAttribute4", value); }
         }
@@ -202,13 +230,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute5 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute5 {
+        public string? ExtensionAttribute5
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute5"); }
             set { BackingStore?.Set("extensionAttribute5", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute5 {
+        public string ExtensionAttribute5
+        {
             get { return BackingStore?.Get<string>("extensionAttribute5"); }
             set { BackingStore?.Set("extensionAttribute5", value); }
         }
@@ -216,13 +246,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute6 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute6 {
+        public string? ExtensionAttribute6
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute6"); }
             set { BackingStore?.Set("extensionAttribute6", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute6 {
+        public string ExtensionAttribute6
+        {
             get { return BackingStore?.Get<string>("extensionAttribute6"); }
             set { BackingStore?.Set("extensionAttribute6", value); }
         }
@@ -230,13 +262,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute7 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute7 {
+        public string? ExtensionAttribute7
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute7"); }
             set { BackingStore?.Set("extensionAttribute7", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute7 {
+        public string ExtensionAttribute7
+        {
             get { return BackingStore?.Get<string>("extensionAttribute7"); }
             set { BackingStore?.Set("extensionAttribute7", value); }
         }
@@ -244,13 +278,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute8 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute8 {
+        public string? ExtensionAttribute8
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute8"); }
             set { BackingStore?.Set("extensionAttribute8", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute8 {
+        public string ExtensionAttribute8
+        {
             get { return BackingStore?.Get<string>("extensionAttribute8"); }
             set { BackingStore?.Set("extensionAttribute8", value); }
         }
@@ -258,32 +294,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensionAttribute9 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionAttribute9 {
+        public string? ExtensionAttribute9
+        {
             get { return BackingStore?.Get<string?>("extensionAttribute9"); }
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
 #nullable restore
 #else
-        public string ExtensionAttribute9 {
+        public string ExtensionAttribute9
+        {
             get { return BackingStore?.Get<string>("extensionAttribute9"); }
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
 #endif
         /// <summary>The isCompliant property</summary>
-        public bool? IsCompliant {
+        public bool? IsCompliant
+        {
             get { return BackingStore?.Get<bool?>("isCompliant"); }
             set { BackingStore?.Set("isCompliant", value); }
         }
         /// <summary>The manufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -291,13 +332,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mdmAppId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MdmAppId {
+        public string? MdmAppId
+        {
             get { return BackingStore?.Get<string?>("mdmAppId"); }
             set { BackingStore?.Set("mdmAppId", value); }
         }
 #nullable restore
 #else
-        public string MdmAppId {
+        public string MdmAppId
+        {
             get { return BackingStore?.Get<string>("mdmAppId"); }
             set { BackingStore?.Set("mdmAppId", value); }
         }
@@ -305,13 +348,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -319,13 +364,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -333,13 +380,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The operatingSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
@@ -347,13 +396,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The operatingSystemVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystemVersion {
+        public string? OperatingSystemVersion
+        {
             get { return BackingStore?.Get<string?>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystemVersion {
+        public string OperatingSystemVersion
+        {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
@@ -361,13 +412,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ownership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ownership {
+        public string? Ownership
+        {
             get { return BackingStore?.Get<string?>("ownership"); }
             set { BackingStore?.Set("ownership", value); }
         }
 #nullable restore
 #else
-        public string Ownership {
+        public string Ownership
+        {
             get { return BackingStore?.Get<string>("ownership"); }
             set { BackingStore?.Set("ownership", value); }
         }
@@ -375,13 +428,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The physicalIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PhysicalIds {
+        public List<string>? PhysicalIds
+        {
             get { return BackingStore?.Get<List<string>?>("physicalIds"); }
             set { BackingStore?.Set("physicalIds", value); }
         }
 #nullable restore
 #else
-        public List<string> PhysicalIds {
+        public List<string> PhysicalIds
+        {
             get { return BackingStore?.Get<List<string>>("physicalIds"); }
             set { BackingStore?.Set("physicalIds", value); }
         }
@@ -389,13 +444,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The profileType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileType {
+        public string? ProfileType
+        {
             get { return BackingStore?.Get<string?>("profileType"); }
             set { BackingStore?.Set("profileType", value); }
         }
 #nullable restore
 #else
-        public string ProfileType {
+        public string ProfileType
+        {
             get { return BackingStore?.Get<string>("profileType"); }
             set { BackingStore?.Set("profileType", value); }
         }
@@ -403,13 +460,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The systemLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SystemLabels {
+        public List<string>? SystemLabels
+        {
             get { return BackingStore?.Get<List<string>?>("systemLabels"); }
             set { BackingStore?.Set("systemLabels", value); }
         }
 #nullable restore
 #else
-        public List<string> SystemLabels {
+        public List<string> SystemLabels
+        {
             get { return BackingStore?.Get<List<string>>("systemLabels"); }
             set { BackingStore?.Set("systemLabels", value); }
         }
@@ -417,13 +476,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The trustType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrustType {
+        public string? TrustType
+        {
             get { return BackingStore?.Get<string?>("trustType"); }
             set { BackingStore?.Set("trustType", value); }
         }
 #nullable restore
 #else
-        public string TrustType {
+        public string TrustType
+        {
             get { return BackingStore?.Get<string>("trustType"); }
             set { BackingStore?.Set("trustType", value); }
         }
@@ -454,36 +515,36 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
-                {"extensionAttribute1", n => { ExtensionAttribute1 = n.GetStringValue(); } },
-                {"extensionAttribute10", n => { ExtensionAttribute10 = n.GetStringValue(); } },
-                {"extensionAttribute11", n => { ExtensionAttribute11 = n.GetStringValue(); } },
-                {"extensionAttribute12", n => { ExtensionAttribute12 = n.GetStringValue(); } },
-                {"extensionAttribute13", n => { ExtensionAttribute13 = n.GetStringValue(); } },
-                {"extensionAttribute14", n => { ExtensionAttribute14 = n.GetStringValue(); } },
-                {"extensionAttribute15", n => { ExtensionAttribute15 = n.GetStringValue(); } },
-                {"extensionAttribute2", n => { ExtensionAttribute2 = n.GetStringValue(); } },
-                {"extensionAttribute3", n => { ExtensionAttribute3 = n.GetStringValue(); } },
-                {"extensionAttribute4", n => { ExtensionAttribute4 = n.GetStringValue(); } },
-                {"extensionAttribute5", n => { ExtensionAttribute5 = n.GetStringValue(); } },
-                {"extensionAttribute6", n => { ExtensionAttribute6 = n.GetStringValue(); } },
-                {"extensionAttribute7", n => { ExtensionAttribute7 = n.GetStringValue(); } },
-                {"extensionAttribute8", n => { ExtensionAttribute8 = n.GetStringValue(); } },
-                {"extensionAttribute9", n => { ExtensionAttribute9 = n.GetStringValue(); } },
-                {"isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"mdmAppId", n => { MdmAppId = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
-                {"ownership", n => { Ownership = n.GetStringValue(); } },
-                {"physicalIds", n => { PhysicalIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"profileType", n => { ProfileType = n.GetStringValue(); } },
-                {"systemLabels", n => { SystemLabels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"trustType", n => { TrustType = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "enrollmentProfileName", n => { EnrollmentProfileName = n.GetStringValue(); } },
+                { "extensionAttribute1", n => { ExtensionAttribute1 = n.GetStringValue(); } },
+                { "extensionAttribute10", n => { ExtensionAttribute10 = n.GetStringValue(); } },
+                { "extensionAttribute11", n => { ExtensionAttribute11 = n.GetStringValue(); } },
+                { "extensionAttribute12", n => { ExtensionAttribute12 = n.GetStringValue(); } },
+                { "extensionAttribute13", n => { ExtensionAttribute13 = n.GetStringValue(); } },
+                { "extensionAttribute14", n => { ExtensionAttribute14 = n.GetStringValue(); } },
+                { "extensionAttribute15", n => { ExtensionAttribute15 = n.GetStringValue(); } },
+                { "extensionAttribute2", n => { ExtensionAttribute2 = n.GetStringValue(); } },
+                { "extensionAttribute3", n => { ExtensionAttribute3 = n.GetStringValue(); } },
+                { "extensionAttribute4", n => { ExtensionAttribute4 = n.GetStringValue(); } },
+                { "extensionAttribute5", n => { ExtensionAttribute5 = n.GetStringValue(); } },
+                { "extensionAttribute6", n => { ExtensionAttribute6 = n.GetStringValue(); } },
+                { "extensionAttribute7", n => { ExtensionAttribute7 = n.GetStringValue(); } },
+                { "extensionAttribute8", n => { ExtensionAttribute8 = n.GetStringValue(); } },
+                { "extensionAttribute9", n => { ExtensionAttribute9 = n.GetStringValue(); } },
+                { "isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "mdmAppId", n => { MdmAppId = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "operatingSystemVersion", n => { OperatingSystemVersion = n.GetStringValue(); } },
+                { "ownership", n => { Ownership = n.GetStringValue(); } },
+                { "physicalIds", n => { PhysicalIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "profileType", n => { ProfileType = n.GetStringValue(); } },
+                { "systemLabels", n => { SystemLabels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "trustType", n => { TrustType = n.GetStringValue(); } },
             };
         }
         /// <summary>

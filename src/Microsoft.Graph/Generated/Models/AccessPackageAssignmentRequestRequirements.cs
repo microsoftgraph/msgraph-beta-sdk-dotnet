@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentRequestRequirements : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessPackageAssignmentRequestRequirements : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,47 +22,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Answers that have already been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAnswer>? ExistingAnswers {
+        public List<AccessPackageAnswer>? ExistingAnswers
+        {
             get { return BackingStore?.Get<List<AccessPackageAnswer>?>("existingAnswers"); }
             set { BackingStore?.Set("existingAnswers", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAnswer> ExistingAnswers {
+        public List<AccessPackageAnswer> ExistingAnswers
+        {
             get { return BackingStore?.Get<List<AccessPackageAnswer>>("existingAnswers"); }
             set { BackingStore?.Set("existingAnswers", value); }
         }
 #endif
         /// <summary>Indicates whether a request must be approved by an approver.</summary>
-        public bool? IsApprovalRequired {
+        public bool? IsApprovalRequired
+        {
             get { return BackingStore?.Get<bool?>("isApprovalRequired"); }
             set { BackingStore?.Set("isApprovalRequired", value); }
         }
         /// <summary>Indicates whether approval is required when a user tries to extend their access.</summary>
-        public bool? IsApprovalRequiredForExtension {
+        public bool? IsApprovalRequiredForExtension
+        {
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForExtension"); }
             set { BackingStore?.Set("isApprovalRequiredForExtension", value); }
         }
         /// <summary>Indicates whether the requestor is allowed to set a custom schedule.</summary>
-        public bool? IsCustomAssignmentScheduleAllowed {
+        public bool? IsCustomAssignmentScheduleAllowed
+        {
             get { return BackingStore?.Get<bool?>("isCustomAssignmentScheduleAllowed"); }
             set { BackingStore?.Set("isCustomAssignmentScheduleAllowed", value); }
         }
         /// <summary>Indicates whether a requestor must supply justification when submitting an assignment request.</summary>
-        public bool? IsRequestorJustificationRequired {
+        public bool? IsRequestorJustificationRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
             set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -68,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the policy that the user is trying to request access using.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyDescription {
+        public string? PolicyDescription
+        {
             get { return BackingStore?.Get<string?>("policyDescription"); }
             set { BackingStore?.Set("policyDescription", value); }
         }
 #nullable restore
 #else
-        public string PolicyDescription {
+        public string PolicyDescription
+        {
             get { return BackingStore?.Get<string>("policyDescription"); }
             set { BackingStore?.Set("policyDescription", value); }
         }
@@ -82,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the policy that the user is trying to request access using.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyDisplayName {
+        public string? PolicyDisplayName
+        {
             get { return BackingStore?.Get<string?>("policyDisplayName"); }
             set { BackingStore?.Set("policyDisplayName", value); }
         }
 #nullable restore
 #else
-        public string PolicyDisplayName {
+        public string PolicyDisplayName
+        {
             get { return BackingStore?.Get<string>("policyDisplayName"); }
             set { BackingStore?.Set("policyDisplayName", value); }
         }
@@ -96,13 +110,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the policy that these requirements are associated with. This identifier can be used when creating a new assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyId {
+        public string? PolicyId
+        {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
 #nullable restore
 #else
-        public string PolicyId {
+        public string PolicyId
+        {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
@@ -110,13 +126,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Questions that are configured on the policy. The questions can be required or optional; callers can determine whether a question is required or optional based on the isRequired property on accessPackageQuestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageQuestion>? Questions {
+        public List<AccessPackageQuestion>? Questions
+        {
             get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageQuestion> Questions {
+        public List<AccessPackageQuestion> Questions
+        {
             get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
@@ -124,13 +142,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Schedule restrictions enforced, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? Schedule {
+        public RequestSchedule? Schedule
+        {
             get { return BackingStore?.Get<RequestSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule Schedule {
+        public RequestSchedule Schedule
+        {
             get { return BackingStore?.Get<RequestSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -138,13 +158,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status of the process to process the verifiable credential, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus? VerifiableCredentialRequirementStatus {
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus? VerifiableCredentialRequirementStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus?>("verifiableCredentialRequirementStatus"); }
             set { BackingStore?.Set("verifiableCredentialRequirementStatus", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus VerifiableCredentialRequirementStatus {
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus VerifiableCredentialRequirementStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>("verifiableCredentialRequirementStatus"); }
             set { BackingStore?.Set("verifiableCredentialRequirementStatus", value); }
         }
@@ -175,18 +197,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"existingAnswers", n => { ExistingAnswers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
-                {"isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
-                {"isCustomAssignmentScheduleAllowed", n => { IsCustomAssignmentScheduleAllowed = n.GetBoolValue(); } },
-                {"isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
-                {"policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
-                {"policyId", n => { PolicyId = n.GetStringValue(); } },
-                {"questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                {"verifiableCredentialRequirementStatus", n => { VerifiableCredentialRequirementStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>(Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus.CreateFromDiscriminatorValue); } },
+                { "existingAnswers", n => { ExistingAnswers = n.GetCollectionOfObjectValues<AccessPackageAnswer>(AccessPackageAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
+                { "isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
+                { "isCustomAssignmentScheduleAllowed", n => { IsCustomAssignmentScheduleAllowed = n.GetBoolValue(); } },
+                { "isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
+                { "policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "verifiableCredentialRequirementStatus", n => { VerifiableCredentialRequirementStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus>(Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

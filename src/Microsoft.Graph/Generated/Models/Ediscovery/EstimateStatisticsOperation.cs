@@ -4,52 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class EstimateStatisticsOperation : CaseOperation, IParsable 
+    public class EstimateStatisticsOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The estimated count of items for the sourceCollection that matched the content query.</summary>
-        public long? IndexedItemCount {
+        public long? IndexedItemCount
+        {
             get { return BackingStore?.Get<long?>("indexedItemCount"); }
             set { BackingStore?.Set("indexedItemCount", value); }
         }
         /// <summary>The estimated size of items for the sourceCollection that matched the content query.</summary>
-        public long? IndexedItemsSize {
+        public long? IndexedItemsSize
+        {
             get { return BackingStore?.Get<long?>("indexedItemsSize"); }
             set { BackingStore?.Set("indexedItemsSize", value); }
         }
         /// <summary>The number of mailboxes that had search hits.</summary>
-        public int? MailboxCount {
+        public int? MailboxCount
+        {
             get { return BackingStore?.Get<int?>("mailboxCount"); }
             set { BackingStore?.Set("mailboxCount", value); }
         }
         /// <summary>The number of mailboxes that had search hits.</summary>
-        public int? SiteCount {
+        public int? SiteCount
+        {
             get { return BackingStore?.Get<int?>("siteCount"); }
             set { BackingStore?.Set("siteCount", value); }
         }
         /// <summary>eDiscovery collection, commonly known as a search.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
 #endif
         /// <summary>The estimated count of unindexed items for the collection.</summary>
-        public long? UnindexedItemCount {
+        public long? UnindexedItemCount
+        {
             get { return BackingStore?.Get<long?>("unindexedItemCount"); }
             set { BackingStore?.Set("unindexedItemCount", value); }
         }
         /// <summary>The estimated size of unindexed items for the collection.</summary>
-        public long? UnindexedItemsSize {
+        public long? UnindexedItemsSize
+        {
             get { return BackingStore?.Get<long?>("unindexedItemsSize"); }
             set { BackingStore?.Set("unindexedItemsSize", value); }
         }
@@ -71,13 +80,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
-                {"indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
-                {"mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
-                {"siteCount", n => { SiteCount = n.GetIntValue(); } },
-                {"sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
-                {"unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
-                {"unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
+                { "indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
+                { "indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
+                { "mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
+                { "siteCount", n => { SiteCount = n.GetIntValue(); } },
+                { "sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
+                { "unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
+                { "unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
             };
         }
         /// <summary>

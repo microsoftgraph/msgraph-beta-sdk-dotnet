@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationAppDeviceDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthenticationAppDeviceDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The version of the client authentication app used during the authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppVersion {
+        public string? AppVersion
+        {
             get { return BackingStore?.Get<string?>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #nullable restore
 #else
-        public string AppVersion {
+        public string AppVersion
+        {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the client authentication app used during the authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientApp {
+        public string? ClientApp
+        {
             get { return BackingStore?.Get<string?>("clientApp"); }
             set { BackingStore?.Set("clientApp", value); }
         }
 #nullable restore
 #else
-        public string ClientApp {
+        public string ClientApp
+        {
             get { return BackingStore?.Get<string>("clientApp"); }
             set { BackingStore?.Set("clientApp", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the device used during the authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The operating system running on the device used for the authentication step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"clientApp", n => { ClientApp = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "appVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "clientApp", n => { ClientApp = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

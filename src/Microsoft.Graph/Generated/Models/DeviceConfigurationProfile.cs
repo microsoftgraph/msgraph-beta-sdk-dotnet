@@ -4,75 +4,87 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The listing service profile entity contains the meta data of an Intune configuration profile 
     /// </summary>
-    public class DeviceConfigurationProfile : Entity, IParsable 
+    public class DeviceConfigurationProfile : Entity, IParsable
     {
         /// <summary>Account Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId {
+        public string? AccountId
+        {
             get { return BackingStore?.Get<string?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
 #nullable restore
 #else
-        public string AccountId {
+        public string AccountId
+        {
             get { return BackingStore?.Get<string>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
 #endif
         /// <summary>Configuration Technologies for Settins Catalog Policies</summary>
-        public int? ConfigurationTechnologies {
+        public int? ConfigurationTechnologies
+        {
             get { return BackingStore?.Get<int?>("configurationTechnologies"); }
             set { BackingStore?.Set("configurationTechnologies", value); }
         }
         /// <summary>The date and time the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Platform Type</summary>
-        public Microsoft.Graph.Beta.Models.PlatformType? PlatformType {
+        public Microsoft.Graph.Beta.Models.PlatformType? PlatformType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>Profile name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileName {
+        public string? ProfileName
+        {
             get { return BackingStore?.Get<string?>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
 #nullable restore
 #else
-        public string ProfileName {
+        public string ProfileName
+        {
             get { return BackingStore?.Get<string>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
 #endif
         /// <summary>Profile Type</summary>
-        public Microsoft.Graph.Beta.Models.ProfileType? ProfileType {
+        public Microsoft.Graph.Beta.Models.ProfileType? ProfileType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProfileType?>("profileType"); }
             set { BackingStore?.Set("profileType", value); }
         }
         /// <summary>The list of scope tags for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -80,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>TemplateId for Settings Catalog Policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId {
+        public string? TemplateId
+        {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #nullable restore
 #else
-        public string TemplateId {
+        public string TemplateId
+        {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
@@ -109,15 +123,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountId", n => { AccountId = n.GetStringValue(); } },
-                {"configurationTechnologies", n => { ConfigurationTechnologies = n.GetIntValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platformType", n => { PlatformType = n.GetEnumValue<PlatformType>(); } },
-                {"profileName", n => { ProfileName = n.GetStringValue(); } },
-                {"profileType", n => { ProfileType = n.GetEnumValue<ProfileType>(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                { "accountId", n => { AccountId = n.GetStringValue(); } },
+                { "configurationTechnologies", n => { ConfigurationTechnologies = n.GetIntValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<PlatformType>(); } },
+                { "profileName", n => { ProfileName = n.GetStringValue(); } },
+                { "profileType", n => { ProfileType = n.GetEnumValue<ProfileType>(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

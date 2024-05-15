@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing an intent setting category
     /// </summary>
-    public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable 
+    public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable
     {
         /// <summary>The settings this category contains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? Settings {
+        public List<DeviceManagementSettingInstance>? Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> Settings {
+        public List<DeviceManagementSettingInstance> Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

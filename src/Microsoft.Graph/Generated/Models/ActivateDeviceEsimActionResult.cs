@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Activate device eSIM action result
     /// </summary>
-    public class ActivateDeviceEsimActionResult : DeviceActionResult, IParsable 
+    public class ActivateDeviceEsimActionResult : DeviceActionResult, IParsable
     {
         /// <summary>Carrier Url to activate the device eSIM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CarrierUrl {
+        public string? CarrierUrl
+        {
             get { return BackingStore?.Get<string?>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
 #nullable restore
 #else
-        public string CarrierUrl {
+        public string CarrierUrl
+        {
             get { return BackingStore?.Get<string>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
+                { "carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

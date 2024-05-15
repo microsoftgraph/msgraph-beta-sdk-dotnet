@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class SecurityGroupCreationOptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SecurityGroupCreationOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the security group should be created based on the org and role group.</summary>
-        public bool? CreateBasedOnOrgPlusRoleGroup {
+        public bool? CreateBasedOnOrgPlusRoleGroup
+        {
             get { return BackingStore?.Get<bool?>("createBasedOnOrgPlusRoleGroup"); }
             set { BackingStore?.Set("createBasedOnOrgPlusRoleGroup", value); }
         }
         /// <summary>A boolean choice indicating whether the security group should be created based on the role group</summary>
-        public bool? CreateBasedOnRoleGroup {
+        public bool? CreateBasedOnRoleGroup
+        {
             get { return BackingStore?.Get<bool?>("createBasedOnRoleGroup"); }
             set { BackingStore?.Set("createBasedOnRoleGroup", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"createBasedOnOrgPlusRoleGroup", n => { CreateBasedOnOrgPlusRoleGroup = n.GetBoolValue(); } },
-                {"createBasedOnRoleGroup", n => { CreateBasedOnRoleGroup = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "createBasedOnOrgPlusRoleGroup", n => { CreateBasedOnOrgPlusRoleGroup = n.GetBoolValue(); } },
+                { "createBasedOnRoleGroup", n => { CreateBasedOnRoleGroup = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

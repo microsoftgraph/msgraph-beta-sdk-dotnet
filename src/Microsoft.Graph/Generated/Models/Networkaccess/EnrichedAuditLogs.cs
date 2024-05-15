@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class EnrichedAuditLogs : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class EnrichedAuditLogs : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Exchange Online enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EnrichedAuditLogsSettings? Exchange {
+        public EnrichedAuditLogsSettings? Exchange
+        {
             get { return BackingStore?.Get<EnrichedAuditLogsSettings?>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
 #nullable restore
 #else
-        public EnrichedAuditLogsSettings Exchange {
+        public EnrichedAuditLogsSettings Exchange
+        {
             get { return BackingStore?.Get<EnrichedAuditLogsSettings>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>SharePoint Online enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EnrichedAuditLogsSettings? Sharepoint {
+        public EnrichedAuditLogsSettings? Sharepoint
+        {
             get { return BackingStore?.Get<EnrichedAuditLogsSettings?>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
 #nullable restore
 #else
-        public EnrichedAuditLogsSettings Sharepoint {
+        public EnrichedAuditLogsSettings Sharepoint
+        {
             get { return BackingStore?.Get<EnrichedAuditLogsSettings>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Teams enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EnrichedAuditLogsSettings? Teams {
+        public EnrichedAuditLogsSettings? Teams
+        {
             get { return BackingStore?.Get<EnrichedAuditLogsSettings?>("teams"); }
             set { BackingStore?.Set("teams", value); }
         }
 #nullable restore
 #else
-        public EnrichedAuditLogsSettings Teams {
+        public EnrichedAuditLogsSettings Teams
+        {
             get { return BackingStore?.Get<EnrichedAuditLogsSettings>("teams"); }
             set { BackingStore?.Set("teams", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"exchange", n => { Exchange = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
-                {"sharepoint", n => { Sharepoint = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
-                {"teams", n => { Teams = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
+                { "sharepoint", n => { Sharepoint = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
+                { "teams", n => { Teams = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

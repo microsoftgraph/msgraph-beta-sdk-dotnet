@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The set of Role Definitions and Role Assignments assigned to a user.
     /// </summary>
-    public class DeviceAndAppManagementAssignedRoleDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceAndAppManagementAssignedRoleDetails : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Role Assignment IDs for the specifc Role Assignments assigned to a user. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleAssignmentIds {
+        public List<string>? RoleAssignmentIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleAssignmentIds"); }
             set { BackingStore?.Set("roleAssignmentIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleAssignmentIds {
+        public List<string> RoleAssignmentIds
+        {
             get { return BackingStore?.Get<List<string>>("roleAssignmentIds"); }
             set { BackingStore?.Set("roleAssignmentIds", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Role Definition IDs for the specifc Role Definitions assigned to a user. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleDefinitionIds {
+        public List<string>? RoleDefinitionIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleDefinitionIds"); }
             set { BackingStore?.Set("roleDefinitionIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleDefinitionIds {
+        public List<string> RoleDefinitionIds
+        {
             get { return BackingStore?.Get<List<string>>("roleDefinitionIds"); }
             set { BackingStore?.Set("roleDefinitionIds", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roleAssignmentIds", n => { RoleAssignmentIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"roleDefinitionIds", n => { RoleDefinitionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roleAssignmentIds", n => { RoleAssignmentIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "roleDefinitionIds", n => { RoleDefinitionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

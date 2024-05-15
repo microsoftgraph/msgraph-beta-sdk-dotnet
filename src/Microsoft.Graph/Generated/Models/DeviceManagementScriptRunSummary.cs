@@ -4,29 +4,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the run summary of a device management script.
     /// </summary>
-    public class DeviceManagementScriptRunSummary : Entity, IParsable 
+    public class DeviceManagementScriptRunSummary : Entity, IParsable
     {
         /// <summary>Error device count.</summary>
-        public int? ErrorDeviceCount {
+        public int? ErrorDeviceCount
+        {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Error user count.</summary>
-        public int? ErrorUserCount {
+        public int? ErrorUserCount
+        {
             get { return BackingStore?.Get<int?>("errorUserCount"); }
             set { BackingStore?.Set("errorUserCount", value); }
         }
         /// <summary>Success device count.</summary>
-        public int? SuccessDeviceCount {
+        public int? SuccessDeviceCount
+        {
             get { return BackingStore?.Get<int?>("successDeviceCount"); }
             set { BackingStore?.Set("successDeviceCount", value); }
         }
         /// <summary>Success user count.</summary>
-        public int? SuccessUserCount {
+        public int? SuccessUserCount
+        {
             get { return BackingStore?.Get<int?>("successUserCount"); }
             set { BackingStore?.Set("successUserCount", value); }
         }
@@ -48,10 +53,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                {"errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
-                {"successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
-                {"successUserCount", n => { SuccessUserCount = n.GetIntValue(); } },
+                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                { "errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
+                { "successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
+                { "successUserCount", n => { SuccessUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

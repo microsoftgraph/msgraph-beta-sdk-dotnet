@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Drive : BaseItem, IParsable 
+    public class Drive : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of recent activities that took place under this drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityOLD>? Activities {
+        public List<ItemActivityOLD>? Activities
+        {
             get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityOLD> Activities {
+        public List<ItemActivityOLD> Activities
+        {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of bundles (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveItem>? Bundles {
+        public List<DriveItem>? Bundles
+        {
             get { return BackingStore?.Get<List<DriveItem>?>("bundles"); }
             set { BackingStore?.Set("bundles", value); }
         }
 #nullable restore
 #else
-        public List<DriveItem> Bundles {
+        public List<DriveItem> Bundles
+        {
             get { return BackingStore?.Get<List<DriveItem>>("bundles"); }
             set { BackingStore?.Set("bundles", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DriveType {
+        public string? DriveType
+        {
             get { return BackingStore?.Get<string?>("driveType"); }
             set { BackingStore?.Set("driveType", value); }
         }
 #nullable restore
 #else
-        public string DriveType {
+        public string DriveType
+        {
             get { return BackingStore?.Get<string>("driveType"); }
             set { BackingStore?.Set("driveType", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of items the user is following. Only in OneDrive for Business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveItem>? Following {
+        public List<DriveItem>? Following
+        {
             get { return BackingStore?.Get<List<DriveItem>?>("following"); }
             set { BackingStore?.Set("following", value); }
         }
 #nullable restore
 #else
-        public List<DriveItem> Following {
+        public List<DriveItem> Following
+        {
             get { return BackingStore?.Get<List<DriveItem>>("following"); }
             set { BackingStore?.Set("following", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All items contained in the drive. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveItem>? Items {
+        public List<DriveItem>? Items
+        {
             get { return BackingStore?.Get<List<DriveItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<DriveItem> Items {
+        public List<DriveItem> Items
+        {
             get { return BackingStore?.Get<List<DriveItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>For drives in SharePoint, the underlying document library list. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.List? List {
+        public Microsoft.Graph.Beta.Models.List? List
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.List List {
+        public Microsoft.Graph.Beta.Models.List List
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List>("list"); }
             set { BackingStore?.Set("list", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Optional. The user account that owns the drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Owner {
+        public IdentitySet? Owner
+        {
             get { return BackingStore?.Get<IdentitySet?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Owner {
+        public IdentitySet Owner
+        {
             get { return BackingStore?.Get<IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Optional. Information about the drive&apos;s storage space quota. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Quota? Quota {
+        public Microsoft.Graph.Beta.Models.Quota? Quota
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Quota?>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Quota Quota {
+        public Microsoft.Graph.Beta.Models.Quota Quota
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Quota>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The root folder of the drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DriveItem? Root {
+        public DriveItem? Root
+        {
             get { return BackingStore?.Get<DriveItem?>("root"); }
             set { BackingStore?.Set("root", value); }
         }
 #nullable restore
 #else
-        public DriveItem Root {
+        public DriveItem Root
+        {
             get { return BackingStore?.Get<DriveItem>("root"); }
             set { BackingStore?.Set("root", value); }
         }
@@ -138,13 +157,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sharePointIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SharepointIds? SharePointIds {
+        public Microsoft.Graph.Beta.Models.SharepointIds? SharePointIds
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharePointIds"); }
             set { BackingStore?.Set("sharePointIds", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SharepointIds SharePointIds {
+        public Microsoft.Graph.Beta.Models.SharepointIds SharePointIds
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharePointIds"); }
             set { BackingStore?.Set("sharePointIds", value); }
         }
@@ -152,13 +173,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of common folders available in OneDrive. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveItem>? Special {
+        public List<DriveItem>? Special
+        {
             get { return BackingStore?.Get<List<DriveItem>?>("special"); }
             set { BackingStore?.Set("special", value); }
         }
 #nullable restore
 #else
-        public List<DriveItem> Special {
+        public List<DriveItem> Special
+        {
             get { return BackingStore?.Get<List<DriveItem>>("special"); }
             set { BackingStore?.Set("special", value); }
         }
@@ -166,13 +189,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If present, indicates that this is a system-managed drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SystemFacet? System {
+        public SystemFacet? System
+        {
             get { return BackingStore?.Get<SystemFacet?>("system"); }
             set { BackingStore?.Set("system", value); }
         }
 #nullable restore
 #else
-        public SystemFacet System {
+        public SystemFacet System
+        {
             get { return BackingStore?.Get<SystemFacet>("system"); }
             set { BackingStore?.Set("system", value); }
         }
@@ -202,18 +227,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"bundles", n => { Bundles = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"driveType", n => { DriveType = n.GetStringValue(); } },
-                {"following", n => { Following = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"list", n => { List = n.GetObjectValue<Microsoft.Graph.Beta.Models.List>(Microsoft.Graph.Beta.Models.List.CreateFromDiscriminatorValue); } },
-                {"owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"quota", n => { Quota = n.GetObjectValue<Microsoft.Graph.Beta.Models.Quota>(Microsoft.Graph.Beta.Models.Quota.CreateFromDiscriminatorValue); } },
-                {"root", n => { Root = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
-                {"sharePointIds", n => { SharePointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
-                {"special", n => { Special = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"system", n => { System = n.GetObjectValue<SystemFacet>(SystemFacet.CreateFromDiscriminatorValue); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bundles", n => { Bundles = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "driveType", n => { DriveType = n.GetStringValue(); } },
+                { "following", n => { Following = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "list", n => { List = n.GetObjectValue<Microsoft.Graph.Beta.Models.List>(Microsoft.Graph.Beta.Models.List.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "quota", n => { Quota = n.GetObjectValue<Microsoft.Graph.Beta.Models.Quota>(Microsoft.Graph.Beta.Models.Quota.CreateFromDiscriminatorValue); } },
+                { "root", n => { Root = n.GetObjectValue<DriveItem>(DriveItem.CreateFromDiscriminatorValue); } },
+                { "sharePointIds", n => { SharePointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
+                { "special", n => { Special = n.GetCollectionOfObjectValues<DriveItem>(DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "system", n => { System = n.GetObjectValue<SystemFacet>(SystemFacet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

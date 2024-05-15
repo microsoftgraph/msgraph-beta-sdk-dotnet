@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows 8.1 Phone and Mobile PFX Import certificate profile
     /// </summary>
-    public class WindowsPhone81ImportedPFXCertificateProfile : WindowsCertificateProfileBase, IParsable 
+    public class WindowsPhone81ImportedPFXCertificateProfile : WindowsCertificateProfileBase, IParsable
     {
         /// <summary>PFX Import Options.</summary>
-        public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
+        public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntendedPurpose?>("intendedPurpose"); }
             set { BackingStore?.Set("intendedPurpose", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"intendedPurpose", n => { IntendedPurpose = n.GetEnumValue<IntendedPurpose>(); } },
-                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "intendedPurpose", n => { IntendedPurpose = n.GetEnumValue<IntendedPurpose>(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

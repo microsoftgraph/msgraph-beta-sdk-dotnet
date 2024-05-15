@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Exclusions.MicrosoftGraphWindowsUpdatesEnrollAssetsById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.Exclusions.MicrosoftGraphWindowsUpdatesEnrollAssetsById
+{
     #pragma warning disable CS1591
-    public class EnrollAssetsByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EnrollAssetsByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         /// <summary>The ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids {
+        public List<string>? Ids
+        {
             get { return BackingStore?.Get<List<string>?>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
 #nullable restore
 #else
-        public List<string> Ids {
+        public List<string> Ids
+        {
             get { return BackingStore?.Get<List<string>>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         /// <summary>The memberEntityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberEntityType {
+        public string? MemberEntityType
+        {
             get { return BackingStore?.Get<string?>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
 #nullable restore
 #else
-        public string MemberEntityType {
+        public string MemberEntityType
+        {
             get { return BackingStore?.Get<string>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
 #endif
         /// <summary>The updateCategory property</summary>
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory? UpdateCategory
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateCategory?>("updateCategory"); }
             set { BackingStore?.Set("updateCategory", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
-                {"updateCategory", n => { UpdateCategory = n.GetEnumValue<UpdateCategory>(); } },
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
+                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<UpdateCategory>(); } },
             };
         }
         /// <summary>

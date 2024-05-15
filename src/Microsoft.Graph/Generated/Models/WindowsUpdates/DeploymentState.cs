@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class DeploymentState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeploymentState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The effectiveValue property</summary>
-        public DeploymentStateValue? EffectiveValue {
+        public DeploymentStateValue? EffectiveValue
+        {
             get { return BackingStore?.Get<DeploymentStateValue?>("effectiveValue"); }
             set { BackingStore?.Set("effectiveValue", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,19 +44,22 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Specifies the reasons the deployment has its state value. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeploymentStateReason>? Reasons {
+        public List<DeploymentStateReason>? Reasons
+        {
             get { return BackingStore?.Get<List<DeploymentStateReason>?>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
 #nullable restore
 #else
-        public List<DeploymentStateReason> Reasons {
+        public List<DeploymentStateReason> Reasons
+        {
             get { return BackingStore?.Get<List<DeploymentStateReason>>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
 #endif
         /// <summary>The requestedValue property</summary>
-        public RequestedDeploymentStateValue? RequestedValue {
+        public RequestedDeploymentStateValue? RequestedValue
+        {
             get { return BackingStore?.Get<RequestedDeploymentStateValue?>("requestedValue"); }
             set { BackingStore?.Set("requestedValue", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"effectiveValue", n => { EffectiveValue = n.GetEnumValue<DeploymentStateValue>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reasons", n => { Reasons = n.GetCollectionOfObjectValues<DeploymentStateReason>(DeploymentStateReason.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requestedValue", n => { RequestedValue = n.GetEnumValue<RequestedDeploymentStateValue>(); } },
+                { "effectiveValue", n => { EffectiveValue = n.GetEnumValue<DeploymentStateValue>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reasons", n => { Reasons = n.GetCollectionOfObjectValues<DeploymentStateReason>(DeploymentStateReason.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requestedValue", n => { RequestedValue = n.GetEnumValue<RequestedDeploymentStateValue>(); } },
             };
         }
         /// <summary>

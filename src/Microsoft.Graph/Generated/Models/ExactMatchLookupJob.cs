@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchLookupJob : ExactMatchJobBase, IParsable 
+    public class ExactMatchLookupJob : ExactMatchJobBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The matchingRows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LookupResultRow>? MatchingRows {
+        public List<LookupResultRow>? MatchingRows
+        {
             get { return BackingStore?.Get<List<LookupResultRow>?>("matchingRows"); }
             set { BackingStore?.Set("matchingRows", value); }
         }
 #nullable restore
 #else
-        public List<LookupResultRow> MatchingRows {
+        public List<LookupResultRow> MatchingRows
+        {
             get { return BackingStore?.Get<List<LookupResultRow>>("matchingRows"); }
             set { BackingStore?.Set("matchingRows", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"matchingRows", n => { MatchingRows = n.GetCollectionOfObjectValues<LookupResultRow>(LookupResultRow.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetStringValue(); } },
+                { "matchingRows", n => { MatchingRows = n.GetCollectionOfObjectValues<LookupResultRow>(LookupResultRow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

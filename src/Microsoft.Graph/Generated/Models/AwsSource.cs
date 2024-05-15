@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsSource : AuthorizationSystemIdentitySource, IParsable 
+    public class AwsSource : AuthorizationSystemIdentitySource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>AWS account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId {
+        public string? AccountId
+        {
             get { return BackingStore?.Get<string?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
 #nullable restore
 #else
-        public string AccountId {
+        public string AccountId
+        {
             get { return BackingStore?.Get<string>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                { "accountId", n => { AccountId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class PstnBlockedUsersLogRow : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PstnBlockedUsersLogRow : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time when the user was blocked/unblocked from making PSTN calls. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? BlockDateTime {
+        public DateTimeOffset? BlockDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("blockDateTime"); }
             set { BackingStore?.Set("blockDateTime", value); }
         }
         /// <summary>The reason why the user is blocked/unblocked from making calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BlockReason {
+        public string? BlockReason
+        {
             get { return BackingStore?.Get<string?>("blockReason"); }
             set { BackingStore?.Set("blockReason", value); }
         }
 #nullable restore
 #else
-        public string BlockReason {
+        public string BlockReason
+        {
             get { return BackingStore?.Get<string>("blockReason"); }
             set { BackingStore?.Set("blockReason", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,32 +60,37 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Unique identifier (GUID) for the blocking/unblocking action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemediationId {
+        public string? RemediationId
+        {
             get { return BackingStore?.Get<string?>("remediationId"); }
             set { BackingStore?.Set("remediationId", value); }
         }
 #nullable restore
 #else
-        public string RemediationId {
+        public string RemediationId
+        {
             get { return BackingStore?.Get<string>("remediationId"); }
             set { BackingStore?.Set("remediationId", value); }
         }
 #endif
         /// <summary>Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.</summary>
-        public PstnUserBlockMode? UserBlockMode {
+        public PstnUserBlockMode? UserBlockMode
+        {
             get { return BackingStore?.Get<PstnUserBlockMode?>("userBlockMode"); }
             set { BackingStore?.Set("userBlockMode", value); }
         }
         /// <summary>Display name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The unique identifier (GUID) of the user in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -114,13 +130,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>User&apos;s blocked number. For details, see E.164.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserTelephoneNumber {
+        public string? UserTelephoneNumber
+        {
             get { return BackingStore?.Get<string?>("userTelephoneNumber"); }
             set { BackingStore?.Set("userTelephoneNumber", value); }
         }
 #nullable restore
 #else
-        public string UserTelephoneNumber {
+        public string UserTelephoneNumber
+        {
             get { return BackingStore?.Get<string>("userTelephoneNumber"); }
             set { BackingStore?.Set("userTelephoneNumber", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"blockDateTime", n => { BlockDateTime = n.GetDateTimeOffsetValue(); } },
-                {"blockReason", n => { BlockReason = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remediationId", n => { RemediationId = n.GetStringValue(); } },
-                {"userBlockMode", n => { UserBlockMode = n.GetEnumValue<PstnUserBlockMode>(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"userTelephoneNumber", n => { UserTelephoneNumber = n.GetStringValue(); } },
+                { "blockDateTime", n => { BlockDateTime = n.GetDateTimeOffsetValue(); } },
+                { "blockReason", n => { BlockReason = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remediationId", n => { RemediationId = n.GetStringValue(); } },
+                { "userBlockMode", n => { UserBlockMode = n.GetEnumValue<PstnUserBlockMode>(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "userTelephoneNumber", n => { UserTelephoneNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

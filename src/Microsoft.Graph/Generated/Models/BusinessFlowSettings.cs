@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessFlowSettings : AccessReviewSettings, IParsable 
+    public class BusinessFlowSettings : AccessReviewSettings, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The durationInDays property</summary>
-        public int? DurationInDays {
+        public int? DurationInDays
+        {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
             };
         }
         /// <summary>

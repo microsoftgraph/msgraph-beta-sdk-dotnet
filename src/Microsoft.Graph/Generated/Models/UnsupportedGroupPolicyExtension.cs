@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Unsupported Group Policy Extension.
     /// </summary>
-    public class UnsupportedGroupPolicyExtension : Entity, IParsable 
+    public class UnsupportedGroupPolicyExtension : Entity, IParsable
     {
         /// <summary>ExtensionType of the unsupported extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionType {
+        public string? ExtensionType
+        {
             get { return BackingStore?.Get<string?>("extensionType"); }
             set { BackingStore?.Set("extensionType", value); }
         }
 #nullable restore
 #else
-        public string ExtensionType {
+        public string ExtensionType
+        {
             get { return BackingStore?.Get<string>("extensionType"); }
             set { BackingStore?.Set("extensionType", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Namespace Url of the unsupported extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NamespaceUrl {
+        public string? NamespaceUrl
+        {
             get { return BackingStore?.Get<string?>("namespaceUrl"); }
             set { BackingStore?.Set("namespaceUrl", value); }
         }
 #nullable restore
 #else
-        public string NamespaceUrl {
+        public string NamespaceUrl
+        {
             get { return BackingStore?.Get<string>("namespaceUrl"); }
             set { BackingStore?.Set("namespaceUrl", value); }
         }
@@ -41,19 +46,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Node name of the unsupported extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NodeName {
+        public string? NodeName
+        {
             get { return BackingStore?.Get<string?>("nodeName"); }
             set { BackingStore?.Set("nodeName", value); }
         }
 #nullable restore
 #else
-        public string NodeName {
+        public string NodeName
+        {
             get { return BackingStore?.Get<string>("nodeName"); }
             set { BackingStore?.Set("nodeName", value); }
         }
 #endif
         /// <summary>Scope of the group policy setting.</summary>
-        public GroupPolicySettingScope? SettingScope {
+        public GroupPolicySettingScope? SettingScope
+        {
             get { return BackingStore?.Get<GroupPolicySettingScope?>("settingScope"); }
             set { BackingStore?.Set("settingScope", value); }
         }
@@ -75,10 +83,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"extensionType", n => { ExtensionType = n.GetStringValue(); } },
-                {"namespaceUrl", n => { NamespaceUrl = n.GetStringValue(); } },
-                {"nodeName", n => { NodeName = n.GetStringValue(); } },
-                {"settingScope", n => { SettingScope = n.GetEnumValue<GroupPolicySettingScope>(); } },
+                { "extensionType", n => { ExtensionType = n.GetStringValue(); } },
+                { "namespaceUrl", n => { NamespaceUrl = n.GetStringValue(); } },
+                { "nodeName", n => { NodeName = n.GetStringValue(); } },
+                { "settingScope", n => { SettingScope = n.GetEnumValue<GroupPolicySettingScope>(); } },
             };
         }
         /// <summary>

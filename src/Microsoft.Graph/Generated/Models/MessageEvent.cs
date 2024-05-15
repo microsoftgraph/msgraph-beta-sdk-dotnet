@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MessageEvent : Entity, IParsable 
+    public class MessageEvent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dateTime property</summary>
-        public DateTimeOffset? DateTime {
+        public DateTimeOffset? DateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The eventType property</summary>
-        public MessageEventType? EventType {
+        public MessageEventType? EventType
+        {
             get { return BackingStore?.Get<MessageEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"eventType", n => { EventType = n.GetEnumValue<MessageEventType>(); } },
+                { "dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<MessageEventType>(); } },
             };
         }
         /// <summary>

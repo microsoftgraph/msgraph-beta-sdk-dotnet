@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId
+{
     [Obsolete("This class is obsolete. Use GetLicensesForAppWithBundleIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetLicensesForAppWithBundleIdResponse : GetLicensesForAppWithBundleIdGetResponse, IParsable 
+    public class GetLicensesForAppWithBundleIdResponse : GetLicensesForAppWithBundleIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

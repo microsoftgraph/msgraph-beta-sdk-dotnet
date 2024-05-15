@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcSharedUseServicePlan : Entity, IParsable 
+    public class CloudPcSharedUseServicePlan : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the shared-use service plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Total number of shared-use service plans purchased by the customer.</summary>
-        public int? TotalCount {
+        public int? TotalCount
+        {
             get { return BackingStore?.Get<int?>("totalCount"); }
             set { BackingStore?.Set("totalCount", value); }
         }
         /// <summary>The number of service plans that the account uses.</summary>
-        public int? UsedCount {
+        public int? UsedCount
+        {
             get { return BackingStore?.Get<int?>("usedCount"); }
             set { BackingStore?.Set("usedCount", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"totalCount", n => { TotalCount = n.GetIntValue(); } },
-                {"usedCount", n => { UsedCount = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "totalCount", n => { TotalCount = n.GetIntValue(); } },
+                { "usedCount", n => { UsedCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

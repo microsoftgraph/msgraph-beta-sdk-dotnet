@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemPatent : ItemFacet, IParsable 
+    public class ItemPatent : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Descpription of the patent or filing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -27,37 +30,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Title of the patent or filing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates the patent is pending.</summary>
-        public bool? IsPending {
+        public bool? IsPending
+        {
             get { return BackingStore?.Get<bool?>("isPending"); }
             set { BackingStore?.Set("isPending", value); }
         }
         /// <summary>The date that the patent was granted.</summary>
-        public Date? IssuedDate {
+        public Date? IssuedDate
+        {
             get { return BackingStore?.Get<Date?>("issuedDate"); }
             set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the patent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuingAuthority {
+        public string? IssuingAuthority
+        {
             get { return BackingStore?.Get<string?>("issuingAuthority"); }
             set { BackingStore?.Set("issuingAuthority", value); }
         }
 #nullable restore
 #else
-        public string IssuingAuthority {
+        public string IssuingAuthority
+        {
             get { return BackingStore?.Get<string>("issuingAuthority"); }
             set { BackingStore?.Set("issuingAuthority", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The patent number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number {
+        public string? Number
+        {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public string Number {
+        public string Number
+        {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>URL referencing the patent or filing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -115,13 +128,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isPending", n => { IsPending = n.GetBoolValue(); } },
-                {"issuedDate", n => { IssuedDate = n.GetDateValue(); } },
-                {"issuingAuthority", n => { IssuingAuthority = n.GetStringValue(); } },
-                {"number", n => { Number = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isPending", n => { IsPending = n.GetBoolValue(); } },
+                { "issuedDate", n => { IssuedDate = n.GetDateValue(); } },
+                { "issuingAuthority", n => { IssuingAuthority = n.GetStringValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

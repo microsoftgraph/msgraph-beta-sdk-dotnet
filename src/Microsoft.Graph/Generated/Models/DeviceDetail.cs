@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the browser information of the used for signing-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Browser {
+        public string? Browser
+        {
             get { return BackingStore?.Get<string?>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
 #nullable restore
 #else
-        public string Browser {
+        public string Browser
+        {
             get { return BackingStore?.Get<string>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The browserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BrowserId {
+        public string? BrowserId
+        {
             get { return BackingStore?.Get<string?>("browserId"); }
             set { BackingStore?.Set("browserId", value); }
         }
 #nullable restore
 #else
-        public string BrowserId {
+        public string BrowserId
+        {
             get { return BackingStore?.Get<string>("browserId"); }
             set { BackingStore?.Set("browserId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Refers to the UniqueID of the device used for signing-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -62,37 +70,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Refers to the name of the device used for signing-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether the device is compliant or not.</summary>
-        public bool? IsCompliant {
+        public bool? IsCompliant
+        {
             get { return BackingStore?.Get<bool?>("isCompliant"); }
             set { BackingStore?.Set("isCompliant", value); }
         }
         /// <summary>Indicates if the device is managed or not.</summary>
-        public bool? IsManaged {
+        public bool? IsManaged
+        {
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the OS name and version used for signing-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
@@ -114,13 +130,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrustType {
+        public string? TrustType
+        {
             get { return BackingStore?.Get<string?>("trustType"); }
             set { BackingStore?.Set("trustType", value); }
         }
 #nullable restore
 #else
-        public string TrustType {
+        public string TrustType
+        {
             get { return BackingStore?.Get<string>("trustType"); }
             set { BackingStore?.Set("trustType", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"browser", n => { Browser = n.GetStringValue(); } },
-                {"browserId", n => { BrowserId = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
-                {"isManaged", n => { IsManaged = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"trustType", n => { TrustType = n.GetStringValue(); } },
+                { "browser", n => { Browser = n.GetStringValue(); } },
+                { "browserId", n => { BrowserId = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
+                { "isManaged", n => { IsManaged = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "trustType", n => { TrustType = n.GetStringValue(); } },
             };
         }
         /// <summary>

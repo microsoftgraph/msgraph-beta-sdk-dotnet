@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class KnowledgeBaseArticle : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class KnowledgeBaseArticle : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The URL of the knowledge base article. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

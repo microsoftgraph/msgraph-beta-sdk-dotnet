@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProgramControlType : Entity, IParsable 
+    public class ProgramControlType : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The controlTypeGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ControlTypeGroupId {
+        public string? ControlTypeGroupId
+        {
             get { return BackingStore?.Get<string?>("controlTypeGroupId"); }
             set { BackingStore?.Set("controlTypeGroupId", value); }
         }
 #nullable restore
 #else
-        public string ControlTypeGroupId {
+        public string ControlTypeGroupId
+        {
             get { return BackingStore?.Get<string>("controlTypeGroupId"); }
             set { BackingStore?.Set("controlTypeGroupId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the program control type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"controlTypeGroupId", n => { ControlTypeGroupId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "controlTypeGroupId", n => { ControlTypeGroupId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

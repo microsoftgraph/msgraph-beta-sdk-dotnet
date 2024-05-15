@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TimeOff : ChangeTrackedEntity, IParsable 
+    public class TimeOff : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeOffItem? DraftTimeOff {
+        public TimeOffItem? DraftTimeOff
+        {
             get { return BackingStore?.Get<TimeOffItem?>("draftTimeOff"); }
             set { BackingStore?.Set("draftTimeOff", value); }
         }
 #nullable restore
 #else
-        public TimeOffItem DraftTimeOff {
+        public TimeOffItem DraftTimeOff
+        {
             get { return BackingStore?.Get<TimeOffItem>("draftTimeOff"); }
             set { BackingStore?.Set("draftTimeOff", value); }
         }
 #endif
         /// <summary>The timeOff is marked for deletion, a process that is finalized when the schedule is shared.</summary>
-        public bool? IsStagedForDeletion {
+        public bool? IsStagedForDeletion
+        {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeOffItem? SharedTimeOff {
+        public TimeOffItem? SharedTimeOff
+        {
             get { return BackingStore?.Get<TimeOffItem?>("sharedTimeOff"); }
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
 #nullable restore
 #else
-        public TimeOffItem SharedTimeOff {
+        public TimeOffItem SharedTimeOff
+        {
             get { return BackingStore?.Get<TimeOffItem>("sharedTimeOff"); }
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information of the team that the timeOff is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftsTeamInfo? TeamInfo {
+        public ShiftsTeamInfo? TeamInfo
+        {
             get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
             set { BackingStore?.Set("teamInfo", value); }
         }
 #nullable restore
 #else
-        public ShiftsTeamInfo TeamInfo {
+        public ShiftsTeamInfo TeamInfo
+        {
             get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
             set { BackingStore?.Set("teamInfo", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the user assigned to the timeOff. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information of the user assigned to the timeOff.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftsUserInfo? UserInfo {
+        public ShiftsUserInfo? UserInfo
+        {
             get { return BackingStore?.Get<ShiftsUserInfo?>("userInfo"); }
             set { BackingStore?.Set("userInfo", value); }
         }
 #nullable restore
 #else
-        public ShiftsUserInfo UserInfo {
+        public ShiftsUserInfo UserInfo
+        {
             get { return BackingStore?.Get<ShiftsUserInfo>("userInfo"); }
             set { BackingStore?.Set("userInfo", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
-                {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
-                {"sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
-                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userInfo", n => { UserInfo = n.GetObjectValue<ShiftsUserInfo>(ShiftsUserInfo.CreateFromDiscriminatorValue); } },
+                { "draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
+                { "isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
+                { "sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<TimeOffItem>(TimeOffItem.CreateFromDiscriminatorValue); } },
+                { "teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userInfo", n => { UserInfo = n.GetObjectValue<ShiftsUserInfo>(ShiftsUserInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

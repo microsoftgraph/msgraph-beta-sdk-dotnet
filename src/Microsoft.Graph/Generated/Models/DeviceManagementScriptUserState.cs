@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for user run state of the device management script.
     /// </summary>
-    public class DeviceManagementScriptUserState : Entity, IParsable 
+    public class DeviceManagementScriptUserState : Entity, IParsable
     {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptDeviceState>? DeviceRunStates {
+        public List<DeviceManagementScriptDeviceState>? DeviceRunStates
+        {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>?>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptDeviceState> DeviceRunStates {
+        public List<DeviceManagementScriptDeviceState> DeviceRunStates
+        {
             get { return BackingStore?.Get<List<DeviceManagementScriptDeviceState>>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
 #endif
         /// <summary>Error device count for specific user.</summary>
-        public int? ErrorDeviceCount {
+        public int? ErrorDeviceCount
+        {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Success device count for specific user.</summary>
-        public int? SuccessDeviceCount {
+        public int? SuccessDeviceCount
+        {
             get { return BackingStore?.Get<int?>("successDeviceCount"); }
             set { BackingStore?.Set("successDeviceCount", value); }
         }
         /// <summary>User principle name of specific user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                {"successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<DeviceManagementScriptDeviceState>(DeviceManagementScriptDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                { "successDeviceCount", n => { SuccessDeviceCount = n.GetIntValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

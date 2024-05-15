@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing configurations in this profile you can instruct the Nine Work email client on Android For Work devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class AndroidForWorkNineWorkEasConfiguration : AndroidForWorkEasEmailProfileBase, IParsable 
+    public class AndroidForWorkNineWorkEasConfiguration : AndroidForWorkEasEmailProfileBase, IParsable
     {
         /// <summary>Toggles syncing the calendar. If set to false the calendar is turned off on the device.</summary>
-        public bool? SyncCalendar {
+        public bool? SyncCalendar
+        {
             get { return BackingStore?.Get<bool?>("syncCalendar"); }
             set { BackingStore?.Set("syncCalendar", value); }
         }
         /// <summary>Toggles syncing contacts. If set to false contacts are turned off on the device.</summary>
-        public bool? SyncContacts {
+        public bool? SyncContacts
+        {
             get { return BackingStore?.Get<bool?>("syncContacts"); }
             set { BackingStore?.Set("syncContacts", value); }
         }
         /// <summary>Toggles syncing tasks. If set to false tasks are turned off on the device.</summary>
-        public bool? SyncTasks {
+        public bool? SyncTasks
+        {
             get { return BackingStore?.Get<bool?>("syncTasks"); }
             set { BackingStore?.Set("syncTasks", value); }
         }
@@ -50,9 +54,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"syncCalendar", n => { SyncCalendar = n.GetBoolValue(); } },
-                {"syncContacts", n => { SyncContacts = n.GetBoolValue(); } },
-                {"syncTasks", n => { SyncTasks = n.GetBoolValue(); } },
+                { "syncCalendar", n => { SyncCalendar = n.GetBoolValue(); } },
+                { "syncContacts", n => { SyncContacts = n.GetBoolValue(); } },
+                { "syncTasks", n => { SyncTasks = n.GetBoolValue(); } },
             };
         }
         /// <summary>

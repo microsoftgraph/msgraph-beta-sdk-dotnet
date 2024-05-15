@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcHealthCheckItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcHealthCheckItem : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Additional message for this health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalDetails {
+        public string? AdditionalDetails
+        {
             get { return BackingStore?.Get<string?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public string AdditionalDetails {
+        public string AdditionalDetails
+        {
             get { return BackingStore?.Get<string>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
@@ -34,38 +38,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connectivity health check item name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastHealthCheckDateTime {
+        public DateTimeOffset? LastHealthCheckDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastHealthCheckDateTime"); }
             set { BackingStore?.Set("lastHealthCheckDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The result property</summary>
-        public CloudPcConnectivityEventResult? Result {
+        public CloudPcConnectivityEventResult? Result
+        {
             get { return BackingStore?.Get<CloudPcConnectivityEventResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastHealthCheckDateTime", n => { LastHealthCheckDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetEnumValue<CloudPcConnectivityEventResult>(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastHealthCheckDateTime", n => { LastHealthCheckDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetEnumValue<CloudPcConnectivityEventResult>(); } },
             };
         }
         /// <summary>

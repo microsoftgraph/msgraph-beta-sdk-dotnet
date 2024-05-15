@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BookingsAvailabilityWindow : BookingsAvailability, IParsable 
+    public class BookingsAvailabilityWindow : BookingsAvailability, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>End date of the availability window.</summary>
-        public Date? EndDate {
+        public Date? EndDate
+        {
             get { return BackingStore?.Get<Date?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
         /// <summary>Start date of the availability window.</summary>
-        public Date? StartDate {
+        public Date? StartDate
+        {
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDate", n => { EndDate = n.GetDateValue(); } },
-                {"startDate", n => { StartDate = n.GetDateValue(); } },
+                { "endDate", n => { EndDate = n.GetDateValue(); } },
+                { "startDate", n => { StartDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcPartnerAgentInstallResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcPartnerAgentInstallResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,48 +22,56 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains a detailed error message when the partner agent installation failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage {
+        public string? ErrorMessage
+        {
             get { return BackingStore?.Get<string?>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
 #nullable restore
 #else
-        public string ErrorMessage {
+        public string ErrorMessage
+        {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
 #endif
         /// <summary>The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.</summary>
-        public CloudPcPartnerAgentInstallStatus? InstallStatus {
+        public CloudPcPartnerAgentInstallStatus? InstallStatus
+        {
             get { return BackingStore?.Get<CloudPcPartnerAgentInstallStatus?>("installStatus"); }
             set { BackingStore?.Set("installStatus", value); }
         }
         /// <summary>Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn&apos;t known.  The default value is false.</summary>
-        public bool? IsThirdPartyPartner {
+        public bool? IsThirdPartyPartner
+        {
             get { return BackingStore?.Get<bool?>("isThirdPartyPartner"); }
             set { BackingStore?.Set("isThirdPartyPartner", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.</summary>
-        public CloudPcPartnerAgentName? PartnerAgentName {
+        public CloudPcPartnerAgentName? PartnerAgentName
+        {
             get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }
         }
         /// <summary>Indicates whether the partner agent installation should be retried. The default value is false.</summary>
-        public bool? Retriable {
+        public bool? Retriable
+        {
             get { return BackingStore?.Get<bool?>("retriable"); }
             set { BackingStore?.Set("retriable", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                {"installStatus", n => { InstallStatus = n.GetEnumValue<CloudPcPartnerAgentInstallStatus>(); } },
-                {"isThirdPartyPartner", n => { IsThirdPartyPartner = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"partnerAgentName", n => { PartnerAgentName = n.GetEnumValue<CloudPcPartnerAgentName>(); } },
-                {"retriable", n => { Retriable = n.GetBoolValue(); } },
+                { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "installStatus", n => { InstallStatus = n.GetEnumValue<CloudPcPartnerAgentInstallStatus>(); } },
+                { "isThirdPartyPartner", n => { IsThirdPartyPartner = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "partnerAgentName", n => { PartnerAgentName = n.GetEnumValue<CloudPcPartnerAgentName>(); } },
+                { "retriable", n => { Retriable = n.GetBoolValue(); } },
             };
         }
         /// <summary>

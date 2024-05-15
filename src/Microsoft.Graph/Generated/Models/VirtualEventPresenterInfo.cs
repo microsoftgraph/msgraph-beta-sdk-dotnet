@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventPresenterInfo : MeetingParticipantInfo, IParsable 
+    public class VirtualEventPresenterInfo : MeetingParticipantInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The presenterDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventPresenterDetails? PresenterDetails {
+        public VirtualEventPresenterDetails? PresenterDetails
+        {
             get { return BackingStore?.Get<VirtualEventPresenterDetails?>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #nullable restore
 #else
-        public VirtualEventPresenterDetails PresenterDetails {
+        public VirtualEventPresenterDetails PresenterDetails
+        {
             get { return BackingStore?.Get<VirtualEventPresenterDetails>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
+                { "presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

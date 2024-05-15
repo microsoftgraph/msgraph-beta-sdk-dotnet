@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplateDetailedInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ManagementTemplateDetailedInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The category property</summary>
-        public ManagementCategory? Category {
+        public ManagementCategory? Category
+        {
             get { return BackingStore?.Get<ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The display name for the management template. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The unique identifier for the management template. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateId {
+        public string? ManagementTemplateId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateId {
+        public string ManagementTemplateId
+        {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
@@ -53,19 +60,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The version property</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

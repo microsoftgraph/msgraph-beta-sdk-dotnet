@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PermissionsRequestChange : Entity, IParsable 
+    public class PermissionsRequestChange : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The status of the active occurence of the schedule if one exists. The possible values are: grantingFailed, granted, granting, revoked, revoking, revokingFailed, unknownFutureValue.</summary>
-        public PermissionsRequestOccurrenceStatus? ActiveOccurrenceStatus {
+        public PermissionsRequestOccurrenceStatus? ActiveOccurrenceStatus
+        {
             get { return BackingStore?.Get<PermissionsRequestOccurrenceStatus?>("activeOccurrenceStatus"); }
             set { BackingStore?.Set("activeOccurrenceStatus", value); }
         }
         /// <summary>Time when the change occurred.</summary>
-        public DateTimeOffset? ModificationDateTime {
+        public DateTimeOffset? ModificationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("modificationDateTime"); }
             set { BackingStore?.Set("modificationDateTime", value); }
         }
         /// <summary>The ID of the scheduledPermissionsRequest object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionsRequestId {
+        public string? PermissionsRequestId
+        {
             get { return BackingStore?.Get<string?>("permissionsRequestId"); }
             set { BackingStore?.Set("permissionsRequestId", value); }
         }
 #nullable restore
 #else
-        public string PermissionsRequestId {
+        public string PermissionsRequestId
+        {
             get { return BackingStore?.Get<string>("permissionsRequestId"); }
             set { BackingStore?.Set("permissionsRequestId", value); }
         }
 #endif
         /// <summary>The statusDetail property</summary>
-        public Microsoft.Graph.Beta.Models.StatusDetail? StatusDetail {
+        public Microsoft.Graph.Beta.Models.StatusDetail? StatusDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StatusDetail?>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
         /// <summary>Represents the ticketing system identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketId {
+        public string? TicketId
+        {
             get { return BackingStore?.Get<string?>("ticketId"); }
             set { BackingStore?.Set("ticketId", value); }
         }
 #nullable restore
 #else
-        public string TicketId {
+        public string TicketId
+        {
             get { return BackingStore?.Get<string>("ticketId"); }
             set { BackingStore?.Set("ticketId", value); }
         }
@@ -70,11 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeOccurrenceStatus", n => { ActiveOccurrenceStatus = n.GetEnumValue<PermissionsRequestOccurrenceStatus>(); } },
-                {"modificationDateTime", n => { ModificationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"permissionsRequestId", n => { PermissionsRequestId = n.GetStringValue(); } },
-                {"statusDetail", n => { StatusDetail = n.GetEnumValue<StatusDetail>(); } },
-                {"ticketId", n => { TicketId = n.GetStringValue(); } },
+                { "activeOccurrenceStatus", n => { ActiveOccurrenceStatus = n.GetEnumValue<PermissionsRequestOccurrenceStatus>(); } },
+                { "modificationDateTime", n => { ModificationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "permissionsRequestId", n => { PermissionsRequestId = n.GetStringValue(); } },
+                { "statusDetail", n => { StatusDetail = n.GetEnumValue<StatusDetail>(); } },
+                { "ticketId", n => { TicketId = n.GetStringValue(); } },
             };
         }
         /// <summary>

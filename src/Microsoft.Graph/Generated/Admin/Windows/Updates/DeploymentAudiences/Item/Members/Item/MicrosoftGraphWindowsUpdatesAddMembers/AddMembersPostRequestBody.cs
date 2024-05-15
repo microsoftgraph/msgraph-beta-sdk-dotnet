@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.MicrosoftGraphWindowsUpdatesAddMembers {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Members.Item.MicrosoftGraphWindowsUpdatesAddMembers
+{
     #pragma warning disable CS1591
-    public class AddMembersPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddMembersPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? Assets {
+        public List<UpdatableAsset>? Assets
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("assets"); }
             set { BackingStore?.Set("assets", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> Assets {
+        public List<UpdatableAsset> Assets
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("assets"); }
             set { BackingStore?.Set("assets", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Me
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assets", n => { Assets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assets", n => { Assets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

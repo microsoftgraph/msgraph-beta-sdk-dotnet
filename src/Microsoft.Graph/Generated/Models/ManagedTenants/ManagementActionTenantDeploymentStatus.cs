@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementActionTenantDeploymentStatus : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementActionTenantDeploymentStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementActionDeploymentStatus>? Statuses {
+        public List<ManagementActionDeploymentStatus>? Statuses
+        {
             get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>?>("statuses"); }
             set { BackingStore?.Set("statuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagementActionDeploymentStatus> Statuses {
+        public List<ManagementActionDeploymentStatus> Statuses
+        {
             get { return BackingStore?.Get<List<ManagementActionDeploymentStatus>>("statuses"); }
             set { BackingStore?.Set("statuses", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The identifier for the tenant group that is associated with the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantGroupId {
+        public string? TenantGroupId
+        {
             get { return BackingStore?.Get<string?>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
 #nullable restore
 #else
-        public string TenantGroupId {
+        public string TenantGroupId
+        {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"statuses", n => { Statuses = n.GetCollectionOfObjectValues<ManagementActionDeploymentStatus>(ManagementActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "statuses", n => { Statuses = n.GetCollectionOfObjectValues<ManagementActionDeploymentStatus>(ManagementActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

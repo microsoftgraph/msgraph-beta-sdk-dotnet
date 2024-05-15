@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcExportJob : Entity, IParsable 
+    public class CloudPcExportJob : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the export job expires.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The status of the export job. The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.</summary>
-        public CloudPcExportJobStatus? ExportJobStatus {
+        public CloudPcExportJobStatus? ExportJobStatus
+        {
             get { return BackingStore?.Get<CloudPcExportJobStatus?>("exportJobStatus"); }
             set { BackingStore?.Set("exportJobStatus", value); }
         }
         /// <summary>The storage account URL of the exported report. It can be used to download the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExportUrl {
+        public string? ExportUrl
+        {
             get { return BackingStore?.Get<string?>("exportUrl"); }
             set { BackingStore?.Set("exportUrl", value); }
         }
 #nullable restore
 #else
-        public string ExportUrl {
+        public string ExportUrl
+        {
             get { return BackingStore?.Get<string>("exportUrl"); }
             set { BackingStore?.Set("exportUrl", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The filter applied on the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filter {
+        public string? Filter
+        {
             get { return BackingStore?.Get<string?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #nullable restore
 #else
-        public string Filter {
+        public string Filter
+        {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
@@ -50,37 +57,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The format of the exported report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format {
+        public string? Format
+        {
             get { return BackingStore?.Get<string?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public string Format {
+        public string Format
+        {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
         /// <summary>The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, sharedUseLicenseUsageReport, sharedUseLicenseUsageRealTimeReport, unknownFutureValue,  noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport,  remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports, cloudPcUsageCategoryReports. You must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: noLicenseAvailableConnectivityFailureReport, frontlineLicenseUsageReport, frontlineLicenseUsageRealTimeReport, remoteConnectionQualityReports, inaccessibleCloudPcReports, rawRemoteConnectionReports, cloudPcUsageCategoryReports.</summary>
-        public CloudPcReportName? ReportName {
+        public CloudPcReportName? ReportName
+        {
             get { return BackingStore?.Get<CloudPcReportName?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
         /// <summary>The date and time when the export job was requested.</summary>
-        public DateTimeOffset? RequestDateTime {
+        public DateTimeOffset? RequestDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>The selected columns of the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Select {
+        public List<string>? Select
+        {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
 #nullable restore
 #else
-        public List<string> Select {
+        public List<string> Select
+        {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
@@ -103,14 +116,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"exportJobStatus", n => { ExportJobStatus = n.GetEnumValue<CloudPcExportJobStatus>(); } },
-                {"exportUrl", n => { ExportUrl = n.GetStringValue(); } },
-                {"filter", n => { Filter = n.GetStringValue(); } },
-                {"format", n => { Format = n.GetStringValue(); } },
-                {"reportName", n => { ReportName = n.GetEnumValue<CloudPcReportName>(); } },
-                {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "exportJobStatus", n => { ExportJobStatus = n.GetEnumValue<CloudPcExportJobStatus>(); } },
+                { "exportUrl", n => { ExportUrl = n.GetStringValue(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "format", n => { Format = n.GetStringValue(); } },
+                { "reportName", n => { ReportName = n.GetEnumValue<CloudPcReportName>(); } },
+                { "requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

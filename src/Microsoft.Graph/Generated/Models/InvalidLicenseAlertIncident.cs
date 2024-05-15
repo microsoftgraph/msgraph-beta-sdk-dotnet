@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InvalidLicenseAlertIncident : UnifiedRoleManagementAlertIncident, IParsable 
+    public class InvalidLicenseAlertIncident : UnifiedRoleManagementAlertIncident, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Status of the tenant&apos;s Microsoft Entra ID P2 license.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantLicenseStatus {
+        public string? TenantLicenseStatus
+        {
             get { return BackingStore?.Get<string?>("tenantLicenseStatus"); }
             set { BackingStore?.Set("tenantLicenseStatus", value); }
         }
 #nullable restore
 #else
-        public string TenantLicenseStatus {
+        public string TenantLicenseStatus
+        {
             get { return BackingStore?.Get<string>("tenantLicenseStatus"); }
             set { BackingStore?.Set("tenantLicenseStatus", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"tenantLicenseStatus", n => { TenantLicenseStatus = n.GetStringValue(); } },
+                { "tenantLicenseStatus", n => { TenantLicenseStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>

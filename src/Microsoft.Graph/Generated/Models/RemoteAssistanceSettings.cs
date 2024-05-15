@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Remote assistance settings for the account
     /// </summary>
-    public class RemoteAssistanceSettings : Entity, IParsable 
+    public class RemoteAssistanceSettings : Entity, IParsable
     {
         /// <summary>Indicates if sessions to unenrolled devices are allowed for the account. This setting is configurable by the admin. Default value is false.</summary>
-        public bool? AllowSessionsToUnenrolledDevices {
+        public bool? AllowSessionsToUnenrolledDevices
+        {
             get { return BackingStore?.Get<bool?>("allowSessionsToUnenrolledDevices"); }
             set { BackingStore?.Set("allowSessionsToUnenrolledDevices", value); }
         }
         /// <summary>Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.</summary>
-        public bool? BlockChat {
+        public bool? BlockChat
+        {
             get { return BackingStore?.Get<bool?>("blockChat"); }
             set { BackingStore?.Set("blockChat", value); }
         }
         /// <summary>State of remote assistance for the account</summary>
-        public Microsoft.Graph.Beta.Models.RemoteAssistanceState? RemoteAssistanceState {
+        public Microsoft.Graph.Beta.Models.RemoteAssistanceState? RemoteAssistanceState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceState?>("remoteAssistanceState"); }
             set { BackingStore?.Set("remoteAssistanceState", value); }
         }
@@ -43,9 +47,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowSessionsToUnenrolledDevices", n => { AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
-                {"blockChat", n => { BlockChat = n.GetBoolValue(); } },
-                {"remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<RemoteAssistanceState>(); } },
+                { "allowSessionsToUnenrolledDevices", n => { AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
+                { "blockChat", n => { BlockChat = n.GetBoolValue(); } },
+                { "remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<RemoteAssistanceState>(); } },
             };
         }
         /// <summary>

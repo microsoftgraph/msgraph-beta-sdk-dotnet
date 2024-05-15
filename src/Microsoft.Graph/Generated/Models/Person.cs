@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Person : Entity, IParsable 
+    public class Person : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The person&apos;s birthday.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Birthday {
+        public string? Birthday
+        {
             get { return BackingStore?.Get<string?>("birthday"); }
             set { BackingStore?.Set("birthday", value); }
         }
 #nullable restore
 #else
-        public string Birthday {
+        public string Birthday
+        {
             get { return BackingStore?.Get<string>("birthday"); }
             set { BackingStore?.Set("birthday", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the person&apos;s company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName {
+        public string? CompanyName
+        {
             get { return BackingStore?.Get<string?>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
 #nullable restore
 #else
-        public string CompanyName {
+        public string CompanyName
+        {
             get { return BackingStore?.Get<string>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s department.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Department {
+        public string? Department
+        {
             get { return BackingStore?.Get<string?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
 #nullable restore
 #else
-        public string Department {
+        public string Department
+        {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s email addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RankedEmailAddress>? EmailAddresses {
+        public List<RankedEmailAddress>? EmailAddresses
+        {
             get { return BackingStore?.Get<List<RankedEmailAddress>?>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
 #nullable restore
 #else
-        public List<RankedEmailAddress> EmailAddresses {
+        public List<RankedEmailAddress> EmailAddresses
+        {
             get { return BackingStore?.Get<List<RankedEmailAddress>>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
@@ -82,32 +93,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s given name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GivenName {
+        public string? GivenName
+        {
             get { return BackingStore?.Get<string?>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
 #nullable restore
 #else
-        public string GivenName {
+        public string GivenName
+        {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
 #endif
         /// <summary>True if the user has flagged this person as a favorite.</summary>
-        public bool? IsFavorite {
+        public bool? IsFavorite
+        {
             get { return BackingStore?.Get<bool?>("isFavorite"); }
             set { BackingStore?.Set("isFavorite", value); }
         }
         /// <summary>The type of mailbox that is represented by the person&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailboxType {
+        public string? MailboxType
+        {
             get { return BackingStore?.Get<string?>("mailboxType"); }
             set { BackingStore?.Set("mailboxType", value); }
         }
 #nullable restore
 #else
-        public string MailboxType {
+        public string MailboxType
+        {
             get { return BackingStore?.Get<string>("mailboxType"); }
             set { BackingStore?.Set("mailboxType", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The location of the person&apos;s office.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfficeLocation {
+        public string? OfficeLocation
+        {
             get { return BackingStore?.Get<string?>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
 #nullable restore
 #else
-        public string OfficeLocation {
+        public string OfficeLocation
+        {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Free-form notes that the user has taken about this person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonNotes {
+        public string? PersonNotes
+        {
             get { return BackingStore?.Get<string?>("personNotes"); }
             set { BackingStore?.Set("personNotes", value); }
         }
 #nullable restore
 #else
-        public string PersonNotes {
+        public string PersonNotes
+        {
             get { return BackingStore?.Get<string>("personNotes"); }
             set { BackingStore?.Set("personNotes", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of person, for example distribution list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonType {
+        public string? PersonType
+        {
             get { return BackingStore?.Get<string?>("personType"); }
             set { BackingStore?.Set("personType", value); }
         }
 #nullable restore
 #else
-        public string PersonType {
+        public string PersonType
+        {
             get { return BackingStore?.Get<string>("personType"); }
             set { BackingStore?.Set("personType", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s phone numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones {
+        public List<Phone>? Phones
+        {
             get { return BackingStore?.Get<List<Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones {
+        public List<Phone> Phones
+        {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
@@ -171,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Location>? PostalAddresses {
+        public List<Location>? PostalAddresses
+        {
             get { return BackingStore?.Get<List<Location>?>("postalAddresses"); }
             set { BackingStore?.Set("postalAddresses", value); }
         }
 #nullable restore
 #else
-        public List<Location> PostalAddresses {
+        public List<Location> PostalAddresses
+        {
             get { return BackingStore?.Get<List<Location>>("postalAddresses"); }
             set { BackingStore?.Set("postalAddresses", value); }
         }
@@ -185,13 +211,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s profession.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Profession {
+        public string? Profession
+        {
             get { return BackingStore?.Get<string?>("profession"); }
             set { BackingStore?.Set("profession", value); }
         }
 #nullable restore
 #else
-        public string Profession {
+        public string Profession
+        {
             get { return BackingStore?.Get<string>("profession"); }
             set { BackingStore?.Set("profession", value); }
         }
@@ -199,13 +227,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sources the user data comes from, for example Directory or Outlook Contacts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonDataSource>? Sources {
+        public List<PersonDataSource>? Sources
+        {
             get { return BackingStore?.Get<List<PersonDataSource>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #nullable restore
 #else
-        public List<PersonDataSource> Sources {
+        public List<PersonDataSource> Sources
+        {
             get { return BackingStore?.Get<List<PersonDataSource>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
@@ -213,13 +243,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s surname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Surname {
+        public string? Surname
+        {
             get { return BackingStore?.Get<string?>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
 #nullable restore
 #else
-        public string Surname {
+        public string Surname
+        {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
@@ -227,13 +259,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -241,13 +275,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user principal name (UPN) of the person. The UPN is an Internet-style login name for the person based on the Internet standard RFC 822. By convention, this should map to the person&apos;s email name. The general format is alias@domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -255,13 +291,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The person&apos;s websites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Website>? Websites {
+        public List<Website>? Websites
+        {
             get { return BackingStore?.Get<List<Website>?>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #nullable restore
 #else
-        public List<Website> Websites {
+        public List<Website> Websites
+        {
             get { return BackingStore?.Get<List<Website>>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
@@ -269,13 +307,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The phonetic Japanese name of the person&apos;s company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? YomiCompany {
+        public string? YomiCompany
+        {
             get { return BackingStore?.Get<string?>("yomiCompany"); }
             set { BackingStore?.Set("yomiCompany", value); }
         }
 #nullable restore
 #else
-        public string YomiCompany {
+        public string YomiCompany
+        {
             get { return BackingStore?.Get<string>("yomiCompany"); }
             set { BackingStore?.Set("yomiCompany", value); }
         }
@@ -298,26 +338,26 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"birthday", n => { Birthday = n.GetStringValue(); } },
-                {"companyName", n => { CompanyName = n.GetStringValue(); } },
-                {"department", n => { Department = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"emailAddresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<RankedEmailAddress>(RankedEmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"givenName", n => { GivenName = n.GetStringValue(); } },
-                {"isFavorite", n => { IsFavorite = n.GetBoolValue(); } },
-                {"mailboxType", n => { MailboxType = n.GetStringValue(); } },
-                {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
-                {"personNotes", n => { PersonNotes = n.GetStringValue(); } },
-                {"personType", n => { PersonType = n.GetStringValue(); } },
-                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"profession", n => { Profession = n.GetStringValue(); } },
-                {"sources", n => { Sources = n.GetCollectionOfObjectValues<PersonDataSource>(PersonDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"surname", n => { Surname = n.GetStringValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"websites", n => { Websites = n.GetCollectionOfObjectValues<Website>(Website.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"yomiCompany", n => { YomiCompany = n.GetStringValue(); } },
+                { "birthday", n => { Birthday = n.GetStringValue(); } },
+                { "companyName", n => { CompanyName = n.GetStringValue(); } },
+                { "department", n => { Department = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "emailAddresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<RankedEmailAddress>(RankedEmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "givenName", n => { GivenName = n.GetStringValue(); } },
+                { "isFavorite", n => { IsFavorite = n.GetBoolValue(); } },
+                { "mailboxType", n => { MailboxType = n.GetStringValue(); } },
+                { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
+                { "personNotes", n => { PersonNotes = n.GetStringValue(); } },
+                { "personType", n => { PersonType = n.GetStringValue(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "profession", n => { Profession = n.GetStringValue(); } },
+                { "sources", n => { Sources = n.GetCollectionOfObjectValues<PersonDataSource>(PersonDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "surname", n => { Surname = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "websites", n => { Websites = n.GetCollectionOfObjectValues<Website>(Website.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "yomiCompany", n => { YomiCompany = n.GetStringValue(); } },
             };
         }
         /// <summary>

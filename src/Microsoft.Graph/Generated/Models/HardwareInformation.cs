@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Hardware information of a given device.
     /// </summary>
-    public class HardwareInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HardwareInformation : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of charge cycles the device’s current battery has gone through. Valid values 0 to 2147483647</summary>
-        public int? BatteryChargeCycles {
+        public int? BatteryChargeCycles
+        {
             get { return BackingStore?.Get<int?>("batteryChargeCycles"); }
             set { BackingStore?.Set("batteryChargeCycles", value); }
         }
         /// <summary>The device’s current battery’s health percentage. Valid values 0 to 100</summary>
-        public int? BatteryHealthPercentage {
+        public int? BatteryHealthPercentage
+        {
             get { return BackingStore?.Get<int?>("batteryHealthPercentage"); }
             set { BackingStore?.Set("batteryHealthPercentage", value); }
         }
         /// <summary>The battery level, between 0.0 and 100, or null if the battery level cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 5.0 and later, and is available only when Device Information access right is obtained. Valid values 0 to 100</summary>
-        public double? BatteryLevelPercentage {
+        public double? BatteryLevelPercentage
+        {
             get { return BackingStore?.Get<double?>("batteryLevelPercentage"); }
             set { BackingStore?.Set("batteryLevelPercentage", value); }
         }
         /// <summary>The serial number of the device’s current battery</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatterySerialNumber {
+        public string? BatterySerialNumber
+        {
             get { return BackingStore?.Get<string?>("batterySerialNumber"); }
             set { BackingStore?.Set("batterySerialNumber", value); }
         }
 #nullable restore
 #else
-        public string BatterySerialNumber {
+        public string BatterySerialNumber
+        {
             get { return BackingStore?.Get<string>("batterySerialNumber"); }
             set { BackingStore?.Set("batterySerialNumber", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Cellular technology of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CellularTechnology {
+        public string? CellularTechnology
+        {
             get { return BackingStore?.Get<string?>("cellularTechnology"); }
             set { BackingStore?.Set("cellularTechnology", value); }
         }
 #nullable restore
 #else
-        public string CellularTechnology {
+        public string CellularTechnology
+        {
             get { return BackingStore?.Get<string>("cellularTechnology"); }
             set { BackingStore?.Set("cellularTechnology", value); }
         }
@@ -64,85 +73,99 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Returns the fully qualified domain name of the device (if any). If the device is not domain-joined, it returns an empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceFullQualifiedDomainName {
+        public string? DeviceFullQualifiedDomainName
+        {
             get { return BackingStore?.Get<string?>("deviceFullQualifiedDomainName"); }
             set { BackingStore?.Set("deviceFullQualifiedDomainName", value); }
         }
 #nullable restore
 #else
-        public string DeviceFullQualifiedDomainName {
+        public string DeviceFullQualifiedDomainName
+        {
             get { return BackingStore?.Get<string>("deviceFullQualifiedDomainName"); }
             set { BackingStore?.Set("deviceFullQualifiedDomainName", value); }
         }
 #endif
         /// <summary>The deviceGuardLocalSystemAuthorityCredentialGuardState property</summary>
-        public Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState {
+        public Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState? DeviceGuardLocalSystemAuthorityCredentialGuardState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardLocalSystemAuthorityCredentialGuardState?>("deviceGuardLocalSystemAuthorityCredentialGuardState"); }
             set { BackingStore?.Set("deviceGuardLocalSystemAuthorityCredentialGuardState", value); }
         }
         /// <summary>The deviceGuardVirtualizationBasedSecurityHardwareRequirementState property</summary>
-        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState {
+        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState? DeviceGuardVirtualizationBasedSecurityHardwareRequirementState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityHardwareRequirementState?>("deviceGuardVirtualizationBasedSecurityHardwareRequirementState"); }
             set { BackingStore?.Set("deviceGuardVirtualizationBasedSecurityHardwareRequirementState", value); }
         }
         /// <summary>The deviceGuardVirtualizationBasedSecurityState property</summary>
-        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState {
+        public Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState? DeviceGuardVirtualizationBasedSecurityState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceGuardVirtualizationBasedSecurityState?>("deviceGuardVirtualizationBasedSecurityState"); }
             set { BackingStore?.Set("deviceGuardVirtualizationBasedSecurityState", value); }
         }
         /// <summary>A standard error code indicating the last error, or 0 indicating no error (default). The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing. Valid values 0 to 2147483647</summary>
-        public int? DeviceLicensingLastErrorCode {
+        public int? DeviceLicensingLastErrorCode
+        {
             get { return BackingStore?.Get<int?>("deviceLicensingLastErrorCode"); }
             set { BackingStore?.Set("deviceLicensingLastErrorCode", value); }
         }
         /// <summary>Error text message as a descripition for deviceLicensingLastErrorCode. The update frequency of this property is daily. Note this property is currently supported only for Windows based Device based subscription licensing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceLicensingLastErrorDescription {
+        public string? DeviceLicensingLastErrorDescription
+        {
             get { return BackingStore?.Get<string?>("deviceLicensingLastErrorDescription"); }
             set { BackingStore?.Set("deviceLicensingLastErrorDescription", value); }
         }
 #nullable restore
 #else
-        public string DeviceLicensingLastErrorDescription {
+        public string DeviceLicensingLastErrorDescription
+        {
             get { return BackingStore?.Get<string>("deviceLicensingLastErrorDescription"); }
             set { BackingStore?.Set("deviceLicensingLastErrorDescription", value); }
         }
 #endif
         /// <summary>Indicates the device licensing status after Windows device based subscription has been enabled.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceLicensingStatus? DeviceLicensingStatus {
+        public Microsoft.Graph.Beta.Models.DeviceLicensingStatus? DeviceLicensingStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceLicensingStatus?>("deviceLicensingStatus"); }
             set { BackingStore?.Set("deviceLicensingStatus", value); }
         }
         /// <summary>eSIM identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EsimIdentifier {
+        public string? EsimIdentifier
+        {
             get { return BackingStore?.Get<string?>("esimIdentifier"); }
             set { BackingStore?.Set("esimIdentifier", value); }
         }
 #nullable restore
 #else
-        public string EsimIdentifier {
+        public string EsimIdentifier
+        {
             get { return BackingStore?.Get<string>("esimIdentifier"); }
             set { BackingStore?.Set("esimIdentifier", value); }
         }
 #endif
         /// <summary>Free storage space of the device.</summary>
-        public long? FreeStorageSpace {
+        public long? FreeStorageSpace
+        {
             get { return BackingStore?.Get<long?>("freeStorageSpace"); }
             set { BackingStore?.Set("freeStorageSpace", value); }
         }
         /// <summary>IMEI</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Imei {
+        public string? Imei
+        {
             get { return BackingStore?.Get<string?>("imei"); }
             set { BackingStore?.Set("imei", value); }
         }
 #nullable restore
 #else
-        public string Imei {
+        public string Imei
+        {
             get { return BackingStore?.Get<string>("imei"); }
             set { BackingStore?.Set("imei", value); }
         }
@@ -150,42 +173,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>IPAddressV4</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddressV4 {
+        public string? IpAddressV4
+        {
             get { return BackingStore?.Get<string?>("ipAddressV4"); }
             set { BackingStore?.Set("ipAddressV4", value); }
         }
 #nullable restore
 #else
-        public string IpAddressV4 {
+        public string IpAddressV4
+        {
             get { return BackingStore?.Get<string>("ipAddressV4"); }
             set { BackingStore?.Set("ipAddressV4", value); }
         }
 #endif
         /// <summary>Encryption status of the device</summary>
-        public bool? IsEncrypted {
+        public bool? IsEncrypted
+        {
             get { return BackingStore?.Get<bool?>("isEncrypted"); }
             set { BackingStore?.Set("isEncrypted", value); }
         }
         /// <summary>Shared iPad</summary>
-        public bool? IsSharedDevice {
+        public bool? IsSharedDevice
+        {
             get { return BackingStore?.Get<bool?>("isSharedDevice"); }
             set { BackingStore?.Set("isSharedDevice", value); }
         }
         /// <summary>Supervised mode of the device</summary>
-        public bool? IsSupervised {
+        public bool? IsSupervised
+        {
             get { return BackingStore?.Get<bool?>("isSupervised"); }
             set { BackingStore?.Set("isSupervised", value); }
         }
         /// <summary>Manufacturer of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -193,13 +223,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>MEID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Meid {
+        public string? Meid
+        {
             get { return BackingStore?.Get<string?>("meid"); }
             set { BackingStore?.Set("meid", value); }
         }
 #nullable restore
 #else
-        public string Meid {
+        public string Meid
+        {
             get { return BackingStore?.Get<string>("meid"); }
             set { BackingStore?.Set("meid", value); }
         }
@@ -207,13 +239,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Model of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -221,13 +255,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -235,13 +271,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>String that specifies the OS edition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystemEdition {
+        public string? OperatingSystemEdition
+        {
             get { return BackingStore?.Get<string?>("operatingSystemEdition"); }
             set { BackingStore?.Set("operatingSystemEdition", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystemEdition {
+        public string OperatingSystemEdition
+        {
             get { return BackingStore?.Get<string>("operatingSystemEdition"); }
             set { BackingStore?.Set("operatingSystemEdition", value); }
         }
@@ -249,32 +287,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Operating system language of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystemLanguage {
+        public string? OperatingSystemLanguage
+        {
             get { return BackingStore?.Get<string?>("operatingSystemLanguage"); }
             set { BackingStore?.Set("operatingSystemLanguage", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystemLanguage {
+        public string OperatingSystemLanguage
+        {
             get { return BackingStore?.Get<string>("operatingSystemLanguage"); }
             set { BackingStore?.Set("operatingSystemLanguage", value); }
         }
 #endif
         /// <summary>Int that specifies the Windows Operating System ProductType. More details here https://go.microsoft.com/fwlink/?linkid=2126950. Valid values 0 to 2147483647</summary>
-        public int? OperatingSystemProductType {
+        public int? OperatingSystemProductType
+        {
             get { return BackingStore?.Get<int?>("operatingSystemProductType"); }
             set { BackingStore?.Set("operatingSystemProductType", value); }
         }
         /// <summary>Operating System Build Number on Android device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsBuildNumber {
+        public string? OsBuildNumber
+        {
             get { return BackingStore?.Get<string?>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #nullable restore
 #else
-        public string OsBuildNumber {
+        public string OsBuildNumber
+        {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
@@ -282,13 +325,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Phone number of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
@@ -296,32 +341,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The product name, e.g. iPad8,12 etc. The update frequency of this property is weekly. Note this property is currently supported only on iOS/MacOS devices, and is available only when Device Information access right is obtained.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductName {
+        public string? ProductName
+        {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
 #nullable restore
 #else
-        public string ProductName {
+        public string ProductName
+        {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
 #endif
         /// <summary>The number of users currently on this device, or null (default) if the value of this property cannot be determined. The update frequency of this property is per-checkin. Note this property is currently supported only on devices running iOS 13.4 and later, and is available only when Device Information access right is obtained. Valid values 0 to 2147483647</summary>
-        public int? ResidentUsersCount {
+        public int? ResidentUsersCount
+        {
             get { return BackingStore?.Get<int?>("residentUsersCount"); }
             set { BackingStore?.Set("residentUsersCount", value); }
         }
         /// <summary>Serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -329,13 +379,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All users on the shared Apple device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedAppleDeviceUser>? SharedDeviceCachedUsers {
+        public List<SharedAppleDeviceUser>? SharedDeviceCachedUsers
+        {
             get { return BackingStore?.Get<List<SharedAppleDeviceUser>?>("sharedDeviceCachedUsers"); }
             set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
         }
 #nullable restore
 #else
-        public List<SharedAppleDeviceUser> SharedDeviceCachedUsers {
+        public List<SharedAppleDeviceUser> SharedDeviceCachedUsers
+        {
             get { return BackingStore?.Get<List<SharedAppleDeviceUser>>("sharedDeviceCachedUsers"); }
             set { BackingStore?.Set("sharedDeviceCachedUsers", value); }
         }
@@ -343,13 +395,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>SubnetAddress</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubnetAddress {
+        public string? SubnetAddress
+        {
             get { return BackingStore?.Get<string?>("subnetAddress"); }
             set { BackingStore?.Set("subnetAddress", value); }
         }
 #nullable restore
 #else
-        public string SubnetAddress {
+        public string SubnetAddress
+        {
             get { return BackingStore?.Get<string>("subnetAddress"); }
             set { BackingStore?.Set("subnetAddress", value); }
         }
@@ -357,13 +411,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Subscriber carrier of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriberCarrier {
+        public string? SubscriberCarrier
+        {
             get { return BackingStore?.Get<string?>("subscriberCarrier"); }
             set { BackingStore?.Set("subscriberCarrier", value); }
         }
 #nullable restore
 #else
-        public string SubscriberCarrier {
+        public string SubscriberCarrier
+        {
             get { return BackingStore?.Get<string>("subscriberCarrier"); }
             set { BackingStore?.Set("subscriberCarrier", value); }
         }
@@ -371,32 +427,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>BIOS version as reported by SMBIOS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SystemManagementBIOSVersion {
+        public string? SystemManagementBIOSVersion
+        {
             get { return BackingStore?.Get<string?>("systemManagementBIOSVersion"); }
             set { BackingStore?.Set("systemManagementBIOSVersion", value); }
         }
 #nullable restore
 #else
-        public string SystemManagementBIOSVersion {
+        public string SystemManagementBIOSVersion
+        {
             get { return BackingStore?.Get<string>("systemManagementBIOSVersion"); }
             set { BackingStore?.Set("systemManagementBIOSVersion", value); }
         }
 #endif
         /// <summary>Total storage space of the device.</summary>
-        public long? TotalStorageSpace {
+        public long? TotalStorageSpace
+        {
             get { return BackingStore?.Get<long?>("totalStorageSpace"); }
             set { BackingStore?.Set("totalStorageSpace", value); }
         }
         /// <summary>The identifying information that uniquely names the TPM manufacturer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TpmManufacturer {
+        public string? TpmManufacturer
+        {
             get { return BackingStore?.Get<string?>("tpmManufacturer"); }
             set { BackingStore?.Set("tpmManufacturer", value); }
         }
 #nullable restore
 #else
-        public string TpmManufacturer {
+        public string TpmManufacturer
+        {
             get { return BackingStore?.Get<string>("tpmManufacturer"); }
             set { BackingStore?.Set("tpmManufacturer", value); }
         }
@@ -404,13 +465,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>String that specifies the specification version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TpmSpecificationVersion {
+        public string? TpmSpecificationVersion
+        {
             get { return BackingStore?.Get<string?>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
 #nullable restore
 #else
-        public string TpmSpecificationVersion {
+        public string TpmSpecificationVersion
+        {
             get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
@@ -418,13 +481,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The version of the TPM, as specified by the manufacturer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TpmVersion {
+        public string? TpmVersion
+        {
             get { return BackingStore?.Get<string?>("tpmVersion"); }
             set { BackingStore?.Set("tpmVersion", value); }
         }
 #nullable restore
 #else
-        public string TpmVersion {
+        public string TpmVersion
+        {
             get { return BackingStore?.Get<string>("tpmVersion"); }
             set { BackingStore?.Set("tpmVersion", value); }
         }
@@ -432,13 +497,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>WiFi MAC address of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WifiMac {
+        public string? WifiMac
+        {
             get { return BackingStore?.Get<string?>("wifiMac"); }
             set { BackingStore?.Set("wifiMac", value); }
         }
 #nullable restore
 #else
-        public string WifiMac {
+        public string WifiMac
+        {
             get { return BackingStore?.Get<string>("wifiMac"); }
             set { BackingStore?.Set("wifiMac", value); }
         }
@@ -446,13 +513,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of wired IPv4 addresses. The update frequency (the maximum delay for the change of property value to be synchronized from the device to the cloud storage) of this property is daily. Note this property is currently supported only on devices running on Windows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WiredIPv4Addresses {
+        public List<string>? WiredIPv4Addresses
+        {
             get { return BackingStore?.Get<List<string>?>("wiredIPv4Addresses"); }
             set { BackingStore?.Set("wiredIPv4Addresses", value); }
         }
 #nullable restore
 #else
-        public List<string> WiredIPv4Addresses {
+        public List<string> WiredIPv4Addresses
+        {
             get { return BackingStore?.Get<List<string>>("wiredIPv4Addresses"); }
             set { BackingStore?.Set("wiredIPv4Addresses", value); }
         }
@@ -483,47 +552,47 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"batteryChargeCycles", n => { BatteryChargeCycles = n.GetIntValue(); } },
-                {"batteryHealthPercentage", n => { BatteryHealthPercentage = n.GetIntValue(); } },
-                {"batteryLevelPercentage", n => { BatteryLevelPercentage = n.GetDoubleValue(); } },
-                {"batterySerialNumber", n => { BatterySerialNumber = n.GetStringValue(); } },
-                {"cellularTechnology", n => { CellularTechnology = n.GetStringValue(); } },
-                {"deviceFullQualifiedDomainName", n => { DeviceFullQualifiedDomainName = n.GetStringValue(); } },
-                {"deviceGuardLocalSystemAuthorityCredentialGuardState", n => { DeviceGuardLocalSystemAuthorityCredentialGuardState = n.GetEnumValue<DeviceGuardLocalSystemAuthorityCredentialGuardState>(); } },
-                {"deviceGuardVirtualizationBasedSecurityHardwareRequirementState", n => { DeviceGuardVirtualizationBasedSecurityHardwareRequirementState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>(); } },
-                {"deviceGuardVirtualizationBasedSecurityState", n => { DeviceGuardVirtualizationBasedSecurityState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityState>(); } },
-                {"deviceLicensingLastErrorCode", n => { DeviceLicensingLastErrorCode = n.GetIntValue(); } },
-                {"deviceLicensingLastErrorDescription", n => { DeviceLicensingLastErrorDescription = n.GetStringValue(); } },
-                {"deviceLicensingStatus", n => { DeviceLicensingStatus = n.GetEnumValue<DeviceLicensingStatus>(); } },
-                {"esimIdentifier", n => { EsimIdentifier = n.GetStringValue(); } },
-                {"freeStorageSpace", n => { FreeStorageSpace = n.GetLongValue(); } },
-                {"imei", n => { Imei = n.GetStringValue(); } },
-                {"ipAddressV4", n => { IpAddressV4 = n.GetStringValue(); } },
-                {"isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
-                {"isSharedDevice", n => { IsSharedDevice = n.GetBoolValue(); } },
-                {"isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"meid", n => { Meid = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatingSystemEdition", n => { OperatingSystemEdition = n.GetStringValue(); } },
-                {"operatingSystemLanguage", n => { OperatingSystemLanguage = n.GetStringValue(); } },
-                {"operatingSystemProductType", n => { OperatingSystemProductType = n.GetIntValue(); } },
-                {"osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"productName", n => { ProductName = n.GetStringValue(); } },
-                {"residentUsersCount", n => { ResidentUsersCount = n.GetIntValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"sharedDeviceCachedUsers", n => { SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>(SharedAppleDeviceUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"subnetAddress", n => { SubnetAddress = n.GetStringValue(); } },
-                {"subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
-                {"systemManagementBIOSVersion", n => { SystemManagementBIOSVersion = n.GetStringValue(); } },
-                {"totalStorageSpace", n => { TotalStorageSpace = n.GetLongValue(); } },
-                {"tpmManufacturer", n => { TpmManufacturer = n.GetStringValue(); } },
-                {"tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
-                {"tpmVersion", n => { TpmVersion = n.GetStringValue(); } },
-                {"wifiMac", n => { WifiMac = n.GetStringValue(); } },
-                {"wiredIPv4Addresses", n => { WiredIPv4Addresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "batteryChargeCycles", n => { BatteryChargeCycles = n.GetIntValue(); } },
+                { "batteryHealthPercentage", n => { BatteryHealthPercentage = n.GetIntValue(); } },
+                { "batteryLevelPercentage", n => { BatteryLevelPercentage = n.GetDoubleValue(); } },
+                { "batterySerialNumber", n => { BatterySerialNumber = n.GetStringValue(); } },
+                { "cellularTechnology", n => { CellularTechnology = n.GetStringValue(); } },
+                { "deviceFullQualifiedDomainName", n => { DeviceFullQualifiedDomainName = n.GetStringValue(); } },
+                { "deviceGuardLocalSystemAuthorityCredentialGuardState", n => { DeviceGuardLocalSystemAuthorityCredentialGuardState = n.GetEnumValue<DeviceGuardLocalSystemAuthorityCredentialGuardState>(); } },
+                { "deviceGuardVirtualizationBasedSecurityHardwareRequirementState", n => { DeviceGuardVirtualizationBasedSecurityHardwareRequirementState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityHardwareRequirementState>(); } },
+                { "deviceGuardVirtualizationBasedSecurityState", n => { DeviceGuardVirtualizationBasedSecurityState = n.GetEnumValue<DeviceGuardVirtualizationBasedSecurityState>(); } },
+                { "deviceLicensingLastErrorCode", n => { DeviceLicensingLastErrorCode = n.GetIntValue(); } },
+                { "deviceLicensingLastErrorDescription", n => { DeviceLicensingLastErrorDescription = n.GetStringValue(); } },
+                { "deviceLicensingStatus", n => { DeviceLicensingStatus = n.GetEnumValue<DeviceLicensingStatus>(); } },
+                { "esimIdentifier", n => { EsimIdentifier = n.GetStringValue(); } },
+                { "freeStorageSpace", n => { FreeStorageSpace = n.GetLongValue(); } },
+                { "imei", n => { Imei = n.GetStringValue(); } },
+                { "ipAddressV4", n => { IpAddressV4 = n.GetStringValue(); } },
+                { "isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
+                { "isSharedDevice", n => { IsSharedDevice = n.GetBoolValue(); } },
+                { "isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "meid", n => { Meid = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystemEdition", n => { OperatingSystemEdition = n.GetStringValue(); } },
+                { "operatingSystemLanguage", n => { OperatingSystemLanguage = n.GetStringValue(); } },
+                { "operatingSystemProductType", n => { OperatingSystemProductType = n.GetIntValue(); } },
+                { "osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "productName", n => { ProductName = n.GetStringValue(); } },
+                { "residentUsersCount", n => { ResidentUsersCount = n.GetIntValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "sharedDeviceCachedUsers", n => { SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>(SharedAppleDeviceUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subnetAddress", n => { SubnetAddress = n.GetStringValue(); } },
+                { "subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
+                { "systemManagementBIOSVersion", n => { SystemManagementBIOSVersion = n.GetStringValue(); } },
+                { "totalStorageSpace", n => { TotalStorageSpace = n.GetLongValue(); } },
+                { "tpmManufacturer", n => { TpmManufacturer = n.GetStringValue(); } },
+                { "tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
+                { "tpmVersion", n => { TpmVersion = n.GetStringValue(); } },
+                { "wifiMac", n => { WifiMac = n.GetStringValue(); } },
+                { "wiredIPv4Addresses", n => { WiredIPv4Addresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

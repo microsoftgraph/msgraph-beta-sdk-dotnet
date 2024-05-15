@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesWritebackConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnPremisesWritebackConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The distinguished name of the on-premises container that the customer is using to store unified groups which are created in the cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UnifiedGroupContainer {
+        public string? UnifiedGroupContainer
+        {
             get { return BackingStore?.Get<string?>("unifiedGroupContainer"); }
             set { BackingStore?.Set("unifiedGroupContainer", value); }
         }
 #nullable restore
 #else
-        public string UnifiedGroupContainer {
+        public string UnifiedGroupContainer
+        {
             get { return BackingStore?.Get<string>("unifiedGroupContainer"); }
             set { BackingStore?.Set("unifiedGroupContainer", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The distinguished name of the on-premises container that the customer is using to store users which are created in the cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserContainer {
+        public string? UserContainer
+        {
             get { return BackingStore?.Get<string?>("userContainer"); }
             set { BackingStore?.Set("userContainer", value); }
         }
 #nullable restore
 #else
-        public string UserContainer {
+        public string UserContainer
+        {
             get { return BackingStore?.Get<string>("userContainer"); }
             set { BackingStore?.Set("userContainer", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"unifiedGroupContainer", n => { UnifiedGroupContainer = n.GetStringValue(); } },
-                {"userContainer", n => { UserContainer = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "unifiedGroupContainer", n => { UnifiedGroupContainer = n.GetStringValue(); } },
+                { "userContainer", n => { UserContainer = n.GetStringValue(); } },
             };
         }
         /// <summary>

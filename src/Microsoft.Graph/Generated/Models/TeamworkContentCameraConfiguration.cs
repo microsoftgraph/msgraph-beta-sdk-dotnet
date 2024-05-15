@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkContentCameraConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkContentCameraConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the content camera is inverted.</summary>
-        public bool? IsContentCameraInverted {
+        public bool? IsContentCameraInverted
+        {
             get { return BackingStore?.Get<bool?>("isContentCameraInverted"); }
             set { BackingStore?.Set("isContentCameraInverted", value); }
         }
         /// <summary>True if the content camera is optional.</summary>
-        public bool? IsContentCameraOptional {
+        public bool? IsContentCameraOptional
+        {
             get { return BackingStore?.Get<bool?>("isContentCameraOptional"); }
             set { BackingStore?.Set("isContentCameraOptional", value); }
         }
         /// <summary>True if the content enhancement is enabled.</summary>
-        public bool? IsContentEnhancementEnabled {
+        public bool? IsContentEnhancementEnabled
+        {
             get { return BackingStore?.Get<bool?>("isContentEnhancementEnabled"); }
             set { BackingStore?.Set("isContentEnhancementEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isContentCameraInverted", n => { IsContentCameraInverted = n.GetBoolValue(); } },
-                {"isContentCameraOptional", n => { IsContentCameraOptional = n.GetBoolValue(); } },
-                {"isContentEnhancementEnabled", n => { IsContentEnhancementEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isContentCameraInverted", n => { IsContentCameraInverted = n.GetBoolValue(); } },
+                { "isContentCameraOptional", n => { IsContentCameraOptional = n.GetBoolValue(); } },
+                { "isContentEnhancementEnabled", n => { IsContentEnhancementEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

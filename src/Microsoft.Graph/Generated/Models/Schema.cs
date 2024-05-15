@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Schema : Entity, IParsable 
+    public class Schema : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The baseType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseType {
+        public string? BaseType
+        {
             get { return BackingStore?.Get<string?>("baseType"); }
             set { BackingStore?.Set("baseType", value); }
         }
 #nullable restore
 #else
-        public string BaseType {
+        public string BaseType
+        {
             get { return BackingStore?.Get<string>("baseType"); }
             set { BackingStore?.Set("baseType", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Property>? Properties {
+        public List<Property>? Properties
+        {
             get { return BackingStore?.Get<List<Property>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<Property> Properties {
+        public List<Property> Properties
+        {
             get { return BackingStore?.Get<List<Property>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"baseType", n => { BaseType = n.GetStringValue(); } },
-                {"properties", n => { Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "baseType", n => { BaseType = n.GetStringValue(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<Property>(Property.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

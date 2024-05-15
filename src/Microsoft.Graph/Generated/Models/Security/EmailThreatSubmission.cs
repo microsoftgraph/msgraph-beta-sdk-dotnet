@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class EmailThreatSubmission : ThreatSubmission, IParsable 
+    public class EmailThreatSubmission : ThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If the email is phishing simulation, this field won&apos;t be null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo? AttackSimulationInfo {
+        public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo? AttackSimulationInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo?>("attackSimulationInfo"); }
             set { BackingStore?.Set("attackSimulationInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo AttackSimulationInfo {
+        public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo AttackSimulationInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>("attackSimulationInfo"); }
             set { BackingStore?.Set("attackSimulationInfo", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies the internet message ID of the email being submitted. This information is present in the email header.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternetMessageId {
+        public string? InternetMessageId
+        {
             get { return BackingStore?.Get<string?>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
 #nullable restore
 #else
-        public string InternetMessageId {
+        public string InternetMessageId
+        {
             get { return BackingStore?.Get<string>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
 #endif
         /// <summary>The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.</summary>
-        public SubmissionCategory? OriginalCategory {
+        public SubmissionCategory? OriginalCategory
+        {
             get { return BackingStore?.Get<SubmissionCategory?>("originalCategory"); }
             set { BackingStore?.Set("originalCategory", value); }
         }
         /// <summary>Specifies the date and time stamp when the email was received.</summary>
-        public DateTimeOffset? ReceivedDateTime {
+        public DateTimeOffset? ReceivedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>Specifies the email address (in smtp format) of the recipient who received the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientEmailAddress {
+        public string? RecipientEmailAddress
+        {
             get { return BackingStore?.Get<string?>("recipientEmailAddress"); }
             set { BackingStore?.Set("recipientEmailAddress", value); }
         }
 #nullable restore
 #else
-        public string RecipientEmailAddress {
+        public string RecipientEmailAddress
+        {
             get { return BackingStore?.Get<string>("recipientEmailAddress"); }
             set { BackingStore?.Set("recipientEmailAddress", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies the email address of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sender {
+        public string? Sender
+        {
             get { return BackingStore?.Get<string?>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
 #nullable restore
 #else
-        public string Sender {
+        public string Sender
+        {
             get { return BackingStore?.Get<string>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies the IP address of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderIP {
+        public string? SenderIP
+        {
             get { return BackingStore?.Get<string?>("senderIP"); }
             set { BackingStore?.Set("senderIP", value); }
         }
 #nullable restore
 #else
-        public string SenderIP {
+        public string SenderIP
+        {
             get { return BackingStore?.Get<string>("senderIP"); }
             set { BackingStore?.Set("senderIP", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies the subject of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>It&apos;s used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction? TenantAllowOrBlockListAction {
+        public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction? TenantAllowOrBlockListAction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction?>("tenantAllowOrBlockListAction"); }
             set { BackingStore?.Set("tenantAllowOrBlockListAction", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction TenantAllowOrBlockListAction {
+        public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction TenantAllowOrBlockListAction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction>("tenantAllowOrBlockListAction"); }
             set { BackingStore?.Set("tenantAllowOrBlockListAction", value); }
         }
@@ -148,15 +165,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attackSimulationInfo", n => { AttackSimulationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>(Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo.CreateFromDiscriminatorValue); } },
-                {"internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
-                {"originalCategory", n => { OriginalCategory = n.GetEnumValue<SubmissionCategory>(); } },
-                {"receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
-                {"sender", n => { Sender = n.GetStringValue(); } },
-                {"senderIP", n => { SenderIP = n.GetStringValue(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"tenantAllowOrBlockListAction", n => { TenantAllowOrBlockListAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction>(Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction.CreateFromDiscriminatorValue); } },
+                { "attackSimulationInfo", n => { AttackSimulationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>(Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo.CreateFromDiscriminatorValue); } },
+                { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
+                { "originalCategory", n => { OriginalCategory = n.GetEnumValue<SubmissionCategory>(); } },
+                { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
+                { "sender", n => { Sender = n.GetStringValue(); } },
+                { "senderIP", n => { SenderIP = n.GetStringValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "tenantAllowOrBlockListAction", n => { TenantAllowOrBlockListAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction>(Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

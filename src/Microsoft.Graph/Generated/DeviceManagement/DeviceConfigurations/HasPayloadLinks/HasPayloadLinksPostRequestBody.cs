@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadLinks {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadLinks
+{
     #pragma warning disable CS1591
-    public class HasPayloadLinksPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HasPayloadLinksPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
         /// <summary>The payloadIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PayloadIds {
+        public List<string>? PayloadIds
+        {
             get { return BackingStore?.Get<List<string>?>("payloadIds"); }
             set { BackingStore?.Set("payloadIds", value); }
         }
 #nullable restore
 #else
-        public List<string> PayloadIds {
+        public List<string> PayloadIds
+        {
             get { return BackingStore?.Get<List<string>>("payloadIds"); }
             set { BackingStore?.Set("payloadIds", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"payloadIds", n => { PayloadIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "payloadIds", n => { PayloadIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

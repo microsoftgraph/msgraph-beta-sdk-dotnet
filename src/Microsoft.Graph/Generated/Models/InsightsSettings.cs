@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InsightsSettings : Entity, IParsable 
+    public class InsightsSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of a Microsoft Entra group, of which the specified type of insights are disabled for its members. Default is empty. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisabledForGroup {
+        public string? DisabledForGroup
+        {
             get { return BackingStore?.Get<string?>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
 #nullable restore
 #else
-        public string DisabledForGroup {
+        public string DisabledForGroup
+        {
             get { return BackingStore?.Get<string>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
 #endif
         /// <summary>true if insights of the specified type are enabled for the organization; false if insights of the specified type are disabled for all users without exceptions. Default is true. Optional.</summary>
-        public bool? IsEnabledInOrganization {
+        public bool? IsEnabledInOrganization
+        {
             get { return BackingStore?.Get<bool?>("isEnabledInOrganization"); }
             set { BackingStore?.Set("isEnabledInOrganization", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"disabledForGroup", n => { DisabledForGroup = n.GetStringValue(); } },
-                {"isEnabledInOrganization", n => { IsEnabledInOrganization = n.GetBoolValue(); } },
+                { "disabledForGroup", n => { DisabledForGroup = n.GetStringValue(); } },
+                { "isEnabledInOrganization", n => { IsEnabledInOrganization = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,33 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows device health monitoring configuration
     /// </summary>
-    public class WindowsHealthMonitoringConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsHealthMonitoringConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Possible values of a property</summary>
-        public Enablement? AllowDeviceHealthMonitoring {
+        public Enablement? AllowDeviceHealthMonitoring
+        {
             get { return BackingStore?.Get<Enablement?>("allowDeviceHealthMonitoring"); }
             set { BackingStore?.Set("allowDeviceHealthMonitoring", value); }
         }
         /// <summary>Specifies custom set of events collected from the device where health monitoring is enabled</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigDeviceHealthMonitoringCustomScope {
+        public string? ConfigDeviceHealthMonitoringCustomScope
+        {
             get { return BackingStore?.Get<string?>("configDeviceHealthMonitoringCustomScope"); }
             set { BackingStore?.Set("configDeviceHealthMonitoringCustomScope", value); }
         }
 #nullable restore
 #else
-        public string ConfigDeviceHealthMonitoringCustomScope {
+        public string ConfigDeviceHealthMonitoringCustomScope
+        {
             get { return BackingStore?.Get<string>("configDeviceHealthMonitoringCustomScope"); }
             set { BackingStore?.Set("configDeviceHealthMonitoringCustomScope", value); }
         }
 #endif
         /// <summary>Device health monitoring scope</summary>
-        public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope {
+        public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope
+        {
             get { return BackingStore?.Get<WindowsHealthMonitoringScope?>("configDeviceHealthMonitoringScope"); }
             set { BackingStore?.Set("configDeviceHealthMonitoringScope", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowDeviceHealthMonitoring", n => { AllowDeviceHealthMonitoring = n.GetEnumValue<Enablement>(); } },
-                {"configDeviceHealthMonitoringCustomScope", n => { ConfigDeviceHealthMonitoringCustomScope = n.GetStringValue(); } },
-                {"configDeviceHealthMonitoringScope", n => { ConfigDeviceHealthMonitoringScope = n.GetEnumValue<WindowsHealthMonitoringScope>(); } },
+                { "allowDeviceHealthMonitoring", n => { AllowDeviceHealthMonitoring = n.GetEnumValue<Enablement>(); } },
+                { "configDeviceHealthMonitoringCustomScope", n => { ConfigDeviceHealthMonitoringCustomScope = n.GetStringValue(); } },
+                { "configDeviceHealthMonitoringScope", n => { ConfigDeviceHealthMonitoringScope = n.GetEnumValue<WindowsHealthMonitoringScope>(); } },
             };
         }
         /// <summary>

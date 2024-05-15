@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedApproval.MyRequests {
+namespace Microsoft.Graph.Beta.PrivilegedApproval.MyRequests
+{
     [Obsolete("This class is obsolete. Use MyRequestsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class MyRequestsResponse : MyRequestsGetResponse, IParsable 
+    public class MyRequestsResponse : MyRequestsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

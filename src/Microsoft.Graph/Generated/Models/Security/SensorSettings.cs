@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class SensorSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SensorSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The domainControllerDnsNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DomainControllerDnsNames {
+        public List<string>? DomainControllerDnsNames
+        {
             get { return BackingStore?.Get<List<string>?>("domainControllerDnsNames"); }
             set { BackingStore?.Set("domainControllerDnsNames", value); }
         }
 #nullable restore
 #else
-        public List<string> DomainControllerDnsNames {
+        public List<string> DomainControllerDnsNames
+        {
             get { return BackingStore?.Get<List<string>>("domainControllerDnsNames"); }
             set { BackingStore?.Set("domainControllerDnsNames", value); }
         }
 #endif
         /// <summary>The isDelayedDeploymentEnabled property</summary>
-        public bool? IsDelayedDeploymentEnabled {
+        public bool? IsDelayedDeploymentEnabled
+        {
             get { return BackingStore?.Get<bool?>("isDelayedDeploymentEnabled"); }
             set { BackingStore?.Set("isDelayedDeploymentEnabled", value); }
         }
         /// <summary>The networkAdapters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkAdapter>? NetworkAdapters {
+        public List<NetworkAdapter>? NetworkAdapters
+        {
             get { return BackingStore?.Get<List<NetworkAdapter>?>("networkAdapters"); }
             set { BackingStore?.Set("networkAdapters", value); }
         }
 #nullable restore
 #else
-        public List<NetworkAdapter> NetworkAdapters {
+        public List<NetworkAdapter> NetworkAdapters
+        {
             get { return BackingStore?.Get<List<NetworkAdapter>>("networkAdapters"); }
             set { BackingStore?.Set("networkAdapters", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"domainControllerDnsNames", n => { DomainControllerDnsNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"isDelayedDeploymentEnabled", n => { IsDelayedDeploymentEnabled = n.GetBoolValue(); } },
-                {"networkAdapters", n => { NetworkAdapters = n.GetCollectionOfObjectValues<NetworkAdapter>(NetworkAdapter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "domainControllerDnsNames", n => { DomainControllerDnsNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "isDelayedDeploymentEnabled", n => { IsDelayedDeploymentEnabled = n.GetBoolValue(); } },
+                { "networkAdapters", n => { NetworkAdapters = n.GetCollectionOfObjectValues<NetworkAdapter>(NetworkAdapter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

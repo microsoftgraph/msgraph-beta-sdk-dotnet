@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateDeviceLogCollectionRequest {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateDeviceLogCollectionRequest
+{
     #pragma warning disable CS1591
-    public class CreateDeviceLogCollectionRequestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateDeviceLogCollectionRequestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateDeviceLogCollectionR
         /// <summary>The templateType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceLogCollectionRequest? TemplateType {
+        public DeviceLogCollectionRequest? TemplateType
+        {
             get { return BackingStore?.Get<DeviceLogCollectionRequest?>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
 #nullable restore
 #else
-        public DeviceLogCollectionRequest TemplateType {
+        public DeviceLogCollectionRequest TemplateType
+        {
             get { return BackingStore?.Get<DeviceLogCollectionRequest>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateDeviceLogCollectionR
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"templateType", n => { TemplateType = n.GetObjectValue<DeviceLogCollectionRequest>(DeviceLogCollectionRequest.CreateFromDiscriminatorValue); } },
+                { "templateType", n => { TemplateType = n.GetObjectValue<DeviceLogCollectionRequest>(DeviceLogCollectionRequest.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

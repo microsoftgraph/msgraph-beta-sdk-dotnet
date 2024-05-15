@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class EmailThreatSubmissionPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class EmailThreatSubmissionPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomizedNotificationSenderEmailAddress {
+        public string? CustomizedNotificationSenderEmailAddress
+        {
             get { return BackingStore?.Get<string?>("customizedNotificationSenderEmailAddress"); }
             set { BackingStore?.Set("customizedNotificationSenderEmailAddress", value); }
         }
 #nullable restore
 #else
-        public string CustomizedNotificationSenderEmailAddress {
+        public string CustomizedNotificationSenderEmailAddress
+        {
             get { return BackingStore?.Get<string>("customizedNotificationSenderEmailAddress"); }
             set { BackingStore?.Set("customizedNotificationSenderEmailAddress", value); }
         }
@@ -26,69 +29,82 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies the destination where the reported messages from end users land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomizedReportRecipientEmailAddress {
+        public string? CustomizedReportRecipientEmailAddress
+        {
             get { return BackingStore?.Get<string?>("customizedReportRecipientEmailAddress"); }
             set { BackingStore?.Set("customizedReportRecipientEmailAddress", value); }
         }
 #nullable restore
 #else
-        public string CustomizedReportRecipientEmailAddress {
+        public string CustomizedReportRecipientEmailAddress
+        {
             get { return BackingStore?.Get<string>("customizedReportRecipientEmailAddress"); }
             set { BackingStore?.Set("customizedReportRecipientEmailAddress", value); }
         }
 #endif
         /// <summary>Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is true.  Optional for creation.</summary>
-        public bool? IsAlwaysReportEnabledForUsers {
+        public bool? IsAlwaysReportEnabledForUsers
+        {
             get { return BackingStore?.Get<bool?>("isAlwaysReportEnabledForUsers"); }
             set { BackingStore?.Set("isAlwaysReportEnabledForUsers", value); }
         }
         /// <summary>Indicates whether end users can confirm using a popup before reporting messages as spam, phish or not junk. The default value is true.  Optional for creation.</summary>
-        public bool? IsAskMeEnabledForUsers {
+        public bool? IsAskMeEnabledForUsers
+        {
             get { return BackingStore?.Get<bool?>("isAskMeEnabledForUsers"); }
             set { BackingStore?.Set("isAskMeEnabledForUsers", value); }
         }
         /// <summary>Indicates whether the email notifications sent to end users to inform them if an email is a phish mail, spam or junk is customized or not. The default value is false. Optional for creation.</summary>
-        public bool? IsCustomizedMessageEnabled {
+        public bool? IsCustomizedMessageEnabled
+        {
             get { return BackingStore?.Get<bool?>("isCustomizedMessageEnabled"); }
             set { BackingStore?.Set("isCustomizedMessageEnabled", value); }
         }
         /// <summary>If enabled, customized message only shows when email is reported as phishing. The default value is false. Optional for creation.</summary>
-        public bool? IsCustomizedMessageEnabledForPhishing {
+        public bool? IsCustomizedMessageEnabledForPhishing
+        {
             get { return BackingStore?.Get<bool?>("isCustomizedMessageEnabledForPhishing"); }
             set { BackingStore?.Set("isCustomizedMessageEnabledForPhishing", value); }
         }
         /// <summary>Indicates whether to use the sender email address set using customizedNotificationSenderEmailAddress for sending email notifications to end users. The default value is false. Optional for creation.</summary>
-        public bool? IsCustomizedNotificationSenderEnabled {
+        public bool? IsCustomizedNotificationSenderEnabled
+        {
             get { return BackingStore?.Get<bool?>("isCustomizedNotificationSenderEnabled"); }
             set { BackingStore?.Set("isCustomizedNotificationSenderEnabled", value); }
         }
         /// <summary>Indicates whether end users can move the message from one folder to another based on the action of spam, phish or not junk without actually reporting it. The default value is true. Optional for creation.</summary>
-        public bool? IsNeverReportEnabledForUsers {
+        public bool? IsNeverReportEnabledForUsers
+        {
             get { return BackingStore?.Get<bool?>("isNeverReportEnabledForUsers"); }
             set { BackingStore?.Set("isNeverReportEnabledForUsers", value); }
         }
         /// <summary>Indicates whether the branding logo should be used in the email notifications sent to end users. The default value is false. Optional for creation.</summary>
-        public bool? IsOrganizationBrandingEnabled {
+        public bool? IsOrganizationBrandingEnabled
+        {
             get { return BackingStore?.Get<bool?>("isOrganizationBrandingEnabled"); }
             set { BackingStore?.Set("isOrganizationBrandingEnabled", value); }
         }
         /// <summary>Indicates whether end users can submit from the quarantine page. The default value is true. Optional for creation.</summary>
-        public bool? IsReportFromQuarantineEnabled {
+        public bool? IsReportFromQuarantineEnabled
+        {
             get { return BackingStore?.Get<bool?>("isReportFromQuarantineEnabled"); }
             set { BackingStore?.Set("isReportFromQuarantineEnabled", value); }
         }
         /// <summary>Indicates whether emails reported by end users should be sent to the custom mailbox configured using customizedReportRecipientEmailAddress.  The default value is false. Optional for creation.</summary>
-        public bool? IsReportToCustomizedEmailAddressEnabled {
+        public bool? IsReportToCustomizedEmailAddressEnabled
+        {
             get { return BackingStore?.Get<bool?>("isReportToCustomizedEmailAddressEnabled"); }
             set { BackingStore?.Set("isReportToCustomizedEmailAddressEnabled", value); }
         }
         /// <summary>If enabled, the email is sent to Microsoft for analysis. The default value is false. Required for creation.</summary>
-        public bool? IsReportToMicrosoftEnabled {
+        public bool? IsReportToMicrosoftEnabled
+        {
             get { return BackingStore?.Get<bool?>("isReportToMicrosoftEnabled"); }
             set { BackingStore?.Set("isReportToMicrosoftEnabled", value); }
         }
         /// <summary>Indicates whether an email notification is sent to the end user who reported the email when it has been reviewed by the admin. The default value is false. Optional for creation.</summary>
-        public bool? IsReviewEmailNotificationEnabled {
+        public bool? IsReviewEmailNotificationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isReviewEmailNotificationEnabled"); }
             set { BackingStore?.Set("isReviewEmailNotificationEnabled", value); }
         }
@@ -110,19 +126,19 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customizedNotificationSenderEmailAddress", n => { CustomizedNotificationSenderEmailAddress = n.GetStringValue(); } },
-                {"customizedReportRecipientEmailAddress", n => { CustomizedReportRecipientEmailAddress = n.GetStringValue(); } },
-                {"isAlwaysReportEnabledForUsers", n => { IsAlwaysReportEnabledForUsers = n.GetBoolValue(); } },
-                {"isAskMeEnabledForUsers", n => { IsAskMeEnabledForUsers = n.GetBoolValue(); } },
-                {"isCustomizedMessageEnabled", n => { IsCustomizedMessageEnabled = n.GetBoolValue(); } },
-                {"isCustomizedMessageEnabledForPhishing", n => { IsCustomizedMessageEnabledForPhishing = n.GetBoolValue(); } },
-                {"isCustomizedNotificationSenderEnabled", n => { IsCustomizedNotificationSenderEnabled = n.GetBoolValue(); } },
-                {"isNeverReportEnabledForUsers", n => { IsNeverReportEnabledForUsers = n.GetBoolValue(); } },
-                {"isOrganizationBrandingEnabled", n => { IsOrganizationBrandingEnabled = n.GetBoolValue(); } },
-                {"isReportFromQuarantineEnabled", n => { IsReportFromQuarantineEnabled = n.GetBoolValue(); } },
-                {"isReportToCustomizedEmailAddressEnabled", n => { IsReportToCustomizedEmailAddressEnabled = n.GetBoolValue(); } },
-                {"isReportToMicrosoftEnabled", n => { IsReportToMicrosoftEnabled = n.GetBoolValue(); } },
-                {"isReviewEmailNotificationEnabled", n => { IsReviewEmailNotificationEnabled = n.GetBoolValue(); } },
+                { "customizedNotificationSenderEmailAddress", n => { CustomizedNotificationSenderEmailAddress = n.GetStringValue(); } },
+                { "customizedReportRecipientEmailAddress", n => { CustomizedReportRecipientEmailAddress = n.GetStringValue(); } },
+                { "isAlwaysReportEnabledForUsers", n => { IsAlwaysReportEnabledForUsers = n.GetBoolValue(); } },
+                { "isAskMeEnabledForUsers", n => { IsAskMeEnabledForUsers = n.GetBoolValue(); } },
+                { "isCustomizedMessageEnabled", n => { IsCustomizedMessageEnabled = n.GetBoolValue(); } },
+                { "isCustomizedMessageEnabledForPhishing", n => { IsCustomizedMessageEnabledForPhishing = n.GetBoolValue(); } },
+                { "isCustomizedNotificationSenderEnabled", n => { IsCustomizedNotificationSenderEnabled = n.GetBoolValue(); } },
+                { "isNeverReportEnabledForUsers", n => { IsNeverReportEnabledForUsers = n.GetBoolValue(); } },
+                { "isOrganizationBrandingEnabled", n => { IsOrganizationBrandingEnabled = n.GetBoolValue(); } },
+                { "isReportFromQuarantineEnabled", n => { IsReportFromQuarantineEnabled = n.GetBoolValue(); } },
+                { "isReportToCustomizedEmailAddressEnabled", n => { IsReportToCustomizedEmailAddressEnabled = n.GetBoolValue(); } },
+                { "isReportToMicrosoftEnabled", n => { IsReportToMicrosoftEnabled = n.GetBoolValue(); } },
+                { "isReviewEmailNotificationEnabled", n => { IsReviewEmailNotificationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

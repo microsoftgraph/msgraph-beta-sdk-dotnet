@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class NoTrainingNotificationSetting : EndUserNotificationSetting, IParsable 
+    public class NoTrainingNotificationSetting : EndUserNotificationSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The notification for the user who is part of the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SimulationNotification? SimulationNotification {
+        public Microsoft.Graph.Beta.Models.SimulationNotification? SimulationNotification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationNotification?>("simulationNotification"); }
             set { BackingStore?.Set("simulationNotification", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SimulationNotification SimulationNotification {
+        public Microsoft.Graph.Beta.Models.SimulationNotification SimulationNotification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SimulationNotification>("simulationNotification"); }
             set { BackingStore?.Set("simulationNotification", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"simulationNotification", n => { SimulationNotification = n.GetObjectValue<Microsoft.Graph.Beta.Models.SimulationNotification>(Microsoft.Graph.Beta.Models.SimulationNotification.CreateFromDiscriminatorValue); } },
+                { "simulationNotification", n => { SimulationNotification = n.GetObjectValue<Microsoft.Graph.Beta.Models.SimulationNotification>(Microsoft.Graph.Beta.Models.SimulationNotification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

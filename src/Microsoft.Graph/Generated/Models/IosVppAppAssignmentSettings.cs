@@ -4,47 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties used to assign an iOS VPP mobile app to a group.
     /// </summary>
-    public class IosVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    public class IosVppAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Whether or not the app can be removed by the user.</summary>
-        public bool? IsRemovable {
+        public bool? IsRemovable
+        {
             get { return BackingStore?.Get<bool?>("isRemovable"); }
             set { BackingStore?.Set("isRemovable", value); }
         }
         /// <summary>When TRUE, indicates that the app should not be automatically updated with the latest version from Apple app store. When FALSE, indicates that the app may be auto updated. By default, this property is set to null which internally is treated as FALSE.</summary>
-        public bool? PreventAutoAppUpdate {
+        public bool? PreventAutoAppUpdate
+        {
             get { return BackingStore?.Get<bool?>("preventAutoAppUpdate"); }
             set { BackingStore?.Set("preventAutoAppUpdate", value); }
         }
         /// <summary>When TRUE, indicates that the app should not be backed up to iCloud. When FALSE, indicates that the app may be backed up to iCloud. By default, this property is set to null which internally is treated as FALSE.</summary>
-        public bool? PreventManagedAppBackup {
+        public bool? PreventManagedAppBackup
+        {
             get { return BackingStore?.Get<bool?>("preventManagedAppBackup"); }
             set { BackingStore?.Set("preventManagedAppBackup", value); }
         }
         /// <summary>Whether or not to uninstall the app when device is removed from Intune.</summary>
-        public bool? UninstallOnDeviceRemoval {
+        public bool? UninstallOnDeviceRemoval
+        {
             get { return BackingStore?.Get<bool?>("uninstallOnDeviceRemoval"); }
             set { BackingStore?.Set("uninstallOnDeviceRemoval", value); }
         }
         /// <summary>Whether or not to use device licensing.</summary>
-        public bool? UseDeviceLicensing {
+        public bool? UseDeviceLicensing
+        {
             get { return BackingStore?.Get<bool?>("useDeviceLicensing"); }
             set { BackingStore?.Set("useDeviceLicensing", value); }
         }
         /// <summary>The VPN Configuration Id to apply for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VpnConfigurationId {
+        public string? VpnConfigurationId
+        {
             get { return BackingStore?.Get<string?>("vpnConfigurationId"); }
             set { BackingStore?.Set("vpnConfigurationId", value); }
         }
 #nullable restore
 #else
-        public string VpnConfigurationId {
+        public string VpnConfigurationId
+        {
             get { return BackingStore?.Get<string>("vpnConfigurationId"); }
             set { BackingStore?.Set("vpnConfigurationId", value); }
         }
@@ -74,12 +82,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
-                {"preventAutoAppUpdate", n => { PreventAutoAppUpdate = n.GetBoolValue(); } },
-                {"preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
-                {"uninstallOnDeviceRemoval", n => { UninstallOnDeviceRemoval = n.GetBoolValue(); } },
-                {"useDeviceLicensing", n => { UseDeviceLicensing = n.GetBoolValue(); } },
-                {"vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
+                { "isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
+                { "preventAutoAppUpdate", n => { PreventAutoAppUpdate = n.GetBoolValue(); } },
+                { "preventManagedAppBackup", n => { PreventManagedAppBackup = n.GetBoolValue(); } },
+                { "uninstallOnDeviceRemoval", n => { UninstallOnDeviceRemoval = n.GetBoolValue(); } },
+                { "useDeviceLicensing", n => { UseDeviceLicensing = n.GetBoolValue(); } },
+                { "vpnConfigurationId", n => { VpnConfigurationId = n.GetStringValue(); } },
             };
         }
         /// <summary>

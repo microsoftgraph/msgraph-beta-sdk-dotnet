@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties, inherited properties and actions for Android Enterprise mobile app configurations.
     /// </summary>
-    public class AndroidManagedStoreAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable 
+    public class AndroidManagedStoreAppConfiguration : ManagedDeviceMobileAppConfiguration, IParsable
     {
         /// <summary>Whether or not this AppConfig is an OEMConfig policy. This property is read-only.</summary>
-        public bool? AppSupportsOemConfig {
+        public bool? AppSupportsOemConfig
+        {
             get { return BackingStore?.Get<bool?>("appSupportsOemConfig"); }
             set { BackingStore?.Set("appSupportsOemConfig", value); }
         }
         /// <summary>Setting to specify whether to allow ConnectedApps experience for this app.</summary>
-        public bool? ConnectedAppsEnabled {
+        public bool? ConnectedAppsEnabled
+        {
             get { return BackingStore?.Get<bool?>("connectedAppsEnabled"); }
             set { BackingStore?.Set("connectedAppsEnabled", value); }
         }
         /// <summary>Android Enterprise app configuration package id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId {
+        public string? PackageId
+        {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #nullable restore
 #else
-        public string PackageId {
+        public string PackageId
+        {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Android Enterprise app configuration JSON payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadJson {
+        public string? PayloadJson
+        {
             get { return BackingStore?.Get<string?>("payloadJson"); }
             set { BackingStore?.Set("payloadJson", value); }
         }
 #nullable restore
 #else
-        public string PayloadJson {
+        public string PayloadJson
+        {
             get { return BackingStore?.Get<string>("payloadJson"); }
             set { BackingStore?.Set("payloadJson", value); }
         }
@@ -51,19 +58,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Android app permissions and corresponding permission actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidPermissionAction>? PermissionActions {
+        public List<AndroidPermissionAction>? PermissionActions
+        {
             get { return BackingStore?.Get<List<AndroidPermissionAction>?>("permissionActions"); }
             set { BackingStore?.Set("permissionActions", value); }
         }
 #nullable restore
 #else
-        public List<AndroidPermissionAction> PermissionActions {
+        public List<AndroidPermissionAction> PermissionActions
+        {
             get { return BackingStore?.Get<List<AndroidPermissionAction>>("permissionActions"); }
             set { BackingStore?.Set("permissionActions", value); }
         }
 #endif
         /// <summary>Android profile applicability</summary>
-        public AndroidProfileApplicability? ProfileApplicability {
+        public AndroidProfileApplicability? ProfileApplicability
+        {
             get { return BackingStore?.Get<AndroidProfileApplicability?>("profileApplicability"); }
             set { BackingStore?.Set("profileApplicability", value); }
         }
@@ -92,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appSupportsOemConfig", n => { AppSupportsOemConfig = n.GetBoolValue(); } },
-                {"connectedAppsEnabled", n => { ConnectedAppsEnabled = n.GetBoolValue(); } },
-                {"packageId", n => { PackageId = n.GetStringValue(); } },
-                {"payloadJson", n => { PayloadJson = n.GetStringValue(); } },
-                {"permissionActions", n => { PermissionActions = n.GetCollectionOfObjectValues<AndroidPermissionAction>(AndroidPermissionAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"profileApplicability", n => { ProfileApplicability = n.GetEnumValue<AndroidProfileApplicability>(); } },
+                { "appSupportsOemConfig", n => { AppSupportsOemConfig = n.GetBoolValue(); } },
+                { "connectedAppsEnabled", n => { ConnectedAppsEnabled = n.GetBoolValue(); } },
+                { "packageId", n => { PackageId = n.GetStringValue(); } },
+                { "payloadJson", n => { PayloadJson = n.GetStringValue(); } },
+                { "permissionActions", n => { PermissionActions = n.GetCollectionOfObjectValues<AndroidPermissionAction>(AndroidPermissionAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "profileApplicability", n => { ProfileApplicability = n.GetEnumValue<AndroidProfileApplicability>(); } },
             };
         }
         /// <summary>

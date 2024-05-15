@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assign {
+namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         /// <summary>The hardwareConfigurationAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HardwareConfigurationAssignment>? HardwareConfigurationAssignments {
+        public List<HardwareConfigurationAssignment>? HardwareConfigurationAssignments
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationAssignment>?>("hardwareConfigurationAssignments"); }
             set { BackingStore?.Set("hardwareConfigurationAssignments", value); }
         }
 #nullable restore
 #else
-        public List<HardwareConfigurationAssignment> HardwareConfigurationAssignments {
+        public List<HardwareConfigurationAssignment> HardwareConfigurationAssignments
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationAssignment>>("hardwareConfigurationAssignments"); }
             set { BackingStore?.Set("hardwareConfigurationAssignments", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.Assi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hardwareConfigurationAssignments", n => { HardwareConfigurationAssignments = n.GetCollectionOfObjectValues<HardwareConfigurationAssignment>(HardwareConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hardwareConfigurationAssignments", n => { HardwareConfigurationAssignments = n.GetCollectionOfObjectValues<HardwareConfigurationAssignment>(HardwareConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

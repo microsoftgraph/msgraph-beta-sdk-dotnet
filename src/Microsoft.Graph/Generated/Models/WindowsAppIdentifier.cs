@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The identifier for a Windows app.
     /// </summary>
-    public class WindowsAppIdentifier : MobileAppIdentifier, IParsable 
+    public class WindowsAppIdentifier : MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WindowsAppId {
+        public string? WindowsAppId
+        {
             get { return BackingStore?.Get<string?>("windowsAppId"); }
             set { BackingStore?.Set("windowsAppId", value); }
         }
 #nullable restore
 #else
-        public string WindowsAppId {
+        public string WindowsAppId
+        {
             get { return BackingStore?.Get<string>("windowsAppId"); }
             set { BackingStore?.Set("windowsAppId", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"windowsAppId", n => { WindowsAppId = n.GetStringValue(); } },
+                { "windowsAppId", n => { WindowsAppId = n.GetStringValue(); } },
             };
         }
         /// <summary>

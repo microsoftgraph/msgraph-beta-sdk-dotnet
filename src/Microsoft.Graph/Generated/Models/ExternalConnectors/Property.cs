@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+namespace Microsoft.Graph.Beta.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class Property : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Property : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>A set of aliases or friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Aliases {
+        public List<string>? Aliases
+        {
             get { return BackingStore?.Get<List<string>?>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
 #nullable restore
 #else
-        public List<string> Aliases {
+        public List<string> Aliases
+        {
             get { return BackingStore?.Get<List<string>>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
@@ -32,40 +36,47 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.</summary>
-        public bool? IsExactMatchRequired {
+        public bool? IsExactMatchRequired
+        {
             get { return BackingStore?.Get<bool?>("isExactMatchRequired"); }
             set { BackingStore?.Set("isExactMatchRequired", value); }
         }
         /// <summary>Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.</summary>
-        public bool? IsQueryable {
+        public bool? IsQueryable
+        {
             get { return BackingStore?.Get<bool?>("isQueryable"); }
             set { BackingStore?.Set("isQueryable", value); }
         }
         /// <summary>Specifies if the property is refinable.  Refinable properties can be used to filter search results in the Search API and add a refiner control in the Microsoft Search user experience. Optional.</summary>
-        public bool? IsRefinable {
+        public bool? IsRefinable
+        {
             get { return BackingStore?.Get<bool?>("isRefinable"); }
             set { BackingStore?.Set("isRefinable", value); }
         }
         /// <summary>Specifies if the property is retrievable. Retrievable properties are returned in the result set when items are returned by the search API. Retrievable properties are also available to add to the display template used to render search results. Optional.</summary>
-        public bool? IsRetrievable {
+        public bool? IsRetrievable
+        {
             get { return BackingStore?.Get<bool?>("isRetrievable"); }
             set { BackingStore?.Set("isRetrievable", value); }
         }
         /// <summary>Specifies if the property is searchable. Only properties of type string or stringCollection can be searchable. Non-searchable properties aren&apos;t added to the search index. Optional.</summary>
-        public bool? IsSearchable {
+        public bool? IsSearchable
+        {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: containerName, containerUrl, iconUrl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Label?>? Labels {
+        public List<Label?>? Labels
+        {
             get { return BackingStore?.Get<List<Label?>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public List<Label?> Labels {
+        public List<Label?> Labels
+        {
             get { return BackingStore?.Get<List<Label?>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
@@ -73,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^.  Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -87,13 +100,15 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -101,19 +116,22 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>Specifies the property ranking hint. Developers can specify which properties are most important, allowing Microsoft Search to determine the search relevance of the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint? RankingHint {
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint? RankingHint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint?>("rankingHint"); }
             set { BackingStore?.Set("rankingHint", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint RankingHint {
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint RankingHint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>("rankingHint"); }
             set { BackingStore?.Set("rankingHint", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public PropertyType? Type {
+        public PropertyType? Type
+        {
             get { return BackingStore?.Get<PropertyType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -143,17 +161,17 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"isExactMatchRequired", n => { IsExactMatchRequired = n.GetBoolValue(); } },
-                {"isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
-                {"isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
-                {"isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
-                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"rankingHint", n => { RankingHint = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>(Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },
+                { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "isExactMatchRequired", n => { IsExactMatchRequired = n.GetBoolValue(); } },
+                { "isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
+                { "isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
+                { "isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
+                { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                { "labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "rankingHint", n => { RankingHint = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint>(Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<PropertyType>(); } },
             };
         }
         /// <summary>

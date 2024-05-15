@@ -4,34 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Mac OS certificate profile.
     /// </summary>
-    public class MacOSCertificateProfileBase : DeviceConfiguration, IParsable 
+    public class MacOSCertificateProfileBase : DeviceConfiguration, IParsable
     {
         /// <summary>Certificate Validity Period Options.</summary>
-        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
+        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
             set { BackingStore?.Set("certificateValidityPeriodScale", value); }
         }
         /// <summary>Value for the Certificate Validity Period.</summary>
-        public int? CertificateValidityPeriodValue {
+        public int? CertificateValidityPeriodValue
+        {
             get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
             set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>Certificate renewal threshold percentage.</summary>
-        public int? RenewalThresholdPercentage {
+        public int? RenewalThresholdPercentage
+        {
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Certificate Subject Alternative Name Type. Possible values are: none, emailAddress, userPrincipalName, customAzureADAttribute, domainNameService, universalResourceIdentifier.</summary>
-        public Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType {
+        public Microsoft.Graph.Beta.Models.SubjectAlternativeNameType? SubjectAlternativeNameType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType?>("subjectAlternativeNameType"); }
             set { BackingStore?.Set("subjectAlternativeNameType", value); }
         }
         /// <summary>Subject Name Format Options for Apple devices.</summary>
-        public AppleSubjectNameFormat? SubjectNameFormat {
+        public AppleSubjectNameFormat? SubjectNameFormat
+        {
             get { return BackingStore?.Get<AppleSubjectNameFormat?>("subjectNameFormat"); }
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
@@ -67,11 +73,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
-                {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                {"subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
-                {"subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<AppleSubjectNameFormat>(); } },
+                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
+                { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
+                { "subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
+                { "subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<AppleSubjectNameFormat>(); } },
             };
         }
         /// <summary>

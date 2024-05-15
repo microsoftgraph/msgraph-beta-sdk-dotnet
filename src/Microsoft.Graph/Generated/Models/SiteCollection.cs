@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SiteCollection : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SiteCollection : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents whether the site collection is recently archived, fully archived, or reactivating. Possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SiteArchivalDetails? ArchivalDetails {
+        public SiteArchivalDetails? ArchivalDetails
+        {
             get { return BackingStore?.Get<SiteArchivalDetails?>("archivalDetails"); }
             set { BackingStore?.Set("archivalDetails", value); }
         }
 #nullable restore
 #else
-        public SiteArchivalDetails ArchivalDetails {
+        public SiteArchivalDetails ArchivalDetails
+        {
             get { return BackingStore?.Get<SiteArchivalDetails>("archivalDetails"); }
             set { BackingStore?.Set("archivalDetails", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The geographic region code for where this site collection resides. Only present for multi-geo tenants. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataLocationCode {
+        public string? DataLocationCode
+        {
             get { return BackingStore?.Get<string?>("dataLocationCode"); }
             set { BackingStore?.Set("dataLocationCode", value); }
         }
 #nullable restore
 #else
-        public string DataLocationCode {
+        public string DataLocationCode
+        {
             get { return BackingStore?.Get<string>("dataLocationCode"); }
             set { BackingStore?.Set("dataLocationCode", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hostname for the site collection. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname {
+        public string? Hostname
+        {
             get { return BackingStore?.Get<string?>("hostname"); }
             set { BackingStore?.Set("hostname", value); }
         }
 #nullable restore
 #else
-        public string Hostname {
+        public string Hostname
+        {
             get { return BackingStore?.Get<string>("hostname"); }
             set { BackingStore?.Set("hostname", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If present, indicates that this is a root site collection in SharePoint. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Root? Root {
+        public Microsoft.Graph.Beta.Models.Root? Root
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root?>("root"); }
             set { BackingStore?.Set("root", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Root Root {
+        public Microsoft.Graph.Beta.Models.Root Root
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root>("root"); }
             set { BackingStore?.Set("root", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"archivalDetails", n => { ArchivalDetails = n.GetObjectValue<SiteArchivalDetails>(SiteArchivalDetails.CreateFromDiscriminatorValue); } },
-                {"dataLocationCode", n => { DataLocationCode = n.GetStringValue(); } },
-                {"hostname", n => { Hostname = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
+                { "archivalDetails", n => { ArchivalDetails = n.GetObjectValue<SiteArchivalDetails>(SiteArchivalDetails.CreateFromDiscriminatorValue); } },
+                { "dataLocationCode", n => { DataLocationCode = n.GetStringValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.Root>(Microsoft.Graph.Beta.Models.Root.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

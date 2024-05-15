@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.GetLoggedOnManagedDevices {
+namespace Microsoft.Graph.Beta.Users.Item.GetLoggedOnManagedDevices
+{
     #pragma warning disable CS1591
-    public class GetLoggedOnManagedDevicesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetLoggedOnManagedDevicesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? Value {
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ManagedDevice> Value {
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice> Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.GetLoggedOnManagedDevices {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

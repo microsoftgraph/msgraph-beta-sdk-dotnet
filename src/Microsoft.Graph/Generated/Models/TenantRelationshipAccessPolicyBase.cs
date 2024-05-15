@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable 
+    public class TenantRelationshipAccessPolicyBase : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The definition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Definition {
+        public List<string>? Definition
+        {
             get { return BackingStore?.Get<List<string>?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #nullable restore
 #else
-        public List<string> Definition {
+        public List<string> Definition
+        {
             get { return BackingStore?.Get<List<string>>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
@@ -53,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"definition", n => { Definition = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "definition", n => { Definition = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

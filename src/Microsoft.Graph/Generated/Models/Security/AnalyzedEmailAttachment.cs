@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AnalyzedEmailAttachment : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AnalyzedEmailAttachment : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The detonation details of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.DetonationDetails? DetonationDetails {
+        public Microsoft.Graph.Beta.Models.Security.DetonationDetails? DetonationDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationDetails?>("detonationDetails"); }
             set { BackingStore?.Set("detonationDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.DetonationDetails DetonationDetails {
+        public Microsoft.Graph.Beta.Models.Security.DetonationDetails DetonationDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationDetails>("detonationDetails"); }
             set { BackingStore?.Set("detonationDetails", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The name of the attachment in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The type of the attachment in the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileType {
+        public string? FileType
+        {
             get { return BackingStore?.Get<string?>("fileType"); }
             set { BackingStore?.Set("fileType", value); }
         }
 #nullable restore
 #else
-        public string FileType {
+        public string FileType
+        {
             get { return BackingStore?.Get<string>("fileType"); }
             set { BackingStore?.Set("fileType", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The SHA256 file hash of the attachment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha256 {
+        public string? Sha256
+        {
             get { return BackingStore?.Get<string?>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
 #nullable restore
 #else
-        public string Sha256 {
+        public string Sha256
+        {
             get { return BackingStore?.Get<string>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
@@ -90,19 +102,22 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The threat name associated with the threat type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreatName {
+        public string? ThreatName
+        {
             get { return BackingStore?.Get<string?>("threatName"); }
             set { BackingStore?.Set("threatName", value); }
         }
 #nullable restore
 #else
-        public string ThreatName {
+        public string ThreatName
+        {
             get { return BackingStore?.Get<string>("threatName"); }
             set { BackingStore?.Set("threatName", value); }
         }
 #endif
         /// <summary>The threat type associated with the attachment. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType {
+        public Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ThreatType?>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"detonationDetails", n => { DetonationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationDetails>(Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"fileType", n => { FileType = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sha256", n => { Sha256 = n.GetStringValue(); } },
-                {"threatName", n => { ThreatName = n.GetStringValue(); } },
-                {"threatType", n => { ThreatType = n.GetEnumValue<ThreatType>(); } },
+                { "detonationDetails", n => { DetonationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationDetails>(Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "fileType", n => { FileType = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sha256", n => { Sha256 = n.GetStringValue(); } },
+                { "threatName", n => { ThreatName = n.GetStringValue(); } },
+                { "threatType", n => { ThreatType = n.GetEnumValue<ThreatType>(); } },
             };
         }
         /// <summary>

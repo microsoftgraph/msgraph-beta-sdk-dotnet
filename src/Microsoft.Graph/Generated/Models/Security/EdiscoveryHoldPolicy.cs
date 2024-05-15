@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryHoldPolicy : PolicyBase, IParsable 
+    public class EdiscoveryHoldPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentQuery {
+        public string? ContentQuery
+        {
             get { return BackingStore?.Get<string?>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
 #nullable restore
 #else
-        public string ContentQuery {
+        public string ContentQuery
+        {
             get { return BackingStore?.Get<string>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Lists any errors that happened while placing the hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Errors {
+        public List<string>? Errors
+        {
             get { return BackingStore?.Get<List<string>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<string> Errors {
+        public List<string> Errors
+        {
             get { return BackingStore?.Get<List<string>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #endif
         /// <summary>Indicates whether the hold is enabled and actively holding content.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Data sources that represent SharePoint sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SiteSource>? SiteSources {
+        public List<SiteSource>? SiteSources
+        {
             get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #nullable restore
 #else
-        public List<SiteSource> SiteSources {
+        public List<SiteSource> SiteSources
+        {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Data sources that represent Exchange mailboxes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSource>? UserSources {
+        public List<UserSource>? UserSources
+        {
             get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #nullable restore
 #else
-        public List<UserSource> UserSources {
+        public List<UserSource> UserSources
+        {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentQuery", n => { ContentQuery = n.GetStringValue(); } },
-                {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentQuery", n => { ContentQuery = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

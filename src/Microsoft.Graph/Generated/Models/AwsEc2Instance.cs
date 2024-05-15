@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsEc2Instance : AwsIdentity, IParsable 
+    public class AwsEc2Instance : AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the resources in an authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAuthorizationSystemResource? Resource {
+        public AwsAuthorizationSystemResource? Resource
+        {
             get { return BackingStore?.Get<AwsAuthorizationSystemResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AwsAuthorizationSystemResource Resource {
+        public AwsAuthorizationSystemResource Resource
+        {
             get { return BackingStore?.Get<AwsAuthorizationSystemResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"resource", n => { Resource = n.GetObjectValue<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

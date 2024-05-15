@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource {
+namespace Microsoft.Graph.Beta.DeviceManagement.ScopedForResourceWithResource
+{
     [Obsolete("This class is obsolete. Use ScopedForResourceWithResourceGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ScopedForResourceWithResourceResponse : ScopedForResourceWithResourceGetResponse, IParsable 
+    public class ScopedForResourceWithResourceResponse : ScopedForResourceWithResourceGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

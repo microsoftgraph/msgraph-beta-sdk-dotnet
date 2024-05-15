@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDevice : Entity, IParsable 
+    public class TeamworkDevice : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activity properties that change based on the device usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceActivity? Activity {
+        public TeamworkDeviceActivity? Activity
+        {
             get { return BackingStore?.Get<TeamworkDeviceActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceActivity Activity {
+        public TeamworkDeviceActivity Activity
+        {
             get { return BackingStore?.Get<TeamworkDeviceActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
         /// <summary>The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.</summary>
-        public TeamworkDeviceActivityState? ActivityState {
+        public TeamworkDeviceActivityState? ActivityState
+        {
             get { return BackingStore?.Get<TeamworkDeviceActivityState?>("activityState"); }
             set { BackingStore?.Set("activityState", value); }
         }
         /// <summary>The company asset tag assigned by the admin on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyAssetTag {
+        public string? CompanyAssetTag
+        {
             get { return BackingStore?.Get<string?>("companyAssetTag"); }
             set { BackingStore?.Set("companyAssetTag", value); }
         }
 #nullable restore
 #else
-        public string CompanyAssetTag {
+        public string CompanyAssetTag
+        {
             get { return BackingStore?.Get<string>("companyAssetTag"); }
             set { BackingStore?.Set("companyAssetTag", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The configuration properties of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceConfiguration? Configuration {
+        public TeamworkDeviceConfiguration? Configuration
+        {
             get { return BackingStore?.Get<TeamworkDeviceConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceConfiguration Configuration {
+        public TeamworkDeviceConfiguration Configuration
+        {
             get { return BackingStore?.Get<TeamworkDeviceConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -59,51 +67,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who enrolled the device to the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device was enrolled to the tenant.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The signed-in user on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkUserIdentity? CurrentUser {
+        public TeamworkUserIdentity? CurrentUser
+        {
             get { return BackingStore?.Get<TeamworkUserIdentity?>("currentUser"); }
             set { BackingStore?.Set("currentUser", value); }
         }
 #nullable restore
 #else
-        public TeamworkUserIdentity CurrentUser {
+        public TeamworkUserIdentity CurrentUser
+        {
             get { return BackingStore?.Get<TeamworkUserIdentity>("currentUser"); }
             set { BackingStore?.Set("currentUser", value); }
         }
 #endif
         /// <summary>The deviceType property</summary>
-        public TeamworkDeviceType? DeviceType {
+        public TeamworkDeviceType? DeviceType
+        {
             get { return BackingStore?.Get<TeamworkDeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>The hardwareDetail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHardwareDetail? HardwareDetail {
+        public TeamworkHardwareDetail? HardwareDetail
+        {
             get { return BackingStore?.Get<TeamworkHardwareDetail?>("hardwareDetail"); }
             set { BackingStore?.Set("hardwareDetail", value); }
         }
 #nullable restore
 #else
-        public TeamworkHardwareDetail HardwareDetail {
+        public TeamworkHardwareDetail HardwareDetail
+        {
             get { return BackingStore?.Get<TeamworkHardwareDetail>("hardwareDetail"); }
             set { BackingStore?.Set("hardwareDetail", value); }
         }
@@ -111,51 +127,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health properties of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceHealth? Health {
+        public TeamworkDeviceHealth? Health
+        {
             get { return BackingStore?.Get<TeamworkDeviceHealth?>("health"); }
             set { BackingStore?.Set("health", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceHealth Health {
+        public TeamworkDeviceHealth Health
+        {
             get { return BackingStore?.Get<TeamworkDeviceHealth>("health"); }
             set { BackingStore?.Set("health", value); }
         }
 #endif
         /// <summary>The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.</summary>
-        public TeamworkDeviceHealthStatus? HealthStatus {
+        public TeamworkDeviceHealthStatus? HealthStatus
+        {
             get { return BackingStore?.Get<TeamworkDeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Identity of the user who last modified the device details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device detail was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The notes added by the admin to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes {
+        public string? Notes
+        {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public string Notes {
+        public string Notes
+        {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -163,13 +187,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The async operations on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkDeviceOperation>? Operations {
+        public List<TeamworkDeviceOperation>? Operations
+        {
             get { return BackingStore?.Get<List<TeamworkDeviceOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkDeviceOperation> Operations {
+        public List<TeamworkDeviceOperation> Operations
+        {
             get { return BackingStore?.Get<List<TeamworkDeviceOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -192,21 +218,21 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetObjectValue<TeamworkDeviceActivity>(TeamworkDeviceActivity.CreateFromDiscriminatorValue); } },
-                {"activityState", n => { ActivityState = n.GetEnumValue<TeamworkDeviceActivityState>(); } },
-                {"companyAssetTag", n => { CompanyAssetTag = n.GetStringValue(); } },
-                {"configuration", n => { Configuration = n.GetObjectValue<TeamworkDeviceConfiguration>(TeamworkDeviceConfiguration.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"currentUser", n => { CurrentUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
-                {"deviceType", n => { DeviceType = n.GetEnumValue<TeamworkDeviceType>(); } },
-                {"hardwareDetail", n => { HardwareDetail = n.GetObjectValue<TeamworkHardwareDetail>(TeamworkHardwareDetail.CreateFromDiscriminatorValue); } },
-                {"health", n => { Health = n.GetObjectValue<TeamworkDeviceHealth>(TeamworkDeviceHealth.CreateFromDiscriminatorValue); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<TeamworkDeviceHealthStatus>(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notes", n => { Notes = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<TeamworkDeviceOperation>(TeamworkDeviceOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activity", n => { Activity = n.GetObjectValue<TeamworkDeviceActivity>(TeamworkDeviceActivity.CreateFromDiscriminatorValue); } },
+                { "activityState", n => { ActivityState = n.GetEnumValue<TeamworkDeviceActivityState>(); } },
+                { "companyAssetTag", n => { CompanyAssetTag = n.GetStringValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<TeamworkDeviceConfiguration>(TeamworkDeviceConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "currentUser", n => { CurrentUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<TeamworkDeviceType>(); } },
+                { "hardwareDetail", n => { HardwareDetail = n.GetObjectValue<TeamworkHardwareDetail>(TeamworkHardwareDetail.CreateFromDiscriminatorValue); } },
+                { "health", n => { Health = n.GetObjectValue<TeamworkDeviceHealth>(TeamworkDeviceHealth.CreateFromDiscriminatorValue); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<TeamworkDeviceHealthStatus>(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<TeamworkDeviceOperation>(TeamworkDeviceOperation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains PowerShell script properties to detect a Win32 App
     /// </summary>
-    public class Win32LobAppPowerShellScriptDetection : Win32LobAppDetection, IParsable 
+    public class Win32LobAppPowerShellScriptDetection : Win32LobAppDetection, IParsable
     {
         /// <summary>A value indicating whether signature check is enforced</summary>
-        public bool? EnforceSignatureCheck {
+        public bool? EnforceSignatureCheck
+        {
             get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
             set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>A value indicating whether this script should run as 32-bit</summary>
-        public bool? RunAs32Bit {
+        public bool? RunAs32Bit
+        {
             get { return BackingStore?.Get<bool?>("runAs32Bit"); }
             set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptContent {
+        public string? ScriptContent
+        {
             get { return BackingStore?.Get<string?>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
 #nullable restore
 #else
-        public string ScriptContent {
+        public string ScriptContent
+        {
             get { return BackingStore?.Get<string>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
-                {"runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
-                {"scriptContent", n => { ScriptContent = n.GetStringValue(); } },
+                { "enforceSignatureCheck", n => { EnforceSignatureCheck = n.GetBoolValue(); } },
+                { "runAs32Bit", n => { RunAs32Bit = n.GetBoolValue(); } },
+                { "scriptContent", n => { ScriptContent = n.GetStringValue(); } },
             };
         }
         /// <summary>

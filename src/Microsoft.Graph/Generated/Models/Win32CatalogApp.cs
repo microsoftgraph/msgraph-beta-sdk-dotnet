@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A mobileApp that is based on a referenced application in a Win32CatalogApp repository
     /// </summary>
-    public class Win32CatalogApp : Win32LobApp, IParsable 
+    public class Win32CatalogApp : Win32LobApp, IParsable
     {
         /// <summary>The latest available catalog package the app is upgradeable to. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppCatalogPackage? LatestUpgradeCatalogPackage {
+        public MobileAppCatalogPackage? LatestUpgradeCatalogPackage
+        {
             get { return BackingStore?.Get<MobileAppCatalogPackage?>("latestUpgradeCatalogPackage"); }
             set { BackingStore?.Set("latestUpgradeCatalogPackage", value); }
         }
 #nullable restore
 #else
-        public MobileAppCatalogPackage LatestUpgradeCatalogPackage {
+        public MobileAppCatalogPackage LatestUpgradeCatalogPackage
+        {
             get { return BackingStore?.Get<MobileAppCatalogPackage>("latestUpgradeCatalogPackage"); }
             set { BackingStore?.Set("latestUpgradeCatalogPackage", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mobileAppCatalogPackageId property references the mobileAppCatalogPackage entity which contains information about an application catalog package that can be deployed to Intune-managed devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobileAppCatalogPackageId {
+        public string? MobileAppCatalogPackageId
+        {
             get { return BackingStore?.Get<string?>("mobileAppCatalogPackageId"); }
             set { BackingStore?.Set("mobileAppCatalogPackageId", value); }
         }
 #nullable restore
 #else
-        public string MobileAppCatalogPackageId {
+        public string MobileAppCatalogPackageId
+        {
             get { return BackingStore?.Get<string>("mobileAppCatalogPackageId"); }
             set { BackingStore?.Set("mobileAppCatalogPackageId", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The current catalog package the app is synced from. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppCatalogPackage? ReferencedCatalogPackage {
+        public MobileAppCatalogPackage? ReferencedCatalogPackage
+        {
             get { return BackingStore?.Get<MobileAppCatalogPackage?>("referencedCatalogPackage"); }
             set { BackingStore?.Set("referencedCatalogPackage", value); }
         }
 #nullable restore
 #else
-        public MobileAppCatalogPackage ReferencedCatalogPackage {
+        public MobileAppCatalogPackage ReferencedCatalogPackage
+        {
             get { return BackingStore?.Get<MobileAppCatalogPackage>("referencedCatalogPackage"); }
             set { BackingStore?.Set("referencedCatalogPackage", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"latestUpgradeCatalogPackage", n => { LatestUpgradeCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
-                {"mobileAppCatalogPackageId", n => { MobileAppCatalogPackageId = n.GetStringValue(); } },
-                {"referencedCatalogPackage", n => { ReferencedCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
+                { "latestUpgradeCatalogPackage", n => { LatestUpgradeCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
+                { "mobileAppCatalogPackageId", n => { MobileAppCatalogPackageId = n.GetStringValue(); } },
+                { "referencedCatalogPackage", n => { ReferencedCatalogPackage = n.GetObjectValue<MobileAppCatalogPackage>(MobileAppCatalogPackage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationAttributeCollectionInputConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthenticationAttributeCollectionInputConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The built-in or custom attribute for which a value is being collected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Attribute {
+        public string? Attribute
+        {
             get { return BackingStore?.Get<string?>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
 #nullable restore
 #else
-        public string Attribute {
+        public string Attribute
+        {
             get { return BackingStore?.Get<string>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
@@ -34,42 +38,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The default value of the attribute displayed to the end user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValue {
+        public string? DefaultValue
+        {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public string DefaultValue {
+        public string DefaultValue
+        {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
         /// <summary>Whether the attribute is editable by the end user.</summary>
-        public bool? Editable {
+        public bool? Editable
+        {
             get { return BackingStore?.Get<bool?>("editable"); }
             set { BackingStore?.Set("editable", value); }
         }
         /// <summary>Whether the attribute is displayed to the end user.</summary>
-        public bool? Hidden {
+        public bool? Hidden
+        {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>The inputType property</summary>
-        public AuthenticationAttributeCollectionInputType? InputType {
+        public AuthenticationAttributeCollectionInputType? InputType
+        {
             get { return BackingStore?.Get<AuthenticationAttributeCollectionInputType?>("inputType"); }
             set { BackingStore?.Set("inputType", value); }
         }
         /// <summary>The label of the attribute field that is displayed to end user, unless overridden.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label {
+        public string? Label
+        {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
 #nullable restore
 #else
-        public string Label {
+        public string Label
+        {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
@@ -77,13 +88,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,38 +104,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The option values for certain multiple-option input types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationAttributeCollectionOptionConfiguration>? Options {
+        public List<AuthenticationAttributeCollectionOptionConfiguration>? Options
+        {
             get { return BackingStore?.Get<List<AuthenticationAttributeCollectionOptionConfiguration>?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationAttributeCollectionOptionConfiguration> Options {
+        public List<AuthenticationAttributeCollectionOptionConfiguration> Options
+        {
             get { return BackingStore?.Get<List<AuthenticationAttributeCollectionOptionConfiguration>>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #endif
         /// <summary>Whether the field is required.</summary>
-        public bool? Required {
+        public bool? Required
+        {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>The regex for the value of the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidationRegEx {
+        public string? ValidationRegEx
+        {
             get { return BackingStore?.Get<string?>("validationRegEx"); }
             set { BackingStore?.Set("validationRegEx", value); }
         }
 #nullable restore
 #else
-        public string ValidationRegEx {
+        public string ValidationRegEx
+        {
             get { return BackingStore?.Get<string>("validationRegEx"); }
             set { BackingStore?.Set("validationRegEx", value); }
         }
 #endif
         /// <summary>Whether the value collected is stored.</summary>
-        public bool? WriteToDirectory {
+        public bool? WriteToDirectory
+        {
             get { return BackingStore?.Get<bool?>("writeToDirectory"); }
             set { BackingStore?.Set("writeToDirectory", value); }
         }
@@ -152,17 +171,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attribute", n => { Attribute = n.GetStringValue(); } },
-                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
-                {"editable", n => { Editable = n.GetBoolValue(); } },
-                {"hidden", n => { Hidden = n.GetBoolValue(); } },
-                {"inputType", n => { InputType = n.GetEnumValue<AuthenticationAttributeCollectionInputType>(); } },
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"options", n => { Options = n.GetCollectionOfObjectValues<AuthenticationAttributeCollectionOptionConfiguration>(AuthenticationAttributeCollectionOptionConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
-                {"validationRegEx", n => { ValidationRegEx = n.GetStringValue(); } },
-                {"writeToDirectory", n => { WriteToDirectory = n.GetBoolValue(); } },
+                { "attribute", n => { Attribute = n.GetStringValue(); } },
+                { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                { "editable", n => { Editable = n.GetBoolValue(); } },
+                { "hidden", n => { Hidden = n.GetBoolValue(); } },
+                { "inputType", n => { InputType = n.GetEnumValue<AuthenticationAttributeCollectionInputType>(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<AuthenticationAttributeCollectionOptionConfiguration>(AuthenticationAttributeCollectionOptionConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "validationRegEx", n => { ValidationRegEx = n.GetStringValue(); } },
+                { "writeToDirectory", n => { WriteToDirectory = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class AddToReviewSetOperation : CaseOperation, IParsable 
+    public class AddToReviewSetOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The review set to which items matching the source collection query are added to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet? ReviewSet {
+        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet? ReviewSet
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet {
+        public Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet ReviewSet
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The sourceCollection that items are being added from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"reviewSet", n => { ReviewSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet.CreateFromDiscriminatorValue); } },
-                {"sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
+                { "reviewSet", n => { ReviewSet = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet>(Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet.CreateFromDiscriminatorValue); } },
+                { "sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

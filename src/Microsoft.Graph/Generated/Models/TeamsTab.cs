@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamsTab : Entity, IParsable 
+    public class TeamsTab : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Container for custom settings applied to a tab. The tab is considered configured only once this property is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsTabConfiguration? Configuration {
+        public TeamsTabConfiguration? Configuration
+        {
             get { return BackingStore?.Get<TeamsTabConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public TeamsTabConfiguration Configuration {
+        public TeamsTabConfiguration Configuration
+        {
             get { return BackingStore?.Get<TeamsTabConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the tab.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The messageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId {
+        public string? MessageId
+        {
             get { return BackingStore?.Get<string?>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
 #nullable restore
 #else
-        public string MessageId {
+        public string MessageId
+        {
             get { return BackingStore?.Get<string>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Index of the order used for sorting tabs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SortOrderIndex {
+        public string? SortOrderIndex
+        {
             get { return BackingStore?.Get<string?>("sortOrderIndex"); }
             set { BackingStore?.Set("sortOrderIndex", value); }
         }
 #nullable restore
 #else
-        public string SortOrderIndex {
+        public string SortOrderIndex
+        {
             get { return BackingStore?.Get<string>("sortOrderIndex"); }
             set { BackingStore?.Set("sortOrderIndex", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The application that is linked to the tab.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TeamsApp? TeamsApp {
+        public Microsoft.Graph.Beta.Models.TeamsApp? TeamsApp
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp?>("teamsApp"); }
             set { BackingStore?.Set("teamsApp", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp {
+        public Microsoft.Graph.Beta.Models.TeamsApp TeamsApp
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsApp>("teamsApp"); }
             set { BackingStore?.Set("teamsApp", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The teamsAppId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsAppId {
+        public string? TeamsAppId
+        {
             get { return BackingStore?.Get<string?>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
 #nullable restore
 #else
-        public string TeamsAppId {
+        public string TeamsAppId
+        {
             get { return BackingStore?.Get<string>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Deep link URL of the tab instance. Read only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -125,13 +140,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<TeamsTabConfiguration>(TeamsTabConfiguration.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"messageId", n => { MessageId = n.GetStringValue(); } },
-                {"sortOrderIndex", n => { SortOrderIndex = n.GetStringValue(); } },
-                {"teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue); } },
-                {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<TeamsTabConfiguration>(TeamsTabConfiguration.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "messageId", n => { MessageId = n.GetStringValue(); } },
+                { "sortOrderIndex", n => { SortOrderIndex = n.GetStringValue(); } },
+                { "teamsApp", n => { TeamsApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsApp>(Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue); } },
+                { "teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

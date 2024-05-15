@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OutlookTaskGroup : Entity, IParsable 
+    public class OutlookTaskGroup : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The version of the task group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangeKey {
+        public string? ChangeKey
+        {
             get { return BackingStore?.Get<string?>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
 #nullable restore
 #else
-        public string ChangeKey {
+        public string ChangeKey
+        {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
 #endif
         /// <summary>The unique GUID identifier for the task group.</summary>
-        public Guid? GroupKey {
+        public Guid? GroupKey
+        {
             get { return BackingStore?.Get<Guid?>("groupKey"); }
             set { BackingStore?.Set("groupKey", value); }
         }
         /// <summary>True if the task group is the default task group.</summary>
-        public bool? IsDefaultGroup {
+        public bool? IsDefaultGroup
+        {
             get { return BackingStore?.Get<bool?>("isDefaultGroup"); }
             set { BackingStore?.Set("isDefaultGroup", value); }
         }
         /// <summary>The name of the task group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of task folders in the task group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTaskFolder>? TaskFolders {
+        public List<OutlookTaskFolder>? TaskFolders
+        {
             get { return BackingStore?.Get<List<OutlookTaskFolder>?>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTaskFolder> TaskFolders {
+        public List<OutlookTaskFolder> TaskFolders
+        {
             get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
-                {"groupKey", n => { GroupKey = n.GetGuidValue(); } },
-                {"isDefaultGroup", n => { IsDefaultGroup = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "changeKey", n => { ChangeKey = n.GetStringValue(); } },
+                { "groupKey", n => { GroupKey = n.GetGuidValue(); } },
+                { "isDefaultGroup", n => { IsDefaultGroup = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CallEvent : Entity, IParsable 
+    public class CallEvent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The callEventType property</summary>
-        public Microsoft.Graph.Beta.Models.CallEventType? CallEventType {
+        public Microsoft.Graph.Beta.Models.CallEventType? CallEventType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallEventType?>("callEventType"); }
             set { BackingStore?.Set("callEventType", value); }
         }
         /// <summary>The eventDateTime property</summary>
-        public DateTimeOffset? EventDateTime {
+        public DateTimeOffset? EventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Participant>? Participants {
+        public List<Participant>? Participants
+        {
             get { return BackingStore?.Get<List<Participant>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<Participant> Participants {
+        public List<Participant> Participants
+        {
             get { return BackingStore?.Get<List<Participant>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callEventType", n => { CallEventType = n.GetEnumValue<CallEventType>(); } },
-                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "callEventType", n => { CallEventType = n.GetEnumValue<CallEventType>(); } },
+                { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

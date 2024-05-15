@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcCrossCloudGovernmentOrganizationMapping : Entity, IParsable 
+    public class CloudPcCrossCloudGovernmentOrganizationMapping : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OrganizationIdsInUSGovCloud {
+        public List<string>? OrganizationIdsInUSGovCloud
+        {
             get { return BackingStore?.Get<List<string>?>("organizationIdsInUSGovCloud"); }
             set { BackingStore?.Set("organizationIdsInUSGovCloud", value); }
         }
 #nullable restore
 #else
-        public List<string> OrganizationIdsInUSGovCloud {
+        public List<string> OrganizationIdsInUSGovCloud
+        {
             get { return BackingStore?.Get<List<string>>("organizationIdsInUSGovCloud"); }
             set { BackingStore?.Set("organizationIdsInUSGovCloud", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"organizationIdsInUSGovCloud", n => { OrganizationIdsInUSGovCloud = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "organizationIdsInUSGovCloud", n => { OrganizationIdsInUSGovCloud = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

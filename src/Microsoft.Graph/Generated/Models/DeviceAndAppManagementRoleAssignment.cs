@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
     /// </summary>
-    public class DeviceAndAppManagementRoleAssignment : RoleAssignment, IParsable 
+    public class DeviceAndAppManagementRoleAssignment : RoleAssignment, IParsable
     {
         /// <summary>The list of ids of role member security groups. These are IDs from Azure Active Directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Members {
+        public List<string>? Members
+        {
             get { return BackingStore?.Get<List<string>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<string> Members {
+        public List<string> Members
+        {
             get { return BackingStore?.Get<List<string>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The set of Role Scope Tags defined on the Role Assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleScopeTag>? RoleScopeTags {
+        public List<RoleScopeTag>? RoleScopeTags
+        {
             get { return BackingStore?.Get<List<RoleScopeTag>?>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
 #nullable restore
 #else
-        public List<RoleScopeTag> RoleScopeTags {
+        public List<RoleScopeTag> RoleScopeTags
+        {
             get { return BackingStore?.Get<List<RoleScopeTag>>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTag>(RoleScopeTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTag>(RoleScopeTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

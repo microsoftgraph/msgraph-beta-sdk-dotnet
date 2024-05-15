@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OutlookTask : OutlookItem, IParsable 
+    public class OutlookTask : OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the person who has been assigned the task in Outlook. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo {
+        public string? AssignedTo
+        {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public string AssignedTo {
+        public string AssignedTo
+        {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the task.  Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attachment>? Attachments {
+        public List<Attachment>? Attachments
+        {
             get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<Attachment> Attachments {
+        public List<Attachment> Attachments
+        {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The task body that typically contains information about the task. Note that only HTML type is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body {
+        public ItemBody? Body
+        {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body {
+        public ItemBody Body
+        {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date in the specified time zone that the task was finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? CompletedDateTime {
+        public DateTimeTimeZone? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone CompletedDateTime {
+        public DateTimeTimeZone CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
@@ -68,42 +77,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date in the specified time zone that the task is to be finished.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? DueDateTime {
+        public DateTimeTimeZone? DueDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone DueDateTime {
+        public DateTimeTimeZone DueDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
 #endif
         /// <summary>Set to true if the task has attachments.</summary>
-        public bool? HasAttachments {
+        public bool? HasAttachments
+        {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>The importance of the event. Possible values are: low, normal, high.</summary>
-        public Microsoft.Graph.Beta.Models.Importance? Importance {
+        public Microsoft.Graph.Beta.Models.Importance? Importance
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
         /// <summary>Set to true if an alert is set to remind the user of the task.</summary>
-        public bool? IsReminderOn {
+        public bool? IsReminderOn
+        {
             get { return BackingStore?.Get<bool?>("isReminderOn"); }
             set { BackingStore?.Set("isReminderOn", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the task. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the person who created the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner {
+        public string? Owner
+        {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public string Owner {
+        public string Owner
+        {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for the task&apos;s parent folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentFolderId {
+        public string? ParentFolderId
+        {
             get { return BackingStore?.Get<string?>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
 #nullable restore
 #else
-        public string ParentFolderId {
+        public string ParentFolderId
+        {
             get { return BackingStore?.Get<string>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recurrence pattern for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence {
+        public PatternedRecurrence? Recurrence
+        {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence {
+        public PatternedRecurrence Recurrence
+        {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
@@ -153,32 +175,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date and time for a reminder alert of the task to occur.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? ReminderDateTime {
+        public DateTimeTimeZone? ReminderDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone ReminderDateTime {
+        public DateTimeTimeZone ReminderDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
 #endif
         /// <summary>Indicates the level of privacy for the task. Possible values are: normal, personal, private, confidential.</summary>
-        public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity {
+        public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the task. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
@@ -186,32 +213,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date in the specified time zone when the task is to begin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime {
+        public DateTimeTimeZone? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime {
+        public DateTimeTimeZone StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>Indicates the state or progress of the task. Possible values are: notStarted, inProgress, completed, waitingOnOthers, deferred.</summary>
-        public TaskStatus? Status {
+        public TaskStatus? Status
+        {
             get { return BackingStore?.Get<TaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>A brief description or title of the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -241,24 +273,24 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                {"importance", n => { Importance = n.GetEnumValue<Importance>(); } },
-                {"isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
-                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
-                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
-                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<TaskStatus>(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                { "importance", n => { Importance = n.GetEnumValue<Importance>(); } },
+                { "isReminderOn", n => { IsReminderOn = n.GetBoolValue(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "reminderDateTime", n => { ReminderDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<TaskStatus>(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

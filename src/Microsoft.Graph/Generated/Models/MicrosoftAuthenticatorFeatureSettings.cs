@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MicrosoftAuthenticatorFeatureSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MicrosoftAuthenticatorFeatureSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Determines whether users are able to approve push notifications on other Microsoft applications such as Outlook Mobile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodFeatureConfiguration? CompanionAppAllowedState {
+        public AuthenticationMethodFeatureConfiguration? CompanionAppAllowedState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("companionAppAllowedState"); }
             set { BackingStore?.Set("companionAppAllowedState", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodFeatureConfiguration CompanionAppAllowedState {
+        public AuthenticationMethodFeatureConfiguration CompanionAppAllowedState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("companionAppAllowedState"); }
             set { BackingStore?.Set("companionAppAllowedState", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Determines whether the user&apos;s Authenticator app shows them the client app they&apos;re signing into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodFeatureConfiguration? DisplayAppInformationRequiredState {
+        public AuthenticationMethodFeatureConfiguration? DisplayAppInformationRequiredState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("displayAppInformationRequiredState"); }
             set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodFeatureConfiguration DisplayAppInformationRequiredState {
+        public AuthenticationMethodFeatureConfiguration DisplayAppInformationRequiredState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("displayAppInformationRequiredState"); }
             set { BackingStore?.Set("displayAppInformationRequiredState", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Determines whether the user&apos;s Authenticator app shows them the geographic location of where the authentication request originated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodFeatureConfiguration? DisplayLocationInformationRequiredState {
+        public AuthenticationMethodFeatureConfiguration? DisplayLocationInformationRequiredState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("displayLocationInformationRequiredState"); }
             set { BackingStore?.Set("displayLocationInformationRequiredState", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodFeatureConfiguration DisplayLocationInformationRequiredState {
+        public AuthenticationMethodFeatureConfiguration DisplayLocationInformationRequiredState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("displayLocationInformationRequiredState"); }
             set { BackingStore?.Set("displayLocationInformationRequiredState", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies whether the user needs to enter a number in the Authenticator app from the login screen to complete their login. Value is ignored for phone sign-in notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationMethodFeatureConfiguration? NumberMatchingRequiredState {
+        public AuthenticationMethodFeatureConfiguration? NumberMatchingRequiredState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration?>("numberMatchingRequiredState"); }
             set { BackingStore?.Set("numberMatchingRequiredState", value); }
         }
 #nullable restore
 #else
-        public AuthenticationMethodFeatureConfiguration NumberMatchingRequiredState {
+        public AuthenticationMethodFeatureConfiguration NumberMatchingRequiredState
+        {
             get { return BackingStore?.Get<AuthenticationMethodFeatureConfiguration>("numberMatchingRequiredState"); }
             set { BackingStore?.Set("numberMatchingRequiredState", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"companionAppAllowedState", n => { CompanionAppAllowedState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
-                {"displayAppInformationRequiredState", n => { DisplayAppInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
-                {"displayLocationInformationRequiredState", n => { DisplayLocationInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
-                {"numberMatchingRequiredState", n => { NumberMatchingRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "companionAppAllowedState", n => { CompanionAppAllowedState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
+                { "displayAppInformationRequiredState", n => { DisplayAppInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
+                { "displayLocationInformationRequiredState", n => { DisplayLocationInformationRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
+                { "numberMatchingRequiredState", n => { NumberMatchingRequiredState = n.GetObjectValue<AuthenticationMethodFeatureConfiguration>(AuthenticationMethodFeatureConfiguration.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

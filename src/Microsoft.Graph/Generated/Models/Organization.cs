@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Organization : DirectoryObject, IParsable 
+    public class Organization : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedPlan>? AssignedPlans {
+        public List<AssignedPlan>? AssignedPlans
+        {
             get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
 #nullable restore
 #else
-        public List<AssignedPlan> AssignedPlans {
+        public List<AssignedPlan> AssignedPlans
+        {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resource to manage the default branding for the organization. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OrganizationalBranding? Branding {
+        public OrganizationalBranding? Branding
+        {
             get { return BackingStore?.Get<OrganizationalBranding?>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
 #nullable restore
 #else
-        public OrganizationalBranding Branding {
+        public OrganizationalBranding Branding
+        {
             get { return BackingStore?.Get<OrganizationalBranding>("branding"); }
             set { BackingStore?.Set("branding", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Telephone number for the organization. Although this property is a string collection, only one number can be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BusinessPhones {
+        public List<string>? BusinessPhones
+        {
             get { return BackingStore?.Get<List<string>?>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
 #nullable restore
 #else
-        public List<string> BusinessPhones {
+        public List<string> BusinessPhones
+        {
             get { return BackingStore?.Get<List<string>>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Navigation property to manage certificate-based authentication configuration. Only a single instance of certificateBasedAuthConfiguration can be created in the collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>? CertificateBasedAuthConfiguration {
+        public List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>? CertificateBasedAuthConfiguration
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>?>("certificateBasedAuthConfiguration"); }
             set { BackingStore?.Set("certificateBasedAuthConfiguration", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration {
+        public List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration> CertificateBasedAuthConfiguration
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>>("certificateBasedAuthConfiguration"); }
             set { BackingStore?.Set("certificateBasedAuthConfiguration", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Certificate connector setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.CertificateConnectorSetting? CertificateConnectorSetting {
+        public Microsoft.Graph.Beta.Models.CertificateConnectorSetting? CertificateConnectorSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateConnectorSetting?>("certificateConnectorSetting"); }
             set { BackingStore?.Set("certificateConnectorSetting", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.CertificateConnectorSetting CertificateConnectorSetting {
+        public Microsoft.Graph.Beta.Models.CertificateConnectorSetting CertificateConnectorSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateConnectorSetting>("certificateConnectorSetting"); }
             set { BackingStore?.Set("certificateConnectorSetting", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>City name of the address for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City {
+        public string? City
+        {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
 #nullable restore
 #else
-        public string City {
+        public string City
+        {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Country/region name of the address for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country {
+        public string? Country
+        {
             get { return BackingStore?.Get<string?>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #nullable restore
 #else
-        public string Country {
+        public string Country
+        {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
@@ -110,32 +125,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Country or region abbreviation for the organization in ISO 3166-2 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryLetterCode {
+        public string? CountryLetterCode
+        {
             get { return BackingStore?.Get<string?>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
 #nullable restore
 #else
-        public string CountryLetterCode {
+        public string CountryLetterCode
+        {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
 #endif
         /// <summary>Timestamp of when the organization was created. The value can&apos;t be modified and is automatically populated when the organization is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Two-letter ISO 3166 country code indicating the default service usage location of an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultUsageLocation {
+        public string? DefaultUsageLocation
+        {
             get { return BackingStore?.Get<string?>("defaultUsageLocation"); }
             set { BackingStore?.Set("defaultUsageLocation", value); }
         }
 #nullable restore
 #else
-        public string DefaultUsageLocation {
+        public string DefaultUsageLocation
+        {
             get { return BackingStore?.Get<string>("defaultUsageLocation"); }
             set { BackingStore?.Set("defaultUsageLocation", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The directory size quota information of an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DirectorySizeQuota? DirectorySizeQuota {
+        public Microsoft.Graph.Beta.Models.DirectorySizeQuota? DirectorySizeQuota
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectorySizeQuota?>("directorySizeQuota"); }
             set { BackingStore?.Set("directorySizeQuota", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DirectorySizeQuota DirectorySizeQuota {
+        public Microsoft.Graph.Beta.Models.DirectorySizeQuota DirectorySizeQuota
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectorySizeQuota>("directorySizeQuota"); }
             set { BackingStore?.Set("directorySizeQuota", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -171,85 +195,99 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of open extensions defined for the organization resource. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions {
+        public List<Extension>? Extensions
+        {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions {
+        public List<Extension> Extensions
+        {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>true if organization is Multi-Geo enabled; false if organization isn&apos;t Multi-Geo enabled; null (default). Read-only. For more information, see OneDrive Online Multi-Geo.</summary>
-        public bool? IsMultipleDataLocationsForServicesEnabled {
+        public bool? IsMultipleDataLocationsForServicesEnabled
+        {
             get { return BackingStore?.Get<bool?>("isMultipleDataLocationsForServicesEnabled"); }
             set { BackingStore?.Set("isMultipleDataLocationsForServicesEnabled", value); }
         }
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MarketingNotificationEmails {
+        public List<string>? MarketingNotificationEmails
+        {
             get { return BackingStore?.Get<List<string>?>("marketingNotificationEmails"); }
             set { BackingStore?.Set("marketingNotificationEmails", value); }
         }
 #nullable restore
 #else
-        public List<string> MarketingNotificationEmails {
+        public List<string> MarketingNotificationEmails
+        {
             get { return BackingStore?.Get<List<string>>("marketingNotificationEmails"); }
             set { BackingStore?.Set("marketingNotificationEmails", value); }
         }
 #endif
         /// <summary>Mobile device management authority.</summary>
-        public MdmAuthority? MobileDeviceManagementAuthority {
+        public MdmAuthority? MobileDeviceManagementAuthority
+        {
             get { return BackingStore?.Get<MdmAuthority?>("mobileDeviceManagementAuthority"); }
             set { BackingStore?.Set("mobileDeviceManagementAuthority", value); }
         }
         /// <summary>The last time a password sync request was received for the tenant.</summary>
-        public DateTimeOffset? OnPremisesLastPasswordSyncDateTime {
+        public DateTimeOffset? OnPremisesLastPasswordSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastPasswordSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastPasswordSyncDateTime", value); }
         }
         /// <summary>The time and date at which the tenant was last synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? OnPremisesLastSyncDateTime {
+        public DateTimeOffset? OnPremisesLastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced; Nullable. null, if this object isn&apos;t synced from on-premises active directory (default).</summary>
-        public bool? OnPremisesSyncEnabled {
+        public bool? OnPremisesSyncEnabled
+        {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
         /// <summary>The partnerInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PartnerInformation? PartnerInformation {
+        public Microsoft.Graph.Beta.Models.PartnerInformation? PartnerInformation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerInformation?>("partnerInformation"); }
             set { BackingStore?.Set("partnerInformation", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PartnerInformation PartnerInformation {
+        public Microsoft.Graph.Beta.Models.PartnerInformation PartnerInformation
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerInformation>("partnerInformation"); }
             set { BackingStore?.Set("partnerInformation", value); }
         }
 #endif
         /// <summary>The type of partnership this tenant has with Microsoft. The possible values are: microsoftSupport, syndicatePartner, breadthPartner, breadthPartnerDelegatedAdmin, resellerPartnerDelegatedAdmin, valueAddedResellerPartnerDelegatedAdmin, unknownFutureValue. Nullable. For more information about the possible types, see partnerTenantType values.</summary>
-        public Microsoft.Graph.Beta.Models.PartnerTenantType? PartnerTenantType {
+        public Microsoft.Graph.Beta.Models.PartnerTenantType? PartnerTenantType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PartnerTenantType?>("partnerTenantType"); }
             set { BackingStore?.Set("partnerTenantType", value); }
         }
         /// <summary>Postal code of the address for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostalCode {
+        public string? PostalCode
+        {
             get { return BackingStore?.Get<string?>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
 #nullable restore
 #else
-        public string PostalCode {
+        public string PostalCode
+        {
             get { return BackingStore?.Get<string>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
@@ -257,13 +295,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The preferred language for the organization. Should follow ISO 639-1 code; for example, en.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredLanguage {
+        public string? PreferredLanguage
+        {
             get { return BackingStore?.Get<string?>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
 #nullable restore
 #else
-        public string PreferredLanguage {
+        public string PreferredLanguage
+        {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
@@ -271,13 +311,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The privacy profile of an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PrivacyProfile? PrivacyProfile {
+        public Microsoft.Graph.Beta.Models.PrivacyProfile? PrivacyProfile
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivacyProfile?>("privacyProfile"); }
             set { BackingStore?.Set("privacyProfile", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PrivacyProfile PrivacyProfile {
+        public Microsoft.Graph.Beta.Models.PrivacyProfile PrivacyProfile
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivacyProfile>("privacyProfile"); }
             set { BackingStore?.Set("privacyProfile", value); }
         }
@@ -285,13 +327,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisionedPlan>? ProvisionedPlans {
+        public List<ProvisionedPlan>? ProvisionedPlans
+        {
             get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #nullable restore
 #else
-        public List<ProvisionedPlan> ProvisionedPlans {
+        public List<ProvisionedPlan> ProvisionedPlans
+        {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
@@ -299,13 +343,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SecurityComplianceNotificationMails {
+        public List<string>? SecurityComplianceNotificationMails
+        {
             get { return BackingStore?.Get<List<string>?>("securityComplianceNotificationMails"); }
             set { BackingStore?.Set("securityComplianceNotificationMails", value); }
         }
 #nullable restore
 #else
-        public List<string> SecurityComplianceNotificationMails {
+        public List<string> SecurityComplianceNotificationMails
+        {
             get { return BackingStore?.Get<List<string>>("securityComplianceNotificationMails"); }
             set { BackingStore?.Set("securityComplianceNotificationMails", value); }
         }
@@ -313,13 +359,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SecurityComplianceNotificationPhones {
+        public List<string>? SecurityComplianceNotificationPhones
+        {
             get { return BackingStore?.Get<List<string>?>("securityComplianceNotificationPhones"); }
             set { BackingStore?.Set("securityComplianceNotificationPhones", value); }
         }
 #nullable restore
 #else
-        public List<string> SecurityComplianceNotificationPhones {
+        public List<string> SecurityComplianceNotificationPhones
+        {
             get { return BackingStore?.Get<List<string>>("securityComplianceNotificationPhones"); }
             set { BackingStore?.Set("securityComplianceNotificationPhones", value); }
         }
@@ -327,13 +375,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OrganizationSettings? Settings {
+        public OrganizationSettings? Settings
+        {
             get { return BackingStore?.Get<OrganizationSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public OrganizationSettings Settings {
+        public OrganizationSettings Settings
+        {
             get { return BackingStore?.Get<OrganizationSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -341,13 +391,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>State name of the address for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -355,13 +407,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Street name of the address for organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Street {
+        public string? Street
+        {
             get { return BackingStore?.Get<string?>("street"); }
             set { BackingStore?.Set("street", value); }
         }
 #nullable restore
 #else
-        public string Street {
+        public string Street
+        {
             get { return BackingStore?.Get<string>("street"); }
             set { BackingStore?.Set("street", value); }
         }
@@ -369,13 +423,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TechnicalNotificationMails {
+        public List<string>? TechnicalNotificationMails
+        {
             get { return BackingStore?.Get<List<string>?>("technicalNotificationMails"); }
             set { BackingStore?.Set("technicalNotificationMails", value); }
         }
 #nullable restore
 #else
-        public List<string> TechnicalNotificationMails {
+        public List<string> TechnicalNotificationMails
+        {
             get { return BackingStore?.Get<List<string>>("technicalNotificationMails"); }
             set { BackingStore?.Set("technicalNotificationMails", value); }
         }
@@ -383,13 +439,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not nullable. Can be one of the following types:  AAD - An enterprise identity access management (IAM) service that serves business-to-employee and business-to-business (B2B) scenarios.  AAD B2C An identity access management (IAM) service that serves business-to-consumer (B2C) scenarios.   CIAM - A customer identity &amp; access management (CIAM) solution that provides an integrated platform to serve consumers, partners, and citizen scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantType {
+        public string? TenantType
+        {
             get { return BackingStore?.Get<string?>("tenantType"); }
             set { BackingStore?.Set("tenantType", value); }
         }
 #nullable restore
 #else
-        public string TenantType {
+        public string TenantType
+        {
             get { return BackingStore?.Get<string>("tenantType"); }
             set { BackingStore?.Set("tenantType", value); }
         }
@@ -397,13 +455,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of domains associated with this tenant. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VerifiedDomain>? VerifiedDomains {
+        public List<VerifiedDomain>? VerifiedDomains
+        {
             get { return BackingStore?.Get<List<VerifiedDomain>?>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
 #nullable restore
 #else
-        public List<VerifiedDomain> VerifiedDomains {
+        public List<VerifiedDomain> VerifiedDomains
+        {
             get { return BackingStore?.Get<List<VerifiedDomain>>("verifiedDomains"); }
             set { BackingStore?.Set("verifiedDomains", value); }
         }
@@ -433,39 +493,39 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"branding", n => { Branding = n.GetObjectValue<OrganizationalBranding>(OrganizationalBranding.CreateFromDiscriminatorValue); } },
-                {"businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"certificateBasedAuthConfiguration", n => { CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>(Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"certificateConnectorSetting", n => { CertificateConnectorSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.CertificateConnectorSetting>(Microsoft.Graph.Beta.Models.CertificateConnectorSetting.CreateFromDiscriminatorValue); } },
-                {"city", n => { City = n.GetStringValue(); } },
-                {"country", n => { Country = n.GetStringValue(); } },
-                {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"defaultUsageLocation", n => { DefaultUsageLocation = n.GetStringValue(); } },
-                {"directorySizeQuota", n => { DirectorySizeQuota = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectorySizeQuota>(Microsoft.Graph.Beta.Models.DirectorySizeQuota.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isMultipleDataLocationsForServicesEnabled", n => { IsMultipleDataLocationsForServicesEnabled = n.GetBoolValue(); } },
-                {"marketingNotificationEmails", n => { MarketingNotificationEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<MdmAuthority>(); } },
-                {"onPremisesLastPasswordSyncDateTime", n => { OnPremisesLastPasswordSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
-                {"partnerInformation", n => { PartnerInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>(Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue); } },
-                {"partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<PartnerTenantType>(); } },
-                {"postalCode", n => { PostalCode = n.GetStringValue(); } },
-                {"preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
-                {"privacyProfile", n => { PrivacyProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivacyProfile>(Microsoft.Graph.Beta.Models.PrivacyProfile.CreateFromDiscriminatorValue); } },
-                {"provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"securityComplianceNotificationMails", n => { SecurityComplianceNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"securityComplianceNotificationPhones", n => { SecurityComplianceNotificationPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"settings", n => { Settings = n.GetObjectValue<OrganizationSettings>(OrganizationSettings.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"street", n => { Street = n.GetStringValue(); } },
-                {"technicalNotificationMails", n => { TechnicalNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"tenantType", n => { TenantType = n.GetStringValue(); } },
-                {"verifiedDomains", n => { VerifiedDomains = n.GetCollectionOfObjectValues<VerifiedDomain>(VerifiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedPlans", n => { AssignedPlans = n.GetCollectionOfObjectValues<AssignedPlan>(AssignedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "branding", n => { Branding = n.GetObjectValue<OrganizationalBranding>(OrganizationalBranding.CreateFromDiscriminatorValue); } },
+                { "businessPhones", n => { BusinessPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "certificateBasedAuthConfiguration", n => { CertificateBasedAuthConfiguration = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration>(Microsoft.Graph.Beta.Models.CertificateBasedAuthConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateConnectorSetting", n => { CertificateConnectorSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.CertificateConnectorSetting>(Microsoft.Graph.Beta.Models.CertificateConnectorSetting.CreateFromDiscriminatorValue); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "defaultUsageLocation", n => { DefaultUsageLocation = n.GetStringValue(); } },
+                { "directorySizeQuota", n => { DirectorySizeQuota = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectorySizeQuota>(Microsoft.Graph.Beta.Models.DirectorySizeQuota.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isMultipleDataLocationsForServicesEnabled", n => { IsMultipleDataLocationsForServicesEnabled = n.GetBoolValue(); } },
+                { "marketingNotificationEmails", n => { MarketingNotificationEmails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "mobileDeviceManagementAuthority", n => { MobileDeviceManagementAuthority = n.GetEnumValue<MdmAuthority>(); } },
+                { "onPremisesLastPasswordSyncDateTime", n => { OnPremisesLastPasswordSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
+                { "partnerInformation", n => { PartnerInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.PartnerInformation>(Microsoft.Graph.Beta.Models.PartnerInformation.CreateFromDiscriminatorValue); } },
+                { "partnerTenantType", n => { PartnerTenantType = n.GetEnumValue<PartnerTenantType>(); } },
+                { "postalCode", n => { PostalCode = n.GetStringValue(); } },
+                { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
+                { "privacyProfile", n => { PrivacyProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivacyProfile>(Microsoft.Graph.Beta.Models.PrivacyProfile.CreateFromDiscriminatorValue); } },
+                { "provisionedPlans", n => { ProvisionedPlans = n.GetCollectionOfObjectValues<ProvisionedPlan>(ProvisionedPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "securityComplianceNotificationMails", n => { SecurityComplianceNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "securityComplianceNotificationPhones", n => { SecurityComplianceNotificationPhones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<OrganizationSettings>(OrganizationSettings.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "street", n => { Street = n.GetStringValue(); } },
+                { "technicalNotificationMails", n => { TechnicalNotificationMails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "tenantType", n => { TenantType = n.GetStringValue(); } },
+                { "verifiedDomains", n => { VerifiedDomains = n.GetCollectionOfObjectValues<VerifiedDomain>(VerifiedDomain.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

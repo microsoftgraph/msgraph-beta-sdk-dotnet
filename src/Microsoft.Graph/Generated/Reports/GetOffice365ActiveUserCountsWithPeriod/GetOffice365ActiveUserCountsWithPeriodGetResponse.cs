@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod
+{
     #pragma warning disable CS1591
-    public class GetOffice365ActiveUserCountsWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetOffice365ActiveUserCountsWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Office365ActiveUserCounts>? Value {
+        public List<Office365ActiveUserCounts>? Value
+        {
             get { return BackingStore?.Get<List<Office365ActiveUserCounts>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Office365ActiveUserCounts> Value {
+        public List<Office365ActiveUserCounts> Value
+        {
             get { return BackingStore?.Get<List<Office365ActiveUserCounts>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365ActiveUserCounts>(Office365ActiveUserCounts.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Office365ActiveUserCounts>(Office365ActiveUserCounts.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

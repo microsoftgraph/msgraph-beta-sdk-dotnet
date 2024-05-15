@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Simple Setting Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationSimpleSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable 
+    public class DeviceManagementConfigurationSimpleSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable
     {
         /// <summary>Simple Setting Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSimpleSettingValueTemplate? SimpleSettingValueTemplate {
+        public DeviceManagementConfigurationSimpleSettingValueTemplate? SimpleSettingValueTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValueTemplate?>("simpleSettingValueTemplate"); }
             set { BackingStore?.Set("simpleSettingValueTemplate", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSimpleSettingValueTemplate SimpleSettingValueTemplate {
+        public DeviceManagementConfigurationSimpleSettingValueTemplate SimpleSettingValueTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValueTemplate>("simpleSettingValueTemplate"); }
             set { BackingStore?.Set("simpleSettingValueTemplate", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"simpleSettingValueTemplate", n => { SimpleSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationSimpleSettingValueTemplate>(DeviceManagementConfigurationSimpleSettingValueTemplate.CreateFromDiscriminatorValue); } },
+                { "simpleSettingValueTemplate", n => { SimpleSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationSimpleSettingValueTemplate>(DeviceManagementConfigurationSimpleSettingValueTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

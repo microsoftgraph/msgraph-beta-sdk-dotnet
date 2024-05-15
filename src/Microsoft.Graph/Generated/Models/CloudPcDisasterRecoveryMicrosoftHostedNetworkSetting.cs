@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting : CloudPcDisasterRecoveryNetworkSetting, IParsable 
+    public class CloudPcDisasterRecoveryMicrosoftHostedNetworkSetting : CloudPcDisasterRecoveryNetworkSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The regionGroup property</summary>
-        public CloudPcRegionGroup? RegionGroup {
+        public CloudPcRegionGroup? RegionGroup
+        {
             get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
         /// <summary>The regionName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegionName {
+        public string? RegionName
+        {
             get { return BackingStore?.Get<string?>("regionName"); }
             set { BackingStore?.Set("regionName", value); }
         }
 #nullable restore
 #else
-        public string RegionName {
+        public string RegionName
+        {
             get { return BackingStore?.Get<string>("regionName"); }
             set { BackingStore?.Set("regionName", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
-                {"regionName", n => { RegionName = n.GetStringValue(); } },
+                { "regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
+                { "regionName", n => { RegionName = n.GetStringValue(); } },
             };
         }
         /// <summary>

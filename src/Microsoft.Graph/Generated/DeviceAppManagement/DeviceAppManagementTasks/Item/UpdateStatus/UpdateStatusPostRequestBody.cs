@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus
+{
     #pragma warning disable CS1591
-    public class UpdateStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,19 +23,22 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <summary>The note property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note {
+        public string? Note
+        {
             get { return BackingStore?.Get<string?>("note"); }
             set { BackingStore?.Set("note", value); }
         }
 #nullable restore
 #else
-        public string Note {
+        public string Note
+        {
             get { return BackingStore?.Get<string>("note"); }
             set { BackingStore?.Set("note", value); }
         }
 #endif
         /// <summary>Device app management task status.</summary>
-        public DeviceAppManagementTaskStatus? Status {
+        public DeviceAppManagementTaskStatus? Status
+        {
             get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"note", n => { Note = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
             };
         }
         /// <summary>

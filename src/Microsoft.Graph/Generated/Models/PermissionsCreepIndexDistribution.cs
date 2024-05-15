@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PermissionsCreepIndexDistribution : Entity, IParsable 
+    public class PermissionsCreepIndexDistribution : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authorizationSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem {
+        public Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystem?>("authorizationSystem"); }
             set { BackingStore?.Set("authorizationSystem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AuthorizationSystem AuthorizationSystem {
+        public Microsoft.Graph.Beta.Models.AuthorizationSystem AuthorizationSystem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystem"); }
             set { BackingStore?.Set("authorizationSystem", value); }
         }
 #endif
         /// <summary>Defines when the PCI distribution was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The highRiskProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskProfile? HighRiskProfile {
+        public RiskProfile? HighRiskProfile
+        {
             get { return BackingStore?.Get<RiskProfile?>("highRiskProfile"); }
             set { BackingStore?.Set("highRiskProfile", value); }
         }
 #nullable restore
 #else
-        public RiskProfile HighRiskProfile {
+        public RiskProfile HighRiskProfile
+        {
             get { return BackingStore?.Get<RiskProfile>("highRiskProfile"); }
             set { BackingStore?.Set("highRiskProfile", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The lowRiskProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskProfile? LowRiskProfile {
+        public RiskProfile? LowRiskProfile
+        {
             get { return BackingStore?.Get<RiskProfile?>("lowRiskProfile"); }
             set { BackingStore?.Set("lowRiskProfile", value); }
         }
 #nullable restore
 #else
-        public RiskProfile LowRiskProfile {
+        public RiskProfile LowRiskProfile
+        {
             get { return BackingStore?.Get<RiskProfile>("lowRiskProfile"); }
             set { BackingStore?.Set("lowRiskProfile", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mediumRiskProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RiskProfile? MediumRiskProfile {
+        public RiskProfile? MediumRiskProfile
+        {
             get { return BackingStore?.Get<RiskProfile?>("mediumRiskProfile"); }
             set { BackingStore?.Set("mediumRiskProfile", value); }
         }
 #nullable restore
 #else
-        public RiskProfile MediumRiskProfile {
+        public RiskProfile MediumRiskProfile
+        {
             get { return BackingStore?.Get<RiskProfile>("mediumRiskProfile"); }
             set { BackingStore?.Set("mediumRiskProfile", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"highRiskProfile", n => { HighRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
-                {"lowRiskProfile", n => { LowRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
-                {"mediumRiskProfile", n => { MediumRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
+                { "authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "highRiskProfile", n => { HighRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
+                { "lowRiskProfile", n => { LowRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
+                { "mediumRiskProfile", n => { MediumRiskProfile = n.GetObjectValue<RiskProfile>(RiskProfile.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

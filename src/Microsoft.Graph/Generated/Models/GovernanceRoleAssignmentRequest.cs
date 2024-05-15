@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GovernanceRoleAssignmentRequest : Entity, IParsable 
+    public class GovernanceRoleAssignmentRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentState {
+        public string? AssignmentState
+        {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
 #nullable restore
 #else
-        public string AssignmentState {
+        public string AssignmentState
+        {
             get { return BackingStore?.Get<string>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If this is a request for role activation, it represents the id of the eligible assignment being referred; Otherwise, the value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkedEligibleRoleAssignmentId {
+        public string? LinkedEligibleRoleAssignmentId
+        {
             get { return BackingStore?.Get<string?>("linkedEligibleRoleAssignmentId"); }
             set { BackingStore?.Set("linkedEligibleRoleAssignmentId", value); }
         }
 #nullable restore
 #else
-        public string LinkedEligibleRoleAssignmentId {
+        public string LinkedEligibleRoleAssignmentId
+        {
             get { return BackingStore?.Get<string>("linkedEligibleRoleAssignmentId"); }
             set { BackingStore?.Set("linkedEligibleRoleAssignmentId", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A message provided by users and administrators when create the request about why it is needed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #endif
         /// <summary>Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? RequestedDateTime {
+        public DateTimeOffset? RequestedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTime"); }
             set { BackingStore?.Set("requestedDateTime", value); }
         }
         /// <summary>Read-only. The resource that the request aims to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceResource? Resource {
+        public GovernanceResource? Resource
+        {
             get { return BackingStore?.Get<GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public GovernanceResource Resource {
+        public GovernanceResource Resource
+        {
             get { return BackingStore?.Get<GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Required. The unique identifier of the Azure resource that is associated with the role assignment request. Azure resources can include subscriptions, resource groups, virtual machines, and SQL databases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. The role definition that the request aims to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleDefinition? RoleDefinition {
+        public GovernanceRoleDefinition? RoleDefinition
+        {
             get { return BackingStore?.Get<GovernanceRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleDefinition RoleDefinition {
+        public GovernanceRoleDefinition RoleDefinition
+        {
             get { return BackingStore?.Get<GovernanceRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Required. The identifier of the Azure role definition that the role assignment request is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleDefinitionId {
+        public string? RoleDefinitionId
+        {
             get { return BackingStore?.Get<string?>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string RoleDefinitionId {
+        public string RoleDefinitionId
+        {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The schedule object of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSchedule? Schedule {
+        public GovernanceSchedule? Schedule
+        {
             get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public GovernanceSchedule Schedule {
+        public GovernanceSchedule Schedule
+        {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleAssignmentRequestStatus? Status {
+        public GovernanceRoleAssignmentRequestStatus? Status
+        {
             get { return BackingStore?.Get<GovernanceRoleAssignmentRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleAssignmentRequestStatus Status {
+        public GovernanceRoleAssignmentRequestStatus Status
+        {
             get { return BackingStore?.Get<GovernanceRoleAssignmentRequestStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. The user/group principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSubject? Subject {
+        public GovernanceSubject? Subject
+        {
             get { return BackingStore?.Get<GovernanceSubject?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public GovernanceSubject Subject {
+        public GovernanceSubject Subject
+        {
             get { return BackingStore?.Get<GovernanceSubject>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Required. The unique identifier of the principal or subject that the role assignment request is associated with. Principals can be users, groups, or service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectId {
+        public string? SubjectId
+        {
             get { return BackingStore?.Get<string?>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
         }
 #nullable restore
 #else
-        public string SubjectId {
+        public string SubjectId
+        {
             get { return BackingStore?.Get<string>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
         }
@@ -171,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Required. Representing the type of the operation on the role assignment. The possible values are: AdminAdd , UserAdd , AdminUpdate , AdminRemove , UserRemove , UserExtend , AdminExtend , UserRenew , AdminRenew.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -200,19 +226,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
-                {"linkedEligibleRoleAssignmentId", n => { LinkedEligibleRoleAssignmentId = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"roleDefinition", n => { RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
-                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetObjectValue<GovernanceRoleAssignmentRequestStatus>(GovernanceRoleAssignmentRequestStatus.CreateFromDiscriminatorValue); } },
-                {"subject", n => { Subject = n.GetObjectValue<GovernanceSubject>(GovernanceSubject.CreateFromDiscriminatorValue); } },
-                {"subjectId", n => { SubjectId = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "assignmentState", n => { AssignmentState = n.GetStringValue(); } },
+                { "linkedEligibleRoleAssignmentId", n => { LinkedEligibleRoleAssignmentId = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<GovernanceRoleAssignmentRequestStatus>(GovernanceRoleAssignmentRequestStatus.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetObjectValue<GovernanceSubject>(GovernanceSubject.CreateFromDiscriminatorValue); } },
+                { "subjectId", n => { SubjectId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

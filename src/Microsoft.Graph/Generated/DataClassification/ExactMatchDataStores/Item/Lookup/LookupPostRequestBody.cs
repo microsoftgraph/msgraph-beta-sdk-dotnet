@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup {
+namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup
+{
     #pragma warning disable CS1591
-    public class LookupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LookupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key {
+        public string? Key
+        {
             get { return BackingStore?.Get<string?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
 #nullable restore
 #else
-        public string Key {
+        public string Key
+        {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>The resultColumnNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResultColumnNames {
+        public List<string>? ResultColumnNames
+        {
             get { return BackingStore?.Get<List<string>?>("resultColumnNames"); }
             set { BackingStore?.Set("resultColumnNames", value); }
         }
 #nullable restore
 #else
-        public List<string> ResultColumnNames {
+        public List<string> ResultColumnNames
+        {
             get { return BackingStore?.Get<List<string>>("resultColumnNames"); }
             set { BackingStore?.Set("resultColumnNames", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values {
+        public List<string>? Values
+        {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<string> Values {
+        public List<string> Values
+        {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"key", n => { Key = n.GetStringValue(); } },
-                {"resultColumnNames", n => { ResultColumnNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "resultColumnNames", n => { ResultColumnNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

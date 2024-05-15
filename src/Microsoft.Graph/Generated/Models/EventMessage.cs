@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EventMessage : Message, IParsable 
+    public class EventMessage : Message, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The end time of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime {
+        public DateTimeTimeZone? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime {
+        public DateTimeTimeZone EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
@@ -26,61 +29,71 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The event associated with the event message. The assumption for attendees or room resources is that the Calendar Attendant is set to automatically update the calendar with an event when meeting request event messages arrive. Navigation property.  Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Event? Event {
+        public Microsoft.Graph.Beta.Models.Event? Event
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Event?>("event"); }
             set { BackingStore?.Set("event", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Event Event {
+        public Microsoft.Graph.Beta.Models.Event Event
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Event>("event"); }
             set { BackingStore?.Set("event", value); }
         }
 #endif
         /// <summary>Indicates whether the event lasts the entire day. Adjusting this property requires adjusting the startDateTime and endDateTime properties of the event as well.</summary>
-        public bool? IsAllDay {
+        public bool? IsAllDay
+        {
             get { return BackingStore?.Get<bool?>("isAllDay"); }
             set { BackingStore?.Set("isAllDay", value); }
         }
         /// <summary>True if this meeting request is accessible to a delegate, false otherwise. Default is false.</summary>
-        public bool? IsDelegated {
+        public bool? IsDelegated
+        {
             get { return BackingStore?.Get<bool?>("isDelegated"); }
             set { BackingStore?.Set("isDelegated", value); }
         }
         /// <summary>Indicates whether this meeting request has been made out-of-date by a more recent request.</summary>
-        public bool? IsOutOfDate {
+        public bool? IsOutOfDate
+        {
             get { return BackingStore?.Get<bool?>("isOutOfDate"); }
             set { BackingStore?.Set("isOutOfDate", value); }
         }
         /// <summary>The location of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Location? Location {
+        public Microsoft.Graph.Beta.Models.Location? Location
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Location Location {
+        public Microsoft.Graph.Beta.Models.Location Location
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
         /// <summary>The type of event message: none, meetingRequest, meetingCancelled, meetingAccepted, meetingTentativelyAccepted, meetingDeclined.</summary>
-        public Microsoft.Graph.Beta.Models.MeetingMessageType? MeetingMessageType {
+        public Microsoft.Graph.Beta.Models.MeetingMessageType? MeetingMessageType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingMessageType?>("meetingMessageType"); }
             set { BackingStore?.Set("meetingMessageType", value); }
         }
         /// <summary>The recurrence pattern of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PatternedRecurrence? Recurrence {
+        public PatternedRecurrence? Recurrence
+        {
             get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
 #nullable restore
 #else
-        public PatternedRecurrence Recurrence {
+        public PatternedRecurrence Recurrence
+        {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
@@ -88,19 +101,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The start time of the requested meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime {
+        public DateTimeTimeZone? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime {
+        public DateTimeTimeZone StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
         /// <summary>The type of requested meeting: singleInstance, occurence, exception, seriesMaster.</summary>
-        public EventType? Type {
+        public EventType? Type
+        {
             get { return BackingStore?.Get<EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -135,16 +151,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"event", n => { Event = n.GetObjectValue<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue); } },
-                {"isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
-                {"isDelegated", n => { IsDelegated = n.GetBoolValue(); } },
-                {"isOutOfDate", n => { IsOutOfDate = n.GetBoolValue(); } },
-                {"location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue); } },
-                {"meetingMessageType", n => { MeetingMessageType = n.GetEnumValue<MeetingMessageType>(); } },
-                {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
-                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<EventType>(); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "event", n => { Event = n.GetObjectValue<Microsoft.Graph.Beta.Models.Event>(Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue); } },
+                { "isAllDay", n => { IsAllDay = n.GetBoolValue(); } },
+                { "isDelegated", n => { IsDelegated = n.GetBoolValue(); } },
+                { "isOutOfDate", n => { IsOutOfDate = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue); } },
+                { "meetingMessageType", n => { MeetingMessageType = n.GetEnumValue<MeetingMessageType>(); } },
+                { "recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<EventType>(); } },
             };
         }
         /// <summary>

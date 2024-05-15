@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationIdentityMatchingConfiguration : EducationIdentitySynchronizationConfiguration, IParsable 
+    public class EducationIdentityMatchingConfiguration : EducationIdentitySynchronizationConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Mapping between the user account and the options to use to uniquely identify the user to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationIdentityMatchingOptions>? MatchingOptions {
+        public List<EducationIdentityMatchingOptions>? MatchingOptions
+        {
             get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>?>("matchingOptions"); }
             set { BackingStore?.Set("matchingOptions", value); }
         }
 #nullable restore
 #else
-        public List<EducationIdentityMatchingOptions> MatchingOptions {
+        public List<EducationIdentityMatchingOptions> MatchingOptions
+        {
             get { return BackingStore?.Get<List<EducationIdentityMatchingOptions>>("matchingOptions"); }
             set { BackingStore?.Set("matchingOptions", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"matchingOptions", n => { MatchingOptions = n.GetCollectionOfObjectValues<EducationIdentityMatchingOptions>(EducationIdentityMatchingOptions.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchingOptions", n => { MatchingOptions = n.GetCollectionOfObjectValues<EducationIdentityMatchingOptions>(EducationIdentityMatchingOptions.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A device app management task.
     /// </summary>
-    public class DeviceAppManagementTask : Entity, IParsable 
+    public class DeviceAppManagementTask : Entity, IParsable
     {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo {
+        public string? AssignedTo
+        {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public string AssignedTo {
+        public string AssignedTo
+        {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
         /// <summary>Device app management task category.</summary>
-        public DeviceAppManagementTaskCategory? Category {
+        public DeviceAppManagementTaskCategory? Category
+        {
             get { return BackingStore?.Get<DeviceAppManagementTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The created date.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The email address of the creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Creator {
+        public string? Creator
+        {
             get { return BackingStore?.Get<string?>("creator"); }
             set { BackingStore?.Set("creator", value); }
         }
 #nullable restore
 #else
-        public string Creator {
+        public string Creator
+        {
             get { return BackingStore?.Get<string>("creator"); }
             set { BackingStore?.Set("creator", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Notes from the creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatorNotes {
+        public string? CreatorNotes
+        {
             get { return BackingStore?.Get<string?>("creatorNotes"); }
             set { BackingStore?.Set("creatorNotes", value); }
         }
 #nullable restore
 #else
-        public string CreatorNotes {
+        public string CreatorNotes
+        {
             get { return BackingStore?.Get<string>("creatorNotes"); }
             set { BackingStore?.Set("creatorNotes", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -79,29 +90,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The due date.</summary>
-        public DateTimeOffset? DueDateTime {
+        public DateTimeOffset? DueDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
         /// <summary>Device app management task priority.</summary>
-        public DeviceAppManagementTaskPriority? Priority {
+        public DeviceAppManagementTaskPriority? Priority
+        {
             get { return BackingStore?.Get<DeviceAppManagementTaskPriority?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Device app management task status.</summary>
-        public DeviceAppManagementTaskStatus? Status {
+        public DeviceAppManagementTaskStatus? Status
+        {
             get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -130,16 +146,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"category", n => { Category = n.GetEnumValue<DeviceAppManagementTaskCategory>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creator", n => { Creator = n.GetStringValue(); } },
-                {"creatorNotes", n => { CreatorNotes = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
-                {"priority", n => { Priority = n.GetEnumValue<DeviceAppManagementTaskPriority>(); } },
-                {"status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
+                { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetEnumValue<DeviceAppManagementTaskCategory>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "creator", n => { Creator = n.GetStringValue(); } },
+                { "creatorNotes", n => { CreatorNotes = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                { "priority", n => { Priority = n.GetEnumValue<DeviceAppManagementTaskPriority>(); } },
+                { "status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
             };
         }
         /// <summary>

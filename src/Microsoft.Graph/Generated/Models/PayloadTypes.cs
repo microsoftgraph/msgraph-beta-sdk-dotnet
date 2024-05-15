@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PayloadTypes : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PayloadTypes : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RawContent {
+        public string? RawContent
+        {
             get { return BackingStore?.Get<string?>("rawContent"); }
             set { BackingStore?.Set("rawContent", value); }
         }
 #nullable restore
 #else
-        public string RawContent {
+        public string RawContent
+        {
             get { return BackingStore?.Get<string>("rawContent"); }
             set { BackingStore?.Set("rawContent", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VisualProperties? VisualContent {
+        public VisualProperties? VisualContent
+        {
             get { return BackingStore?.Get<VisualProperties?>("visualContent"); }
             set { BackingStore?.Set("visualContent", value); }
         }
 #nullable restore
 #else
-        public VisualProperties VisualContent {
+        public VisualProperties VisualContent
+        {
             get { return BackingStore?.Get<VisualProperties>("visualContent"); }
             set { BackingStore?.Set("visualContent", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"rawContent", n => { RawContent = n.GetStringValue(); } },
-                {"visualContent", n => { VisualContent = n.GetObjectValue<VisualProperties>(VisualProperties.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "rawContent", n => { RawContent = n.GetStringValue(); } },
+                { "visualContent", n => { VisualContent = n.GetObjectValue<VisualProperties>(VisualProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

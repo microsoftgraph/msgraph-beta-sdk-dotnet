@@ -4,53 +4,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that stores the server log collection status.
     /// </summary>
-    public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable 
+    public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable
     {
         /// <summary>The end time of the logs collected</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The time when the log collection is expired</summary>
-        public DateTimeOffset? ExpiryDateTime {
+        public DateTimeOffset? ExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
         /// <summary>The time when the log collection was requested</summary>
-        public DateTimeOffset? RequestDateTime {
+        public DateTimeOffset? RequestDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>ID of the server the log collection is requested upon</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerId {
+        public string? ServerId
+        {
             get { return BackingStore?.Get<string?>("serverId"); }
             set { BackingStore?.Set("serverId", value); }
         }
 #nullable restore
 #else
-        public string ServerId {
+        public string ServerId
+        {
             get { return BackingStore?.Get<string>("serverId"); }
             set { BackingStore?.Set("serverId", value); }
         }
 #endif
         /// <summary>The size of the logs in bytes</summary>
-        public long? SizeInBytes {
+        public long? SizeInBytes
+        {
             get { return BackingStore?.Get<long?>("sizeInBytes"); }
             set { BackingStore?.Set("sizeInBytes", value); }
         }
         /// <summary>The start time of the logs collected</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Enum type that represent the status of log collection</summary>
-        public MicrosoftTunnelLogCollectionStatus? Status {
+        public MicrosoftTunnelLogCollectionStatus? Status
+        {
             get { return BackingStore?.Get<MicrosoftTunnelLogCollectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -72,13 +81,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"serverId", n => { ServerId = n.GetStringValue(); } },
-                {"sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<MicrosoftTunnelLogCollectionStatus>(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                { "serverId", n => { ServerId = n.GetStringValue(); } },
+                { "sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<MicrosoftTunnelLogCollectionStatus>(); } },
             };
         }
         /// <summary>

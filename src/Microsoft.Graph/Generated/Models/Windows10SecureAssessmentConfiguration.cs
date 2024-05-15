@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
     /// </summary>
-    public class Windows10SecureAssessmentConfiguration : DeviceConfiguration, IParsable 
+    public class Windows10SecureAssessmentConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to allow the app from printing during the test.</summary>
-        public bool? AllowPrinting {
+        public bool? AllowPrinting
+        {
             get { return BackingStore?.Get<bool?>("allowPrinting"); }
             set { BackingStore?.Set("allowPrinting", value); }
         }
         /// <summary>Indicates whether or not to allow screen capture capability during a test.</summary>
-        public bool? AllowScreenCapture {
+        public bool? AllowScreenCapture
+        {
             get { return BackingStore?.Get<bool?>("allowScreenCapture"); }
             set { BackingStore?.Set("allowScreenCapture", value); }
         }
         /// <summary>Indicates whether or not to allow text suggestions during the test.</summary>
-        public bool? AllowTextSuggestion {
+        public bool? AllowTextSuggestion
+        {
             get { return BackingStore?.Get<bool?>("allowTextSuggestion"); }
             set { BackingStore?.Set("allowTextSuggestion", value); }
         }
         /// <summary>Specifies the application user model ID of the assessment app launched when a user signs in to a secure assessment with a local guest account. Important notice: this property must be set with localGuestAccountName in order to make the local guest account sign-in experience work properly for secure assessments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssessmentAppUserModelId {
+        public string? AssessmentAppUserModelId
+        {
             get { return BackingStore?.Get<string?>("assessmentAppUserModelId"); }
             set { BackingStore?.Set("assessmentAppUserModelId", value); }
         }
 #nullable restore
 #else
-        public string AssessmentAppUserModelId {
+        public string AssessmentAppUserModelId
+        {
             get { return BackingStore?.Get<string>("assessmentAppUserModelId"); }
             set { BackingStore?.Set("assessmentAppUserModelId", value); }
         }
@@ -42,32 +48,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationAccount {
+        public string? ConfigurationAccount
+        {
             get { return BackingStore?.Get<string?>("configurationAccount"); }
             set { BackingStore?.Set("configurationAccount", value); }
         }
 #nullable restore
 #else
-        public string ConfigurationAccount {
+        public string ConfigurationAccount
+        {
             get { return BackingStore?.Get<string>("configurationAccount"); }
             set { BackingStore?.Set("configurationAccount", value); }
         }
 #endif
         /// <summary>Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.</summary>
-        public SecureAssessmentAccountType? ConfigurationAccountType {
+        public SecureAssessmentAccountType? ConfigurationAccountType
+        {
             get { return BackingStore?.Get<SecureAssessmentAccountType?>("configurationAccountType"); }
             set { BackingStore?.Set("configurationAccountType", value); }
         }
         /// <summary>Url link to an assessment that&apos;s automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LaunchUri {
+        public string? LaunchUri
+        {
             get { return BackingStore?.Get<string?>("launchUri"); }
             set { BackingStore?.Set("launchUri", value); }
         }
 #nullable restore
 #else
-        public string LaunchUri {
+        public string LaunchUri
+        {
             get { return BackingStore?.Get<string>("launchUri"); }
             set { BackingStore?.Set("launchUri", value); }
         }
@@ -75,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies the display text for the local guest account shown on the sign-in screen. Typically is the name of an assessment. When the user clicks the local guest account on the sign-in screen, an assessment app is launched with a specified assessment URL. Secure assessments can only be configured with local guest account sign-in on devices running Windows 10, version 1903 or later. Important notice: this property must be set with assessmentAppUserModelID in order to make the local guest account sign-in experience work properly for secure assessments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalGuestAccountName {
+        public string? LocalGuestAccountName
+        {
             get { return BackingStore?.Get<string?>("localGuestAccountName"); }
             set { BackingStore?.Set("localGuestAccountName", value); }
         }
 #nullable restore
 #else
-        public string LocalGuestAccountName {
+        public string LocalGuestAccountName
+        {
             get { return BackingStore?.Get<string>("localGuestAccountName"); }
             set { BackingStore?.Set("localGuestAccountName", value); }
         }
@@ -111,14 +124,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowPrinting", n => { AllowPrinting = n.GetBoolValue(); } },
-                {"allowScreenCapture", n => { AllowScreenCapture = n.GetBoolValue(); } },
-                {"allowTextSuggestion", n => { AllowTextSuggestion = n.GetBoolValue(); } },
-                {"assessmentAppUserModelId", n => { AssessmentAppUserModelId = n.GetStringValue(); } },
-                {"configurationAccount", n => { ConfigurationAccount = n.GetStringValue(); } },
-                {"configurationAccountType", n => { ConfigurationAccountType = n.GetEnumValue<SecureAssessmentAccountType>(); } },
-                {"launchUri", n => { LaunchUri = n.GetStringValue(); } },
-                {"localGuestAccountName", n => { LocalGuestAccountName = n.GetStringValue(); } },
+                { "allowPrinting", n => { AllowPrinting = n.GetBoolValue(); } },
+                { "allowScreenCapture", n => { AllowScreenCapture = n.GetBoolValue(); } },
+                { "allowTextSuggestion", n => { AllowTextSuggestion = n.GetBoolValue(); } },
+                { "assessmentAppUserModelId", n => { AssessmentAppUserModelId = n.GetStringValue(); } },
+                { "configurationAccount", n => { ConfigurationAccount = n.GetStringValue(); } },
+                { "configurationAccountType", n => { ConfigurationAccountType = n.GetEnumValue<SecureAssessmentAccountType>(); } },
+                { "launchUri", n => { LaunchUri = n.GetStringValue(); } },
+                { "localGuestAccountName", n => { LocalGuestAccountName = n.GetStringValue(); } },
             };
         }
         /// <summary>

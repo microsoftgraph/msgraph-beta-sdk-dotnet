@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class BasicFilter : Filter, IParsable 
+    public class BasicFilter : Filter, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The attribute property</summary>
-        public FilterOptions? Attribute {
+        public FilterOptions? Attribute
+        {
             get { return BackingStore?.Get<FilterOptions?>("attribute"); }
             set { BackingStore?.Set("attribute", value); }
         }
         /// <summary>The condition to filter with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? In {
+        public List<string>? In
+        {
             get { return BackingStore?.Get<List<string>?>("in"); }
             set { BackingStore?.Set("in", value); }
         }
 #nullable restore
 #else
-        public List<string> In {
+        public List<string> In
+        {
             get { return BackingStore?.Get<List<string>>("in"); }
             set { BackingStore?.Set("in", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attribute", n => { Attribute = n.GetEnumValue<FilterOptions>(); } },
-                {"in", n => { In = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "attribute", n => { Attribute = n.GetEnumValue<FilterOptions>(); } },
+                { "in", n => { In = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

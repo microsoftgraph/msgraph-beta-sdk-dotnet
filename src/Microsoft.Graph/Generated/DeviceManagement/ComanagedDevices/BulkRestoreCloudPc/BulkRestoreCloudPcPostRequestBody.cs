@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc
+{
     #pragma warning disable CS1591
-    public class BulkRestoreCloudPcPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BulkRestoreCloudPcPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreClou
         /// <summary>The managedDeviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ManagedDeviceIds {
+        public List<string>? ManagedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ManagedDeviceIds {
+        public List<string> ManagedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
 #endif
         /// <summary>The restorePointDateTime property</summary>
-        public DateTimeOffset? RestorePointDateTime {
+        public DateTimeOffset? RestorePointDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
             set { BackingStore?.Set("restorePointDateTime", value); }
         }
         /// <summary>The timeRange property</summary>
-        public RestoreTimeRange? TimeRange {
+        public RestoreTimeRange? TimeRange
+        {
             get { return BackingStore?.Get<RestoreTimeRange?>("timeRange"); }
             set { BackingStore?.Set("timeRange", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreClou
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
-                {"timeRange", n => { TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
+                { "managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
+                { "timeRange", n => { TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
             };
         }
         /// <summary>

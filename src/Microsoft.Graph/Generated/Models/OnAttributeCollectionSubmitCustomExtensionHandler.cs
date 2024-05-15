@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnAttributeCollectionSubmitCustomExtensionHandler : OnAttributeCollectionSubmitHandler, IParsable 
+    public class OnAttributeCollectionSubmitCustomExtensionHandler : OnAttributeCollectionSubmitHandler, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Configuration regarding properties of the custom extension that can be overwritten per event listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomExtensionOverwriteConfiguration? Configuration {
+        public CustomExtensionOverwriteConfiguration? Configuration
+        {
             get { return BackingStore?.Get<CustomExtensionOverwriteConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public CustomExtensionOverwriteConfiguration Configuration {
+        public CustomExtensionOverwriteConfiguration Configuration
+        {
             get { return BackingStore?.Get<CustomExtensionOverwriteConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionSubmitCustomExtension? CustomExtension {
+        public OnAttributeCollectionSubmitCustomExtension? CustomExtension
+        {
             get { return BackingStore?.Get<OnAttributeCollectionSubmitCustomExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionSubmitCustomExtension CustomExtension {
+        public OnAttributeCollectionSubmitCustomExtension CustomExtension
+        {
             get { return BackingStore?.Get<OnAttributeCollectionSubmitCustomExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<CustomExtensionOverwriteConfiguration>(CustomExtensionOverwriteConfiguration.CreateFromDiscriminatorValue); } },
-                {"customExtension", n => { CustomExtension = n.GetObjectValue<OnAttributeCollectionSubmitCustomExtension>(OnAttributeCollectionSubmitCustomExtension.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<CustomExtensionOverwriteConfiguration>(CustomExtensionOverwriteConfiguration.CreateFromDiscriminatorValue); } },
+                { "customExtension", n => { CustomExtension = n.GetObjectValue<OnAttributeCollectionSubmitCustomExtension>(OnAttributeCollectionSubmitCustomExtension.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

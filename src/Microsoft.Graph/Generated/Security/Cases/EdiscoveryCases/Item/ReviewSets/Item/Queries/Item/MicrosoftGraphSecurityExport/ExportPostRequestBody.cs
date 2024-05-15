@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityExport {
+namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityExport
+{
     #pragma warning disable CS1591
-    public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The azureBlobContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureBlobContainer {
+        public string? AzureBlobContainer
+        {
             get { return BackingStore?.Get<string?>("azureBlobContainer"); }
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
 #nullable restore
 #else
-        public string AzureBlobContainer {
+        public string AzureBlobContainer
+        {
             get { return BackingStore?.Get<string>("azureBlobContainer"); }
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
@@ -33,13 +37,15 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// <summary>The azureBlobToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureBlobToken {
+        public string? AzureBlobToken
+        {
             get { return BackingStore?.Get<string?>("azureBlobToken"); }
             set { BackingStore?.Set("azureBlobToken", value); }
         }
 #nullable restore
 #else
-        public string AzureBlobToken {
+        public string AzureBlobToken
+        {
             get { return BackingStore?.Get<string>("azureBlobToken"); }
             set { BackingStore?.Set("azureBlobToken", value); }
         }
@@ -49,37 +55,43 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The exportOptions property</summary>
-        public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions {
+        public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The exportStructure property</summary>
-        public ExportFileStructure? ExportStructure {
+        public ExportFileStructure? ExportStructure
+        {
             get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The outputName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputName {
+        public string? OutputName
+        {
             get { return BackingStore?.Get<string?>("outputName"); }
             set { BackingStore?.Set("outputName", value); }
         }
 #nullable restore
 #else
-        public string OutputName {
+        public string OutputName
+        {
             get { return BackingStore?.Get<string>("outputName"); }
             set { BackingStore?.Set("outputName", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
-                {"azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
-                {"exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
-                {"outputName", n => { OutputName = n.GetStringValue(); } },
+                { "azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
+                { "azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
+                { "exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                { "outputName", n => { OutputName = n.GetStringValue(); } },
             };
         }
         /// <summary>

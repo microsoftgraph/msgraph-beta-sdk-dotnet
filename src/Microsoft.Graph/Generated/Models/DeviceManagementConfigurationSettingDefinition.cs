@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable 
+    public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessTypes property</summary>
-        public DeviceManagementConfigurationSettingAccessTypes? AccessTypes {
+        public DeviceManagementConfigurationSettingAccessTypes? AccessTypes
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingAccessTypes?>("accessTypes"); }
             set { BackingStore?.Set("accessTypes", value); }
         }
         /// <summary>Details which device setting is applicable on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingApplicability? Applicability {
+        public DeviceManagementConfigurationSettingApplicability? Applicability
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingApplicability?>("applicability"); }
             set { BackingStore?.Set("applicability", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingApplicability Applicability {
+        public DeviceManagementConfigurationSettingApplicability Applicability
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingApplicability>("applicability"); }
             set { BackingStore?.Set("applicability", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Base CSP Path</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseUri {
+        public string? BaseUri
+        {
             get { return BackingStore?.Get<string?>("baseUri"); }
             set { BackingStore?.Set("baseUri", value); }
         }
 #nullable restore
 #else
-        public string BaseUri {
+        public string BaseUri
+        {
             get { return BackingStore?.Get<string>("baseUri"); }
             set { BackingStore?.Set("baseUri", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies the area group under which the setting is configured in a specified configuration service provider (CSP)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryId {
+        public string? CategoryId
+        {
             get { return BackingStore?.Get<string?>("categoryId"); }
             set { BackingStore?.Set("categoryId", value); }
         }
 #nullable restore
 #else
-        public string CategoryId {
+        public string CategoryId
+        {
             get { return BackingStore?.Get<string>("categoryId"); }
             set { BackingStore?.Set("categoryId", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Help text of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HelpText {
+        public string? HelpText
+        {
             get { return BackingStore?.Get<string?>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
 #nullable restore
 #else
-        public string HelpText {
+        public string HelpText
+        {
             get { return BackingStore?.Get<string>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of links more info for the setting can be found at</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InfoUrls {
+        public List<string>? InfoUrls
+        {
             get { return BackingStore?.Get<List<string>?>("infoUrls"); }
             set { BackingStore?.Set("infoUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> InfoUrls {
+        public List<string> InfoUrls
+        {
             get { return BackingStore?.Get<List<string>>("infoUrls"); }
             set { BackingStore?.Set("infoUrls", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Tokens which to search settings on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords {
+        public List<string>? Keywords
+        {
             get { return BackingStore?.Get<List<string>?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #nullable restore
 #else
-        public List<string> Keywords {
+        public List<string> Keywords
+        {
             get { return BackingStore?.Get<List<string>>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates whether the setting is required or not</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingOccurrence? Occurrence {
+        public DeviceManagementConfigurationSettingOccurrence? Occurrence
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingOccurrence?>("occurrence"); }
             set { BackingStore?.Set("occurrence", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingOccurrence Occurrence {
+        public DeviceManagementConfigurationSettingOccurrence Occurrence
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingOccurrence>("occurrence"); }
             set { BackingStore?.Set("occurrence", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Offset CSP Path from Base</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OffsetUri {
+        public string? OffsetUri
+        {
             get { return BackingStore?.Get<string?>("offsetUri"); }
             set { BackingStore?.Set("offsetUri", value); }
         }
 #nullable restore
 #else
-        public string OffsetUri {
+        public string OffsetUri
+        {
             get { return BackingStore?.Get<string>("offsetUri"); }
             set { BackingStore?.Set("offsetUri", value); }
         }
@@ -171,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of referred setting information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationReferredSettingInformation>? ReferredSettingInformationList {
+        public List<DeviceManagementConfigurationReferredSettingInformation>? ReferredSettingInformationList
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationReferredSettingInformation>?>("referredSettingInformationList"); }
             set { BackingStore?.Set("referredSettingInformationList", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationReferredSettingInformation> ReferredSettingInformationList {
+        public List<DeviceManagementConfigurationReferredSettingInformation> ReferredSettingInformationList
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationReferredSettingInformation>>("referredSettingInformationList"); }
             set { BackingStore?.Set("referredSettingInformationList", value); }
         }
@@ -185,43 +211,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Root setting definition if the setting is a child setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootDefinitionId {
+        public string? RootDefinitionId
+        {
             get { return BackingStore?.Get<string?>("rootDefinitionId"); }
             set { BackingStore?.Set("rootDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string RootDefinitionId {
+        public string RootDefinitionId
+        {
             get { return BackingStore?.Get<string>("rootDefinitionId"); }
             set { BackingStore?.Set("rootDefinitionId", value); }
         }
 #endif
         /// <summary>Supported setting types</summary>
-        public DeviceManagementConfigurationSettingUsage? SettingUsage {
+        public DeviceManagementConfigurationSettingUsage? SettingUsage
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
             set { BackingStore?.Set("settingUsage", value); }
         }
         /// <summary>Setting control type representation in the UX</summary>
-        public DeviceManagementConfigurationControlType? UxBehavior {
+        public DeviceManagementConfigurationControlType? UxBehavior
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationControlType?>("uxBehavior"); }
             set { BackingStore?.Set("uxBehavior", value); }
         }
         /// <summary>Item Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #endif
         /// <summary>Supported setting types</summary>
-        public DeviceManagementConfigurationSettingVisibility? Visibility {
+        public DeviceManagementConfigurationSettingVisibility? Visibility
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingVisibility?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
@@ -254,24 +287,24 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessTypes", n => { AccessTypes = n.GetEnumValue<DeviceManagementConfigurationSettingAccessTypes>(); } },
-                {"applicability", n => { Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
-                {"baseUri", n => { BaseUri = n.GetStringValue(); } },
-                {"categoryId", n => { CategoryId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"helpText", n => { HelpText = n.GetStringValue(); } },
-                {"infoUrls", n => { InfoUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"occurrence", n => { Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
-                {"offsetUri", n => { OffsetUri = n.GetStringValue(); } },
-                {"referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"rootDefinitionId", n => { RootDefinitionId = n.GetStringValue(); } },
-                {"settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
-                {"uxBehavior", n => { UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
-                {"visibility", n => { Visibility = n.GetEnumValue<DeviceManagementConfigurationSettingVisibility>(); } },
+                { "accessTypes", n => { AccessTypes = n.GetEnumValue<DeviceManagementConfigurationSettingAccessTypes>(); } },
+                { "applicability", n => { Applicability = n.GetObjectValue<DeviceManagementConfigurationSettingApplicability>(DeviceManagementConfigurationSettingApplicability.CreateFromDiscriminatorValue); } },
+                { "baseUri", n => { BaseUri = n.GetStringValue(); } },
+                { "categoryId", n => { CategoryId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "helpText", n => { HelpText = n.GetStringValue(); } },
+                { "infoUrls", n => { InfoUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "occurrence", n => { Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
+                { "offsetUri", n => { OffsetUri = n.GetStringValue(); } },
+                { "referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rootDefinitionId", n => { RootDefinitionId = n.GetStringValue(); } },
+                { "settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
+                { "uxBehavior", n => { UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<DeviceManagementConfigurationSettingVisibility>(); } },
             };
         }
         /// <summary>

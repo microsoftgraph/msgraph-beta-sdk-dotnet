@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessFlow : Entity, IParsable 
+    public class BusinessFlow : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The customData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomData {
+        public string? CustomData
+        {
             get { return BackingStore?.Get<string?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #nullable restore
 #else
-        public string CustomData {
+        public string CustomData
+        {
             get { return BackingStore?.Get<string>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The deDuplicationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeDuplicationId {
+        public string? DeDuplicationId
+        {
             get { return BackingStore?.Get<string?>("deDuplicationId"); }
             set { BackingStore?.Set("deDuplicationId", value); }
         }
 #nullable restore
 #else
-        public string DeDuplicationId {
+        public string DeDuplicationId
+        {
             get { return BackingStore?.Get<string>("deDuplicationId"); }
             set { BackingStore?.Set("deDuplicationId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernancePolicy? Policy {
+        public GovernancePolicy? Policy
+        {
             get { return BackingStore?.Get<GovernancePolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public GovernancePolicy Policy {
+        public GovernancePolicy Policy
+        {
             get { return BackingStore?.Get<GovernancePolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policyTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyTemplateId {
+        public string? PolicyTemplateId
+        {
             get { return BackingStore?.Get<string?>("policyTemplateId"); }
             set { BackingStore?.Set("policyTemplateId", value); }
         }
 #nullable restore
 #else
-        public string PolicyTemplateId {
+        public string PolicyTemplateId
+        {
             get { return BackingStore?.Get<string>("policyTemplateId"); }
             set { BackingStore?.Set("policyTemplateId", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recordVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecordVersion {
+        public string? RecordVersion
+        {
             get { return BackingStore?.Get<string?>("recordVersion"); }
             set { BackingStore?.Set("recordVersion", value); }
         }
 #nullable restore
 #else
-        public string RecordVersion {
+        public string RecordVersion
+        {
             get { return BackingStore?.Get<string>("recordVersion"); }
             set { BackingStore?.Set("recordVersion", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The schemaId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchemaId {
+        public string? SchemaId
+        {
             get { return BackingStore?.Get<string?>("schemaId"); }
             set { BackingStore?.Set("schemaId", value); }
         }
 #nullable restore
 #else
-        public string SchemaId {
+        public string SchemaId
+        {
             get { return BackingStore?.Get<string>("schemaId"); }
             set { BackingStore?.Set("schemaId", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BusinessFlowSettings? Settings {
+        public BusinessFlowSettings? Settings
+        {
             get { return BackingStore?.Get<BusinessFlowSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public BusinessFlowSettings Settings {
+        public BusinessFlowSettings Settings
+        {
             get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -153,15 +172,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customData", n => { CustomData = n.GetStringValue(); } },
-                {"deDuplicationId", n => { DeDuplicationId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"policy", n => { Policy = n.GetObjectValue<GovernancePolicy>(GovernancePolicy.CreateFromDiscriminatorValue); } },
-                {"policyTemplateId", n => { PolicyTemplateId = n.GetStringValue(); } },
-                {"recordVersion", n => { RecordVersion = n.GetStringValue(); } },
-                {"schemaId", n => { SchemaId = n.GetStringValue(); } },
-                {"settings", n => { Settings = n.GetObjectValue<BusinessFlowSettings>(BusinessFlowSettings.CreateFromDiscriminatorValue); } },
+                { "customData", n => { CustomData = n.GetStringValue(); } },
+                { "deDuplicationId", n => { DeDuplicationId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "policy", n => { Policy = n.GetObjectValue<GovernancePolicy>(GovernancePolicy.CreateFromDiscriminatorValue); } },
+                { "policyTemplateId", n => { PolicyTemplateId = n.GetStringValue(); } },
+                { "recordVersion", n => { RecordVersion = n.GetStringValue(); } },
+                { "schemaId", n => { SchemaId = n.GetStringValue(); } },
+                { "settings", n => { Settings = n.GetObjectValue<BusinessFlowSettings>(BusinessFlowSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

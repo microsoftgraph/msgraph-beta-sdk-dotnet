@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages {
+namespace Microsoft.Graph.Beta.Teams.Item.Channels.GetAllRetainedMessages
+{
     [Obsolete("This class is obsolete. Use GetAllRetainedMessagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAllRetainedMessagesResponse : GetAllRetainedMessagesGetResponse, IParsable 
+    public class GetAllRetainedMessagesResponse : GetAllRetainedMessagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

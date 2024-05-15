@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults {
+namespace Microsoft.Graph.Beta.Sites.Item.InformationProtection.Policy.Labels.EvaluateClassificationResults
+{
     [Obsolete("This class is obsolete. Use EvaluateClassificationResultsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class EvaluateClassificationResultsResponse : EvaluateClassificationResultsPostResponse, IParsable 
+    public class EvaluateClassificationResultsResponse : EvaluateClassificationResultsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

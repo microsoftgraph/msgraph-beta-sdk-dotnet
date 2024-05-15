@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint enforcing the file extension is acceptable for a given setting
     /// </summary>
-    public class DeviceManagementSettingFileConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingFileConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>Acceptable file extensions to upload for this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedExtensions {
+        public List<string>? SupportedExtensions
+        {
             get { return BackingStore?.Get<List<string>?>("supportedExtensions"); }
             set { BackingStore?.Set("supportedExtensions", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedExtensions {
+        public List<string> SupportedExtensions
+        {
             get { return BackingStore?.Get<List<string>>("supportedExtensions"); }
             set { BackingStore?.Set("supportedExtensions", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"supportedExtensions", n => { SupportedExtensions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "supportedExtensions", n => { SupportedExtensions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

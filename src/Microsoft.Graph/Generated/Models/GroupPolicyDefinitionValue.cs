@@ -4,56 +4,65 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The definition value entity stores the value for a single group policy definition.
     /// </summary>
-    public class GroupPolicyDefinitionValue : Entity, IParsable 
+    public class GroupPolicyDefinitionValue : Entity, IParsable
     {
         /// <summary>Group Policy Configuration Type</summary>
-        public GroupPolicyConfigurationType? ConfigurationType {
+        public GroupPolicyConfigurationType? ConfigurationType
+        {
             get { return BackingStore?.Get<GroupPolicyConfigurationType?>("configurationType"); }
             set { BackingStore?.Set("configurationType", value); }
         }
         /// <summary>The date and time the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The associated group policy definition with the value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyDefinition? Definition {
+        public GroupPolicyDefinition? Definition
+        {
             get { return BackingStore?.Get<GroupPolicyDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyDefinition Definition {
+        public GroupPolicyDefinition Definition
+        {
             get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #endif
         /// <summary>Enables or disables the associated group policy definition.</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The associated group policy presentation values with the definition value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyPresentationValue>? PresentationValues {
+        public List<GroupPolicyPresentationValue>? PresentationValues
+        {
             get { return BackingStore?.Get<List<GroupPolicyPresentationValue>?>("presentationValues"); }
             set { BackingStore?.Set("presentationValues", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyPresentationValue> PresentationValues {
+        public List<GroupPolicyPresentationValue> PresentationValues
+        {
             get { return BackingStore?.Get<List<GroupPolicyPresentationValue>>("presentationValues"); }
             set { BackingStore?.Set("presentationValues", value); }
         }
@@ -76,12 +85,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationType", n => { ConfigurationType = n.GetEnumValue<GroupPolicyConfigurationType>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"definition", n => { Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"presentationValues", n => { PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationType", n => { ConfigurationType = n.GetEnumValue<GroupPolicyConfigurationType>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "definition", n => { Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "presentationValues", n => { PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

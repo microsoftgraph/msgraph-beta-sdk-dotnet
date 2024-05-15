@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class TransactionSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TransactionSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of transactions that were blocked.</summary>
-        public int? BlockedCount {
+        public int? BlockedCount
+        {
             get { return BackingStore?.Get<int?>("blockedCount"); }
             set { BackingStore?.Set("blockedCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The total number of transactions.</summary>
-        public int? TotalCount {
+        public int? TotalCount
+        {
             get { return BackingStore?.Get<int?>("totalCount"); }
             set { BackingStore?.Set("totalCount", value); }
         }
         /// <summary>The trafficType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"blockedCount", n => { BlockedCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"totalCount", n => { TotalCount = n.GetIntValue(); } },
-                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "blockedCount", n => { BlockedCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "totalCount", n => { TotalCount = n.GetIntValue(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
             };
         }
         /// <summary>

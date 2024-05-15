@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OAuth2PermissionGrant : Entity, IParsable 
+    public class OAuth2PermissionGrant : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The object id (not appId) of the client service principal for the application that is authorized to act on behalf of a signed-in user when accessing an API. Required. Supports $filter (eq only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId {
+        public string? ClientId
+        {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
 #nullable restore
 #else
-        public string ClientId {
+        public string ClientId
+        {
             get { return BackingStore?.Get<string>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates whether authorization is granted for the client application to impersonate all users or only a specific user. AllPrincipals indicates authorization to impersonate all users. Principal indicates authorization to impersonate a specific user. Consent on behalf of all users can be granted by an administrator. Nonadmin users may be authorized to consent on behalf of themselves in some cases, for some delegated permissions. Required. Supports $filter (eq only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsentType {
+        public string? ConsentType
+        {
             get { return BackingStore?.Get<string?>("consentType"); }
             set { BackingStore?.Set("consentType", value); }
         }
 #nullable restore
 #else
-        public string ConsentType {
+        public string ConsentType
+        {
             get { return BackingStore?.Get<string>("consentType"); }
             set { BackingStore?.Set("consentType", value); }
         }
 #endif
         /// <summary>Currently, the end time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.</summary>
-        public DateTimeOffset? ExpiryTime {
+        public DateTimeOffset? ExpiryTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryTime"); }
             set { BackingStore?.Set("expiryTime", value); }
         }
         /// <summary>The id of the user on behalf of whom the client is authorized to access the resource, when consentType is Principal. If consentType is AllPrincipals this value is null. Required when consentType is Principal. Supports $filter (eq only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrincipalId {
+        public string? PrincipalId
+        {
             get { return BackingStore?.Get<string?>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
 #nullable restore
 #else
-        public string PrincipalId {
+        public string PrincipalId
+        {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The id of the resource service principal to which access is authorized. This identifies the API that the client is authorized to attempt to call on behalf of a signed-in user. Supports $filter (eq only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -73,19 +83,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A space-separated list of the claim values for delegated permissions that should be included in access tokens for the resource application (the API). For example, openid User.Read GroupMember.Read.All. Each claim value should match the value field of one of the delegated permissions defined by the API, listed in the publishedPermissionScopes property of the resource service principal. Must not exceed 3850 characters in length.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope {
+        public string? Scope
+        {
             get { return BackingStore?.Get<string?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public string Scope {
+        public string Scope
+        {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #endif
         /// <summary>Currently, the start time value is ignored, but a value is required when creating an oAuth2PermissionGrant. Required.</summary>
-        public DateTimeOffset? StartTime {
+        public DateTimeOffset? StartTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clientId", n => { ClientId = n.GetStringValue(); } },
-                {"consentType", n => { ConsentType = n.GetStringValue(); } },
-                {"expiryTime", n => { ExpiryTime = n.GetDateTimeOffsetValue(); } },
-                {"principalId", n => { PrincipalId = n.GetStringValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"scope", n => { Scope = n.GetStringValue(); } },
-                {"startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "consentType", n => { ConsentType = n.GetStringValue(); } },
+                { "expiryTime", n => { ExpiryTime = n.GetDateTimeOffsetValue(); } },
+                { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class X509CertificateCombinationConfiguration : AuthenticationCombinationConfiguration, IParsable 
+    public class X509CertificateCombinationConfiguration : AuthenticationCombinationConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of allowed subject key identifier values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedIssuerSkis {
+        public List<string>? AllowedIssuerSkis
+        {
             get { return BackingStore?.Get<List<string>?>("allowedIssuerSkis"); }
             set { BackingStore?.Set("allowedIssuerSkis", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedIssuerSkis {
+        public List<string> AllowedIssuerSkis
+        {
             get { return BackingStore?.Get<List<string>>("allowedIssuerSkis"); }
             set { BackingStore?.Set("allowedIssuerSkis", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of allowed policy OIDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedPolicyOIDs {
+        public List<string>? AllowedPolicyOIDs
+        {
             get { return BackingStore?.Get<List<string>?>("allowedPolicyOIDs"); }
             set { BackingStore?.Set("allowedPolicyOIDs", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedPolicyOIDs {
+        public List<string> AllowedPolicyOIDs
+        {
             get { return BackingStore?.Get<List<string>>("allowedPolicyOIDs"); }
             set { BackingStore?.Set("allowedPolicyOIDs", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedIssuerSkis", n => { AllowedIssuerSkis = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"allowedPolicyOIDs", n => { AllowedPolicyOIDs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowedIssuerSkis", n => { AllowedIssuerSkis = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowedPolicyOIDs", n => { AllowedPolicyOIDs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

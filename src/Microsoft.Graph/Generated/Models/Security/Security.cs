@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class Security : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Security : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The informationProtection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.InformationProtection? InformationProtection {
+        public Microsoft.Graph.Beta.Models.Security.InformationProtection? InformationProtection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.InformationProtection?>("informationProtection"); }
             set { BackingStore?.Set("informationProtection", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.InformationProtection InformationProtection {
+        public Microsoft.Graph.Beta.Models.Security.InformationProtection InformationProtection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.InformationProtection>("informationProtection"); }
             set { BackingStore?.Set("informationProtection", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"informationProtection", n => { InformationProtection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.InformationProtection>(Microsoft.Graph.Beta.Models.Security.InformationProtection.CreateFromDiscriminatorValue); } },
+                { "informationProtection", n => { InformationProtection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.InformationProtection>(Microsoft.Graph.Beta.Models.Security.InformationProtection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

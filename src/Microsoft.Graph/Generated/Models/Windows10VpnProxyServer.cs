@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN Proxy Server.
     /// </summary>
-    public class Windows10VpnProxyServer : VpnProxyServer, IParsable 
+    public class Windows10VpnProxyServer : VpnProxyServer, IParsable
     {
         /// <summary>Bypass proxy server for local address.</summary>
-        public bool? BypassProxyServerForLocalAddress {
+        public bool? BypassProxyServerForLocalAddress
+        {
             get { return BackingStore?.Get<bool?>("bypassProxyServerForLocalAddress"); }
             set { BackingStore?.Set("bypassProxyServerForLocalAddress", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bypassProxyServerForLocalAddress", n => { BypassProxyServerForLocalAddress = n.GetBoolValue(); } },
+                { "bypassProxyServerForLocalAddress", n => { BypassProxyServerForLocalAddress = n.GetBoolValue(); } },
             };
         }
         /// <summary>

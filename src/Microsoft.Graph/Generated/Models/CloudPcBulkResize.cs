@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcBulkResize : CloudPcBulkAction, IParsable 
+    public class CloudPcBulkResize : CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The target service plan ID of the resize configuration with new vCPU and storage size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetServicePlanId {
+        public string? TargetServicePlanId
+        {
             get { return BackingStore?.Get<string?>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
 #nullable restore
 #else
-        public string TargetServicePlanId {
+        public string TargetServicePlanId
+        {
             get { return BackingStore?.Get<string>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
+                { "targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
             };
         }
         /// <summary>

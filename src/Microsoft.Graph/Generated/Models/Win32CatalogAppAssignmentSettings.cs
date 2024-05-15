@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties used to assign an Win32 catalog mobile app to a group.
     /// </summary>
-    public class Win32CatalogAppAssignmentSettings : Win32LobAppAssignmentSettings, IParsable 
+    public class Win32CatalogAppAssignmentSettings : Win32LobAppAssignmentSettings, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="Win32CatalogAppAssignmentSettings"/> and sets the default values.

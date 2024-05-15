@@ -5,59 +5,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MfaCompletionMetric : Entity, IParsable 
+    public class MfaCompletionMetric : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the Microsoft Entra application. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #endif
         /// <summary>Number of users who attempted to sign up. Supports $filter (eq).</summary>
-        public long? AttemptsCount {
+        public long? AttemptsCount
+        {
             get { return BackingStore?.Get<long?>("attemptsCount"); }
             set { BackingStore?.Set("attemptsCount", value); }
         }
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country {
+        public string? Country
+        {
             get { return BackingStore?.Get<string?>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #nullable restore
 #else
-        public string Country {
+        public string Country
+        {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #endif
         /// <summary>The date of the user insight.</summary>
-        public Date? FactDate {
+        public Date? FactDate
+        {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
         /// <summary>The identityProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProvider {
+        public string? IdentityProvider
+        {
             get { return BackingStore?.Get<string?>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
 #nullable restore
 #else
-        public string IdentityProvider {
+        public string IdentityProvider
+        {
             get { return BackingStore?.Get<string>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mfaFailures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MfaFailure>? MfaFailures {
+        public List<MfaFailure>? MfaFailures
+        {
             get { return BackingStore?.Get<List<MfaFailure>?>("mfaFailures"); }
             set { BackingStore?.Set("mfaFailures", value); }
         }
 #nullable restore
 #else
-        public List<MfaFailure> MfaFailures {
+        public List<MfaFailure> MfaFailures
+        {
             get { return BackingStore?.Get<List<MfaFailure>>("mfaFailures"); }
             set { BackingStore?.Set("mfaFailures", value); }
         }
@@ -93,13 +106,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The MFA authentication method used by the customers. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MfaMethod {
+        public string? MfaMethod
+        {
             get { return BackingStore?.Get<string?>("mfaMethod"); }
             set { BackingStore?.Set("mfaMethod", value); }
         }
 #nullable restore
 #else
-        public string MfaMethod {
+        public string MfaMethod
+        {
             get { return BackingStore?.Get<string>("mfaMethod"); }
             set { BackingStore?.Set("mfaMethod", value); }
         }
@@ -107,19 +122,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The platform of the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os {
+        public string? Os
+        {
             get { return BackingStore?.Get<string?>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #nullable restore
 #else
-        public string Os {
+        public string Os
+        {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #endif
         /// <summary>Number of users who signed up successfully. Supports $filter (eq).</summary>
-        public long? SuccessCount {
+        public long? SuccessCount
+        {
             get { return BackingStore?.Get<long?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }
         }
@@ -141,16 +159,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"attemptsCount", n => { AttemptsCount = n.GetLongValue(); } },
-                {"country", n => { Country = n.GetStringValue(); } },
-                {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"mfaFailures", n => { MfaFailures = n.GetCollectionOfObjectValues<MfaFailure>(MfaFailure.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"mfaMethod", n => { MfaMethod = n.GetStringValue(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
-                {"successCount", n => { SuccessCount = n.GetLongValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "attemptsCount", n => { AttemptsCount = n.GetLongValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "mfaFailures", n => { MfaFailures = n.GetCollectionOfObjectValues<MfaFailure>(MfaFailure.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mfaMethod", n => { MfaMethod = n.GetStringValue(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "successCount", n => { SuccessCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

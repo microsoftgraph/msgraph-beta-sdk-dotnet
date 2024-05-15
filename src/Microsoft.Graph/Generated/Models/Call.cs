@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Call : Entity, IParsable 
+    public class Call : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? ActiveModalities {
+        public List<Modality?>? ActiveModalities
+        {
             get { return BackingStore?.Get<List<Modality?>?>("activeModalities"); }
             set { BackingStore?.Set("activeModalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> ActiveModalities {
+        public List<Modality?> ActiveModalities
+        {
             get { return BackingStore?.Get<List<Modality?>>("activeModalities"); }
             set { BackingStore?.Set("activeModalities", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The participant that answered the call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? AnsweredBy {
+        public ParticipantInfo? AnsweredBy
+        {
             get { return BackingStore?.Get<ParticipantInfo?>("answeredBy"); }
             set { BackingStore?.Set("answeredBy", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo AnsweredBy {
+        public ParticipantInfo AnsweredBy
+        {
             get { return BackingStore?.Get<ParticipantInfo>("answeredBy"); }
             set { BackingStore?.Set("answeredBy", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The audioRoutingGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AudioRoutingGroup>? AudioRoutingGroups {
+        public List<AudioRoutingGroup>? AudioRoutingGroups
+        {
             get { return BackingStore?.Get<List<AudioRoutingGroup>?>("audioRoutingGroups"); }
             set { BackingStore?.Set("audioRoutingGroups", value); }
         }
 #nullable restore
 #else
-        public List<AudioRoutingGroup> AudioRoutingGroups {
+        public List<AudioRoutingGroup> AudioRoutingGroups
+        {
             get { return BackingStore?.Get<List<AudioRoutingGroup>>("audioRoutingGroups"); }
             set { BackingStore?.Set("audioRoutingGroups", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The callback URL on which callbacks will be delivered. Must be https.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallbackUri {
+        public string? CallbackUri
+        {
             get { return BackingStore?.Get<string?>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
 #nullable restore
 #else
-        public string CallbackUri {
+        public string CallbackUri
+        {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A unique identifier for all the participant calls in a conference or a unique identifier for two participant calls in a P2P call.  This needs to be copied over from Microsoft.Graph.Call.CallChainId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallChainId {
+        public string? CallChainId
+        {
             get { return BackingStore?.Get<string?>("callChainId"); }
             set { BackingStore?.Set("callChainId", value); }
         }
 #nullable restore
 #else
-        public string CallChainId {
+        public string CallChainId
+        {
             get { return BackingStore?.Get<string>("callChainId"); }
             set { BackingStore?.Set("callChainId", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains the optional features for the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.CallOptions? CallOptions {
+        public Microsoft.Graph.Beta.Models.CallOptions? CallOptions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallOptions?>("callOptions"); }
             set { BackingStore?.Set("callOptions", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.CallOptions CallOptions {
+        public Microsoft.Graph.Beta.Models.CallOptions CallOptions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallOptions>("callOptions"); }
             set { BackingStore?.Set("callOptions", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The routing information on how the call was retargeted. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CallRoute>? CallRoutes {
+        public List<CallRoute>? CallRoutes
+        {
             get { return BackingStore?.Get<List<CallRoute>?>("callRoutes"); }
             set { BackingStore?.Set("callRoutes", value); }
         }
 #nullable restore
 #else
-        public List<CallRoute> CallRoutes {
+        public List<CallRoute> CallRoutes
+        {
             get { return BackingStore?.Get<List<CallRoute>>("callRoutes"); }
             set { BackingStore?.Set("callRoutes", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The chat information. Required information for meeting scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ChatInfo? ChatInfo {
+        public Microsoft.Graph.Beta.Models.ChatInfo? ChatInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatInfo?>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ChatInfo ChatInfo {
+        public Microsoft.Graph.Beta.Models.ChatInfo ChatInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
         }
@@ -124,32 +141,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The contentSharingSessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentSharingSession>? ContentSharingSessions {
+        public List<ContentSharingSession>? ContentSharingSessions
+        {
             get { return BackingStore?.Get<List<ContentSharingSession>?>("contentSharingSessions"); }
             set { BackingStore?.Set("contentSharingSessions", value); }
         }
 #nullable restore
 #else
-        public List<ContentSharingSession> ContentSharingSessions {
+        public List<ContentSharingSession> ContentSharingSessions
+        {
             get { return BackingStore?.Get<List<ContentSharingSession>>("contentSharingSessions"); }
             set { BackingStore?.Set("contentSharingSessions", value); }
         }
 #endif
         /// <summary>The direction of the call. The possible values are incoming or outgoing. Read-only.</summary>
-        public CallDirection? Direction {
+        public CallDirection? Direction
+        {
             get { return BackingStore?.Get<CallDirection?>("direction"); }
             set { BackingStore?.Set("direction", value); }
         }
         /// <summary>The context associated with an incoming call. Read-only. Server generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IncomingContext? IncomingContext {
+        public Microsoft.Graph.Beta.Models.IncomingContext? IncomingContext
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncomingContext?>("incomingContext"); }
             set { BackingStore?.Set("incomingContext", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IncomingContext IncomingContext {
+        public Microsoft.Graph.Beta.Models.IncomingContext IncomingContext
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncomingContext>("incomingContext"); }
             set { BackingStore?.Set("incomingContext", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The media configuration. Required information for creating peer to peer calls or joining meetings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.MediaConfig? MediaConfig {
+        public Microsoft.Graph.Beta.Models.MediaConfig? MediaConfig
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaConfig?>("mediaConfig"); }
             set { BackingStore?.Set("mediaConfig", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.MediaConfig MediaConfig {
+        public Microsoft.Graph.Beta.Models.MediaConfig MediaConfig
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaConfig>("mediaConfig"); }
             set { BackingStore?.Set("mediaConfig", value); }
         }
@@ -171,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. The call media state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CallMediaState? MediaState {
+        public CallMediaState? MediaState
+        {
             get { return BackingStore?.Get<CallMediaState?>("mediaState"); }
             set { BackingStore?.Set("mediaState", value); }
         }
 #nullable restore
 #else
-        public CallMediaState MediaState {
+        public CallMediaState MediaState
+        {
             get { return BackingStore?.Get<CallMediaState>("mediaState"); }
             set { BackingStore?.Set("mediaState", value); }
         }
@@ -185,13 +211,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains the capabilities of a meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.MeetingCapability? MeetingCapability {
+        public Microsoft.Graph.Beta.Models.MeetingCapability? MeetingCapability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingCapability?>("meetingCapability"); }
             set { BackingStore?.Set("meetingCapability", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.MeetingCapability MeetingCapability {
+        public Microsoft.Graph.Beta.Models.MeetingCapability MeetingCapability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingCapability>("meetingCapability"); }
             set { BackingStore?.Set("meetingCapability", value); }
         }
@@ -199,13 +227,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The meeting information. Required information for meeting scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.MeetingInfo? MeetingInfo {
+        public Microsoft.Graph.Beta.Models.MeetingInfo? MeetingInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingInfo?>("meetingInfo"); }
             set { BackingStore?.Set("meetingInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.MeetingInfo MeetingInfo {
+        public Microsoft.Graph.Beta.Models.MeetingInfo MeetingInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingInfo>("meetingInfo"); }
             set { BackingStore?.Set("meetingInfo", value); }
         }
@@ -213,13 +243,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The myParticipantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MyParticipantId {
+        public string? MyParticipantId
+        {
             get { return BackingStore?.Get<string?>("myParticipantId"); }
             set { BackingStore?.Set("myParticipantId", value); }
         }
 #nullable restore
 #else
-        public string MyParticipantId {
+        public string MyParticipantId
+        {
             get { return BackingStore?.Get<string>("myParticipantId"); }
             set { BackingStore?.Set("myParticipantId", value); }
         }
@@ -227,13 +259,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommsOperation>? Operations {
+        public List<CommsOperation>? Operations
+        {
             get { return BackingStore?.Get<List<CommsOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<CommsOperation> Operations {
+        public List<CommsOperation> Operations
+        {
             get { return BackingStore?.Get<List<CommsOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -241,13 +275,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Participant>? Participants {
+        public List<Participant>? Participants
+        {
             get { return BackingStore?.Get<List<Participant>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<Participant> Participants {
+        public List<Participant> Participants
+        {
             get { return BackingStore?.Get<List<Participant>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -255,13 +291,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestedModalities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Modality?>? RequestedModalities {
+        public List<Modality?>? RequestedModalities
+        {
             get { return BackingStore?.Get<List<Modality?>?>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #nullable restore
 #else
-        public List<Modality?> RequestedModalities {
+        public List<Modality?> RequestedModalities
+        {
             get { return BackingStore?.Get<List<Modality?>>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
@@ -269,32 +307,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The resultInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ResultInfo? ResultInfo {
+        public Microsoft.Graph.Beta.Models.ResultInfo? ResultInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo?>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ResultInfo ResultInfo {
+        public Microsoft.Graph.Beta.Models.ResultInfo ResultInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo"); }
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
         /// <summary>The ringingTimeoutInSeconds property</summary>
-        public int? RingingTimeoutInSeconds {
+        public int? RingingTimeoutInSeconds
+        {
             get { return BackingStore?.Get<int?>("ringingTimeoutInSeconds"); }
             set { BackingStore?.Set("ringingTimeoutInSeconds", value); }
         }
         /// <summary>The routingPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoutingPolicy?>? RoutingPolicies {
+        public List<RoutingPolicy?>? RoutingPolicies
+        {
             get { return BackingStore?.Get<List<RoutingPolicy?>?>("routingPolicies"); }
             set { BackingStore?.Set("routingPolicies", value); }
         }
 #nullable restore
 #else
-        public List<RoutingPolicy?> RoutingPolicies {
+        public List<RoutingPolicy?> RoutingPolicies
+        {
             get { return BackingStore?.Get<List<RoutingPolicy?>>("routingPolicies"); }
             set { BackingStore?.Set("routingPolicies", value); }
         }
@@ -302,32 +345,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? Source {
+        public ParticipantInfo? Source
+        {
             get { return BackingStore?.Get<ParticipantInfo?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo Source {
+        public ParticipantInfo Source
+        {
             get { return BackingStore?.Get<ParticipantInfo>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public CallState? State {
+        public CallState? State
+        {
             get { return BackingStore?.Get<CallState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -335,13 +383,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The targets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InvitationParticipantInfo>? Targets {
+        public List<InvitationParticipantInfo>? Targets
+        {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #nullable restore
 #else
-        public List<InvitationParticipantInfo> Targets {
+        public List<InvitationParticipantInfo> Targets
+        {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
@@ -349,13 +399,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -363,13 +415,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The terminationReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TerminationReason {
+        public string? TerminationReason
+        {
             get { return BackingStore?.Get<string?>("terminationReason"); }
             set { BackingStore?.Set("terminationReason", value); }
         }
 #nullable restore
 #else
-        public string TerminationReason {
+        public string TerminationReason
+        {
             get { return BackingStore?.Get<string>("terminationReason"); }
             set { BackingStore?.Set("terminationReason", value); }
         }
@@ -377,13 +431,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The toneInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ToneInfo? ToneInfo {
+        public Microsoft.Graph.Beta.Models.ToneInfo? ToneInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ToneInfo?>("toneInfo"); }
             set { BackingStore?.Set("toneInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ToneInfo ToneInfo {
+        public Microsoft.Graph.Beta.Models.ToneInfo ToneInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ToneInfo>("toneInfo"); }
             set { BackingStore?.Set("toneInfo", value); }
         }
@@ -391,13 +447,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The transcription information for the call. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CallTranscriptionInfo? Transcription {
+        public CallTranscriptionInfo? Transcription
+        {
             get { return BackingStore?.Get<CallTranscriptionInfo?>("transcription"); }
             set { BackingStore?.Set("transcription", value); }
         }
 #nullable restore
 #else
-        public CallTranscriptionInfo Transcription {
+        public CallTranscriptionInfo Transcription
+        {
             get { return BackingStore?.Get<CallTranscriptionInfo>("transcription"); }
             set { BackingStore?.Set("transcription", value); }
         }
@@ -420,36 +478,36 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeModalities", n => { ActiveModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
-                {"answeredBy", n => { AnsweredBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
-                {"audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<AudioRoutingGroup>(AudioRoutingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"callChainId", n => { CallChainId = n.GetStringValue(); } },
-                {"callOptions", n => { CallOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallOptions>(Microsoft.Graph.Beta.Models.CallOptions.CreateFromDiscriminatorValue); } },
-                {"callRoutes", n => { CallRoutes = n.GetCollectionOfObjectValues<CallRoute>(CallRoute.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
-                {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
-                {"contentSharingSessions", n => { ContentSharingSessions = n.GetCollectionOfObjectValues<ContentSharingSession>(ContentSharingSession.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"direction", n => { Direction = n.GetEnumValue<CallDirection>(); } },
-                {"incomingContext", n => { IncomingContext = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncomingContext>(Microsoft.Graph.Beta.Models.IncomingContext.CreateFromDiscriminatorValue); } },
-                {"mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>(Microsoft.Graph.Beta.Models.MediaConfig.CreateFromDiscriminatorValue); } },
-                {"mediaState", n => { MediaState = n.GetObjectValue<CallMediaState>(CallMediaState.CreateFromDiscriminatorValue); } },
-                {"meetingCapability", n => { MeetingCapability = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingCapability>(Microsoft.Graph.Beta.Models.MeetingCapability.CreateFromDiscriminatorValue); } },
-                {"meetingInfo", n => { MeetingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingInfo>(Microsoft.Graph.Beta.Models.MeetingInfo.CreateFromDiscriminatorValue); } },
-                {"myParticipantId", n => { MyParticipantId = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<CommsOperation>(CommsOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
-                {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                {"ringingTimeoutInSeconds", n => { RingingTimeoutInSeconds = n.GetIntValue(); } },
-                {"routingPolicies", n => { RoutingPolicies = n.GetCollectionOfEnumValues<RoutingPolicy>()?.ToList(); } },
-                {"source", n => { Source = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<CallState>(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"terminationReason", n => { TerminationReason = n.GetStringValue(); } },
-                {"toneInfo", n => { ToneInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ToneInfo>(Microsoft.Graph.Beta.Models.ToneInfo.CreateFromDiscriminatorValue); } },
-                {"transcription", n => { Transcription = n.GetObjectValue<CallTranscriptionInfo>(CallTranscriptionInfo.CreateFromDiscriminatorValue); } },
+                { "activeModalities", n => { ActiveModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "answeredBy", n => { AnsweredBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<AudioRoutingGroup>(AudioRoutingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "callChainId", n => { CallChainId = n.GetStringValue(); } },
+                { "callOptions", n => { CallOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallOptions>(Microsoft.Graph.Beta.Models.CallOptions.CreateFromDiscriminatorValue); } },
+                { "callRoutes", n => { CallRoutes = n.GetCollectionOfObjectValues<CallRoute>(CallRoute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
+                { "chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
+                { "contentSharingSessions", n => { ContentSharingSessions = n.GetCollectionOfObjectValues<ContentSharingSession>(ContentSharingSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "direction", n => { Direction = n.GetEnumValue<CallDirection>(); } },
+                { "incomingContext", n => { IncomingContext = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncomingContext>(Microsoft.Graph.Beta.Models.IncomingContext.CreateFromDiscriminatorValue); } },
+                { "mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>(Microsoft.Graph.Beta.Models.MediaConfig.CreateFromDiscriminatorValue); } },
+                { "mediaState", n => { MediaState = n.GetObjectValue<CallMediaState>(CallMediaState.CreateFromDiscriminatorValue); } },
+                { "meetingCapability", n => { MeetingCapability = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingCapability>(Microsoft.Graph.Beta.Models.MeetingCapability.CreateFromDiscriminatorValue); } },
+                { "meetingInfo", n => { MeetingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.MeetingInfo>(Microsoft.Graph.Beta.Models.MeetingInfo.CreateFromDiscriminatorValue); } },
+                { "myParticipantId", n => { MyParticipantId = n.GetStringValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<CommsOperation>(CommsOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
+                { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
+                { "ringingTimeoutInSeconds", n => { RingingTimeoutInSeconds = n.GetIntValue(); } },
+                { "routingPolicies", n => { RoutingPolicies = n.GetCollectionOfEnumValues<RoutingPolicy>()?.ToList(); } },
+                { "source", n => { Source = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<CallState>(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "terminationReason", n => { TerminationReason = n.GetStringValue(); } },
+                { "toneInfo", n => { ToneInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ToneInfo>(Microsoft.Graph.Beta.Models.ToneInfo.CreateFromDiscriminatorValue); } },
+                { "transcription", n => { Transcription = n.GetObjectValue<CallTranscriptionInfo>(CallTranscriptionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationalActivityDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EducationalActivityDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Shortened name of the degree or program (example: PhD, MBA)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Abbreviation {
+        public string? Abbreviation
+        {
             get { return BackingStore?.Get<string?>("abbreviation"); }
             set { BackingStore?.Set("abbreviation", value); }
         }
 #nullable restore
 #else
-        public string Abbreviation {
+        public string Abbreviation
+        {
             get { return BackingStore?.Get<string>("abbreviation"); }
             set { BackingStore?.Set("abbreviation", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Extracurricular activities undertaken alongside the program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Activities {
+        public List<string>? Activities
+        {
             get { return BackingStore?.Get<List<string>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<string> Activities {
+        public List<string> Activities
+        {
             get { return BackingStore?.Get<List<string>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Any awards or honors associated with the program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Awards {
+        public List<string>? Awards
+        {
             get { return BackingStore?.Get<List<string>?>("awards"); }
             set { BackingStore?.Set("awards", value); }
         }
 #nullable restore
 #else
-        public List<string> Awards {
+        public List<string> Awards
+        {
             get { return BackingStore?.Get<List<string>>("awards"); }
             set { BackingStore?.Set("awards", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Short description of the program provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Long-form name of the program that the user has provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Majors and minors associated with the program. (if applicable)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FieldsOfStudy {
+        public List<string>? FieldsOfStudy
+        {
             get { return BackingStore?.Get<List<string>?>("fieldsOfStudy"); }
             set { BackingStore?.Set("fieldsOfStudy", value); }
         }
 #nullable restore
 #else
-        public List<string> FieldsOfStudy {
+        public List<string> FieldsOfStudy
+        {
             get { return BackingStore?.Get<List<string>>("fieldsOfStudy"); }
             set { BackingStore?.Set("fieldsOfStudy", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The final grade, class, GPA or score.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Grade {
+        public string? Grade
+        {
             get { return BackingStore?.Get<string?>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
 #nullable restore
 #else
-        public string Grade {
+        public string Grade
+        {
             get { return BackingStore?.Get<string>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Additional notes the user has provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes {
+        public string? Notes
+        {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public string Notes {
+        public string Notes
+        {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Link to the degree or program page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -183,16 +205,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"abbreviation", n => { Abbreviation = n.GetStringValue(); } },
-                {"activities", n => { Activities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"awards", n => { Awards = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"fieldsOfStudy", n => { FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"grade", n => { Grade = n.GetStringValue(); } },
-                {"notes", n => { Notes = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "abbreviation", n => { Abbreviation = n.GetStringValue(); } },
+                { "activities", n => { Activities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "awards", n => { Awards = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "fieldsOfStudy", n => { FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "grade", n => { Grade = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

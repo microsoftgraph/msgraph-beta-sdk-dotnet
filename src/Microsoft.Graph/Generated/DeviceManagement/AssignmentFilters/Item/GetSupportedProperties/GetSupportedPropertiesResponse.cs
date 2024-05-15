@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties
+{
     [Obsolete("This class is obsolete. Use GetSupportedPropertiesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSupportedPropertiesResponse : GetSupportedPropertiesGetResponse, IParsable 
+    public class GetSupportedPropertiesResponse : GetSupportedPropertiesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ZebraFotaArtifactCollectionResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class ZebraFotaArtifactCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ZebraFotaArtifact>? Value {
+        public List<ZebraFotaArtifact>? Value
+        {
             get { return BackingStore?.Get<List<ZebraFotaArtifact>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ZebraFotaArtifact> Value {
+        public List<ZebraFotaArtifact> Value
+        {
             get { return BackingStore?.Get<List<ZebraFotaArtifact>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ZebraFotaArtifact>(ZebraFotaArtifact.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ZebraFotaArtifact>(ZebraFotaArtifact.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

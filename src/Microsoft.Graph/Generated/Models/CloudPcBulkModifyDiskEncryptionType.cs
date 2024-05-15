@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcBulkModifyDiskEncryptionType : CloudPcBulkAction, IParsable 
+    public class CloudPcBulkModifyDiskEncryptionType : CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The diskEncryptionType property</summary>
-        public CloudPcDiskEncryptionType? DiskEncryptionType {
+        public CloudPcDiskEncryptionType? DiskEncryptionType
+        {
             get { return BackingStore?.Get<CloudPcDiskEncryptionType?>("diskEncryptionType"); }
             set { BackingStore?.Set("diskEncryptionType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"diskEncryptionType", n => { DiskEncryptionType = n.GetEnumValue<CloudPcDiskEncryptionType>(); } },
+                { "diskEncryptionType", n => { DiskEncryptionType = n.GetEnumValue<CloudPcDiskEncryptionType>(); } },
             };
         }
         /// <summary>

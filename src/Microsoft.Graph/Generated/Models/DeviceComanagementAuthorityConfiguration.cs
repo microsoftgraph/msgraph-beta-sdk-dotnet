@@ -4,33 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows 10 Co-Management Authority Page Configuration
     /// </summary>
-    public class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration, IParsable 
+    public class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationManagerAgentCommandLineArgument {
+        public string? ConfigurationManagerAgentCommandLineArgument
+        {
             get { return BackingStore?.Get<string?>("configurationManagerAgentCommandLineArgument"); }
             set { BackingStore?.Set("configurationManagerAgentCommandLineArgument", value); }
         }
 #nullable restore
 #else
-        public string ConfigurationManagerAgentCommandLineArgument {
+        public string ConfigurationManagerAgentCommandLineArgument
+        {
             get { return BackingStore?.Get<string>("configurationManagerAgentCommandLineArgument"); }
             set { BackingStore?.Set("configurationManagerAgentCommandLineArgument", value); }
         }
 #endif
         /// <summary>CoManagement Authority configuration InstallConfigurationManagerAgent</summary>
-        public bool? InstallConfigurationManagerAgent {
+        public bool? InstallConfigurationManagerAgent
+        {
             get { return BackingStore?.Get<bool?>("installConfigurationManagerAgent"); }
             set { BackingStore?.Set("installConfigurationManagerAgent", value); }
         }
         /// <summary>CoManagement Authority configuration ManagedDeviceAuthority</summary>
-        public int? ManagedDeviceAuthority {
+        public int? ManagedDeviceAuthority
+        {
             get { return BackingStore?.Get<int?>("managedDeviceAuthority"); }
             set { BackingStore?.Set("managedDeviceAuthority", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationManagerAgentCommandLineArgument", n => { ConfigurationManagerAgentCommandLineArgument = n.GetStringValue(); } },
-                {"installConfigurationManagerAgent", n => { InstallConfigurationManagerAgent = n.GetBoolValue(); } },
-                {"managedDeviceAuthority", n => { ManagedDeviceAuthority = n.GetIntValue(); } },
+                { "configurationManagerAgentCommandLineArgument", n => { ConfigurationManagerAgentCommandLineArgument = n.GetStringValue(); } },
+                { "installConfigurationManagerAgent", n => { InstallConfigurationManagerAgent = n.GetBoolValue(); } },
+                { "managedDeviceAuthority", n => { ManagedDeviceAuthority = n.GetIntValue(); } },
             };
         }
         /// <summary>

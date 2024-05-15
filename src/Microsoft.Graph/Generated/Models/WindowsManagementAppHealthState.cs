@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows management app health state entity.
     /// </summary>
-    public class WindowsManagementAppHealthState : Entity, IParsable 
+    public class WindowsManagementAppHealthState : Entity, IParsable
     {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -27,38 +30,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Windows 10 OS version of the device on which Windows management app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceOSVersion {
+        public string? DeviceOSVersion
+        {
             get { return BackingStore?.Get<string?>("deviceOSVersion"); }
             set { BackingStore?.Set("deviceOSVersion", value); }
         }
 #nullable restore
 #else
-        public string DeviceOSVersion {
+        public string DeviceOSVersion
+        {
             get { return BackingStore?.Get<string>("deviceOSVersion"); }
             set { BackingStore?.Set("deviceOSVersion", value); }
         }
 #endif
         /// <summary>Indicates health state of the Windows management app.</summary>
-        public Microsoft.Graph.Beta.Models.HealthState? HealthState {
+        public Microsoft.Graph.Beta.Models.HealthState? HealthState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HealthState?>("healthState"); }
             set { BackingStore?.Set("healthState", value); }
         }
         /// <summary>Windows management app installed version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstalledVersion {
+        public string? InstalledVersion
+        {
             get { return BackingStore?.Get<string?>("installedVersion"); }
             set { BackingStore?.Set("installedVersion", value); }
         }
 #nullable restore
 #else
-        public string InstalledVersion {
+        public string InstalledVersion
+        {
             get { return BackingStore?.Get<string>("installedVersion"); }
             set { BackingStore?.Set("installedVersion", value); }
         }
 #endif
         /// <summary>Windows management app last check-in time.</summary>
-        public DateTimeOffset? LastCheckInDateTime {
+        public DateTimeOffset? LastCheckInDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
             set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
@@ -80,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceOSVersion", n => { DeviceOSVersion = n.GetStringValue(); } },
-                {"healthState", n => { HealthState = n.GetEnumValue<HealthState>(); } },
-                {"installedVersion", n => { InstalledVersion = n.GetStringValue(); } },
-                {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceOSVersion", n => { DeviceOSVersion = n.GetStringValue(); } },
+                { "healthState", n => { HealthState = n.GetEnumValue<HealthState>(); } },
+                { "installedVersion", n => { InstalledVersion = n.GetStringValue(); } },
+                { "lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

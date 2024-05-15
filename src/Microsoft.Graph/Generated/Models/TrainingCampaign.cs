@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TrainingCampaign : Entity, IParsable 
+    public class TrainingCampaign : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Details about the schedule and current status for a training campaign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.CampaignSchedule? CampaignSchedule {
+        public Microsoft.Graph.Beta.Models.CampaignSchedule? CampaignSchedule
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CampaignSchedule?>("campaignSchedule"); }
             set { BackingStore?.Set("campaignSchedule", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.CampaignSchedule CampaignSchedule {
+        public Microsoft.Graph.Beta.Models.CampaignSchedule CampaignSchedule
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CampaignSchedule>("campaignSchedule"); }
             set { BackingStore?.Set("campaignSchedule", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who created the training campaign</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? CreatedBy {
+        public EmailIdentity? CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity CreatedBy {
+        public EmailIdentity CreatedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Date and time of creation of the training campaign.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name of the training campaign. Supports $filter and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details about the end user notification setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.EndUserNotificationSetting? EndUserNotificationSetting {
+        public Microsoft.Graph.Beta.Models.EndUserNotificationSetting? EndUserNotificationSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndUserNotificationSetting?>("endUserNotificationSetting"); }
             set { BackingStore?.Set("endUserNotificationSetting", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.EndUserNotificationSetting EndUserNotificationSetting {
+        public Microsoft.Graph.Beta.Models.EndUserNotificationSetting EndUserNotificationSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndUserNotificationSetting>("endUserNotificationSetting"); }
             set { BackingStore?.Set("endUserNotificationSetting", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Users excluded from the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccountTargetContent? ExcludedAccountTarget {
+        public AccountTargetContent? ExcludedAccountTarget
+        {
             get { return BackingStore?.Get<AccountTargetContent?>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
 #nullable restore
 #else
-        public AccountTargetContent ExcludedAccountTarget {
+        public AccountTargetContent ExcludedAccountTarget
+        {
             get { return BackingStore?.Get<AccountTargetContent>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Users targeted in the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccountTargetContent? IncludedAccountTarget {
+        public AccountTargetContent? IncludedAccountTarget
+        {
             get { return BackingStore?.Get<AccountTargetContent?>("includedAccountTarget"); }
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
 #nullable restore
 #else
-        public AccountTargetContent IncludedAccountTarget {
+        public AccountTargetContent IncludedAccountTarget
+        {
             get { return BackingStore?.Get<AccountTargetContent>("includedAccountTarget"); }
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
@@ -115,32 +131,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who most recently modified the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailIdentity? LastModifiedBy {
+        public EmailIdentity? LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public EmailIdentity LastModifiedBy {
+        public EmailIdentity LastModifiedBy
+        {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Date and time of the most recent modification of the training campaign.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Report of the training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingCampaignReport? Report {
+        public TrainingCampaignReport? Report
+        {
             get { return BackingStore?.Get<TrainingCampaignReport?>("report"); }
             set { BackingStore?.Set("report", value); }
         }
 #nullable restore
 #else
-        public TrainingCampaignReport Report {
+        public TrainingCampaignReport Report
+        {
             get { return BackingStore?.Get<TrainingCampaignReport>("report"); }
             set { BackingStore?.Set("report", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details about the training settings for a training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TrainingSetting? TrainingSetting {
+        public Microsoft.Graph.Beta.Models.TrainingSetting? TrainingSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingSetting?>("trainingSetting"); }
             set { BackingStore?.Set("trainingSetting", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TrainingSetting TrainingSetting {
+        public Microsoft.Graph.Beta.Models.TrainingSetting TrainingSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingSetting>("trainingSetting"); }
             set { BackingStore?.Set("trainingSetting", value); }
         }
@@ -177,18 +200,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"campaignSchedule", n => { CampaignSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.CampaignSchedule>(Microsoft.Graph.Beta.Models.CampaignSchedule.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"endUserNotificationSetting", n => { EndUserNotificationSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.EndUserNotificationSetting>(Microsoft.Graph.Beta.Models.EndUserNotificationSetting.CreateFromDiscriminatorValue); } },
-                {"excludedAccountTarget", n => { ExcludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
-                {"includedAccountTarget", n => { IncludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"report", n => { Report = n.GetObjectValue<TrainingCampaignReport>(TrainingCampaignReport.CreateFromDiscriminatorValue); } },
-                {"trainingSetting", n => { TrainingSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingSetting>(Microsoft.Graph.Beta.Models.TrainingSetting.CreateFromDiscriminatorValue); } },
+                { "campaignSchedule", n => { CampaignSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.CampaignSchedule>(Microsoft.Graph.Beta.Models.CampaignSchedule.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endUserNotificationSetting", n => { EndUserNotificationSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.EndUserNotificationSetting>(Microsoft.Graph.Beta.Models.EndUserNotificationSetting.CreateFromDiscriminatorValue); } },
+                { "excludedAccountTarget", n => { ExcludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
+                { "includedAccountTarget", n => { IncludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "report", n => { Report = n.GetObjectValue<TrainingCampaignReport>(TrainingCampaignReport.CreateFromDiscriminatorValue); } },
+                { "trainingSetting", n => { TrainingSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.TrainingSetting>(Microsoft.Graph.Beta.Models.TrainingSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

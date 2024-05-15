@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsRemoteConnection.SummarizeDeviceRemoteConnectionWithSummarizeBy
+{
     [Obsolete("This class is obsolete. Use SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable 
+    public class SummarizeDeviceRemoteConnectionWithSummarizeByResponse : SummarizeDeviceRemoteConnectionWithSummarizeByGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

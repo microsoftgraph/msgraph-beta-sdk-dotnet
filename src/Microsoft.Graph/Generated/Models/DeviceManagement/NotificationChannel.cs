@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class NotificationChannel : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NotificationChannel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannelType? NotificationChannelType {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannelType? NotificationChannelType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannelType?>("notificationChannelType"); }
             set { BackingStore?.Set("notificationChannelType", value); }
         }
         /// <summary>Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NotificationReceiver>? NotificationReceivers {
+        public List<NotificationReceiver>? NotificationReceivers
+        {
             get { return BackingStore?.Get<List<NotificationReceiver>?>("notificationReceivers"); }
             set { BackingStore?.Set("notificationReceivers", value); }
         }
 #nullable restore
 #else
-        public List<NotificationReceiver> NotificationReceivers {
+        public List<NotificationReceiver> NotificationReceivers
+        {
             get { return BackingStore?.Get<List<NotificationReceiver>>("notificationReceivers"); }
             set { BackingStore?.Set("notificationReceivers", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"notificationChannelType", n => { NotificationChannelType = n.GetEnumValue<NotificationChannelType>(); } },
-                {"notificationReceivers", n => { NotificationReceivers = n.GetCollectionOfObjectValues<NotificationReceiver>(NotificationReceiver.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "notificationChannelType", n => { NotificationChannelType = n.GetEnumValue<NotificationChannelType>(); } },
+                { "notificationReceivers", n => { NotificationReceivers = n.GetCollectionOfObjectValues<NotificationReceiver>(NotificationReceiver.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

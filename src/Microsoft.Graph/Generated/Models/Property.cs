@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Property : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Property : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The aliases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Aliases {
+        public List<string>? Aliases
+        {
             get { return BackingStore?.Get<List<string>?>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
 #nullable restore
 #else
-        public List<string> Aliases {
+        public List<string> Aliases
+        {
             get { return BackingStore?.Get<List<string>>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
@@ -32,35 +36,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isQueryable property</summary>
-        public bool? IsQueryable {
+        public bool? IsQueryable
+        {
             get { return BackingStore?.Get<bool?>("isQueryable"); }
             set { BackingStore?.Set("isQueryable", value); }
         }
         /// <summary>The isRefinable property</summary>
-        public bool? IsRefinable {
+        public bool? IsRefinable
+        {
             get { return BackingStore?.Get<bool?>("isRefinable"); }
             set { BackingStore?.Set("isRefinable", value); }
         }
         /// <summary>The isRetrievable property</summary>
-        public bool? IsRetrievable {
+        public bool? IsRetrievable
+        {
             get { return BackingStore?.Get<bool?>("isRetrievable"); }
             set { BackingStore?.Set("isRetrievable", value); }
         }
         /// <summary>The isSearchable property</summary>
-        public bool? IsSearchable {
+        public bool? IsSearchable
+        {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Label?>? Labels {
+        public List<Label?>? Labels
+        {
             get { return BackingStore?.Get<List<Label?>?>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
 #nullable restore
 #else
-        public List<Label?> Labels {
+        public List<Label?> Labels
+        {
             get { return BackingStore?.Get<List<Label?>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
@@ -68,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -82,19 +94,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public PropertyType? Type {
+        public PropertyType? Type
+        {
             get { return BackingStore?.Get<PropertyType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -124,15 +139,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
-                {"isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
-                {"isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
-                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },
+                { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
+                { "isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
+                { "isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
+                { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                { "labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<PropertyType>(); } },
             };
         }
         /// <summary>

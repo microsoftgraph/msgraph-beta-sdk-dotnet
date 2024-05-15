@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing the defintion for a complex setting
     /// </summary>
-    public class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable 
+    public class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable
     {
         /// <summary>The definitions of each property of the complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PropertyDefinitionIds {
+        public List<string>? PropertyDefinitionIds
+        {
             get { return BackingStore?.Get<List<string>?>("propertyDefinitionIds"); }
             set { BackingStore?.Set("propertyDefinitionIds", value); }
         }
 #nullable restore
 #else
-        public List<string> PropertyDefinitionIds {
+        public List<string> PropertyDefinitionIds
+        {
             get { return BackingStore?.Get<List<string>>("propertyDefinitionIds"); }
             set { BackingStore?.Set("propertyDefinitionIds", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"propertyDefinitionIds", n => { PropertyDefinitionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "propertyDefinitionIds", n => { PropertyDefinitionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AzureRoleDefinition : Entity, IParsable 
+    public class AzureRoleDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Scopes at which the Azure role can be assigned. For more information about common patterns, see Understand Azure role definitions: AssignableScopes. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AssignableScopes {
+        public List<string>? AssignableScopes
+        {
             get { return BackingStore?.Get<List<string>?>("assignableScopes"); }
             set { BackingStore?.Set("assignableScopes", value); }
         }
 #nullable restore
 #else
-        public List<string> AssignableScopes {
+        public List<string> AssignableScopes
+        {
             get { return BackingStore?.Get<List<string>>("assignableScopes"); }
             set { BackingStore?.Set("assignableScopes", value); }
         }
 #endif
         /// <summary>The azureRoleDefinitionType property</summary>
-        public Microsoft.Graph.Beta.Models.AzureRoleDefinitionType? AzureRoleDefinitionType {
+        public Microsoft.Graph.Beta.Models.AzureRoleDefinitionType? AzureRoleDefinitionType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureRoleDefinitionType?>("azureRoleDefinitionType"); }
             set { BackingStore?.Set("azureRoleDefinitionType", value); }
         }
         /// <summary>Name of the Azure role. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of an Azure role defined by Microsoft Azure. Alternate key. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignableScopes", n => { AssignableScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"azureRoleDefinitionType", n => { AzureRoleDefinitionType = n.GetEnumValue<AzureRoleDefinitionType>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "assignableScopes", n => { AssignableScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "azureRoleDefinitionType", n => { AzureRoleDefinitionType = n.GetEnumValue<AzureRoleDefinitionType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

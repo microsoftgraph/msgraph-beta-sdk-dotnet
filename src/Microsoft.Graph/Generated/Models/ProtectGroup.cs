@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProtectGroup : LabelActionBase, IParsable 
+    public class ProtectGroup : LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allowEmailFromGuestUsers property</summary>
-        public bool? AllowEmailFromGuestUsers {
+        public bool? AllowEmailFromGuestUsers
+        {
             get { return BackingStore?.Get<bool?>("allowEmailFromGuestUsers"); }
             set { BackingStore?.Set("allowEmailFromGuestUsers", value); }
         }
         /// <summary>The allowGuestUsers property</summary>
-        public bool? AllowGuestUsers {
+        public bool? AllowGuestUsers
+        {
             get { return BackingStore?.Get<bool?>("allowGuestUsers"); }
             set { BackingStore?.Set("allowGuestUsers", value); }
         }
         /// <summary>The privacy property</summary>
-        public GroupPrivacy? Privacy {
+        public GroupPrivacy? Privacy
+        {
             get { return BackingStore?.Get<GroupPrivacy?>("privacy"); }
             set { BackingStore?.Set("privacy", value); }
         }
@@ -49,9 +53,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowEmailFromGuestUsers", n => { AllowEmailFromGuestUsers = n.GetBoolValue(); } },
-                {"allowGuestUsers", n => { AllowGuestUsers = n.GetBoolValue(); } },
-                {"privacy", n => { Privacy = n.GetEnumValue<GroupPrivacy>(); } },
+                { "allowEmailFromGuestUsers", n => { AllowEmailFromGuestUsers = n.GetBoolValue(); } },
+                { "allowGuestUsers", n => { AllowGuestUsers = n.GetBoolValue(); } },
+                { "privacy", n => { Privacy = n.GetEnumValue<GroupPrivacy>(); } },
             };
         }
         /// <summary>

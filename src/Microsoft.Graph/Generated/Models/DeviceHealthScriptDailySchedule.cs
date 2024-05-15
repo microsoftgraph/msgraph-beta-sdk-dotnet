@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device health script daily schedule.
     /// </summary>
-    public class DeviceHealthScriptDailySchedule : DeviceHealthScriptTimeSchedule, IParsable 
+    public class DeviceHealthScriptDailySchedule : DeviceHealthScriptTimeSchedule, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DeviceHealthScriptDailySchedule"/> and sets the default values.

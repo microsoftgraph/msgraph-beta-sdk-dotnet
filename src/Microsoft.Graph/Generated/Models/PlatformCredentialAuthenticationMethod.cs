@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlatformCredentialAuthenticationMethod : AuthenticationMethod, IParsable 
+    public class PlatformCredentialAuthenticationMethod : AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time that this Platform Credential Key was registered.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The registered device on which this Platform Credential resides. Supports $expand. When you get a user&apos;s Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Device? Device {
+        public Microsoft.Graph.Beta.Models.Device? Device
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Device Device {
+        public Microsoft.Graph.Beta.Models.Device Device
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
             set { BackingStore?.Set("device", value); }
         }
@@ -31,24 +35,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the device on which Platform Credential is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Key strength of this Platform Credential key. Possible values are: normal, weak, unknown.</summary>
-        public AuthenticationMethodKeyStrength? KeyStrength {
+        public AuthenticationMethodKeyStrength? KeyStrength
+        {
             get { return BackingStore?.Get<AuthenticationMethodKeyStrength?>("keyStrength"); }
             set { BackingStore?.Set("keyStrength", value); }
         }
         /// <summary>Platform on which this Platform Credential key is present. Possible values are: unknown, windows, macOS,iOS, android, linux.</summary>
-        public AuthenticationMethodPlatform? Platform {
+        public AuthenticationMethodPlatform? Platform
+        {
             get { return BackingStore?.Get<AuthenticationMethodPlatform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"keyStrength", n => { KeyStrength = n.GetEnumValue<AuthenticationMethodKeyStrength>(); } },
-                {"platform", n => { Platform = n.GetEnumValue<AuthenticationMethodPlatform>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "keyStrength", n => { KeyStrength = n.GetEnumValue<AuthenticationMethodKeyStrength>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<AuthenticationMethodPlatform>(); } },
             };
         }
         /// <summary>

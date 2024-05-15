@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
+namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
+{
     /// <summary>
     /// Provides operations to manage the inboundFlows property of the microsoft.graph.industryData.industryDataRoot entity.
     /// </summary>
-    public class InboundFlowItemRequestBuilder : BaseRequestBuilder 
+    public class InboundFlowItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the dataConnector property of the microsoft.graph.industryData.inboundFlow entity.</summary>
         public DataConnectorRequestBuilder DataConnector
@@ -44,8 +45,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
         {
         }
         /// <summary>
-        /// Delete an inboundFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-delete?view=graph-rest-beta" />
+        /// Delete an inboundFileFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,13 +63,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of an inboundFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InboundFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,13 +87,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an inboundFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-update?view=graph-rest-beta" />
+        /// Update the properties of an inboundFileFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InboundFlow"/></returns>
         /// <param name="body">The request body</param>
@@ -112,12 +113,12 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<InboundFlow>(requestInfo, InboundFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an inboundFlow object.
+        /// Delete an inboundFileFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +137,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
+        /// Read the properties and relationships of an inboundFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an inboundFlow object.
+        /// Update the properties of an inboundFileFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -189,11 +190,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InboundFlowItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class InboundFlowItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
+        /// Read the properties and relationships of an inboundFlow object.
         /// </summary>
         public class InboundFlowItemRequestBuilderGetQueryParameters 
         {
@@ -222,14 +223,14 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InboundFlowItemRequestBuilderGetRequestConfiguration : RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters> 
+        public class InboundFlowItemRequestBuilderGetRequestConfiguration : RequestConfiguration<InboundFlowItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InboundFlowItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class InboundFlowItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

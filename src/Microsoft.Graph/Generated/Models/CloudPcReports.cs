@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcReports : Entity, IParsable 
+    public class CloudPcReports : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The export jobs created for downloading reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcExportJob>? ExportJobs {
+        public List<CloudPcExportJob>? ExportJobs
+        {
             get { return BackingStore?.Get<List<CloudPcExportJob>?>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcExportJob> ExportJobs {
+        public List<CloudPcExportJob> ExportJobs
+        {
             get { return BackingStore?.Get<List<CloudPcExportJob>>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<CloudPcExportJob>(CloudPcExportJob.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<CloudPcExportJob>(CloudPcExportJob.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

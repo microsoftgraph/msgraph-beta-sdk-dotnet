@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StrongAuthenticationDetail : Entity, IParsable 
+    public class StrongAuthenticationDetail : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The encryptedPinHashHistory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? EncryptedPinHashHistory {
+        public byte[]? EncryptedPinHashHistory
+        {
             get { return BackingStore?.Get<byte[]?>("encryptedPinHashHistory"); }
             set { BackingStore?.Set("encryptedPinHashHistory", value); }
         }
 #nullable restore
 #else
-        public byte[] EncryptedPinHashHistory {
+        public byte[] EncryptedPinHashHistory
+        {
             get { return BackingStore?.Get<byte[]>("encryptedPinHashHistory"); }
             set { BackingStore?.Set("encryptedPinHashHistory", value); }
         }
 #endif
         /// <summary>The proofupTime property</summary>
-        public long? ProofupTime {
+        public long? ProofupTime
+        {
             get { return BackingStore?.Get<long?>("proofupTime"); }
             set { BackingStore?.Set("proofupTime", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"encryptedPinHashHistory", n => { EncryptedPinHashHistory = n.GetByteArrayValue(); } },
-                {"proofupTime", n => { ProofupTime = n.GetLongValue(); } },
+                { "encryptedPinHashHistory", n => { EncryptedPinHashHistory = n.GetByteArrayValue(); } },
+                { "proofupTime", n => { ProofupTime = n.GetLongValue(); } },
             };
         }
         /// <summary>

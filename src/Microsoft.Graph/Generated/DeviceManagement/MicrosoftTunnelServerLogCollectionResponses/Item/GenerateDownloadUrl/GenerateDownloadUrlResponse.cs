@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl {
+namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl
+{
     [Obsolete("This class is obsolete. Use GenerateDownloadUrlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GenerateDownloadUrlResponse : GenerateDownloadUrlPostResponse, IParsable 
+    public class GenerateDownloadUrlResponse : GenerateDownloadUrlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,23 +5,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcRemoteActionCapability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the state of the supported action capability to perform a Cloud PC remote action. Possible values are: enabled, disabled. Default value is enabled.</summary>
-        public Microsoft.Graph.Beta.Models.ActionCapability? ActionCapability {
+        public Microsoft.Graph.Beta.Models.ActionCapability? ActionCapability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionCapability?>("actionCapability"); }
             set { BackingStore?.Set("actionCapability", value); }
         }
         /// <summary>The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
-        public CloudPcRemoteActionName? ActionName {
+        public CloudPcRemoteActionName? ActionName
+        {
             get { return BackingStore?.Get<CloudPcRemoteActionName?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -30,13 +34,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionCapability", n => { ActionCapability = n.GetEnumValue<ActionCapability>(); } },
-                {"actionName", n => { ActionName = n.GetEnumValue<CloudPcRemoteActionName>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "actionCapability", n => { ActionCapability = n.GetEnumValue<ActionCapability>(); } },
+                { "actionName", n => { ActionName = n.GetEnumValue<CloudPcRemoteActionName>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

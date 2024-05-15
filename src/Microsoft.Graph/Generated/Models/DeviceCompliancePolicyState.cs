@@ -4,65 +4,75 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Compliance Policy State for a given device.
     /// </summary>
-    public class DeviceCompliancePolicyState : Entity, IParsable 
+    public class DeviceCompliancePolicyState : Entity, IParsable
     {
         /// <summary>The name of the policy for this policyBase</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType {
+        public PolicyPlatformType? PlatformType
+        {
             get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>Count of how many setting a policy holds</summary>
-        public int? SettingCount {
+        public int? SettingCount
+        {
             get { return BackingStore?.Get<int?>("settingCount"); }
             set { BackingStore?.Set("settingCount", value); }
         }
         /// <summary>The settingStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicySettingState>? SettingStates {
+        public List<DeviceCompliancePolicySettingState>? SettingStates
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>?>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicySettingState> SettingStates {
+        public List<DeviceCompliancePolicySettingState> SettingStates
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ComplianceStatus? State {
+        public ComplianceStatus? State
+        {
             get { return BackingStore?.Get<ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -70,19 +80,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Principal Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
         /// <summary>The version of the policy</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -104,14 +117,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"settingCount", n => { SettingCount = n.GetIntValue(); } },
-                {"settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "settingCount", n => { SettingCount = n.GetIntValue(); } },
+                { "settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

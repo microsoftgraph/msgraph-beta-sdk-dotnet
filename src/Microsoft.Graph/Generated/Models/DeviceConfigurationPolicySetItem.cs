@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for device configuration PolicySetItem.
     /// </summary>
-    public class DeviceConfigurationPolicySetItem : PolicySetItem, IParsable 
+    public class DeviceConfigurationPolicySetItem : PolicySetItem, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DeviceConfigurationPolicySetItem"/> and sets the default values.

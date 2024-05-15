@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class DeviceHealthStatus : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class DeviceHealthStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The blueScreenCount property</summary>
-        public int? BlueScreenCount {
+        public int? BlueScreenCount
+        {
             get { return BackingStore?.Get<int?>("blueScreenCount"); }
             set { BackingStore?.Set("blueScreenCount", value); }
         }
         /// <summary>The bootTotalDurationInSeconds property</summary>
-        public double? BootTotalDurationInSeconds {
+        public double? BootTotalDurationInSeconds
+        {
             get { return BackingStore?.Get<double?>("bootTotalDurationInSeconds"); }
             set { BackingStore?.Set("bootTotalDurationInSeconds", value); }
         }
         /// <summary>The deviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceMake property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceMake {
+        public string? DeviceMake
+        {
             get { return BackingStore?.Get<string?>("deviceMake"); }
             set { BackingStore?.Set("deviceMake", value); }
         }
 #nullable restore
 #else
-        public string DeviceMake {
+        public string DeviceMake
+        {
             get { return BackingStore?.Get<string>("deviceMake"); }
             set { BackingStore?.Set("deviceMake", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceModel {
+        public string? DeviceModel
+        {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
 #nullable restore
 #else
-        public string DeviceModel {
+        public string DeviceModel
+        {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -78,32 +89,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The healthStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HealthStatus {
+        public string? HealthStatus
+        {
             get { return BackingStore?.Get<string?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
 #nullable restore
 #else
-        public string HealthStatus {
+        public string HealthStatus
+        {
             get { return BackingStore?.Get<string>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
 #endif
         /// <summary>The lastUpdatedDateTime property</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The osVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
@@ -111,37 +127,43 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The primaryDiskType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryDiskType {
+        public string? PrimaryDiskType
+        {
             get { return BackingStore?.Get<string?>("primaryDiskType"); }
             set { BackingStore?.Set("primaryDiskType", value); }
         }
 #nullable restore
 #else
-        public string PrimaryDiskType {
+        public string PrimaryDiskType
+        {
             get { return BackingStore?.Get<string>("primaryDiskType"); }
             set { BackingStore?.Set("primaryDiskType", value); }
         }
 #endif
         /// <summary>The restartCount property</summary>
-        public int? RestartCount {
+        public int? RestartCount
+        {
             get { return BackingStore?.Get<int?>("restartCount"); }
             set { BackingStore?.Set("restartCount", value); }
         }
         /// <summary>The startupPerformanceScore property</summary>
-        public double? StartupPerformanceScore {
+        public double? StartupPerformanceScore
+        {
             get { return BackingStore?.Get<double?>("startupPerformanceScore"); }
             set { BackingStore?.Set("startupPerformanceScore", value); }
         }
         /// <summary>The tenantDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -149,13 +171,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -163,13 +187,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The topProcesses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TopProcesses {
+        public string? TopProcesses
+        {
             get { return BackingStore?.Get<string?>("topProcesses"); }
             set { BackingStore?.Set("topProcesses", value); }
         }
 #nullable restore
 #else
-        public string TopProcesses {
+        public string TopProcesses
+        {
             get { return BackingStore?.Get<string>("topProcesses"); }
             set { BackingStore?.Set("topProcesses", value); }
         }
@@ -192,21 +218,21 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"blueScreenCount", n => { BlueScreenCount = n.GetIntValue(); } },
-                {"bootTotalDurationInSeconds", n => { BootTotalDurationInSeconds = n.GetDoubleValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceMake", n => { DeviceMake = n.GetStringValue(); } },
-                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"primaryDiskType", n => { PrimaryDiskType = n.GetStringValue(); } },
-                {"restartCount", n => { RestartCount = n.GetIntValue(); } },
-                {"startupPerformanceScore", n => { StartupPerformanceScore = n.GetDoubleValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"topProcesses", n => { TopProcesses = n.GetStringValue(); } },
+                { "blueScreenCount", n => { BlueScreenCount = n.GetIntValue(); } },
+                { "bootTotalDurationInSeconds", n => { BootTotalDurationInSeconds = n.GetDoubleValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceMake", n => { DeviceMake = n.GetStringValue(); } },
+                { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "primaryDiskType", n => { PrimaryDiskType = n.GetStringValue(); } },
+                { "restartCount", n => { RestartCount = n.GetIntValue(); } },
+                { "startupPerformanceScore", n => { StartupPerformanceScore = n.GetDoubleValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "topProcesses", n => { TopProcesses = n.GetStringValue(); } },
             };
         }
         /// <summary>

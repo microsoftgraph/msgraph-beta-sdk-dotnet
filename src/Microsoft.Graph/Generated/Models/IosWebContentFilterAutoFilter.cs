@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an iOS Web Content Filter setting type, which enables iOS automatic filter feature and allows for additional URL access control. When constructed with no property values, the iOS device will enable the automatic filter regardless.
     /// </summary>
-    public class IosWebContentFilterAutoFilter : IosWebContentFilterBase, IParsable 
+    public class IosWebContentFilterAutoFilter : IosWebContentFilterBase, IParsable
     {
         /// <summary>Additional URLs allowed for access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedUrls {
+        public List<string>? AllowedUrls
+        {
             get { return BackingStore?.Get<List<string>?>("allowedUrls"); }
             set { BackingStore?.Set("allowedUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedUrls {
+        public List<string> AllowedUrls
+        {
             get { return BackingStore?.Get<List<string>>("allowedUrls"); }
             set { BackingStore?.Set("allowedUrls", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Additional URLs blocked for access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BlockedUrls {
+        public List<string>? BlockedUrls
+        {
             get { return BackingStore?.Get<List<string>?>("blockedUrls"); }
             set { BackingStore?.Set("blockedUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> BlockedUrls {
+        public List<string> BlockedUrls
+        {
             get { return BackingStore?.Get<List<string>>("blockedUrls"); }
             set { BackingStore?.Set("blockedUrls", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedUrls", n => { AllowedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"blockedUrls", n => { BlockedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowedUrls", n => { AllowedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "blockedUrls", n => { BlockedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.HasPayloadLinks
+{
     [Obsolete("This class is obsolete. Use HasPayloadLinksPostResponse instead.")]
     #pragma warning disable CS1591
-    public class HasPayloadLinksResponse : HasPayloadLinksPostResponse, IParsable 
+    public class HasPayloadLinksResponse : HasPayloadLinksPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

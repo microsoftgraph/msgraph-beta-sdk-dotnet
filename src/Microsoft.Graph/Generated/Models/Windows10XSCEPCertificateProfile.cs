@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows X SCEP Certificate configuration profile
     /// </summary>
-    public class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile, IParsable 
+    public class Windows10XSCEPCertificateProfile : Windows10XCertificateProfile, IParsable
     {
         /// <summary>CertificateStore types</summary>
-        public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
+        public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
             set { BackingStore?.Set("certificateStore", value); }
         }
         /// <summary>Certificate Validity Period Options.</summary>
-        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
+        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
             set { BackingStore?.Set("certificateValidityPeriodScale", value); }
         }
         /// <summary>Value for the Certificate Validity Period</summary>
-        public int? CertificateValidityPeriodValue {
+        public int? CertificateValidityPeriodValue
+        {
             get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
             set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>Extended Key Usage (EKU) settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages {
+        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages {
+        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
@@ -42,52 +48,61 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>SCEP Hash Algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HashAlgorithms?>? HashAlgorithm {
+        public List<HashAlgorithms?>? HashAlgorithm
+        {
             get { return BackingStore?.Get<List<HashAlgorithms?>?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
 #nullable restore
 #else
-        public List<HashAlgorithms?> HashAlgorithm {
+        public List<HashAlgorithms?> HashAlgorithm
+        {
             get { return BackingStore?.Get<List<HashAlgorithms?>>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
 #endif
         /// <summary>Key Size Options.</summary>
-        public Microsoft.Graph.Beta.Models.KeySize? KeySize {
+        public Microsoft.Graph.Beta.Models.KeySize? KeySize
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Storage Provider (KSP) Import Options.</summary>
-        public KeyStorageProviderOption? KeyStorageProvider {
+        public KeyStorageProviderOption? KeyStorageProvider
+        {
             get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }
             set { BackingStore?.Set("keyStorageProvider", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage {
+        public KeyUsages? KeyUsage
+        {
             get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate renewal threshold percentage</summary>
-        public int? RenewalThresholdPercentage {
+        public int? RenewalThresholdPercentage
+        {
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Trusted Root Certificate ID</summary>
-        public Guid? RootCertificateId {
+        public Guid? RootCertificateId
+        {
             get { return BackingStore?.Get<Guid?>("rootCertificateId"); }
             set { BackingStore?.Set("rootCertificateId", value); }
         }
         /// <summary>SCEP Server Url(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScepServerUrls {
+        public List<string>? ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>?>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> ScepServerUrls {
+        public List<string> ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
@@ -95,13 +110,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom AAD Attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Windows10XCustomSubjectAlternativeName>? SubjectAlternativeNameFormats {
+        public List<Windows10XCustomSubjectAlternativeName>? SubjectAlternativeNameFormats
+        {
             get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>?>("subjectAlternativeNameFormats"); }
             set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
 #nullable restore
 #else
-        public List<Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats {
+        public List<Windows10XCustomSubjectAlternativeName> SubjectAlternativeNameFormats
+        {
             get { return BackingStore?.Get<List<Windows10XCustomSubjectAlternativeName>>("subjectAlternativeNameFormats"); }
             set { BackingStore?.Set("subjectAlternativeNameFormats", value); }
         }
@@ -109,13 +126,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectNameFormatString {
+        public string? SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectNameFormatString {
+        public string SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
@@ -145,19 +164,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
-                {"certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
-                {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                {"extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hashAlgorithm", n => { HashAlgorithm = n.GetCollectionOfEnumValues<HashAlgorithms>()?.ToList(); } },
-                {"keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                {"keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
-                {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
-                {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                {"rootCertificateId", n => { RootCertificateId = n.GetGuidValue(); } },
-                {"scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"subjectAlternativeNameFormats", n => { SubjectAlternativeNameFormats = n.GetCollectionOfObjectValues<Windows10XCustomSubjectAlternativeName>(Windows10XCustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
+                { "certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
+                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hashAlgorithm", n => { HashAlgorithm = n.GetCollectionOfEnumValues<HashAlgorithms>()?.ToList(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
+                { "keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
+                { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
+                { "rootCertificateId", n => { RootCertificateId = n.GetGuidValue(); } },
+                { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "subjectAlternativeNameFormats", n => { SubjectAlternativeNameFormats = n.GetCollectionOfObjectValues<Windows10XCustomSubjectAlternativeName>(Windows10XCustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
         }
         /// <summary>

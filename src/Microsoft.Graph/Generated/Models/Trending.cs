@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Trending : Entity, IParsable 
+    public class Trending : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Used for navigating to the trending document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Entity? Resource {
+        public Entity? Resource
+        {
             get { return BackingStore?.Get<Entity?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public Entity Resource {
+        public Entity Resource
+        {
             get { return BackingStore?.Get<Entity>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Reference properties of the trending document, such as the url and type of the document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ResourceReference? ResourceReference {
+        public Microsoft.Graph.Beta.Models.ResourceReference? ResourceReference
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference?>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ResourceReference ResourceReference {
+        public Microsoft.Graph.Beta.Models.ResourceReference ResourceReference
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference"); }
             set { BackingStore?.Set("resourceReference", value); }
         }
@@ -45,19 +51,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Properties that you can use to visualize the document in your experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ResourceVisualization? ResourceVisualization {
+        public Microsoft.Graph.Beta.Models.ResourceVisualization? ResourceVisualization
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization?>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ResourceVisualization ResourceVisualization {
+        public Microsoft.Graph.Beta.Models.ResourceVisualization ResourceVisualization
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
         }
 #endif
         /// <summary>Value indicating how much the document is currently trending. The larger the number, the more the document is currently trending around the user (the more relevant it is). Returned documents are sorted by this value.</summary>
-        public double? Weight {
+        public double? Weight
+        {
             get { return BackingStore?.Get<double?>("weight"); }
             set { BackingStore?.Set("weight", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
-                {"resourceReference", n => { ResourceReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResourceReference>(Microsoft.Graph.Beta.Models.ResourceReference.CreateFromDiscriminatorValue); } },
-                {"resourceVisualization", n => { ResourceVisualization = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResourceVisualization>(Microsoft.Graph.Beta.Models.ResourceVisualization.CreateFromDiscriminatorValue); } },
-                {"weight", n => { Weight = n.GetDoubleValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
+                { "resourceReference", n => { ResourceReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResourceReference>(Microsoft.Graph.Beta.Models.ResourceReference.CreateFromDiscriminatorValue); } },
+                { "resourceVisualization", n => { ResourceVisualization = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResourceVisualization>(Microsoft.Graph.Beta.Models.ResourceVisualization.CreateFromDiscriminatorValue); } },
+                { "weight", n => { Weight = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

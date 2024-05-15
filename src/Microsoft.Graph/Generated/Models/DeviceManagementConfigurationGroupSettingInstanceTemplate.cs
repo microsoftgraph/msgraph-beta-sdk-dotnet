@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Group Setting Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationGroupSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable 
+    public class DeviceManagementConfigurationGroupSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable
     {
         /// <summary>Group Setting Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationGroupSettingValueTemplate? GroupSettingValueTemplate {
+        public DeviceManagementConfigurationGroupSettingValueTemplate? GroupSettingValueTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationGroupSettingValueTemplate?>("groupSettingValueTemplate"); }
             set { BackingStore?.Set("groupSettingValueTemplate", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationGroupSettingValueTemplate GroupSettingValueTemplate {
+        public DeviceManagementConfigurationGroupSettingValueTemplate GroupSettingValueTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationGroupSettingValueTemplate>("groupSettingValueTemplate"); }
             set { BackingStore?.Set("groupSettingValueTemplate", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupSettingValueTemplate", n => { GroupSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationGroupSettingValueTemplate>(DeviceManagementConfigurationGroupSettingValueTemplate.CreateFromDiscriminatorValue); } },
+                { "groupSettingValueTemplate", n => { GroupSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationGroupSettingValueTemplate>(DeviceManagementConfigurationGroupSettingValueTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

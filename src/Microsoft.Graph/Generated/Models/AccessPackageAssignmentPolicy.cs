@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentPolicy : Entity, IParsable 
+    public class AccessPackageAssignmentPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessPackage? AccessPackage {
+        public Microsoft.Graph.Beta.Models.AccessPackage? AccessPackage
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage?>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
+        public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackage>("accessPackage"); }
             set { BackingStore?.Set("accessPackage", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The accessPackageCatalog property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessPackageCatalog? AccessPackageCatalog {
+        public Microsoft.Graph.Beta.Models.AccessPackageCatalog? AccessPackageCatalog
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog?>("accessPackageCatalog"); }
             set { BackingStore?.Set("accessPackageCatalog", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog {
+        public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog>("accessPackageCatalog"); }
             set { BackingStore?.Set("accessPackageCatalog", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessPackageId {
+        public string? AccessPackageId
+        {
             get { return BackingStore?.Get<string?>("accessPackageId"); }
             set { BackingStore?.Set("accessPackageId", value); }
         }
 #nullable restore
 #else
-        public string AccessPackageId {
+        public string AccessPackageId
+        {
             get { return BackingStore?.Get<string>("accessPackageId"); }
             set { BackingStore?.Set("accessPackageId", value); }
         }
@@ -54,51 +61,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Who must review, and how often, the assignments to the access package from this policy. This property is null if reviews aren&apos;t required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AssignmentReviewSettings? AccessReviewSettings {
+        public AssignmentReviewSettings? AccessReviewSettings
+        {
             get { return BackingStore?.Get<AssignmentReviewSettings?>("accessReviewSettings"); }
             set { BackingStore?.Set("accessReviewSettings", value); }
         }
 #nullable restore
 #else
-        public AssignmentReviewSettings AccessReviewSettings {
+        public AssignmentReviewSettings AccessReviewSettings
+        {
             get { return BackingStore?.Get<AssignmentReviewSettings>("accessReviewSettings"); }
             set { BackingStore?.Set("accessReviewSettings", value); }
         }
 #endif
         /// <summary>Indicates whether a user can extend the access package assignment duration after approval.</summary>
-        public bool? CanExtend {
+        public bool? CanExtend
+        {
             get { return BackingStore?.Get<bool?>("canExtend"); }
             set { BackingStore?.Set("canExtend", value); }
         }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy {
+        public string? CreatedBy
+        {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public string CreatedBy {
+        public string CreatedBy
+        {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionHandler>? CustomExtensionHandlers {
+        public List<CustomExtensionHandler>? CustomExtensionHandlers
+        {
             get { return BackingStore?.Get<List<CustomExtensionHandler>?>("customExtensionHandlers"); }
             set { BackingStore?.Set("customExtensionHandlers", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionHandler> CustomExtensionHandlers {
+        public List<CustomExtensionHandler> CustomExtensionHandlers
+        {
             get { return BackingStore?.Get<List<CustomExtensionHandler>>("customExtensionHandlers"); }
             set { BackingStore?.Set("customExtensionHandlers", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of stages when to execute one or more custom access package workflow extensions. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomExtensionStageSetting>? CustomExtensionStageSettings {
+        public List<CustomExtensionStageSetting>? CustomExtensionStageSettings
+        {
             get { return BackingStore?.Get<List<CustomExtensionStageSetting>?>("customExtensionStageSettings"); }
             set { BackingStore?.Set("customExtensionStageSettings", value); }
         }
 #nullable restore
 #else
-        public List<CustomExtensionStageSetting> CustomExtensionStageSettings {
+        public List<CustomExtensionStageSetting> CustomExtensionStageSettings
+        {
             get { return BackingStore?.Get<List<CustomExtensionStageSetting>>("customExtensionStageSettings"); }
             set { BackingStore?.Set("customExtensionStageSettings", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -134,56 +153,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the policy. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The number of days in which assignments from this policy last until they&apos;re expired.</summary>
-        public int? DurationInDays {
+        public int? DurationInDays
+        {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>The expiration date for assignments created in this policy. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The modifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy {
+        public string? ModifiedBy
+        {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #nullable restore
 #else
-        public string ModifiedBy {
+        public string ModifiedBy
+        {
             get { return BackingStore?.Get<string>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ModifiedDateTime {
+        public DateTimeOffset? ModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>Questions that are posed to the  requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageQuestion>? Questions {
+        public List<AccessPackageQuestion>? Questions
+        {
             get { return BackingStore?.Get<List<AccessPackageQuestion>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageQuestion> Questions {
+        public List<AccessPackageQuestion> Questions
+        {
             get { return BackingStore?.Get<List<AccessPackageQuestion>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
@@ -191,13 +219,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Who must approve requests for access package in this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ApprovalSettings? RequestApprovalSettings {
+        public ApprovalSettings? RequestApprovalSettings
+        {
             get { return BackingStore?.Get<ApprovalSettings?>("requestApprovalSettings"); }
             set { BackingStore?.Set("requestApprovalSettings", value); }
         }
 #nullable restore
 #else
-        public ApprovalSettings RequestApprovalSettings {
+        public ApprovalSettings RequestApprovalSettings
+        {
             get { return BackingStore?.Get<ApprovalSettings>("requestApprovalSettings"); }
             set { BackingStore?.Set("requestApprovalSettings", value); }
         }
@@ -205,13 +235,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Who can request this access package from this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RequestorSettings? RequestorSettings {
+        public Microsoft.Graph.Beta.Models.RequestorSettings? RequestorSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestorSettings?>("requestorSettings"); }
             set { BackingStore?.Set("requestorSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings {
+        public Microsoft.Graph.Beta.Models.RequestorSettings RequestorSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestorSettings>("requestorSettings"); }
             set { BackingStore?.Set("requestorSettings", value); }
         }
@@ -219,13 +251,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Settings for verifiable credentials set up through the Microsoft Entra Verified I D service. These settings represent the verifiable credentials that a requestor of an access package in this policy can present to be assigned the access package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings? VerifiableCredentialSettings {
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings? VerifiableCredentialSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings?>("verifiableCredentialSettings"); }
             set { BackingStore?.Set("verifiableCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings VerifiableCredentialSettings {
+        public Microsoft.Graph.Beta.Models.VerifiableCredentialSettings VerifiableCredentialSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings>("verifiableCredentialSettings"); }
             set { BackingStore?.Set("verifiableCredentialSettings", value); }
         }
@@ -248,25 +282,25 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
-                {"accessPackageCatalog", n => { AccessPackageCatalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
-                {"accessPackageId", n => { AccessPackageId = n.GetStringValue(); } },
-                {"accessReviewSettings", n => { AccessReviewSettings = n.GetObjectValue<AssignmentReviewSettings>(AssignmentReviewSettings.CreateFromDiscriminatorValue); } },
-                {"canExtend", n => { CanExtend = n.GetBoolValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customExtensionHandlers", n => { CustomExtensionHandlers = n.GetCollectionOfObjectValues<CustomExtensionHandler>(CustomExtensionHandler.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customExtensionStageSettings", n => { CustomExtensionStageSettings = n.GetCollectionOfObjectValues<CustomExtensionStageSetting>(CustomExtensionStageSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
-                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requestApprovalSettings", n => { RequestApprovalSettings = n.GetObjectValue<ApprovalSettings>(ApprovalSettings.CreateFromDiscriminatorValue); } },
-                {"requestorSettings", n => { RequestorSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestorSettings>(Microsoft.Graph.Beta.Models.RequestorSettings.CreateFromDiscriminatorValue); } },
-                {"verifiableCredentialSettings", n => { VerifiableCredentialSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings>(Microsoft.Graph.Beta.Models.VerifiableCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "accessPackage", n => { AccessPackage = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackage>(Microsoft.Graph.Beta.Models.AccessPackage.CreateFromDiscriminatorValue); } },
+                { "accessPackageCatalog", n => { AccessPackageCatalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageCatalog>(Microsoft.Graph.Beta.Models.AccessPackageCatalog.CreateFromDiscriminatorValue); } },
+                { "accessPackageId", n => { AccessPackageId = n.GetStringValue(); } },
+                { "accessReviewSettings", n => { AccessReviewSettings = n.GetObjectValue<AssignmentReviewSettings>(AssignmentReviewSettings.CreateFromDiscriminatorValue); } },
+                { "canExtend", n => { CanExtend = n.GetBoolValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "customExtensionHandlers", n => { CustomExtensionHandlers = n.GetCollectionOfObjectValues<CustomExtensionHandler>(CustomExtensionHandler.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customExtensionStageSettings", n => { CustomExtensionStageSettings = n.GetCollectionOfObjectValues<CustomExtensionStageSetting>(CustomExtensionStageSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
+                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<AccessPackageQuestion>(AccessPackageQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requestApprovalSettings", n => { RequestApprovalSettings = n.GetObjectValue<ApprovalSettings>(ApprovalSettings.CreateFromDiscriminatorValue); } },
+                { "requestorSettings", n => { RequestorSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestorSettings>(Microsoft.Graph.Beta.Models.RequestorSettings.CreateFromDiscriminatorValue); } },
+                { "verifiableCredentialSettings", n => { VerifiableCredentialSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiableCredentialSettings>(Microsoft.Graph.Beta.Models.VerifiableCredentialSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

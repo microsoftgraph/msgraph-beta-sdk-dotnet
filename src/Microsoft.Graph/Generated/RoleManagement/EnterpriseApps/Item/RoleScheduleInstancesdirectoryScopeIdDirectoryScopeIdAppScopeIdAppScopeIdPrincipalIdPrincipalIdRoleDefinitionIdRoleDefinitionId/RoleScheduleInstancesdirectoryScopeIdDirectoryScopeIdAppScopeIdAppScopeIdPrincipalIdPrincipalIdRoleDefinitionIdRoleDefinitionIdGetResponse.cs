@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId {
+namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionId
+{
     #pragma warning disable CS1591
-    public class RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class RoleScheduleInstancesdirectoryScopeIdDirectoryScopeIdAppScopeIdAppScopeIdPrincipalIdPrincipalIdRoleDefinitionIdRoleDefinitionIdGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleScheduleInstanceBase>? Value {
+        public List<UnifiedRoleScheduleInstanceBase>? Value
+        {
             get { return BackingStore?.Get<List<UnifiedRoleScheduleInstanceBase>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleScheduleInstanceBase> Value {
+        public List<UnifiedRoleScheduleInstanceBase> Value
+        {
             get { return BackingStore?.Get<List<UnifiedRoleScheduleInstanceBase>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.RoleScheduleIn
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UnifiedRoleScheduleInstanceBase>(UnifiedRoleScheduleInstanceBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<UnifiedRoleScheduleInstanceBase>(UnifiedRoleScheduleInstanceBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities {
+namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.CertificateBasedApplicationConfigurations.Item.TrustedCertificateAuthorities
+{
     /// <summary>
     /// Provides operations to manage the trustedCertificateAuthorities property of the microsoft.graph.trustedCertificateAuthorityAsEntityBase entity.
     /// </summary>
-    public class TrustedCertificateAuthoritiesRequestBuilder : BaseRequestBuilder 
+    public class TrustedCertificateAuthoritiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count
@@ -51,7 +52,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
+        /// List the trusted certificate authorities in a certificateBasedApplicationConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-list-trustedcertificateauthorities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CertificateAuthorityAsEntityCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,12 +71,13 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CertificateAuthorityAsEntityCollectionResponse>(requestInfo, CertificateAuthorityAsEntityCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to trustedCertificateAuthorities for directory
+        /// Create a new trusted certificate authority in a certificateBasedApplicationConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedapplicationconfiguration-post-trustedcertificateauthorities?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CertificateAuthorityAsEntity"/></returns>
         /// <param name="body">The request body</param>
@@ -94,12 +97,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CertificateAuthorityAsEntity>(requestInfo, CertificateAuthorityAsEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
+        /// List the trusted certificate authorities in a certificateBasedApplicationConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +121,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to trustedCertificateAuthorities for directory
+        /// Create a new trusted certificate authority in a certificateBasedApplicationConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
             return new TrustedCertificateAuthoritiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a certificateAuthorityAsEntity object.
+        /// List the trusted certificate authorities in a certificateBasedApplicationConfiguration object.
         /// </summary>
         public class TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters 
         {
@@ -217,14 +220,14 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.CertificateAuthorities.Certifi
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TrustedCertificateAuthoritiesRequestBuilderGetRequestConfiguration : RequestConfiguration<TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters> 
+        public class TrustedCertificateAuthoritiesRequestBuilderGetRequestConfiguration : RequestConfiguration<TrustedCertificateAuthoritiesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TrustedCertificateAuthoritiesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class TrustedCertificateAuthoritiesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

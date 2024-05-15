@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Specify access control level per privacy data category
     /// </summary>
-    public class WindowsPrivacyDataAccessControlItem : Entity, IParsable 
+    public class WindowsPrivacyDataAccessControlItem : Entity, IParsable
     {
         /// <summary>Determine the access level to specific Windows privacy data category.</summary>
-        public WindowsPrivacyDataAccessLevel? AccessLevel {
+        public WindowsPrivacyDataAccessLevel? AccessLevel
+        {
             get { return BackingStore?.Get<WindowsPrivacyDataAccessLevel?>("accessLevel"); }
             set { BackingStore?.Set("accessLevel", value); }
         }
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -32,19 +36,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppPackageFamilyName {
+        public string? AppPackageFamilyName
+        {
             get { return BackingStore?.Get<string?>("appPackageFamilyName"); }
             set { BackingStore?.Set("appPackageFamilyName", value); }
         }
 #nullable restore
 #else
-        public string AppPackageFamilyName {
+        public string AppPackageFamilyName
+        {
             get { return BackingStore?.Get<string>("appPackageFamilyName"); }
             set { BackingStore?.Set("appPackageFamilyName", value); }
         }
 #endif
         /// <summary>Windows privacy data category specifier for privacy data access.</summary>
-        public WindowsPrivacyDataCategory? DataCategory {
+        public WindowsPrivacyDataCategory? DataCategory
+        {
             get { return BackingStore?.Get<WindowsPrivacyDataCategory?>("dataCategory"); }
             set { BackingStore?.Set("dataCategory", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessLevel", n => { AccessLevel = n.GetEnumValue<WindowsPrivacyDataAccessLevel>(); } },
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"appPackageFamilyName", n => { AppPackageFamilyName = n.GetStringValue(); } },
-                {"dataCategory", n => { DataCategory = n.GetEnumValue<WindowsPrivacyDataCategory>(); } },
+                { "accessLevel", n => { AccessLevel = n.GetEnumValue<WindowsPrivacyDataAccessLevel>(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "appPackageFamilyName", n => { AppPackageFamilyName = n.GetStringValue(); } },
+                { "dataCategory", n => { DataCategory = n.GetEnumValue<WindowsPrivacyDataCategory>(); } },
             };
         }
         /// <summary>

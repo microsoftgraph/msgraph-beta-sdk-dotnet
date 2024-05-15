@@ -4,87 +4,102 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows 10 Enrollment Status Page Configuration
     /// </summary>
-    public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable 
+    public class Windows10EnrollmentCompletionPageConfiguration : DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>When TRUE, allows device reset on installation failure. When false, reset is blocked. The default is false.</summary>
-        public bool? AllowDeviceResetOnInstallFailure {
+        public bool? AllowDeviceResetOnInstallFailure
+        {
             get { return BackingStore?.Get<bool?>("allowDeviceResetOnInstallFailure"); }
             set { BackingStore?.Set("allowDeviceResetOnInstallFailure", value); }
         }
         /// <summary>When TRUE, allows the user to continue using the device on installation failure. When false, blocks the user on installation failure. The default is false.</summary>
-        public bool? AllowDeviceUseOnInstallFailure {
+        public bool? AllowDeviceUseOnInstallFailure
+        {
             get { return BackingStore?.Get<bool?>("allowDeviceUseOnInstallFailure"); }
             set { BackingStore?.Set("allowDeviceUseOnInstallFailure", value); }
         }
         /// <summary>When TRUE, allows log collection on installation failure. When false, log collection is not allowed. The default is false.</summary>
-        public bool? AllowLogCollectionOnInstallFailure {
+        public bool? AllowLogCollectionOnInstallFailure
+        {
             get { return BackingStore?.Get<bool?>("allowLogCollectionOnInstallFailure"); }
             set { BackingStore?.Set("allowLogCollectionOnInstallFailure", value); }
         }
         /// <summary>When TRUE, ESP (Enrollment Status Page) installs all required apps targeted during technician phase and ignores any failures for non-blocking apps. When FALSE, ESP fails on any error during app install. The default is false.</summary>
-        public bool? AllowNonBlockingAppInstallation {
+        public bool? AllowNonBlockingAppInstallation
+        {
             get { return BackingStore?.Get<bool?>("allowNonBlockingAppInstallation"); }
             set { BackingStore?.Set("allowNonBlockingAppInstallation", value); }
         }
         /// <summary>When TRUE, blocks user from retrying the setup on installation failure. When false, user is allowed to retry. The default is false.</summary>
-        public bool? BlockDeviceSetupRetryByUser {
+        public bool? BlockDeviceSetupRetryByUser
+        {
             get { return BackingStore?.Get<bool?>("blockDeviceSetupRetryByUser"); }
             set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
         /// <summary>The custom error message to show upon installation failure. Max length is 10000. example: &apos;Setup could not be completed. Please try again or contact your support person for help.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomErrorMessage {
+        public string? CustomErrorMessage
+        {
             get { return BackingStore?.Get<string?>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
 #nullable restore
 #else
-        public string CustomErrorMessage {
+        public string CustomErrorMessage
+        {
             get { return BackingStore?.Get<string>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
 #endif
         /// <summary>When TRUE, disables showing installation progress for first user post enrollment. When false, enables showing progress. The default is false.</summary>
-        public bool? DisableUserStatusTrackingAfterFirstUser {
+        public bool? DisableUserStatusTrackingAfterFirstUser
+        {
             get { return BackingStore?.Get<bool?>("disableUserStatusTrackingAfterFirstUser"); }
             set { BackingStore?.Set("disableUserStatusTrackingAfterFirstUser", value); }
         }
         /// <summary>The installation progress timeout in minutes. Default is 60 minutes.</summary>
-        public int? InstallProgressTimeoutInMinutes {
+        public int? InstallProgressTimeoutInMinutes
+        {
             get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
             set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
         /// <summary>Allows quality updates installation during OOBE</summary>
-        public bool? InstallQualityUpdates {
+        public bool? InstallQualityUpdates
+        {
             get { return BackingStore?.Get<bool?>("installQualityUpdates"); }
             set { BackingStore?.Set("installQualityUpdates", value); }
         }
         /// <summary>Selected applications to track the installation status. It is in the form of an array of GUIDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectedMobileAppIds {
+        public List<string>? SelectedMobileAppIds
+        {
             get { return BackingStore?.Get<List<string>?>("selectedMobileAppIds"); }
             set { BackingStore?.Set("selectedMobileAppIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SelectedMobileAppIds {
+        public List<string> SelectedMobileAppIds
+        {
             get { return BackingStore?.Get<List<string>>("selectedMobileAppIds"); }
             set { BackingStore?.Set("selectedMobileAppIds", value); }
         }
 #endif
         /// <summary>When TRUE, shows installation progress to user. When false, hides installation progress. The default is false.</summary>
-        public bool? ShowInstallationProgress {
+        public bool? ShowInstallationProgress
+        {
             get { return BackingStore?.Get<bool?>("showInstallationProgress"); }
             set { BackingStore?.Set("showInstallationProgress", value); }
         }
         /// <summary>When TRUE, installation progress is tracked for only Autopilot enrollment scenarios. When false, other scenarios are tracked as well. The default is false.</summary>
-        public bool? TrackInstallProgressForAutopilotOnly {
+        public bool? TrackInstallProgressForAutopilotOnly
+        {
             get { return BackingStore?.Get<bool?>("trackInstallProgressForAutopilotOnly"); }
             set { BackingStore?.Set("trackInstallProgressForAutopilotOnly", value); }
         }
@@ -113,18 +128,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowDeviceResetOnInstallFailure", n => { AllowDeviceResetOnInstallFailure = n.GetBoolValue(); } },
-                {"allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
-                {"allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
-                {"allowNonBlockingAppInstallation", n => { AllowNonBlockingAppInstallation = n.GetBoolValue(); } },
-                {"blockDeviceSetupRetryByUser", n => { BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
-                {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
-                {"disableUserStatusTrackingAfterFirstUser", n => { DisableUserStatusTrackingAfterFirstUser = n.GetBoolValue(); } },
-                {"installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
-                {"installQualityUpdates", n => { InstallQualityUpdates = n.GetBoolValue(); } },
-                {"selectedMobileAppIds", n => { SelectedMobileAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"showInstallationProgress", n => { ShowInstallationProgress = n.GetBoolValue(); } },
-                {"trackInstallProgressForAutopilotOnly", n => { TrackInstallProgressForAutopilotOnly = n.GetBoolValue(); } },
+                { "allowDeviceResetOnInstallFailure", n => { AllowDeviceResetOnInstallFailure = n.GetBoolValue(); } },
+                { "allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
+                { "allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
+                { "allowNonBlockingAppInstallation", n => { AllowNonBlockingAppInstallation = n.GetBoolValue(); } },
+                { "blockDeviceSetupRetryByUser", n => { BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
+                { "customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
+                { "disableUserStatusTrackingAfterFirstUser", n => { DisableUserStatusTrackingAfterFirstUser = n.GetBoolValue(); } },
+                { "installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
+                { "installQualityUpdates", n => { InstallQualityUpdates = n.GetBoolValue(); } },
+                { "selectedMobileAppIds", n => { SelectedMobileAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "showInstallationProgress", n => { ShowInstallationProgress = n.GetBoolValue(); } },
+                { "trackInstallProgressForAutopilotOnly", n => { TrackInstallProgressForAutopilotOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

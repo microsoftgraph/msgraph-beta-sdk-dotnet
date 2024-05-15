@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Android COBO Derived Credential profile.
     /// </summary>
-    public class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable 
+    public class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
-        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
             set { BackingStore?.Set("certificateAccessType", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
+        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails {
+        public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>?>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
+        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
-                {"derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
-                {"silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
+                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

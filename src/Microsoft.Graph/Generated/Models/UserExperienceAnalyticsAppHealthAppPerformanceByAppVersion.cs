@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics application performance entity contains app performance details by app version.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity, IParsable 
+    public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity, IParsable
     {
         /// <summary>The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? AppCrashCount {
+        public int? AppCrashCount
+        {
             get { return BackingStore?.Get<int?>("appCrashCount"); }
             set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName {
+        public string? AppName
+        {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #nullable restore
 #else
-        public string AppName {
+        public string AppName
+        {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
@@ -46,38 +52,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The publisher of the application. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppPublisher {
+        public string? AppPublisher
+        {
             get { return BackingStore?.Get<string?>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
 #nullable restore
 #else
-        public string AppPublisher {
+        public string AppPublisher
+        {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
 #endif
         /// <summary>The total usage time of the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? AppUsageDuration {
+        public int? AppUsageDuration
+        {
             get { return BackingStore?.Get<int?>("appUsageDuration"); }
             set { BackingStore?.Set("appUsageDuration", value); }
         }
         /// <summary>The version of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppVersion {
+        public string? AppVersion
+        {
             get { return BackingStore?.Get<string?>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #nullable restore
 #else
-        public string AppVersion {
+        public string AppVersion
+        {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #endif
         /// <summary>The mean time to failure for the application in minutes. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
-        public int? MeanTimeToFailureInMinutes {
+        public int? MeanTimeToFailureInMinutes
+        {
             get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
@@ -99,13 +111,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"appName", n => { AppName = n.GetStringValue(); } },
-                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
-                {"appUsageDuration", n => { AppUsageDuration = n.GetIntValue(); } },
-                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                { "appCrashCount", n => { AppCrashCount = n.GetIntValue(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                { "appUsageDuration", n => { AppUsageDuration = n.GetIntValue(); } },
+                { "appVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

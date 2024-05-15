@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains the pair of OperationApprovalPolicyType and OperationApprovalPolicyPlatform determining the set of applicable OperationApprovalPolicies for a user. The OperationApprovalPolicySet complex type is used to indicate to the UX which policies are enabled for the current logged in user in order to correctly show the expected experience.
     /// </summary>
-    public class OperationApprovalPolicySet : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OperationApprovalPolicySet : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The set of available platforms for the OperationApprovalPolicy. Allows configuration of a policy to specific platform(s) for approval. If no specific platform is required or applicable, the platform is `notApplicable`.</summary>
-        public OperationApprovalPolicyPlatform? PolicyPlatform {
+        public OperationApprovalPolicyPlatform? PolicyPlatform
+        {
             get { return BackingStore?.Get<OperationApprovalPolicyPlatform?>("policyPlatform"); }
             set { BackingStore?.Set("policyPlatform", value); }
         }
-        /// <summary>The set of available policy types that can be configured for approval. There is no default value for this enum, indicating that the policy type must always be chosen.</summary>
-        public OperationApprovalPolicyType? PolicyType {
+        /// <summary>The set of available policy types that can be configured for approval. The policy type must always be defined in an OperationApprovalRequest.</summary>
+        public OperationApprovalPolicyType? PolicyType
+        {
             get { return BackingStore?.Get<OperationApprovalPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyPlatform", n => { PolicyPlatform = n.GetEnumValue<OperationApprovalPolicyPlatform>(); } },
-                {"policyType", n => { PolicyType = n.GetEnumValue<OperationApprovalPolicyType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyPlatform", n => { PolicyPlatform = n.GetEnumValue<OperationApprovalPolicyPlatform>(); } },
+                { "policyType", n => { PolicyType = n.GetEnumValue<OperationApprovalPolicyType>(); } },
             };
         }
         /// <summary>

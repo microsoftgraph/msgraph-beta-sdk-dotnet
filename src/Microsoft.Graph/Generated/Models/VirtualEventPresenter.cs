@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventPresenter : Entity, IParsable 
+    public class VirtualEventPresenter : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Email address of the presenter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity information of the presenter. The supported identities are: communicationsGuestIdentity and communicationsUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Identity? Identity {
+        public Microsoft.Graph.Beta.Models.Identity? Identity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Identity Identity {
+        public Microsoft.Graph.Beta.Models.Identity Identity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Other detail information of the presenter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventPresenterDetails? PresenterDetails {
+        public VirtualEventPresenterDetails? PresenterDetails
+        {
             get { return BackingStore?.Get<VirtualEventPresenterDetails?>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #nullable restore
 #else
-        public VirtualEventPresenterDetails PresenterDetails {
+        public VirtualEventPresenterDetails PresenterDetails
+        {
             get { return BackingStore?.Get<VirtualEventPresenterDetails>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventSession>? Sessions {
+        public List<VirtualEventSession>? Sessions
+        {
             get { return BackingStore?.Get<List<VirtualEventSession>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventSession> Sessions {
+        public List<VirtualEventSession> Sessions
+        {
             get { return BackingStore?.Get<List<VirtualEventSession>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
-                {"presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
-                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

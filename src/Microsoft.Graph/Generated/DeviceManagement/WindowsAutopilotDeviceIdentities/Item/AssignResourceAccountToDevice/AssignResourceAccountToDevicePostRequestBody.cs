@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities.Item.AssignResourceAccountToDevice
+{
     #pragma warning disable CS1591
-    public class AssignResourceAccountToDevicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignResourceAccountToDevicePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The addressableUserName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressableUserName {
+        public string? AddressableUserName
+        {
             get { return BackingStore?.Get<string?>("addressableUserName"); }
             set { BackingStore?.Set("addressableUserName", value); }
         }
 #nullable restore
 #else
-        public string AddressableUserName {
+        public string AddressableUserName
+        {
             get { return BackingStore?.Get<string>("addressableUserName"); }
             set { BackingStore?.Set("addressableUserName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         /// <summary>The resourceAccountName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceAccountName {
+        public string? ResourceAccountName
+        {
             get { return BackingStore?.Get<string?>("resourceAccountName"); }
             set { BackingStore?.Set("resourceAccountName", value); }
         }
 #nullable restore
 #else
-        public string ResourceAccountName {
+        public string ResourceAccountName
+        {
             get { return BackingStore?.Get<string>("resourceAccountName"); }
             set { BackingStore?.Set("resourceAccountName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeviceIdentities
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addressableUserName", n => { AddressableUserName = n.GetStringValue(); } },
-                {"resourceAccountName", n => { ResourceAccountName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "addressableUserName", n => { AddressableUserName = n.GetStringValue(); } },
+                { "resourceAccountName", n => { ResourceAccountName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

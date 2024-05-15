@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class Deployment : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Deployment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the audience to which content is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentAudience? Audience {
+        public DeploymentAudience? Audience
+        {
             get { return BackingStore?.Get<DeploymentAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
 #nullable restore
 #else
-        public DeploymentAudience Audience {
+        public DeploymentAudience Audience
+        {
             get { return BackingStore?.Get<DeploymentAudience>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Specifies what content to deploy. Cannot be changed. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeployableContent? Content {
+        public DeployableContent? Content
+        {
             get { return BackingStore?.Get<DeployableContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public DeployableContent Content {
+        public DeployableContent Content
+        {
             get { return BackingStore?.Get<DeployableContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>The date and time the deployment was created. Returned by default. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time the deployment was last modified. Returned by default. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Settings specified on the specific deployment governing how to deploy content. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentSettings? Settings {
+        public DeploymentSettings? Settings
+        {
             get { return BackingStore?.Get<DeploymentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public DeploymentSettings Settings {
+        public DeploymentSettings Settings
+        {
             get { return BackingStore?.Get<DeploymentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Execution status of the deployment. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentState? State {
+        public DeploymentState? State
+        {
             get { return BackingStore?.Get<DeploymentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public DeploymentState State {
+        public DeploymentState State
+        {
             get { return BackingStore?.Get<DeploymentState>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"audience", n => { Audience = n.GetObjectValue<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue); } },
-                {"content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"settings", n => { Settings = n.GetObjectValue<DeploymentSettings>(DeploymentSettings.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetObjectValue<DeploymentState>(DeploymentState.CreateFromDiscriminatorValue); } },
+                { "audience", n => { Audience = n.GetObjectValue<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "settings", n => { Settings = n.GetObjectValue<DeploymentSettings>(DeploymentSettings.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetObjectValue<DeploymentState>(DeploymentState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

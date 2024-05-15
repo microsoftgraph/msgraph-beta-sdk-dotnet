@@ -6,21 +6,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive
+{
     #pragma warning disable CS1591
-    public class GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KnownIssue>? Value {
+        public List<KnownIssue>? Value
+        {
             get { return BackingStore?.Get<List<KnownIssue>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<KnownIssue> Value {
+        public List<KnownIssue> Value
+        {
             get { return BackingStore?.Get<List<KnownIssue>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -43,7 +46,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGrap
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<KnownIssue>(KnownIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<KnownIssue>(KnownIssue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

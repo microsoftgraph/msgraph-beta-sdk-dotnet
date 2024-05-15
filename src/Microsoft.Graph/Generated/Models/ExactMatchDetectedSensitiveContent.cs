@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable 
+    public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitiveContentLocation>? Matches {
+        public List<SensitiveContentLocation>? Matches
+        {
             get { return BackingStore?.Get<List<SensitiveContentLocation>?>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
 #nullable restore
 #else
-        public List<SensitiveContentLocation> Matches {
+        public List<SensitiveContentLocation> Matches
+        {
             get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"matches", n => { Matches = n.GetCollectionOfObjectValues<SensitiveContentLocation>(SensitiveContentLocation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matches", n => { Matches = n.GetCollectionOfObjectValues<SensitiveContentLocation>(SensitiveContentLocation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

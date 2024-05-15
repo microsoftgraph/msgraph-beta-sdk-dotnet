@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AppConsentRequest : Entity, IParsable 
+    public class AppConsentRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the application. Required. Supports $filter (eq only) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The consent type of the request. Possible values are: Static and Dynamic. These represent static and dynamic permissions, respectively, requested in the consent workflow. Supports $filter (eq only) and $orderby. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsentType {
+        public string? ConsentType
+        {
             get { return BackingStore?.Get<string?>("consentType"); }
             set { BackingStore?.Set("consentType", value); }
         }
 #nullable restore
 #else
-        public string ConsentType {
+        public string ConsentType
+        {
             get { return BackingStore?.Get<string>("consentType"); }
             set { BackingStore?.Set("consentType", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of pending scopes waiting for approval. This is empty if the consentType is Static. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppConsentRequestScope>? PendingScopes {
+        public List<AppConsentRequestScope>? PendingScopes
+        {
             get { return BackingStore?.Get<List<AppConsentRequestScope>?>("pendingScopes"); }
             set { BackingStore?.Set("pendingScopes", value); }
         }
 #nullable restore
 #else
-        public List<AppConsentRequestScope> PendingScopes {
+        public List<AppConsentRequestScope> PendingScopes
+        {
             get { return BackingStore?.Get<List<AppConsentRequestScope>>("pendingScopes"); }
             set { BackingStore?.Set("pendingScopes", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of pending user consent requests. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserConsentRequest>? UserConsentRequests {
+        public List<UserConsentRequest>? UserConsentRequests
+        {
             get { return BackingStore?.Get<List<UserConsentRequest>?>("userConsentRequests"); }
             set { BackingStore?.Set("userConsentRequests", value); }
         }
 #nullable restore
 #else
-        public List<UserConsentRequest> UserConsentRequests {
+        public List<UserConsentRequest> UserConsentRequests
+        {
             get { return BackingStore?.Get<List<UserConsentRequest>>("userConsentRequests"); }
             set { BackingStore?.Set("userConsentRequests", value); }
         }
@@ -97,11 +108,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"consentType", n => { ConsentType = n.GetStringValue(); } },
-                {"pendingScopes", n => { PendingScopes = n.GetCollectionOfObjectValues<AppConsentRequestScope>(AppConsentRequestScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userConsentRequests", n => { UserConsentRequests = n.GetCollectionOfObjectValues<UserConsentRequest>(UserConsentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "consentType", n => { ConsentType = n.GetStringValue(); } },
+                { "pendingScopes", n => { PendingScopes = n.GetCollectionOfObjectValues<AppConsentRequestScope>(AppConsentRequestScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userConsentRequests", n => { UserConsentRequests = n.GetCollectionOfObjectValues<UserConsentRequest>(UserConsentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

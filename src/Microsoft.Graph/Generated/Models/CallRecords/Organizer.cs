@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class Organizer : ParticipantBase, IParsable 
+    public class Organizer : ParticipantBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

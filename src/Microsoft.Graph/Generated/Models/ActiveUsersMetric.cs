@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ActiveUsersMetric : Entity, IParsable 
+    public class ActiveUsersMetric : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -27,51 +30,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The appName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName {
+        public string? AppName
+        {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #nullable restore
 #else
-        public string AppName {
+        public string AppName
+        {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #endif
         /// <summary>The total number of users who made at least one authentication request within the specified time period.</summary>
-        public long? Count {
+        public long? Count
+        {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country {
+        public string? Country
+        {
             get { return BackingStore?.Get<string?>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #nullable restore
 #else
-        public string Country {
+        public string Country
+        {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #endif
         /// <summary>Date of the insight.</summary>
-        public Date? FactDate {
+        public Date? FactDate
+        {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os {
+        public string? Os
+        {
             get { return BackingStore?.Get<string?>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #nullable restore
 #else
-        public string Os {
+        public string Os
+        {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
@@ -108,13 +121,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"appName", n => { AppName = n.GetStringValue(); } },
-                {"count", n => { Count = n.GetLongValue(); } },
-                {"country", n => { Country = n.GetStringValue(); } },
-                {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Instance of a GroupSettingCollection
     /// </summary>
-    public class DeviceManagementConfigurationGroupSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable 
+    public class DeviceManagementConfigurationGroupSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>A collection of GroupSetting values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationGroupSettingValue>? GroupSettingCollectionValue {
+        public List<DeviceManagementConfigurationGroupSettingValue>? GroupSettingCollectionValue
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>?>("groupSettingCollectionValue"); }
             set { BackingStore?.Set("groupSettingCollectionValue", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationGroupSettingValue> GroupSettingCollectionValue {
+        public List<DeviceManagementConfigurationGroupSettingValue> GroupSettingCollectionValue
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>>("groupSettingCollectionValue"); }
             set { BackingStore?.Set("groupSettingCollectionValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupSettingCollectionValue", n => { GroupSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationGroupSettingValue>(DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupSettingCollectionValue", n => { GroupSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationGroupSettingValue>(DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

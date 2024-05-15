@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes {
+namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes
+{
     #pragma warning disable CS1591
-    public class FindByMethodModeWithAuthenticationMethodModesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class FindByMethodModeWithAuthenticationMethodModesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationStrengthPolicy>? Value {
+        public List<AuthenticationStrengthPolicy>? Value
+        {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationStrengthPolicy> Value {
+        public List<AuthenticationStrengthPolicy> Value
+        {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMet
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

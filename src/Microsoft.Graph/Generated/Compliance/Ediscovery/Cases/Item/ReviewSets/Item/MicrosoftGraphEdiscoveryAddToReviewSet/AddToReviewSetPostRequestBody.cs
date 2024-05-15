@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.MicrosoftGraphEdiscoveryAddToReviewSet {
+namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.MicrosoftGraphEdiscoveryAddToReviewSet
+{
     #pragma warning disable CS1591
-    public class AddToReviewSetPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddToReviewSetPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The additionalDataOptions property</summary>
-        public Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions? AdditionalDataOptions {
+        public Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions? AdditionalDataOptions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.AdditionalDataOptions?>("additionalDataOptions"); }
             set { BackingStore?.Set("additionalDataOptions", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         /// <summary>The sourceCollection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection {
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection? SourceCollection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection?>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection {
+        public Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection SourceCollection
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("sourceCollection"); }
             set { BackingStore?.Set("sourceCollection", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalDataOptions", n => { AdditionalDataOptions = n.GetEnumValue<AdditionalDataOptions>(); } },
-                {"sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
+                { "additionalDataOptions", n => { AdditionalDataOptions = n.GetEnumValue<AdditionalDataOptions>(); } },
+                { "sourceCollection", n => { SourceCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

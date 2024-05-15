@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkPeripheralsHealth : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkPeripheralsHealth : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about the communication speaker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? CommunicationSpeakerHealth {
+        public TeamworkPeripheralHealth? CommunicationSpeakerHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("communicationSpeakerHealth"); }
             set { BackingStore?.Set("communicationSpeakerHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth CommunicationSpeakerHealth {
+        public TeamworkPeripheralHealth CommunicationSpeakerHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("communicationSpeakerHealth"); }
             set { BackingStore?.Set("communicationSpeakerHealth", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about the content camera.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? ContentCameraHealth {
+        public TeamworkPeripheralHealth? ContentCameraHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("contentCameraHealth"); }
             set { BackingStore?.Set("contentCameraHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth ContentCameraHealth {
+        public TeamworkPeripheralHealth ContentCameraHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("contentCameraHealth"); }
             set { BackingStore?.Set("contentCameraHealth", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about displays.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkPeripheralHealth>? DisplayHealthCollection {
+        public List<TeamworkPeripheralHealth>? DisplayHealthCollection
+        {
             get { return BackingStore?.Get<List<TeamworkPeripheralHealth>?>("displayHealthCollection"); }
             set { BackingStore?.Set("displayHealthCollection", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkPeripheralHealth> DisplayHealthCollection {
+        public List<TeamworkPeripheralHealth> DisplayHealthCollection
+        {
             get { return BackingStore?.Get<List<TeamworkPeripheralHealth>>("displayHealthCollection"); }
             set { BackingStore?.Set("displayHealthCollection", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about the microphone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? MicrophoneHealth {
+        public TeamworkPeripheralHealth? MicrophoneHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("microphoneHealth"); }
             set { BackingStore?.Set("microphoneHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth MicrophoneHealth {
+        public TeamworkPeripheralHealth MicrophoneHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("microphoneHealth"); }
             set { BackingStore?.Set("microphoneHealth", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about the room camera.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? RoomCameraHealth {
+        public TeamworkPeripheralHealth? RoomCameraHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("roomCameraHealth"); }
             set { BackingStore?.Set("roomCameraHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth RoomCameraHealth {
+        public TeamworkPeripheralHealth RoomCameraHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("roomCameraHealth"); }
             set { BackingStore?.Set("roomCameraHealth", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about the speaker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? SpeakerHealth {
+        public TeamworkPeripheralHealth? SpeakerHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("speakerHealth"); }
             set { BackingStore?.Set("speakerHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth SpeakerHealth {
+        public TeamworkPeripheralHealth SpeakerHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("speakerHealth"); }
             set { BackingStore?.Set("speakerHealth", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"communicationSpeakerHealth", n => { CommunicationSpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                {"contentCameraHealth", n => { ContentCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                {"displayHealthCollection", n => { DisplayHealthCollection = n.GetCollectionOfObjectValues<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"microphoneHealth", n => { MicrophoneHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roomCameraHealth", n => { RoomCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                {"speakerHealth", n => { SpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "communicationSpeakerHealth", n => { CommunicationSpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "contentCameraHealth", n => { ContentCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "displayHealthCollection", n => { DisplayHealthCollection = n.GetCollectionOfObjectValues<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microphoneHealth", n => { MicrophoneHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roomCameraHealth", n => { RoomCameraHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "speakerHealth", n => { SpeakerHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

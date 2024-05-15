@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The management category for the management template. Possible values are: custom, devices, identity, unknownFutureValue. Required. Read-only.</summary>
-        public ManagementCategory? Category {
+        public ManagementCategory? Category
+        {
             get { return BackingStore?.Get<ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByUserId {
+        public string? CreatedByUserId
+        {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #nullable restore
 #else
-        public string CreatedByUserId {
+        public string CreatedByUserId
+        {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #endif
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description for the management template. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name for the management template. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The informationLinks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ActionUrl>? InformationLinks {
+        public List<Microsoft.Graph.Beta.Models.ActionUrl>? InformationLinks
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>?>("informationLinks"); }
             set { BackingStore?.Set("informationLinks", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks {
+        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>("informationLinks"); }
             set { BackingStore?.Set("informationLinks", value); }
         }
@@ -78,32 +89,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActionByUserId {
+        public string? LastActionByUserId
+        {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #nullable restore
 #else
-        public string LastActionByUserId {
+        public string LastActionByUserId
+        {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #endif
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplateCollections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateCollection>? ManagementTemplateCollections {
+        public List<ManagementTemplateCollection>? ManagementTemplateCollections
+        {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>?>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateCollection> ManagementTemplateCollections {
+        public List<ManagementTemplateCollection> ManagementTemplateCollections
+        {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateSteps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStep>? ManagementTemplateSteps {
+        public List<ManagementTemplateStep>? ManagementTemplateSteps
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStep>?>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStep> ManagementTemplateSteps {
+        public List<ManagementTemplateStep> ManagementTemplateSteps
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
@@ -125,56 +143,65 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of parameters used by the management template. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TemplateParameter>? Parameters {
+        public List<TemplateParameter>? Parameters
+        {
             get { return BackingStore?.Get<List<TemplateParameter>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<TemplateParameter> Parameters {
+        public List<TemplateParameter> Parameters
+        {
             get { return BackingStore?.Get<List<TemplateParameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The provider property</summary>
-        public ManagementProvider? Provider {
+        public ManagementProvider? Provider
+        {
             get { return BackingStore?.Get<ManagementProvider?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
         /// <summary>The userImpact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserImpact {
+        public string? UserImpact
+        {
             get { return BackingStore?.Get<string?>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
 #nullable restore
 #else
-        public string UserImpact {
+        public string UserImpact
+        {
             get { return BackingStore?.Get<string>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
 #endif
         /// <summary>The version property</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkloadAction>? WorkloadActions {
+        public List<WorkloadAction>? WorkloadActions
+        {
             get { return BackingStore?.Get<List<WorkloadAction>?>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
 #nullable restore
 #else
-        public List<WorkloadAction> WorkloadActions {
+        public List<WorkloadAction> WorkloadActions
+        {
             get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
@@ -197,22 +224,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<TemplateParameter>(TemplateParameter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"provider", n => { Provider = n.GetEnumValue<ManagementProvider>(); } },
-                {"userImpact", n => { UserImpact = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
-                {"workloadActions", n => { WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<TemplateParameter>(TemplateParameter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "provider", n => { Provider = n.GetEnumValue<ManagementProvider>(); } },
+                { "userImpact", n => { UserImpact = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
+                { "workloadActions", n => { WorkloadActions = n.GetCollectionOfObjectValues<WorkloadAction>(WorkloadAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

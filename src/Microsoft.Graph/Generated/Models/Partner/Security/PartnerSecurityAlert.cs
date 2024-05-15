@@ -4,206 +4,238 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Partner.Security {
+namespace Microsoft.Graph.Beta.Models.Partner.Security
+{
     #pragma warning disable CS1591
-    public class PartnerSecurityAlert : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class PartnerSecurityAlert : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activityLogs property</summary>
+        /// <summary>Represents the activity by a partner and includes details of state transitions, who performed them, and when they occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActivityLog>? ActivityLogs {
+        public List<ActivityLog>? ActivityLogs
+        {
             get { return BackingStore?.Get<List<ActivityLog>?>("activityLogs"); }
             set { BackingStore?.Set("activityLogs", value); }
         }
 #nullable restore
 #else
-        public List<ActivityLog> ActivityLogs {
+        public List<ActivityLog> ActivityLogs
+        {
             get { return BackingStore?.Get<List<ActivityLog>>("activityLogs"); }
             set { BackingStore?.Set("activityLogs", value); }
         }
 #endif
-        /// <summary>The additionalDetails property</summary>
+        /// <summary>A bag of name-value pairs that contain additional details about an alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdditionalDataDictionary? AdditionalDetails {
+        public AdditionalDataDictionary? AdditionalDetails
+        {
             get { return BackingStore?.Get<AdditionalDataDictionary?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public AdditionalDataDictionary AdditionalDetails {
+        public AdditionalDataDictionary AdditionalDetails
+        {
             get { return BackingStore?.Get<AdditionalDataDictionary>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #endif
-        /// <summary>The affectedResources property</summary>
+        /// <summary>Contains details of the resources affected by the security alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AffectedResource>? AffectedResources {
+        public List<AffectedResource>? AffectedResources
+        {
             get { return BackingStore?.Get<List<AffectedResource>?>("affectedResources"); }
             set { BackingStore?.Set("affectedResources", value); }
         }
 #nullable restore
 #else
-        public List<AffectedResource> AffectedResources {
+        public List<AffectedResource> AffectedResources
+        {
             get { return BackingStore?.Get<List<AffectedResource>>("affectedResources"); }
             set { BackingStore?.Set("affectedResources", value); }
         }
 #endif
-        /// <summary>The alertType property</summary>
+        /// <summary>The type of vulnerability that impacts the customer due to this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertType {
+        public string? AlertType
+        {
             get { return BackingStore?.Get<string?>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
 #nullable restore
 #else
-        public string AlertType {
+        public string AlertType
+        {
             get { return BackingStore?.Get<string>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
 #endif
-        /// <summary>The catalogOfferId property</summary>
+        /// <summary>The modern offer category ID of the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CatalogOfferId {
+        public string? CatalogOfferId
+        {
             get { return BackingStore?.Get<string?>("catalogOfferId"); }
             set { BackingStore?.Set("catalogOfferId", value); }
         }
 #nullable restore
 #else
-        public string CatalogOfferId {
+        public string CatalogOfferId
+        {
             get { return BackingStore?.Get<string>("catalogOfferId"); }
             set { BackingStore?.Set("catalogOfferId", value); }
         }
 #endif
         /// <summary>The confidenceLevel property</summary>
-        public SecurityAlertConfidence? ConfidenceLevel {
+        public SecurityAlertConfidence? ConfidenceLevel
+        {
             get { return BackingStore?.Get<SecurityAlertConfidence?>("confidenceLevel"); }
             set { BackingStore?.Set("confidenceLevel", value); }
         }
-        /// <summary>The customerTenantId property</summary>
+        /// <summary>The impacted customer tenant associated with the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerTenantId {
+        public string? CustomerTenantId
+        {
             get { return BackingStore?.Get<string?>("customerTenantId"); }
             set { BackingStore?.Set("customerTenantId", value); }
         }
 #nullable restore
 #else
-        public string CustomerTenantId {
+        public string CustomerTenantId
+        {
             get { return BackingStore?.Get<string>("customerTenantId"); }
             set { BackingStore?.Set("customerTenantId", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description for each alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The detectedDateTime property</summary>
-        public DateTimeOffset? DetectedDateTime {
+        /// <summary>Time when the alert was detected or created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? DetectedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
             set { BackingStore?.Set("detectedDateTime", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The firstObservedDateTime property</summary>
-        public DateTimeOffset? FirstObservedDateTime {
+        /// <summary>Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.</summary>
+        public DateTimeOffset? FirstObservedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstObservedDateTime"); }
             set { BackingStore?.Set("firstObservedDateTime", value); }
         }
-        /// <summary>The isTest property</summary>
-        public bool? IsTest {
+        /// <summary>Indicates whehter an alert is a test alert.</summary>
+        public bool? IsTest
+        {
             get { return BackingStore?.Get<bool?>("isTest"); }
             set { BackingStore?.Set("isTest", value); }
         }
-        /// <summary>The lastObservedDateTime property</summary>
-        public DateTimeOffset? LastObservedDateTime {
+        /// <summary>Time of the latest activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? LastObservedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastObservedDateTime"); }
             set { BackingStore?.Set("lastObservedDateTime", value); }
         }
-        /// <summary>The resolvedBy property</summary>
+        /// <summary>The UPN of the partner user who resolved the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResolvedBy {
+        public string? ResolvedBy
+        {
             get { return BackingStore?.Get<string?>("resolvedBy"); }
             set { BackingStore?.Set("resolvedBy", value); }
         }
 #nullable restore
 #else
-        public string ResolvedBy {
+        public string ResolvedBy
+        {
             get { return BackingStore?.Get<string>("resolvedBy"); }
             set { BackingStore?.Set("resolvedBy", value); }
         }
 #endif
-        /// <summary>The resolvedOnDateTime property</summary>
-        public DateTimeOffset? ResolvedOnDateTime {
+        /// <summary>Time when the alert was resolved. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? ResolvedOnDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("resolvedOnDateTime"); }
             set { BackingStore?.Set("resolvedOnDateTime", value); }
         }
-        /// <summary>The resolvedReason property</summary>
-        public SecurityAlertResolvedReason? ResolvedReason {
+        /// <summary>The reason provided by the partner for addressing the alert. The possible values are: legitimate, ignore, fraud, unknownFutureValue.</summary>
+        public SecurityAlertResolvedReason? ResolvedReason
+        {
             get { return BackingStore?.Get<SecurityAlertResolvedReason?>("resolvedReason"); }
             set { BackingStore?.Set("resolvedReason", value); }
         }
         /// <summary>The severity property</summary>
-        public SecurityAlertSeverity? Severity {
+        public SecurityAlertSeverity? Severity
+        {
             get { return BackingStore?.Get<SecurityAlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The status property</summary>
-        public SecurityAlertStatus? Status {
+        public SecurityAlertStatus? Status
+        {
             get { return BackingStore?.Get<SecurityAlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>The subscription associated with the alert for the customer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId {
+        public string? SubscriptionId
+        {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionId {
+        public string SubscriptionId
+        {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #endif
-        /// <summary>The valueAddedResellerTenantId property</summary>
+        /// <summary>The value-added reseller tenant associated with the partner tenant and customer tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueAddedResellerTenantId {
+        public string? ValueAddedResellerTenantId
+        {
             get { return BackingStore?.Get<string?>("valueAddedResellerTenantId"); }
             set { BackingStore?.Set("valueAddedResellerTenantId", value); }
         }
 #nullable restore
 #else
-        public string ValueAddedResellerTenantId {
+        public string ValueAddedResellerTenantId
+        {
             get { return BackingStore?.Get<string>("valueAddedResellerTenantId"); }
             set { BackingStore?.Set("valueAddedResellerTenantId", value); }
         }
@@ -226,26 +258,26 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activityLogs", n => { ActivityLogs = n.GetCollectionOfObjectValues<ActivityLog>(ActivityLog.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"additionalDetails", n => { AdditionalDetails = n.GetObjectValue<AdditionalDataDictionary>(AdditionalDataDictionary.CreateFromDiscriminatorValue); } },
-                {"affectedResources", n => { AffectedResources = n.GetCollectionOfObjectValues<AffectedResource>(AffectedResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"alertType", n => { AlertType = n.GetStringValue(); } },
-                {"catalogOfferId", n => { CatalogOfferId = n.GetStringValue(); } },
-                {"confidenceLevel", n => { ConfidenceLevel = n.GetEnumValue<SecurityAlertConfidence>(); } },
-                {"customerTenantId", n => { CustomerTenantId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"firstObservedDateTime", n => { FirstObservedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isTest", n => { IsTest = n.GetBoolValue(); } },
-                {"lastObservedDateTime", n => { LastObservedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resolvedBy", n => { ResolvedBy = n.GetStringValue(); } },
-                {"resolvedOnDateTime", n => { ResolvedOnDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resolvedReason", n => { ResolvedReason = n.GetEnumValue<SecurityAlertResolvedReason>(); } },
-                {"severity", n => { Severity = n.GetEnumValue<SecurityAlertSeverity>(); } },
-                {"status", n => { Status = n.GetEnumValue<SecurityAlertStatus>(); } },
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"valueAddedResellerTenantId", n => { ValueAddedResellerTenantId = n.GetStringValue(); } },
+                { "activityLogs", n => { ActivityLogs = n.GetCollectionOfObjectValues<ActivityLog>(ActivityLog.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetObjectValue<AdditionalDataDictionary>(AdditionalDataDictionary.CreateFromDiscriminatorValue); } },
+                { "affectedResources", n => { AffectedResources = n.GetCollectionOfObjectValues<AffectedResource>(AffectedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertType", n => { AlertType = n.GetStringValue(); } },
+                { "catalogOfferId", n => { CatalogOfferId = n.GetStringValue(); } },
+                { "confidenceLevel", n => { ConfidenceLevel = n.GetEnumValue<SecurityAlertConfidence>(); } },
+                { "customerTenantId", n => { CustomerTenantId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "firstObservedDateTime", n => { FirstObservedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isTest", n => { IsTest = n.GetBoolValue(); } },
+                { "lastObservedDateTime", n => { LastObservedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resolvedBy", n => { ResolvedBy = n.GetStringValue(); } },
+                { "resolvedOnDateTime", n => { ResolvedOnDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resolvedReason", n => { ResolvedReason = n.GetEnumValue<SecurityAlertResolvedReason>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<SecurityAlertSeverity>(); } },
+                { "status", n => { Status = n.GetEnumValue<SecurityAlertStatus>(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "valueAddedResellerTenantId", n => { ValueAddedResellerTenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

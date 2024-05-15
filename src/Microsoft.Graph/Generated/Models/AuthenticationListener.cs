@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationListener : Entity, IParsable 
+    public class AuthenticationListener : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The priority of the listener. Determines the order of evaluation when an event has multiple listeners. The priority is evaluated from low to high.</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Filter based on the source of the authentication that is used to determine whether the listener is evaluated, and is currently limited to evaluations based on application the user is authenticating to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationSourceFilter? SourceFilter {
+        public AuthenticationSourceFilter? SourceFilter
+        {
             get { return BackingStore?.Get<AuthenticationSourceFilter?>("sourceFilter"); }
             set { BackingStore?.Set("sourceFilter", value); }
         }
 #nullable restore
 #else
-        public AuthenticationSourceFilter SourceFilter {
+        public AuthenticationSourceFilter SourceFilter
+        {
             get { return BackingStore?.Get<AuthenticationSourceFilter>("sourceFilter"); }
             set { BackingStore?.Set("sourceFilter", value); }
         }
@@ -51,8 +55,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"sourceFilter", n => { SourceFilter = n.GetObjectValue<AuthenticationSourceFilter>(AuthenticationSourceFilter.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "sourceFilter", n => { SourceFilter = n.GetObjectValue<AuthenticationSourceFilter>(AuthenticationSourceFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

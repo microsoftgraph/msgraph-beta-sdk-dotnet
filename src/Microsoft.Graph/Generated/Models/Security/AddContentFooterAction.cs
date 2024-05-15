@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AddContentFooterAction : InformationProtectionAction, IParsable 
+    public class AddContentFooterAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The alignment property</summary>
-        public ContentAlignment? Alignment {
+        public ContentAlignment? Alignment
+        {
             get { return BackingStore?.Get<ContentAlignment?>("alignment"); }
             set { BackingStore?.Set("alignment", value); }
         }
         /// <summary>Color of the font to use for the footer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontColor {
+        public string? FontColor
+        {
             get { return BackingStore?.Get<string?>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
 #nullable restore
 #else
-        public string FontColor {
+        public string FontColor
+        {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
@@ -31,37 +35,43 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Name of the font to use for the footer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontName {
+        public string? FontName
+        {
             get { return BackingStore?.Get<string?>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
 #nullable restore
 #else
-        public string FontName {
+        public string FontName
+        {
             get { return BackingStore?.Get<string>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
 #endif
         /// <summary>Font size to use for the footer.</summary>
-        public int? FontSize {
+        public int? FontSize
+        {
             get { return BackingStore?.Get<int?>("fontSize"); }
             set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The margin of the header from the bottom of the document.</summary>
-        public int? Margin {
+        public int? Margin
+        {
             get { return BackingStore?.Get<int?>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
         /// <summary>The contents of the footer itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The name of the UI element where the footer should be placed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UiElementName {
+        public string? UiElementName
+        {
             get { return BackingStore?.Get<string?>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }
         }
 #nullable restore
 #else
-        public string UiElementName {
+        public string UiElementName
+        {
             get { return BackingStore?.Get<string>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }
         }
@@ -105,13 +117,13 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alignment", n => { Alignment = n.GetEnumValue<ContentAlignment>(); } },
-                {"fontColor", n => { FontColor = n.GetStringValue(); } },
-                {"fontName", n => { FontName = n.GetStringValue(); } },
-                {"fontSize", n => { FontSize = n.GetIntValue(); } },
-                {"margin", n => { Margin = n.GetIntValue(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
-                {"uiElementName", n => { UiElementName = n.GetStringValue(); } },
+                { "alignment", n => { Alignment = n.GetEnumValue<ContentAlignment>(); } },
+                { "fontColor", n => { FontColor = n.GetStringValue(); } },
+                { "fontName", n => { FontName = n.GetStringValue(); } },
+                { "fontSize", n => { FontSize = n.GetIntValue(); } },
+                { "margin", n => { Margin = n.GetIntValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "uiElementName", n => { UiElementName = n.GetStringValue(); } },
             };
         }
         /// <summary>

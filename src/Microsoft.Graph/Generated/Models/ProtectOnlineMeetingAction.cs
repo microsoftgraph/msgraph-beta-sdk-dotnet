@@ -4,41 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProtectOnlineMeetingAction : LabelActionBase, IParsable 
+    public class ProtectOnlineMeetingAction : LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allowedForwarders property</summary>
-        public OnlineMeetingForwarders? AllowedForwarders {
+        public OnlineMeetingForwarders? AllowedForwarders
+        {
             get { return BackingStore?.Get<OnlineMeetingForwarders?>("allowedForwarders"); }
             set { BackingStore?.Set("allowedForwarders", value); }
         }
         /// <summary>The allowedPresenters property</summary>
-        public OnlineMeetingPresenters? AllowedPresenters {
+        public OnlineMeetingPresenters? AllowedPresenters
+        {
             get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
         /// <summary>The isCopyToClipboardEnabled property</summary>
-        public bool? IsCopyToClipboardEnabled {
+        public bool? IsCopyToClipboardEnabled
+        {
             get { return BackingStore?.Get<bool?>("isCopyToClipboardEnabled"); }
             set { BackingStore?.Set("isCopyToClipboardEnabled", value); }
         }
         /// <summary>The isLobbyEnabled property</summary>
-        public bool? IsLobbyEnabled {
+        public bool? IsLobbyEnabled
+        {
             get { return BackingStore?.Get<bool?>("isLobbyEnabled"); }
             set { BackingStore?.Set("isLobbyEnabled", value); }
         }
         /// <summary>The lobbyBypassSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.LobbyBypassSettings? LobbyBypassSettings {
+        public Microsoft.Graph.Beta.Models.LobbyBypassSettings? LobbyBypassSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings?>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings {
+        public Microsoft.Graph.Beta.Models.LobbyBypassSettings LobbyBypassSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LobbyBypassSettings>("lobbyBypassSettings"); }
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
@@ -68,11 +75,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedForwarders", n => { AllowedForwarders = n.GetEnumValue<OnlineMeetingForwarders>(); } },
-                {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
-                {"isCopyToClipboardEnabled", n => { IsCopyToClipboardEnabled = n.GetBoolValue(); } },
-                {"isLobbyEnabled", n => { IsLobbyEnabled = n.GetBoolValue(); } },
-                {"lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>(Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
+                { "allowedForwarders", n => { AllowedForwarders = n.GetEnumValue<OnlineMeetingForwarders>(); } },
+                { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
+                { "isCopyToClipboardEnabled", n => { IsCopyToClipboardEnabled = n.GetBoolValue(); } },
+                { "isLobbyEnabled", n => { IsLobbyEnabled = n.GetBoolValue(); } },
+                { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LobbyBypassSettings>(Microsoft.Graph.Beta.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

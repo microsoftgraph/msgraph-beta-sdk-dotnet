@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TextClassificationRequest : Entity, IParsable 
+    public class TextClassificationRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The contentMetaData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClassificationRequestContentMetaData? ContentMetaData {
+        public ClassificationRequestContentMetaData? ContentMetaData
+        {
             get { return BackingStore?.Get<ClassificationRequestContentMetaData?>("contentMetaData"); }
             set { BackingStore?.Set("contentMetaData", value); }
         }
 #nullable restore
 #else
-        public ClassificationRequestContentMetaData ContentMetaData {
+        public ClassificationRequestContentMetaData ContentMetaData
+        {
             get { return BackingStore?.Get<ClassificationRequestContentMetaData>("contentMetaData"); }
             set { BackingStore?.Set("contentMetaData", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The fileExtension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileExtension {
+        public string? FileExtension
+        {
             get { return BackingStore?.Get<string?>("fileExtension"); }
             set { BackingStore?.Set("fileExtension", value); }
         }
 #nullable restore
 #else
-        public string FileExtension {
+        public string FileExtension
+        {
             get { return BackingStore?.Get<string>("fileExtension"); }
             set { BackingStore?.Set("fileExtension", value); }
         }
 #endif
         /// <summary>The matchTolerancesToInclude property</summary>
-        public MlClassificationMatchTolerance? MatchTolerancesToInclude {
+        public MlClassificationMatchTolerance? MatchTolerancesToInclude
+        {
             get { return BackingStore?.Get<MlClassificationMatchTolerance?>("matchTolerancesToInclude"); }
             set { BackingStore?.Set("matchTolerancesToInclude", value); }
         }
         /// <summary>The scopesToRun property</summary>
-        public SensitiveTypeScope? ScopesToRun {
+        public SensitiveTypeScope? ScopesToRun
+        {
             get { return BackingStore?.Get<SensitiveTypeScope?>("scopesToRun"); }
             set { BackingStore?.Set("scopesToRun", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SensitiveTypeIds {
+        public List<string>? SensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SensitiveTypeIds {
+        public List<string> SensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentMetaData", n => { ContentMetaData = n.GetObjectValue<ClassificationRequestContentMetaData>(ClassificationRequestContentMetaData.CreateFromDiscriminatorValue); } },
-                {"fileExtension", n => { FileExtension = n.GetStringValue(); } },
-                {"matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
-                {"scopesToRun", n => { ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
-                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
+                { "contentMetaData", n => { ContentMetaData = n.GetObjectValue<ClassificationRequestContentMetaData>(ClassificationRequestContentMetaData.CreateFromDiscriminatorValue); } },
+                { "fileExtension", n => { FileExtension = n.GetStringValue(); } },
+                { "matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
+                { "scopesToRun", n => { ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
+                { "sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

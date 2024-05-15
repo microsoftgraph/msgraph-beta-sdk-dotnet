@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewInstance : Entity, IParsable 
+    public class AccessReviewInstance : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewer>? ContactedReviewers {
+        public List<AccessReviewReviewer>? ContactedReviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewer>?>("contactedReviewers"); }
             set { BackingStore?.Set("contactedReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewer> ContactedReviewers {
+        public List<AccessReviewReviewer> ContactedReviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewer>>("contactedReviewers"); }
             set { BackingStore?.Set("contactedReviewers", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewInstanceDecisionItem>? Decisions {
+        public List<AccessReviewInstanceDecisionItem>? Decisions
+        {
             get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewInstanceDecisionItem> Decisions {
+        public List<AccessReviewInstanceDecisionItem> Decisions
+        {
             get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>There&apos;s exactly one accessReviewScheduleDefinition associated with each instance. It&apos;s the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewScheduleDefinition? Definition {
+        public AccessReviewScheduleDefinition? Definition
+        {
             get { return BackingStore?.Get<AccessReviewScheduleDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #nullable restore
 #else
-        public AccessReviewScheduleDefinition Definition {
+        public AccessReviewScheduleDefinition Definition
+        {
             get { return BackingStore?.Get<AccessReviewScheduleDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #endif
         /// <summary>DateTime when review instance is scheduled to end. The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Collection of errors in an access review instance lifecycle. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewError>? Errors {
+        public List<AccessReviewError>? Errors
+        {
             get { return BackingStore?.Get<List<AccessReviewError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewError> Errors {
+        public List<AccessReviewError> Errors
+        {
             get { return BackingStore?.Get<List<AccessReviewError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers are notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner doesn&apos;t exist, or manager is specified as reviewer but a user&apos;s manager doesn&apos;t exist. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? FallbackReviewers {
+        public List<AccessReviewReviewerScope>? FallbackReviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> FallbackReviewers {
+        public List<AccessReviewReviewerScope> FallbackReviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewReviewerScope>? Reviewers {
+        public List<AccessReviewReviewerScope>? Reviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewReviewerScope> Reviewers {
+        public List<AccessReviewReviewerScope> Reviewers
+        {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessReviewScope? Scope {
+        public AccessReviewScope? Scope
+        {
             get { return BackingStore?.Get<AccessReviewScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public AccessReviewScope Scope {
+        public AccessReviewScope Scope
+        {
             get { return BackingStore?.Get<AccessReviewScope>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -115,32 +131,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessReviewStage>? Stages {
+        public List<AccessReviewStage>? Stages
+        {
             get { return BackingStore?.Get<List<AccessReviewStage>?>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #nullable restore
 #else
-        public List<AccessReviewStage> Stages {
+        public List<AccessReviewStage> Stages
+        {
             get { return BackingStore?.Get<List<AccessReviewStage>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
 #endif
         /// <summary>DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -163,17 +184,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"decisions", n => { Decisions = n.GetCollectionOfObjectValues<AccessReviewInstanceDecisionItem>(AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"definition", n => { Definition = n.GetObjectValue<AccessReviewScheduleDefinition>(AccessReviewScheduleDefinition.CreateFromDiscriminatorValue); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<AccessReviewError>(AccessReviewError.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scope", n => { Scope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
-                {"stages", n => { Stages = n.GetCollectionOfObjectValues<AccessReviewStage>(AccessReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
+                { "contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewer>(AccessReviewReviewer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<AccessReviewInstanceDecisionItem>(AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definition", n => { Definition = n.GetObjectValue<AccessReviewScheduleDefinition>(AccessReviewScheduleDefinition.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<AccessReviewError>(AccessReviewError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scope", n => { Scope = n.GetObjectValue<AccessReviewScope>(AccessReviewScope.CreateFromDiscriminatorValue); } },
+                { "stages", n => { Stages = n.GetCollectionOfObjectValues<AccessReviewStage>(AccessReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServiceProvisioningLinkedResourceErrorDetail : ServiceProvisioningResourceErrorDetail, IParsable 
+    public class ServiceProvisioningLinkedResourceErrorDetail : ServiceProvisioningResourceErrorDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The propertyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyName {
+        public string? PropertyName
+        {
             get { return BackingStore?.Get<string?>("propertyName"); }
             set { BackingStore?.Set("propertyName", value); }
         }
 #nullable restore
 #else
-        public string PropertyName {
+        public string PropertyName
+        {
             get { return BackingStore?.Get<string>("propertyName"); }
             set { BackingStore?.Set("propertyName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Target {
+        public string? Target
+        {
             get { return BackingStore?.Get<string?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public string Target {
+        public string Target
+        {
             get { return BackingStore?.Get<string>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"propertyName", n => { PropertyName = n.GetStringValue(); } },
-                {"target", n => { Target = n.GetStringValue(); } },
+                { "propertyName", n => { PropertyName = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Properties of the  Integer script parameter.
     /// </summary>
-    public class DeviceHealthScriptIntegerParameter : DeviceHealthScriptParameter, IParsable 
+    public class DeviceHealthScriptIntegerParameter : DeviceHealthScriptParameter, IParsable
     {
         /// <summary>The default value of Integer param. Valid values -2147483648 to 2147483647</summary>
-        public int? DefaultValue {
+        public int? DefaultValue
+        {
             get { return BackingStore?.Get<int?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetIntValue(); } },
+                { "defaultValue", n => { DefaultValue = n.GetIntValue(); } },
             };
         }
         /// <summary>

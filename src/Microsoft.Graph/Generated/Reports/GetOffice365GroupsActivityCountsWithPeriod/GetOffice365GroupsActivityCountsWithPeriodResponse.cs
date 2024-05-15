@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityCountsWithPeriod
+{
     [Obsolete("This class is obsolete. Use GetOffice365GroupsActivityCountsWithPeriodGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365GroupsActivityCountsWithPeriodResponse : GetOffice365GroupsActivityCountsWithPeriodGetResponse, IParsable 
+    public class GetOffice365GroupsActivityCountsWithPeriodResponse : GetOffice365GroupsActivityCountsWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

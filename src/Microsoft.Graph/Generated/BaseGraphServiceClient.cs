@@ -132,11 +132,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta {
+namespace Microsoft.Graph.Beta
+{
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class BaseGraphServiceClient : BaseRequestBuilder 
+    public class BaseGraphServiceClient : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
         public AccessReviewDecisionsRequestBuilder AccessReviewDecisions

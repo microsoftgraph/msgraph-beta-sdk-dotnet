@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class Tag : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Tag : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
-        public Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability {
+        public Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability?>("childSelectability"); }
             set { BackingStore?.Set("childSelectability", value); }
         }
         /// <summary>Returns the tags that are a child of a tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tag>? ChildTags {
+        public List<Tag>? ChildTags
+        {
             get { return BackingStore?.Get<List<Tag>?>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
 #nullable restore
 #else
-        public List<Tag> ChildTags {
+        public List<Tag> ChildTags
+        {
             get { return BackingStore?.Get<List<Tag>>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The user who created the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The description for the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Display name of the tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date and time the tag was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Returns the parent tag of the specified tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Tag? Parent {
+        public Tag? Parent
+        {
             get { return BackingStore?.Get<Tag?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public Tag Parent {
+        public Tag Parent
+        {
             get { return BackingStore?.Get<Tag>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
-                {"childTags", n => { ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"parent", n => { Parent = n.GetObjectValue<Tag>(Tag.CreateFromDiscriminatorValue); } },
+                { "childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
+                { "childTags", n => { ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "parent", n => { Parent = n.GetObjectValue<Tag>(Tag.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

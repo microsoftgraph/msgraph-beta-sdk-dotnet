@@ -4,34 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics battery health capacity entity contains count of devices broken down into 3 categories - devices with capacity &gt; 80%, devices with capacity 50-80% and devices with capacity &lt; 50 %.This API provides the count of devices in these 3 categories..
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthCapacityDetails : Entity, IParsable 
+    public class UserExperienceAnalyticsBatteryHealthCapacityDetails : Entity, IParsable
     {
         /// <summary>Number of active devices within the tenant. Valid values 0 to 2147483647</summary>
-        public int? ActiveDevices {
+        public int? ActiveDevices
+        {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
         }
         /// <summary>Number of devices whose battery maximum capacity is greater than 50% but lesser than 80%. Valid values 0 to 2147483647</summary>
-        public int? BatteryCapacityFair {
+        public int? BatteryCapacityFair
+        {
             get { return BackingStore?.Get<int?>("batteryCapacityFair"); }
             set { BackingStore?.Set("batteryCapacityFair", value); }
         }
         /// <summary>Number of devices whose battery maximum capacity is greater than 80%. Valid values 0 to 2147483647</summary>
-        public int? BatteryCapacityGood {
+        public int? BatteryCapacityGood
+        {
             get { return BackingStore?.Get<int?>("batteryCapacityGood"); }
             set { BackingStore?.Set("batteryCapacityGood", value); }
         }
         /// <summary>Number of devices whose battery maximum capacity is lesser than 50%. Valid values 0 to 2147483647</summary>
-        public int? BatteryCapacityPoor {
+        public int? BatteryCapacityPoor
+        {
             get { return BackingStore?.Get<int?>("batteryCapacityPoor"); }
             set { BackingStore?.Set("batteryCapacityPoor", value); }
         }
         /// <summary>Recorded date time of this capacity details instance.</summary>
-        public DateTimeOffset? LastRefreshedDateTime {
+        public DateTimeOffset? LastRefreshedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
@@ -53,11 +59,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
-                {"batteryCapacityFair", n => { BatteryCapacityFair = n.GetIntValue(); } },
-                {"batteryCapacityGood", n => { BatteryCapacityGood = n.GetIntValue(); } },
-                {"batteryCapacityPoor", n => { BatteryCapacityPoor = n.GetIntValue(); } },
-                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
+                { "batteryCapacityFair", n => { BatteryCapacityFair = n.GetIntValue(); } },
+                { "batteryCapacityGood", n => { BatteryCapacityGood = n.GetIntValue(); } },
+                { "batteryCapacityPoor", n => { BatteryCapacityPoor = n.GetIntValue(); } },
+                { "lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

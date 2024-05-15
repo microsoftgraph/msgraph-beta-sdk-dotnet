@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OpenAwsSecurityGroupFinding : Finding, IParsable 
+    public class OpenAwsSecurityGroupFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A set of AWS EC2 compute instances related to this open security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedComputeInstanceDetails>? AssignedComputeInstancesDetails {
+        public List<AssignedComputeInstanceDetails>? AssignedComputeInstancesDetails
+        {
             get { return BackingStore?.Get<List<AssignedComputeInstanceDetails>?>("assignedComputeInstancesDetails"); }
             set { BackingStore?.Set("assignedComputeInstancesDetails", value); }
         }
 #nullable restore
 #else
-        public List<AssignedComputeInstanceDetails> AssignedComputeInstancesDetails {
+        public List<AssignedComputeInstanceDetails> AssignedComputeInstancesDetails
+        {
             get { return BackingStore?.Get<List<AssignedComputeInstanceDetails>>("assignedComputeInstancesDetails"); }
             set { BackingStore?.Set("assignedComputeInstancesDetails", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The inboundPorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.InboundPorts? InboundPorts {
+        public Microsoft.Graph.Beta.Models.InboundPorts? InboundPorts
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InboundPorts?>("inboundPorts"); }
             set { BackingStore?.Set("inboundPorts", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.InboundPorts InboundPorts {
+        public Microsoft.Graph.Beta.Models.InboundPorts InboundPorts
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InboundPorts>("inboundPorts"); }
             set { BackingStore?.Set("inboundPorts", value); }
         }
@@ -40,19 +45,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The securityGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAuthorizationSystemResource? SecurityGroup {
+        public AwsAuthorizationSystemResource? SecurityGroup
+        {
             get { return BackingStore?.Get<AwsAuthorizationSystemResource?>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #nullable restore
 #else
-        public AwsAuthorizationSystemResource SecurityGroup {
+        public AwsAuthorizationSystemResource SecurityGroup
+        {
             get { return BackingStore?.Get<AwsAuthorizationSystemResource>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #endif
         /// <summary>The number of storage buckets accessed by the assigned compute instances.</summary>
-        public int? TotalStorageBucketCount {
+        public int? TotalStorageBucketCount
+        {
             get { return BackingStore?.Get<int?>("totalStorageBucketCount"); }
             set { BackingStore?.Set("totalStorageBucketCount", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedComputeInstancesDetails", n => { AssignedComputeInstancesDetails = n.GetCollectionOfObjectValues<AssignedComputeInstanceDetails>(AssignedComputeInstanceDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
-                {"securityGroup", n => { SecurityGroup = n.GetObjectValue<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
-                {"totalStorageBucketCount", n => { TotalStorageBucketCount = n.GetIntValue(); } },
+                { "assignedComputeInstancesDetails", n => { AssignedComputeInstancesDetails = n.GetCollectionOfObjectValues<AssignedComputeInstanceDetails>(AssignedComputeInstanceDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
+                { "securityGroup", n => { SecurityGroup = n.GetObjectValue<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "totalStorageBucketCount", n => { TotalStorageBucketCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

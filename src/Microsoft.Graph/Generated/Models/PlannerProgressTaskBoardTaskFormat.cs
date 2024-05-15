@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerProgressTaskBoardTaskFormat : PlannerDelta, IParsable 
+    public class PlannerProgressTaskBoardTaskFormat : PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrderHint {
+        public string? OrderHint
+        {
             get { return BackingStore?.Get<string?>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
 #nullable restore
 #else
-        public string OrderHint {
+        public string OrderHint
+        {
             get { return BackingStore?.Get<string>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"orderHint", n => { OrderHint = n.GetStringValue(); } },
+                { "orderHint", n => { OrderHint = n.GetStringValue(); } },
             };
         }
         /// <summary>

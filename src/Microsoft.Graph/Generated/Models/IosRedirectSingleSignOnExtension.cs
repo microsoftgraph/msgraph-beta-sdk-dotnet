@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a Redirect-type Single Sign-On extension profile for iOS devices.
     /// </summary>
-    public class IosRedirectSingleSignOnExtension : IosSingleSignOnExtension, IParsable 
+    public class IosRedirectSingleSignOnExtension : IosSingleSignOnExtension, IParsable
     {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyTypedValuePair>? Configurations {
+        public List<KeyTypedValuePair>? Configurations
+        {
             get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #nullable restore
 #else
-        public List<KeyTypedValuePair> Configurations {
+        public List<KeyTypedValuePair> Configurations
+        {
             get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionIdentifier {
+        public string? ExtensionIdentifier
+        {
             get { return BackingStore?.Get<string?>("extensionIdentifier"); }
             set { BackingStore?.Set("extensionIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ExtensionIdentifier {
+        public string ExtensionIdentifier
+        {
             get { return BackingStore?.Get<string>("extensionIdentifier"); }
             set { BackingStore?.Set("extensionIdentifier", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets the team ID of the app extension that performs SSO for the specified URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamIdentifier {
+        public string? TeamIdentifier
+        {
             get { return BackingStore?.Get<string?>("teamIdentifier"); }
             set { BackingStore?.Set("teamIdentifier", value); }
         }
 #nullable restore
 #else
-        public string TeamIdentifier {
+        public string TeamIdentifier
+        {
             get { return BackingStore?.Get<string>("teamIdentifier"); }
             set { BackingStore?.Set("teamIdentifier", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>One or more URL prefixes of identity providers on whose behalf the app extension performs single sign-on. URLs must begin with http:// or https://. All URL prefixes must be unique for all profiles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UrlPrefixes {
+        public List<string>? UrlPrefixes
+        {
             get { return BackingStore?.Get<List<string>?>("urlPrefixes"); }
             set { BackingStore?.Set("urlPrefixes", value); }
         }
 #nullable restore
 #else
-        public List<string> UrlPrefixes {
+        public List<string> UrlPrefixes
+        {
             get { return BackingStore?.Get<List<string>>("urlPrefixes"); }
             set { BackingStore?.Set("urlPrefixes", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
-                {"teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
-                {"urlPrefixes", n => { UrlPrefixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
+                { "teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
+                { "urlPrefixes", n => { UrlPrefixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

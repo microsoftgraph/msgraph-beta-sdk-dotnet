@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ProductRevision : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ProductRevision : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The catalogEntry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry? CatalogEntry {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry? CatalogEntry
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry?>("catalogEntry"); }
             set { BackingStore?.Set("catalogEntry", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CatalogEntry {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CatalogEntry
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry"); }
             set { BackingStore?.Set("catalogEntry", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The display name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The knowledge base article associated with the product revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle? KnowledgeBaseArticle {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle? KnowledgeBaseArticle
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle?>("knowledgeBaseArticle"); }
             set { BackingStore?.Set("knowledgeBaseArticle", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle KnowledgeBaseArticle {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle KnowledgeBaseArticle
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>("knowledgeBaseArticle"); }
             set { BackingStore?.Set("knowledgeBaseArticle", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The osBuild property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BuildVersionDetails? OsBuild {
+        public BuildVersionDetails? OsBuild
+        {
             get { return BackingStore?.Get<BuildVersionDetails?>("osBuild"); }
             set { BackingStore?.Set("osBuild", value); }
         }
 #nullable restore
 #else
-        public BuildVersionDetails OsBuild {
+        public BuildVersionDetails OsBuild
+        {
             get { return BackingStore?.Get<BuildVersionDetails>("osBuild"); }
             set { BackingStore?.Set("osBuild", value); }
         }
@@ -68,32 +77,37 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The product of the revision. Possible values are: Windows 10, Windows 11. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Product {
+        public string? Product
+        {
             get { return BackingStore?.Get<string?>("product"); }
             set { BackingStore?.Set("product", value); }
         }
 #nullable restore
 #else
-        public string Product {
+        public string Product
+        {
             get { return BackingStore?.Get<string>("product"); }
             set { BackingStore?.Set("product", value); }
         }
 #endif
         /// <summary>The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? ReleaseDateTime {
+        public DateTimeOffset? ReleaseDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>The version of the feature update. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -116,13 +130,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"knowledgeBaseArticle", n => { KnowledgeBaseArticle = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
-                {"osBuild", n => { OsBuild = n.GetObjectValue<BuildVersionDetails>(BuildVersionDetails.CreateFromDiscriminatorValue); } },
-                {"product", n => { Product = n.GetStringValue(); } },
-                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "knowledgeBaseArticle", n => { KnowledgeBaseArticle = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle>(Microsoft.Graph.Beta.Models.WindowsUpdates.KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
+                { "osBuild", n => { OsBuild = n.GetObjectValue<BuildVersionDetails>(BuildVersionDetails.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetStringValue(); } },
+                { "releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

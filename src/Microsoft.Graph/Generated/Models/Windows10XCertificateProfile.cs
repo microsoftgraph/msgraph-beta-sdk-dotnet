@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Base Profile Type for Authentication Certificates (SCEP or PFX Create)
     /// </summary>
-    public class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase, IParsable 
+    public class Windows10XCertificateProfile : DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="Windows10XCertificateProfile"/> and sets the default values.

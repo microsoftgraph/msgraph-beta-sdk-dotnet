@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets
+{
     #pragma warning disable CS1591
-    public class GetPolicySetsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetPolicySetsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
         /// <summary>The policySetIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PolicySetIds {
+        public List<string>? PolicySetIds
+        {
             get { return BackingStore?.Get<List<string>?>("policySetIds"); }
             set { BackingStore?.Set("policySetIds", value); }
         }
 #nullable restore
 #else
-        public List<string> PolicySetIds {
+        public List<string> PolicySetIds
+        {
             get { return BackingStore?.Get<List<string>>("policySetIds"); }
             set { BackingStore?.Set("policySetIds", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"policySetIds", n => { PolicySetIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "policySetIds", n => { PolicySetIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

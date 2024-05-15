@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRbacResourceAction : Entity, IParsable 
+    public class UnifiedRbacResourceAction : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionVerb {
+        public string? ActionVerb
+        {
             get { return BackingStore?.Get<string?>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
 #nullable restore
 #else
-        public string ActionVerb {
+        public string ActionVerb
+        {
             get { return BackingStore?.Get<string>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The authenticationContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationContextClassReference? AuthenticationContext {
+        public AuthenticationContextClassReference? AuthenticationContext
+        {
             get { return BackingStore?.Get<AuthenticationContextClassReference?>("authenticationContext"); }
             set { BackingStore?.Set("authenticationContext", value); }
         }
 #nullable restore
 #else
-        public AuthenticationContextClassReference AuthenticationContext {
+        public AuthenticationContextClassReference AuthenticationContext
+        {
             get { return BackingStore?.Get<AuthenticationContextClassReference>("authenticationContext"); }
             set { BackingStore?.Set("authenticationContext", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The authenticationContextId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationContextId {
+        public string? AuthenticationContextId
+        {
             get { return BackingStore?.Get<string?>("authenticationContextId"); }
             set { BackingStore?.Set("authenticationContextId", value); }
         }
 #nullable restore
 #else
-        public string AuthenticationContextId {
+        public string AuthenticationContextId
+        {
             get { return BackingStore?.Get<string>("authenticationContextId"); }
             set { BackingStore?.Set("authenticationContextId", value); }
         }
@@ -54,37 +61,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description for the action. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The isAuthenticationContextSettable property</summary>
-        public bool? IsAuthenticationContextSettable {
+        public bool? IsAuthenticationContextSettable
+        {
             get { return BackingStore?.Get<bool?>("isAuthenticationContextSettable"); }
             set { BackingStore?.Set("isAuthenticationContextSettable", value); }
         }
         /// <summary>Flag indicating if the action is a sensitive resource action. Applies only for actions in the microsoft.directory resource namespace. Read-only. Supports $filter (eq).</summary>
-        public bool? IsPrivileged {
+        public bool? IsPrivileged
+        {
             get { return BackingStore?.Get<bool?>("isPrivileged"); }
             set { BackingStore?.Set("isPrivileged", value); }
         }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The resourceScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRbacResourceScope? ResourceScope {
+        public UnifiedRbacResourceScope? ResourceScope
+        {
             get { return BackingStore?.Get<UnifiedRbacResourceScope?>("resourceScope"); }
             set { BackingStore?.Set("resourceScope", value); }
         }
 #nullable restore
 #else
-        public UnifiedRbacResourceScope ResourceScope {
+        public UnifiedRbacResourceScope ResourceScope
+        {
             get { return BackingStore?.Get<UnifiedRbacResourceScope>("resourceScope"); }
             set { BackingStore?.Set("resourceScope", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not implemented.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceScopeId {
+        public string? ResourceScopeId
+        {
             get { return BackingStore?.Get<string?>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
         }
 #nullable restore
 #else
-        public string ResourceScopeId {
+        public string ResourceScopeId
+        {
             get { return BackingStore?.Get<string>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
         }
@@ -135,15 +152,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionVerb", n => { ActionVerb = n.GetStringValue(); } },
-                {"authenticationContext", n => { AuthenticationContext = n.GetObjectValue<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue); } },
-                {"authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
-                {"isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"resourceScope", n => { ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
-                {"resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
+                { "actionVerb", n => { ActionVerb = n.GetStringValue(); } },
+                { "authenticationContext", n => { AuthenticationContext = n.GetObjectValue<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue); } },
+                { "authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
+                { "isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "resourceScope", n => { ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
+                { "resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

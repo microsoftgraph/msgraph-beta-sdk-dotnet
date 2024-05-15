@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DefaultSharingLink : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DefaultSharingLink : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the default link setting for this object is a direct URL rather than a sharing link.</summary>
-        public bool? DefaultToExistingAccess {
+        public bool? DefaultToExistingAccess
+        {
             get { return BackingStore?.Get<bool?>("defaultToExistingAccess"); }
             set { BackingStore?.Set("defaultToExistingAccess", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The default sharing link role. The possible values are: none, view, edit, manageList, review, restrictedView, submitOnly, unknownFutureValue.</summary>
-        public SharingRole? Role {
+        public SharingRole? Role
+        {
             get { return BackingStore?.Get<SharingRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>The default sharing link scope. The possible values are: anyone, organization, specificPeople, anonymous, users, unknownFutureValue.</summary>
-        public SharingScope? Scope {
+        public SharingScope? Scope
+        {
             get { return BackingStore?.Get<SharingScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultToExistingAccess", n => { DefaultToExistingAccess = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"role", n => { Role = n.GetEnumValue<SharingRole>(); } },
-                {"scope", n => { Scope = n.GetEnumValue<SharingScope>(); } },
+                { "defaultToExistingAccess", n => { DefaultToExistingAccess = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetEnumValue<SharingRole>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<SharingScope>(); } },
             };
         }
         /// <summary>

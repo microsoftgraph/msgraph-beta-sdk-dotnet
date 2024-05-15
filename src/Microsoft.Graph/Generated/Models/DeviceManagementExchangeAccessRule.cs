@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Access Rules in Exchange.
     /// </summary>
-    public class DeviceManagementExchangeAccessRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementExchangeAccessRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Access Level in Exchange.</summary>
-        public DeviceManagementExchangeAccessLevel? AccessLevel {
+        public DeviceManagementExchangeAccessLevel? AccessLevel
+        {
             get { return BackingStore?.Get<DeviceManagementExchangeAccessLevel?>("accessLevel"); }
             set { BackingStore?.Set("accessLevel", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device Class which will be impacted by this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementExchangeDeviceClass? DeviceClass {
+        public DeviceManagementExchangeDeviceClass? DeviceClass
+        {
             get { return BackingStore?.Get<DeviceManagementExchangeDeviceClass?>("deviceClass"); }
             set { BackingStore?.Set("deviceClass", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementExchangeDeviceClass DeviceClass {
+        public DeviceManagementExchangeDeviceClass DeviceClass
+        {
             get { return BackingStore?.Get<DeviceManagementExchangeDeviceClass>("deviceClass"); }
             set { BackingStore?.Set("deviceClass", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessLevel", n => { AccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
-                {"deviceClass", n => { DeviceClass = n.GetObjectValue<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "accessLevel", n => { AccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
+                { "deviceClass", n => { DeviceClass = n.GetObjectValue<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

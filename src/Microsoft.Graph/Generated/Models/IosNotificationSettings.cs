@@ -5,32 +5,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// An item describing notification setting.
     /// </summary>
-    public class IosNotificationSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IosNotificationSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Notification Settings Alert Type.</summary>
-        public IosNotificationAlertType? AlertType {
+        public IosNotificationAlertType? AlertType
+        {
             get { return BackingStore?.Get<IosNotificationAlertType?>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
         /// <summary>Application name to be associated with the bundleID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName {
+        public string? AppName
+        {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #nullable restore
 #else
-        public string AppName {
+        public string AppName
+        {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
@@ -38,74 +43,86 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether badges are allowed for this app.</summary>
-        public bool? BadgesEnabled {
+        public bool? BadgesEnabled
+        {
             get { return BackingStore?.Get<bool?>("badgesEnabled"); }
             set { BackingStore?.Set("badgesEnabled", value); }
         }
         /// <summary>Bundle id of app to which to apply these notification settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleID {
+        public string? BundleID
+        {
             get { return BackingStore?.Get<string?>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
 #nullable restore
 #else
-        public string BundleID {
+        public string BundleID
+        {
             get { return BackingStore?.Get<string>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
 #endif
         /// <summary>Indicates whether notifications are allowed for this app.</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user&apos;s defined preview settings.</summary>
-        public IosNotificationPreviewVisibility? PreviewVisibility {
+        public IosNotificationPreviewVisibility? PreviewVisibility
+        {
             get { return BackingStore?.Get<IosNotificationPreviewVisibility?>("previewVisibility"); }
             set { BackingStore?.Set("previewVisibility", value); }
         }
         /// <summary>Publisher to be associated with the bundleID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #endif
         /// <summary>Indicates whether notifications can be shown in notification center.</summary>
-        public bool? ShowInNotificationCenter {
+        public bool? ShowInNotificationCenter
+        {
             get { return BackingStore?.Get<bool?>("showInNotificationCenter"); }
             set { BackingStore?.Set("showInNotificationCenter", value); }
         }
         /// <summary>Indicates whether notifications can be shown on the lock screen.</summary>
-        public bool? ShowOnLockScreen {
+        public bool? ShowOnLockScreen
+        {
             get { return BackingStore?.Get<bool?>("showOnLockScreen"); }
             set { BackingStore?.Set("showOnLockScreen", value); }
         }
         /// <summary>Indicates whether sounds are allowed for this app.</summary>
-        public bool? SoundsEnabled {
+        public bool? SoundsEnabled
+        {
             get { return BackingStore?.Get<bool?>("soundsEnabled"); }
             set { BackingStore?.Set("soundsEnabled", value); }
         }
@@ -135,17 +152,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alertType", n => { AlertType = n.GetEnumValue<IosNotificationAlertType>(); } },
-                {"appName", n => { AppName = n.GetStringValue(); } },
-                {"badgesEnabled", n => { BadgesEnabled = n.GetBoolValue(); } },
-                {"bundleID", n => { BundleID = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"previewVisibility", n => { PreviewVisibility = n.GetEnumValue<IosNotificationPreviewVisibility>(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"showInNotificationCenter", n => { ShowInNotificationCenter = n.GetBoolValue(); } },
-                {"showOnLockScreen", n => { ShowOnLockScreen = n.GetBoolValue(); } },
-                {"soundsEnabled", n => { SoundsEnabled = n.GetBoolValue(); } },
+                { "alertType", n => { AlertType = n.GetEnumValue<IosNotificationAlertType>(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "badgesEnabled", n => { BadgesEnabled = n.GetBoolValue(); } },
+                { "bundleID", n => { BundleID = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "previewVisibility", n => { PreviewVisibility = n.GetEnumValue<IosNotificationPreviewVisibility>(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "showInNotificationCenter", n => { ShowInNotificationCenter = n.GetBoolValue(); } },
+                { "showOnLockScreen", n => { ShowOnLockScreen = n.GetBoolValue(); } },
+                { "soundsEnabled", n => { SoundsEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

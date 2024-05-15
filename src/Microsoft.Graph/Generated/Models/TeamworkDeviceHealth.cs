@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDeviceHealth : Entity, IParsable 
+    public class TeamworkDeviceHealth : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? Connection {
+        public TeamworkConnection? Connection
+        {
             get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection Connection {
+        public TeamworkConnection Connection
+        {
             get { return BackingStore?.Get<TeamworkConnection>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who created the device health document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device health document was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Health details about the device hardware.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHardwareHealth? HardwareHealth {
+        public TeamworkHardwareHealth? HardwareHealth
+        {
             get { return BackingStore?.Get<TeamworkHardwareHealth?>("hardwareHealth"); }
             set { BackingStore?.Set("hardwareHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkHardwareHealth HardwareHealth {
+        public TeamworkHardwareHealth HardwareHealth
+        {
             get { return BackingStore?.Get<TeamworkHardwareHealth>("hardwareHealth"); }
             set { BackingStore?.Set("hardwareHealth", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who last modified the device health details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device health detail was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The login status of Microsoft Teams, Skype for Business, and Exchange.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkLoginStatus? LoginStatus {
+        public TeamworkLoginStatus? LoginStatus
+        {
             get { return BackingStore?.Get<TeamworkLoginStatus?>("loginStatus"); }
             set { BackingStore?.Set("loginStatus", value); }
         }
 #nullable restore
 #else
-        public TeamworkLoginStatus LoginStatus {
+        public TeamworkLoginStatus LoginStatus
+        {
             get { return BackingStore?.Get<TeamworkLoginStatus>("loginStatus"); }
             set { BackingStore?.Set("loginStatus", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Health details about all peripherals (for example, speaker and microphone) attached to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralsHealth? PeripheralsHealth {
+        public TeamworkPeripheralsHealth? PeripheralsHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralsHealth?>("peripheralsHealth"); }
             set { BackingStore?.Set("peripheralsHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralsHealth PeripheralsHealth {
+        public TeamworkPeripheralsHealth PeripheralsHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralsHealth>("peripheralsHealth"); }
             set { BackingStore?.Set("peripheralsHealth", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Software updates available for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkSoftwareUpdateHealth? SoftwareUpdateHealth {
+        public TeamworkSoftwareUpdateHealth? SoftwareUpdateHealth
+        {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth?>("softwareUpdateHealth"); }
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth {
+        public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth
+        {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>("softwareUpdateHealth"); }
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
@@ -135,15 +152,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"hardwareHealth", n => { HardwareHealth = n.GetObjectValue<TeamworkHardwareHealth>(TeamworkHardwareHealth.CreateFromDiscriminatorValue); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"loginStatus", n => { LoginStatus = n.GetObjectValue<TeamworkLoginStatus>(TeamworkLoginStatus.CreateFromDiscriminatorValue); } },
-                {"peripheralsHealth", n => { PeripheralsHealth = n.GetObjectValue<TeamworkPeripheralsHealth>(TeamworkPeripheralsHealth.CreateFromDiscriminatorValue); } },
-                {"softwareUpdateHealth", n => { SoftwareUpdateHealth = n.GetObjectValue<TeamworkSoftwareUpdateHealth>(TeamworkSoftwareUpdateHealth.CreateFromDiscriminatorValue); } },
+                { "connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "hardwareHealth", n => { HardwareHealth = n.GetObjectValue<TeamworkHardwareHealth>(TeamworkHardwareHealth.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "loginStatus", n => { LoginStatus = n.GetObjectValue<TeamworkLoginStatus>(TeamworkLoginStatus.CreateFromDiscriminatorValue); } },
+                { "peripheralsHealth", n => { PeripheralsHealth = n.GetObjectValue<TeamworkPeripheralsHealth>(TeamworkPeripheralsHealth.CreateFromDiscriminatorValue); } },
+                { "softwareUpdateHealth", n => { SoftwareUpdateHealth = n.GetObjectValue<TeamworkSoftwareUpdateHealth>(TeamworkSoftwareUpdateHealth.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

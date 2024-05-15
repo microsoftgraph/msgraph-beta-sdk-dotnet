@@ -6,21 +6,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval {
+namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval
+{
     #pragma warning disable CS1591
-    public class EvaluateRemovalPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class EvaluateRemovalPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction>? Value {
+        public List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction>? Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction> Value {
+        public List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction> Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -43,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction>(Microsoft.Graph.Beta.Models.Security.InformationProtectionAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction>(Microsoft.Graph.Beta.Models.Security.InformationProtectionAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

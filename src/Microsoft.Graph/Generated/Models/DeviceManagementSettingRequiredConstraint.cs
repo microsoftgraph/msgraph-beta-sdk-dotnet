@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint that enforces a particular required setting that is not null/undefined/empty string/not configured
     /// </summary>
-    public class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingRequiredConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>List of value which means not configured for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotConfiguredValue {
+        public string? NotConfiguredValue
+        {
             get { return BackingStore?.Get<string?>("notConfiguredValue"); }
             set { BackingStore?.Set("notConfiguredValue", value); }
         }
 #nullable restore
 #else
-        public string NotConfiguredValue {
+        public string NotConfiguredValue
+        {
             get { return BackingStore?.Get<string>("notConfiguredValue"); }
             set { BackingStore?.Set("notConfiguredValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"notConfiguredValue", n => { NotConfiguredValue = n.GetStringValue(); } },
+                { "notConfiguredValue", n => { NotConfiguredValue = n.GetStringValue(); } },
             };
         }
         /// <summary>

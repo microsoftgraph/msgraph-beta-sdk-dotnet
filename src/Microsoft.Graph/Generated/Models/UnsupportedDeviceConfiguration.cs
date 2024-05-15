@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// UnsupportedDeviceConfiguration is used when an entity cannot be mapped to another model-compliant subtype of deviceConfiguration.
     /// </summary>
-    public class UnsupportedDeviceConfiguration : DeviceConfiguration, IParsable 
+    public class UnsupportedDeviceConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnsupportedDeviceConfigurationDetail>? Details {
+        public List<UnsupportedDeviceConfigurationDetail>? Details
+        {
             get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<UnsupportedDeviceConfigurationDetail> Details {
+        public List<UnsupportedDeviceConfigurationDetail> Details
+        {
             get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of entity that would be returned otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginalEntityTypeName {
+        public string? OriginalEntityTypeName
+        {
             get { return BackingStore?.Get<string?>("originalEntityTypeName"); }
             set { BackingStore?.Set("originalEntityTypeName", value); }
         }
 #nullable restore
 #else
-        public string OriginalEntityTypeName {
+        public string OriginalEntityTypeName
+        {
             get { return BackingStore?.Get<string>("originalEntityTypeName"); }
             set { BackingStore?.Set("originalEntityTypeName", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"details", n => { Details = n.GetCollectionOfObjectValues<UnsupportedDeviceConfigurationDetail>(UnsupportedDeviceConfigurationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"originalEntityTypeName", n => { OriginalEntityTypeName = n.GetStringValue(); } },
+                { "details", n => { Details = n.GetCollectionOfObjectValues<UnsupportedDeviceConfigurationDetail>(UnsupportedDeviceConfigurationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "originalEntityTypeName", n => { OriginalEntityTypeName = n.GetStringValue(); } },
             };
         }
         /// <summary>

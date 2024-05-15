@@ -4,39 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an ADMX longDecimalTextBox element and an ADMX longDecimal element.
     /// </summary>
-    public class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyUploadedPresentation, IParsable 
+    public class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.</summary>
-        public long? DefaultValue {
+        public long? DefaultValue
+        {
             get { return BackingStore?.Get<long?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
         /// <summary>An unsigned long that specifies the maximum allowed value. The default value is 9999.</summary>
-        public long? MaxValue {
+        public long? MaxValue
+        {
             get { return BackingStore?.Get<long?>("maxValue"); }
             set { BackingStore?.Set("maxValue", value); }
         }
         /// <summary>An unsigned long that specifies the minimum allowed value. The default value is 0.</summary>
-        public long? MinValue {
+        public long? MinValue
+        {
             get { return BackingStore?.Get<long?>("minValue"); }
             set { BackingStore?.Set("minValue", value); }
         }
         /// <summary>Requirement to enter a value in the parameter box. The default value is false.</summary>
-        public bool? Required {
+        public bool? Required
+        {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>If true, create a spin control; otherwise, create a text box for numeric entry. The default value is true.</summary>
-        public bool? Spin {
+        public bool? Spin
+        {
             get { return BackingStore?.Get<bool?>("spin"); }
             set { BackingStore?.Set("spin", value); }
         }
         /// <summary>An unsigned integer that specifies the increment of change for the spin control. The default value is 1.</summary>
-        public long? SpinStep {
+        public long? SpinStep
+        {
             get { return BackingStore?.Get<long?>("spinStep"); }
             set { BackingStore?.Set("spinStep", value); }
         }
@@ -65,12 +72,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetLongValue(); } },
-                {"maxValue", n => { MaxValue = n.GetLongValue(); } },
-                {"minValue", n => { MinValue = n.GetLongValue(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
-                {"spin", n => { Spin = n.GetBoolValue(); } },
-                {"spinStep", n => { SpinStep = n.GetLongValue(); } },
+                { "defaultValue", n => { DefaultValue = n.GetLongValue(); } },
+                { "maxValue", n => { MaxValue = n.GetLongValue(); } },
+                { "minValue", n => { MinValue = n.GetLongValue(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "spin", n => { Spin = n.GetBoolValue(); } },
+                { "spinStep", n => { SpinStep = n.GetLongValue(); } },
             };
         }
         /// <summary>

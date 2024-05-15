@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProvisioningObjectSummary : Entity, IParsable 
+    public class ProvisioningObjectSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action {
+        public string? Action
+        {
             get { return BackingStore?.Get<string?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
 #nullable restore
 #else
-        public string Action {
+        public string Action
+        {
             get { return BackingStore?.Get<string>("action"); }
             set { BackingStore?.Set("action", value); }
         }
 #endif
         /// <summary>Represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Supports $filter (eq, gt, lt) and orderby.</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Unique ID of this change in this cycle. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChangeId {
+        public string? ChangeId
+        {
             get { return BackingStore?.Get<string?>("changeId"); }
             set { BackingStore?.Set("changeId", value); }
         }
 #nullable restore
 #else
-        public string ChangeId {
+        public string ChangeId
+        {
             get { return BackingStore?.Get<string>("changeId"); }
             set { BackingStore?.Set("changeId", value); }
         }
@@ -45,32 +51,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique ID per job iteration. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CycleId {
+        public string? CycleId
+        {
             get { return BackingStore?.Get<string?>("cycleId"); }
             set { BackingStore?.Set("cycleId", value); }
         }
 #nullable restore
 #else
-        public string CycleId {
+        public string CycleId
+        {
             get { return BackingStore?.Get<string>("cycleId"); }
             set { BackingStore?.Set("cycleId", value); }
         }
 #endif
         /// <summary>Indicates how long this provisioning action took to finish. Measured in milliseconds. Supports $filter (eq, gt, lt).</summary>
-        public int? DurationInMilliseconds {
+        public int? DurationInMilliseconds
+        {
             get { return BackingStore?.Get<int?>("durationInMilliseconds"); }
             set { BackingStore?.Set("durationInMilliseconds", value); }
         }
         /// <summary>Details of who initiated this provisioning. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Initiator? InitiatedBy {
+        public Initiator? InitiatedBy
+        {
             get { return BackingStore?.Get<Initiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public Initiator InitiatedBy {
+        public Initiator InitiatedBy
+        {
             get { return BackingStore?.Get<Initiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique ID for the whole provisioning job. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobId {
+        public string? JobId
+        {
             get { return BackingStore?.Get<string?>("jobId"); }
             set { BackingStore?.Set("jobId", value); }
         }
 #nullable restore
 #else
-        public string JobId {
+        public string JobId
+        {
             get { return BackingStore?.Get<string>("jobId"); }
             set { BackingStore?.Set("jobId", value); }
         }
@@ -92,32 +105,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details of each property that was modified in this provisioning action on this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ModifiedProperty>? ModifiedProperties {
+        public List<ModifiedProperty>? ModifiedProperties
+        {
             get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #nullable restore
 #else
-        public List<ModifiedProperty> ModifiedProperties {
+        public List<ModifiedProperty> ModifiedProperties
+        {
             get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #endif
         /// <summary>Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Microsoft Entra activity list. Supports $filter (eq, contains).</summary>
-        public Microsoft.Graph.Beta.Models.ProvisioningAction? ProvisioningAction {
+        public Microsoft.Graph.Beta.Models.ProvisioningAction? ProvisioningAction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningAction?>("provisioningAction"); }
             set { BackingStore?.Set("provisioningAction", value); }
         }
         /// <summary>Details of provisioning status. Supports $filter (eq, contains) for status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo? ProvisioningStatusInfo {
+        public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo? ProvisioningStatusInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo?>("provisioningStatusInfo"); }
             set { BackingStore?.Set("provisioningStatusInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo ProvisioningStatusInfo {
+        public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo ProvisioningStatusInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo>("provisioningStatusInfo"); }
             set { BackingStore?.Set("provisioningStatusInfo", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details of each step in provisioning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningStep>? ProvisioningSteps {
+        public List<ProvisioningStep>? ProvisioningSteps
+        {
             get { return BackingStore?.Get<List<ProvisioningStep>?>("provisioningSteps"); }
             set { BackingStore?.Set("provisioningSteps", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningStep> ProvisioningSteps {
+        public List<ProvisioningStep> ProvisioningSteps
+        {
             get { return BackingStore?.Get<List<ProvisioningStep>>("provisioningSteps"); }
             set { BackingStore?.Set("provisioningSteps", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents the service principal used for provisioning. Supports $filter (eq) for id and name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningServicePrincipal? ServicePrincipal {
+        public ProvisioningServicePrincipal? ServicePrincipal
+        {
             get { return BackingStore?.Get<ProvisioningServicePrincipal?>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
 #nullable restore
 #else
-        public ProvisioningServicePrincipal ServicePrincipal {
+        public ProvisioningServicePrincipal ServicePrincipal
+        {
             get { return BackingStore?.Get<ProvisioningServicePrincipal>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details of source object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisionedIdentity? SourceIdentity {
+        public ProvisionedIdentity? SourceIdentity
+        {
             get { return BackingStore?.Get<ProvisionedIdentity?>("sourceIdentity"); }
             set { BackingStore?.Set("sourceIdentity", value); }
         }
 #nullable restore
 #else
-        public ProvisionedIdentity SourceIdentity {
+        public ProvisionedIdentity SourceIdentity
+        {
             get { return BackingStore?.Get<ProvisionedIdentity>("sourceIdentity"); }
             set { BackingStore?.Set("sourceIdentity", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details of source system of the object being provisioned. Supports $filter (eq, contains) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningSystem? SourceSystem {
+        public ProvisioningSystem? SourceSystem
+        {
             get { return BackingStore?.Get<ProvisioningSystem?>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #nullable restore
 #else
-        public ProvisioningSystem SourceSystem {
+        public ProvisioningSystem SourceSystem
+        {
             get { return BackingStore?.Get<ProvisioningSystem>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
@@ -181,13 +207,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The statusInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StatusBase? StatusInfo {
+        public StatusBase? StatusInfo
+        {
             get { return BackingStore?.Get<StatusBase?>("statusInfo"); }
             set { BackingStore?.Set("statusInfo", value); }
         }
 #nullable restore
 #else
-        public StatusBase StatusInfo {
+        public StatusBase StatusInfo
+        {
             get { return BackingStore?.Get<StatusBase>("statusInfo"); }
             set { BackingStore?.Set("statusInfo", value); }
         }
@@ -195,13 +223,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details of target object being provisioned. Supports $filter (eq, contains) for identityType, id, and displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisionedIdentity? TargetIdentity {
+        public ProvisionedIdentity? TargetIdentity
+        {
             get { return BackingStore?.Get<ProvisionedIdentity?>("targetIdentity"); }
             set { BackingStore?.Set("targetIdentity", value); }
         }
 #nullable restore
 #else
-        public ProvisionedIdentity TargetIdentity {
+        public ProvisionedIdentity TargetIdentity
+        {
             get { return BackingStore?.Get<ProvisionedIdentity>("targetIdentity"); }
             set { BackingStore?.Set("targetIdentity", value); }
         }
@@ -209,13 +239,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Details of target system of the object being provisioned. Supports $filter (eq, contains) for displayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningSystem? TargetSystem {
+        public ProvisioningSystem? TargetSystem
+        {
             get { return BackingStore?.Get<ProvisioningSystem?>("targetSystem"); }
             set { BackingStore?.Set("targetSystem", value); }
         }
 #nullable restore
 #else
-        public ProvisioningSystem TargetSystem {
+        public ProvisioningSystem TargetSystem
+        {
             get { return BackingStore?.Get<ProvisioningSystem>("targetSystem"); }
             set { BackingStore?.Set("targetSystem", value); }
         }
@@ -223,13 +255,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique Microsoft Entra tenant ID. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -252,24 +286,24 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetStringValue(); } },
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"changeId", n => { ChangeId = n.GetStringValue(); } },
-                {"cycleId", n => { CycleId = n.GetStringValue(); } },
-                {"durationInMilliseconds", n => { DurationInMilliseconds = n.GetIntValue(); } },
-                {"initiatedBy", n => { InitiatedBy = n.GetObjectValue<Initiator>(Initiator.CreateFromDiscriminatorValue); } },
-                {"jobId", n => { JobId = n.GetStringValue(); } },
-                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"provisioningAction", n => { ProvisioningAction = n.GetEnumValue<ProvisioningAction>(); } },
-                {"provisioningStatusInfo", n => { ProvisioningStatusInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo>(Microsoft.Graph.Beta.Models.ProvisioningStatusInfo.CreateFromDiscriminatorValue); } },
-                {"provisioningSteps", n => { ProvisioningSteps = n.GetCollectionOfObjectValues<ProvisioningStep>(ProvisioningStep.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<ProvisioningServicePrincipal>(ProvisioningServicePrincipal.CreateFromDiscriminatorValue); } },
-                {"sourceIdentity", n => { SourceIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
-                {"sourceSystem", n => { SourceSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },
-                {"statusInfo", n => { StatusInfo = n.GetObjectValue<StatusBase>(StatusBase.CreateFromDiscriminatorValue); } },
-                {"targetIdentity", n => { TargetIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
-                {"targetSystem", n => { TargetSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetStringValue(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "changeId", n => { ChangeId = n.GetStringValue(); } },
+                { "cycleId", n => { CycleId = n.GetStringValue(); } },
+                { "durationInMilliseconds", n => { DurationInMilliseconds = n.GetIntValue(); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<Initiator>(Initiator.CreateFromDiscriminatorValue); } },
+                { "jobId", n => { JobId = n.GetStringValue(); } },
+                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisioningAction", n => { ProvisioningAction = n.GetEnumValue<ProvisioningAction>(); } },
+                { "provisioningStatusInfo", n => { ProvisioningStatusInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo>(Microsoft.Graph.Beta.Models.ProvisioningStatusInfo.CreateFromDiscriminatorValue); } },
+                { "provisioningSteps", n => { ProvisioningSteps = n.GetCollectionOfObjectValues<ProvisioningStep>(ProvisioningStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<ProvisioningServicePrincipal>(ProvisioningServicePrincipal.CreateFromDiscriminatorValue); } },
+                { "sourceIdentity", n => { SourceIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
+                { "sourceSystem", n => { SourceSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },
+                { "statusInfo", n => { StatusInfo = n.GetObjectValue<StatusBase>(StatusBase.CreateFromDiscriminatorValue); } },
+                { "targetIdentity", n => { TargetIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
+                { "targetSystem", n => { TargetSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

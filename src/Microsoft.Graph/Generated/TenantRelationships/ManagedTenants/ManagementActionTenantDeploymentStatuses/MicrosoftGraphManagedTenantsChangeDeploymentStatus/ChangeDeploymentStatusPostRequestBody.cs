@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.MicrosoftGraphManagedTenantsChangeDeploymentStatus {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses.MicrosoftGraphManagedTenantsChangeDeploymentStatus
+{
     #pragma warning disable CS1591
-    public class ChangeDeploymentStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChangeDeploymentStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The managementActionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementActionId {
+        public string? ManagementActionId
+        {
             get { return BackingStore?.Get<string?>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
 #nullable restore
 #else
-        public string ManagementActionId {
+        public string ManagementActionId
+        {
             get { return BackingStore?.Get<string>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The managementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateId {
+        public string? ManagementTemplateId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateId {
+        public string ManagementTemplateId
+        {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #endif
         /// <summary>The managementTemplateVersion property</summary>
-        public int? ManagementTemplateVersion {
+        public int? ManagementTemplateVersion
+        {
             get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
             set { BackingStore?.Set("managementTemplateVersion", value); }
         }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The tenantGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantGroupId {
+        public string? TenantGroupId
+        {
             get { return BackingStore?.Get<string?>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
 #nullable restore
 #else
-        public string TenantGroupId {
+        public string TenantGroupId
+        {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
-                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
-                {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
+                { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                { "managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationBehaviors : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthenticationBehaviors : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The blockAzureADGraphAccess property</summary>
-        public bool? BlockAzureADGraphAccess {
+        public bool? BlockAzureADGraphAccess
+        {
             get { return BackingStore?.Get<bool?>("blockAzureADGraphAccess"); }
             set { BackingStore?.Set("blockAzureADGraphAccess", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Removes the email claim from tokens sent to an application when the email address&apos;s domain can&apos;t be verified.</summary>
-        public bool? RemoveUnverifiedEmailClaim {
+        public bool? RemoveUnverifiedEmailClaim
+        {
             get { return BackingStore?.Get<bool?>("removeUnverifiedEmailClaim"); }
             set { BackingStore?.Set("removeUnverifiedEmailClaim", value); }
         }
         /// <summary>Requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they&apos;re granted access tokens. This property is only modifiable for multi-tenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.</summary>
-        public bool? RequireClientServicePrincipal {
+        public bool? RequireClientServicePrincipal
+        {
             get { return BackingStore?.Get<bool?>("requireClientServicePrincipal"); }
             set { BackingStore?.Set("requireClientServicePrincipal", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"blockAzureADGraphAccess", n => { BlockAzureADGraphAccess = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"removeUnverifiedEmailClaim", n => { RemoveUnverifiedEmailClaim = n.GetBoolValue(); } },
-                {"requireClientServicePrincipal", n => { RequireClientServicePrincipal = n.GetBoolValue(); } },
+                { "blockAzureADGraphAccess", n => { BlockAzureADGraphAccess = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "removeUnverifiedEmailClaim", n => { RemoveUnverifiedEmailClaim = n.GetBoolValue(); } },
+                { "requireClientServicePrincipal", n => { RequireClientServicePrincipal = n.GetBoolValue(); } },
             };
         }
         /// <summary>

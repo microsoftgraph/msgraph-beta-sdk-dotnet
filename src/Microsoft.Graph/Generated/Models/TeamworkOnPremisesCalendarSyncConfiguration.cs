@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkOnPremisesCalendarSyncConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkOnPremisesCalendarSyncConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The fully qualified domain name (FQDN) of the Skype for Business Server. Use the Exchange domain if the Skype for Business SIP domain is different from the Exchange domain of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain {
+        public string? Domain
+        {
             get { return BackingStore?.Get<string?>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
 #nullable restore
 #else
-        public string Domain {
+        public string Domain
+        {
             get { return BackingStore?.Get<string>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The domain and username of the console device, for example, Seattle/RanierConf.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainUserName {
+        public string? DomainUserName
+        {
             get { return BackingStore?.Get<string?>("domainUserName"); }
             set { BackingStore?.Set("domainUserName", value); }
         }
 #nullable restore
 #else
-        public string DomainUserName {
+        public string DomainUserName
+        {
             get { return BackingStore?.Get<string>("domainUserName"); }
             set { BackingStore?.Set("domainUserName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Simple Mail Transfer Protocol (SMTP) address of the user account. This is only required if a different user principal name (UPN) is used to sign in to Exchange other than Microsoft Teams and Skype for Business. This is a common scenario in a hybrid environment where an on-premises Exchange server is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SmtpAddress {
+        public string? SmtpAddress
+        {
             get { return BackingStore?.Get<string?>("smtpAddress"); }
             set { BackingStore?.Set("smtpAddress", value); }
         }
 #nullable restore
 #else
-        public string SmtpAddress {
+        public string SmtpAddress
+        {
             get { return BackingStore?.Get<string>("smtpAddress"); }
             set { BackingStore?.Set("smtpAddress", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"domain", n => { Domain = n.GetStringValue(); } },
-                {"domainUserName", n => { DomainUserName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"smtpAddress", n => { SmtpAddress = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "domainUserName", n => { DomainUserName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "smtpAddress", n => { SmtpAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

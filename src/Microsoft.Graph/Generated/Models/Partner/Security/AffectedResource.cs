@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Partner.Security {
+namespace Microsoft.Graph.Beta.Models.Partner.Security
+{
     #pragma warning disable CS1591
-    public class AffectedResource : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AffectedResource : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,41 +22,47 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The resourceId property</summary>
+        /// <summary>The resource path of the resource affected by the security alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
-        /// <summary>The resourceType property</summary>
+        /// <summary>The type of resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType {
+        public string? ResourceType
+        {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #nullable restore
 #else
-        public string ResourceType {
+        public string ResourceType
+        {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
             };
         }
         /// <summary>

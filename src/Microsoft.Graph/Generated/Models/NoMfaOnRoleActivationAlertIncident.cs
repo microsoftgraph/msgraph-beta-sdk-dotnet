@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class NoMfaOnRoleActivationAlertIncident : UnifiedRoleManagementAlertIncident, IParsable 
+    public class NoMfaOnRoleActivationAlertIncident : UnifiedRoleManagementAlertIncident, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the Microsoft Entra ID directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleDisplayName {
+        public string? RoleDisplayName
+        {
             get { return BackingStore?.Get<string?>("roleDisplayName"); }
             set { BackingStore?.Set("roleDisplayName", value); }
         }
 #nullable restore
 #else
-        public string RoleDisplayName {
+        public string RoleDisplayName
+        {
             get { return BackingStore?.Get<string>("roleDisplayName"); }
             set { BackingStore?.Set("roleDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The globally unique identifier for a directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleTemplateId {
+        public string? RoleTemplateId
+        {
             get { return BackingStore?.Get<string?>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
 #nullable restore
 #else
-        public string RoleTemplateId {
+        public string RoleTemplateId
+        {
             get { return BackingStore?.Get<string>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"roleDisplayName", n => { RoleDisplayName = n.GetStringValue(); } },
-                {"roleTemplateId", n => { RoleTemplateId = n.GetStringValue(); } },
+                { "roleDisplayName", n => { RoleDisplayName = n.GetStringValue(); } },
+                { "roleTemplateId", n => { RoleTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

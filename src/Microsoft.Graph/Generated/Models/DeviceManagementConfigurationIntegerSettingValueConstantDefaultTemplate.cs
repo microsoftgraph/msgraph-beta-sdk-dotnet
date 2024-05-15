@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Integer Setting Value Constant Default Template
     /// </summary>
-    public class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable 
+    public class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Default Constant Value. Valid values -2147483648 to 2147483647</summary>
-        public int? ConstantValue {
+        public int? ConstantValue
+        {
             get { return BackingStore?.Get<int?>("constantValue"); }
             set { BackingStore?.Set("constantValue", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"constantValue", n => { ConstantValue = n.GetIntValue(); } },
+                { "constantValue", n => { ConstantValue = n.GetIntValue(); } },
             };
         }
         /// <summary>

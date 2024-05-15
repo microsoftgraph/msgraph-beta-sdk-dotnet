@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// MacOS software update category summary report for a device and user
     /// </summary>
-    public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable 
+    public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable
     {
         /// <summary>The device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -27,52 +30,61 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Number of failed updates on the device</summary>
-        public int? FailedUpdateCount {
+        public int? FailedUpdateCount
+        {
             get { return BackingStore?.Get<int?>("failedUpdateCount"); }
             set { BackingStore?.Set("failedUpdateCount", value); }
         }
         /// <summary>Last date time the report for this device was updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Number of successful updates on the device</summary>
-        public int? SuccessfulUpdateCount {
+        public int? SuccessfulUpdateCount
+        {
             get { return BackingStore?.Get<int?>("successfulUpdateCount"); }
             set { BackingStore?.Set("successfulUpdateCount", value); }
         }
         /// <summary>Number of total updates on the device</summary>
-        public int? TotalUpdateCount {
+        public int? TotalUpdateCount
+        {
             get { return BackingStore?.Get<int?>("totalUpdateCount"); }
             set { BackingStore?.Set("totalUpdateCount", value); }
         }
         /// <summary>MacOS Software Update Category</summary>
-        public MacOSSoftwareUpdateCategory? UpdateCategory {
+        public MacOSSoftwareUpdateCategory? UpdateCategory
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>("updateCategory"); }
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Summary of the update states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSoftwareUpdateStateSummary>? UpdateStateSummaries {
+        public List<MacOSSoftwareUpdateStateSummary>? UpdateStateSummaries
+        {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>?>("updateStateSummaries"); }
             set { BackingStore?.Set("updateStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSoftwareUpdateStateSummary> UpdateStateSummaries {
+        public List<MacOSSoftwareUpdateStateSummary> UpdateStateSummaries
+        {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateStateSummary>>("updateStateSummaries"); }
             set { BackingStore?.Set("updateStateSummaries", value); }
         }
@@ -80,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -109,15 +123,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"failedUpdateCount", n => { FailedUpdateCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
-                {"totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
-                {"updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
-                {"updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "failedUpdateCount", n => { FailedUpdateCount = n.GetIntValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
+                { "totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
+                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
+                { "updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,38 +4,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Apple device features configuration profile.
     /// </summary>
-    public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable 
+    public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable
     {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomDomainName {
+        public string? CustomDomainName
+        {
             get { return BackingStore?.Get<string?>("customDomainName"); }
             set { BackingStore?.Set("customDomainName", value); }
         }
 #nullable restore
 #else
-        public string CustomDomainName {
+        public string CustomDomainName
+        {
             get { return BackingStore?.Get<string>("customDomainName"); }
             set { BackingStore?.Set("customDomainName", value); }
         }
 #endif
         /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
-        public DomainNameSource? UserDomainNameSource {
+        public DomainNameSource? UserDomainNameSource
+        {
             get { return BackingStore?.Get<DomainNameSource?>("userDomainNameSource"); }
             set { BackingStore?.Set("userDomainNameSource", value); }
         }
         /// <summary>Name of the AAD field, that will be used to retrieve UserName for email profile. Possible values are: userPrincipalName, primarySmtpAddress, samAccountName.</summary>
-        public Microsoft.Graph.Beta.Models.UsernameSource? UsernameAADSource {
+        public Microsoft.Graph.Beta.Models.UsernameSource? UsernameAADSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UsernameSource?>("usernameAADSource"); }
             set { BackingStore?.Set("usernameAADSource", value); }
         }
         /// <summary>Possible values for username source or email source.</summary>
-        public UserEmailSource? UsernameSource {
+        public UserEmailSource? UsernameSource
+        {
             get { return BackingStore?.Get<UserEmailSource?>("usernameSource"); }
             set { BackingStore?.Set("usernameSource", value); }
         }
@@ -71,10 +77,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customDomainName", n => { CustomDomainName = n.GetStringValue(); } },
-                {"userDomainNameSource", n => { UserDomainNameSource = n.GetEnumValue<DomainNameSource>(); } },
-                {"usernameAADSource", n => { UsernameAADSource = n.GetEnumValue<UsernameSource>(); } },
-                {"usernameSource", n => { UsernameSource = n.GetEnumValue<UserEmailSource>(); } },
+                { "customDomainName", n => { CustomDomainName = n.GetStringValue(); } },
+                { "userDomainNameSource", n => { UserDomainNameSource = n.GetEnumValue<DomainNameSource>(); } },
+                { "usernameAADSource", n => { UsernameAADSource = n.GetEnumValue<UsernameSource>(); } },
+                { "usernameSource", n => { UsernameSource = n.GetEnumValue<UserEmailSource>(); } },
             };
         }
         /// <summary>

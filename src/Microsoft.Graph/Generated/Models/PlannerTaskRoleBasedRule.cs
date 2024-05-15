@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerTaskRoleBasedRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PlannerTaskRoleBasedRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultRule {
+        public string? DefaultRule
+        {
             get { return BackingStore?.Get<string?>("defaultRule"); }
             set { BackingStore?.Set("defaultRule", value); }
         }
 #nullable restore
 #else
-        public string DefaultRule {
+        public string DefaultRule
+        {
             get { return BackingStore?.Get<string>("defaultRule"); }
             set { BackingStore?.Set("defaultRule", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Rules for specific properties and actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskPropertyRule? PropertyRule {
+        public PlannerTaskPropertyRule? PropertyRule
+        {
             get { return BackingStore?.Get<PlannerTaskPropertyRule?>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskPropertyRule PropertyRule {
+        public PlannerTaskPropertyRule PropertyRule
+        {
             get { return BackingStore?.Get<PlannerTaskPropertyRule>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The role these rules apply to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskConfigurationRoleBase? Role {
+        public PlannerTaskConfigurationRoleBase? Role
+        {
             get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskConfigurationRoleBase Role {
+        public PlannerTaskConfigurationRoleBase Role
+        {
             get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultRule", n => { DefaultRule = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"propertyRule", n => { PropertyRule = n.GetObjectValue<PlannerTaskPropertyRule>(PlannerTaskPropertyRule.CreateFromDiscriminatorValue); } },
-                {"role", n => { Role = n.GetObjectValue<PlannerTaskConfigurationRoleBase>(PlannerTaskConfigurationRoleBase.CreateFromDiscriminatorValue); } },
+                { "defaultRule", n => { DefaultRule = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "propertyRule", n => { PropertyRule = n.GetObjectValue<PlannerTaskPropertyRule>(PlannerTaskPropertyRule.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetObjectValue<PlannerTaskConfigurationRoleBase>(PlannerTaskConfigurationRoleBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

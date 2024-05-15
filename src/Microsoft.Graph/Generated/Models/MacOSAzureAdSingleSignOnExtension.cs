@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an Azure AD-type Single Sign-On extension profile for macOS devices.
     /// </summary>
-    public class MacOSAzureAdSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable 
+    public class MacOSAzureAdSingleSignOnExtension : MacOSSingleSignOnExtension, IParsable
     {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BundleIdAccessControlList {
+        public List<string>? BundleIdAccessControlList
+        {
             get { return BackingStore?.Get<List<string>?>("bundleIdAccessControlList"); }
             set { BackingStore?.Set("bundleIdAccessControlList", value); }
         }
 #nullable restore
 #else
-        public List<string> BundleIdAccessControlList {
+        public List<string> BundleIdAccessControlList
+        {
             get { return BackingStore?.Get<List<string>>("bundleIdAccessControlList"); }
             set { BackingStore?.Set("bundleIdAccessControlList", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyTypedValuePair>? Configurations {
+        public List<KeyTypedValuePair>? Configurations
+        {
             get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #nullable restore
 #else
-        public List<KeyTypedValuePair> Configurations {
+        public List<KeyTypedValuePair> Configurations
+        {
             get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #endif
         /// <summary>Enables or disables shared device mode.</summary>
-        public bool? EnableSharedDeviceMode {
+        public bool? EnableSharedDeviceMode
+        {
             get { return BackingStore?.Get<bool?>("enableSharedDeviceMode"); }
             set { BackingStore?.Set("enableSharedDeviceMode", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bundleIdAccessControlList", n => { BundleIdAccessControlList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"enableSharedDeviceMode", n => { EnableSharedDeviceMode = n.GetBoolValue(); } },
+                { "bundleIdAccessControlList", n => { BundleIdAccessControlList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enableSharedDeviceMode", n => { EnableSharedDeviceMode = n.GetBoolValue(); } },
             };
         }
         /// <summary>

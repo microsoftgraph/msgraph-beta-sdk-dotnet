@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AdminWindowsUpdates : Entity, IParsable 
+    public class AdminWindowsUpdates : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Catalog of content that can be approved for deployment by the deployment service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog? Catalog {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog? Catalog
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog?>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog Catalog {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog Catalog
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>("catalog"); }
             set { BackingStore?.Set("catalog", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The set of updatableAsset resources to which a deployment can apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeploymentAudience>? DeploymentAudiences {
+        public List<DeploymentAudience>? DeploymentAudiences
+        {
             get { return BackingStore?.Get<List<DeploymentAudience>?>("deploymentAudiences"); }
             set { BackingStore?.Set("deploymentAudiences", value); }
         }
 #nullable restore
 #else
-        public List<DeploymentAudience> DeploymentAudiences {
+        public List<DeploymentAudience> DeploymentAudiences
+        {
             get { return BackingStore?.Get<List<DeploymentAudience>>("deploymentAudiences"); }
             set { BackingStore?.Set("deploymentAudiences", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Deployments created using the deployment service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Deployment>? Deployments {
+        public List<Deployment>? Deployments
+        {
             get { return BackingStore?.Get<List<Deployment>?>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
 #nullable restore
 #else
-        public List<Deployment> Deployments {
+        public List<Deployment> Deployments
+        {
             get { return BackingStore?.Get<List<Deployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of Windows products.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Product>? Products {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Product>? Products
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.Product>?>("products"); }
             set { BackingStore?.Set("products", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Product> Products {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.Product> Products
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.Product>>("products"); }
             set { BackingStore?.Set("products", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Service connections to external resources such as analytics workspaces.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceConnection>? ResourceConnections {
+        public List<ResourceConnection>? ResourceConnections
+        {
             get { return BackingStore?.Get<List<ResourceConnection>?>("resourceConnections"); }
             set { BackingStore?.Set("resourceConnections", value); }
         }
 #nullable restore
 #else
-        public List<ResourceConnection> ResourceConnections {
+        public List<ResourceConnection> ResourceConnections
+        {
             get { return BackingStore?.Get<List<ResourceConnection>>("resourceConnections"); }
             set { BackingStore?.Set("resourceConnections", value); }
         }
@@ -83,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Assets registered with the deployment service that can receive updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? UpdatableAssets {
+        public List<UpdatableAsset>? UpdatableAssets
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("updatableAssets"); }
             set { BackingStore?.Set("updatableAssets", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> UpdatableAssets {
+        public List<UpdatableAsset> UpdatableAssets
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("updatableAssets"); }
             set { BackingStore?.Set("updatableAssets", value); }
         }
@@ -97,13 +110,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of policies for approving the deployment of different content to an audience over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>? UpdatePolicies {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>? UpdatePolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>?>("updatePolicies"); }
             set { BackingStore?.Set("updatePolicies", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy> UpdatePolicies {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy> UpdatePolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>>("updatePolicies"); }
             set { BackingStore?.Set("updatePolicies", value); }
         }
@@ -126,13 +141,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"catalog", n => { Catalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog.CreateFromDiscriminatorValue); } },
-                {"deploymentAudiences", n => { DeploymentAudiences = n.GetCollectionOfObjectValues<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<Deployment>(Deployment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"products", n => { Products = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.Product>(Microsoft.Graph.Beta.Models.WindowsUpdates.Product.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resourceConnections", n => { ResourceConnections = n.GetCollectionOfObjectValues<ResourceConnection>(ResourceConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"updatableAssets", n => { UpdatableAssets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"updatePolicies", n => { UpdatePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "catalog", n => { Catalog = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog>(Microsoft.Graph.Beta.Models.WindowsUpdates.Catalog.CreateFromDiscriminatorValue); } },
+                { "deploymentAudiences", n => { DeploymentAudiences = n.GetCollectionOfObjectValues<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<Deployment>(Deployment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "products", n => { Products = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.Product>(Microsoft.Graph.Beta.Models.WindowsUpdates.Product.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceConnections", n => { ResourceConnections = n.GetCollectionOfObjectValues<ResourceConnection>(ResourceConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "updatableAssets", n => { UpdatableAssets = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "updatePolicies", n => { UpdatePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

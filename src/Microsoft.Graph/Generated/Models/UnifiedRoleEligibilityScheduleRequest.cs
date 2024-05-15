@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleEligibilityScheduleRequest : Request, IParsable 
+    public class UnifiedRoleEligibilityScheduleRequest : Request, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the type of operation on the role eligibility request. The possible values are: AdminAssign: For administrators to assign eligible roles to principals.AdminRemove: For administrators to remove eligible roles from principals. AdminUpdate: For administrators to change existing role eligibilities.AdminExtend: For administrators to extend expiring role eligibilities.AdminRenew: For administrators to renew expired eligibilities.UserAdd: For users to activate their eligible assignments.UserRemove: For users to deactivate their active eligible assignments.UserExtend: For users to request to extend their expiring eligible assignments.UserRenew: For users to request to renew their expired eligible assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action {
+        public string? Action
+        {
             get { return BackingStore?.Get<string?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
 #nullable restore
 #else
-        public string Action {
+        public string Action
+        {
             get { return BackingStore?.Get<string>("action"); }
             set { BackingStore?.Set("action", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only property with details of the app-specific scope when the role eligibility is scoped to an app. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AppScope? AppScope {
+        public Microsoft.Graph.Beta.Models.AppScope? AppScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppScope?>("appScope"); }
             set { BackingStore?.Set("appScope", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AppScope AppScope {
+        public Microsoft.Graph.Beta.Models.AppScope AppScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppScope>("appScope"); }
             set { BackingStore?.Set("appScope", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the app-specific scope when the role eligibility is scoped to an app. The scope of a role eligibility determines the set of resources for which the principal is eligible to access. App scopes are scopes that are defined and understood by this application only. Use / for tenant-wide app scopes. Use directoryScopeId to limit the scope to particular directory objects, for example, administrative units. Supports $filter (eq, ne, and on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppScopeId {
+        public string? AppScopeId
+        {
             get { return BackingStore?.Get<string?>("appScopeId"); }
             set { BackingStore?.Set("appScopeId", value); }
         }
 #nullable restore
 #else
-        public string AppScopeId {
+        public string AppScopeId
+        {
             get { return BackingStore?.Get<string>("appScopeId"); }
             set { BackingStore?.Set("appScopeId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The directory object that is the scope of the role eligibility. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? DirectoryScope {
+        public DirectoryObject? DirectoryScope
+        {
             get { return BackingStore?.Get<DirectoryObject?>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject DirectoryScope {
+        public DirectoryObject DirectoryScope
+        {
             get { return BackingStore?.Get<DirectoryObject>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
@@ -68,32 +77,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the directory object representing the scope of the role eligibility. The scope of a role eligibility determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. Use appScopeId to limit the scope to an application only. Supports $filter (eq, ne, and on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectoryScopeId {
+        public string? DirectoryScopeId
+        {
             get { return BackingStore?.Get<string?>("directoryScopeId"); }
             set { BackingStore?.Set("directoryScopeId", value); }
         }
 #nullable restore
 #else
-        public string DirectoryScopeId {
+        public string DirectoryScopeId
+        {
             get { return BackingStore?.Get<string>("directoryScopeId"); }
             set { BackingStore?.Set("directoryScopeId", value); }
         }
 #endif
         /// <summary>Determines whether the call is a validation or an actual call. Only set this property if you want to check whether an activation is subject to additional rules like MFA before actually submitting the request.</summary>
-        public bool? IsValidationOnly {
+        public bool? IsValidationOnly
+        {
             get { return BackingStore?.Get<bool?>("isValidationOnly"); }
             set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>A message provided by users and administrators when create they create the unifiedRoleEligibilityScheduleRequest object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The principal that&apos;s getting a role eligibility through the request. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Principal {
+        public DirectoryObject? Principal
+        {
             get { return BackingStore?.Get<DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Principal {
+        public DirectoryObject Principal
+        {
             get { return BackingStore?.Get<DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrincipalId {
+        public string? PrincipalId
+        {
             get { return BackingStore?.Get<string?>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
 #nullable restore
 #else
-        public string PrincipalId {
+        public string PrincipalId
+        {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Detailed information for the unifiedRoleDefinition object that is referenced through the roleDefinitionId property. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleDefinition? RoleDefinition {
+        public UnifiedRoleDefinition? RoleDefinition
+        {
             get { return BackingStore?.Get<UnifiedRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleDefinition RoleDefinition {
+        public UnifiedRoleDefinition RoleDefinition
+        {
             get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the unifiedRoleDefinition object that is being assigned to the principal. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleDefinitionId {
+        public string? RoleDefinitionId
+        {
             get { return BackingStore?.Get<string?>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string RoleDefinitionId {
+        public string RoleDefinitionId
+        {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The period of the role eligibility. Recurring schedules are currently unsupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? ScheduleInfo {
+        public RequestSchedule? ScheduleInfo
+        {
             get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule ScheduleInfo {
+        public RequestSchedule ScheduleInfo
+        {
             get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
@@ -171,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The schedule for a role eligibility that is referenced through the targetScheduleId property. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleEligibilitySchedule? TargetSchedule {
+        public UnifiedRoleEligibilitySchedule? TargetSchedule
+        {
             get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule?>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleEligibilitySchedule TargetSchedule {
+        public UnifiedRoleEligibilitySchedule TargetSchedule
+        {
             get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
@@ -185,13 +211,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the schedule object that&apos;s linked to the eligibility request. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetScheduleId {
+        public string? TargetScheduleId
+        {
             get { return BackingStore?.Get<string?>("targetScheduleId"); }
             set { BackingStore?.Set("targetScheduleId", value); }
         }
 #nullable restore
 #else
-        public string TargetScheduleId {
+        public string TargetScheduleId
+        {
             get { return BackingStore?.Get<string>("targetScheduleId"); }
             set { BackingStore?.Set("targetScheduleId", value); }
         }
@@ -199,13 +227,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Ticket details linked to the role eligibility request including details of the ticket number and ticket system. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TicketInfo? TicketInfo {
+        public Microsoft.Graph.Beta.Models.TicketInfo? TicketInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TicketInfo?>("ticketInfo"); }
             set { BackingStore?.Set("ticketInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TicketInfo TicketInfo {
+        public Microsoft.Graph.Beta.Models.TicketInfo TicketInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TicketInfo>("ticketInfo"); }
             set { BackingStore?.Set("ticketInfo", value); }
         }
@@ -235,21 +265,21 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetStringValue(); } },
-                {"appScope", n => { AppScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppScope>(Microsoft.Graph.Beta.Models.AppScope.CreateFromDiscriminatorValue); } },
-                {"appScopeId", n => { AppScopeId = n.GetStringValue(); } },
-                {"directoryScope", n => { DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
-                {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
-                {"principalId", n => { PrincipalId = n.GetStringValue(); } },
-                {"roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
-                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
-                {"scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                {"targetSchedule", n => { TargetSchedule = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
-                {"targetScheduleId", n => { TargetScheduleId = n.GetStringValue(); } },
-                {"ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetStringValue(); } },
+                { "appScope", n => { AppScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppScope>(Microsoft.Graph.Beta.Models.AppScope.CreateFromDiscriminatorValue); } },
+                { "appScopeId", n => { AppScopeId = n.GetStringValue(); } },
+                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
+                { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
+                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "targetSchedule", n => { TargetSchedule = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                { "targetScheduleId", n => { TargetScheduleId = n.GetStringValue(); } },
+                { "ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

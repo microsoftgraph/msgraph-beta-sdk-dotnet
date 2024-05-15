@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Search {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Search
+{
     [Obsolete("This class is obsolete. Use SearchGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SearchResponse : SearchGetResponse, IParsable 
+    public class SearchResponse : SearchGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

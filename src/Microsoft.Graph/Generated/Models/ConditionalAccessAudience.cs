@@ -5,32 +5,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessAudience : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessAudience : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The ID of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId {
+        public string? ApplicationId
+        {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
 #nullable restore
 #else
-        public string ApplicationId {
+        public string ApplicationId
+        {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
 #endif
         /// <summary>Indicates the reasons this audience was included for a sign-in request.</summary>
-        public ConditionalAccessAudienceReason? AudienceReasons {
+        public ConditionalAccessAudienceReason? AudienceReasons
+        {
             get { return BackingStore?.Get<ConditionalAccessAudienceReason?>("audienceReasons"); }
             set { BackingStore?.Set("audienceReasons", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
-                {"audienceReasons", n => { AudienceReasons = n.GetEnumValue<ConditionalAccessAudienceReason>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                { "audienceReasons", n => { AudienceReasons = n.GetEnumValue<ConditionalAccessAudienceReason>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

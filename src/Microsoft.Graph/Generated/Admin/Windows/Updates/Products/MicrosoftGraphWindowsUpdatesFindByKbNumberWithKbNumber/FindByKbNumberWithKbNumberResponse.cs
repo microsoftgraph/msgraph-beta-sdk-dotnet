@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByKbNumberWithKbNumber
+{
     [Obsolete("This class is obsolete. Use FindByKbNumberWithKbNumberGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindByKbNumberWithKbNumberResponse : FindByKbNumberWithKbNumberGetResponse, IParsable 
+    public class FindByKbNumberWithKbNumberResponse : FindByKbNumberWithKbNumberGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

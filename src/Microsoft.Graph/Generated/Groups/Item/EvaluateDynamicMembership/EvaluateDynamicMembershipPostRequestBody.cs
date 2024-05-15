@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
+namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership
+{
     #pragma warning disable CS1591
-    public class EvaluateDynamicMembershipPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EvaluateDynamicMembershipPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
         /// <summary>The memberId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberId {
+        public string? MemberId
+        {
             get { return BackingStore?.Get<string?>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
 #nullable restore
 #else
-        public string MemberId {
+        public string MemberId
+        {
             get { return BackingStore?.Get<string>("memberId"); }
             set { BackingStore?.Set("memberId", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"memberId", n => { MemberId = n.GetStringValue(); } },
+                { "memberId", n => { MemberId = n.GetStringValue(); } },
             };
         }
         /// <summary>

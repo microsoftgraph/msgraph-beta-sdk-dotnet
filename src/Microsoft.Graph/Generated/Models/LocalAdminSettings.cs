@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class LocalAdminSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LocalAdminSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enableGlobalAdmins property</summary>
-        public bool? EnableGlobalAdmins {
+        public bool? EnableGlobalAdmins
+        {
             get { return BackingStore?.Get<bool?>("enableGlobalAdmins"); }
             set { BackingStore?.Set("enableGlobalAdmins", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The registeringUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceRegistrationMembership? RegisteringUsers {
+        public DeviceRegistrationMembership? RegisteringUsers
+        {
             get { return BackingStore?.Get<DeviceRegistrationMembership?>("registeringUsers"); }
             set { BackingStore?.Set("registeringUsers", value); }
         }
 #nullable restore
 #else
-        public DeviceRegistrationMembership RegisteringUsers {
+        public DeviceRegistrationMembership RegisteringUsers
+        {
             get { return BackingStore?.Get<DeviceRegistrationMembership>("registeringUsers"); }
             set { BackingStore?.Set("registeringUsers", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enableGlobalAdmins", n => { EnableGlobalAdmins = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"registeringUsers", n => { RegisteringUsers = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
+                { "enableGlobalAdmins", n => { EnableGlobalAdmins = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "registeringUsers", n => { RegisteringUsers = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// MacOS software update account summary report for a device and user
     /// </summary>
-    public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable 
+    public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable
     {
         /// <summary>Summary of the updates by category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSoftwareUpdateCategorySummary>? CategorySummaries {
+        public List<MacOSSoftwareUpdateCategorySummary>? CategorySummaries
+        {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>?>("categorySummaries"); }
             set { BackingStore?.Set("categorySummaries", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries {
+        public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries
+        {
             get { return BackingStore?.Get<List<MacOSSoftwareUpdateCategorySummary>>("categorySummaries"); }
             set { BackingStore?.Set("categorySummaries", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -55,61 +62,71 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Number of failed updates on the device.</summary>
-        public int? FailedUpdateCount {
+        public int? FailedUpdateCount
+        {
             get { return BackingStore?.Get<int?>("failedUpdateCount"); }
             set { BackingStore?.Set("failedUpdateCount", value); }
         }
         /// <summary>Last date time the report for this device was updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The OS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
         /// <summary>Number of successful updates on the device.</summary>
-        public int? SuccessfulUpdateCount {
+        public int? SuccessfulUpdateCount
+        {
             get { return BackingStore?.Get<int?>("successfulUpdateCount"); }
             set { BackingStore?.Set("successfulUpdateCount", value); }
         }
         /// <summary>Number of total updates on the device.</summary>
-        public int? TotalUpdateCount {
+        public int? TotalUpdateCount
+        {
             get { return BackingStore?.Get<int?>("totalUpdateCount"); }
             set { BackingStore?.Set("totalUpdateCount", value); }
         }
         /// <summary>The user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -117,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user principal name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -146,17 +165,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categorySummaries", n => { CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>(MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"failedUpdateCount", n => { FailedUpdateCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
-                {"totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "categorySummaries", n => { CategorySummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateCategorySummary>(MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "failedUpdateCount", n => { FailedUpdateCount = n.GetIntValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
+                { "totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

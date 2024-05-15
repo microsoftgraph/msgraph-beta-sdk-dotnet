@@ -4,34 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents user state summary for an intent
     /// </summary>
-    public class DeviceManagementIntentUserStateSummary : Entity, IParsable 
+    public class DeviceManagementIntentUserStateSummary : Entity, IParsable
     {
         /// <summary>Number of users in conflict</summary>
-        public int? ConflictCount {
+        public int? ConflictCount
+        {
             get { return BackingStore?.Get<int?>("conflictCount"); }
             set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error users</summary>
-        public int? ErrorCount {
+        public int? ErrorCount
+        {
             get { return BackingStore?.Get<int?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of failed users</summary>
-        public int? FailedCount {
+        public int? FailedCount
+        {
             get { return BackingStore?.Get<int?>("failedCount"); }
             set { BackingStore?.Set("failedCount", value); }
         }
         /// <summary>Number of not applicable users</summary>
-        public int? NotApplicableCount {
+        public int? NotApplicableCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableCount"); }
             set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of succeeded users</summary>
-        public int? SuccessCount {
+        public int? SuccessCount
+        {
             get { return BackingStore?.Get<int?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }
         }
@@ -53,11 +59,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
-                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
-                {"failedCount", n => { FailedCount = n.GetIntValue(); } },
-                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
-                {"successCount", n => { SuccessCount = n.GetIntValue(); } },
+                { "conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                { "failedCount", n => { FailedCount = n.GetIntValue(); } },
+                { "notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                { "successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

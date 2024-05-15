@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventPresenterDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VirtualEventPresenterDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Bio of the presenter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Bio {
+        public ItemBody? Bio
+        {
             get { return BackingStore?.Get<ItemBody?>("bio"); }
             set { BackingStore?.Set("bio", value); }
         }
 #nullable restore
 #else
-        public ItemBody Bio {
+        public ItemBody Bio
+        {
             get { return BackingStore?.Get<ItemBody>("bio"); }
             set { BackingStore?.Set("bio", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The presenter&apos;s company name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Company {
+        public string? Company
+        {
             get { return BackingStore?.Get<string?>("company"); }
             set { BackingStore?.Set("company", value); }
         }
 #nullable restore
 #else
-        public string Company {
+        public string Company
+        {
             get { return BackingStore?.Get<string>("company"); }
             set { BackingStore?.Set("company", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The presenter&apos;s job title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitle {
+        public string? JobTitle
+        {
             get { return BackingStore?.Get<string?>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
 #nullable restore
 #else
-        public string JobTitle {
+        public string JobTitle
+        {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The presenter&apos;s LinkedIn profile URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LinkedInProfileWebUrl {
+        public string? LinkedInProfileWebUrl
+        {
             get { return BackingStore?.Get<string?>("linkedInProfileWebUrl"); }
             set { BackingStore?.Set("linkedInProfileWebUrl", value); }
         }
 #nullable restore
 #else
-        public string LinkedInProfileWebUrl {
+        public string LinkedInProfileWebUrl
+        {
             get { return BackingStore?.Get<string>("linkedInProfileWebUrl"); }
             set { BackingStore?.Set("linkedInProfileWebUrl", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The presenter&apos;s personal website URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalSiteWebUrl {
+        public string? PersonalSiteWebUrl
+        {
             get { return BackingStore?.Get<string?>("personalSiteWebUrl"); }
             set { BackingStore?.Set("personalSiteWebUrl", value); }
         }
 #nullable restore
 #else
-        public string PersonalSiteWebUrl {
+        public string PersonalSiteWebUrl
+        {
             get { return BackingStore?.Get<string>("personalSiteWebUrl"); }
             set { BackingStore?.Set("personalSiteWebUrl", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The content stream of the presenter&apos;s photo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Photo {
+        public byte[]? Photo
+        {
             get { return BackingStore?.Get<byte[]?>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #nullable restore
 #else
-        public byte[] Photo {
+        public byte[] Photo
+        {
             get { return BackingStore?.Get<byte[]>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The presenter&apos;s Twitter profile URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TwitterProfileWebUrl {
+        public string? TwitterProfileWebUrl
+        {
             get { return BackingStore?.Get<string?>("twitterProfileWebUrl"); }
             set { BackingStore?.Set("twitterProfileWebUrl", value); }
         }
 #nullable restore
 #else
-        public string TwitterProfileWebUrl {
+        public string TwitterProfileWebUrl
+        {
             get { return BackingStore?.Get<string>("twitterProfileWebUrl"); }
             set { BackingStore?.Set("twitterProfileWebUrl", value); }
         }
@@ -155,14 +173,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"bio", n => { Bio = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"company", n => { Company = n.GetStringValue(); } },
-                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
-                {"linkedInProfileWebUrl", n => { LinkedInProfileWebUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"personalSiteWebUrl", n => { PersonalSiteWebUrl = n.GetStringValue(); } },
-                {"photo", n => { Photo = n.GetByteArrayValue(); } },
-                {"twitterProfileWebUrl", n => { TwitterProfileWebUrl = n.GetStringValue(); } },
+                { "bio", n => { Bio = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "company", n => { Company = n.GetStringValue(); } },
+                { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                { "linkedInProfileWebUrl", n => { LinkedInProfileWebUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "personalSiteWebUrl", n => { PersonalSiteWebUrl = n.GetStringValue(); } },
+                { "photo", n => { Photo = n.GetByteArrayValue(); } },
+                { "twitterProfileWebUrl", n => { TwitterProfileWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

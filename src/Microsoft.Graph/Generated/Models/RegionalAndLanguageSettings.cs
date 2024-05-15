@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RegionalAndLanguageSettings : Entity, IParsable 
+    public class RegionalAndLanguageSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocaleInfo>? AuthoringLanguages {
+        public List<LocaleInfo>? AuthoringLanguages
+        {
             get { return BackingStore?.Get<List<LocaleInfo>?>("authoringLanguages"); }
             set { BackingStore?.Set("authoringLanguages", value); }
         }
 #nullable restore
 #else
-        public List<LocaleInfo> AuthoringLanguages {
+        public List<LocaleInfo> AuthoringLanguages
+        {
             get { return BackingStore?.Get<List<LocaleInfo>>("authoringLanguages"); }
             set { BackingStore?.Set("authoringLanguages", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The  user&apos;s preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? DefaultDisplayLanguage {
+        public LocaleInfo? DefaultDisplayLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo?>("defaultDisplayLanguage"); }
             set { BackingStore?.Set("defaultDisplayLanguage", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo DefaultDisplayLanguage {
+        public LocaleInfo DefaultDisplayLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo>("defaultDisplayLanguage"); }
             set { BackingStore?.Set("defaultDisplayLanguage", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The locale that drives the default date, time, and calendar formatting.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? DefaultRegionalFormat {
+        public LocaleInfo? DefaultRegionalFormat
+        {
             get { return BackingStore?.Get<LocaleInfo?>("defaultRegionalFormat"); }
             set { BackingStore?.Set("defaultRegionalFormat", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo DefaultRegionalFormat {
+        public LocaleInfo DefaultRegionalFormat
+        {
             get { return BackingStore?.Get<LocaleInfo>("defaultRegionalFormat"); }
             set { BackingStore?.Set("defaultRegionalFormat", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language a user expected to use as input for text to speech scenarios.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? DefaultSpeechInputLanguage {
+        public LocaleInfo? DefaultSpeechInputLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo?>("defaultSpeechInputLanguage"); }
             set { BackingStore?.Set("defaultSpeechInputLanguage", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo DefaultSpeechInputLanguage {
+        public LocaleInfo DefaultSpeechInputLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo>("defaultSpeechInputLanguage"); }
             set { BackingStore?.Set("defaultSpeechInputLanguage", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language a user expects to have documents, emails, and messages translated into.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocaleInfo? DefaultTranslationLanguage {
+        public LocaleInfo? DefaultTranslationLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo?>("defaultTranslationLanguage"); }
             set { BackingStore?.Set("defaultTranslationLanguage", value); }
         }
 #nullable restore
 #else
-        public LocaleInfo DefaultTranslationLanguage {
+        public LocaleInfo DefaultTranslationLanguage
+        {
             get { return BackingStore?.Get<LocaleInfo>("defaultTranslationLanguage"); }
             set { BackingStore?.Set("defaultTranslationLanguage", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RegionalFormatOverrides? RegionalFormatOverrides {
+        public Microsoft.Graph.Beta.Models.RegionalFormatOverrides? RegionalFormatOverrides
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalFormatOverrides?>("regionalFormatOverrides"); }
             set { BackingStore?.Set("regionalFormatOverrides", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RegionalFormatOverrides RegionalFormatOverrides {
+        public Microsoft.Graph.Beta.Models.RegionalFormatOverrides RegionalFormatOverrides
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>("regionalFormatOverrides"); }
             set { BackingStore?.Set("regionalFormatOverrides", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user&apos;s preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TranslationPreferences? TranslationPreferences {
+        public Microsoft.Graph.Beta.Models.TranslationPreferences? TranslationPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationPreferences?>("translationPreferences"); }
             set { BackingStore?.Set("translationPreferences", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TranslationPreferences TranslationPreferences {
+        public Microsoft.Graph.Beta.Models.TranslationPreferences TranslationPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationPreferences>("translationPreferences"); }
             set { BackingStore?.Set("translationPreferences", value); }
         }
@@ -125,13 +140,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authoringLanguages", n => { AuthoringLanguages = n.GetCollectionOfObjectValues<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"defaultDisplayLanguage", n => { DefaultDisplayLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"defaultRegionalFormat", n => { DefaultRegionalFormat = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"defaultSpeechInputLanguage", n => { DefaultSpeechInputLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"defaultTranslationLanguage", n => { DefaultTranslationLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
-                {"regionalFormatOverrides", n => { RegionalFormatOverrides = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>(Microsoft.Graph.Beta.Models.RegionalFormatOverrides.CreateFromDiscriminatorValue); } },
-                {"translationPreferences", n => { TranslationPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.TranslationPreferences>(Microsoft.Graph.Beta.Models.TranslationPreferences.CreateFromDiscriminatorValue); } },
+                { "authoringLanguages", n => { AuthoringLanguages = n.GetCollectionOfObjectValues<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultDisplayLanguage", n => { DefaultDisplayLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "defaultRegionalFormat", n => { DefaultRegionalFormat = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "defaultSpeechInputLanguage", n => { DefaultSpeechInputLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "defaultTranslationLanguage", n => { DefaultTranslationLanguage = n.GetObjectValue<LocaleInfo>(LocaleInfo.CreateFromDiscriminatorValue); } },
+                { "regionalFormatOverrides", n => { RegionalFormatOverrides = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>(Microsoft.Graph.Beta.Models.RegionalFormatOverrides.CreateFromDiscriminatorValue); } },
+                { "translationPreferences", n => { TranslationPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.TranslationPreferences>(Microsoft.Graph.Beta.Models.TranslationPreferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

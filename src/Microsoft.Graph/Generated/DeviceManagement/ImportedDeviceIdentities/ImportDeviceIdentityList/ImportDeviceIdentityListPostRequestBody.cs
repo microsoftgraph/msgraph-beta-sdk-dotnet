@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList {
+namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList
+{
     #pragma warning disable CS1591
-    public class ImportDeviceIdentityListPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ImportDeviceIdentityListPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,19 +23,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
         /// <summary>The importedDeviceIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedDeviceIdentity>? ImportedDeviceIdentities {
+        public List<ImportedDeviceIdentity>? ImportedDeviceIdentities
+        {
             get { return BackingStore?.Get<List<ImportedDeviceIdentity>?>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<ImportedDeviceIdentity> ImportedDeviceIdentities {
+        public List<ImportedDeviceIdentity> ImportedDeviceIdentities
+        {
             get { return BackingStore?.Get<List<ImportedDeviceIdentity>>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
 #endif
         /// <summary>The overwriteImportedDeviceIdentities property</summary>
-        public bool? OverwriteImportedDeviceIdentities {
+        public bool? OverwriteImportedDeviceIdentities
+        {
             get { return BackingStore?.Get<bool?>("overwriteImportedDeviceIdentities"); }
             set { BackingStore?.Set("overwriteImportedDeviceIdentities", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<ImportedDeviceIdentity>(ImportedDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"overwriteImportedDeviceIdentities", n => { OverwriteImportedDeviceIdentities = n.GetBoolValue(); } },
+                { "importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<ImportedDeviceIdentity>(ImportedDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "overwriteImportedDeviceIdentities", n => { OverwriteImportedDeviceIdentities = n.GetBoolValue(); } },
             };
         }
         /// <summary>

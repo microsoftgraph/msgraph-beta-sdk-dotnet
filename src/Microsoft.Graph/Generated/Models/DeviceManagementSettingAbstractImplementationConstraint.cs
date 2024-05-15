@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint that enforces an AbstractComplex type has or is set to a particular value
     /// </summary>
-    public class DeviceManagementSettingAbstractImplementationConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingAbstractImplementationConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>List of value which means not configured for the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedAbstractImplementationDefinitionIds {
+        public List<string>? AllowedAbstractImplementationDefinitionIds
+        {
             get { return BackingStore?.Get<List<string>?>("allowedAbstractImplementationDefinitionIds"); }
             set { BackingStore?.Set("allowedAbstractImplementationDefinitionIds", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedAbstractImplementationDefinitionIds {
+        public List<string> AllowedAbstractImplementationDefinitionIds
+        {
             get { return BackingStore?.Get<List<string>>("allowedAbstractImplementationDefinitionIds"); }
             set { BackingStore?.Set("allowedAbstractImplementationDefinitionIds", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedAbstractImplementationDefinitionIds", n => { AllowedAbstractImplementationDefinitionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowedAbstractImplementationDefinitionIds", n => { AllowedAbstractImplementationDefinitionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

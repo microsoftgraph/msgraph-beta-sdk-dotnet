@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults
+{
     [Obsolete("This class is obsolete. Use GetCloudPcRemoteActionResultsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCloudPcRemoteActionResultsResponse : GetCloudPcRemoteActionResultsGetResponse, IParsable 
+    public class GetCloudPcRemoteActionResultsResponse : GetCloudPcRemoteActionResultsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

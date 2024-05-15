@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class PrivateAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PrivateAccessDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.AccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The connectionStatus property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus? ConnectionStatus {
+        public Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus? ConnectionStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ConnectionStatus?>("connectionStatus"); }
             set { BackingStore?.Set("connectionStatus", value); }
         }
         /// <summary>The connectorId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorId {
+        public string? ConnectorId
+        {
             get { return BackingStore?.Get<string?>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
 #nullable restore
 #else
-        public string ConnectorId {
+        public string ConnectorId
+        {
             get { return BackingStore?.Get<string>("connectorId"); }
             set { BackingStore?.Set("connectorId", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The connectorIp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorIp {
+        public string? ConnectorIp
+        {
             get { return BackingStore?.Get<string?>("connectorIp"); }
             set { BackingStore?.Set("connectorIp", value); }
         }
 #nullable restore
 #else
-        public string ConnectorIp {
+        public string ConnectorIp
+        {
             get { return BackingStore?.Get<string>("connectorIp"); }
             set { BackingStore?.Set("connectorIp", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The connectorName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorName {
+        public string? ConnectorName
+        {
             get { return BackingStore?.Get<string?>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
 #nullable restore
 #else
-        public string ConnectorName {
+        public string ConnectorName
+        {
             get { return BackingStore?.Get<string>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The processingRegion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessingRegion {
+        public string? ProcessingRegion
+        {
             get { return BackingStore?.Get<string?>("processingRegion"); }
             set { BackingStore?.Set("processingRegion", value); }
         }
 #nullable restore
 #else
-        public string ProcessingRegion {
+        public string ProcessingRegion
+        {
             get { return BackingStore?.Get<string>("processingRegion"); }
             set { BackingStore?.Set("processingRegion", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The thirdPartyTokenDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails? ThirdPartyTokenDetails {
+        public Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails? ThirdPartyTokenDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails?>("thirdPartyTokenDetails"); }
             set { BackingStore?.Set("thirdPartyTokenDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails ThirdPartyTokenDetails {
+        public Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails ThirdPartyTokenDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails>("thirdPartyTokenDetails"); }
             set { BackingStore?.Set("thirdPartyTokenDetails", value); }
         }
@@ -137,14 +153,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
-                {"connectionStatus", n => { ConnectionStatus = n.GetEnumValue<ConnectionStatus>(); } },
-                {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
-                {"connectorIp", n => { ConnectorIp = n.GetStringValue(); } },
-                {"connectorName", n => { ConnectorName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"processingRegion", n => { ProcessingRegion = n.GetStringValue(); } },
-                {"thirdPartyTokenDetails", n => { ThirdPartyTokenDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails>(Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails.CreateFromDiscriminatorValue); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
+                { "connectionStatus", n => { ConnectionStatus = n.GetEnumValue<ConnectionStatus>(); } },
+                { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                { "connectorIp", n => { ConnectorIp = n.GetStringValue(); } },
+                { "connectorName", n => { ConnectorName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "processingRegion", n => { ProcessingRegion = n.GetStringValue(); } },
+                { "thirdPartyTokenDetails", n => { ThirdPartyTokenDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails>(Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

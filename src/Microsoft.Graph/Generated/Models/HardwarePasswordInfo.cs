@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Intune will provide customer the ability to configure hardware/bios settings on the enrolled windows 10 Azure Active Directory joined devices.
     /// </summary>
-    public class HardwarePasswordInfo : Entity, IParsable 
+    public class HardwarePasswordInfo : Entity, IParsable
     {
         /// <summary>Current device password</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentPassword {
+        public string? CurrentPassword
+        {
             get { return BackingStore?.Get<string?>("currentPassword"); }
             set { BackingStore?.Set("currentPassword", value); }
         }
 #nullable restore
 #else
-        public string CurrentPassword {
+        public string CurrentPassword
+        {
             get { return BackingStore?.Get<string>("currentPassword"); }
             set { BackingStore?.Set("currentPassword", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of previous device passwords</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PreviousPasswords {
+        public List<string>? PreviousPasswords
+        {
             get { return BackingStore?.Get<List<string>?>("previousPasswords"); }
             set { BackingStore?.Set("previousPasswords", value); }
         }
 #nullable restore
 #else
-        public List<string> PreviousPasswords {
+        public List<string> PreviousPasswords
+        {
             get { return BackingStore?.Get<List<string>>("previousPasswords"); }
             set { BackingStore?.Set("previousPasswords", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device serial number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -70,9 +77,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"currentPassword", n => { CurrentPassword = n.GetStringValue(); } },
-                {"previousPasswords", n => { PreviousPasswords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "currentPassword", n => { CurrentPassword = n.GetStringValue(); } },
+                { "previousPasswords", n => { PreviousPasswords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

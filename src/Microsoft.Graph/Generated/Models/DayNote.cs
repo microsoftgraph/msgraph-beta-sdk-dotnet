@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DayNote : ChangeTrackedEntity, IParsable 
+    public class DayNote : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date of the day note.</summary>
-        public Date? DayNoteDate {
+        public Date? DayNoteDate
+        {
             get { return BackingStore?.Get<Date?>("dayNoteDate"); }
             set { BackingStore?.Set("dayNoteDate", value); }
         }
         /// <summary>The draft version of this day note that is viewable by managers. Only contentType text is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? DraftDayNote {
+        public ItemBody? DraftDayNote
+        {
             get { return BackingStore?.Get<ItemBody?>("draftDayNote"); }
             set { BackingStore?.Set("draftDayNote", value); }
         }
 #nullable restore
 #else
-        public ItemBody DraftDayNote {
+        public ItemBody DraftDayNote
+        {
             get { return BackingStore?.Get<ItemBody>("draftDayNote"); }
             set { BackingStore?.Set("draftDayNote", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shared version of this day note that is viewable by both employees and managers. Only contentType text is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? SharedDayNote {
+        public ItemBody? SharedDayNote
+        {
             get { return BackingStore?.Get<ItemBody?>("sharedDayNote"); }
             set { BackingStore?.Set("sharedDayNote", value); }
         }
 #nullable restore
 #else
-        public ItemBody SharedDayNote {
+        public ItemBody SharedDayNote
+        {
             get { return BackingStore?.Get<ItemBody>("sharedDayNote"); }
             set { BackingStore?.Set("sharedDayNote", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dayNoteDate", n => { DayNoteDate = n.GetDateValue(); } },
-                {"draftDayNote", n => { DraftDayNote = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"sharedDayNote", n => { SharedDayNote = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "dayNoteDate", n => { DayNoteDate = n.GetDateValue(); } },
+                { "draftDayNote", n => { DraftDayNote = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "sharedDayNote", n => { SharedDayNote = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class FilteringRule : PolicyRule, IParsable 
+    public class FilteringRule : PolicyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible destinations and types of destinations accessed by the user in accordance with the network filtering policy, such as IP addresses and FQDNs/URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RuleDestination>? Destinations {
+        public List<RuleDestination>? Destinations
+        {
             get { return BackingStore?.Get<List<RuleDestination>?>("destinations"); }
             set { BackingStore?.Set("destinations", value); }
         }
 #nullable restore
 #else
-        public List<RuleDestination> Destinations {
+        public List<RuleDestination> Destinations
+        {
             get { return BackingStore?.Get<List<RuleDestination>>("destinations"); }
             set { BackingStore?.Set("destinations", value); }
         }
 #endif
         /// <summary>The ruleType property</summary>
-        public NetworkDestinationType? RuleType {
+        public NetworkDestinationType? RuleType
+        {
             get { return BackingStore?.Get<NetworkDestinationType?>("ruleType"); }
             set { BackingStore?.Set("ruleType", value); }
         }
@@ -59,8 +63,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"destinations", n => { Destinations = n.GetCollectionOfObjectValues<RuleDestination>(RuleDestination.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"ruleType", n => { RuleType = n.GetEnumValue<NetworkDestinationType>(); } },
+                { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<RuleDestination>(RuleDestination.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ruleType", n => { RuleType = n.GetEnumValue<NetworkDestinationType>(); } },
             };
         }
         /// <summary>

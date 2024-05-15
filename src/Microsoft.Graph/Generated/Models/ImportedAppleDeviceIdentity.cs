@@ -4,76 +4,89 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The importedAppleDeviceIdentity resource represents the imported device identity of an Apple device .
     /// </summary>
-    public class ImportedAppleDeviceIdentity : Entity, IParsable 
+    public class ImportedAppleDeviceIdentity : Entity, IParsable
     {
         /// <summary>Created Date Time of the device</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The discoverySource property</summary>
-        public Microsoft.Graph.Beta.Models.DiscoverySource? DiscoverySource {
+        public Microsoft.Graph.Beta.Models.DiscoverySource? DiscoverySource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiscoverySource?>("discoverySource"); }
             set { BackingStore?.Set("discoverySource", value); }
         }
         /// <summary>The enrollmentState property</summary>
-        public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState {
+        public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>("enrollmentState"); }
             set { BackingStore?.Set("enrollmentState", value); }
         }
         /// <summary>Indicates if the device is deleted from Apple Business Manager</summary>
-        public bool? IsDeleted {
+        public bool? IsDeleted
+        {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
             set { BackingStore?.Set("isDeleted", value); }
         }
         /// <summary>Indicates if the Apple device is supervised.</summary>
-        public bool? IsSupervised {
+        public bool? IsSupervised
+        {
             get { return BackingStore?.Get<bool?>("isSupervised"); }
             set { BackingStore?.Set("isSupervised", value); }
         }
         /// <summary>Last Contacted Date Time of the device</summary>
-        public DateTimeOffset? LastContactedDateTime {
+        public DateTimeOffset? LastContactedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastContactedDateTime"); }
             set { BackingStore?.Set("lastContactedDateTime", value); }
         }
         /// <summary>The platform property</summary>
-        public Microsoft.Graph.Beta.Models.Platform? Platform {
+        public Microsoft.Graph.Beta.Models.Platform? Platform
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Platform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The time enrollment profile was assigned to the device</summary>
-        public DateTimeOffset? RequestedEnrollmentProfileAssignmentDateTime {
+        public DateTimeOffset? RequestedEnrollmentProfileAssignmentDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedEnrollmentProfileAssignmentDateTime"); }
             set { BackingStore?.Set("requestedEnrollmentProfileAssignmentDateTime", value); }
         }
         /// <summary>Enrollment profile Id admin intends to apply to the device during next enrollment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedEnrollmentProfileId {
+        public string? RequestedEnrollmentProfileId
+        {
             get { return BackingStore?.Get<string?>("requestedEnrollmentProfileId"); }
             set { BackingStore?.Set("requestedEnrollmentProfileId", value); }
         }
 #nullable restore
 #else
-        public string RequestedEnrollmentProfileId {
+        public string RequestedEnrollmentProfileId
+        {
             get { return BackingStore?.Get<string>("requestedEnrollmentProfileId"); }
             set { BackingStore?.Set("requestedEnrollmentProfileId", value); }
         }
@@ -81,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device serial number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -115,17 +130,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"discoverySource", n => { DiscoverySource = n.GetEnumValue<DiscoverySource>(); } },
-                {"enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
-                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
-                {"isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
-                {"lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platform", n => { Platform = n.GetEnumValue<Platform>(); } },
-                {"requestedEnrollmentProfileAssignmentDateTime", n => { RequestedEnrollmentProfileAssignmentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestedEnrollmentProfileId", n => { RequestedEnrollmentProfileId = n.GetStringValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "discoverySource", n => { DiscoverySource = n.GetEnumValue<DiscoverySource>(); } },
+                { "enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
+                { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                { "isSupervised", n => { IsSupervised = n.GetBoolValue(); } },
+                { "lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Platform>(); } },
+                { "requestedEnrollmentProfileAssignmentDateTime", n => { RequestedEnrollmentProfileAssignmentDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requestedEnrollmentProfileId", n => { RequestedEnrollmentProfileId = n.GetStringValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

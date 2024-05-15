@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.TeamsUserConfiguration {
+namespace Microsoft.Graph.Beta.Models.TeamsUserConfiguration
+{
     #pragma warning disable CS1591
-    public class UserConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class UserConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The binaryData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? BinaryData {
+        public byte[]? BinaryData
+        {
             get { return BackingStore?.Get<byte[]?>("binaryData"); }
             set { BackingStore?.Set("binaryData", value); }
         }
 #nullable restore
 #else
-        public byte[] BinaryData {
+        public byte[] BinaryData
+        {
             get { return BackingStore?.Get<byte[]>("binaryData"); }
             set { BackingStore?.Set("binaryData", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.TeamsUserConfiguration {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"binaryData", n => { BinaryData = n.GetByteArrayValue(); } },
+                { "binaryData", n => { BinaryData = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

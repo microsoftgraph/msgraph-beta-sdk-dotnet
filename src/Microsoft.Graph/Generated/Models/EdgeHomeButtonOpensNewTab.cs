@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Show the home button; clicking the home button loads the New tab page.
     /// </summary>
-    public class EdgeHomeButtonOpensNewTab : EdgeHomeButtonConfiguration, IParsable 
+    public class EdgeHomeButtonOpensNewTab : EdgeHomeButtonConfiguration, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="EdgeHomeButtonOpensNewTab"/> and sets the default values.

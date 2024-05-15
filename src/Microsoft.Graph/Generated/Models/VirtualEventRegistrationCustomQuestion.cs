@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventRegistrationCustomQuestion : VirtualEventRegistrationQuestionBase, IParsable 
+    public class VirtualEventRegistrationCustomQuestion : VirtualEventRegistrationQuestionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The answerChoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AnswerChoices {
+        public List<string>? AnswerChoices
+        {
             get { return BackingStore?.Get<List<string>?>("answerChoices"); }
             set { BackingStore?.Set("answerChoices", value); }
         }
 #nullable restore
 #else
-        public List<string> AnswerChoices {
+        public List<string> AnswerChoices
+        {
             get { return BackingStore?.Get<List<string>>("answerChoices"); }
             set { BackingStore?.Set("answerChoices", value); }
         }
 #endif
         /// <summary>The answerInputType property</summary>
-        public VirtualEventRegistrationQuestionAnswerInputType? AnswerInputType {
+        public VirtualEventRegistrationQuestionAnswerInputType? AnswerInputType
+        {
             get { return BackingStore?.Get<VirtualEventRegistrationQuestionAnswerInputType?>("answerInputType"); }
             set { BackingStore?.Set("answerInputType", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"answerChoices", n => { AnswerChoices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"answerInputType", n => { AnswerInputType = n.GetEnumValue<VirtualEventRegistrationQuestionAnswerInputType>(); } },
+                { "answerChoices", n => { AnswerChoices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "answerInputType", n => { AnswerInputType = n.GetEnumValue<VirtualEventRegistrationQuestionAnswerInputType>(); } },
             };
         }
         /// <summary>

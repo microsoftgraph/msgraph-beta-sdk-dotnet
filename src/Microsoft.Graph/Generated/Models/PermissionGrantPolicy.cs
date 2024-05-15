@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PermissionGrantPolicy : PolicyBase, IParsable 
+    public class PermissionGrantPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantConditionSet>? Excludes {
+        public List<PermissionGrantConditionSet>? Excludes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>?>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantConditionSet> Excludes {
+        public List<PermissionGrantConditionSet> Excludes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Condition sets that are included in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantConditionSet>? Includes {
+        public List<PermissionGrantConditionSet>? Includes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>?>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantConditionSet> Includes {
+        public List<PermissionGrantConditionSet> Includes
+        {
             get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #endif
         /// <summary>The resource type the pre-approval policy applies to. Possible values: team for groups and teams, chat for chats, tenant for all supported resources in the tenant. Required.</summary>
-        public Microsoft.Graph.Beta.Models.ResourceScopeType? ResourceScopeType {
+        public Microsoft.Graph.Beta.Models.ResourceScopeType? ResourceScopeType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceScopeType?>("resourceScopeType"); }
             set { BackingStore?.Set("resourceScopeType", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"excludes", n => { Excludes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"includes", n => { Includes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resourceScopeType", n => { ResourceScopeType = n.GetEnumValue<ResourceScopeType>(); } },
+                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includes", n => { Includes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceScopeType", n => { ResourceScopeType = n.GetEnumValue<ResourceScopeType>(); } },
             };
         }
         /// <summary>

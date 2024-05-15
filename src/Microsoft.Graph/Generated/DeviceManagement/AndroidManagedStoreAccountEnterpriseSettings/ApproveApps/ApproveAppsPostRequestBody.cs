@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.ApproveApps
+{
     #pragma warning disable CS1591
-    public class ApproveAppsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApproveAppsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The approveAllPermissions property</summary>
-        public bool? ApproveAllPermissions {
+        public bool? ApproveAllPermissions
+        {
             get { return BackingStore?.Get<bool?>("approveAllPermissions"); }
             set { BackingStore?.Set("approveAllPermissions", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>The packageIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PackageIds {
+        public List<string>? PackageIds
+        {
             get { return BackingStore?.Get<List<string>?>("packageIds"); }
             set { BackingStore?.Set("packageIds", value); }
         }
 #nullable restore
 #else
-        public List<string> PackageIds {
+        public List<string> PackageIds
+        {
             get { return BackingStore?.Get<List<string>>("packageIds"); }
             set { BackingStore?.Set("packageIds", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"approveAllPermissions", n => { ApproveAllPermissions = n.GetBoolValue(); } },
-                {"packageIds", n => { PackageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "approveAllPermissions", n => { ApproveAllPermissions = n.GetBoolValue(); } },
+                { "packageIds", n => { PackageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

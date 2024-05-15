@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventSession : OnlineMeetingBase, IParsable 
+    public class VirtualEventSession : OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The endDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? EndDateTime {
+        public DateTimeTimeZone? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone EndDateTime {
+        public DateTimeTimeZone EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The presenters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventPresenter>? Presenters {
+        public List<VirtualEventPresenter>? Presenters
+        {
             get { return BackingStore?.Get<List<VirtualEventPresenter>?>("presenters"); }
             set { BackingStore?.Set("presenters", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventPresenter> Presenters {
+        public List<VirtualEventPresenter> Presenters
+        {
             get { return BackingStore?.Get<List<VirtualEventPresenter>>("presenters"); }
             set { BackingStore?.Set("presenters", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The registrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistration>? Registrations {
+        public List<VirtualEventRegistration>? Registrations
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistration>?>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistration> Registrations {
+        public List<VirtualEventRegistration> Registrations
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistration>>("registrations"); }
             set { BackingStore?.Set("registrations", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The startDateTime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? StartDateTime {
+        public DateTimeTimeZone? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone StartDateTime {
+        public DateTimeTimeZone StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
-                {"presenters", n => { Presenters = n.GetCollectionOfObjectValues<VirtualEventPresenter>(VirtualEventPresenter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "endDateTime", n => { EndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<VirtualEventPresenter>(VirtualEventPresenter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<VirtualEventRegistration>(VirtualEventRegistration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

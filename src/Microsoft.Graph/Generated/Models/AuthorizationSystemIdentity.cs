@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthorizationSystemIdentity : Entity, IParsable 
+    public class AuthorizationSystemIdentity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Navigation to the authorizationSystem object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem {
+        public Microsoft.Graph.Beta.Models.AuthorizationSystem? AuthorizationSystem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystem?>("authorizationSystem"); }
             set { BackingStore?.Set("authorizationSystem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AuthorizationSystem AuthorizationSystem {
+        public Microsoft.Graph.Beta.Models.AuthorizationSystem AuthorizationSystem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystem>("authorizationSystem"); }
             set { BackingStore?.Set("authorizationSystem", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the identity. Read-only. Supports $filter and (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique ID of the identity within the external system. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents details of the source of the identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentitySource? Source {
+        public AuthorizationSystemIdentitySource? Source
+        {
             get { return BackingStore?.Get<AuthorizationSystemIdentitySource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentitySource Source {
+        public AuthorizationSystemIdentitySource Source
+        {
             get { return BackingStore?.Get<AuthorizationSystemIdentitySource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -105,10 +114,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"source", n => { Source = n.GetObjectValue<AuthorizationSystemIdentitySource>(AuthorizationSystemIdentitySource.CreateFromDiscriminatorValue); } },
+                { "authorizationSystem", n => { AuthorizationSystem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<AuthorizationSystemIdentitySource>(AuthorizationSystemIdentitySource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

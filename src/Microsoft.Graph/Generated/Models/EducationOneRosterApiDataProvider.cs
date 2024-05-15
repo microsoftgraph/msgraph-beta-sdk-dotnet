@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationOneRosterApiDataProvider : EducationSynchronizationDataProvider, IParsable 
+    public class EducationOneRosterApiDataProvider : EducationSynchronizationDataProvider, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connectionSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationConnectionSettings? ConnectionSettings {
+        public EducationSynchronizationConnectionSettings? ConnectionSettings
+        {
             get { return BackingStore?.Get<EducationSynchronizationConnectionSettings?>("connectionSettings"); }
             set { BackingStore?.Set("connectionSettings", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationConnectionSettings ConnectionSettings {
+        public EducationSynchronizationConnectionSettings ConnectionSettings
+        {
             get { return BackingStore?.Get<EducationSynchronizationConnectionSettings>("connectionSettings"); }
             set { BackingStore?.Set("connectionSettings", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connection URL to the OneRoster instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionUrl {
+        public string? ConnectionUrl
+        {
             get { return BackingStore?.Get<string?>("connectionUrl"); }
             set { BackingStore?.Set("connectionUrl", value); }
         }
 #nullable restore
 #else
-        public string ConnectionUrl {
+        public string ConnectionUrl
+        {
             get { return BackingStore?.Get<string>("connectionUrl"); }
             set { BackingStore?.Set("connectionUrl", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Optional customization to be applied to the synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomizations? Customizations {
+        public EducationSynchronizationCustomizations? Customizations
+        {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations?>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomizations Customizations {
+        public EducationSynchronizationCustomizations Customizations
+        {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OneRoster Service Provider name as defined by the OneRoster specification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderName {
+        public string? ProviderName
+        {
             get { return BackingStore?.Get<string?>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
 #nullable restore
 #else
-        public string ProviderName {
+        public string ProviderName
+        {
             get { return BackingStore?.Get<string>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of School/Org sourcedId to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SchoolsIds {
+        public List<string>? SchoolsIds
+        {
             get { return BackingStore?.Get<List<string>?>("schoolsIds"); }
             set { BackingStore?.Set("schoolsIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SchoolsIds {
+        public List<string> SchoolsIds
+        {
             get { return BackingStore?.Get<List<string>>("schoolsIds"); }
             set { BackingStore?.Set("schoolsIds", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of academic sessions to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TermIds {
+        public List<string>? TermIds
+        {
             get { return BackingStore?.Get<List<string>?>("termIds"); }
             set { BackingStore?.Set("termIds", value); }
         }
 #nullable restore
 #else
-        public List<string> TermIds {
+        public List<string> TermIds
+        {
             get { return BackingStore?.Get<List<string>>("termIds"); }
             set { BackingStore?.Set("termIds", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectionSettings", n => { ConnectionSettings = n.GetObjectValue<EducationSynchronizationConnectionSettings>(EducationSynchronizationConnectionSettings.CreateFromDiscriminatorValue); } },
-                {"connectionUrl", n => { ConnectionUrl = n.GetStringValue(); } },
-                {"customizations", n => { Customizations = n.GetObjectValue<EducationSynchronizationCustomizations>(EducationSynchronizationCustomizations.CreateFromDiscriminatorValue); } },
-                {"providerName", n => { ProviderName = n.GetStringValue(); } },
-                {"schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"termIds", n => { TermIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "connectionSettings", n => { ConnectionSettings = n.GetObjectValue<EducationSynchronizationConnectionSettings>(EducationSynchronizationConnectionSettings.CreateFromDiscriminatorValue); } },
+                { "connectionUrl", n => { ConnectionUrl = n.GetStringValue(); } },
+                { "customizations", n => { Customizations = n.GetObjectValue<EducationSynchronizationCustomizations>(EducationSynchronizationCustomizations.CreateFromDiscriminatorValue); } },
+                { "providerName", n => { ProviderName = n.GetStringValue(); } },
+                { "schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "termIds", n => { TermIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

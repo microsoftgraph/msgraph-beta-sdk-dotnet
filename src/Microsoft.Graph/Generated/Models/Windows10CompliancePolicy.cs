@@ -4,57 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This class contains compliance settings for Windows 10.
     /// </summary>
-    public class Windows10CompliancePolicy : DeviceCompliancePolicy, IParsable 
+    public class Windows10CompliancePolicy : DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require active firewall on Windows devices.</summary>
-        public bool? ActiveFirewallRequired {
+        public bool? ActiveFirewallRequired
+        {
             get { return BackingStore?.Get<bool?>("activeFirewallRequired"); }
             set { BackingStore?.Set("activeFirewallRequired", value); }
         }
         /// <summary>Require any AntiSpyware solution registered with Windows Decurity Center to be on and monitoring (e.g. Symantec, Windows Defender).</summary>
-        public bool? AntiSpywareRequired {
+        public bool? AntiSpywareRequired
+        {
             get { return BackingStore?.Get<bool?>("antiSpywareRequired"); }
             set { BackingStore?.Set("antiSpywareRequired", value); }
         }
         /// <summary>Require any Antivirus solution registered with Windows Decurity Center to be on and monitoring (e.g. Symantec, Windows Defender).</summary>
-        public bool? AntivirusRequired {
+        public bool? AntivirusRequired
+        {
             get { return BackingStore?.Get<bool?>("antivirusRequired"); }
             set { BackingStore?.Set("antivirusRequired", value); }
         }
         /// <summary>Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled</summary>
-        public bool? BitLockerEnabled {
+        public bool? BitLockerEnabled
+        {
             get { return BackingStore?.Get<bool?>("bitLockerEnabled"); }
             set { BackingStore?.Set("bitLockerEnabled", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation.</summary>
-        public bool? CodeIntegrityEnabled {
+        public bool? CodeIntegrityEnabled
+        {
             get { return BackingStore?.Get<bool?>("codeIntegrityEnabled"); }
             set { BackingStore?.Set("codeIntegrityEnabled", value); }
         }
         /// <summary>Require to consider SCCM Compliance state into consideration for Intune Compliance State.</summary>
-        public bool? ConfigurationManagerComplianceRequired {
+        public bool? ConfigurationManagerComplianceRequired
+        {
             get { return BackingStore?.Get<bool?>("configurationManagerComplianceRequired"); }
             set { BackingStore?.Set("configurationManagerComplianceRequired", value); }
         }
         /// <summary>Require Windows Defender Antimalware on Windows devices.</summary>
-        public bool? DefenderEnabled {
+        public bool? DefenderEnabled
+        {
             get { return BackingStore?.Get<bool?>("defenderEnabled"); }
             set { BackingStore?.Set("defenderEnabled", value); }
         }
         /// <summary>Require Windows Defender Antimalware minimum version on Windows devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefenderVersion {
+        public string? DefenderVersion
+        {
             get { return BackingStore?.Get<string?>("defenderVersion"); }
             set { BackingStore?.Set("defenderVersion", value); }
         }
 #nullable restore
 #else
-        public string DefenderVersion {
+        public string DefenderVersion
+        {
             get { return BackingStore?.Get<string>("defenderVersion"); }
             set { BackingStore?.Set("defenderVersion", value); }
         }
@@ -62,57 +72,67 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The deviceCompliancePolicyScript property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript {
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript?>("deviceCompliancePolicyScript"); }
             set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript {
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript"); }
             set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
 #endif
         /// <summary>Require that devices have enabled device threat protection.</summary>
-        public bool? DeviceThreatProtectionEnabled {
+        public bool? DeviceThreatProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("deviceThreatProtectionEnabled"); }
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel {
+        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        {
             get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation - early launch antimalware driver is enabled.</summary>
-        public bool? EarlyLaunchAntiMalwareDriverEnabled {
+        public bool? EarlyLaunchAntiMalwareDriverEnabled
+        {
             get { return BackingStore?.Get<bool?>("earlyLaunchAntiMalwareDriverEnabled"); }
             set { BackingStore?.Set("earlyLaunchAntiMalwareDriverEnabled", value); }
         }
         /// <summary>When TRUE, indicates that Firmware protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Firmware protection is not required to be reported as healthy. Devices that support either Dynamic Root of Trust for Measurement (DRTM) or Firmware Attack Surface Reduction (FASR) will report compliant for this setting. Default value is FALSE.</summary>
-        public bool? FirmwareProtectionEnabled {
+        public bool? FirmwareProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("firmwareProtectionEnabled"); }
             set { BackingStore?.Set("firmwareProtectionEnabled", value); }
         }
         /// <summary>When TRUE, indicates that Kernel Direct Memory Access (DMA) protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Kernel DMA Protection is not required to be reported as healthy. Default value is FALSE.</summary>
-        public bool? KernelDmaProtectionEnabled {
+        public bool? KernelDmaProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("kernelDmaProtectionEnabled"); }
             set { BackingStore?.Set("kernelDmaProtectionEnabled", value); }
         }
         /// <summary>When TRUE, indicates that Memory Integrity as known as Hypervisor-protected Code Integrity (HVCI) or Hypervisor Enforced Code Integrity protection is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Memory Integrity Protection is not required to be reported as healthy. Default value is FALSE.</summary>
-        public bool? MemoryIntegrityEnabled {
+        public bool? MemoryIntegrityEnabled
+        {
             get { return BackingStore?.Get<bool?>("memoryIntegrityEnabled"); }
             set { BackingStore?.Set("memoryIntegrityEnabled", value); }
         }
         /// <summary>Maximum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobileOsMaximumVersion {
+        public string? MobileOsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("mobileOsMaximumVersion"); }
             set { BackingStore?.Set("mobileOsMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string MobileOsMaximumVersion {
+        public string MobileOsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("mobileOsMaximumVersion"); }
             set { BackingStore?.Set("mobileOsMaximumVersion", value); }
         }
@@ -120,13 +140,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Minimum Windows Phone version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobileOsMinimumVersion {
+        public string? MobileOsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("mobileOsMinimumVersion"); }
             set { BackingStore?.Set("mobileOsMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string MobileOsMinimumVersion {
+        public string MobileOsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("mobileOsMinimumVersion"); }
             set { BackingStore?.Set("mobileOsMinimumVersion", value); }
         }
@@ -134,13 +156,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Maximum Windows 10 version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMaximumVersion {
+        public string? OsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMaximumVersion {
+        public string OsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
@@ -148,108 +172,128 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Minimum Windows 10 version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMinimumVersion {
+        public string? OsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMinimumVersion {
+        public string OsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
         /// <summary>Indicates whether or not to block simple password.</summary>
-        public bool? PasswordBlockSimple {
+        public bool? PasswordBlockSimple
+        {
             get { return BackingStore?.Get<bool?>("passwordBlockSimple"); }
             set { BackingStore?.Set("passwordBlockSimple", value); }
         }
         /// <summary>The password expiration in days.</summary>
-        public int? PasswordExpirationDays {
+        public int? PasswordExpirationDays
+        {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
             set { BackingStore?.Set("passwordExpirationDays", value); }
         }
         /// <summary>The number of character sets required in the password.</summary>
-        public int? PasswordMinimumCharacterSetCount {
+        public int? PasswordMinimumCharacterSetCount
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumCharacterSetCount"); }
             set { BackingStore?.Set("passwordMinimumCharacterSetCount", value); }
         }
         /// <summary>The minimum password length.</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required.</summary>
-        public int? PasswordMinutesOfInactivityBeforeLock {
+        public int? PasswordMinutesOfInactivityBeforeLock
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>The number of previous passwords to prevent re-use of.</summary>
-        public int? PasswordPreviousPasswordBlockCount {
+        public int? PasswordPreviousPasswordBlockCount
+        {
             get { return BackingStore?.Get<int?>("passwordPreviousPasswordBlockCount"); }
             set { BackingStore?.Set("passwordPreviousPasswordBlockCount", value); }
         }
         /// <summary>Require a password to unlock Windows device.</summary>
-        public bool? PasswordRequired {
+        public bool? PasswordRequired
+        {
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Require a password to unlock an idle device.</summary>
-        public bool? PasswordRequiredToUnlockFromIdle {
+        public bool? PasswordRequiredToUnlockFromIdle
+        {
             get { return BackingStore?.Get<bool?>("passwordRequiredToUnlockFromIdle"); }
             set { BackingStore?.Set("passwordRequiredToUnlockFromIdle", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType {
+        public RequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation.</summary>
-        public bool? RequireHealthyDeviceReport {
+        public bool? RequireHealthyDeviceReport
+        {
             get { return BackingStore?.Get<bool?>("requireHealthyDeviceReport"); }
             set { BackingStore?.Set("requireHealthyDeviceReport", value); }
         }
         /// <summary>Require Windows Defender Antimalware Real-Time Protection on Windows devices.</summary>
-        public bool? RtpEnabled {
+        public bool? RtpEnabled
+        {
             get { return BackingStore?.Get<bool?>("rtpEnabled"); }
             set { BackingStore?.Set("rtpEnabled", value); }
         }
         /// <summary>Require devices to be reported as healthy by Windows Device Health Attestation - secure boot is enabled.</summary>
-        public bool? SecureBootEnabled {
+        public bool? SecureBootEnabled
+        {
             get { return BackingStore?.Get<bool?>("secureBootEnabled"); }
             set { BackingStore?.Set("secureBootEnabled", value); }
         }
         /// <summary>Require Windows Defender Antimalware Signature to be up to date on Windows devices.</summary>
-        public bool? SignatureOutOfDate {
+        public bool? SignatureOutOfDate
+        {
             get { return BackingStore?.Get<bool?>("signatureOutOfDate"); }
             set { BackingStore?.Set("signatureOutOfDate", value); }
         }
         /// <summary>Require encryption on windows devices.</summary>
-        public bool? StorageRequireEncryption {
+        public bool? StorageRequireEncryption
+        {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>Require Trusted Platform Module(TPM) to be present.</summary>
-        public bool? TpmRequired {
+        public bool? TpmRequired
+        {
             get { return BackingStore?.Get<bool?>("tpmRequired"); }
             set { BackingStore?.Set("tpmRequired", value); }
         }
         /// <summary>The valid operating system build ranges on Windows devices. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OperatingSystemVersionRange>? ValidOperatingSystemBuildRanges {
+        public List<OperatingSystemVersionRange>? ValidOperatingSystemBuildRanges
+        {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>?>("validOperatingSystemBuildRanges"); }
             set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
         }
 #nullable restore
 #else
-        public List<OperatingSystemVersionRange> ValidOperatingSystemBuildRanges {
+        public List<OperatingSystemVersionRange> ValidOperatingSystemBuildRanges
+        {
             get { return BackingStore?.Get<List<OperatingSystemVersionRange>>("validOperatingSystemBuildRanges"); }
             set { BackingStore?.Set("validOperatingSystemBuildRanges", value); }
         }
 #endif
         /// <summary>When TRUE, indicates that Virtualization-based Security is required to be reported as healthy by Microsoft Azure Attestion. When FALSE, indicates that Virtualization-based Security is not required to be reported as healthy. Default value is FALSE.</summary>
-        public bool? VirtualizationBasedSecurityEnabled {
+        public bool? VirtualizationBasedSecurityEnabled
+        {
             get { return BackingStore?.Get<bool?>("virtualizationBasedSecurityEnabled"); }
             set { BackingStore?.Set("virtualizationBasedSecurityEnabled", value); }
         }
@@ -278,42 +322,42 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeFirewallRequired", n => { ActiveFirewallRequired = n.GetBoolValue(); } },
-                {"antiSpywareRequired", n => { AntiSpywareRequired = n.GetBoolValue(); } },
-                {"antivirusRequired", n => { AntivirusRequired = n.GetBoolValue(); } },
-                {"bitLockerEnabled", n => { BitLockerEnabled = n.GetBoolValue(); } },
-                {"codeIntegrityEnabled", n => { CodeIntegrityEnabled = n.GetBoolValue(); } },
-                {"configurationManagerComplianceRequired", n => { ConfigurationManagerComplianceRequired = n.GetBoolValue(); } },
-                {"defenderEnabled", n => { DefenderEnabled = n.GetBoolValue(); } },
-                {"defenderVersion", n => { DefenderVersion = n.GetStringValue(); } },
-                {"deviceCompliancePolicyScript", n => { DeviceCompliancePolicyScript = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
-                {"deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                {"deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
-                {"earlyLaunchAntiMalwareDriverEnabled", n => { EarlyLaunchAntiMalwareDriverEnabled = n.GetBoolValue(); } },
-                {"firmwareProtectionEnabled", n => { FirmwareProtectionEnabled = n.GetBoolValue(); } },
-                {"kernelDmaProtectionEnabled", n => { KernelDmaProtectionEnabled = n.GetBoolValue(); } },
-                {"memoryIntegrityEnabled", n => { MemoryIntegrityEnabled = n.GetBoolValue(); } },
-                {"mobileOsMaximumVersion", n => { MobileOsMaximumVersion = n.GetStringValue(); } },
-                {"mobileOsMinimumVersion", n => { MobileOsMinimumVersion = n.GetStringValue(); } },
-                {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
-                {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
-                {"passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
-                {"passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
-                {"passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
-                {"passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
-                {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                {"passwordRequiredToUnlockFromIdle", n => { PasswordRequiredToUnlockFromIdle = n.GetBoolValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                {"requireHealthyDeviceReport", n => { RequireHealthyDeviceReport = n.GetBoolValue(); } },
-                {"rtpEnabled", n => { RtpEnabled = n.GetBoolValue(); } },
-                {"secureBootEnabled", n => { SecureBootEnabled = n.GetBoolValue(); } },
-                {"signatureOutOfDate", n => { SignatureOutOfDate = n.GetBoolValue(); } },
-                {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
-                {"tpmRequired", n => { TpmRequired = n.GetBoolValue(); } },
-                {"validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"virtualizationBasedSecurityEnabled", n => { VirtualizationBasedSecurityEnabled = n.GetBoolValue(); } },
+                { "activeFirewallRequired", n => { ActiveFirewallRequired = n.GetBoolValue(); } },
+                { "antiSpywareRequired", n => { AntiSpywareRequired = n.GetBoolValue(); } },
+                { "antivirusRequired", n => { AntivirusRequired = n.GetBoolValue(); } },
+                { "bitLockerEnabled", n => { BitLockerEnabled = n.GetBoolValue(); } },
+                { "codeIntegrityEnabled", n => { CodeIntegrityEnabled = n.GetBoolValue(); } },
+                { "configurationManagerComplianceRequired", n => { ConfigurationManagerComplianceRequired = n.GetBoolValue(); } },
+                { "defenderEnabled", n => { DefenderEnabled = n.GetBoolValue(); } },
+                { "defenderVersion", n => { DefenderVersion = n.GetStringValue(); } },
+                { "deviceCompliancePolicyScript", n => { DeviceCompliancePolicyScript = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
+                { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "earlyLaunchAntiMalwareDriverEnabled", n => { EarlyLaunchAntiMalwareDriverEnabled = n.GetBoolValue(); } },
+                { "firmwareProtectionEnabled", n => { FirmwareProtectionEnabled = n.GetBoolValue(); } },
+                { "kernelDmaProtectionEnabled", n => { KernelDmaProtectionEnabled = n.GetBoolValue(); } },
+                { "memoryIntegrityEnabled", n => { MemoryIntegrityEnabled = n.GetBoolValue(); } },
+                { "mobileOsMaximumVersion", n => { MobileOsMaximumVersion = n.GetStringValue(); } },
+                { "mobileOsMinimumVersion", n => { MobileOsMinimumVersion = n.GetStringValue(); } },
+                { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
+                { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
+                { "passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
+                { "passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
+                { "passwordMinimumCharacterSetCount", n => { PasswordMinimumCharacterSetCount = n.GetIntValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
+                { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
+                { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
+                { "passwordRequiredToUnlockFromIdle", n => { PasswordRequiredToUnlockFromIdle = n.GetBoolValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "requireHealthyDeviceReport", n => { RequireHealthyDeviceReport = n.GetBoolValue(); } },
+                { "rtpEnabled", n => { RtpEnabled = n.GetBoolValue(); } },
+                { "secureBootEnabled", n => { SecureBootEnabled = n.GetBoolValue(); } },
+                { "signatureOutOfDate", n => { SignatureOutOfDate = n.GetBoolValue(); } },
+                { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
+                { "tpmRequired", n => { TpmRequired = n.GetBoolValue(); } },
+                { "validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "virtualizationBasedSecurityEnabled", n => { VirtualizationBasedSecurityEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

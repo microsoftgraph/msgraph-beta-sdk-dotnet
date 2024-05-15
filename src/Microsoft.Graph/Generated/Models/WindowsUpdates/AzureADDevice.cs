@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class AzureADDevice : UpdatableAsset, IParsable 
+    public class AzureADDevice : UpdatableAsset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies areas of the service in which the device is enrolled. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAssetEnrollment>? Enrollments {
+        public List<UpdatableAssetEnrollment>? Enrollments
+        {
             get { return BackingStore?.Get<List<UpdatableAssetEnrollment>?>("enrollments"); }
             set { BackingStore?.Set("enrollments", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAssetEnrollment> Enrollments {
+        public List<UpdatableAssetEnrollment> Enrollments
+        {
             get { return BackingStore?.Get<List<UpdatableAssetEnrollment>>("enrollments"); }
             set { BackingStore?.Set("enrollments", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Specifies any errors that prevent the device from being enrolled in update management or receving deployed content. Read-only. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAssetError>? Errors {
+        public List<UpdatableAssetError>? Errors
+        {
             get { return BackingStore?.Get<List<UpdatableAssetError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAssetError> Errors {
+        public List<UpdatableAssetError> Errors
+        {
             get { return BackingStore?.Get<List<UpdatableAssetError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enrollments", n => { Enrollments = n.GetCollectionOfObjectValues<UpdatableAssetEnrollment>(UpdatableAssetEnrollment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<UpdatableAssetError>(UpdatableAssetError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enrollments", n => { Enrollments = n.GetCollectionOfObjectValues<UpdatableAssetEnrollment>(UpdatableAssetEnrollment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<UpdatableAssetError>(UpdatableAssetError.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.TaskNamespace.Changes.Count {
+namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Workbook.Comments.Item.TaskNamespace.Changes.Count
+{
     [Obsolete("This class is obsolete. Use CountGetResponse instead.")]
     #pragma warning disable CS1591
-    public class CountResponse : CountGetResponse, IParsable 
+    public class CountResponse : CountGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

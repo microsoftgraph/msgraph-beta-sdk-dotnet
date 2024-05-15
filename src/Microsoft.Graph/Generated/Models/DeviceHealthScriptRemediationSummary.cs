@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The number of device health scripts deployed and the number of devices the scripts remediated.
     /// </summary>
-    public class DeviceHealthScriptRemediationSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceHealthScriptRemediationSummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of devices remediated by device health scripts.</summary>
-        public int? RemediatedDeviceCount {
+        public int? RemediatedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
             set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>The number of device health scripts deployed.</summary>
-        public int? ScriptCount {
+        public int? ScriptCount
+        {
             get { return BackingStore?.Get<int?>("scriptCount"); }
             set { BackingStore?.Set("scriptCount", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
-                {"scriptCount", n => { ScriptCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
+                { "scriptCount", n => { ScriptCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections.Item.UpdateAdDomainPassword
+{
     #pragma warning disable CS1591
-    public class UpdateAdDomainPasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateAdDomainPasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The adDomainPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdDomainPassword {
+        public string? AdDomainPassword
+        {
             get { return BackingStore?.Get<string?>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
 #nullable restore
 #else
-        public string AdDomainPassword {
+        public string AdDomainPassword
+        {
             get { return BackingStore?.Get<string>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
+                { "adDomainPassword", n => { AdDomainPassword = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.UpdateDeviceProperties {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfiles.Item.AssignedDevices.Item.UpdateDeviceProperties
+{
     #pragma warning disable CS1591
-    public class UpdateDevicePropertiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateDevicePropertiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The addressableUserName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressableUserName {
+        public string? AddressableUserName
+        {
             get { return BackingStore?.Get<string?>("addressableUserName"); }
             set { BackingStore?.Set("addressableUserName", value); }
         }
 #nullable restore
 #else
-        public string AddressableUserName {
+        public string AddressableUserName
+        {
             get { return BackingStore?.Get<string>("addressableUserName"); }
             set { BackingStore?.Set("addressableUserName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>The deviceAccountPassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceAccountPassword {
+        public string? DeviceAccountPassword
+        {
             get { return BackingStore?.Get<string?>("deviceAccountPassword"); }
             set { BackingStore?.Set("deviceAccountPassword", value); }
         }
 #nullable restore
 #else
-        public string DeviceAccountPassword {
+        public string DeviceAccountPassword
+        {
             get { return BackingStore?.Get<string>("deviceAccountPassword"); }
             set { BackingStore?.Set("deviceAccountPassword", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>The deviceAccountUpn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceAccountUpn {
+        public string? DeviceAccountUpn
+        {
             get { return BackingStore?.Get<string?>("deviceAccountUpn"); }
             set { BackingStore?.Set("deviceAccountUpn", value); }
         }
 #nullable restore
 #else
-        public string DeviceAccountUpn {
+        public string DeviceAccountUpn
+        {
             get { return BackingStore?.Get<string>("deviceAccountUpn"); }
             set { BackingStore?.Set("deviceAccountUpn", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>The deviceFriendlyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceFriendlyName {
+        public string? DeviceFriendlyName
+        {
             get { return BackingStore?.Get<string?>("deviceFriendlyName"); }
             set { BackingStore?.Set("deviceFriendlyName", value); }
         }
 #nullable restore
 #else
-        public string DeviceFriendlyName {
+        public string DeviceFriendlyName
+        {
             get { return BackingStore?.Get<string>("deviceFriendlyName"); }
             set { BackingStore?.Set("deviceFriendlyName", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>The groupTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupTag {
+        public string? GroupTag
+        {
             get { return BackingStore?.Get<string?>("groupTag"); }
             set { BackingStore?.Set("groupTag", value); }
         }
 #nullable restore
 #else
-        public string GroupTag {
+        public string GroupTag
+        {
             get { return BackingStore?.Get<string>("groupTag"); }
             set { BackingStore?.Set("groupTag", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addressableUserName", n => { AddressableUserName = n.GetStringValue(); } },
-                {"deviceAccountPassword", n => { DeviceAccountPassword = n.GetStringValue(); } },
-                {"deviceAccountUpn", n => { DeviceAccountUpn = n.GetStringValue(); } },
-                {"deviceFriendlyName", n => { DeviceFriendlyName = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"groupTag", n => { GroupTag = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "addressableUserName", n => { AddressableUserName = n.GetStringValue(); } },
+                { "deviceAccountPassword", n => { DeviceAccountPassword = n.GetStringValue(); } },
+                { "deviceAccountUpn", n => { DeviceAccountUpn = n.GetStringValue(); } },
+                { "deviceFriendlyName", n => { DeviceFriendlyName = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "groupTag", n => { GroupTag = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

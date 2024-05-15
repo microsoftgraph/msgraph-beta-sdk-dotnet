@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TooManyGlobalAdminsAssignedToTenantAlertIncident : UnifiedRoleManagementAlertIncident, IParsable 
+    public class TooManyGlobalAdminsAssignedToTenantAlertIncident : UnifiedRoleManagementAlertIncident, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Display name of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeDisplayName {
+        public string? AssigneeDisplayName
+        {
             get { return BackingStore?.Get<string?>("assigneeDisplayName"); }
             set { BackingStore?.Set("assigneeDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AssigneeDisplayName {
+        public string AssigneeDisplayName
+        {
             get { return BackingStore?.Get<string>("assigneeDisplayName"); }
             set { BackingStore?.Set("assigneeDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeId {
+        public string? AssigneeId
+        {
             get { return BackingStore?.Get<string?>("assigneeId"); }
             set { BackingStore?.Set("assigneeId", value); }
         }
 #nullable restore
 #else
-        public string AssigneeId {
+        public string AssigneeId
+        {
             get { return BackingStore?.Get<string>("assigneeId"); }
             set { BackingStore?.Set("assigneeId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User principal name of the subject that the incident applies to. Applies to user principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeUserPrincipalName {
+        public string? AssigneeUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("assigneeUserPrincipalName"); }
             set { BackingStore?.Set("assigneeUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string AssigneeUserPrincipalName {
+        public string AssigneeUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("assigneeUserPrincipalName"); }
             set { BackingStore?.Set("assigneeUserPrincipalName", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assigneeDisplayName", n => { AssigneeDisplayName = n.GetStringValue(); } },
-                {"assigneeId", n => { AssigneeId = n.GetStringValue(); } },
-                {"assigneeUserPrincipalName", n => { AssigneeUserPrincipalName = n.GetStringValue(); } },
+                { "assigneeDisplayName", n => { AssigneeDisplayName = n.GetStringValue(); } },
+                { "assigneeId", n => { AssigneeId = n.GetStringValue(); } },
+                { "assigneeUserPrincipalName", n => { AssigneeUserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

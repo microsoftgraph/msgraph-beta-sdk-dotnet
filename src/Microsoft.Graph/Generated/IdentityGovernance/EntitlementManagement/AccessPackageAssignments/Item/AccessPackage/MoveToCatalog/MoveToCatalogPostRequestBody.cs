@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.MoveToCatalog {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.MoveToCatalog
+{
     #pragma warning disable CS1591
-    public class MoveToCatalogPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MoveToCatalogPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <summary>The catalogId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CatalogId {
+        public string? CatalogId
+        {
             get { return BackingStore?.Get<string?>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
 #nullable restore
 #else
-        public string CatalogId {
+        public string CatalogId
+        {
             get { return BackingStore?.Get<string>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"catalogId", n => { CatalogId = n.GetStringValue(); } },
+                { "catalogId", n => { CatalogId = n.GetStringValue(); } },
             };
         }
         /// <summary>

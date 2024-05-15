@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Connect {
+namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Connect
+{
     #pragma warning disable CS1591
-    public class ConnectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConnectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
         /// <summary>The ownerAccessToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerAccessToken {
+        public string? OwnerAccessToken
+        {
             get { return BackingStore?.Get<string?>("ownerAccessToken"); }
             set { BackingStore?.Set("ownerAccessToken", value); }
         }
 #nullable restore
 #else
-        public string OwnerAccessToken {
+        public string OwnerAccessToken
+        {
             get { return BackingStore?.Get<string>("ownerAccessToken"); }
             set { BackingStore?.Set("ownerAccessToken", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
         /// <summary>The ownerUserPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerUserPrincipalName {
+        public string? OwnerUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string OwnerUserPrincipalName {
+        public string OwnerUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ownerAccessToken", n => { OwnerAccessToken = n.GetStringValue(); } },
-                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
+                { "ownerAccessToken", n => { OwnerAccessToken = n.GetStringValue(); } },
+                { "ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

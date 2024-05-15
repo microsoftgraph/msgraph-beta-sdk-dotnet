@@ -5,57 +5,66 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class DiscoveredApplicationSegmentReport : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DiscoveredApplicationSegmentReport : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.AccessType? AccessType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.AccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceCount property</summary>
-        public int? DeviceCount {
+        public int? DeviceCount
+        {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The discoveredApplicationSegmentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscoveredApplicationSegmentId {
+        public string? DiscoveredApplicationSegmentId
+        {
             get { return BackingStore?.Get<string?>("discoveredApplicationSegmentId"); }
             set { BackingStore?.Set("discoveredApplicationSegmentId", value); }
         }
 #nullable restore
 #else
-        public string DiscoveredApplicationSegmentId {
+        public string DiscoveredApplicationSegmentId
+        {
             get { return BackingStore?.Get<string>("discoveredApplicationSegmentId"); }
             set { BackingStore?.Set("discoveredApplicationSegmentId", value); }
         }
 #endif
         /// <summary>The firstAccessDateTime property</summary>
-        public DateTimeOffset? FirstAccessDateTime {
+        public DateTimeOffset? FirstAccessDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstAccessDateTime"); }
             set { BackingStore?.Set("firstAccessDateTime", value); }
         }
         /// <summary>The fqdn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fqdn {
+        public string? Fqdn
+        {
             get { return BackingStore?.Get<string?>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
 #nullable restore
 #else
-        public string Fqdn {
+        public string Fqdn
+        {
             get { return BackingStore?.Get<string>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
@@ -63,63 +72,74 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip {
+        public string? Ip
+        {
             get { return BackingStore?.Get<string?>("ip"); }
             set { BackingStore?.Set("ip", value); }
         }
 #nullable restore
 #else
-        public string Ip {
+        public string Ip
+        {
             get { return BackingStore?.Get<string>("ip"); }
             set { BackingStore?.Set("ip", value); }
         }
 #endif
         /// <summary>The lastAccessDateTime property</summary>
-        public DateTimeOffset? LastAccessDateTime {
+        public DateTimeOffset? LastAccessDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The port property</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>The totalBytesReceived property</summary>
-        public long? TotalBytesReceived {
+        public long? TotalBytesReceived
+        {
             get { return BackingStore?.Get<long?>("totalBytesReceived"); }
             set { BackingStore?.Set("totalBytesReceived", value); }
         }
         /// <summary>The totalBytesSent property</summary>
-        public long? TotalBytesSent {
+        public long? TotalBytesSent
+        {
             get { return BackingStore?.Get<long?>("totalBytesSent"); }
             set { BackingStore?.Set("totalBytesSent", value); }
         }
         /// <summary>The transactionCount property</summary>
-        public int? TransactionCount {
+        public int? TransactionCount
+        {
             get { return BackingStore?.Get<int?>("transactionCount"); }
             set { BackingStore?.Set("transactionCount", value); }
         }
         /// <summary>The transportProtocol property</summary>
-        public NetworkingProtocol? TransportProtocol {
+        public NetworkingProtocol? TransportProtocol
+        {
             get { return BackingStore?.Get<NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
         /// <summary>The userCount property</summary>
-        public int? UserCount {
+        public int? UserCount
+        {
             get { return BackingStore?.Get<int?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
@@ -149,20 +169,20 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
-                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
-                {"discoveredApplicationSegmentId", n => { DiscoveredApplicationSegmentId = n.GetStringValue(); } },
-                {"firstAccessDateTime", n => { FirstAccessDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fqdn", n => { Fqdn = n.GetStringValue(); } },
-                {"ip", n => { Ip = n.GetStringValue(); } },
-                {"lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
-                {"totalBytesReceived", n => { TotalBytesReceived = n.GetLongValue(); } },
-                {"totalBytesSent", n => { TotalBytesSent = n.GetLongValue(); } },
-                {"transactionCount", n => { TransactionCount = n.GetIntValue(); } },
-                {"transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
-                {"userCount", n => { UserCount = n.GetIntValue(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
+                { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                { "discoveredApplicationSegmentId", n => { DiscoveredApplicationSegmentId = n.GetStringValue(); } },
+                { "firstAccessDateTime", n => { FirstAccessDateTime = n.GetDateTimeOffsetValue(); } },
+                { "fqdn", n => { Fqdn = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "totalBytesReceived", n => { TotalBytesReceived = n.GetLongValue(); } },
+                { "totalBytesSent", n => { TotalBytesSent = n.GetLongValue(); } },
+                { "transactionCount", n => { TransactionCount = n.GetIntValue(); } },
+                { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "userCount", n => { UserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

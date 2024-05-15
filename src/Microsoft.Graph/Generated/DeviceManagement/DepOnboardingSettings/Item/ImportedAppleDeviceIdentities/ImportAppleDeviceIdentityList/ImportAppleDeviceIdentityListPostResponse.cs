@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList
+{
     #pragma warning disable CS1591
-    public class ImportAppleDeviceIdentityListPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class ImportAppleDeviceIdentityListPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedAppleDeviceIdentityResult>? Value {
+        public List<ImportedAppleDeviceIdentityResult>? Value
+        {
             get { return BackingStore?.Get<List<ImportedAppleDeviceIdentityResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ImportedAppleDeviceIdentityResult> Value {
+        public List<ImportedAppleDeviceIdentityResult> Value
+        {
             get { return BackingStore?.Get<List<ImportedAppleDeviceIdentityResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>(ImportedAppleDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ImportedAppleDeviceIdentityResult>(ImportedAppleDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

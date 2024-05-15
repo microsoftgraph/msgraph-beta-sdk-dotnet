@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AssignedComputeInstanceDetails : Entity, IParsable 
+    public class AssignedComputeInstanceDetails : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a set of S3 buckets accessed by this EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemResource>? AccessedStorageBuckets {
+        public List<AuthorizationSystemResource>? AccessedStorageBuckets
+        {
             get { return BackingStore?.Get<List<AuthorizationSystemResource>?>("accessedStorageBuckets"); }
             set { BackingStore?.Set("accessedStorageBuckets", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemResource> AccessedStorageBuckets {
+        public List<AuthorizationSystemResource> AccessedStorageBuckets
+        {
             get { return BackingStore?.Get<List<AuthorizationSystemResource>>("accessedStorageBuckets"); }
             set { BackingStore?.Set("accessedStorageBuckets", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>assigned EC2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? AssignedComputeInstance {
+        public AuthorizationSystemResource? AssignedComputeInstance
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource?>("assignedComputeInstance"); }
             set { BackingStore?.Set("assignedComputeInstance", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource AssignedComputeInstance {
+        public AuthorizationSystemResource AssignedComputeInstance
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource>("assignedComputeInstance"); }
             set { BackingStore?.Set("assignedComputeInstance", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessedStorageBuckets", n => { AccessedStorageBuckets = n.GetCollectionOfObjectValues<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignedComputeInstance", n => { AssignedComputeInstance = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "accessedStorageBuckets", n => { AccessedStorageBuckets = n.GetCollectionOfObjectValues<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedComputeInstance", n => { AssignedComputeInstance = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

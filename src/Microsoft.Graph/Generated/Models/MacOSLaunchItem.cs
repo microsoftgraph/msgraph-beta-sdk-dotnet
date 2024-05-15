@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an app in the list of macOS launch items
     /// </summary>
-    public class MacOSLaunchItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSLaunchItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Whether or not to hide the item from the Users and Groups List.</summary>
-        public bool? Hide {
+        public bool? Hide
+        {
             get { return BackingStore?.Get<bool?>("hide"); }
             set { BackingStore?.Set("hide", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Path to the launch item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path {
+        public string? Path
+        {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
 #nullable restore
 #else
-        public string Path {
+        public string Path
+        {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"hide", n => { Hide = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
+                { "hide", n => { Hide = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>

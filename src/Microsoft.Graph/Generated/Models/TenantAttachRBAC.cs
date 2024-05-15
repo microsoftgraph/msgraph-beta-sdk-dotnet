@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Singleton entity that acts as a container for tenant attach enablement functionality.
     /// </summary>
-    public class TenantAttachRBAC : Entity, IParsable 
+    public class TenantAttachRBAC : Entity, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

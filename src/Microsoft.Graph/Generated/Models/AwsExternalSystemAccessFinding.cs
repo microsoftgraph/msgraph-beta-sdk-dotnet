@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsExternalSystemAccessFinding : Finding, IParsable 
+    public class AwsExternalSystemAccessFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessMethods property</summary>
-        public ExternalSystemAccessMethods? AccessMethods {
+        public ExternalSystemAccessMethods? AccessMethods
+        {
             get { return BackingStore?.Get<ExternalSystemAccessMethods?>("accessMethods"); }
             set { BackingStore?.Set("accessMethods", value); }
         }
         /// <summary>The affectedSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystem? AffectedSystem {
+        public AuthorizationSystem? AffectedSystem
+        {
             get { return BackingStore?.Get<AuthorizationSystem?>("affectedSystem"); }
             set { BackingStore?.Set("affectedSystem", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystem AffectedSystem {
+        public AuthorizationSystem AffectedSystem
+        {
             get { return BackingStore?.Get<AuthorizationSystem>("affectedSystem"); }
             set { BackingStore?.Set("affectedSystem", value); }
         }
@@ -31,24 +35,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The systemWithAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemInfo? SystemWithAccess {
+        public AuthorizationSystemInfo? SystemWithAccess
+        {
             get { return BackingStore?.Get<AuthorizationSystemInfo?>("systemWithAccess"); }
             set { BackingStore?.Set("systemWithAccess", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemInfo SystemWithAccess {
+        public AuthorizationSystemInfo SystemWithAccess
+        {
             get { return BackingStore?.Get<AuthorizationSystemInfo>("systemWithAccess"); }
             set { BackingStore?.Set("systemWithAccess", value); }
         }
 #endif
         /// <summary>The number of identities in the external system that are trusted, if not all. Supports $orderby.</summary>
-        public int? TrustedIdentityCount {
+        public int? TrustedIdentityCount
+        {
             get { return BackingStore?.Get<int?>("trustedIdentityCount"); }
             set { BackingStore?.Set("trustedIdentityCount", value); }
         }
         /// <summary>Flag that determines if all identities in the external system are trusted, or only a subset.</summary>
-        public bool? TrustsAllIdentities {
+        public bool? TrustsAllIdentities
+        {
             get { return BackingStore?.Get<bool?>("trustsAllIdentities"); }
             set { BackingStore?.Set("trustsAllIdentities", value); }
         }
@@ -70,11 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessMethods", n => { AccessMethods = n.GetEnumValue<ExternalSystemAccessMethods>(); } },
-                {"affectedSystem", n => { AffectedSystem = n.GetObjectValue<AuthorizationSystem>(AuthorizationSystem.CreateFromDiscriminatorValue); } },
-                {"systemWithAccess", n => { SystemWithAccess = n.GetObjectValue<AuthorizationSystemInfo>(AuthorizationSystemInfo.CreateFromDiscriminatorValue); } },
-                {"trustedIdentityCount", n => { TrustedIdentityCount = n.GetIntValue(); } },
-                {"trustsAllIdentities", n => { TrustsAllIdentities = n.GetBoolValue(); } },
+                { "accessMethods", n => { AccessMethods = n.GetEnumValue<ExternalSystemAccessMethods>(); } },
+                { "affectedSystem", n => { AffectedSystem = n.GetObjectValue<AuthorizationSystem>(AuthorizationSystem.CreateFromDiscriminatorValue); } },
+                { "systemWithAccess", n => { SystemWithAccess = n.GetObjectValue<AuthorizationSystemInfo>(AuthorizationSystemInfo.CreateFromDiscriminatorValue); } },
+                { "trustedIdentityCount", n => { TrustedIdentityCount = n.GetIntValue(); } },
+                { "trustsAllIdentities", n => { TrustsAllIdentities = n.GetBoolValue(); } },
             };
         }
         /// <summary>

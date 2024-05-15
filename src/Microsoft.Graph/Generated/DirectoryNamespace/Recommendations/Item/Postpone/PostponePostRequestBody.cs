@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone {
+namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone
+{
     #pragma warning disable CS1591
-    public class PostponePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PostponePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The postponeUntilDateTime property</summary>
-        public DateTimeOffset? PostponeUntilDateTime {
+        public DateTimeOffset? PostponeUntilDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("postponeUntilDateTime"); }
             set { BackingStore?.Set("postponeUntilDateTime", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.Recommendations.Item.Postpone 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
+                { "postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

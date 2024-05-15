@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class IndustryDataConnector : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class IndustryDataConnector : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the data connector. Maximum supported length is 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The sourceSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SourceSystemDefinition? SourceSystem {
+        public SourceSystemDefinition? SourceSystem
+        {
             get { return BackingStore?.Get<SourceSystemDefinition?>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #nullable restore
 #else
-        public SourceSystemDefinition SourceSystem {
+        public SourceSystemDefinition SourceSystem
+        {
             get { return BackingStore?.Get<SourceSystemDefinition>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
@@ -61,8 +66,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"sourceSystem", n => { SourceSystem = n.GetObjectValue<SourceSystemDefinition>(SourceSystemDefinition.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "sourceSystem", n => { SourceSystem = n.GetObjectValue<SourceSystemDefinition>(SourceSystemDefinition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

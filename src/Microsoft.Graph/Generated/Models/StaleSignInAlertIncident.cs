@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StaleSignInAlertIncident : UnifiedRoleManagementAlertIncident, IParsable 
+    public class StaleSignInAlertIncident : UnifiedRoleManagementAlertIncident, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Display name of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeDisplayName {
+        public string? AssigneeDisplayName
+        {
             get { return BackingStore?.Get<string?>("assigneeDisplayName"); }
             set { BackingStore?.Set("assigneeDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AssigneeDisplayName {
+        public string AssigneeDisplayName
+        {
             get { return BackingStore?.Get<string>("assigneeDisplayName"); }
             set { BackingStore?.Set("assigneeDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the subject that the incident applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeId {
+        public string? AssigneeId
+        {
             get { return BackingStore?.Get<string?>("assigneeId"); }
             set { BackingStore?.Set("assigneeId", value); }
         }
 #nullable restore
 #else
-        public string AssigneeId {
+        public string AssigneeId
+        {
             get { return BackingStore?.Get<string>("assigneeId"); }
             set { BackingStore?.Set("assigneeId", value); }
         }
@@ -40,37 +45,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User principal name of the subject that the incident applies to. Applies to user principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssigneeUserPrincipalName {
+        public string? AssigneeUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("assigneeUserPrincipalName"); }
             set { BackingStore?.Set("assigneeUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string AssigneeUserPrincipalName {
+        public string AssigneeUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("assigneeUserPrincipalName"); }
             set { BackingStore?.Set("assigneeUserPrincipalName", value); }
         }
 #endif
         /// <summary>Date and time of assignment creation.</summary>
-        public DateTimeOffset? AssignmentCreatedDateTime {
+        public DateTimeOffset? AssignmentCreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("assignmentCreatedDateTime"); }
             set { BackingStore?.Set("assignmentCreatedDateTime", value); }
         }
         /// <summary>Date and time of last sign in.</summary>
-        public DateTimeOffset? LastSignInDateTime {
+        public DateTimeOffset? LastSignInDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSignInDateTime"); }
             set { BackingStore?.Set("lastSignInDateTime", value); }
         }
         /// <summary>The identifier for the directory role definition that&apos;s in scope of this incident.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleDefinitionId {
+        public string? RoleDefinitionId
+        {
             get { return BackingStore?.Get<string?>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string RoleDefinitionId {
+        public string RoleDefinitionId
+        {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name for the directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleDisplayName {
+        public string? RoleDisplayName
+        {
             get { return BackingStore?.Get<string?>("roleDisplayName"); }
             set { BackingStore?.Set("roleDisplayName", value); }
         }
 #nullable restore
 #else
-        public string RoleDisplayName {
+        public string RoleDisplayName
+        {
             get { return BackingStore?.Get<string>("roleDisplayName"); }
             set { BackingStore?.Set("roleDisplayName", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The globally unique identifier for the directory role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleTemplateId {
+        public string? RoleTemplateId
+        {
             get { return BackingStore?.Get<string?>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
 #nullable restore
 #else
-        public string RoleTemplateId {
+        public string RoleTemplateId
+        {
             get { return BackingStore?.Get<string>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assigneeDisplayName", n => { AssigneeDisplayName = n.GetStringValue(); } },
-                {"assigneeId", n => { AssigneeId = n.GetStringValue(); } },
-                {"assigneeUserPrincipalName", n => { AssigneeUserPrincipalName = n.GetStringValue(); } },
-                {"assignmentCreatedDateTime", n => { AssignmentCreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
-                {"roleDisplayName", n => { RoleDisplayName = n.GetStringValue(); } },
-                {"roleTemplateId", n => { RoleTemplateId = n.GetStringValue(); } },
+                { "assigneeDisplayName", n => { AssigneeDisplayName = n.GetStringValue(); } },
+                { "assigneeId", n => { AssigneeId = n.GetStringValue(); } },
+                { "assigneeUserPrincipalName", n => { AssigneeUserPrincipalName = n.GetStringValue(); } },
+                { "assignmentCreatedDateTime", n => { AssignmentCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
+                { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
+                { "roleDisplayName", n => { RoleDisplayName = n.GetStringValue(); } },
+                { "roleTemplateId", n => { RoleTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

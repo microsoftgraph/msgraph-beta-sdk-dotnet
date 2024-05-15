@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemoval {
+namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemoval
+{
     [Obsolete("This class is obsolete. Use EvaluateRemovalPostResponse instead.")]
     #pragma warning disable CS1591
-    public class EvaluateRemovalResponse : EvaluateRemovalPostResponse, IParsable 
+    public class EvaluateRemovalResponse : EvaluateRemovalPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

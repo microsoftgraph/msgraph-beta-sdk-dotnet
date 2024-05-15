@@ -4,66 +4,77 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Encryption report per device
     /// </summary>
-    public class ManagedDeviceEncryptionState : Entity, IParsable 
+    public class ManagedDeviceEncryptionState : Entity, IParsable
     {
         /// <summary>Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.</summary>
-        public AdvancedBitLockerState? AdvancedBitLockerStates {
+        public AdvancedBitLockerState? AdvancedBitLockerStates
+        {
             get { return BackingStore?.Get<AdvancedBitLockerState?>("advancedBitLockerStates"); }
             set { BackingStore?.Set("advancedBitLockerStates", value); }
         }
         /// <summary>Device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>Device type.</summary>
-        public DeviceTypes? DeviceType {
+        public DeviceTypes? DeviceType
+        {
             get { return BackingStore?.Get<DeviceTypes?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>The encryptionPolicySettingState property</summary>
-        public ComplianceStatus? EncryptionPolicySettingState {
+        public ComplianceStatus? EncryptionPolicySettingState
+        {
             get { return BackingStore?.Get<ComplianceStatus?>("encryptionPolicySettingState"); }
             set { BackingStore?.Set("encryptionPolicySettingState", value); }
         }
         /// <summary>Encryption readiness state</summary>
-        public Microsoft.Graph.Beta.Models.EncryptionReadinessState? EncryptionReadinessState {
+        public Microsoft.Graph.Beta.Models.EncryptionReadinessState? EncryptionReadinessState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptionReadinessState?>("encryptionReadinessState"); }
             set { BackingStore?.Set("encryptionReadinessState", value); }
         }
         /// <summary>Encryption state</summary>
-        public Microsoft.Graph.Beta.Models.EncryptionState? EncryptionState {
+        public Microsoft.Graph.Beta.Models.EncryptionState? EncryptionState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptionState?>("encryptionState"); }
             set { BackingStore?.Set("encryptionState", value); }
         }
         /// <summary>FileVault State. Possible values are: success, driveEncryptedByUser, userDeferredEncryption, escrowNotEnabled.</summary>
-        public FileVaultState? FileVaultStates {
+        public FileVaultState? FileVaultStates
+        {
             get { return BackingStore?.Get<FileVaultState?>("fileVaultStates"); }
             set { BackingStore?.Set("fileVaultStates", value); }
         }
         /// <summary>Operating system version of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
@@ -71,13 +82,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Policy Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EncryptionReportPolicyDetails>? PolicyDetails {
+        public List<EncryptionReportPolicyDetails>? PolicyDetails
+        {
             get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>?>("policyDetails"); }
             set { BackingStore?.Set("policyDetails", value); }
         }
 #nullable restore
 #else
-        public List<EncryptionReportPolicyDetails> PolicyDetails {
+        public List<EncryptionReportPolicyDetails> PolicyDetails
+        {
             get { return BackingStore?.Get<List<EncryptionReportPolicyDetails>>("policyDetails"); }
             set { BackingStore?.Set("policyDetails", value); }
         }
@@ -85,13 +98,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device TPM Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TpmSpecificationVersion {
+        public string? TpmSpecificationVersion
+        {
             get { return BackingStore?.Get<string?>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
 #nullable restore
 #else
-        public string TpmSpecificationVersion {
+        public string TpmSpecificationVersion
+        {
             get { return BackingStore?.Get<string>("tpmSpecificationVersion"); }
             set { BackingStore?.Set("tpmSpecificationVersion", value); }
         }
@@ -99,13 +114,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -128,17 +145,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"advancedBitLockerStates", n => { AdvancedBitLockerStates = n.GetEnumValue<AdvancedBitLockerState>(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceTypes>(); } },
-                {"encryptionPolicySettingState", n => { EncryptionPolicySettingState = n.GetEnumValue<ComplianceStatus>(); } },
-                {"encryptionReadinessState", n => { EncryptionReadinessState = n.GetEnumValue<EncryptionReadinessState>(); } },
-                {"encryptionState", n => { EncryptionState = n.GetEnumValue<EncryptionState>(); } },
-                {"fileVaultStates", n => { FileVaultStates = n.GetEnumValue<FileVaultState>(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"policyDetails", n => { PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>(EncryptionReportPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "advancedBitLockerStates", n => { AdvancedBitLockerStates = n.GetEnumValue<AdvancedBitLockerState>(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceTypes>(); } },
+                { "encryptionPolicySettingState", n => { EncryptionPolicySettingState = n.GetEnumValue<ComplianceStatus>(); } },
+                { "encryptionReadinessState", n => { EncryptionReadinessState = n.GetEnumValue<EncryptionReadinessState>(); } },
+                { "encryptionState", n => { EncryptionState = n.GetEnumValue<EncryptionState>(); } },
+                { "fileVaultStates", n => { FileVaultStates = n.GetEnumValue<FileVaultState>(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "policyDetails", n => { PolicyDetails = n.GetCollectionOfObjectValues<EncryptionReportPolicyDetails>(EncryptionReportPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Revoke Apple Vpp licenses action result
     /// </summary>
-    public class RevokeAppleVppLicensesActionResult : DeviceActionResult, IParsable 
+    public class RevokeAppleVppLicensesActionResult : DeviceActionResult, IParsable
     {
         /// <summary>Total number of Apple Vpp licenses that failed to revoke</summary>
-        public int? FailedLicensesCount {
+        public int? FailedLicensesCount
+        {
             get { return BackingStore?.Get<int?>("failedLicensesCount"); }
             set { BackingStore?.Set("failedLicensesCount", value); }
         }
         /// <summary>Total number of Apple Vpp licenses associated</summary>
-        public int? TotalLicensesCount {
+        public int? TotalLicensesCount
+        {
             get { return BackingStore?.Get<int?>("totalLicensesCount"); }
             set { BackingStore?.Set("totalLicensesCount", value); }
         }
@@ -38,8 +41,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
-                {"totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
+                { "failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
+                { "totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

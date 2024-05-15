@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class M365ForwardingRule : ForwardingRule, IParsable 
+    public class M365ForwardingRule : ForwardingRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The category property</summary>
-        public ForwardingCategory? Category {
+        public ForwardingCategory? Category
+        {
             get { return BackingStore?.Get<ForwardingCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The port(s) used by a forwarding rule for Microsoft 365 traffic are specified to determine the specific network port(s) through which the Microsoft 365 traffic is directed and forwarded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ports {
+        public List<string>? Ports
+        {
             get { return BackingStore?.Get<List<string>?>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #nullable restore
 #else
-        public List<string> Ports {
+        public List<string> Ports
+        {
             get { return BackingStore?.Get<List<string>>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #endif
         /// <summary>The protocol property</summary>
-        public NetworkingProtocol? Protocol {
+        public NetworkingProtocol? Protocol
+        {
             get { return BackingStore?.Get<NetworkingProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"category", n => { Category = n.GetEnumValue<ForwardingCategory>(); } },
-                {"ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"protocol", n => { Protocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "category", n => { Category = n.GetEnumValue<ForwardingCategory>(); } },
+                { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<NetworkingProtocol>(); } },
             };
         }
         /// <summary>

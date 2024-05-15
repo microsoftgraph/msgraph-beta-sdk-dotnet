@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WindowsUpdateActiveHoursInstall : WindowsUpdateInstallScheduleType, IParsable 
+    public class WindowsUpdateActiveHoursInstall : WindowsUpdateInstallScheduleType, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Active Hours End</summary>
-        public Time? ActiveHoursEnd {
+        public Time? ActiveHoursEnd
+        {
             get { return BackingStore?.Get<Time?>("activeHoursEnd"); }
             set { BackingStore?.Set("activeHoursEnd", value); }
         }
         /// <summary>Active Hours Start</summary>
-        public Time? ActiveHoursStart {
+        public Time? ActiveHoursStart
+        {
             get { return BackingStore?.Get<Time?>("activeHoursStart"); }
             set { BackingStore?.Set("activeHoursStart", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
-                {"activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
+                { "activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
+                { "activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
             };
         }
         /// <summary>

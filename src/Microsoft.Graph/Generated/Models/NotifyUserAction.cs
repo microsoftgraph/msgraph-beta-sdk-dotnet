@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class NotifyUserAction : DlpActionInfo, IParsable 
+    public class NotifyUserAction : DlpActionInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionLastModifiedDateTime property</summary>
-        public DateTimeOffset? ActionLastModifiedDateTime {
+        public DateTimeOffset? ActionLastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("actionLastModifiedDateTime"); }
             set { BackingStore?.Set("actionLastModifiedDateTime", value); }
         }
         /// <summary>The emailText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailText {
+        public string? EmailText
+        {
             get { return BackingStore?.Get<string?>("emailText"); }
             set { BackingStore?.Set("emailText", value); }
         }
 #nullable restore
 #else
-        public string EmailText {
+        public string EmailText
+        {
             get { return BackingStore?.Get<string>("emailText"); }
             set { BackingStore?.Set("emailText", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policyTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyTip {
+        public string? PolicyTip
+        {
             get { return BackingStore?.Get<string?>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
 #nullable restore
 #else
-        public string PolicyTip {
+        public string PolicyTip
+        {
             get { return BackingStore?.Get<string>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Recipients {
+        public List<string>? Recipients
+        {
             get { return BackingStore?.Get<List<string>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<string> Recipients {
+        public List<string> Recipients
+        {
             get { return BackingStore?.Get<List<string>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionLastModifiedDateTime", n => { ActionLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"emailText", n => { EmailText = n.GetStringValue(); } },
-                {"policyTip", n => { PolicyTip = n.GetStringValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "actionLastModifiedDateTime", n => { ActionLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "emailText", n => { EmailText = n.GetStringValue(); } },
+                { "policyTip", n => { PolicyTip = n.GetStringValue(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

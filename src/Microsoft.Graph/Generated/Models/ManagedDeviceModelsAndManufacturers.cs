@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Models and Manufactures meatadata for managed devices in the account
     /// </summary>
-    public class ManagedDeviceModelsAndManufacturers : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ManagedDeviceModelsAndManufacturers : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Manufactures for managed devices in the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceManufacturers {
+        public List<string>? DeviceManufacturers
+        {
             get { return BackingStore?.Get<List<string>?>("deviceManufacturers"); }
             set { BackingStore?.Set("deviceManufacturers", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceManufacturers {
+        public List<string> DeviceManufacturers
+        {
             get { return BackingStore?.Get<List<string>>("deviceManufacturers"); }
             set { BackingStore?.Set("deviceManufacturers", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Models for managed devices in the account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceModels {
+        public List<string>? DeviceModels
+        {
             get { return BackingStore?.Get<List<string>?>("deviceModels"); }
             set { BackingStore?.Set("deviceModels", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceModels {
+        public List<string> DeviceModels
+        {
             get { return BackingStore?.Get<List<string>>("deviceModels"); }
             set { BackingStore?.Set("deviceModels", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceManufacturers", n => { DeviceManufacturers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"deviceModels", n => { DeviceModels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "deviceManufacturers", n => { DeviceManufacturers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "deviceModels", n => { DeviceModels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

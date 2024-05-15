@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Collection of app diagnostics associated with a user.
     /// </summary>
-    public class PowerliftIncidentMetadata : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PowerliftIncidentMetadata : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The name of the application the diagnostic is from. Example: com.microsoft.CompanyPortal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Application {
+        public string? Application
+        {
             get { return BackingStore?.Get<string?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public string Application {
+        public string Application
+        {
             get { return BackingStore?.Get<string>("application"); }
             set { BackingStore?.Set("application", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The version of the application. Example: 5.2203.1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientVersion {
+        public string? ClientVersion
+        {
             get { return BackingStore?.Get<string?>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
 #nullable restore
 #else
-        public string ClientVersion {
+        public string ClientVersion
+        {
             get { return BackingStore?.Get<string>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
 #endif
         /// <summary>The time the app diagnostic was created. Example: 2022-04-19T17:24:45.313Z</summary>
-        public DateTimeOffset? CreatedAtDateTime {
+        public DateTimeOffset? CreatedAtDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdAtDateTime"); }
             set { BackingStore?.Set("createdAtDateTime", value); }
         }
         /// <summary>The unique app diagnostic identifier as a user friendly 8 character hexadecimal string. Example: 8520467A</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EasyId {
+        public string? EasyId
+        {
             get { return BackingStore?.Get<string?>("easyId"); }
             set { BackingStore?.Set("easyId", value); }
         }
 #nullable restore
 #else
-        public string EasyId {
+        public string EasyId
+        {
             get { return BackingStore?.Get<string>("easyId"); }
             set { BackingStore?.Set("easyId", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of files that are associated with the diagnostic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FileNames {
+        public List<string>? FileNames
+        {
             get { return BackingStore?.Get<List<string>?>("fileNames"); }
             set { BackingStore?.Set("fileNames", value); }
         }
 #nullable restore
 #else
-        public List<string> FileNames {
+        public List<string> FileNames
+        {
             get { return BackingStore?.Get<List<string>>("fileNames"); }
             set { BackingStore?.Set("fileNames", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The locale information of the application. Example: en-US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale {
+        public string? Locale
+        {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
 #nullable restore
 #else
-        public string Locale {
+        public string Locale
+        {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -110,19 +125,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The device&apos;s OS the diagnostic is from. Example: iOS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Platform {
+        public string? Platform
+        {
             get { return BackingStore?.Get<string?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
 #nullable restore
 #else
-        public string Platform {
+        public string Platform
+        {
             get { return BackingStore?.Get<string>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
 #endif
         /// <summary>The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726</summary>
-        public Guid? PowerliftId {
+        public Guid? PowerliftId
+        {
             get { return BackingStore?.Get<Guid?>("powerliftId"); }
             set { BackingStore?.Set("powerliftId", value); }
         }
@@ -152,15 +170,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"application", n => { Application = n.GetStringValue(); } },
-                {"clientVersion", n => { ClientVersion = n.GetStringValue(); } },
-                {"createdAtDateTime", n => { CreatedAtDateTime = n.GetDateTimeOffsetValue(); } },
-                {"easyId", n => { EasyId = n.GetStringValue(); } },
-                {"fileNames", n => { FileNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"locale", n => { Locale = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"platform", n => { Platform = n.GetStringValue(); } },
-                {"powerliftId", n => { PowerliftId = n.GetGuidValue(); } },
+                { "application", n => { Application = n.GetStringValue(); } },
+                { "clientVersion", n => { ClientVersion = n.GetStringValue(); } },
+                { "createdAtDateTime", n => { CreatedAtDateTime = n.GetDateTimeOffsetValue(); } },
+                { "easyId", n => { EasyId = n.GetStringValue(); } },
+                { "fileNames", n => { FileNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
+                { "powerliftId", n => { PowerliftId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

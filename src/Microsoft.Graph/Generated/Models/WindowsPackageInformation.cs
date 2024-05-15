@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the package information for a Windows line of business app. Used as property within windowsPhone81AppXBundle object, which is also being deprecated. This complex type will be deprecated in February 2023.
     /// </summary>
-    public class WindowsPackageInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsPackageInformation : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitecture {
+        public WindowsArchitecture? ApplicableArchitecture
+        {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitecture"); }
             set { BackingStore?.Set("applicableArchitecture", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Display Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityName {
+        public string? IdentityName
+        {
             get { return BackingStore?.Get<string?>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
 #nullable restore
 #else
-        public string IdentityName {
+        public string IdentityName
+        {
             get { return BackingStore?.Get<string>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Publisher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityPublisher {
+        public string? IdentityPublisher
+        {
             get { return BackingStore?.Get<string?>("identityPublisher"); }
             set { BackingStore?.Set("identityPublisher", value); }
         }
 #nullable restore
 #else
-        public string IdentityPublisher {
+        public string IdentityPublisher
+        {
             get { return BackingStore?.Get<string>("identityPublisher"); }
             set { BackingStore?.Set("identityPublisher", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Resource Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityResourceIdentifier {
+        public string? IdentityResourceIdentifier
+        {
             get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
 #nullable restore
 #else
-        public string IdentityResourceIdentifier {
+        public string IdentityResourceIdentifier
+        {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityVersion {
+        public string? IdentityVersion
+        {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
 #nullable restore
 #else
-        public string IdentityVersion {
+        public string IdentityVersion
+        {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -147,14 +164,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicableArchitecture", n => { ApplicableArchitecture = n.GetEnumValue<WindowsArchitecture>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"identityName", n => { IdentityName = n.GetStringValue(); } },
-                {"identityPublisher", n => { IdentityPublisher = n.GetStringValue(); } },
-                {"identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "applicableArchitecture", n => { ApplicableArchitecture = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "identityName", n => { IdentityName = n.GetStringValue(); } },
+                { "identityPublisher", n => { IdentityPublisher = n.GetStringValue(); } },
+                { "identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
+                { "identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

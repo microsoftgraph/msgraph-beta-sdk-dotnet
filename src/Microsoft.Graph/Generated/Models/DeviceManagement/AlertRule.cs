@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class AlertRule : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class AlertRule : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, cloudPcInGracePeriodScenario, cloudPcFrontlineInsufficientLicensesScenario, cloudPcInaccessibleScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
         /// <summary>The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RuleCondition>? Conditions {
+        public List<RuleCondition>? Conditions
+        {
             get { return BackingStore?.Get<List<RuleCondition>?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public List<RuleCondition> Conditions {
+        public List<RuleCondition> Conditions
+        {
             get { return BackingStore?.Get<List<RuleCondition>>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The rule description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -45,56 +51,65 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The display name of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom-defined rule and can be edited. System rules are built in and only a few properties can be edited.</summary>
-        public bool? IsSystemRule {
+        public bool? IsSystemRule
+        {
             get { return BackingStore?.Get<bool?>("isSystemRule"); }
             set { BackingStore?.Set("isSystemRule", value); }
         }
         /// <summary>The notification channels of the rule selected by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NotificationChannel>? NotificationChannels {
+        public List<NotificationChannel>? NotificationChannels
+        {
             get { return BackingStore?.Get<List<NotificationChannel>?>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
 #nullable restore
 #else
-        public List<NotificationChannel> NotificationChannels {
+        public List<NotificationChannel> NotificationChannels
+        {
             get { return BackingStore?.Get<List<NotificationChannel>>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
 #endif
         /// <summary>The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
-        public RuleSeverityType? Severity {
+        public RuleSeverityType? Severity
+        {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RuleThreshold? Threshold {
+        public RuleThreshold? Threshold
+        {
             get { return BackingStore?.Get<RuleThreshold?>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
 #nullable restore
 #else
-        public RuleThreshold Threshold {
+        public RuleThreshold Threshold
+        {
             get { return BackingStore?.Get<RuleThreshold>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
@@ -117,15 +132,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<AlertRuleTemplate>(); } },
-                {"conditions", n => { Conditions = n.GetCollectionOfObjectValues<RuleCondition>(RuleCondition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"isSystemRule", n => { IsSystemRule = n.GetBoolValue(); } },
-                {"notificationChannels", n => { NotificationChannels = n.GetCollectionOfObjectValues<NotificationChannel>(NotificationChannel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"severity", n => { Severity = n.GetEnumValue<RuleSeverityType>(); } },
-                {"threshold", n => { Threshold = n.GetObjectValue<RuleThreshold>(RuleThreshold.CreateFromDiscriminatorValue); } },
+                { "alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<AlertRuleTemplate>(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<RuleCondition>(RuleCondition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "isSystemRule", n => { IsSystemRule = n.GetBoolValue(); } },
+                { "notificationChannels", n => { NotificationChannels = n.GetCollectionOfObjectValues<NotificationChannel>(NotificationChannel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "severity", n => { Severity = n.GetEnumValue<RuleSeverityType>(); } },
+                { "threshold", n => { Threshold = n.GetObjectValue<RuleThreshold>(RuleThreshold.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

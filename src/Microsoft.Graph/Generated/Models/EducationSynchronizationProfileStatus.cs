@@ -4,41 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationSynchronizationProfileStatus : Entity, IParsable 
+    public class EducationSynchronizationProfileStatus : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of errors during synchronization.</summary>
-        public long? ErrorCount {
+        public long? ErrorCount
+        {
             get { return BackingStore?.Get<long?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Date and time when most recent changes were observed in the profile.</summary>
-        public DateTimeOffset? LastActivityDateTime {
+        public DateTimeOffset? LastActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActivityDateTime"); }
             set { BackingStore?.Set("lastActivityDateTime", value); }
         }
         /// <summary>Date and time of the most recent successful synchronization.</summary>
-        public DateTimeOffset? LastSynchronizationDateTime {
+        public DateTimeOffset? LastSynchronizationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSynchronizationDateTime"); }
             set { BackingStore?.Set("lastSynchronizationDateTime", value); }
         }
         /// <summary>The status of a sync. The possible values are: paused, inProgress, success, error, validationError, quarantined, unknownFutureValue, extracting, validating. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: extracting, validating.</summary>
-        public EducationSynchronizationStatus? Status {
+        public EducationSynchronizationStatus? Status
+        {
             get { return BackingStore?.Get<EducationSynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Status message for the synchronization stage of the current profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusMessage {
+        public string? StatusMessage
+        {
             get { return BackingStore?.Get<string?>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
 #nullable restore
 #else
-        public string StatusMessage {
+        public string StatusMessage
+        {
             get { return BackingStore?.Get<string>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
@@ -61,11 +68,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errorCount", n => { ErrorCount = n.GetLongValue(); } },
-                {"lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSynchronizationDateTime", n => { LastSynchronizationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<EducationSynchronizationStatus>(); } },
-                {"statusMessage", n => { StatusMessage = n.GetStringValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetLongValue(); } },
+                { "lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSynchronizationDateTime", n => { LastSynchronizationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<EducationSynchronizationStatus>(); } },
+                { "statusMessage", n => { StatusMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>

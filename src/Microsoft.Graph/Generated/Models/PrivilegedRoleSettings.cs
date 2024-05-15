@@ -4,67 +4,79 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedRoleSettings : Entity, IParsable 
+    public class PrivilegedRoleSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The approvalOnElevation property</summary>
-        public bool? ApprovalOnElevation {
+        public bool? ApprovalOnElevation
+        {
             get { return BackingStore?.Get<bool?>("approvalOnElevation"); }
             set { BackingStore?.Set("approvalOnElevation", value); }
         }
         /// <summary>The approverIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ApproverIds {
+        public List<string>? ApproverIds
+        {
             get { return BackingStore?.Get<List<string>?>("approverIds"); }
             set { BackingStore?.Set("approverIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ApproverIds {
+        public List<string> ApproverIds
+        {
             get { return BackingStore?.Get<List<string>>("approverIds"); }
             set { BackingStore?.Set("approverIds", value); }
         }
 #endif
         /// <summary>The elevationDuration property</summary>
-        public TimeSpan? ElevationDuration {
+        public TimeSpan? ElevationDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("elevationDuration"); }
             set { BackingStore?.Set("elevationDuration", value); }
         }
         /// <summary>The isMfaOnElevationConfigurable property</summary>
-        public bool? IsMfaOnElevationConfigurable {
+        public bool? IsMfaOnElevationConfigurable
+        {
             get { return BackingStore?.Get<bool?>("isMfaOnElevationConfigurable"); }
             set { BackingStore?.Set("isMfaOnElevationConfigurable", value); }
         }
         /// <summary>The lastGlobalAdmin property</summary>
-        public bool? LastGlobalAdmin {
+        public bool? LastGlobalAdmin
+        {
             get { return BackingStore?.Get<bool?>("lastGlobalAdmin"); }
             set { BackingStore?.Set("lastGlobalAdmin", value); }
         }
         /// <summary>The maxElavationDuration property</summary>
-        public TimeSpan? MaxElavationDuration {
+        public TimeSpan? MaxElavationDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("maxElavationDuration"); }
             set { BackingStore?.Set("maxElavationDuration", value); }
         }
         /// <summary>The mfaOnElevation property</summary>
-        public bool? MfaOnElevation {
+        public bool? MfaOnElevation
+        {
             get { return BackingStore?.Get<bool?>("mfaOnElevation"); }
             set { BackingStore?.Set("mfaOnElevation", value); }
         }
         /// <summary>The minElevationDuration property</summary>
-        public TimeSpan? MinElevationDuration {
+        public TimeSpan? MinElevationDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("minElevationDuration"); }
             set { BackingStore?.Set("minElevationDuration", value); }
         }
         /// <summary>The notificationToUserOnElevation property</summary>
-        public bool? NotificationToUserOnElevation {
+        public bool? NotificationToUserOnElevation
+        {
             get { return BackingStore?.Get<bool?>("notificationToUserOnElevation"); }
             set { BackingStore?.Set("notificationToUserOnElevation", value); }
         }
         /// <summary>The ticketingInfoOnElevation property</summary>
-        public bool? TicketingInfoOnElevation {
+        public bool? TicketingInfoOnElevation
+        {
             get { return BackingStore?.Get<bool?>("ticketingInfoOnElevation"); }
             set { BackingStore?.Set("ticketingInfoOnElevation", value); }
         }
@@ -86,16 +98,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"approvalOnElevation", n => { ApprovalOnElevation = n.GetBoolValue(); } },
-                {"approverIds", n => { ApproverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"elevationDuration", n => { ElevationDuration = n.GetTimeSpanValue(); } },
-                {"isMfaOnElevationConfigurable", n => { IsMfaOnElevationConfigurable = n.GetBoolValue(); } },
-                {"lastGlobalAdmin", n => { LastGlobalAdmin = n.GetBoolValue(); } },
-                {"maxElavationDuration", n => { MaxElavationDuration = n.GetTimeSpanValue(); } },
-                {"mfaOnElevation", n => { MfaOnElevation = n.GetBoolValue(); } },
-                {"minElevationDuration", n => { MinElevationDuration = n.GetTimeSpanValue(); } },
-                {"notificationToUserOnElevation", n => { NotificationToUserOnElevation = n.GetBoolValue(); } },
-                {"ticketingInfoOnElevation", n => { TicketingInfoOnElevation = n.GetBoolValue(); } },
+                { "approvalOnElevation", n => { ApprovalOnElevation = n.GetBoolValue(); } },
+                { "approverIds", n => { ApproverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "elevationDuration", n => { ElevationDuration = n.GetTimeSpanValue(); } },
+                { "isMfaOnElevationConfigurable", n => { IsMfaOnElevationConfigurable = n.GetBoolValue(); } },
+                { "lastGlobalAdmin", n => { LastGlobalAdmin = n.GetBoolValue(); } },
+                { "maxElavationDuration", n => { MaxElavationDuration = n.GetTimeSpanValue(); } },
+                { "mfaOnElevation", n => { MfaOnElevation = n.GetBoolValue(); } },
+                { "minElevationDuration", n => { MinElevationDuration = n.GetTimeSpanValue(); } },
+                { "notificationToUserOnElevation", n => { NotificationToUserOnElevation = n.GetBoolValue(); } },
+                { "ticketingInfoOnElevation", n => { TicketingInfoOnElevation = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -5,52 +5,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationGradingSchemeGrade : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EducationGradingSchemeGrade : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The midpoint of the grade range.</summary>
-        public float? DefaultPercentage {
+        public float? DefaultPercentage
+        {
             get { return BackingStore?.Get<float?>("defaultPercentage"); }
             set { BackingStore?.Set("defaultPercentage", value); }
         }
         /// <summary>The name of the grading scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The minimum percentage of the total points needed to achieve this grade.</summary>
-        public float? MinPercentage {
+        public float? MinPercentage
+        {
             get { return BackingStore?.Get<float?>("minPercentage"); }
             set { BackingStore?.Set("minPercentage", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultPercentage", n => { DefaultPercentage = n.GetFloatValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"minPercentage", n => { MinPercentage = n.GetFloatValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "defaultPercentage", n => { DefaultPercentage = n.GetFloatValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "minPercentage", n => { MinPercentage = n.GetFloatValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

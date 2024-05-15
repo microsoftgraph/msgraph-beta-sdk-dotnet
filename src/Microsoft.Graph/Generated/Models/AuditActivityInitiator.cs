@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuditActivityInitiator : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuditActivityInitiator : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>If the actor initiating the activity is an app, this property indicates all its identification information including appId, displayName, servicePrincipalId, and servicePrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppIdentity? App {
+        public AppIdentity? App
+        {
             get { return BackingStore?.Get<AppIdentity?>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #nullable restore
 #else
-        public AppIdentity App {
+        public AppIdentity App
+        {
             get { return BackingStore?.Get<AppIdentity>("app"); }
             set { BackingStore?.Set("app", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If the actor initiating the activity is a user, this property indicates their identification information including their id, displayName, and userPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditUserIdentity? User {
+        public AuditUserIdentity? User
+        {
             get { return BackingStore?.Get<AuditUserIdentity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public AuditUserIdentity User {
+        public AuditUserIdentity User
+        {
             get { return BackingStore?.Get<AuditUserIdentity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"app", n => { App = n.GetObjectValue<AppIdentity>(AppIdentity.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<AuditUserIdentity>(AuditUserIdentity.CreateFromDiscriminatorValue); } },
+                { "app", n => { App = n.GetObjectValue<AppIdentity>(AppIdentity.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<AuditUserIdentity>(AuditUserIdentity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

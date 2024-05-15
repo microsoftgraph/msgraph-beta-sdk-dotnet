@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExternalAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable 
+    public class ExternalAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>appId for the app registration in Microsoft Entra ID representing the integration with the external provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name for the external authentication method. This name is shown to users during sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of groups that are enabled to use an authentication method as part of an authentication method policy in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodTarget>? IncludeTargets {
+        public List<AuthenticationMethodTarget>? IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodTarget> IncludeTargets {
+        public List<AuthenticationMethodTarget> IncludeTargets
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The openIdConnectSetting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.OpenIdConnectSetting? OpenIdConnectSetting {
+        public Microsoft.Graph.Beta.Models.OpenIdConnectSetting? OpenIdConnectSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenIdConnectSetting?>("openIdConnectSetting"); }
             set { BackingStore?.Set("openIdConnectSetting", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.OpenIdConnectSetting OpenIdConnectSetting {
+        public Microsoft.Graph.Beta.Models.OpenIdConnectSetting OpenIdConnectSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OpenIdConnectSetting>("openIdConnectSetting"); }
             set { BackingStore?.Set("openIdConnectSetting", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"openIdConnectSetting", n => { OpenIdConnectSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.OpenIdConnectSetting>(Microsoft.Graph.Beta.Models.OpenIdConnectSetting.CreateFromDiscriminatorValue); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<AuthenticationMethodTarget>(AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "openIdConnectSetting", n => { OpenIdConnectSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.OpenIdConnectSetting>(Microsoft.Graph.Beta.Models.OpenIdConnectSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

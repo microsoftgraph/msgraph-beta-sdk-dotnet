@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TrustedCertificateAuthorityAsEntityBase : DirectoryObject, IParsable 
+    public class TrustedCertificateAuthorityAsEntityBase : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of trusted certificate authorities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificateAuthorityAsEntity>? TrustedCertificateAuthorities {
+        public List<CertificateAuthorityAsEntity>? TrustedCertificateAuthorities
+        {
             get { return BackingStore?.Get<List<CertificateAuthorityAsEntity>?>("trustedCertificateAuthorities"); }
             set { BackingStore?.Set("trustedCertificateAuthorities", value); }
         }
 #nullable restore
 #else
-        public List<CertificateAuthorityAsEntity> TrustedCertificateAuthorities {
+        public List<CertificateAuthorityAsEntity> TrustedCertificateAuthorities
+        {
             get { return BackingStore?.Get<List<CertificateAuthorityAsEntity>>("trustedCertificateAuthorities"); }
             set { BackingStore?.Set("trustedCertificateAuthorities", value); }
         }
@@ -53,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"trustedCertificateAuthorities", n => { TrustedCertificateAuthorities = n.GetCollectionOfObjectValues<CertificateAuthorityAsEntity>(CertificateAuthorityAsEntity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trustedCertificateAuthorities", n => { TrustedCertificateAuthorities = n.GetCollectionOfObjectValues<CertificateAuthorityAsEntity>(CertificateAuthorityAsEntity.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

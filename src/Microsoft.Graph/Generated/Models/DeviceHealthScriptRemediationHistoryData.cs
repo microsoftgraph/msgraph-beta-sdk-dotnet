@@ -6,50 +6,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The number of devices remediated by a device health script on a given date.
     /// </summary>
-    public class DeviceHealthScriptRemediationHistoryData : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceHealthScriptRemediationHistoryData : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date on which devices were remediated by the device health script.</summary>
-        public Date? Date {
+        public Date? Date
+        {
             get { return BackingStore?.Get<Date?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
         /// <summary>The number of devices for which the detection script found an issue.</summary>
-        public int? DetectFailedDeviceCount {
+        public int? DetectFailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("detectFailedDeviceCount"); }
             set { BackingStore?.Set("detectFailedDeviceCount", value); }
         }
         /// <summary>The number of devices that were found to have no issue by the device health script.</summary>
-        public int? NoIssueDeviceCount {
+        public int? NoIssueDeviceCount
+        {
             get { return BackingStore?.Get<int?>("noIssueDeviceCount"); }
             set { BackingStore?.Set("noIssueDeviceCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of devices remediated by the device health script.</summary>
-        public int? RemediatedDeviceCount {
+        public int? RemediatedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
             set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
@@ -79,11 +87,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"date", n => { Date = n.GetDateValue(); } },
-                {"detectFailedDeviceCount", n => { DetectFailedDeviceCount = n.GetIntValue(); } },
-                {"noIssueDeviceCount", n => { NoIssueDeviceCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
+                { "date", n => { Date = n.GetDateValue(); } },
+                { "detectFailedDeviceCount", n => { DetectFailedDeviceCount = n.GetIntValue(); } },
+                { "noIssueDeviceCount", n => { NoIssueDeviceCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

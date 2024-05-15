@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Windows 10 device (desktop or mobile) to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class Windows10VpnConfiguration : WindowsVpnConfiguration, IParsable 
+    public class Windows10VpnConfiguration : WindowsVpnConfiguration, IParsable
     {
         /// <summary>Associated Apps. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Windows10AssociatedApps>? AssociatedApps {
+        public List<Windows10AssociatedApps>? AssociatedApps
+        {
             get { return BackingStore?.Get<List<Windows10AssociatedApps>?>("associatedApps"); }
             set { BackingStore?.Set("associatedApps", value); }
         }
 #nullable restore
 #else
-        public List<Windows10AssociatedApps> AssociatedApps {
+        public List<Windows10AssociatedApps> AssociatedApps
+        {
             get { return BackingStore?.Get<List<Windows10AssociatedApps>>("associatedApps"); }
             set { BackingStore?.Set("associatedApps", value); }
         }
 #endif
         /// <summary>Windows 10 VPN connection types.</summary>
-        public Windows10VpnAuthenticationMethod? AuthenticationMethod {
+        public Windows10VpnAuthenticationMethod? AuthenticationMethod
+        {
             get { return BackingStore?.Get<Windows10VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>VPN connection types.</summary>
-        public Windows10VpnConnectionType? ConnectionType {
+        public Windows10VpnConnectionType? ConnectionType
+        {
             get { return BackingStore?.Get<Windows10VpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Cryptography Suite security settings for IKEv2 VPN in Windows10 and above</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.CryptographySuite? CryptographySuite {
+        public Microsoft.Graph.Beta.Models.CryptographySuite? CryptographySuite
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CryptographySuite?>("cryptographySuite"); }
             set { BackingStore?.Set("cryptographySuite", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.CryptographySuite CryptographySuite {
+        public Microsoft.Graph.Beta.Models.CryptographySuite CryptographySuite
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CryptographySuite>("cryptographySuite"); }
             set { BackingStore?.Set("cryptographySuite", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>DNS rules. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnDnsRule>? DnsRules {
+        public List<VpnDnsRule>? DnsRules
+        {
             get { return BackingStore?.Get<List<VpnDnsRule>?>("dnsRules"); }
             set { BackingStore?.Set("dnsRules", value); }
         }
 #nullable restore
 #else
-        public List<VpnDnsRule> DnsRules {
+        public List<VpnDnsRule> DnsRules
+        {
             get { return BackingStore?.Get<List<VpnDnsRule>>("dnsRules"); }
             set { BackingStore?.Set("dnsRules", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify DNS suffixes to add to the DNS search list to properly route short names.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DnsSuffixes {
+        public List<string>? DnsSuffixes
+        {
             get { return BackingStore?.Get<List<string>?>("dnsSuffixes"); }
             set { BackingStore?.Set("dnsSuffixes", value); }
         }
 #nullable restore
 #else
-        public List<string> DnsSuffixes {
+        public List<string> DnsSuffixes
+        {
             get { return BackingStore?.Get<List<string>>("dnsSuffixes"); }
             set { BackingStore?.Set("dnsSuffixes", value); }
         }
@@ -79,57 +90,67 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Extensible Authentication Protocol (EAP) XML. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? EapXml {
+        public byte[]? EapXml
+        {
             get { return BackingStore?.Get<byte[]?>("eapXml"); }
             set { BackingStore?.Set("eapXml", value); }
         }
 #nullable restore
 #else
-        public byte[] EapXml {
+        public byte[] EapXml
+        {
             get { return BackingStore?.Get<byte[]>("eapXml"); }
             set { BackingStore?.Set("eapXml", value); }
         }
 #endif
         /// <summary>Enable Always On mode.</summary>
-        public bool? EnableAlwaysOn {
+        public bool? EnableAlwaysOn
+        {
             get { return BackingStore?.Get<bool?>("enableAlwaysOn"); }
             set { BackingStore?.Set("enableAlwaysOn", value); }
         }
         /// <summary>Enable conditional access.</summary>
-        public bool? EnableConditionalAccess {
+        public bool? EnableConditionalAccess
+        {
             get { return BackingStore?.Get<bool?>("enableConditionalAccess"); }
             set { BackingStore?.Set("enableConditionalAccess", value); }
         }
         /// <summary>Enable device tunnel.</summary>
-        public bool? EnableDeviceTunnel {
+        public bool? EnableDeviceTunnel
+        {
             get { return BackingStore?.Get<bool?>("enableDeviceTunnel"); }
             set { BackingStore?.Set("enableDeviceTunnel", value); }
         }
         /// <summary>Enable IP address registration with internal DNS.</summary>
-        public bool? EnableDnsRegistration {
+        public bool? EnableDnsRegistration
+        {
             get { return BackingStore?.Get<bool?>("enableDnsRegistration"); }
             set { BackingStore?.Set("enableDnsRegistration", value); }
         }
         /// <summary>Enable single sign-on (SSO) with alternate certificate.</summary>
-        public bool? EnableSingleSignOnWithAlternateCertificate {
+        public bool? EnableSingleSignOnWithAlternateCertificate
+        {
             get { return BackingStore?.Get<bool?>("enableSingleSignOnWithAlternateCertificate"); }
             set { BackingStore?.Set("enableSingleSignOnWithAlternateCertificate", value); }
         }
         /// <summary>Enable split tunneling.</summary>
-        public bool? EnableSplitTunneling {
+        public bool? EnableSplitTunneling
+        {
             get { return BackingStore?.Get<bool?>("enableSplitTunneling"); }
             set { BackingStore?.Set("enableSplitTunneling", value); }
         }
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsCertificateProfileBase? IdentityCertificate {
+        public WindowsCertificateProfileBase? IdentityCertificate
+        {
             get { return BackingStore?.Get<WindowsCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public WindowsCertificateProfileBase IdentityCertificate {
+        public WindowsCertificateProfileBase IdentityCertificate
+        {
             get { return BackingStore?.Get<WindowsCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
@@ -137,56 +158,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the Microsoft Tunnel site associated with the VPN profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MicrosoftTunnelSiteId {
+        public string? MicrosoftTunnelSiteId
+        {
             get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
 #nullable restore
 #else
-        public string MicrosoftTunnelSiteId {
+        public string MicrosoftTunnelSiteId
+        {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
 #endif
         /// <summary>Only associated Apps can use connection (per-app VPN).</summary>
-        public bool? OnlyAssociatedAppsCanUseConnection {
+        public bool? OnlyAssociatedAppsCanUseConnection
+        {
             get { return BackingStore?.Get<bool?>("onlyAssociatedAppsCanUseConnection"); }
             set { BackingStore?.Set("onlyAssociatedAppsCanUseConnection", value); }
         }
         /// <summary>Profile target type. Possible values are: user, device, autoPilotDevice.</summary>
-        public Windows10VpnProfileTarget? ProfileTarget {
+        public Windows10VpnProfileTarget? ProfileTarget
+        {
             get { return BackingStore?.Get<Windows10VpnProfileTarget?>("profileTarget"); }
             set { BackingStore?.Set("profileTarget", value); }
         }
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Windows10VpnProxyServer? ProxyServer {
+        public Windows10VpnProxyServer? ProxyServer
+        {
             get { return BackingStore?.Get<Windows10VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #nullable restore
 #else
-        public Windows10VpnProxyServer ProxyServer {
+        public Windows10VpnProxyServer ProxyServer
+        {
             get { return BackingStore?.Get<Windows10VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #endif
         /// <summary>Remember user credentials.</summary>
-        public bool? RememberUserCredentials {
+        public bool? RememberUserCredentials
+        {
             get { return BackingStore?.Get<bool?>("rememberUserCredentials"); }
             set { BackingStore?.Set("rememberUserCredentials", value); }
         }
         /// <summary>Routes (optional for third-party providers). This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnRoute>? Routes {
+        public List<VpnRoute>? Routes
+        {
             get { return BackingStore?.Get<List<VpnRoute>?>("routes"); }
             set { BackingStore?.Set("routes", value); }
         }
 #nullable restore
 #else
-        public List<VpnRoute> Routes {
+        public List<VpnRoute> Routes
+        {
             get { return BackingStore?.Get<List<VpnRoute>>("routes"); }
             set { BackingStore?.Set("routes", value); }
         }
@@ -194,13 +224,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Single sign-on Extended Key Usage (EKU).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExtendedKeyUsage? SingleSignOnEku {
+        public ExtendedKeyUsage? SingleSignOnEku
+        {
             get { return BackingStore?.Get<ExtendedKeyUsage?>("singleSignOnEku"); }
             set { BackingStore?.Set("singleSignOnEku", value); }
         }
 #nullable restore
 #else
-        public ExtendedKeyUsage SingleSignOnEku {
+        public ExtendedKeyUsage SingleSignOnEku
+        {
             get { return BackingStore?.Get<ExtendedKeyUsage>("singleSignOnEku"); }
             set { BackingStore?.Set("singleSignOnEku", value); }
         }
@@ -208,13 +240,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Single sign-on issuer hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingleSignOnIssuerHash {
+        public string? SingleSignOnIssuerHash
+        {
             get { return BackingStore?.Get<string?>("singleSignOnIssuerHash"); }
             set { BackingStore?.Set("singleSignOnIssuerHash", value); }
         }
 #nullable restore
 #else
-        public string SingleSignOnIssuerHash {
+        public string SingleSignOnIssuerHash
+        {
             get { return BackingStore?.Get<string>("singleSignOnIssuerHash"); }
             set { BackingStore?.Set("singleSignOnIssuerHash", value); }
         }
@@ -222,13 +256,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Traffic rules. This collection can contain a maximum of 1000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnTrafficRule>? TrafficRules {
+        public List<VpnTrafficRule>? TrafficRules
+        {
             get { return BackingStore?.Get<List<VpnTrafficRule>?>("trafficRules"); }
             set { BackingStore?.Set("trafficRules", value); }
         }
 #nullable restore
 #else
-        public List<VpnTrafficRule> TrafficRules {
+        public List<VpnTrafficRule> TrafficRules
+        {
             get { return BackingStore?.Get<List<VpnTrafficRule>>("trafficRules"); }
             set { BackingStore?.Set("trafficRules", value); }
         }
@@ -236,13 +272,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Trusted Network Domains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TrustedNetworkDomains {
+        public List<string>? TrustedNetworkDomains
+        {
             get { return BackingStore?.Get<List<string>?>("trustedNetworkDomains"); }
             set { BackingStore?.Set("trustedNetworkDomains", value); }
         }
 #nullable restore
 #else
-        public List<string> TrustedNetworkDomains {
+        public List<string> TrustedNetworkDomains
+        {
             get { return BackingStore?.Get<List<string>>("trustedNetworkDomains"); }
             set { BackingStore?.Set("trustedNetworkDomains", value); }
         }
@@ -250,13 +288,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Windows Information Protection (WIP) domain to associate with this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WindowsInformationProtectionDomain {
+        public string? WindowsInformationProtectionDomain
+        {
             get { return BackingStore?.Get<string?>("windowsInformationProtectionDomain"); }
             set { BackingStore?.Set("windowsInformationProtectionDomain", value); }
         }
 #nullable restore
 #else
-        public string WindowsInformationProtectionDomain {
+        public string WindowsInformationProtectionDomain
+        {
             get { return BackingStore?.Get<string>("windowsInformationProtectionDomain"); }
             set { BackingStore?.Set("windowsInformationProtectionDomain", value); }
         }
@@ -286,31 +326,31 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"associatedApps", n => { AssociatedApps = n.GetCollectionOfObjectValues<Windows10AssociatedApps>(Windows10AssociatedApps.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Windows10VpnAuthenticationMethod>(); } },
-                {"connectionType", n => { ConnectionType = n.GetEnumValue<Windows10VpnConnectionType>(); } },
-                {"cryptographySuite", n => { CryptographySuite = n.GetObjectValue<Microsoft.Graph.Beta.Models.CryptographySuite>(Microsoft.Graph.Beta.Models.CryptographySuite.CreateFromDiscriminatorValue); } },
-                {"dnsRules", n => { DnsRules = n.GetCollectionOfObjectValues<VpnDnsRule>(VpnDnsRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dnsSuffixes", n => { DnsSuffixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"eapXml", n => { EapXml = n.GetByteArrayValue(); } },
-                {"enableAlwaysOn", n => { EnableAlwaysOn = n.GetBoolValue(); } },
-                {"enableConditionalAccess", n => { EnableConditionalAccess = n.GetBoolValue(); } },
-                {"enableDeviceTunnel", n => { EnableDeviceTunnel = n.GetBoolValue(); } },
-                {"enableDnsRegistration", n => { EnableDnsRegistration = n.GetBoolValue(); } },
-                {"enableSingleSignOnWithAlternateCertificate", n => { EnableSingleSignOnWithAlternateCertificate = n.GetBoolValue(); } },
-                {"enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
-                {"identityCertificate", n => { IdentityCertificate = n.GetObjectValue<WindowsCertificateProfileBase>(WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
-                {"microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
-                {"onlyAssociatedAppsCanUseConnection", n => { OnlyAssociatedAppsCanUseConnection = n.GetBoolValue(); } },
-                {"profileTarget", n => { ProfileTarget = n.GetEnumValue<Windows10VpnProfileTarget>(); } },
-                {"proxyServer", n => { ProxyServer = n.GetObjectValue<Windows10VpnProxyServer>(Windows10VpnProxyServer.CreateFromDiscriminatorValue); } },
-                {"rememberUserCredentials", n => { RememberUserCredentials = n.GetBoolValue(); } },
-                {"routes", n => { Routes = n.GetCollectionOfObjectValues<VpnRoute>(VpnRoute.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"singleSignOnEku", n => { SingleSignOnEku = n.GetObjectValue<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue); } },
-                {"singleSignOnIssuerHash", n => { SingleSignOnIssuerHash = n.GetStringValue(); } },
-                {"trafficRules", n => { TrafficRules = n.GetCollectionOfObjectValues<VpnTrafficRule>(VpnTrafficRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"trustedNetworkDomains", n => { TrustedNetworkDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"windowsInformationProtectionDomain", n => { WindowsInformationProtectionDomain = n.GetStringValue(); } },
+                { "associatedApps", n => { AssociatedApps = n.GetCollectionOfObjectValues<Windows10AssociatedApps>(Windows10AssociatedApps.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Windows10VpnAuthenticationMethod>(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Windows10VpnConnectionType>(); } },
+                { "cryptographySuite", n => { CryptographySuite = n.GetObjectValue<Microsoft.Graph.Beta.Models.CryptographySuite>(Microsoft.Graph.Beta.Models.CryptographySuite.CreateFromDiscriminatorValue); } },
+                { "dnsRules", n => { DnsRules = n.GetCollectionOfObjectValues<VpnDnsRule>(VpnDnsRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dnsSuffixes", n => { DnsSuffixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "eapXml", n => { EapXml = n.GetByteArrayValue(); } },
+                { "enableAlwaysOn", n => { EnableAlwaysOn = n.GetBoolValue(); } },
+                { "enableConditionalAccess", n => { EnableConditionalAccess = n.GetBoolValue(); } },
+                { "enableDeviceTunnel", n => { EnableDeviceTunnel = n.GetBoolValue(); } },
+                { "enableDnsRegistration", n => { EnableDnsRegistration = n.GetBoolValue(); } },
+                { "enableSingleSignOnWithAlternateCertificate", n => { EnableSingleSignOnWithAlternateCertificate = n.GetBoolValue(); } },
+                { "enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<WindowsCertificateProfileBase>(WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
+                { "onlyAssociatedAppsCanUseConnection", n => { OnlyAssociatedAppsCanUseConnection = n.GetBoolValue(); } },
+                { "profileTarget", n => { ProfileTarget = n.GetEnumValue<Windows10VpnProfileTarget>(); } },
+                { "proxyServer", n => { ProxyServer = n.GetObjectValue<Windows10VpnProxyServer>(Windows10VpnProxyServer.CreateFromDiscriminatorValue); } },
+                { "rememberUserCredentials", n => { RememberUserCredentials = n.GetBoolValue(); } },
+                { "routes", n => { Routes = n.GetCollectionOfObjectValues<VpnRoute>(VpnRoute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleSignOnEku", n => { SingleSignOnEku = n.GetObjectValue<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue); } },
+                { "singleSignOnIssuerHash", n => { SingleSignOnIssuerHash = n.GetStringValue(); } },
+                { "trafficRules", n => { TrafficRules = n.GetCollectionOfObjectValues<VpnTrafficRule>(VpnTrafficRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "trustedNetworkDomains", n => { TrustedNetworkDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "windowsInformationProtectionDomain", n => { WindowsInformationProtectionDomain = n.GetStringValue(); } },
             };
         }
         /// <summary>

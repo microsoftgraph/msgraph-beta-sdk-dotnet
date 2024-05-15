@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
     /// </summary>
-    public class WindowsInformationProtectionWipeAction : Entity, IParsable 
+    public class WindowsInformationProtectionWipeAction : Entity, IParsable
     {
         /// <summary>Last checkin time of the device that was targeted by this wipe action.</summary>
-        public DateTimeOffset? LastCheckInDateTime {
+        public DateTimeOffset? LastCheckInDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
             set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public ActionState? Status {
+        public ActionState? Status
+        {
             get { return BackingStore?.Get<ActionState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Targeted device Mac address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetedDeviceMacAddress {
+        public string? TargetedDeviceMacAddress
+        {
             get { return BackingStore?.Get<string?>("targetedDeviceMacAddress"); }
             set { BackingStore?.Set("targetedDeviceMacAddress", value); }
         }
 #nullable restore
 #else
-        public string TargetedDeviceMacAddress {
+        public string TargetedDeviceMacAddress
+        {
             get { return BackingStore?.Get<string>("targetedDeviceMacAddress"); }
             set { BackingStore?.Set("targetedDeviceMacAddress", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Targeted device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetedDeviceName {
+        public string? TargetedDeviceName
+        {
             get { return BackingStore?.Get<string?>("targetedDeviceName"); }
             set { BackingStore?.Set("targetedDeviceName", value); }
         }
 #nullable restore
 #else
-        public string TargetedDeviceName {
+        public string TargetedDeviceName
+        {
             get { return BackingStore?.Get<string>("targetedDeviceName"); }
             set { BackingStore?.Set("targetedDeviceName", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The DeviceRegistrationId being targeted by this wipe action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetedDeviceRegistrationId {
+        public string? TargetedDeviceRegistrationId
+        {
             get { return BackingStore?.Get<string?>("targetedDeviceRegistrationId"); }
             set { BackingStore?.Set("targetedDeviceRegistrationId", value); }
         }
 #nullable restore
 #else
-        public string TargetedDeviceRegistrationId {
+        public string TargetedDeviceRegistrationId
+        {
             get { return BackingStore?.Get<string>("targetedDeviceRegistrationId"); }
             set { BackingStore?.Set("targetedDeviceRegistrationId", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The UserId being targeted by this wipe action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetedUserId {
+        public string? TargetedUserId
+        {
             get { return BackingStore?.Get<string?>("targetedUserId"); }
             set { BackingStore?.Set("targetedUserId", value); }
         }
 #nullable restore
 #else
-        public string TargetedUserId {
+        public string TargetedUserId
+        {
             get { return BackingStore?.Get<string>("targetedUserId"); }
             set { BackingStore?.Set("targetedUserId", value); }
         }
@@ -94,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ActionState>(); } },
-                {"targetedDeviceMacAddress", n => { TargetedDeviceMacAddress = n.GetStringValue(); } },
-                {"targetedDeviceName", n => { TargetedDeviceName = n.GetStringValue(); } },
-                {"targetedDeviceRegistrationId", n => { TargetedDeviceRegistrationId = n.GetStringValue(); } },
-                {"targetedUserId", n => { TargetedUserId = n.GetStringValue(); } },
+                { "lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ActionState>(); } },
+                { "targetedDeviceMacAddress", n => { TargetedDeviceMacAddress = n.GetStringValue(); } },
+                { "targetedDeviceName", n => { TargetedDeviceName = n.GetStringValue(); } },
+                { "targetedDeviceRegistrationId", n => { TargetedDeviceRegistrationId = n.GetStringValue(); } },
+                { "targetedUserId", n => { TargetedUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

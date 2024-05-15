@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The base presentation value entity that stores the value for a single group policy presentation.
     /// </summary>
-    public class GroupPolicyPresentationValue : Entity, IParsable 
+    public class GroupPolicyPresentationValue : Entity, IParsable
     {
         /// <summary>The date and time the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The group policy definition value associated with the presentation value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyDefinitionValue? DefinitionValue {
+        public GroupPolicyDefinitionValue? DefinitionValue
+        {
             get { return BackingStore?.Get<GroupPolicyDefinitionValue?>("definitionValue"); }
             set { BackingStore?.Set("definitionValue", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyDefinitionValue DefinitionValue {
+        public GroupPolicyDefinitionValue DefinitionValue
+        {
             get { return BackingStore?.Get<GroupPolicyDefinitionValue>("definitionValue"); }
             set { BackingStore?.Set("definitionValue", value); }
         }
 #endif
         /// <summary>The date and time the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The group policy presentation associated with the presentation value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyPresentation? Presentation {
+        public GroupPolicyPresentation? Presentation
+        {
             get { return BackingStore?.Get<GroupPolicyPresentation?>("presentation"); }
             set { BackingStore?.Set("presentation", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyPresentation Presentation {
+        public GroupPolicyPresentation Presentation
+        {
             get { return BackingStore?.Get<GroupPolicyPresentation>("presentation"); }
             set { BackingStore?.Set("presentation", value); }
         }
@@ -76,10 +83,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"definitionValue", n => { DefinitionValue = n.GetObjectValue<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"presentation", n => { Presentation = n.GetObjectValue<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "definitionValue", n => { DefinitionValue = n.GetObjectValue<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "presentation", n => { Presentation = n.GetObjectValue<GroupPolicyPresentation>(GroupPolicyPresentation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

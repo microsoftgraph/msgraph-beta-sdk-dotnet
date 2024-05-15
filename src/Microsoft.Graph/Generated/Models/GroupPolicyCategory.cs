@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The category entity stores the category of a group policy definition
     /// </summary>
-    public class GroupPolicyCategory : Entity, IParsable 
+    public class GroupPolicyCategory : Entity, IParsable
     {
         /// <summary>The children categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyCategory>? Children {
+        public List<GroupPolicyCategory>? Children
+        {
             get { return BackingStore?.Get<List<GroupPolicyCategory>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyCategory> Children {
+        public List<GroupPolicyCategory> Children
+        {
             get { return BackingStore?.Get<List<GroupPolicyCategory>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The id of the definition file the category came from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyDefinitionFile? DefinitionFile {
+        public GroupPolicyDefinitionFile? DefinitionFile
+        {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile?>("definitionFile"); }
             set { BackingStore?.Set("definitionFile", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyDefinitionFile DefinitionFile {
+        public GroupPolicyDefinitionFile DefinitionFile
+        {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
             set { BackingStore?.Set("definitionFile", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The immediate GroupPolicyDefinition children of the category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyDefinition>? Definitions {
+        public List<GroupPolicyDefinition>? Definitions
+        {
             get { return BackingStore?.Get<List<GroupPolicyDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyDefinition> Definitions {
+        public List<GroupPolicyDefinition> Definitions
+        {
             get { return BackingStore?.Get<List<GroupPolicyDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
@@ -55,42 +62,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The string id of the category&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Category Ingestion source</summary>
-        public Microsoft.Graph.Beta.Models.IngestionSource? IngestionSource {
+        public Microsoft.Graph.Beta.Models.IngestionSource? IngestionSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IngestionSource?>("ingestionSource"); }
             set { BackingStore?.Set("ingestionSource", value); }
         }
         /// <summary>Defines if the category is a root category</summary>
-        public bool? IsRoot {
+        public bool? IsRoot
+        {
             get { return BackingStore?.Get<bool?>("isRoot"); }
             set { BackingStore?.Set("isRoot", value); }
         }
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The parent category</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyCategory? Parent {
+        public GroupPolicyCategory? Parent
+        {
             get { return BackingStore?.Get<GroupPolicyCategory?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyCategory Parent {
+        public GroupPolicyCategory Parent
+        {
             get { return BackingStore?.Get<GroupPolicyCategory>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
@@ -113,14 +127,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"children", n => { Children = n.GetCollectionOfObjectValues<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"definitionFile", n => { DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
-                {"definitions", n => { Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"ingestionSource", n => { IngestionSource = n.GetEnumValue<IngestionSource>(); } },
-                {"isRoot", n => { IsRoot = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"parent", n => { Parent = n.GetObjectValue<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definitionFile", n => { DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
+                { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "ingestionSource", n => { IngestionSource = n.GetEnumValue<IngestionSource>(); } },
+                { "isRoot", n => { IsRoot = n.GetBoolValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "parent", n => { Parent = n.GetObjectValue<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

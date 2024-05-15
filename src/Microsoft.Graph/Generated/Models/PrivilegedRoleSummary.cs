@@ -4,33 +4,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedRoleSummary : Entity, IParsable 
+    public class PrivilegedRoleSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The elevatedCount property</summary>
-        public int? ElevatedCount {
+        public int? ElevatedCount
+        {
             get { return BackingStore?.Get<int?>("elevatedCount"); }
             set { BackingStore?.Set("elevatedCount", value); }
         }
         /// <summary>The managedCount property</summary>
-        public int? ManagedCount {
+        public int? ManagedCount
+        {
             get { return BackingStore?.Get<int?>("managedCount"); }
             set { BackingStore?.Set("managedCount", value); }
         }
         /// <summary>The mfaEnabled property</summary>
-        public bool? MfaEnabled {
+        public bool? MfaEnabled
+        {
             get { return BackingStore?.Get<bool?>("mfaEnabled"); }
             set { BackingStore?.Set("mfaEnabled", value); }
         }
         /// <summary>The status property</summary>
-        public RoleSummaryStatus? Status {
+        public RoleSummaryStatus? Status
+        {
             get { return BackingStore?.Get<RoleSummaryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The usersCount property</summary>
-        public int? UsersCount {
+        public int? UsersCount
+        {
             get { return BackingStore?.Get<int?>("usersCount"); }
             set { BackingStore?.Set("usersCount", value); }
         }
@@ -52,11 +58,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"elevatedCount", n => { ElevatedCount = n.GetIntValue(); } },
-                {"managedCount", n => { ManagedCount = n.GetIntValue(); } },
-                {"mfaEnabled", n => { MfaEnabled = n.GetBoolValue(); } },
-                {"status", n => { Status = n.GetEnumValue<RoleSummaryStatus>(); } },
-                {"usersCount", n => { UsersCount = n.GetIntValue(); } },
+                { "elevatedCount", n => { ElevatedCount = n.GetIntValue(); } },
+                { "managedCount", n => { ManagedCount = n.GetIntValue(); } },
+                { "mfaEnabled", n => { MfaEnabled = n.GetBoolValue(); } },
+                { "status", n => { Status = n.GetEnumValue<RoleSummaryStatus>(); } },
+                { "usersCount", n => { UsersCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

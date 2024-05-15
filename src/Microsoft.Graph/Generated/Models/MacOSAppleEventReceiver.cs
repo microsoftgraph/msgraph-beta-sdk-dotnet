@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a process that can receive an Apple Event notification.
     /// </summary>
-    public class MacOSAppleEventReceiver : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSAppleEventReceiver : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Allow or block this app from receiving Apple events.</summary>
-        public bool? Allowed {
+        public bool? Allowed
+        {
             get { return BackingStore?.Get<bool?>("allowed"); }
             set { BackingStore?.Set("allowed", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Code requirement for the app or binary that receives the Apple Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CodeRequirement {
+        public string? CodeRequirement
+        {
             get { return BackingStore?.Get<string?>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
 #nullable restore
 #else
-        public string CodeRequirement {
+        public string CodeRequirement
+        {
             get { return BackingStore?.Get<string>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Bundle ID of the app or file path of the process or executable that receives the Apple Event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier {
+        public string? Identifier
+        {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #nullable restore
 #else
-        public string Identifier {
+        public string Identifier
+        {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
         /// <summary>Process identifier types for MacOS Privacy Preferences</summary>
-        public MacOSProcessIdentifierType? IdentifierType {
+        public MacOSProcessIdentifierType? IdentifierType
+        {
             get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
             set { BackingStore?.Set("identifierType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowed", n => { Allowed = n.GetBoolValue(); } },
-                {"codeRequirement", n => { CodeRequirement = n.GetStringValue(); } },
-                {"identifier", n => { Identifier = n.GetStringValue(); } },
-                {"identifierType", n => { IdentifierType = n.GetEnumValue<MacOSProcessIdentifierType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowed", n => { Allowed = n.GetBoolValue(); } },
+                { "codeRequirement", n => { CodeRequirement = n.GetStringValue(); } },
+                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "identifierType", n => { IdentifierType = n.GetEnumValue<MacOSProcessIdentifierType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

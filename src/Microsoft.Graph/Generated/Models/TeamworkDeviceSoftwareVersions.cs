@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDeviceSoftwareVersions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkDeviceSoftwareVersions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The software version for the admin agent running on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminAgentSoftwareVersion {
+        public string? AdminAgentSoftwareVersion
+        {
             get { return BackingStore?.Get<string?>("adminAgentSoftwareVersion"); }
             set { BackingStore?.Set("adminAgentSoftwareVersion", value); }
         }
 #nullable restore
 #else
-        public string AdminAgentSoftwareVersion {
+        public string AdminAgentSoftwareVersion
+        {
             get { return BackingStore?.Get<string>("adminAgentSoftwareVersion"); }
             set { BackingStore?.Set("adminAgentSoftwareVersion", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The software version for the firmware running on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirmwareSoftwareVersion {
+        public string? FirmwareSoftwareVersion
+        {
             get { return BackingStore?.Get<string?>("firmwareSoftwareVersion"); }
             set { BackingStore?.Set("firmwareSoftwareVersion", value); }
         }
 #nullable restore
 #else
-        public string FirmwareSoftwareVersion {
+        public string FirmwareSoftwareVersion
+        {
             get { return BackingStore?.Get<string>("firmwareSoftwareVersion"); }
             set { BackingStore?.Set("firmwareSoftwareVersion", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The software version for the operating system on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystemSoftwareVersion {
+        public string? OperatingSystemSoftwareVersion
+        {
             get { return BackingStore?.Get<string?>("operatingSystemSoftwareVersion"); }
             set { BackingStore?.Set("operatingSystemSoftwareVersion", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystemSoftwareVersion {
+        public string OperatingSystemSoftwareVersion
+        {
             get { return BackingStore?.Get<string>("operatingSystemSoftwareVersion"); }
             set { BackingStore?.Set("operatingSystemSoftwareVersion", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The software version for the partner agent running on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerAgentSoftwareVersion {
+        public string? PartnerAgentSoftwareVersion
+        {
             get { return BackingStore?.Get<string?>("partnerAgentSoftwareVersion"); }
             set { BackingStore?.Set("partnerAgentSoftwareVersion", value); }
         }
 #nullable restore
 #else
-        public string PartnerAgentSoftwareVersion {
+        public string PartnerAgentSoftwareVersion
+        {
             get { return BackingStore?.Get<string>("partnerAgentSoftwareVersion"); }
             set { BackingStore?.Set("partnerAgentSoftwareVersion", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The software version for the Teams client running on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamsClientSoftwareVersion {
+        public string? TeamsClientSoftwareVersion
+        {
             get { return BackingStore?.Get<string?>("teamsClientSoftwareVersion"); }
             set { BackingStore?.Set("teamsClientSoftwareVersion", value); }
         }
 #nullable restore
 #else
-        public string TeamsClientSoftwareVersion {
+        public string TeamsClientSoftwareVersion
+        {
             get { return BackingStore?.Get<string>("teamsClientSoftwareVersion"); }
             set { BackingStore?.Set("teamsClientSoftwareVersion", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"adminAgentSoftwareVersion", n => { AdminAgentSoftwareVersion = n.GetStringValue(); } },
-                {"firmwareSoftwareVersion", n => { FirmwareSoftwareVersion = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatingSystemSoftwareVersion", n => { OperatingSystemSoftwareVersion = n.GetStringValue(); } },
-                {"partnerAgentSoftwareVersion", n => { PartnerAgentSoftwareVersion = n.GetStringValue(); } },
-                {"teamsClientSoftwareVersion", n => { TeamsClientSoftwareVersion = n.GetStringValue(); } },
+                { "adminAgentSoftwareVersion", n => { AdminAgentSoftwareVersion = n.GetStringValue(); } },
+                { "firmwareSoftwareVersion", n => { FirmwareSoftwareVersion = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystemSoftwareVersion", n => { OperatingSystemSoftwareVersion = n.GetStringValue(); } },
+                { "partnerAgentSoftwareVersion", n => { PartnerAgentSoftwareVersion = n.GetStringValue(); } },
+                { "teamsClientSoftwareVersion", n => { TeamsClientSoftwareVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

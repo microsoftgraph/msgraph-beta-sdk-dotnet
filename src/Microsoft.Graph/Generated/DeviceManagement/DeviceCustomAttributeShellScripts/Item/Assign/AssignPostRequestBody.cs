@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>The deviceManagementScriptAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptAssignment>? DeviceManagementScriptAssignments {
+        public List<DeviceManagementScriptAssignment>? DeviceManagementScriptAssignments
+        {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("deviceManagementScriptAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments {
+        public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments
+        {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("deviceManagementScriptAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>The deviceManagementScriptGroupAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementScriptGroupAssignment>? DeviceManagementScriptGroupAssignments {
+        public List<DeviceManagementScriptGroupAssignment>? DeviceManagementScriptGroupAssignments
+        {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("deviceManagementScriptGroupAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments {
+        public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments
+        {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("deviceManagementScriptGroupAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceManagementScriptAssignments", n => { DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceManagementScriptGroupAssignments", n => { DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementScriptAssignments", n => { DeviceManagementScriptAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptAssignment>(DeviceManagementScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementScriptGroupAssignments", n => { DeviceManagementScriptGroupAssignments = n.GetCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>(DeviceManagementScriptGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

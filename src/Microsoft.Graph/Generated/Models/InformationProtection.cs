@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InformationProtection : Entity, IParsable 
+    public class InformationProtection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bitlocker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Bitlocker? Bitlocker {
+        public Microsoft.Graph.Beta.Models.Bitlocker? Bitlocker
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker?>("bitlocker"); }
             set { BackingStore?.Set("bitlocker", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Bitlocker Bitlocker {
+        public Microsoft.Graph.Beta.Models.Bitlocker Bitlocker
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Bitlocker>("bitlocker"); }
             set { BackingStore?.Set("bitlocker", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dataLossPreventionPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataLossPreventionPolicy>? DataLossPreventionPolicies {
+        public List<DataLossPreventionPolicy>? DataLossPreventionPolicies
+        {
             get { return BackingStore?.Get<List<DataLossPreventionPolicy>?>("dataLossPreventionPolicies"); }
             set { BackingStore?.Set("dataLossPreventionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<DataLossPreventionPolicy> DataLossPreventionPolicies {
+        public List<DataLossPreventionPolicy> DataLossPreventionPolicies
+        {
             get { return BackingStore?.Get<List<DataLossPreventionPolicy>>("dataLossPreventionPolicies"); }
             set { BackingStore?.Set("dataLossPreventionPolicies", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InformationProtectionPolicy? Policy {
+        public InformationProtectionPolicy? Policy
+        {
             get { return BackingStore?.Get<InformationProtectionPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public InformationProtectionPolicy Policy {
+        public InformationProtectionPolicy Policy
+        {
             get { return BackingStore?.Get<InformationProtectionPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sensitivityLabels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitivityLabel>? SensitivityLabels {
+        public List<SensitivityLabel>? SensitivityLabels
+        {
             get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
 #nullable restore
 #else
-        public List<SensitivityLabel> SensitivityLabels {
+        public List<SensitivityLabel> SensitivityLabels
+        {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sensitivityPolicySettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings? SensitivityPolicySettings {
+        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings? SensitivityPolicySettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings?>("sensitivityPolicySettings"); }
             set { BackingStore?.Set("sensitivityPolicySettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings SensitivityPolicySettings {
+        public Microsoft.Graph.Beta.Models.SensitivityPolicySettings SensitivityPolicySettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>("sensitivityPolicySettings"); }
             set { BackingStore?.Set("sensitivityPolicySettings", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The threatAssessmentRequests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ThreatAssessmentRequest>? ThreatAssessmentRequests {
+        public List<ThreatAssessmentRequest>? ThreatAssessmentRequests
+        {
             get { return BackingStore?.Get<List<ThreatAssessmentRequest>?>("threatAssessmentRequests"); }
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
 #nullable restore
 #else
-        public List<ThreatAssessmentRequest> ThreatAssessmentRequests {
+        public List<ThreatAssessmentRequest> ThreatAssessmentRequests
+        {
             get { return BackingStore?.Get<List<ThreatAssessmentRequest>>("threatAssessmentRequests"); }
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bitlocker", n => { Bitlocker = n.GetObjectValue<Microsoft.Graph.Beta.Models.Bitlocker>(Microsoft.Graph.Beta.Models.Bitlocker.CreateFromDiscriminatorValue); } },
-                {"dataLossPreventionPolicies", n => { DataLossPreventionPolicies = n.GetCollectionOfObjectValues<DataLossPreventionPolicy>(DataLossPreventionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"policy", n => { Policy = n.GetObjectValue<InformationProtectionPolicy>(InformationProtectionPolicy.CreateFromDiscriminatorValue); } },
-                {"sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sensitivityPolicySettings", n => { SensitivityPolicySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue); } },
-                {"threatAssessmentRequests", n => { ThreatAssessmentRequests = n.GetCollectionOfObjectValues<ThreatAssessmentRequest>(ThreatAssessmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bitlocker", n => { Bitlocker = n.GetObjectValue<Microsoft.Graph.Beta.Models.Bitlocker>(Microsoft.Graph.Beta.Models.Bitlocker.CreateFromDiscriminatorValue); } },
+                { "dataLossPreventionPolicies", n => { DataLossPreventionPolicies = n.GetCollectionOfObjectValues<DataLossPreventionPolicy>(DataLossPreventionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "policy", n => { Policy = n.GetObjectValue<InformationProtectionPolicy>(InformationProtectionPolicy.CreateFromDiscriminatorValue); } },
+                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensitivityPolicySettings", n => { SensitivityPolicySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.SensitivityPolicySettings>(Microsoft.Graph.Beta.Models.SensitivityPolicySettings.CreateFromDiscriminatorValue); } },
+                { "threatAssessmentRequests", n => { ThreatAssessmentRequests = n.GetCollectionOfObjectValues<ThreatAssessmentRequest>(ThreatAssessmentRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

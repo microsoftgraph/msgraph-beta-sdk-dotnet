@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Bandwidth limits specified as a percentage.
     /// </summary>
-    public class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth, IParsable 
+    public class DeliveryOptimizationBandwidthPercentage : DeliveryOptimizationBandwidth, IParsable
     {
         /// <summary>Specifies the maximum background download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100</summary>
-        public int? MaximumBackgroundBandwidthPercentage {
+        public int? MaximumBackgroundBandwidthPercentage
+        {
             get { return BackingStore?.Get<int?>("maximumBackgroundBandwidthPercentage"); }
             set { BackingStore?.Set("maximumBackgroundBandwidthPercentage", value); }
         }
         /// <summary>Specifies the maximum foreground download bandwidth that Delivery Optimization uses across all concurrent download activities as a percentage of available download bandwidth (0-100). Valid values 0 to 100</summary>
-        public int? MaximumForegroundBandwidthPercentage {
+        public int? MaximumForegroundBandwidthPercentage
+        {
             get { return BackingStore?.Get<int?>("maximumForegroundBandwidthPercentage"); }
             set { BackingStore?.Set("maximumForegroundBandwidthPercentage", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"maximumBackgroundBandwidthPercentage", n => { MaximumBackgroundBandwidthPercentage = n.GetIntValue(); } },
-                {"maximumForegroundBandwidthPercentage", n => { MaximumForegroundBandwidthPercentage = n.GetIntValue(); } },
+                { "maximumBackgroundBandwidthPercentage", n => { MaximumBackgroundBandwidthPercentage = n.GetIntValue(); } },
+                { "maximumForegroundBandwidthPercentage", n => { MaximumForegroundBandwidthPercentage = n.GetIntValue(); } },
             };
         }
         /// <summary>

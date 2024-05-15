@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DomainSecurityProfile : Entity, IParsable 
+    public class DomainSecurityProfile : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityGroupNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ActivityGroupNames {
+        public List<string>? ActivityGroupNames
+        {
             get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
 #nullable restore
 #else
-        public List<string> ActivityGroupNames {
+        public List<string> ActivityGroupNames
+        {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The azureSubscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureSubscriptionId {
+        public string? AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
 #nullable restore
 #else
-        public string AzureSubscriptionId {
+        public string AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
@@ -40,66 +45,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The azureTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureTenantId {
+        public string? AzureTenantId
+        {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #nullable restore
 #else
-        public string AzureTenantId {
+        public string AzureTenantId
+        {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #endif
         /// <summary>The countHits property</summary>
-        public int? CountHits {
+        public int? CountHits
+        {
             get { return BackingStore?.Get<int?>("countHits"); }
             set { BackingStore?.Set("countHits", value); }
         }
         /// <summary>The countInOrg property</summary>
-        public int? CountInOrg {
+        public int? CountInOrg
+        {
             get { return BackingStore?.Get<int?>("countInOrg"); }
             set { BackingStore?.Set("countInOrg", value); }
         }
         /// <summary>The domainCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReputationCategory>? DomainCategories {
+        public List<ReputationCategory>? DomainCategories
+        {
             get { return BackingStore?.Get<List<ReputationCategory>?>("domainCategories"); }
             set { BackingStore?.Set("domainCategories", value); }
         }
 #nullable restore
 #else
-        public List<ReputationCategory> DomainCategories {
+        public List<ReputationCategory> DomainCategories
+        {
             get { return BackingStore?.Get<List<ReputationCategory>>("domainCategories"); }
             set { BackingStore?.Set("domainCategories", value); }
         }
 #endif
         /// <summary>The domainRegisteredDateTime property</summary>
-        public DateTimeOffset? DomainRegisteredDateTime {
+        public DateTimeOffset? DomainRegisteredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("domainRegisteredDateTime"); }
             set { BackingStore?.Set("domainRegisteredDateTime", value); }
         }
         /// <summary>The firstSeenDateTime property</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The lastSeenDateTime property</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -107,13 +123,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The registrant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DomainRegistrant? Registrant {
+        public DomainRegistrant? Registrant
+        {
             get { return BackingStore?.Get<DomainRegistrant?>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
 #nullable restore
 #else
-        public DomainRegistrant Registrant {
+        public DomainRegistrant Registrant
+        {
             get { return BackingStore?.Get<DomainRegistrant>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
@@ -121,13 +139,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The riskScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore {
+        public string? RiskScore
+        {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
 #nullable restore
 #else
-        public string RiskScore {
+        public string RiskScore
+        {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
@@ -135,13 +155,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags {
+        public List<string>? Tags
+        {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<string> Tags {
+        public List<string> Tags
+        {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -149,13 +171,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation {
+        public SecurityVendorInformation? VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation {
+        public SecurityVendorInformation VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
@@ -178,20 +202,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"countHits", n => { CountHits = n.GetIntValue(); } },
-                {"countInOrg", n => { CountInOrg = n.GetIntValue(); } },
-                {"domainCategories", n => { DomainCategories = n.GetCollectionOfObjectValues<ReputationCategory>(ReputationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"registrant", n => { Registrant = n.GetObjectValue<DomainRegistrant>(DomainRegistrant.CreateFromDiscriminatorValue); } },
-                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                { "countHits", n => { CountHits = n.GetIntValue(); } },
+                { "countInOrg", n => { CountInOrg = n.GetIntValue(); } },
+                { "domainCategories", n => { DomainCategories = n.GetCollectionOfObjectValues<ReputationCategory>(ReputationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domainRegisteredDateTime", n => { DomainRegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "registrant", n => { Registrant = n.GetObjectValue<DomainRegistrant>(DomainRegistrant.CreateFromDiscriminatorValue); } },
+                { "riskScore", n => { RiskScore = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

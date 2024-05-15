@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod
+{
     #pragma warning disable CS1591
-    public class GetAzureADApplicationSignInSummaryWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetAzureADApplicationSignInSummaryWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApplicationSignInSummary>? Value {
+        public List<ApplicationSignInSummary>? Value
+        {
             get { return BackingStore?.Get<List<ApplicationSignInSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ApplicationSignInSummary> Value {
+        public List<ApplicationSignInSummary> Value
+        {
             get { return BackingStore?.Get<List<ApplicationSignInSummary>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ApplicationSignInSummary>(ApplicationSignInSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ApplicationSignInSummary>(ApplicationSignInSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

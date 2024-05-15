@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AllowedDataLocation : Entity, IParsable 
+    public class AllowedDataLocation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Domain {
+        public string? Domain
+        {
             get { return BackingStore?.Get<string?>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
 #nullable restore
 #else
-        public string Domain {
+        public string Domain
+        {
             get { return BackingStore?.Get<string>("domain"); }
             set { BackingStore?.Set("domain", value); }
         }
 #endif
         /// <summary>The isDefault property</summary>
-        public bool? IsDefault {
+        public bool? IsDefault
+        {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location {
+        public string? Location
+        {
             get { return BackingStore?.Get<string?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public string Location {
+        public string Location
+        {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"domain", n => { Domain = n.GetStringValue(); } },
-                {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
-                {"location", n => { Location = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
+                { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
             };
         }
         /// <summary>

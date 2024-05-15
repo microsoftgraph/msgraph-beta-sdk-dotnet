@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AnalyzedEmailUrl : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AnalyzedEmailUrl : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The method used to detect threats in the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetectionMethod {
+        public string? DetectionMethod
+        {
             get { return BackingStore?.Get<string?>("detectionMethod"); }
             set { BackingStore?.Set("detectionMethod", value); }
         }
 #nullable restore
 #else
-        public string DetectionMethod {
+        public string DetectionMethod
+        {
             get { return BackingStore?.Get<string>("detectionMethod"); }
             set { BackingStore?.Set("detectionMethod", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Detonation data associated with the URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.DetonationDetails? DetonationDetails {
+        public Microsoft.Graph.Beta.Models.Security.DetonationDetails? DetonationDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationDetails?>("detonationDetails"); }
             set { BackingStore?.Set("detonationDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.DetonationDetails DetonationDetails {
+        public Microsoft.Graph.Beta.Models.Security.DetonationDetails DetonationDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetonationDetails>("detonationDetails"); }
             set { BackingStore?.Set("detonationDetails", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The type of threat associated with the URL. The possible values are: unknown, spam, malware, phishing, none, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType {
+        public Microsoft.Graph.Beta.Models.Security.ThreatType? ThreatType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ThreatType?>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
         /// <summary>The URL that is found in the email. This is full URL string, including query parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"detectionMethod", n => { DetectionMethod = n.GetStringValue(); } },
-                {"detonationDetails", n => { DetonationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationDetails>(Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"threatType", n => { ThreatType = n.GetEnumValue<ThreatType>(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "detectionMethod", n => { DetectionMethod = n.GetStringValue(); } },
+                { "detonationDetails", n => { DetonationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationDetails>(Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "threatType", n => { ThreatType = n.GetEnumValue<ThreatType>(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

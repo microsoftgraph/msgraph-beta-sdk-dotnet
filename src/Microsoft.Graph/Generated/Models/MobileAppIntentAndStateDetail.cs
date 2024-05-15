@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Mobile App Intent and Install State for a given device.
     /// </summary>
-    public class MobileAppIntentAndStateDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MobileAppIntentAndStateDetail : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>MobieApp identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId {
+        public string? ApplicationId
+        {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
 #nullable restore
 #else
-        public string ApplicationId {
+        public string ApplicationId
+        {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The admin provided or imported title of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -49,37 +55,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Human readable version of the application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayVersion {
+        public string? DisplayVersion
+        {
             get { return BackingStore?.Get<string?>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
 #nullable restore
 #else
-        public string DisplayVersion {
+        public string DisplayVersion
+        {
             get { return BackingStore?.Get<string>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
 #endif
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
-        public ResultantAppState? InstallState {
+        public ResultantAppState? InstallState
+        {
             get { return BackingStore?.Get<ResultantAppState?>("installState"); }
             set { BackingStore?.Set("installState", value); }
         }
         /// <summary>Indicates the status of the mobile app on the device.</summary>
-        public Microsoft.Graph.Beta.Models.MobileAppIntent? MobileAppIntent {
+        public Microsoft.Graph.Beta.Models.MobileAppIntent? MobileAppIntent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIntent?>("mobileAppIntent"); }
             set { BackingStore?.Set("mobileAppIntent", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The supported platforms for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppSupportedDeviceType>? SupportedDeviceTypes {
+        public List<MobileAppSupportedDeviceType>? SupportedDeviceTypes
+        {
             get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>?>("supportedDeviceTypes"); }
             set { BackingStore?.Set("supportedDeviceTypes", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppSupportedDeviceType> SupportedDeviceTypes {
+        public List<MobileAppSupportedDeviceType> SupportedDeviceTypes
+        {
             get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>>("supportedDeviceTypes"); }
             set { BackingStore?.Set("supportedDeviceTypes", value); }
         }
@@ -124,13 +138,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
-                {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                {"mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
+                { "installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
+                { "mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

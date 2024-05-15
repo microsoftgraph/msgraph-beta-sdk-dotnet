@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
     /// </summary>
-    public class DataProcessorServiceForWindowsFeaturesOnboarding : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DataProcessorServiceForWindowsFeaturesOnboarding : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When TRUE, the tenant has enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. When FALSE, the tenant has not enabled MEM features utilizing Data Processor Service for Windows (DPSW) data. Default value is FALSE.</summary>
-        public bool? AreDataProcessorServiceForWindowsFeaturesEnabled {
+        public bool? AreDataProcessorServiceForWindowsFeaturesEnabled
+        {
             get { return BackingStore?.Get<bool?>("areDataProcessorServiceForWindowsFeaturesEnabled"); }
             set { BackingStore?.Set("areDataProcessorServiceForWindowsFeaturesEnabled", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the tenant has required Windows license. When TRUE, the tenant has the required Windows license. When FALSE, the tenant does not have the required Windows license. Default value is FALSE.</summary>
-        public bool? HasValidWindowsLicense {
+        public bool? HasValidWindowsLicense
+        {
             get { return BackingStore?.Get<bool?>("hasValidWindowsLicense"); }
             set { BackingStore?.Set("hasValidWindowsLicense", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"areDataProcessorServiceForWindowsFeaturesEnabled", n => { AreDataProcessorServiceForWindowsFeaturesEnabled = n.GetBoolValue(); } },
-                {"hasValidWindowsLicense", n => { HasValidWindowsLicense = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "areDataProcessorServiceForWindowsFeaturesEnabled", n => { AreDataProcessorServiceForWindowsFeaturesEnabled = n.GetBoolValue(); } },
+                { "hasValidWindowsLicense", n => { HasValidWindowsLicense = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

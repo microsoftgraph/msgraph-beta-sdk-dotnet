@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing a template setting category
     /// </summary>
-    public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable 
+    public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable
     {
         /// <summary>The settings this category contains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? RecommendedSettings {
+        public List<DeviceManagementSettingInstance>? RecommendedSettings
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("recommendedSettings"); }
             set { BackingStore?.Set("recommendedSettings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> RecommendedSettings {
+        public List<DeviceManagementSettingInstance> RecommendedSettings
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("recommendedSettings"); }
             set { BackingStore?.Set("recommendedSettings", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"recommendedSettings", n => { RecommendedSettings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendedSettings", n => { RecommendedSettings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class X509CertificateAuthenticationModeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class X509CertificateAuthenticationModeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,24 +38,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Rules are configured in addition to the authentication mode to bind a specific x509CertificateRuleType to an x509CertificateAuthenticationMode. For example, bind the policyOID with identifier 1.32.132.343 to x509CertificateMultiFactor authentication mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<X509CertificateRule>? Rules {
+        public List<X509CertificateRule>? Rules
+        {
             get { return BackingStore?.Get<List<X509CertificateRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<X509CertificateRule> Rules {
+        public List<X509CertificateRule> Rules
+        {
             get { return BackingStore?.Get<List<X509CertificateRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #endif
         /// <summary>The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue.</summary>
-        public X509CertificateAuthenticationMode? X509CertificateAuthenticationDefaultMode {
+        public X509CertificateAuthenticationMode? X509CertificateAuthenticationDefaultMode
+        {
             get { return BackingStore?.Get<X509CertificateAuthenticationMode?>("x509CertificateAuthenticationDefaultMode"); }
             set { BackingStore?.Set("x509CertificateAuthenticationDefaultMode", value); }
         }
         /// <summary>Determines the default value for the tenant affinity binding level. The possible values are: low, high, unknownFutureValue.</summary>
-        public X509CertificateAffinityLevel? X509CertificateDefaultRequiredAffinityLevel {
+        public X509CertificateAffinityLevel? X509CertificateDefaultRequiredAffinityLevel
+        {
             get { return BackingStore?.Get<X509CertificateAffinityLevel?>("x509CertificateDefaultRequiredAffinityLevel"); }
             set { BackingStore?.Set("x509CertificateDefaultRequiredAffinityLevel", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"rules", n => { Rules = n.GetCollectionOfObjectValues<X509CertificateRule>(X509CertificateRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"x509CertificateAuthenticationDefaultMode", n => { X509CertificateAuthenticationDefaultMode = n.GetEnumValue<X509CertificateAuthenticationMode>(); } },
-                {"x509CertificateDefaultRequiredAffinityLevel", n => { X509CertificateDefaultRequiredAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<X509CertificateRule>(X509CertificateRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "x509CertificateAuthenticationDefaultMode", n => { X509CertificateAuthenticationDefaultMode = n.GetEnumValue<X509CertificateAuthenticationMode>(); } },
+                { "x509CertificateDefaultRequiredAffinityLevel", n => { X509CertificateDefaultRequiredAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
             };
         }
         /// <summary>

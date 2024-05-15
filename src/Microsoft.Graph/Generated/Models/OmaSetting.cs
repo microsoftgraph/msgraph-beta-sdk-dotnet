@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// OMA Settings definition.
     /// </summary>
-    public class OmaSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OmaSetting : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether the value field is encrypted. This property is read-only.</summary>
-        public bool? IsEncrypted {
+        public bool? IsEncrypted
+        {
             get { return BackingStore?.Get<bool?>("isEncrypted"); }
             set { BackingStore?.Set("isEncrypted", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>OMA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OmaUri {
+        public string? OmaUri
+        {
             get { return BackingStore?.Get<string?>("omaUri"); }
             set { BackingStore?.Set("omaUri", value); }
         }
 #nullable restore
 #else
-        public string OmaUri {
+        public string OmaUri
+        {
             get { return BackingStore?.Get<string>("omaUri"); }
             set { BackingStore?.Set("omaUri", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ReferenceId for looking up secret for decryption. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecretReferenceValueId {
+        public string? SecretReferenceValueId
+        {
             get { return BackingStore?.Get<string?>("secretReferenceValueId"); }
             set { BackingStore?.Set("secretReferenceValueId", value); }
         }
 #nullable restore
 #else
-        public string SecretReferenceValueId {
+        public string SecretReferenceValueId
+        {
             get { return BackingStore?.Get<string>("secretReferenceValueId"); }
             set { BackingStore?.Set("secretReferenceValueId", value); }
         }
@@ -130,12 +143,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"omaUri", n => { OmaUri = n.GetStringValue(); } },
-                {"secretReferenceValueId", n => { SecretReferenceValueId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isEncrypted", n => { IsEncrypted = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "omaUri", n => { OmaUri = n.GetStringValue(); } },
+                { "secretReferenceValueId", n => { SecretReferenceValueId = n.GetStringValue(); } },
             };
         }
         /// <summary>

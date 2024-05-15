@@ -5,55 +5,64 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows 10 force update schedule for Kiosk devices.
     /// </summary>
-    public class WindowsKioskForceUpdateSchedule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsKioskForceUpdateSchedule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Day of month. Valid values 1 to 31</summary>
-        public int? DayofMonth {
+        public int? DayofMonth
+        {
             get { return BackingStore?.Get<int?>("dayofMonth"); }
             set { BackingStore?.Set("dayofMonth", value); }
         }
         /// <summary>The dayofWeek property</summary>
-        public DayOfWeekObject? DayofWeek {
+        public DayOfWeekObject? DayofWeek
+        {
             get { return BackingStore?.Get<DayOfWeekObject?>("dayofWeek"); }
             set { BackingStore?.Set("dayofWeek", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Possible values for App update on Windows10 recurrence.</summary>
-        public Windows10AppsUpdateRecurrence? Recurrence {
+        public Windows10AppsUpdateRecurrence? Recurrence
+        {
             get { return BackingStore?.Get<Windows10AppsUpdateRecurrence?>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
         /// <summary>If true, runs the task immediately if StartDateTime is in the past, else, runs at the next recurrence.</summary>
-        public bool? RunImmediatelyIfAfterStartDateTime {
+        public bool? RunImmediatelyIfAfterStartDateTime
+        {
             get { return BackingStore?.Get<bool?>("runImmediatelyIfAfterStartDateTime"); }
             set { BackingStore?.Set("runImmediatelyIfAfterStartDateTime", value); }
         }
         /// <summary>The start time for the force restart.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -83,12 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dayofMonth", n => { DayofMonth = n.GetIntValue(); } },
-                {"dayofWeek", n => { DayofWeek = n.GetEnumValue<DayOfWeekObject>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recurrence", n => { Recurrence = n.GetEnumValue<Windows10AppsUpdateRecurrence>(); } },
-                {"runImmediatelyIfAfterStartDateTime", n => { RunImmediatelyIfAfterStartDateTime = n.GetBoolValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "dayofMonth", n => { DayofMonth = n.GetIntValue(); } },
+                { "dayofWeek", n => { DayofWeek = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recurrence", n => { Recurrence = n.GetEnumValue<Windows10AppsUpdateRecurrence>(); } },
+                { "runImmediatelyIfAfterStartDateTime", n => { RunImmediatelyIfAfterStartDateTime = n.GetBoolValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows Domain Join device configuration.
     /// </summary>
-    public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Active Directory domain name to join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActiveDirectoryDomainName {
+        public string? ActiveDirectoryDomainName
+        {
             get { return BackingStore?.Get<string?>("activeDirectoryDomainName"); }
             set { BackingStore?.Set("activeDirectoryDomainName", value); }
         }
 #nullable restore
 #else
-        public string ActiveDirectoryDomainName {
+        public string ActiveDirectoryDomainName
+        {
             get { return BackingStore?.Get<string>("activeDirectoryDomainName"); }
             set { BackingStore?.Set("activeDirectoryDomainName", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Fixed prefix to be used for computer name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComputerNameStaticPrefix {
+        public string? ComputerNameStaticPrefix
+        {
             get { return BackingStore?.Get<string?>("computerNameStaticPrefix"); }
             set { BackingStore?.Set("computerNameStaticPrefix", value); }
         }
 #nullable restore
 #else
-        public string ComputerNameStaticPrefix {
+        public string ComputerNameStaticPrefix
+        {
             get { return BackingStore?.Get<string>("computerNameStaticPrefix"); }
             set { BackingStore?.Set("computerNameStaticPrefix", value); }
         }
 #endif
         /// <summary>Dynamically generated characters used as suffix for computer name. Valid values 3 to 14</summary>
-        public int? ComputerNameSuffixRandomCharCount {
+        public int? ComputerNameSuffixRandomCharCount
+        {
             get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
             set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
-        /// <summary>Reference to device configurations required for network connectivity</summary>
+        /// <summary>Reference to device configurations required for network connectivity. This collection can contain a maximum of 2 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfiguration>? NetworkAccessConfigurations {
+        public List<DeviceConfiguration>? NetworkAccessConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceConfiguration>?>("networkAccessConfigurations"); }
             set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfiguration> NetworkAccessConfigurations {
+        public List<DeviceConfiguration> NetworkAccessConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceConfiguration>>("networkAccessConfigurations"); }
             set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalUnit {
+        public string? OrganizationalUnit
+        {
             get { return BackingStore?.Get<string?>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
 #nullable restore
 #else
-        public string OrganizationalUnit {
+        public string OrganizationalUnit
+        {
             get { return BackingStore?.Get<string>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeDirectoryDomainName", n => { ActiveDirectoryDomainName = n.GetStringValue(); } },
-                {"computerNameStaticPrefix", n => { ComputerNameStaticPrefix = n.GetStringValue(); } },
-                {"computerNameSuffixRandomCharCount", n => { ComputerNameSuffixRandomCharCount = n.GetIntValue(); } },
-                {"networkAccessConfigurations", n => { NetworkAccessConfigurations = n.GetCollectionOfObjectValues<DeviceConfiguration>(DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
+                { "activeDirectoryDomainName", n => { ActiveDirectoryDomainName = n.GetStringValue(); } },
+                { "computerNameStaticPrefix", n => { ComputerNameStaticPrefix = n.GetStringValue(); } },
+                { "computerNameSuffixRandomCharCount", n => { ComputerNameSuffixRandomCharCount = n.GetIntValue(); } },
+                { "networkAccessConfigurations", n => { NetworkAccessConfigurations = n.GetCollectionOfObjectValues<DeviceConfiguration>(DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationSynchronizationProfile : Entity, IParsable 
+    public class EducationSynchronizationProfile : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dataProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationDataProvider? DataProvider {
+        public EducationSynchronizationDataProvider? DataProvider
+        {
             get { return BackingStore?.Get<EducationSynchronizationDataProvider?>("dataProvider"); }
             set { BackingStore?.Set("dataProvider", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationDataProvider DataProvider {
+        public EducationSynchronizationDataProvider DataProvider
+        {
             get { return BackingStore?.Get<EducationSynchronizationDataProvider>("dataProvider"); }
             set { BackingStore?.Set("dataProvider", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the configuration profile for syncing identities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -41,37 +46,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All errors associated with this synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSynchronizationError>? Errors {
+        public List<EducationSynchronizationError>? Errors
+        {
             get { return BackingStore?.Get<List<EducationSynchronizationError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<EducationSynchronizationError> Errors {
+        public List<EducationSynchronizationError> Errors
+        {
             get { return BackingStore?.Get<List<EducationSynchronizationError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #endif
         /// <summary>The date the profile should be considered expired and cease syncing. Provide the date in YYYY-MM-DD format, following ISO 8601. Maximum value is 18 months from profile creation.  (optional)</summary>
-        public Date? ExpirationDate {
+        public Date? ExpirationDate
+        {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>Determines if School Data Sync should automatically replace unsupported special characters while syncing from source.</summary>
-        public bool? HandleSpecialCharacterConstraint {
+        public bool? HandleSpecialCharacterConstraint
+        {
             get { return BackingStore?.Get<bool?>("handleSpecialCharacterConstraint"); }
             set { BackingStore?.Set("handleSpecialCharacterConstraint", value); }
         }
         /// <summary>The identitySynchronizationConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationIdentitySynchronizationConfiguration? IdentitySynchronizationConfiguration {
+        public EducationIdentitySynchronizationConfiguration? IdentitySynchronizationConfiguration
+        {
             get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration?>("identitySynchronizationConfiguration"); }
             set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
 #nullable restore
 #else
-        public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration {
+        public EducationIdentitySynchronizationConfiguration IdentitySynchronizationConfiguration
+        {
             get { return BackingStore?.Get<EducationIdentitySynchronizationConfiguration>("identitySynchronizationConfiguration"); }
             set { BackingStore?.Set("identitySynchronizationConfiguration", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>License setup configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSynchronizationLicenseAssignment>? LicensesToAssign {
+        public List<EducationSynchronizationLicenseAssignment>? LicensesToAssign
+        {
             get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>?>("licensesToAssign"); }
             set { BackingStore?.Set("licensesToAssign", value); }
         }
 #nullable restore
 #else
-        public List<EducationSynchronizationLicenseAssignment> LicensesToAssign {
+        public List<EducationSynchronizationLicenseAssignment> LicensesToAssign
+        {
             get { return BackingStore?.Get<List<EducationSynchronizationLicenseAssignment>>("licensesToAssign"); }
             set { BackingStore?.Set("licensesToAssign", value); }
         }
@@ -93,19 +106,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The synchronization status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationProfileStatus? ProfileStatus {
+        public EducationSynchronizationProfileStatus? ProfileStatus
+        {
             get { return BackingStore?.Get<EducationSynchronizationProfileStatus?>("profileStatus"); }
             set { BackingStore?.Set("profileStatus", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationProfileStatus ProfileStatus {
+        public EducationSynchronizationProfileStatus ProfileStatus
+        {
             get { return BackingStore?.Get<EducationSynchronizationProfileStatus>("profileStatus"); }
             set { BackingStore?.Set("profileStatus", value); }
         }
 #endif
         /// <summary>The state of the profile. Possible values are: provisioning, provisioned, provisioningFailed, deleting, deletionFailed.</summary>
-        public EducationSynchronizationProfileState? State {
+        public EducationSynchronizationProfileState? State
+        {
             get { return BackingStore?.Get<EducationSynchronizationProfileState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -127,15 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dataProvider", n => { DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>(EducationSynchronizationError.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
-                {"handleSpecialCharacterConstraint", n => { HandleSpecialCharacterConstraint = n.GetBoolValue(); } },
-                {"identitySynchronizationConfiguration", n => { IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
-                {"licensesToAssign", n => { LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>(EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"profileStatus", n => { ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<EducationSynchronizationProfileState>(); } },
+                { "dataProvider", n => { DataProvider = n.GetObjectValue<EducationSynchronizationDataProvider>(EducationSynchronizationDataProvider.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<EducationSynchronizationError>(EducationSynchronizationError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
+                { "handleSpecialCharacterConstraint", n => { HandleSpecialCharacterConstraint = n.GetBoolValue(); } },
+                { "identitySynchronizationConfiguration", n => { IdentitySynchronizationConfiguration = n.GetObjectValue<EducationIdentitySynchronizationConfiguration>(EducationIdentitySynchronizationConfiguration.CreateFromDiscriminatorValue); } },
+                { "licensesToAssign", n => { LicensesToAssign = n.GetCollectionOfObjectValues<EducationSynchronizationLicenseAssignment>(EducationSynchronizationLicenseAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "profileStatus", n => { ProfileStatus = n.GetObjectValue<EducationSynchronizationProfileStatus>(EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<EducationSynchronizationProfileState>(); } },
             };
         }
         /// <summary>

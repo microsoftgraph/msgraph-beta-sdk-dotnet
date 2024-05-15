@@ -4,61 +4,71 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Co-Management eligibility state
     /// </summary>
-    public class ComanagementEligibleDevice : Entity, IParsable 
+    public class ComanagementEligibleDevice : Entity, IParsable
     {
         /// <summary>Device registration status.</summary>
-        public DeviceRegistrationState? ClientRegistrationStatus {
+        public DeviceRegistrationState? ClientRegistrationStatus
+        {
             get { return BackingStore?.Get<DeviceRegistrationState?>("clientRegistrationStatus"); }
             set { BackingStore?.Set("clientRegistrationStatus", value); }
         }
         /// <summary>DeviceName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>Device type.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceType? DeviceType {
+        public Microsoft.Graph.Beta.Models.DeviceType? DeviceType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>EntitySource</summary>
-        public int? EntitySource {
+        public int? EntitySource
+        {
             get { return BackingStore?.Get<int?>("entitySource"); }
             set { BackingStore?.Set("entitySource", value); }
         }
         /// <summary>Management agent type.</summary>
-        public ManagementAgentType? ManagementAgents {
+        public ManagementAgentType? ManagementAgents
+        {
             get { return BackingStore?.Get<ManagementAgentType?>("managementAgents"); }
             set { BackingStore?.Set("managementAgents", value); }
         }
         /// <summary>Management state of device in Microsoft Intune.</summary>
-        public Microsoft.Graph.Beta.Models.ManagementState? ManagementState {
+        public Microsoft.Graph.Beta.Models.ManagementState? ManagementState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagementState?>("managementState"); }
             set { BackingStore?.Set("managementState", value); }
         }
         /// <summary>Manufacturer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -66,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>MDMStatus</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MdmStatus {
+        public string? MdmStatus
+        {
             get { return BackingStore?.Get<string?>("mdmStatus"); }
             set { BackingStore?.Set("mdmStatus", value); }
         }
 #nullable restore
 #else
-        public string MdmStatus {
+        public string MdmStatus
+        {
             get { return BackingStore?.Get<string>("mdmStatus"); }
             set { BackingStore?.Set("mdmStatus", value); }
         }
@@ -80,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -94,13 +108,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>OSDescription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDescription {
+        public string? OsDescription
+        {
             get { return BackingStore?.Get<string?>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
 #nullable restore
 #else
-        public string OsDescription {
+        public string OsDescription
+        {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
@@ -108,32 +124,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>OSVersion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #endif
         /// <summary>Owner type of device.</summary>
-        public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
+        public Microsoft.Graph.Beta.Models.OwnerType? OwnerType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>ReferenceId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceId {
+        public string? ReferenceId
+        {
             get { return BackingStore?.Get<string?>("referenceId"); }
             set { BackingStore?.Set("referenceId", value); }
         }
 #nullable restore
 #else
-        public string ReferenceId {
+        public string ReferenceId
+        {
             get { return BackingStore?.Get<string>("referenceId"); }
             set { BackingStore?.Set("referenceId", value); }
         }
@@ -141,32 +162,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>SerialNumber</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ComanagementEligibleType? Status {
+        public ComanagementEligibleType? Status
+        {
             get { return BackingStore?.Get<ComanagementEligibleType?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>UPN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Upn {
+        public string? Upn
+        {
             get { return BackingStore?.Get<string?>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
 #nullable restore
 #else
-        public string Upn {
+        public string Upn
+        {
             get { return BackingStore?.Get<string>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
@@ -174,13 +200,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>UserEmail</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserEmail {
+        public string? UserEmail
+        {
             get { return BackingStore?.Get<string?>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
 #nullable restore
 #else
-        public string UserEmail {
+        public string UserEmail
+        {
             get { return BackingStore?.Get<string>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
@@ -188,13 +216,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>UserId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -202,13 +232,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>UserName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -231,25 +263,25 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clientRegistrationStatus", n => { ClientRegistrationStatus = n.GetEnumValue<DeviceRegistrationState>(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
-                {"entitySource", n => { EntitySource = n.GetIntValue(); } },
-                {"managementAgents", n => { ManagementAgents = n.GetEnumValue<ManagementAgentType>(); } },
-                {"managementState", n => { ManagementState = n.GetEnumValue<ManagementState>(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"mdmStatus", n => { MdmStatus = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
-                {"referenceId", n => { ReferenceId = n.GetStringValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ComanagementEligibleType>(); } },
-                {"upn", n => { Upn = n.GetStringValue(); } },
-                {"userEmail", n => { UserEmail = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
+                { "clientRegistrationStatus", n => { ClientRegistrationStatus = n.GetEnumValue<DeviceRegistrationState>(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                { "entitySource", n => { EntitySource = n.GetIntValue(); } },
+                { "managementAgents", n => { ManagementAgents = n.GetEnumValue<ManagementAgentType>(); } },
+                { "managementState", n => { ManagementState = n.GetEnumValue<ManagementState>(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "mdmStatus", n => { MdmStatus = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "osDescription", n => { OsDescription = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
+                { "referenceId", n => { ReferenceId = n.GetStringValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ComanagementEligibleType>(); } },
+                { "upn", n => { Upn = n.GetStringValue(); } },
+                { "userEmail", n => { UserEmail = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

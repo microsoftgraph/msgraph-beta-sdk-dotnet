@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable 
+    public class MicrosoftAuthenticatorAuthenticationMethod : AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The app that the user has registered to use to approve push notifications. The possible values are: microsoftAuthenticator, outlookMobile, unknownFutureValue.</summary>
-        public MicrosoftAuthenticatorAuthenticationMethodClientAppName? ClientAppName {
+        public MicrosoftAuthenticatorAuthenticationMethodClientAppName? ClientAppName
+        {
             get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMethodClientAppName?>("clientAppName"); }
             set { BackingStore?.Set("clientAppName", value); }
         }
         /// <summary>The date and time that this app was registered. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Device? Device {
+        public Microsoft.Graph.Beta.Models.Device? Device
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Device Device {
+        public Microsoft.Graph.Beta.Models.Device Device
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
             set { BackingStore?.Set("device", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Tags containing app metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceTag {
+        public string? DeviceTag
+        {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
 #nullable restore
 #else
-        public string DeviceTag {
+        public string DeviceTag
+        {
             get { return BackingStore?.Get<string>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the device on which this app is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Numerical version of this instance of the Authenticator app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneAppVersion {
+        public string? PhoneAppVersion
+        {
             get { return BackingStore?.Get<string?>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
 #nullable restore
 #else
-        public string PhoneAppVersion {
+        public string PhoneAppVersion
+        {
             get { return BackingStore?.Get<string>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"clientAppName", n => { ClientAppName = n.GetEnumValue<MicrosoftAuthenticatorAuthenticationMethodClientAppName>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
-                {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"phoneAppVersion", n => { PhoneAppVersion = n.GetStringValue(); } },
+                { "clientAppName", n => { ClientAppName = n.GetEnumValue<MicrosoftAuthenticatorAuthenticationMethodClientAppName>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue); } },
+                { "deviceTag", n => { DeviceTag = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "phoneAppVersion", n => { PhoneAppVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrinterStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PrinterStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A human-readable description of the printer&apos;s current processing state. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of details describing why the printer is in the current state. Valid values are described in the following table. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrinterProcessingStateDetail?>? Details {
+        public List<PrinterProcessingStateDetail?>? Details
+        {
             get { return BackingStore?.Get<List<PrinterProcessingStateDetail?>?>("details"); }
             set { BackingStore?.Set("details", value); }
         }
 #nullable restore
 #else
-        public List<PrinterProcessingStateDetail?> Details {
+        public List<PrinterProcessingStateDetail?> Details
+        {
             get { return BackingStore?.Get<List<PrinterProcessingStateDetail?>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The processingState property</summary>
-        public PrinterProcessingState? ProcessingState {
+        public PrinterProcessingState? ProcessingState
+        {
             get { return BackingStore?.Get<PrinterProcessingState?>("processingState"); }
             set { BackingStore?.Set("processingState", value); }
         }
         /// <summary>The processingStateDescription property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessingStateDescription {
+        public string? ProcessingStateDescription
+        {
             get { return BackingStore?.Get<string?>("processingStateDescription"); }
             set { BackingStore?.Set("processingStateDescription", value); }
         }
 #nullable restore
 #else
-        public string ProcessingStateDescription {
+        public string ProcessingStateDescription
+        {
             get { return BackingStore?.Get<string>("processingStateDescription"); }
             set { BackingStore?.Set("processingStateDescription", value); }
         }
@@ -81,19 +92,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The processingStateReasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrinterProcessingStateReason?>? ProcessingStateReasons {
+        public List<PrinterProcessingStateReason?>? ProcessingStateReasons
+        {
             get { return BackingStore?.Get<List<PrinterProcessingStateReason?>?>("processingStateReasons"); }
             set { BackingStore?.Set("processingStateReasons", value); }
         }
 #nullable restore
 #else
-        public List<PrinterProcessingStateReason?> ProcessingStateReasons {
+        public List<PrinterProcessingStateReason?> ProcessingStateReasons
+        {
             get { return BackingStore?.Get<List<PrinterProcessingStateReason?>>("processingStateReasons"); }
             set { BackingStore?.Set("processingStateReasons", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public PrinterProcessingState? State {
+        public PrinterProcessingState? State
+        {
             get { return BackingStore?.Get<PrinterProcessingState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"details", n => { Details = n.GetCollectionOfEnumValues<PrinterProcessingStateDetail>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"processingState", n => { ProcessingState = n.GetEnumValue<PrinterProcessingState>(); } },
-                {"processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
-                {"processingStateReasons", n => { ProcessingStateReasons = n.GetCollectionOfEnumValues<PrinterProcessingStateReason>()?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<PrinterProcessingState>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "details", n => { Details = n.GetCollectionOfEnumValues<PrinterProcessingStateDetail>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "processingState", n => { ProcessingState = n.GetEnumValue<PrinterProcessingState>(); } },
+                { "processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
+                { "processingStateReasons", n => { ProcessingStateReasons = n.GetCollectionOfEnumValues<PrinterProcessingStateReason>()?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<PrinterProcessingState>(); } },
             };
         }
         /// <summary>

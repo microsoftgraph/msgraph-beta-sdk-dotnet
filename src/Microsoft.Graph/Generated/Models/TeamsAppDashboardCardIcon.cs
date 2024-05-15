@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppDashboardCardIcon : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamsAppDashboardCardIcon : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The icon for the card, displayed in the toolbox and card bar, is represented as a URL. The preferred size for raster images is 28x28 pixels. If this property has a value, the officeFabricIconFontName property is ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IconUrl {
+        public string? IconUrl
+        {
             get { return BackingStore?.Get<string?>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
 #nullable restore
 #else
-        public string IconUrl {
+        public string IconUrl
+        {
             get { return BackingStore?.Get<string>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The friendly name of the Office UI Fabric/Fluent UI icon for the card that is used when the iconUrl property isn&apos;t specified. For example, &apos;officeUIFabricIconName&apos;: &apos;Search&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfficeUIFabricIconName {
+        public string? OfficeUIFabricIconName
+        {
             get { return BackingStore?.Get<string?>("officeUIFabricIconName"); }
             set { BackingStore?.Set("officeUIFabricIconName", value); }
         }
 #nullable restore
 #else
-        public string OfficeUIFabricIconName {
+        public string OfficeUIFabricIconName
+        {
             get { return BackingStore?.Get<string>("officeUIFabricIconName"); }
             set { BackingStore?.Set("officeUIFabricIconName", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"iconUrl", n => { IconUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"officeUIFabricIconName", n => { OfficeUIFabricIconName = n.GetStringValue(); } },
+                { "iconUrl", n => { IconUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "officeUIFabricIconName", n => { OfficeUIFabricIconName = n.GetStringValue(); } },
             };
         }
         /// <summary>

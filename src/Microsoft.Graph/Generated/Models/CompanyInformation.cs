@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CompanyInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CompanyInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? Address {
+        public PostalAddressType? Address
+        {
             get { return BackingStore?.Get<PostalAddressType?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType Address {
+        public PostalAddressType Address
+        {
             get { return BackingStore?.Get<PostalAddressType>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode {
+        public string? CurrencyCode
+        {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #nullable restore
 #else
-        public string CurrencyCode {
+        public string CurrencyCode
+        {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #endif
         /// <summary>The currentFiscalYearStartDate property</summary>
-        public Date? CurrentFiscalYearStartDate {
+        public Date? CurrentFiscalYearStartDate
+        {
             get { return BackingStore?.Get<Date?>("currentFiscalYearStartDate"); }
             set { BackingStore?.Set("currentFiscalYearStartDate", value); }
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -82,51 +93,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The faxNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FaxNumber {
+        public string? FaxNumber
+        {
             get { return BackingStore?.Get<string?>("faxNumber"); }
             set { BackingStore?.Set("faxNumber", value); }
         }
 #nullable restore
 #else
-        public string FaxNumber {
+        public string FaxNumber
+        {
             get { return BackingStore?.Get<string>("faxNumber"); }
             set { BackingStore?.Set("faxNumber", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The industry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Industry {
+        public string? Industry
+        {
             get { return BackingStore?.Get<string?>("industry"); }
             set { BackingStore?.Set("industry", value); }
         }
 #nullable restore
 #else
-        public string Industry {
+        public string Industry
+        {
             get { return BackingStore?.Get<string>("industry"); }
             set { BackingStore?.Set("industry", value); }
         }
 #endif
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The phoneNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Picture {
+        public byte[]? Picture
+        {
             get { return BackingStore?.Get<byte[]?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
 #nullable restore
 #else
-        public byte[] Picture {
+        public byte[] Picture
+        {
             get { return BackingStore?.Get<byte[]>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
@@ -162,13 +185,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The taxRegistrationNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxRegistrationNumber {
+        public string? TaxRegistrationNumber
+        {
             get { return BackingStore?.Get<string?>("taxRegistrationNumber"); }
             set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
 #nullable restore
 #else
-        public string TaxRegistrationNumber {
+        public string TaxRegistrationNumber
+        {
             get { return BackingStore?.Get<string>("taxRegistrationNumber"); }
             set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
@@ -176,13 +201,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The website property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website {
+        public string? Website
+        {
             get { return BackingStore?.Get<string?>("website"); }
             set { BackingStore?.Set("website", value); }
         }
 #nullable restore
 #else
-        public string Website {
+        public string Website
+        {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
         }
@@ -213,20 +240,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"currentFiscalYearStartDate", n => { CurrentFiscalYearStartDate = n.GetDateValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"faxNumber", n => { FaxNumber = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"industry", n => { Industry = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetByteArrayValue(); } },
-                {"taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
-                {"website", n => { Website = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "currentFiscalYearStartDate", n => { CurrentFiscalYearStartDate = n.GetDateValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "faxNumber", n => { FaxNumber = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "industry", n => { Industry = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "picture", n => { Picture = n.GetByteArrayValue(); } },
+                { "taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
+                { "website", n => { Website = n.GetStringValue(); } },
             };
         }
         /// <summary>

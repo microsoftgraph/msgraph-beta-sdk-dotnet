@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ImpactedResource : Entity, IParsable 
+    public class ImpactedResource : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the impactedResource object was initially associated with the recommendation.</summary>
-        public DateTimeOffset? AddedDateTime {
+        public DateTimeOffset? AddedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("addedDateTime"); }
             set { BackingStore?.Set("addedDateTime", value); }
         }
         /// <summary>Additional information unique to the impactedResource to help contextualize the recommendation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AdditionalDetails {
+        public List<KeyValue>? AdditionalDetails
+        {
             get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AdditionalDetails {
+        public List<KeyValue> AdditionalDetails
+        {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL link to the corresponding Microsoft Entra resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiUrl {
+        public string? ApiUrl
+        {
             get { return BackingStore?.Get<string?>("apiUrl"); }
             set { BackingStore?.Set("apiUrl", value); }
         }
 #nullable restore
 #else
-        public string ApiUrl {
+        public string ApiUrl
+        {
             get { return BackingStore?.Get<string>("apiUrl"); }
             set { BackingStore?.Set("apiUrl", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Friendly name of the Microsoft Entra resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the user or service that last updated the status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastModifiedBy {
+        public string? LastModifiedBy
+        {
             get { return BackingStore?.Get<string?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public string LastModifiedBy {
+        public string LastModifiedBy
+        {
             get { return BackingStore?.Get<string>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date and time when the status was last updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastModifiedDateTime {
+        public string? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<string?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
 #nullable restore
 #else
-        public string LastModifiedDateTime {
+        public string LastModifiedDateTime
+        {
             get { return BackingStore?.Get<string>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user responsible for maintaining the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner {
+        public string? Owner
+        {
             get { return BackingStore?.Get<string?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public string Owner {
+        public string Owner
+        {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -101,37 +115,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL link to the corresponding Microsoft Entra admin center page of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PortalUrl {
+        public string? PortalUrl
+        {
             get { return BackingStore?.Get<string?>("portalUrl"); }
             set { BackingStore?.Set("portalUrl", value); }
         }
 #nullable restore
 #else
-        public string PortalUrl {
+        public string PortalUrl
+        {
             get { return BackingStore?.Get<string>("portalUrl"); }
             set { BackingStore?.Set("portalUrl", value); }
         }
 #endif
         /// <summary>The future date and time when the status of a postponed impactedResource will be active again.</summary>
-        public DateTimeOffset? PostponeUntilDateTime {
+        public DateTimeOffset? PostponeUntilDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("postponeUntilDateTime"); }
             set { BackingStore?.Set("postponeUntilDateTime", value); }
         }
         /// <summary>Indicates the importance of the resource. A resource with a rank equal to 1 is of the highest importance.</summary>
-        public int? Rank {
+        public int? Rank
+        {
             get { return BackingStore?.Get<int?>("rank"); }
             set { BackingStore?.Set("rank", value); }
         }
         /// <summary>The unique identifier of the recommendation that the resource is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendationId {
+        public string? RecommendationId
+        {
             get { return BackingStore?.Get<string?>("recommendationId"); }
             set { BackingStore?.Set("recommendationId", value); }
         }
 #nullable restore
 #else
-        public string RecommendationId {
+        public string RecommendationId
+        {
             get { return BackingStore?.Get<string>("recommendationId"); }
             set { BackingStore?.Set("recommendationId", value); }
         }
@@ -139,32 +159,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the type of Microsoft Entra resource. Examples include user, application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType {
+        public string? ResourceType
+        {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #nullable restore
 #else
-        public string ResourceType {
+        public string ResourceType
+        {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public RecommendationStatus? Status {
+        public RecommendationStatus? Status
+        {
             get { return BackingStore?.Get<RecommendationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The related unique identifier, depending on the resourceType. For example, this property is set to the applicationId if the resourceType is an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectId {
+        public string? SubjectId
+        {
             get { return BackingStore?.Get<string?>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
         }
 #nullable restore
 #else
-        public string SubjectId {
+        public string SubjectId
+        {
             get { return BackingStore?.Get<string>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
         }
@@ -187,20 +212,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"apiUrl", n => { ApiUrl = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetStringValue(); } },
-                {"portalUrl", n => { PortalUrl = n.GetStringValue(); } },
-                {"postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
-                {"rank", n => { Rank = n.GetIntValue(); } },
-                {"recommendationId", n => { RecommendationId = n.GetStringValue(); } },
-                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<RecommendationStatus>(); } },
-                {"subjectId", n => { SubjectId = n.GetStringValue(); } },
+                { "addedDateTime", n => { AddedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "apiUrl", n => { ApiUrl = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
+                { "portalUrl", n => { PortalUrl = n.GetStringValue(); } },
+                { "postponeUntilDateTime", n => { PostponeUntilDateTime = n.GetDateTimeOffsetValue(); } },
+                { "rank", n => { Rank = n.GetIntValue(); } },
+                { "recommendationId", n => { RecommendationId = n.GetStringValue(); } },
+                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<RecommendationStatus>(); } },
+                { "subjectId", n => { SubjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>

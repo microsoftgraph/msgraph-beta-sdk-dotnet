@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ManagedIdentity : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ManagedIdentity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The ARM resource ID of the Azure resource associated with the managed identity used for sign in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssociatedResourceId {
+        public string? AssociatedResourceId
+        {
             get { return BackingStore?.Get<string?>("associatedResourceId"); }
             set { BackingStore?.Set("associatedResourceId", value); }
         }
 #nullable restore
 #else
-        public string AssociatedResourceId {
+        public string AssociatedResourceId
+        {
             get { return BackingStore?.Get<string>("associatedResourceId"); }
             set { BackingStore?.Set("associatedResourceId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique ID of the federated token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FederatedTokenId {
+        public string? FederatedTokenId
+        {
             get { return BackingStore?.Get<string?>("federatedTokenId"); }
             set { BackingStore?.Set("federatedTokenId", value); }
         }
 #nullable restore
 #else
-        public string FederatedTokenId {
+        public string FederatedTokenId
+        {
             get { return BackingStore?.Get<string>("federatedTokenId"); }
             set { BackingStore?.Set("federatedTokenId", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The issuer of the federated token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FederatedTokenIssuer {
+        public string? FederatedTokenIssuer
+        {
             get { return BackingStore?.Get<string?>("federatedTokenIssuer"); }
             set { BackingStore?.Set("federatedTokenIssuer", value); }
         }
 #nullable restore
 #else
-        public string FederatedTokenIssuer {
+        public string FederatedTokenIssuer
+        {
             get { return BackingStore?.Get<string>("federatedTokenIssuer"); }
             set { BackingStore?.Set("federatedTokenIssuer", value); }
         }
 #endif
         /// <summary>The possible values are: none, userAssigned, systemAssigned, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.MsiType? MsiType {
+        public Microsoft.Graph.Beta.Models.MsiType? MsiType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MsiType?>("msiType"); }
             set { BackingStore?.Set("msiType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"associatedResourceId", n => { AssociatedResourceId = n.GetStringValue(); } },
-                {"federatedTokenId", n => { FederatedTokenId = n.GetStringValue(); } },
-                {"federatedTokenIssuer", n => { FederatedTokenIssuer = n.GetStringValue(); } },
-                {"msiType", n => { MsiType = n.GetEnumValue<MsiType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "associatedResourceId", n => { AssociatedResourceId = n.GetStringValue(); } },
+                { "federatedTokenId", n => { FederatedTokenId = n.GetStringValue(); } },
+                { "federatedTokenIssuer", n => { FederatedTokenIssuer = n.GetStringValue(); } },
+                { "msiType", n => { MsiType = n.GetEnumValue<MsiType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

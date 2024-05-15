@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetCredentialUsageSummaryWithPeriod
+{
     [Obsolete("This class is obsolete. Use GetCredentialUsageSummaryWithPeriodGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCredentialUsageSummaryWithPeriodResponse : GetCredentialUsageSummaryWithPeriodGetResponse, IParsable 
+    public class GetCredentialUsageSummaryWithPeriodResponse : GetCredentialUsageSummaryWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

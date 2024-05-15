@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
+namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType
+{
     [Obsolete("This class is obsolete. Use QueryByPlatformTypePostResponse instead.")]
     #pragma warning disable CS1591
-    public class QueryByPlatformTypeResponse : QueryByPlatformTypePostResponse, IParsable 
+    public class QueryByPlatformTypeResponse : QueryByPlatformTypePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

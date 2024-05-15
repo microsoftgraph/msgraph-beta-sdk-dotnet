@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Conditions.Applications {
+namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.Conditions.Applications
+{
     /// <summary>
     /// Builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\conditions\applications
     /// </summary>
-    public class ApplicationsRequestBuilder : BaseRequestBuilder 
+    public class ApplicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.</summary>
         public IncludeApplicationsRequestBuilder IncludeApplications

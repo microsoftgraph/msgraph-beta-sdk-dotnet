@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an item that can be added to Android Device Owner folder (application or weblink)
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable 
+    public class AndroidDeviceOwnerKioskModeFolderItem : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AndroidDeviceOwnerKioskModeFolderItem"/> and sets the default values.

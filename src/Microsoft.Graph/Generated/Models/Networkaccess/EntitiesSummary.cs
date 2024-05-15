@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class EntitiesSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EntitiesSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of unique devices that were seen.</summary>
-        public long? DeviceCount {
+        public long? DeviceCount
+        {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The trafficType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
         /// <summary>The number of unique Microsoft Entra ID users that were seen.</summary>
-        public long? UserCount {
+        public long? UserCount
+        {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>The number of unique target workloads/hosts that were seen.</summary>
-        public long? WorkloadCount {
+        public long? WorkloadCount
+        {
             get { return BackingStore?.Get<long?>("workloadCount"); }
             set { BackingStore?.Set("workloadCount", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
-                {"userCount", n => { UserCount = n.GetLongValue(); } },
-                {"workloadCount", n => { WorkloadCount = n.GetLongValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "userCount", n => { UserCount = n.GetLongValue(); } },
+                { "workloadCount", n => { WorkloadCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

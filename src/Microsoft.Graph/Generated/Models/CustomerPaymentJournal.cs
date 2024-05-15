@@ -5,47 +5,54 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomerPaymentJournal : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CustomerPaymentJournal : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Account? Account {
+        public Microsoft.Graph.Beta.Models.Account? Account
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Account Account {
+        public Microsoft.Graph.Beta.Models.Account Account
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The balancingAccountId property</summary>
-        public Guid? BalancingAccountId {
+        public Guid? BalancingAccountId
+        {
             get { return BackingStore?.Get<Guid?>("balancingAccountId"); }
             set { BackingStore?.Set("balancingAccountId", value); }
         }
         /// <summary>The balancingAccountNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BalancingAccountNumber {
+        public string? BalancingAccountNumber
+        {
             get { return BackingStore?.Get<string?>("balancingAccountNumber"); }
             set { BackingStore?.Set("balancingAccountNumber", value); }
         }
 #nullable restore
 #else
-        public string BalancingAccountNumber {
+        public string BalancingAccountNumber
+        {
             get { return BackingStore?.Get<string>("balancingAccountNumber"); }
             set { BackingStore?.Set("balancingAccountNumber", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
+        public string? Code
+        {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #nullable restore
 #else
-        public string Code {
+        public string Code
+        {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customerPayments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomerPayment>? CustomerPayments {
+        public List<CustomerPayment>? CustomerPayments
+        {
             get { return BackingStore?.Get<List<CustomerPayment>?>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
 #nullable restore
 #else
-        public List<CustomerPayment> CustomerPayments {
+        public List<CustomerPayment> CustomerPayments
+        {
             get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
@@ -81,37 +92,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -142,15 +159,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"balancingAccountId", n => { BalancingAccountId = n.GetGuidValue(); } },
-                {"balancingAccountNumber", n => { BalancingAccountNumber = n.GetStringValue(); } },
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
+                { "balancingAccountId", n => { BalancingAccountId = n.GetGuidValue(); } },
+                { "balancingAccountNumber", n => { BalancingAccountNumber = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

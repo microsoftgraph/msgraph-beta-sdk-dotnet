@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.GetExpiringVppTokenCountWithExpiringBeforeDateTime
+{
     [Obsolete("This class is obsolete. Use GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse : GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse, IParsable 
+    public class GetExpiringVppTokenCountWithExpiringBeforeDateTimeResponse : GetExpiringVppTokenCountWithExpiringBeforeDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

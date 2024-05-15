@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class UpdatableAssetGroup : UpdatableAsset, IParsable 
+    public class UpdatableAssetGroup : UpdatableAsset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Members of the group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? Members {
+        public List<UpdatableAsset>? Members
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> Members {
+        public List<UpdatableAsset> Members
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"members", n => { Members = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class IndustryDataRunStatistics : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IndustryDataRunStatistics : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of statistics for each activity included in this run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataActivityStatistics>? ActivityStatistics {
+        public List<IndustryDataActivityStatistics>? ActivityStatistics
+        {
             get { return BackingStore?.Get<List<IndustryDataActivityStatistics>?>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataActivityStatistics> ActivityStatistics {
+        public List<IndustryDataActivityStatistics> ActivityStatistics
+        {
             get { return BackingStore?.Get<List<IndustryDataActivityStatistics>>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The aggregate statistics for all inbound flows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AggregatedInboundStatistics? InboundTotals {
+        public AggregatedInboundStatistics? InboundTotals
+        {
             get { return BackingStore?.Get<AggregatedInboundStatistics?>("inboundTotals"); }
             set { BackingStore?.Set("inboundTotals", value); }
         }
 #nullable restore
 #else
-        public AggregatedInboundStatistics InboundTotals {
+        public AggregatedInboundStatistics InboundTotals
+        {
             get { return BackingStore?.Get<AggregatedInboundStatistics>("inboundTotals"); }
             set { BackingStore?.Set("inboundTotals", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,19 +70,22 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The ID of the underlying run for the statistics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RunId {
+        public string? RunId
+        {
             get { return BackingStore?.Get<string?>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
 #nullable restore
 #else
-        public string RunId {
+        public string RunId
+        {
             get { return BackingStore?.Get<string>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public IndustryDataRunStatus? Status {
+        public IndustryDataRunStatus? Status
+        {
             get { return BackingStore?.Get<IndustryDataRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<IndustryDataActivityStatistics>(IndustryDataActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"inboundTotals", n => { InboundTotals = n.GetObjectValue<AggregatedInboundStatistics>(AggregatedInboundStatistics.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"runId", n => { RunId = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<IndustryDataRunStatus>(); } },
+                { "activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<IndustryDataActivityStatistics>(IndustryDataActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inboundTotals", n => { InboundTotals = n.GetObjectValue<AggregatedInboundStatistics>(AggregatedInboundStatistics.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "runId", n => { RunId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<IndustryDataRunStatus>(); } },
             };
         }
         /// <summary>

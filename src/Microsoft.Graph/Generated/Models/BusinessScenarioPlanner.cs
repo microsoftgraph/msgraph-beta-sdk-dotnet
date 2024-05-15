@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessScenarioPlanner : Entity, IParsable 
+    public class BusinessScenarioPlanner : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration of Planner plans that will be created for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerPlanConfiguration? PlanConfiguration {
+        public PlannerPlanConfiguration? PlanConfiguration
+        {
             get { return BackingStore?.Get<PlannerPlanConfiguration?>("planConfiguration"); }
             set { BackingStore?.Set("planConfiguration", value); }
         }
 #nullable restore
 #else
-        public PlannerPlanConfiguration PlanConfiguration {
+        public PlannerPlanConfiguration PlanConfiguration
+        {
             get { return BackingStore?.Get<PlannerPlanConfiguration>("planConfiguration"); }
             set { BackingStore?.Set("planConfiguration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The configuration of Planner tasks that will be created for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskConfiguration? TaskConfiguration {
+        public PlannerTaskConfiguration? TaskConfiguration
+        {
             get { return BackingStore?.Get<PlannerTaskConfiguration?>("taskConfiguration"); }
             set { BackingStore?.Set("taskConfiguration", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskConfiguration TaskConfiguration {
+        public PlannerTaskConfiguration TaskConfiguration
+        {
             get { return BackingStore?.Get<PlannerTaskConfiguration>("taskConfiguration"); }
             set { BackingStore?.Set("taskConfiguration", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Planner tasks for the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BusinessScenarioTask>? Tasks {
+        public List<BusinessScenarioTask>? Tasks
+        {
             get { return BackingStore?.Get<List<BusinessScenarioTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<BusinessScenarioTask> Tasks {
+        public List<BusinessScenarioTask> Tasks
+        {
             get { return BackingStore?.Get<List<BusinessScenarioTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"planConfiguration", n => { PlanConfiguration = n.GetObjectValue<PlannerPlanConfiguration>(PlannerPlanConfiguration.CreateFromDiscriminatorValue); } },
-                {"taskConfiguration", n => { TaskConfiguration = n.GetObjectValue<PlannerTaskConfiguration>(PlannerTaskConfiguration.CreateFromDiscriminatorValue); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<BusinessScenarioTask>(BusinessScenarioTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "planConfiguration", n => { PlanConfiguration = n.GetObjectValue<PlannerPlanConfiguration>(PlannerPlanConfiguration.CreateFromDiscriminatorValue); } },
+                { "taskConfiguration", n => { TaskConfiguration = n.GetObjectValue<PlannerTaskConfiguration>(PlannerTaskConfiguration.CreateFromDiscriminatorValue); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<BusinessScenarioTask>(BusinessScenarioTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

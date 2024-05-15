@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class TenantStatus : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class TenantStatus : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reflects a message to the user if there&apos;s an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnboardingErrorMessage {
+        public string? OnboardingErrorMessage
+        {
             get { return BackingStore?.Get<string?>("onboardingErrorMessage"); }
             set { BackingStore?.Set("onboardingErrorMessage", value); }
         }
 #nullable restore
 #else
-        public string OnboardingErrorMessage {
+        public string OnboardingErrorMessage
+        {
             get { return BackingStore?.Get<string>("onboardingErrorMessage"); }
             set { BackingStore?.Set("onboardingErrorMessage", value); }
         }
 #endif
         /// <summary>The onboardingStatus property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus? OnboardingStatus {
+        public Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus? OnboardingStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"onboardingErrorMessage", n => { OnboardingErrorMessage = n.GetStringValue(); } },
-                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                { "onboardingErrorMessage", n => { OnboardingErrorMessage = n.GetStringValue(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
             };
         }
         /// <summary>

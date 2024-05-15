@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityId {
+        public string? ActivityId
+        {
             get { return BackingStore?.Get<string?>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
 #nullable restore
 #else
-        public string ActivityId {
+        public string ActivityId
+        {
             get { return BackingStore?.Get<string>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The clientRequestId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientRequestId {
+        public string? ClientRequestId
+        {
             get { return BackingStore?.Get<string?>("clientRequestId"); }
             set { BackingStore?.Set("clientRequestId", value); }
         }
 #nullable restore
 #else
-        public string ClientRequestId {
+        public string ClientRequestId
+        {
             get { return BackingStore?.Get<string>("clientRequestId"); }
             set { BackingStore?.Set("clientRequestId", value); }
         }
@@ -48,32 +54,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
+        public string? Code
+        {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #nullable restore
 #else
-        public string Code {
+        public string Code
+        {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #endif
         /// <summary>The errorDateTime property</summary>
-        public DateTimeOffset? ErrorDateTime {
+        public DateTimeOffset? ErrorDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("errorDateTime"); }
             set { BackingStore?.Set("errorDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activityId", n => { ActivityId = n.GetStringValue(); } },
-                {"clientRequestId", n => { ClientRequestId = n.GetStringValue(); } },
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"errorDateTime", n => { ErrorDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "activityId", n => { ActivityId = n.GetStringValue(); } },
+                { "clientRequestId", n => { ClientRequestId = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "errorDateTime", n => { ErrorDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessWhatIfPolicy : ConditionalAccessPolicy, IParsable 
+    public class ConditionalAccessWhatIfPolicy : ConditionalAccessPolicy, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The policyApplies property</summary>
-        public bool? PolicyApplies {
+        public bool? PolicyApplies
+        {
             get { return BackingStore?.Get<bool?>("policyApplies"); }
             set { BackingStore?.Set("policyApplies", value); }
         }
         /// <summary>The reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessWhatIfReasons?>? Reasons {
+        public List<ConditionalAccessWhatIfReasons?>? Reasons
+        {
             get { return BackingStore?.Get<List<ConditionalAccessWhatIfReasons?>?>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessWhatIfReasons?> Reasons {
+        public List<ConditionalAccessWhatIfReasons?> Reasons
+        {
             get { return BackingStore?.Get<List<ConditionalAccessWhatIfReasons?>>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"policyApplies", n => { PolicyApplies = n.GetBoolValue(); } },
-                {"reasons", n => { Reasons = n.GetCollectionOfEnumValues<ConditionalAccessWhatIfReasons>()?.ToList(); } },
+                { "policyApplies", n => { PolicyApplies = n.GetBoolValue(); } },
+                { "reasons", n => { Reasons = n.GetCollectionOfEnumValues<ConditionalAccessWhatIfReasons>()?.ToList(); } },
             };
         }
         /// <summary>

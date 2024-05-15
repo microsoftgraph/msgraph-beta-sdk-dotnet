@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics {
+namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics
+{
     #pragma warning disable CS1591
-    public class GetHealthMetricsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetHealthMetricsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         /// <summary>The metricNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MetricNames {
+        public List<string>? MetricNames
+        {
             get { return BackingStore?.Get<List<string>?>("metricNames"); }
             set { BackingStore?.Set("metricNames", value); }
         }
 #nullable restore
 #else
-        public List<string> MetricNames {
+        public List<string> MetricNames
+        {
             get { return BackingStore?.Get<List<string>>("metricNames"); }
             set { BackingStore?.Set("metricNames", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"metricNames", n => { MetricNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "metricNames", n => { MetricNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

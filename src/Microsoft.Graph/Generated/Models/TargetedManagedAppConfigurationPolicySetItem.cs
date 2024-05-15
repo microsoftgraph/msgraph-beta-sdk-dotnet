@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for Targeted managed app configuration PolicySetItem.
     /// </summary>
-    public class TargetedManagedAppConfigurationPolicySetItem : PolicySetItem, IParsable 
+    public class TargetedManagedAppConfigurationPolicySetItem : PolicySetItem, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="TargetedManagedAppConfigurationPolicySetItem"/> and sets the default values.

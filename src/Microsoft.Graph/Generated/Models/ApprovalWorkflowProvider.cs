@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ApprovalWorkflowProvider : Entity, IParsable 
+    public class ApprovalWorkflowProvider : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The businessFlows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BusinessFlow>? BusinessFlows {
+        public List<BusinessFlow>? BusinessFlows
+        {
             get { return BackingStore?.Get<List<BusinessFlow>?>("businessFlows"); }
             set { BackingStore?.Set("businessFlows", value); }
         }
 #nullable restore
 #else
-        public List<BusinessFlow> BusinessFlows {
+        public List<BusinessFlow> BusinessFlows
+        {
             get { return BackingStore?.Get<List<BusinessFlow>>("businessFlows"); }
             set { BackingStore?.Set("businessFlows", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BusinessFlow>? BusinessFlowsWithRequestsAwaitingMyDecision {
+        public List<BusinessFlow>? BusinessFlowsWithRequestsAwaitingMyDecision
+        {
             get { return BackingStore?.Get<List<BusinessFlow>?>("businessFlowsWithRequestsAwaitingMyDecision"); }
             set { BackingStore?.Set("businessFlowsWithRequestsAwaitingMyDecision", value); }
         }
 #nullable restore
 #else
-        public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision {
+        public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision
+        {
             get { return BackingStore?.Get<List<BusinessFlow>>("businessFlowsWithRequestsAwaitingMyDecision"); }
             set { BackingStore?.Set("businessFlowsWithRequestsAwaitingMyDecision", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policyTemplates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernancePolicyTemplate>? PolicyTemplates {
+        public List<GovernancePolicyTemplate>? PolicyTemplates
+        {
             get { return BackingStore?.Get<List<GovernancePolicyTemplate>?>("policyTemplates"); }
             set { BackingStore?.Set("policyTemplates", value); }
         }
 #nullable restore
 #else
-        public List<GovernancePolicyTemplate> PolicyTemplates {
+        public List<GovernancePolicyTemplate> PolicyTemplates
+        {
             get { return BackingStore?.Get<List<GovernancePolicyTemplate>>("policyTemplates"); }
             set { BackingStore?.Set("policyTemplates", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"businessFlows", n => { BusinessFlows = n.GetCollectionOfObjectValues<BusinessFlow>(BusinessFlow.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"businessFlowsWithRequestsAwaitingMyDecision", n => { BusinessFlowsWithRequestsAwaitingMyDecision = n.GetCollectionOfObjectValues<BusinessFlow>(BusinessFlow.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"policyTemplates", n => { PolicyTemplates = n.GetCollectionOfObjectValues<GovernancePolicyTemplate>(GovernancePolicyTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessFlows", n => { BusinessFlows = n.GetCollectionOfObjectValues<BusinessFlow>(BusinessFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessFlowsWithRequestsAwaitingMyDecision", n => { BusinessFlowsWithRequestsAwaitingMyDecision = n.GetCollectionOfObjectValues<BusinessFlow>(BusinessFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "policyTemplates", n => { PolicyTemplates = n.GetCollectionOfObjectValues<GovernancePolicyTemplate>(GovernancePolicyTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityDetailWithDate
+{
     [Obsolete("This class is obsolete. Use GetOffice365GroupsActivityDetailWithDateGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365GroupsActivityDetailWithDateResponse : GetOffice365GroupsActivityDetailWithDateGetResponse, IParsable 
+    public class GetOffice365GroupsActivityDetailWithDateResponse : GetOffice365GroupsActivityDetailWithDateGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

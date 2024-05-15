@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class RecommendLabelAction : InformationProtectionAction, IParsable 
+    public class RecommendLabelAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Actions to take if the label is accepted by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InformationProtectionAction>? Actions {
+        public List<InformationProtectionAction>? Actions
+        {
             get { return BackingStore?.Get<List<InformationProtectionAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<InformationProtectionAction> Actions {
+        public List<InformationProtectionAction> Actions
+        {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>The actionSource property</summary>
-        public Microsoft.Graph.Beta.Models.Security.ActionSource? ActionSource {
+        public Microsoft.Graph.Beta.Models.Security.ActionSource? ActionSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
         /// <summary>The sensitive information type GUIDs that caused the recommendation to be given.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponsibleSensitiveTypeIds {
+        public List<string>? ResponsibleSensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>?>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ResponsibleSensitiveTypeIds {
+        public List<string> ResponsibleSensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The sensitivityLabelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SensitivityLabelId {
+        public string? SensitivityLabelId
+        {
             get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
 #nullable restore
 #else
-        public string SensitivityLabelId {
+        public string SensitivityLabelId
+        {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionSource", n => { ActionSource = n.GetEnumValue<ActionSource>(); } },
-                {"actions", n => { Actions = n.GetCollectionOfObjectValues<InformationProtectionAction>(InformationProtectionAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"responsibleSensitiveTypeIds", n => { ResponsibleSensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
+                { "actionSource", n => { ActionSource = n.GetEnumValue<ActionSource>(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<InformationProtectionAction>(InformationProtectionAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "responsibleSensitiveTypeIds", n => { ResponsibleSensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

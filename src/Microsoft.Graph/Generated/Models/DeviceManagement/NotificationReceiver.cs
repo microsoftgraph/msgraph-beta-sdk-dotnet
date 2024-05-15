@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class NotificationReceiver : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NotificationReceiver : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The contact information about the notification receivers, such as an email address. Currently, only email and portal notifications are supported. For portal notifications, contactInformation can be left blank. For email notifications, contactInformation consists of an email address such as serena.davis@contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactInformation {
+        public string? ContactInformation
+        {
             get { return BackingStore?.Get<string?>("contactInformation"); }
             set { BackingStore?.Set("contactInformation", value); }
         }
 #nullable restore
 #else
-        public string ContactInformation {
+        public string ContactInformation
+        {
             get { return BackingStore?.Get<string>("contactInformation"); }
             set { BackingStore?.Set("contactInformation", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Defines the language and format in which the notification will be sent. Supported locale values are: en-us, cs-cz, de-de, es-es, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, pl-pl, pt-br, pt-pt, ru-ru, sv-se, tr-tr, zh-cn, zh-tw.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locale {
+        public string? Locale
+        {
             get { return BackingStore?.Get<string?>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
 #nullable restore
 #else
-        public string Locale {
+        public string Locale
+        {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contactInformation", n => { ContactInformation = n.GetStringValue(); } },
-                {"locale", n => { Locale = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "contactInformation", n => { ContactInformation = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

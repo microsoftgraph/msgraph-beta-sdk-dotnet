@@ -4,59 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplateStep : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementTemplateStep : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acceptedVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagementTemplateStepVersion? AcceptedVersion {
+        public ManagementTemplateStepVersion? AcceptedVersion
+        {
             get { return BackingStore?.Get<ManagementTemplateStepVersion?>("acceptedVersion"); }
             set { BackingStore?.Set("acceptedVersion", value); }
         }
 #nullable restore
 #else
-        public ManagementTemplateStepVersion AcceptedVersion {
+        public ManagementTemplateStepVersion AcceptedVersion
+        {
             get { return BackingStore?.Get<ManagementTemplateStepVersion>("acceptedVersion"); }
             set { BackingStore?.Set("acceptedVersion", value); }
         }
 #endif
         /// <summary>The category property</summary>
-        public ManagementCategory? Category {
+        public ManagementCategory? Category
+        {
             get { return BackingStore?.Get<ManagementCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByUserId {
+        public string? CreatedByUserId
+        {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #nullable restore
 #else
-        public string CreatedByUserId {
+        public string CreatedByUserId
+        {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #endif
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The informationLinks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ActionUrl>? InformationLinks {
+        public List<Microsoft.Graph.Beta.Models.ActionUrl>? InformationLinks
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>?>("informationLinks"); }
             set { BackingStore?.Set("informationLinks", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks {
+        public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>("informationLinks"); }
             set { BackingStore?.Set("informationLinks", value); }
         }
@@ -92,32 +105,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActionByUserId {
+        public string? LastActionByUserId
+        {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #nullable restore
 #else
-        public string LastActionByUserId {
+        public string LastActionByUserId
+        {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #endif
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate? ManagementTemplate {
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate? ManagementTemplate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate?>("managementTemplate"); }
             set { BackingStore?.Set("managementTemplate", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate ManagementTemplate {
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate ManagementTemplate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>("managementTemplate"); }
             set { BackingStore?.Set("managementTemplate", value); }
         }
@@ -125,32 +143,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The portalLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ActionUrl? PortalLink {
+        public Microsoft.Graph.Beta.Models.ActionUrl? PortalLink
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl?>("portalLink"); }
             set { BackingStore?.Set("portalLink", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ActionUrl PortalLink {
+        public Microsoft.Graph.Beta.Models.ActionUrl PortalLink
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("portalLink"); }
             set { BackingStore?.Set("portalLink", value); }
         }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The userImpact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserImpact {
+        public string? UserImpact
+        {
             get { return BackingStore?.Get<string?>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
 #nullable restore
 #else
-        public string UserImpact {
+        public string UserImpact
+        {
             get { return BackingStore?.Get<string>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
@@ -158,13 +181,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepVersion>? Versions {
+        public List<ManagementTemplateStepVersion>? Versions
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepVersion> Versions {
+        public List<ManagementTemplateStepVersion> Versions
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
@@ -187,20 +212,20 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acceptedVersion", n => { AcceptedVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
-                {"category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
-                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplate", n => { ManagementTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue); } },
-                {"portalLink", n => { PortalLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"userImpact", n => { UserImpact = n.GetStringValue(); } },
-                {"versions", n => { Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "acceptedVersion", n => { AcceptedVersion = n.GetObjectValue<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<ManagementCategory>(); } },
+                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "informationLinks", n => { InformationLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managementTemplate", n => { ManagementTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue); } },
+                { "portalLink", n => { PortalLink = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "userImpact", n => { UserImpact = n.GetStringValue(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

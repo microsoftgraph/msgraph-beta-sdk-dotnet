@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The number of devices remediated by a device health script on a given date with the last modified time.
     /// </summary>
-    public class DeviceHealthScriptRemediationHistory : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceHealthScriptRemediationHistory : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,32 +23,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The number of devices remediated by the device health script on the given date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceHealthScriptRemediationHistoryData>? HistoryData {
+        public List<DeviceHealthScriptRemediationHistoryData>? HistoryData
+        {
             get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>?>("historyData"); }
             set { BackingStore?.Set("historyData", value); }
         }
 #nullable restore
 #else
-        public List<DeviceHealthScriptRemediationHistoryData> HistoryData {
+        public List<DeviceHealthScriptRemediationHistoryData> HistoryData
+        {
             get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>>("historyData"); }
             set { BackingStore?.Set("historyData", value); }
         }
 #endif
         /// <summary>The date on which the results history is calculated for the healthscript.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"historyData", n => { HistoryData = n.GetCollectionOfObjectValues<DeviceHealthScriptRemediationHistoryData>(DeviceHealthScriptRemediationHistoryData.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "historyData", n => { HistoryData = n.GetCollectionOfObjectValues<DeviceHealthScriptRemediationHistoryData>(DeviceHealthScriptRemediationHistoryData.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

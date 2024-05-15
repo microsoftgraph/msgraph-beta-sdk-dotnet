@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Custom group id type
     /// </summary>
-    public class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource, IParsable 
+    public class DeliveryOptimizationGroupIdCustom : DeliveryOptimizationGroupIdSource, IParsable
     {
         /// <summary>Specifies an arbitrary group ID that the device belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupIdCustom {
+        public string? GroupIdCustom
+        {
             get { return BackingStore?.Get<string?>("groupIdCustom"); }
             set { BackingStore?.Set("groupIdCustom", value); }
         }
 #nullable restore
 #else
-        public string GroupIdCustom {
+        public string GroupIdCustom
+        {
             get { return BackingStore?.Get<string>("groupIdCustom"); }
             set { BackingStore?.Set("groupIdCustom", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupIdCustom", n => { GroupIdCustom = n.GetStringValue(); } },
+                { "groupIdCustom", n => { GroupIdCustom = n.GetStringValue(); } },
             };
         }
         /// <summary>

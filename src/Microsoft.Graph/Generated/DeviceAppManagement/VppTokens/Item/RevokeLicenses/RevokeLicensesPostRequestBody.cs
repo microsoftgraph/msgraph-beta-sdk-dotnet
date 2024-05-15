@@ -5,25 +5,29 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
+{
     #pragma warning disable CS1591
-    public class RevokeLicensesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RevokeLicensesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The notifyManagedDevices property</summary>
-        public bool? NotifyManagedDevices {
+        public bool? NotifyManagedDevices
+        {
             get { return BackingStore?.Get<bool?>("notifyManagedDevices"); }
             set { BackingStore?.Set("notifyManagedDevices", value); }
         }
         /// <summary>The revokeUntrackedLicenses property</summary>
-        public bool? RevokeUntrackedLicenses {
+        public bool? RevokeUntrackedLicenses
+        {
             get { return BackingStore?.Get<bool?>("revokeUntrackedLicenses"); }
             set { BackingStore?.Set("revokeUntrackedLicenses", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.Item.RevokeLicenses
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"notifyManagedDevices", n => { NotifyManagedDevices = n.GetBoolValue(); } },
-                {"revokeUntrackedLicenses", n => { RevokeUntrackedLicenses = n.GetBoolValue(); } },
+                { "notifyManagedDevices", n => { NotifyManagedDevices = n.GetBoolValue(); } },
+                { "revokeUntrackedLicenses", n => { RevokeUntrackedLicenses = n.GetBoolValue(); } },
             };
         }
         /// <summary>

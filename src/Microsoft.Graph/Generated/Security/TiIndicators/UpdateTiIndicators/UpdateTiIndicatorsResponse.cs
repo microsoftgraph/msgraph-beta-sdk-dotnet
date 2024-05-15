@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
+namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators
+{
     [Obsolete("This class is obsolete. Use UpdateTiIndicatorsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class UpdateTiIndicatorsResponse : UpdateTiIndicatorsPostResponse, IParsable 
+    public class UpdateTiIndicatorsResponse : UpdateTiIndicatorsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

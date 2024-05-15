@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// ServiceNow properties including the ServiceNow instanceUrl, connection credentials and other metadata.
     /// </summary>
-    public class ServiceNowConnection : Entity, IParsable 
+    public class ServiceNowConnection : Entity, IParsable
     {
         /// <summary>Indicates the method used by Intune to authenticate with ServiceNow. Currently supports only web authentication with ServiceNow using the specified app id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ServiceNowAuthenticationMethod? AuthenticationMethod {
+        public ServiceNowAuthenticationMethod? AuthenticationMethod
+        {
             get { return BackingStore?.Get<ServiceNowAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
 #nullable restore
 #else
-        public ServiceNowAuthenticationMethod AuthenticationMethod {
+        public ServiceNowAuthenticationMethod AuthenticationMethod
+        {
             get { return BackingStore?.Get<ServiceNowAuthenticationMethod>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
 #endif
         /// <summary>Date Time when connection properties were created. The value cannot be modified and is automatically populated when the connection properties were entered.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Indicates the ServiceNow incident API URL that Intune will use the fetch incidents. Saved in the format of /api/now/table/incident</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncidentApiUrl {
+        public string? IncidentApiUrl
+        {
             get { return BackingStore?.Get<string?>("incidentApiUrl"); }
             set { BackingStore?.Set("incidentApiUrl", value); }
         }
 #nullable restore
 #else
-        public string IncidentApiUrl {
+        public string IncidentApiUrl
+        {
             get { return BackingStore?.Get<string>("incidentApiUrl"); }
             set { BackingStore?.Set("incidentApiUrl", value); }
         }
@@ -46,29 +52,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the ServiceNow instance URL that Intune will connect to. Saved in the format of https://.service-now.com</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstanceUrl {
+        public string? InstanceUrl
+        {
             get { return BackingStore?.Get<string?>("instanceUrl"); }
             set { BackingStore?.Set("instanceUrl", value); }
         }
 #nullable restore
 #else
-        public string InstanceUrl {
+        public string InstanceUrl
+        {
             get { return BackingStore?.Get<string>("instanceUrl"); }
             set { BackingStore?.Set("instanceUrl", value); }
         }
 #endif
         /// <summary>Date Time when connection properties were last updated. The value cannot be modified and is automatically populated when the connection properties were updated.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Date Time when incidents from ServiceNow were last queried</summary>
-        public DateTimeOffset? LastQueriedDateTime {
+        public DateTimeOffset? LastQueriedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastQueriedDateTime"); }
             set { BackingStore?.Set("lastQueriedDateTime", value); }
         }
         /// <summary>Status of ServiceNow Connection</summary>
-        public Microsoft.Graph.Beta.Models.ServiceNowConnectionStatus? ServiceNowConnectionStatus {
+        public Microsoft.Graph.Beta.Models.ServiceNowConnectionStatus? ServiceNowConnectionStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceNowConnectionStatus?>("serviceNowConnectionStatus"); }
             set { BackingStore?.Set("serviceNowConnectionStatus", value); }
         }
@@ -90,13 +101,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationMethod", n => { AuthenticationMethod = n.GetObjectValue<ServiceNowAuthenticationMethod>(ServiceNowAuthenticationMethod.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"incidentApiUrl", n => { IncidentApiUrl = n.GetStringValue(); } },
-                {"instanceUrl", n => { InstanceUrl = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastQueriedDateTime", n => { LastQueriedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"serviceNowConnectionStatus", n => { ServiceNowConnectionStatus = n.GetEnumValue<ServiceNowConnectionStatus>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetObjectValue<ServiceNowAuthenticationMethod>(ServiceNowAuthenticationMethod.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "incidentApiUrl", n => { IncidentApiUrl = n.GetStringValue(); } },
+                { "instanceUrl", n => { InstanceUrl = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastQueriedDateTime", n => { LastQueriedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "serviceNowConnectionStatus", n => { ServiceNowConnectionStatus = n.GetEnumValue<ServiceNowConnectionStatus>(); } },
             };
         }
         /// <summary>

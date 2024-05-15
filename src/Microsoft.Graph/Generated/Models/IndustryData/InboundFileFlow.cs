@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class InboundFileFlow : InboundFlow, IParsable 
+    public class InboundFileFlow : InboundFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

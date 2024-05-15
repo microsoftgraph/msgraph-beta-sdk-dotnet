@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcStatusDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcStatusDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Any additional information about the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? AdditionalInformation {
+        public List<KeyValuePair>? AdditionalInformation
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> AdditionalInformation {
+        public List<KeyValuePair> AdditionalInformation
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The code associated with the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
+        public string? Code
+        {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #nullable restore
 #else
-        public string Code {
+        public string Code
+        {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message {
+        public string? Message
+        {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public string Message {
+        public string Message
+        {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

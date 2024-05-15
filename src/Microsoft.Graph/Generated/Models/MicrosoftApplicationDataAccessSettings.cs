@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MicrosoftApplicationDataAccessSettings : Entity, IParsable 
+    public class MicrosoftApplicationDataAccessSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of a Microsoft Entra security group for which the members are allowed to access Microsoft 365 data using only Microsoft 365 apps, but not other Microsoft apps such as Edge.  This is only applicable if isEnabledForAllMicrosoftApplications is set to true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisabledForGroup {
+        public string? DisabledForGroup
+        {
             get { return BackingStore?.Get<string?>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
 #nullable restore
 #else
-        public string DisabledForGroup {
+        public string DisabledForGroup
+        {
             get { return BackingStore?.Get<string>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
 #endif
         /// <summary>When set to true, all users in the organization can access in a Microsoft app any Microsoft 365 data that the user has been authorized to access. The Microsoft app can be a Microsoft 365 app (for example, Excel, Outlook) or non-Microsoft 365 app (for example, Edge). The default is true.  It is possible to disable this access for a subset of users in a Microsoft Entra security group, by specifying the group in the disabledForGroup property.  When set to false, all users can access authorized Microsoft 365 data only in a Microsoft 365 app.</summary>
-        public bool? IsEnabledForAllMicrosoftApplications {
+        public bool? IsEnabledForAllMicrosoftApplications
+        {
             get { return BackingStore?.Get<bool?>("isEnabledForAllMicrosoftApplications"); }
             set { BackingStore?.Set("isEnabledForAllMicrosoftApplications", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"disabledForGroup", n => { DisabledForGroup = n.GetStringValue(); } },
-                {"isEnabledForAllMicrosoftApplications", n => { IsEnabledForAllMicrosoftApplications = n.GetBoolValue(); } },
+                { "disabledForGroup", n => { DisabledForGroup = n.GetStringValue(); } },
+                { "isEnabledForAllMicrosoftApplications", n => { IsEnabledForAllMicrosoftApplications = n.GetBoolValue(); } },
             };
         }
         /// <summary>

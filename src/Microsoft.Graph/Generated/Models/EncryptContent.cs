@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EncryptContent : LabelActionBase, IParsable 
+    public class EncryptContent : LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The encryptWith property</summary>
-        public Microsoft.Graph.Beta.Models.EncryptWith? EncryptWith {
+        public Microsoft.Graph.Beta.Models.EncryptWith? EncryptWith
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EncryptWith?>("encryptWith"); }
             set { BackingStore?.Set("encryptWith", value); }
         }
@@ -45,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"encryptWith", n => { EncryptWith = n.GetEnumValue<EncryptWith>(); } },
+                { "encryptWith", n => { EncryptWith = n.GetEnumValue<EncryptWith>(); } },
             };
         }
         /// <summary>

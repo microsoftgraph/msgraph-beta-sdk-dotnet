@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class X509CertificateRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class X509CertificateRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the X.509 certificate. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier {
+        public string? Identifier
+        {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #nullable restore
 #else
-        public string Identifier {
+        public string Identifier
+        {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the certificate issuer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerSubjectIdentifier {
+        public string? IssuerSubjectIdentifier
+        {
             get { return BackingStore?.Get<string?>("issuerSubjectIdentifier"); }
             set { BackingStore?.Set("issuerSubjectIdentifier", value); }
         }
 #nullable restore
 #else
-        public string IssuerSubjectIdentifier {
+        public string IssuerSubjectIdentifier
+        {
             get { return BackingStore?.Get<string>("issuerSubjectIdentifier"); }
             set { BackingStore?.Set("issuerSubjectIdentifier", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,29 +70,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the X.509 certificate policyOID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyOidIdentifier {
+        public string? PolicyOidIdentifier
+        {
             get { return BackingStore?.Get<string?>("policyOidIdentifier"); }
             set { BackingStore?.Set("policyOidIdentifier", value); }
         }
 #nullable restore
 #else
-        public string PolicyOidIdentifier {
+        public string PolicyOidIdentifier
+        {
             get { return BackingStore?.Get<string>("policyOidIdentifier"); }
             set { BackingStore?.Set("policyOidIdentifier", value); }
         }
 #endif
         /// <summary>The type of strong authentication mode. The possible values are: x509CertificateSingleFactor, x509CertificateMultiFactor, unknownFutureValue. Required.</summary>
-        public Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode? X509CertificateAuthenticationMode {
+        public Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode? X509CertificateAuthenticationMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateAuthenticationMode?>("x509CertificateAuthenticationMode"); }
             set { BackingStore?.Set("x509CertificateAuthenticationMode", value); }
         }
         /// <summary>The possible values are: low, high, unknownFutureValue.</summary>
-        public X509CertificateAffinityLevel? X509CertificateRequiredAffinityLevel {
+        public X509CertificateAffinityLevel? X509CertificateRequiredAffinityLevel
+        {
             get { return BackingStore?.Get<X509CertificateAffinityLevel?>("x509CertificateRequiredAffinityLevel"); }
             set { BackingStore?.Set("x509CertificateRequiredAffinityLevel", value); }
         }
         /// <summary>The type of the X.509 certificate mode configuration rule. The possible values are: issuerSubject, policyOID, unknownFutureValue, issuerSubjectAndPolicyOID. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: issuerSubjectAndPolicyOID. Required.</summary>
-        public Microsoft.Graph.Beta.Models.X509CertificateRuleType? X509CertificateRuleType {
+        public Microsoft.Graph.Beta.Models.X509CertificateRuleType? X509CertificateRuleType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.X509CertificateRuleType?>("x509CertificateRuleType"); }
             set { BackingStore?.Set("x509CertificateRuleType", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"identifier", n => { Identifier = n.GetStringValue(); } },
-                {"issuerSubjectIdentifier", n => { IssuerSubjectIdentifier = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyOidIdentifier", n => { PolicyOidIdentifier = n.GetStringValue(); } },
-                {"x509CertificateAuthenticationMode", n => { X509CertificateAuthenticationMode = n.GetEnumValue<X509CertificateAuthenticationMode>(); } },
-                {"x509CertificateRequiredAffinityLevel", n => { X509CertificateRequiredAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
-                {"x509CertificateRuleType", n => { X509CertificateRuleType = n.GetEnumValue<X509CertificateRuleType>(); } },
+                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "issuerSubjectIdentifier", n => { IssuerSubjectIdentifier = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyOidIdentifier", n => { PolicyOidIdentifier = n.GetStringValue(); } },
+                { "x509CertificateAuthenticationMode", n => { X509CertificateAuthenticationMode = n.GetEnumValue<X509CertificateAuthenticationMode>(); } },
+                { "x509CertificateRequiredAffinityLevel", n => { X509CertificateRequiredAffinityLevel = n.GetEnumValue<X509CertificateAffinityLevel>(); } },
+                { "x509CertificateRuleType", n => { X509CertificateRuleType = n.GetEnumValue<X509CertificateRuleType>(); } },
             };
         }
         /// <summary>

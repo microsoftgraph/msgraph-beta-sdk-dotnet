@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the AOSP device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AospDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable 
+    public class AospDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
-        public bool? ConnectAutomatically {
+        public bool? ConnectAutomatically
+        {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
-        public bool? ConnectWhenNetworkNameIsHidden {
+        public bool? ConnectWhenNetworkNameIsHidden
+        {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkName {
+        public string? NetworkName
+        {
             get { return BackingStore?.Get<string?>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
 #nullable restore
 #else
-        public string NetworkName {
+        public string NetworkName
+        {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
@@ -37,32 +42,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreSharedKey {
+        public string? PreSharedKey
+        {
             get { return BackingStore?.Get<string?>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #nullable restore
 #else
-        public string PreSharedKey {
+        public string PreSharedKey
+        {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
-        public bool? PreSharedKeyIsSet {
+        public bool? PreSharedKeyIsSet
+        {
             get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
             set { BackingStore?.Set("preSharedKeyIsSet", value); }
         }
         /// <summary>Specify the proxy server configuration script URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyAutomaticConfigurationUrl {
+        public string? ProxyAutomaticConfigurationUrl
+        {
             get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
 #nullable restore
 #else
-        public string ProxyAutomaticConfigurationUrl {
+        public string ProxyAutomaticConfigurationUrl
+        {
             get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
@@ -70,13 +80,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProxyExclusionList {
+        public List<string>? ProxyExclusionList
+        {
             get { return BackingStore?.Get<List<string>?>("proxyExclusionList"); }
             set { BackingStore?.Set("proxyExclusionList", value); }
         }
 #nullable restore
 #else
-        public List<string> ProxyExclusionList {
+        public List<string> ProxyExclusionList
+        {
             get { return BackingStore?.Get<List<string>>("proxyExclusionList"); }
             set { BackingStore?.Set("proxyExclusionList", value); }
         }
@@ -84,43 +96,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify the proxy server IP address. Both IPv4 and IPv6 addresses are supported. For example: 192.168.1.1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyManualAddress {
+        public string? ProxyManualAddress
+        {
             get { return BackingStore?.Get<string?>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #nullable restore
 #else
-        public string ProxyManualAddress {
+        public string ProxyManualAddress
+        {
             get { return BackingStore?.Get<string>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #endif
         /// <summary>Specify the proxy server port.</summary>
-        public int? ProxyManualPort {
+        public int? ProxyManualPort
+        {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Wi-Fi Proxy Settings.</summary>
-        public WiFiProxySetting? ProxySetting {
+        public WiFiProxySetting? ProxySetting
+        {
             get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
             set { BackingStore?.Set("proxySetting", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ssid {
+        public string? Ssid
+        {
             get { return BackingStore?.Get<string?>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #nullable restore
 #else
-        public string Ssid {
+        public string Ssid
+        {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
         /// <summary>Wi-Fi Security Types for AOSP Device Owner.</summary>
-        public AospDeviceOwnerWiFiSecurityType? WiFiSecurityType {
+        public AospDeviceOwnerWiFiSecurityType? WiFiSecurityType
+        {
             get { return BackingStore?.Get<AospDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
@@ -154,18 +173,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
-                {"connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
-                {"networkName", n => { NetworkName = n.GetStringValue(); } },
-                {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
-                {"preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
-                {"proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
-                {"proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
-                {"proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                {"proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
-                {"ssid", n => { Ssid = n.GetStringValue(); } },
-                {"wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AospDeviceOwnerWiFiSecurityType>(); } },
+                { "connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
+                { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
+                { "networkName", n => { NetworkName = n.GetStringValue(); } },
+                { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
+                { "preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
+                { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
+                { "proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
+                { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
+                { "proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "ssid", n => { Ssid = n.GetStringValue(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AospDeviceOwnerWiFiSecurityType>(); } },
             };
         }
         /// <summary>

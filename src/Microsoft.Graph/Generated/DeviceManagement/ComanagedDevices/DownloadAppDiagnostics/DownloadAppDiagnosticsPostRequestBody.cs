@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiagnostics {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiagnostics
+{
     #pragma warning disable CS1591
-    public class DownloadAppDiagnosticsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DownloadAppDiagnosticsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiag
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PowerliftDownloadRequest? Request {
+        public PowerliftDownloadRequest? Request
+        {
             get { return BackingStore?.Get<PowerliftDownloadRequest?>("request"); }
             set { BackingStore?.Set("request", value); }
         }
 #nullable restore
 #else
-        public PowerliftDownloadRequest Request {
+        public PowerliftDownloadRequest Request
+        {
             get { return BackingStore?.Get<PowerliftDownloadRequest>("request"); }
             set { BackingStore?.Set("request", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiag
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"request", n => { Request = n.GetObjectValue<PowerliftDownloadRequest>(PowerliftDownloadRequest.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<PowerliftDownloadRequest>(PowerliftDownloadRequest.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessDestinationReportWithStartDateTimeWithEndDateTime
+{
     [Obsolete("This class is obsolete. Use DestinationReportWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class DestinationReportWithStartDateTimeWithEndDateTimeResponse : DestinationReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable 
+    public class DestinationReportWithStartDateTimeWithEndDateTimeResponse : DestinationReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

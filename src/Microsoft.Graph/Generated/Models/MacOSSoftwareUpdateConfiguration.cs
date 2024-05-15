@@ -4,63 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// MacOS Software Update Configuration
     /// </summary>
-    public class MacOSSoftwareUpdateConfiguration : DeviceConfiguration, IParsable 
+    public class MacOSSoftwareUpdateConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Update behavior options for macOS software updates.</summary>
-        public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior {
+        public MacOSSoftwareUpdateBehavior? AllOtherUpdateBehavior
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("allOtherUpdateBehavior"); }
             set { BackingStore?.Set("allOtherUpdateBehavior", value); }
         }
         /// <summary>Update behavior options for macOS software updates.</summary>
-        public MacOSSoftwareUpdateBehavior? ConfigDataUpdateBehavior {
+        public MacOSSoftwareUpdateBehavior? ConfigDataUpdateBehavior
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("configDataUpdateBehavior"); }
             set { BackingStore?.Set("configDataUpdateBehavior", value); }
         }
         /// <summary>Update behavior options for macOS software updates.</summary>
-        public MacOSSoftwareUpdateBehavior? CriticalUpdateBehavior {
+        public MacOSSoftwareUpdateBehavior? CriticalUpdateBehavior
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("criticalUpdateBehavior"); }
             set { BackingStore?.Set("criticalUpdateBehavior", value); }
         }
         /// <summary>Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows {
+        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows
+        {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
 #nullable restore
 #else
-        public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
+        public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows
+        {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
 #endif
         /// <summary>Update behavior options for macOS software updates.</summary>
-        public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior {
+        public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("firmwareUpdateBehavior"); }
             set { BackingStore?.Set("firmwareUpdateBehavior", value); }
         }
         /// <summary>The maximum number of times the system allows the user to postpone an update before it’s installed. Supported values: 0 - 366. Valid values 0 to 365</summary>
-        public int? MaxUserDeferralsCount {
+        public int? MaxUserDeferralsCount
+        {
             get { return BackingStore?.Get<int?>("maxUserDeferralsCount"); }
             set { BackingStore?.Set("maxUserDeferralsCount", value); }
         }
         /// <summary>The scheduling priority for downloading and preparing the requested update. Default: Low. Possible values: Null, Low, High. Possible values are: low, high, unknownFutureValue.</summary>
-        public MacOSPriority? Priority {
+        public MacOSPriority? Priority
+        {
             get { return BackingStore?.Get<MacOSPriority?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Update schedule type for macOS software updates.</summary>
-        public MacOSSoftwareUpdateScheduleType? UpdateScheduleType {
+        public MacOSSoftwareUpdateScheduleType? UpdateScheduleType
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateScheduleType?>("updateScheduleType"); }
             set { BackingStore?.Set("updateScheduleType", value); }
         }
         /// <summary>Minutes indicating UTC offset for each update time window</summary>
-        public int? UpdateTimeWindowUtcOffsetInMinutes {
+        public int? UpdateTimeWindowUtcOffsetInMinutes
+        {
             get { return BackingStore?.Get<int?>("updateTimeWindowUtcOffsetInMinutes"); }
             set { BackingStore?.Set("updateTimeWindowUtcOffsetInMinutes", value); }
         }
@@ -89,15 +100,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allOtherUpdateBehavior", n => { AllOtherUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
-                {"configDataUpdateBehavior", n => { ConfigDataUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
-                {"criticalUpdateBehavior", n => { CriticalUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
-                {"customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"firmwareUpdateBehavior", n => { FirmwareUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
-                {"maxUserDeferralsCount", n => { MaxUserDeferralsCount = n.GetIntValue(); } },
-                {"priority", n => { Priority = n.GetEnumValue<MacOSPriority>(); } },
-                {"updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<MacOSSoftwareUpdateScheduleType>(); } },
-                {"updateTimeWindowUtcOffsetInMinutes", n => { UpdateTimeWindowUtcOffsetInMinutes = n.GetIntValue(); } },
+                { "allOtherUpdateBehavior", n => { AllOtherUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
+                { "configDataUpdateBehavior", n => { ConfigDataUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
+                { "criticalUpdateBehavior", n => { CriticalUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
+                { "customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "firmwareUpdateBehavior", n => { FirmwareUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
+                { "maxUserDeferralsCount", n => { MaxUserDeferralsCount = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetEnumValue<MacOSPriority>(); } },
+                { "updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<MacOSSoftwareUpdateScheduleType>(); } },
+                { "updateTimeWindowUtcOffsetInMinutes", n => { UpdateTimeWindowUtcOffsetInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

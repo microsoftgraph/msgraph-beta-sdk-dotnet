@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents a defined collection of device settings
     /// </summary>
-    public class DeviceManagementTemplate : Entity, IParsable 
+    public class DeviceManagementTemplate : Entity, IParsable
     {
         /// <summary>Collection of setting categories within the template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementTemplateSettingCategory>? Categories {
+        public List<DeviceManagementTemplateSettingCategory>? Categories
+        {
             get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementTemplateSettingCategory> Categories {
+        public List<DeviceManagementTemplateSettingCategory> Categories
+        {
             get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The template&apos;s description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -41,85 +46,99 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The template&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Number of Intents created from this template.</summary>
-        public int? IntentCount {
+        public int? IntentCount
+        {
             get { return BackingStore?.Get<int?>("intentCount"); }
             set { BackingStore?.Set("intentCount", value); }
         }
         /// <summary>The template is deprecated or not. Intents cannot be created from a deprecated template.</summary>
-        public bool? IsDeprecated {
+        public bool? IsDeprecated
+        {
             get { return BackingStore?.Get<bool?>("isDeprecated"); }
             set { BackingStore?.Set("isDeprecated", value); }
         }
         /// <summary>Collection of templates this template can migrate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementTemplate>? MigratableTo {
+        public List<DeviceManagementTemplate>? MigratableTo
+        {
             get { return BackingStore?.Get<List<DeviceManagementTemplate>?>("migratableTo"); }
             set { BackingStore?.Set("migratableTo", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementTemplate> MigratableTo {
+        public List<DeviceManagementTemplate> MigratableTo
+        {
             get { return BackingStore?.Get<List<DeviceManagementTemplate>>("migratableTo"); }
             set { BackingStore?.Set("migratableTo", value); }
         }
 #endif
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType {
+        public PolicyPlatformType? PlatformType
+        {
             get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>When the template was published</summary>
-        public DateTimeOffset? PublishedDateTime {
+        public DateTimeOffset? PublishedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("publishedDateTime"); }
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>Collection of all settings this template has</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? Settings {
+        public List<DeviceManagementSettingInstance>? Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> Settings {
+        public List<DeviceManagementSettingInstance> Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Template subtype</summary>
-        public DeviceManagementTemplateSubtype? TemplateSubtype {
+        public DeviceManagementTemplateSubtype? TemplateSubtype
+        {
             get { return BackingStore?.Get<DeviceManagementTemplateSubtype?>("templateSubtype"); }
             set { BackingStore?.Set("templateSubtype", value); }
         }
         /// <summary>Template type</summary>
-        public DeviceManagementTemplateType? TemplateType {
+        public DeviceManagementTemplateType? TemplateType
+        {
             get { return BackingStore?.Get<DeviceManagementTemplateType?>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>The template&apos;s version information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionInfo {
+        public string? VersionInfo
+        {
             get { return BackingStore?.Get<string?>("versionInfo"); }
             set { BackingStore?.Set("versionInfo", value); }
         }
 #nullable restore
 #else
-        public string VersionInfo {
+        public string VersionInfo
+        {
             get { return BackingStore?.Get<string>("versionInfo"); }
             set { BackingStore?.Set("versionInfo", value); }
         }
@@ -147,18 +166,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categories", n => { Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>(DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"intentCount", n => { IntentCount = n.GetIntValue(); } },
-                {"isDeprecated", n => { IsDeprecated = n.GetBoolValue(); } },
-                {"migratableTo", n => { MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"templateSubtype", n => { TemplateSubtype = n.GetEnumValue<DeviceManagementTemplateSubtype>(); } },
-                {"templateType", n => { TemplateType = n.GetEnumValue<DeviceManagementTemplateType>(); } },
-                {"versionInfo", n => { VersionInfo = n.GetStringValue(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<DeviceManagementTemplateSettingCategory>(DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "intentCount", n => { IntentCount = n.GetIntValue(); } },
+                { "isDeprecated", n => { IsDeprecated = n.GetBoolValue(); } },
+                { "migratableTo", n => { MigratableTo = n.GetCollectionOfObjectValues<DeviceManagementTemplate>(DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templateSubtype", n => { TemplateSubtype = n.GetEnumValue<DeviceManagementTemplateSubtype>(); } },
+                { "templateType", n => { TemplateType = n.GetEnumValue<DeviceManagementTemplateType>(); } },
+                { "versionInfo", n => { VersionInfo = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class ValidateOperation : Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable 
+    public class ValidateOperation : Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Set of errors discovered through validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.PublicError>? Errors {
+        public List<Microsoft.Graph.Beta.Models.PublicError>? Errors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicError>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.PublicError> Errors {
+        public List<Microsoft.Graph.Beta.Models.PublicError> Errors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>Set of warnings discovered through validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.PublicError>? Warnings {
+        public List<Microsoft.Graph.Beta.Models.PublicError>? Warnings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicError>?>("warnings"); }
             set { BackingStore?.Set("warnings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.PublicError> Warnings {
+        public List<Microsoft.Graph.Beta.Models.PublicError> Warnings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PublicError>>("warnings"); }
             set { BackingStore?.Set("warnings", value); }
         }
@@ -60,8 +65,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"warnings", n => { Warnings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "warnings", n => { Warnings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

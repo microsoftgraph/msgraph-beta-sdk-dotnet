@@ -5,53 +5,62 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AssignmentReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignmentReviewSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The default decision to apply if the request isn&apos;t reviewed within the period specified in durationInDays. The possible values are: acceptAccessRecommendation, keepAccess, removeAccess, and unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior {
+        public Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior? AccessReviewTimeoutBehavior
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior?>("accessReviewTimeoutBehavior"); }
             set { BackingStore?.Set("accessReviewTimeoutBehavior", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days within which reviewers should provide input.</summary>
-        public int? DurationInDays {
+        public int? DurationInDays
+        {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>Specifies whether to display recommendations to the reviewer. The default value is true</summary>
-        public bool? IsAccessRecommendationEnabled {
+        public bool? IsAccessRecommendationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isAccessRecommendationEnabled"); }
             set { BackingStore?.Set("isAccessRecommendationEnabled", value); }
         }
         /// <summary>Specifies whether the reviewer must provide justification for the approval. The default value is true.</summary>
-        public bool? IsApprovalJustificationRequired {
+        public bool? IsApprovalJustificationRequired
+        {
             get { return BackingStore?.Get<bool?>("isApprovalJustificationRequired"); }
             set { BackingStore?.Set("isApprovalJustificationRequired", value); }
         }
         /// <summary>If true, access reviews are required for assignments from this policy.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -59,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The interval for recurrence, such as monthly or quarterly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurrenceType {
+        public string? RecurrenceType
+        {
             get { return BackingStore?.Get<string?>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
 #nullable restore
 #else
-        public string RecurrenceType {
+        public string RecurrenceType
+        {
             get { return BackingStore?.Get<string>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
@@ -73,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSet>? Reviewers {
+        public List<UserSet>? Reviewers
+        {
             get { return BackingStore?.Get<List<UserSet>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<UserSet> Reviewers {
+        public List<UserSet> Reviewers
+        {
             get { return BackingStore?.Get<List<UserSet>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
@@ -87,19 +100,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Who should be asked to do the review, either Self, Reviewers or Manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewerType {
+        public string? ReviewerType
+        {
             get { return BackingStore?.Get<string?>("reviewerType"); }
             set { BackingStore?.Set("reviewerType", value); }
         }
 #nullable restore
 #else
-        public string ReviewerType {
+        public string ReviewerType
+        {
             get { return BackingStore?.Get<string>("reviewerType"); }
             set { BackingStore?.Set("reviewerType", value); }
         }
 #endif
         /// <summary>When the first review should start.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -129,16 +145,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<AccessReviewTimeoutBehavior>(); } },
-                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
-                {"isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
-                {"isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
-                {"reviewerType", n => { ReviewerType = n.GetStringValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<AccessReviewTimeoutBehavior>(); } },
+                { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                { "isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
+                { "isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
+                { "reviewerType", n => { ReviewerType = n.GetStringValue(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

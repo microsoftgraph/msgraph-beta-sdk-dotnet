@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SourcedAttribute : CustomClaimAttributeBase, IParsable 
+    public class SourcedAttribute : CustomClaimAttributeBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #endif
         /// <summary>The isExtensionAttribute property</summary>
-        public bool? IsExtensionAttribute {
+        public bool? IsExtensionAttribute
+        {
             get { return BackingStore?.Get<bool?>("isExtensionAttribute"); }
             set { BackingStore?.Set("isExtensionAttribute", value); }
         }
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source {
+        public string? Source
+        {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public string Source {
+        public string Source
+        {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"isExtensionAttribute", n => { IsExtensionAttribute = n.GetBoolValue(); } },
-                {"source", n => { Source = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "isExtensionAttribute", n => { IsExtensionAttribute = n.GetBoolValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
             };
         }
         /// <summary>

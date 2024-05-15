@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp : OnInteractiveAuthFlowStartHandler, IParsable 
+    public class OnInteractiveAuthFlowStartExternalUsersSelfServiceSignUp : OnInteractiveAuthFlowStartHandler, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Optional. Specifies whether the authentication flow includes an option to sign up (create account) and sign in. Default value is false meaning only sign in is enabled.</summary>
-        public bool? IsSignUpAllowed {
+        public bool? IsSignUpAllowed
+        {
             get { return BackingStore?.Get<bool?>("isSignUpAllowed"); }
             set { BackingStore?.Set("isSignUpAllowed", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isSignUpAllowed", n => { IsSignUpAllowed = n.GetBoolValue(); } },
+                { "isSignUpAllowed", n => { IsSignUpAllowed = n.GetBoolValue(); } },
             };
         }
         /// <summary>

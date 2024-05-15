@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class CollaborationRoot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class CollaborationRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains metadata for analyzed emails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnalyzedEmail>? AnalyzedEmails {
+        public List<AnalyzedEmail>? AnalyzedEmails
+        {
             get { return BackingStore?.Get<List<AnalyzedEmail>?>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
         }
 #nullable restore
 #else
-        public List<AnalyzedEmail> AnalyzedEmails {
+        public List<AnalyzedEmail> AnalyzedEmails
+        {
             get { return BackingStore?.Get<List<AnalyzedEmail>>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an AirPrint destination.
     /// </summary>
-    public class AirPrintDestination : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AirPrintDestination : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If true AirPrint connections are secured by Transport Layer Security (TLS). Default is false. Available in iOS 11.0 and later.</summary>
-        public bool? ForceTls {
+        public bool? ForceTls
+        {
             get { return BackingStore?.Get<bool?>("forceTls"); }
             set { BackingStore?.Set("forceTls", value); }
         }
         /// <summary>The IP Address of the AirPrint destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The listening port of the AirPrint destination. If this key is not specified AirPrint will use the default port. Available in iOS 11.0 and later.</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>The Resource Path associated with the printer. This corresponds to the rp parameter of the ipps.tcp Bonjour record. For example: printers/CanonMG5300series, printers/XeroxPhaser7600, ipp/print, EpsonIPPPrinter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourcePath {
+        public string? ResourcePath
+        {
             get { return BackingStore?.Get<string?>("resourcePath"); }
             set { BackingStore?.Set("resourcePath", value); }
         }
 #nullable restore
 #else
-        public string ResourcePath {
+        public string ResourcePath
+        {
             get { return BackingStore?.Get<string>("resourcePath"); }
             set { BackingStore?.Set("resourcePath", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"forceTls", n => { ForceTls = n.GetBoolValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
-                {"resourcePath", n => { ResourcePath = n.GetStringValue(); } },
+                { "forceTls", n => { ForceTls = n.GetBoolValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "resourcePath", n => { ResourcePath = n.GetStringValue(); } },
             };
         }
         /// <summary>

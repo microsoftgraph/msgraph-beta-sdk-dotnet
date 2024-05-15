@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents a Chromebook tenant settings
     /// </summary>
-    public class ChromeOSOnboardingSettings : Entity, IParsable 
+    public class ChromeOSOnboardingSettings : Entity, IParsable
     {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
-        public DateTimeOffset? LastDirectorySyncDateTime {
+        public DateTimeOffset? LastDirectorySyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDirectorySyncDateTime"); }
             set { BackingStore?.Set("lastDirectorySyncDateTime", value); }
         }
         /// <summary>The ChromebookTenant&apos;s LastModifiedDateTime</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The onboarding status of the tenant.</summary>
-        public Microsoft.Graph.Beta.Models.OnboardingStatus? OnboardingStatus {
+        public Microsoft.Graph.Beta.Models.OnboardingStatus? OnboardingStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerUserPrincipalName {
+        public string? OwnerUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string OwnerUserPrincipalName {
+        public string OwnerUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
@@ -57,10 +63,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastDirectorySyncDateTime", n => { LastDirectorySyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
-                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
+                { "lastDirectorySyncDateTime", n => { LastDirectorySyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                { "ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

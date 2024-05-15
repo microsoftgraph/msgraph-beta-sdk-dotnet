@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RiskUserActivity : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RiskUserActivity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
-        public RiskDetail? Detail {
+        public RiskDetail? Detail
+        {
             get { return BackingStore?.Get<RiskDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The eventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskEventType?>? EventTypes {
+        public List<RiskEventType?>? EventTypes
+        {
             get { return BackingStore?.Get<List<RiskEventType?>?>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
 #nullable restore
 #else
-        public List<RiskEventType?> EventTypes {
+        public List<RiskEventType?> EventTypes
+        {
             get { return BackingStore?.Get<List<RiskEventType?>>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The riskEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RiskEventTypes {
+        public List<string>? RiskEventTypes
+        {
             get { return BackingStore?.Get<List<string>?>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #nullable restore
 #else
-        public List<string> RiskEventTypes {
+        public List<string> RiskEventTypes
+        {
             get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
-                {"eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
+                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CrossTenantAccessPolicyTenantRestrictions : CrossTenantAccessPolicyB2BSetting, IParsable 
+    public class CrossTenantAccessPolicyTenantRestrictions : CrossTenantAccessPolicyB2BSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the rule for filtering devices and whether devices satisfying the rule should be allowed or blocked. Not implemented.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DevicesFilter? Devices {
+        public DevicesFilter? Devices
+        {
             get { return BackingStore?.Get<DevicesFilter?>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
 #nullable restore
 #else
-        public DevicesFilter Devices {
+        public DevicesFilter Devices
+        {
             get { return BackingStore?.Get<DevicesFilter>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"devices", n => { Devices = n.GetObjectValue<DevicesFilter>(DevicesFilter.CreateFromDiscriminatorValue); } },
+                { "devices", n => { Devices = n.GetObjectValue<DevicesFilter>(DevicesFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

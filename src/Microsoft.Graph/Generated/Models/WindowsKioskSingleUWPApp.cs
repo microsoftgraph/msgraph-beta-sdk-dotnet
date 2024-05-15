@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The class used to identify the UWP app info for the kiosk configuration
     /// </summary>
-    public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable 
+    public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>The uwpApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsKioskUWPApp? UwpApp {
+        public WindowsKioskUWPApp? UwpApp
+        {
             get { return BackingStore?.Get<WindowsKioskUWPApp?>("uwpApp"); }
             set { BackingStore?.Set("uwpApp", value); }
         }
 #nullable restore
 #else
-        public WindowsKioskUWPApp UwpApp {
+        public WindowsKioskUWPApp UwpApp
+        {
             get { return BackingStore?.Get<WindowsKioskUWPApp>("uwpApp"); }
             set { BackingStore?.Set("uwpApp", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"uwpApp", n => { UwpApp = n.GetObjectValue<WindowsKioskUWPApp>(WindowsKioskUWPApp.CreateFromDiscriminatorValue); } },
+                { "uwpApp", n => { UwpApp = n.GetObjectValue<WindowsKioskUWPApp>(WindowsKioskUWPApp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

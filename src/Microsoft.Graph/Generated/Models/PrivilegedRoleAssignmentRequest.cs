@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedRoleAssignmentRequest : Entity, IParsable 
+    public class PrivilegedRoleAssignmentRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignmentState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentState {
+        public string? AssignmentState
+        {
             get { return BackingStore?.Get<string?>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
 #nullable restore
 #else
-        public string AssignmentState {
+        public string AssignmentState
+        {
             get { return BackingStore?.Get<string>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Duration {
+        public string? Duration
+        {
             get { return BackingStore?.Get<string?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
 #nullable restore
 #else
-        public string Duration {
+        public string Duration
+        {
             get { return BackingStore?.Get<string>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #endif
         /// <summary>The requestedDateTime property</summary>
-        public DateTimeOffset? RequestedDateTime {
+        public DateTimeOffset? RequestedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTime"); }
             set { BackingStore?.Set("requestedDateTime", value); }
         }
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRole? RoleInfo {
+        public PrivilegedRole? RoleInfo
+        {
             get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRole RoleInfo {
+        public PrivilegedRole RoleInfo
+        {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSchedule? Schedule {
+        public GovernanceSchedule? Schedule
+        {
             get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public GovernanceSchedule Schedule {
+        public GovernanceSchedule Schedule
+        {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ticketNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketNumber {
+        public string? TicketNumber
+        {
             get { return BackingStore?.Get<string?>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
 #nullable restore
 #else
-        public string TicketNumber {
+        public string TicketNumber
+        {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ticketSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketSystem {
+        public string? TicketSystem
+        {
             get { return BackingStore?.Get<string?>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
 #nullable restore
 #else
-        public string TicketSystem {
+        public string TicketSystem
+        {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -186,18 +210,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentState", n => { AssignmentState = n.GetStringValue(); } },
-                {"duration", n => { Duration = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
-                {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "assignmentState", n => { AssignmentState = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                { "ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

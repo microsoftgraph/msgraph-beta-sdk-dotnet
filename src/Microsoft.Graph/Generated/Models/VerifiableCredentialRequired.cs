@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VerifiableCredentialRequired : VerifiableCredentialRequirementStatus, IParsable 
+    public class VerifiableCredentialRequired : VerifiableCredentialRequirementStatus, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>When the presentation request will expire and a new one will need to be generated.</summary>
-        public DateTimeOffset? ExpiryDateTime {
+        public DateTimeOffset? ExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
         /// <summary>A URL that launches the digital wallet and starts the presentation process. You can present this URL to the user if they can&apos;t scan the QR code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

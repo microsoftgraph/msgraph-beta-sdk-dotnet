@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod
+{
     #pragma warning disable CS1591
-    public class GetOffice365GroupsActivityStorageWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetOffice365GroupsActivityStorageWithPeriodGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Office365GroupsActivityStorage>? Value {
+        public List<Office365GroupsActivityStorage>? Value
+        {
             get { return BackingStore?.Get<List<Office365GroupsActivityStorage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Office365GroupsActivityStorage> Value {
+        public List<Office365GroupsActivityStorage> Value
+        {
             get { return BackingStore?.Get<List<Office365GroupsActivityStorage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeri
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityStorage>(Office365GroupsActivityStorage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityStorage>(Office365GroupsActivityStorage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

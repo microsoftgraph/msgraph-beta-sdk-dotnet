@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android Fully Managed device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration, IParsable 
+    public class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration, IParsable
     {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
-        public bool? AlwaysOn {
+        public bool? AlwaysOn
+        {
             get { return BackingStore?.Get<bool?>("alwaysOn"); }
             set { BackingStore?.Set("alwaysOn", value); }
         }
         /// <summary>If always-on VPN connection is enabled, whether or not to lock network traffic when that VPN is disconnected.</summary>
-        public bool? AlwaysOnLockdown {
+        public bool? AlwaysOnLockdown
+        {
             get { return BackingStore?.Get<bool?>("alwaysOnLockdown"); }
             set { BackingStore?.Set("alwaysOnLockdown", value); }
         }
         /// <summary>Android VPN connection type.</summary>
-        public AndroidVpnConnectionType? ConnectionType {
+        public AndroidVpnConnectionType? ConnectionType
+        {
             get { return BackingStore?.Get<AndroidVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? CustomData {
+        public List<KeyValue>? CustomData
+        {
             get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> CustomData {
+        public List<KeyValue> CustomData
+        {
             get { return BackingStore?.Get<List<KeyValue>>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
@@ -42,13 +48,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomKeyValueData {
+        public List<KeyValuePair>? CustomKeyValueData
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomKeyValueData {
+        public List<KeyValuePair> CustomKeyValueData
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
@@ -56,13 +64,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
+        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
@@ -70,13 +80,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerCertificateProfileBase? IdentityCertificate {
+        public AndroidDeviceOwnerCertificateProfileBase? IdentityCertificate
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate {
+        public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
@@ -84,13 +96,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Microsoft Tunnel site ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MicrosoftTunnelSiteId {
+        public string? MicrosoftTunnelSiteId
+        {
             get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
 #nullable restore
 #else
-        public string MicrosoftTunnelSiteId {
+        public string MicrosoftTunnelSiteId
+        {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
@@ -98,13 +112,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProxyExclusionList {
+        public List<string>? ProxyExclusionList
+        {
             get { return BackingStore?.Get<List<string>?>("proxyExclusionList"); }
             set { BackingStore?.Set("proxyExclusionList", value); }
         }
 #nullable restore
 #else
-        public List<string> ProxyExclusionList {
+        public List<string> ProxyExclusionList
+        {
             get { return BackingStore?.Get<List<string>>("proxyExclusionList"); }
             set { BackingStore?.Set("proxyExclusionList", value); }
         }
@@ -112,13 +128,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Proxy server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VpnProxyServer? ProxyServer {
+        public VpnProxyServer? ProxyServer
+        {
             get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #nullable restore
 #else
-        public VpnProxyServer ProxyServer {
+        public VpnProxyServer ProxyServer
+        {
             get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? TargetedMobileApps {
+        public List<AppListItem>? TargetedMobileApps
+        {
             get { return BackingStore?.Get<List<AppListItem>?>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> TargetedMobileApps {
+        public List<AppListItem> TargetedMobileApps
+        {
             get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
@@ -140,13 +160,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Targeted App package IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TargetedPackageIds {
+        public List<string>? TargetedPackageIds
+        {
             get { return BackingStore?.Get<List<string>?>("targetedPackageIds"); }
             set { BackingStore?.Set("targetedPackageIds", value); }
         }
 #nullable restore
 #else
-        public List<string> TargetedPackageIds {
+        public List<string> TargetedPackageIds
+        {
             get { return BackingStore?.Get<List<string>>("targetedPackageIds"); }
             set { BackingStore?.Set("targetedPackageIds", value); }
         }
@@ -176,18 +198,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alwaysOn", n => { AlwaysOn = n.GetBoolValue(); } },
-                {"alwaysOnLockdown", n => { AlwaysOnLockdown = n.GetBoolValue(); } },
-                {"connectionType", n => { ConnectionType = n.GetEnumValue<AndroidVpnConnectionType>(); } },
-                {"customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
-                {"identityCertificate", n => { IdentityCertificate = n.GetObjectValue<AndroidDeviceOwnerCertificateProfileBase>(AndroidDeviceOwnerCertificateProfileBase.CreateFromDiscriminatorValue); } },
-                {"microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
-                {"proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"proxyServer", n => { ProxyServer = n.GetObjectValue<VpnProxyServer>(VpnProxyServer.CreateFromDiscriminatorValue); } },
-                {"targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"targetedPackageIds", n => { TargetedPackageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "alwaysOn", n => { AlwaysOn = n.GetBoolValue(); } },
+                { "alwaysOnLockdown", n => { AlwaysOnLockdown = n.GetBoolValue(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<AndroidVpnConnectionType>(); } },
+                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<AndroidDeviceOwnerCertificateProfileBase>(AndroidDeviceOwnerCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
+                { "proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "proxyServer", n => { ProxyServer = n.GetObjectValue<VpnProxyServer>(VpnProxyServer.CreateFromDiscriminatorValue); } },
+                { "targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targetedPackageIds", n => { TargetedPackageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

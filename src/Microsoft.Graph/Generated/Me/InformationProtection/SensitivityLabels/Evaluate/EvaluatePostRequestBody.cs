@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Evaluate {
+namespace Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Evaluate
+{
     #pragma warning disable CS1591
-    public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Evalua
         /// <summary>The currentLabel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.CurrentLabel? CurrentLabel {
+        public Microsoft.Graph.Beta.Models.CurrentLabel? CurrentLabel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel?>("currentLabel"); }
             set { BackingStore?.Set("currentLabel", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel {
+        public Microsoft.Graph.Beta.Models.CurrentLabel CurrentLabel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel"); }
             set { BackingStore?.Set("currentLabel", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Evalua
         /// <summary>The discoveredSensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DiscoveredSensitiveType>? DiscoveredSensitiveTypes {
+        public List<DiscoveredSensitiveType>? DiscoveredSensitiveTypes
+        {
             get { return BackingStore?.Get<List<DiscoveredSensitiveType>?>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
 #nullable restore
 #else
-        public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes {
+        public List<DiscoveredSensitiveType> DiscoveredSensitiveTypes
+        {
             get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Beta.Me.InformationProtection.SensitivityLabels.Evalua
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"currentLabel", n => { CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
-                {"discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "currentLabel", n => { CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
+                { "discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

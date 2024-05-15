@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationIdentityMatchingOptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EducationIdentityMatchingOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appliesTo property</summary>
-        public EducationUserRole? AppliesTo {
+        public EducationUserRole? AppliesTo
+        {
             get { return BackingStore?.Get<EducationUserRole?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the source property, which should be a field name in the source data. This property is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourcePropertyName {
+        public string? SourcePropertyName
+        {
             get { return BackingStore?.Get<string?>("sourcePropertyName"); }
             set { BackingStore?.Set("sourcePropertyName", value); }
         }
 #nullable restore
 #else
-        public string SourcePropertyName {
+        public string SourcePropertyName
+        {
             get { return BackingStore?.Get<string>("sourcePropertyName"); }
             set { BackingStore?.Set("sourcePropertyName", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The domain to suffix with the source property to match on the target. If provided as null, the source property will be used to match with the target property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetDomain {
+        public string? TargetDomain
+        {
             get { return BackingStore?.Get<string?>("targetDomain"); }
             set { BackingStore?.Set("targetDomain", value); }
         }
 #nullable restore
 #else
-        public string TargetDomain {
+        public string TargetDomain
+        {
             get { return BackingStore?.Get<string>("targetDomain"); }
             set { BackingStore?.Set("targetDomain", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the target property, which should be a valid property in Microsoft Entra ID. This property is case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetPropertyName {
+        public string? TargetPropertyName
+        {
             get { return BackingStore?.Get<string?>("targetPropertyName"); }
             set { BackingStore?.Set("targetPropertyName", value); }
         }
 #nullable restore
 #else
-        public string TargetPropertyName {
+        public string TargetPropertyName
+        {
             get { return BackingStore?.Get<string>("targetPropertyName"); }
             set { BackingStore?.Set("targetPropertyName", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appliesTo", n => { AppliesTo = n.GetEnumValue<EducationUserRole>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourcePropertyName", n => { SourcePropertyName = n.GetStringValue(); } },
-                {"targetDomain", n => { TargetDomain = n.GetStringValue(); } },
-                {"targetPropertyName", n => { TargetPropertyName = n.GetStringValue(); } },
+                { "appliesTo", n => { AppliesTo = n.GetEnumValue<EducationUserRole>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sourcePropertyName", n => { SourcePropertyName = n.GetStringValue(); } },
+                { "targetDomain", n => { TargetDomain = n.GetStringValue(); } },
+                { "targetPropertyName", n => { TargetPropertyName = n.GetStringValue(); } },
             };
         }
         /// <summary>

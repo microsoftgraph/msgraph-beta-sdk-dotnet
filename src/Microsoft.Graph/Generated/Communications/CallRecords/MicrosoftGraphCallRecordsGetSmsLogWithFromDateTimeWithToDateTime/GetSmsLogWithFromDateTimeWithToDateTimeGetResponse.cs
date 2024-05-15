@@ -6,21 +6,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime {
+namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetSmsLogWithFromDateTimeWithToDateTime
+{
     #pragma warning disable CS1591
-    public class GetSmsLogWithFromDateTimeWithToDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetSmsLogWithFromDateTimeWithToDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SmsLogRow>? Value {
+        public List<SmsLogRow>? Value
+        {
             get { return BackingStore?.Get<List<SmsLogRow>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<SmsLogRow> Value {
+        public List<SmsLogRow> Value
+        {
             get { return BackingStore?.Get<List<SmsLogRow>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -43,7 +46,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallReco
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<SmsLogRow>(SmsLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<SmsLogRow>(SmsLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

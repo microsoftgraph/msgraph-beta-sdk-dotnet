@@ -4,33 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows update catalog item entity
     /// </summary>
-    public class WindowsUpdateCatalogItem : Entity, IParsable 
+    public class WindowsUpdateCatalogItem : Entity, IParsable
     {
         /// <summary>The display name for the catalog item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The last supported date for a catalog item</summary>
-        public DateTimeOffset? EndOfSupportDate {
+        public DateTimeOffset? EndOfSupportDate
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endOfSupportDate"); }
             set { BackingStore?.Set("endOfSupportDate", value); }
         }
         /// <summary>The date the catalog item was released</summary>
-        public DateTimeOffset? ReleaseDateTime {
+        public DateTimeOffset? ReleaseDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"endOfSupportDate", n => { EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
-                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endOfSupportDate", n => { EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
+                { "releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

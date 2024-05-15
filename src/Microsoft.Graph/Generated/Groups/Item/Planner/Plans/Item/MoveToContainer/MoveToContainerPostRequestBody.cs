@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.MoveToContainer {
+namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.MoveToContainer
+{
     #pragma warning disable CS1591
-    public class MoveToContainerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MoveToContainerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.MoveToContainer {
         /// <summary>The container property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerPlanContainer? Container {
+        public PlannerPlanContainer? Container
+        {
             get { return BackingStore?.Get<PlannerPlanContainer?>("container"); }
             set { BackingStore?.Set("container", value); }
         }
 #nullable restore
 #else
-        public PlannerPlanContainer Container {
+        public PlannerPlanContainer Container
+        {
             get { return BackingStore?.Get<PlannerPlanContainer>("container"); }
             set { BackingStore?.Set("container", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.MoveToContainer {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"container", n => { Container = n.GetObjectValue<PlannerPlanContainer>(PlannerPlanContainer.CreateFromDiscriminatorValue); } },
+                { "container", n => { Container = n.GetObjectValue<PlannerPlanContainer>(PlannerPlanContainer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

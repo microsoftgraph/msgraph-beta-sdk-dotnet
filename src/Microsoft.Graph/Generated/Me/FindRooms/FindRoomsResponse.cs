@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.FindRooms {
+namespace Microsoft.Graph.Beta.Me.FindRooms
+{
     [Obsolete("This class is obsolete. Use FindRoomsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindRoomsResponse : FindRoomsGetResponse, IParsable 
+    public class FindRoomsResponse : FindRoomsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

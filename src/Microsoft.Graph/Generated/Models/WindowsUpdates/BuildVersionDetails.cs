@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class BuildVersionDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BuildVersionDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The build number of the product release. Read-only.</summary>
-        public int? BuildNumber {
+        public int? BuildNumber
+        {
             get { return BackingStore?.Get<int?>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
         /// <summary>The major version of the product release. Read-only.</summary>
-        public int? MajorVersion {
+        public int? MajorVersion
+        {
             get { return BackingStore?.Get<int?>("majorVersion"); }
             set { BackingStore?.Set("majorVersion", value); }
         }
         /// <summary>The minor version of the product release. Read-only.</summary>
-        public int? MinorVersion {
+        public int? MinorVersion
+        {
             get { return BackingStore?.Get<int?>("minorVersion"); }
             set { BackingStore?.Set("minorVersion", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The update build revision number of the product revision. Read-only.</summary>
-        public int? UpdateBuildRevision {
+        public int? UpdateBuildRevision
+        {
             get { return BackingStore?.Get<int?>("updateBuildRevision"); }
             set { BackingStore?.Set("updateBuildRevision", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"buildNumber", n => { BuildNumber = n.GetIntValue(); } },
-                {"majorVersion", n => { MajorVersion = n.GetIntValue(); } },
-                {"minorVersion", n => { MinorVersion = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"updateBuildRevision", n => { UpdateBuildRevision = n.GetIntValue(); } },
+                { "buildNumber", n => { BuildNumber = n.GetIntValue(); } },
+                { "majorVersion", n => { MajorVersion = n.GetIntValue(); } },
+                { "minorVersion", n => { MinorVersion = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "updateBuildRevision", n => { UpdateBuildRevision = n.GetIntValue(); } },
             };
         }
         /// <summary>

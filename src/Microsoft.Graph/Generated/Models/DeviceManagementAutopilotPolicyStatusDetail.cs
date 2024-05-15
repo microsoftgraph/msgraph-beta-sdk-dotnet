@@ -4,48 +4,56 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Policy status detail item contained by an autopilot event.
     /// </summary>
-    public class DeviceManagementAutopilotPolicyStatusDetail : Entity, IParsable 
+    public class DeviceManagementAutopilotPolicyStatusDetail : Entity, IParsable
     {
         /// <summary>The complianceStatus property</summary>
-        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus {
+        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus
+        {
             get { return BackingStore?.Get<DeviceManagementAutopilotPolicyComplianceStatus?>("complianceStatus"); }
             set { BackingStore?.Set("complianceStatus", value); }
         }
         /// <summary>The friendly name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The errorode associated with the compliance or enforcement status of the policy. Error code for enforcement status takes precedence if it exists.</summary>
-        public int? ErrorCode {
+        public int? ErrorCode
+        {
             get { return BackingStore?.Get<int?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Timestamp of the reported policy status</summary>
-        public DateTimeOffset? LastReportedDateTime {
+        public DateTimeOffset? LastReportedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The policyType property</summary>
-        public DeviceManagementAutopilotPolicyType? PolicyType {
+        public DeviceManagementAutopilotPolicyType? PolicyType
+        {
             get { return BackingStore?.Get<DeviceManagementAutopilotPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session</summary>
-        public bool? TrackedOnEnrollmentStatus {
+        public bool? TrackedOnEnrollmentStatus
+        {
             get { return BackingStore?.Get<bool?>("trackedOnEnrollmentStatus"); }
             set { BackingStore?.Set("trackedOnEnrollmentStatus", value); }
         }
@@ -67,12 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"complianceStatus", n => { ComplianceStatus = n.GetEnumValue<DeviceManagementAutopilotPolicyComplianceStatus>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
-                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"policyType", n => { PolicyType = n.GetEnumValue<DeviceManagementAutopilotPolicyType>(); } },
-                {"trackedOnEnrollmentStatus", n => { TrackedOnEnrollmentStatus = n.GetBoolValue(); } },
+                { "complianceStatus", n => { ComplianceStatus = n.GetEnumValue<DeviceManagementAutopilotPolicyComplianceStatus>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "policyType", n => { PolicyType = n.GetEnumValue<DeviceManagementAutopilotPolicyType>(); } },
+                { "trackedOnEnrollmentStatus", n => { TrackedOnEnrollmentStatus = n.GetBoolValue(); } },
             };
         }
         /// <summary>

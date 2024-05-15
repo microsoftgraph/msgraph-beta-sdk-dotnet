@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class AlertImpact : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlertImpact : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType? AggregationType {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType? AggregationType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType?>("aggregationType"); }
             set { BackingStore?.Set("aggregationType", value); }
         }
         /// <summary>The detail information of the impact. For example, if the Frontline Cloud PCs near concurrency limit alert is triggered, the details contain the impacted Frontline license SKU name, such as Windows 365 Frontline 2 vCPU/8GB/128GB, and the corresponding impacted value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? AlertImpactDetails {
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? AlertImpactDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("alertImpactDetails"); }
             set { BackingStore?.Set("alertImpactDetails", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.KeyValuePair> AlertImpactDetails {
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> AlertImpactDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("alertImpactDetails"); }
             set { BackingStore?.Set("alertImpactDetails", value); }
         }
@@ -39,19 +44,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that six Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.</summary>
-        public int? Value {
+        public int? Value
+        {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"aggregationType", n => { AggregationType = n.GetEnumValue<AggregationType>(); } },
-                {"alertImpactDetails", n => { AlertImpactDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetIntValue(); } },
+                { "aggregationType", n => { AggregationType = n.GetEnumValue<AggregationType>(); } },
+                { "alertImpactDetails", n => { AlertImpactDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>

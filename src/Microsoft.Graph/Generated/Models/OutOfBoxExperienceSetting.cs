@@ -5,60 +5,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The Windows Autopilot Deployment Profile settings used by the device for the out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported.
     /// </summary>
-    public class OutOfBoxExperienceSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OutOfBoxExperienceSetting : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceUsageType property</summary>
-        public WindowsDeviceUsageType? DeviceUsageType {
+        public WindowsDeviceUsageType? DeviceUsageType
+        {
             get { return BackingStore?.Get<WindowsDeviceUsageType?>("deviceUsageType"); }
             set { BackingStore?.Set("deviceUsageType", value); }
         }
         /// <summary>When TRUE, the link that allows user to start over with a different account on company sign-in is hidden. When false, the link that allows user to start over with a different account on company sign-in is available. Default value is FALSE.</summary>
-        public bool? EscapeLinkHidden {
+        public bool? EscapeLinkHidden
+        {
             get { return BackingStore?.Get<bool?>("escapeLinkHidden"); }
             set { BackingStore?.Set("escapeLinkHidden", value); }
         }
         /// <summary>When TRUE, EULA is hidden to the end user during OOBE. When FALSE, EULA is shown to the end user during OOBE. Default value is FALSE.</summary>
-        public bool? EulaHidden {
+        public bool? EulaHidden
+        {
             get { return BackingStore?.Get<bool?>("eulaHidden"); }
             set { BackingStore?.Set("eulaHidden", value); }
         }
         /// <summary>When TRUE, the keyboard selection page is hidden to the end user during OOBE if Language and Region are set. When FALSE, the keyboard selection page is skipped during OOBE.</summary>
-        public bool? KeyboardSelectionPageSkipped {
+        public bool? KeyboardSelectionPageSkipped
+        {
             get { return BackingStore?.Get<bool?>("keyboardSelectionPageSkipped"); }
             set { BackingStore?.Set("keyboardSelectionPageSkipped", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>When TRUE, privacy settings is hidden to the end user during OOBE. When FALSE, privacy settings is shown to the end user during OOBE. Default value is FALSE.</summary>
-        public bool? PrivacySettingsHidden {
+        public bool? PrivacySettingsHidden
+        {
             get { return BackingStore?.Get<bool?>("privacySettingsHidden"); }
             set { BackingStore?.Set("privacySettingsHidden", value); }
         }
         /// <summary>The userType property</summary>
-        public WindowsUserType? UserType {
+        public WindowsUserType? UserType
+        {
             get { return BackingStore?.Get<WindowsUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
@@ -88,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
-                {"escapeLinkHidden", n => { EscapeLinkHidden = n.GetBoolValue(); } },
-                {"eulaHidden", n => { EulaHidden = n.GetBoolValue(); } },
-                {"keyboardSelectionPageSkipped", n => { KeyboardSelectionPageSkipped = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"privacySettingsHidden", n => { PrivacySettingsHidden = n.GetBoolValue(); } },
-                {"userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
+                { "deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
+                { "escapeLinkHidden", n => { EscapeLinkHidden = n.GetBoolValue(); } },
+                { "eulaHidden", n => { EulaHidden = n.GetBoolValue(); } },
+                { "keyboardSelectionPageSkipped", n => { KeyboardSelectionPageSkipped = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "privacySettingsHidden", n => { PrivacySettingsHidden = n.GetBoolValue(); } },
+                { "userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StrongAuthenticationPhoneAppDetail : Entity, IParsable 
+    public class StrongAuthenticationPhoneAppDetail : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authenticationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationType {
+        public string? AuthenticationType
+        {
             get { return BackingStore?.Get<string?>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
 #nullable restore
 #else
-        public string AuthenticationType {
+        public string AuthenticationType
+        {
             get { return BackingStore?.Get<string>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The authenticatorFlavor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticatorFlavor {
+        public string? AuthenticatorFlavor
+        {
             get { return BackingStore?.Get<string?>("authenticatorFlavor"); }
             set { BackingStore?.Set("authenticatorFlavor", value); }
         }
 #nullable restore
 #else
-        public string AuthenticatorFlavor {
+        public string AuthenticatorFlavor
+        {
             get { return BackingStore?.Get<string>("authenticatorFlavor"); }
             set { BackingStore?.Set("authenticatorFlavor", value); }
         }
 #endif
         /// <summary>The deviceId property</summary>
-        public Guid? DeviceId {
+        public Guid? DeviceId
+        {
             get { return BackingStore?.Get<Guid?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The deviceTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceTag {
+        public string? DeviceTag
+        {
             get { return BackingStore?.Get<string?>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
 #nullable restore
 #else
-        public string DeviceTag {
+        public string DeviceTag
+        {
             get { return BackingStore?.Get<string>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The deviceToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceToken {
+        public string? DeviceToken
+        {
             get { return BackingStore?.Get<string?>("deviceToken"); }
             set { BackingStore?.Set("deviceToken", value); }
         }
 #nullable restore
 #else
-        public string DeviceToken {
+        public string DeviceToken
+        {
             get { return BackingStore?.Get<string>("deviceToken"); }
             set { BackingStore?.Set("deviceToken", value); }
         }
@@ -87,32 +99,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hashFunction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HashFunction {
+        public string? HashFunction
+        {
             get { return BackingStore?.Get<string?>("hashFunction"); }
             set { BackingStore?.Set("hashFunction", value); }
         }
 #nullable restore
 #else
-        public string HashFunction {
+        public string HashFunction
+        {
             get { return BackingStore?.Get<string>("hashFunction"); }
             set { BackingStore?.Set("hashFunction", value); }
         }
 #endif
         /// <summary>The lastAuthenticatedDateTime property</summary>
-        public DateTimeOffset? LastAuthenticatedDateTime {
+        public DateTimeOffset? LastAuthenticatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAuthenticatedDateTime"); }
             set { BackingStore?.Set("lastAuthenticatedDateTime", value); }
         }
         /// <summary>The notificationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationType {
+        public string? NotificationType
+        {
             get { return BackingStore?.Get<string?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
 #nullable restore
 #else
-        public string NotificationType {
+        public string NotificationType
+        {
             get { return BackingStore?.Get<string>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The oathSecretKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OathSecretKey {
+        public string? OathSecretKey
+        {
             get { return BackingStore?.Get<string?>("oathSecretKey"); }
             set { BackingStore?.Set("oathSecretKey", value); }
         }
 #nullable restore
 #else
-        public string OathSecretKey {
+        public string OathSecretKey
+        {
             get { return BackingStore?.Get<string>("oathSecretKey"); }
             set { BackingStore?.Set("oathSecretKey", value); }
         }
@@ -134,32 +153,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The oathTokenMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.OathTokenMetadata? OathTokenMetadata {
+        public Microsoft.Graph.Beta.Models.OathTokenMetadata? OathTokenMetadata
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata?>("oathTokenMetadata"); }
             set { BackingStore?.Set("oathTokenMetadata", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.OathTokenMetadata OathTokenMetadata {
+        public Microsoft.Graph.Beta.Models.OathTokenMetadata OathTokenMetadata
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata>("oathTokenMetadata"); }
             set { BackingStore?.Set("oathTokenMetadata", value); }
         }
 #endif
         /// <summary>The oathTokenTimeDriftInSeconds property</summary>
-        public int? OathTokenTimeDriftInSeconds {
+        public int? OathTokenTimeDriftInSeconds
+        {
             get { return BackingStore?.Get<int?>("oathTokenTimeDriftInSeconds"); }
             set { BackingStore?.Set("oathTokenTimeDriftInSeconds", value); }
         }
         /// <summary>The phoneAppVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneAppVersion {
+        public string? PhoneAppVersion
+        {
             get { return BackingStore?.Get<string?>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
 #nullable restore
 #else
-        public string PhoneAppVersion {
+        public string PhoneAppVersion
+        {
             get { return BackingStore?.Get<string>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
@@ -167,19 +191,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The tenantDeviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDeviceId {
+        public string? TenantDeviceId
+        {
             get { return BackingStore?.Get<string?>("tenantDeviceId"); }
             set { BackingStore?.Set("tenantDeviceId", value); }
         }
 #nullable restore
 #else
-        public string TenantDeviceId {
+        public string TenantDeviceId
+        {
             get { return BackingStore?.Get<string>("tenantDeviceId"); }
             set { BackingStore?.Set("tenantDeviceId", value); }
         }
 #endif
         /// <summary>The tokenGenerationIntervalInSeconds property</summary>
-        public int? TokenGenerationIntervalInSeconds {
+        public int? TokenGenerationIntervalInSeconds
+        {
             get { return BackingStore?.Get<int?>("tokenGenerationIntervalInSeconds"); }
             set { BackingStore?.Set("tokenGenerationIntervalInSeconds", value); }
         }
@@ -201,21 +228,21 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationType", n => { AuthenticationType = n.GetStringValue(); } },
-                {"authenticatorFlavor", n => { AuthenticatorFlavor = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetGuidValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
-                {"deviceToken", n => { DeviceToken = n.GetStringValue(); } },
-                {"hashFunction", n => { HashFunction = n.GetStringValue(); } },
-                {"lastAuthenticatedDateTime", n => { LastAuthenticatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notificationType", n => { NotificationType = n.GetStringValue(); } },
-                {"oathSecretKey", n => { OathSecretKey = n.GetStringValue(); } },
-                {"oathTokenMetadata", n => { OathTokenMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.OathTokenMetadata>(Microsoft.Graph.Beta.Models.OathTokenMetadata.CreateFromDiscriminatorValue); } },
-                {"oathTokenTimeDriftInSeconds", n => { OathTokenTimeDriftInSeconds = n.GetIntValue(); } },
-                {"phoneAppVersion", n => { PhoneAppVersion = n.GetStringValue(); } },
-                {"tenantDeviceId", n => { TenantDeviceId = n.GetStringValue(); } },
-                {"tokenGenerationIntervalInSeconds", n => { TokenGenerationIntervalInSeconds = n.GetIntValue(); } },
+                { "authenticationType", n => { AuthenticationType = n.GetStringValue(); } },
+                { "authenticatorFlavor", n => { AuthenticatorFlavor = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetGuidValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceTag", n => { DeviceTag = n.GetStringValue(); } },
+                { "deviceToken", n => { DeviceToken = n.GetStringValue(); } },
+                { "hashFunction", n => { HashFunction = n.GetStringValue(); } },
+                { "lastAuthenticatedDateTime", n => { LastAuthenticatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notificationType", n => { NotificationType = n.GetStringValue(); } },
+                { "oathSecretKey", n => { OathSecretKey = n.GetStringValue(); } },
+                { "oathTokenMetadata", n => { OathTokenMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.OathTokenMetadata>(Microsoft.Graph.Beta.Models.OathTokenMetadata.CreateFromDiscriminatorValue); } },
+                { "oathTokenTimeDriftInSeconds", n => { OathTokenTimeDriftInSeconds = n.GetIntValue(); } },
+                { "phoneAppVersion", n => { PhoneAppVersion = n.GetStringValue(); } },
+                { "tenantDeviceId", n => { TenantDeviceId = n.GetStringValue(); } },
+                { "tokenGenerationIntervalInSeconds", n => { TokenGenerationIntervalInSeconds = n.GetIntValue(); } },
             };
         }
         /// <summary>

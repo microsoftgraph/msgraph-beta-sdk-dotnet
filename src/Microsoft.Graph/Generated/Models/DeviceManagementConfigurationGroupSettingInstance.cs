@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Instance of a GroupSetting
     /// </summary>
-    public class DeviceManagementConfigurationGroupSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable 
+    public class DeviceManagementConfigurationGroupSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>The groupSettingValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationGroupSettingValue? GroupSettingValue {
+        public DeviceManagementConfigurationGroupSettingValue? GroupSettingValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationGroupSettingValue?>("groupSettingValue"); }
             set { BackingStore?.Set("groupSettingValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationGroupSettingValue GroupSettingValue {
+        public DeviceManagementConfigurationGroupSettingValue GroupSettingValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationGroupSettingValue>("groupSettingValue"); }
             set { BackingStore?.Set("groupSettingValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupSettingValue", n => { GroupSettingValue = n.GetObjectValue<DeviceManagementConfigurationGroupSettingValue>(DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue); } },
+                { "groupSettingValue", n => { GroupSettingValue = n.GetObjectValue<DeviceManagementConfigurationGroupSettingValue>(DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Devices.Delta {
+namespace Microsoft.Graph.Beta.Devices.Delta
+{
     #pragma warning disable CS1591
-    public class DeltaGetResponse : BaseDeltaFunctionResponse, IParsable 
+    public class DeltaGetResponse : BaseDeltaFunctionResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Device>? Value {
+        public List<Microsoft.Graph.Beta.Models.Device>? Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Device>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Device> Value {
+        public List<Microsoft.Graph.Beta.Models.Device> Value
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Device>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Devices.Delta {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Device>(Microsoft.Graph.Beta.Models.Device.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains file or folder path to detect a Win32 App
     /// </summary>
-    public class Win32LobAppFileSystemRequirement : Win32LobAppRequirement, IParsable 
+    public class Win32LobAppFileSystemRequirement : Win32LobAppRequirement, IParsable
     {
         /// <summary>A value indicating whether this file or folder is for checking 32-bit app on 64-bit system</summary>
-        public bool? Check32BitOn64System {
+        public bool? Check32BitOn64System
+        {
             get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
             set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>Contains all supported file system detection type.</summary>
-        public Win32LobAppFileSystemDetectionType? DetectionType {
+        public Win32LobAppFileSystemDetectionType? DetectionType
+        {
             get { return BackingStore?.Get<Win32LobAppFileSystemDetectionType?>("detectionType"); }
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The file or folder name to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileOrFolderName {
+        public string? FileOrFolderName
+        {
             get { return BackingStore?.Get<string?>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
 #nullable restore
 #else
-        public string FileOrFolderName {
+        public string FileOrFolderName
+        {
             get { return BackingStore?.Get<string>("fileOrFolderName"); }
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The file or folder path to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path {
+        public string? Path
+        {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
 #nullable restore
 #else
-        public string Path {
+        public string Path
+        {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
-                {"detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppFileSystemDetectionType>(); } },
-                {"fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
+                { "check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
+                { "detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppFileSystemDetectionType>(); } },
+                { "fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>

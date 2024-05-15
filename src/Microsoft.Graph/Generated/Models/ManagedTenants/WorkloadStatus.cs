@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class WorkloadStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkloadStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name for the workload. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -34,29 +38,34 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The date and time the workload was offboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OffboardedDateTime {
+        public DateTimeOffset? OffboardedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("offboardedDateTime"); }
             set { BackingStore?.Set("offboardedDateTime", value); }
         }
         /// <summary>The date and time the workload was onboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OnboardedDateTime {
+        public DateTimeOffset? OnboardedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("onboardedDateTime"); }
             set { BackingStore?.Set("onboardedDateTime", value); }
         }
         /// <summary>The onboardingStatus property</summary>
-        public WorkloadOnboardingStatus? OnboardingStatus {
+        public WorkloadOnboardingStatus? OnboardingStatus
+        {
             get { return BackingStore?.Get<WorkloadOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<WorkloadOnboardingStatus>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<WorkloadOnboardingStatus>(); } },
             };
         }
         /// <summary>

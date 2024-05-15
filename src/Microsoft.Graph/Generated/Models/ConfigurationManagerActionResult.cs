@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Result of the ConfigurationManager action
     /// </summary>
-    public class ConfigurationManagerActionResult : DeviceActionResult, IParsable 
+    public class ConfigurationManagerActionResult : DeviceActionResult, IParsable
     {
         /// <summary>Delivery state of Configuration Manager device action</summary>
-        public ConfigurationManagerActionDeliveryStatus? ActionDeliveryStatus {
+        public ConfigurationManagerActionDeliveryStatus? ActionDeliveryStatus
+        {
             get { return BackingStore?.Get<ConfigurationManagerActionDeliveryStatus?>("actionDeliveryStatus"); }
             set { BackingStore?.Set("actionDeliveryStatus", value); }
         }
         /// <summary>Error code of Configuration Manager action from client</summary>
-        public int? ErrorCode {
+        public int? ErrorCode
+        {
             get { return BackingStore?.Get<int?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
@@ -38,8 +41,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionDeliveryStatus", n => { ActionDeliveryStatus = n.GetEnumValue<ConfigurationManagerActionDeliveryStatus>(); } },
-                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                { "actionDeliveryStatus", n => { ActionDeliveryStatus = n.GetEnumValue<ConfigurationManagerActionDeliveryStatus>(); } },
+                { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
             };
         }
         /// <summary>

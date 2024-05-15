@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsAuthorizationSystem : AuthorizationSystem, IParsable 
+    public class AwsAuthorizationSystem : AuthorizationSystem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsAuthorizationSystemTypeAction>? Actions {
+        public List<AwsAuthorizationSystemTypeAction>? Actions
+        {
             get { return BackingStore?.Get<List<AwsAuthorizationSystemTypeAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<AwsAuthorizationSystemTypeAction> Actions {
+        public List<AwsAuthorizationSystemTypeAction> Actions
+        {
             get { return BackingStore?.Get<List<AwsAuthorizationSystemTypeAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAssociatedIdentities? AssociatedIdentities {
+        public AwsAssociatedIdentities? AssociatedIdentities
+        {
             get { return BackingStore?.Get<AwsAssociatedIdentities?>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #nullable restore
 #else
-        public AwsAssociatedIdentities AssociatedIdentities {
+        public AwsAssociatedIdentities AssociatedIdentities
+        {
             get { return BackingStore?.Get<AwsAssociatedIdentities>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Policies associated with the AWS authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsPolicy>? Policies {
+        public List<AwsPolicy>? Policies
+        {
             get { return BackingStore?.Get<List<AwsPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<AwsPolicy> Policies {
+        public List<AwsPolicy> Policies
+        {
             get { return BackingStore?.Get<List<AwsPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsAuthorizationSystemResource>? Resources {
+        public List<AwsAuthorizationSystemResource>? Resources
+        {
             get { return BackingStore?.Get<List<AwsAuthorizationSystemResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<AwsAuthorizationSystemResource> Resources {
+        public List<AwsAuthorizationSystemResource> Resources
+        {
             get { return BackingStore?.Get<List<AwsAuthorizationSystemResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemTypeService>? Services {
+        public List<AuthorizationSystemTypeService>? Services
+        {
             get { return BackingStore?.Get<List<AuthorizationSystemTypeService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemTypeService> Services {
+        public List<AuthorizationSystemTypeService> Services
+        {
             get { return BackingStore?.Get<List<AuthorizationSystemTypeService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actions", n => { Actions = n.GetCollectionOfObjectValues<AwsAuthorizationSystemTypeAction>(AwsAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<AwsAssociatedIdentities>(AwsAssociatedIdentities.CreateFromDiscriminatorValue); } },
-                {"policies", n => { Policies = n.GetCollectionOfObjectValues<AwsPolicy>(AwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<AwsAuthorizationSystemTypeAction>(AwsAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<AwsAssociatedIdentities>(AwsAssociatedIdentities.CreateFromDiscriminatorValue); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<AwsPolicy>(AwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

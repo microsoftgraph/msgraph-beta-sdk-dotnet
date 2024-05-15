@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExternalIdentitiesPolicy : PolicyBase, IParsable 
+    public class ExternalIdentitiesPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reserved for future use.</summary>
-        public bool? AllowDeletedIdentitiesDataRemoval {
+        public bool? AllowDeletedIdentitiesDataRemoval
+        {
             get { return BackingStore?.Get<bool?>("allowDeletedIdentitiesDataRemoval"); }
             set { BackingStore?.Set("allowDeletedIdentitiesDataRemoval", value); }
         }
         /// <summary>Defines whether external users can leave the guest tenant. If set to false, self-service controls are disabled, and the admin of the guest tenant must manually remove the external user from the guest tenant. When the external user leaves the tenant, their data in the guest tenant is first soft-deleted then permanently deleted in 30 days.</summary>
-        public bool? AllowExternalIdentitiesToLeave {
+        public bool? AllowExternalIdentitiesToLeave
+        {
             get { return BackingStore?.Get<bool?>("allowExternalIdentitiesToLeave"); }
             set { BackingStore?.Set("allowExternalIdentitiesToLeave", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowDeletedIdentitiesDataRemoval", n => { AllowDeletedIdentitiesDataRemoval = n.GetBoolValue(); } },
-                {"allowExternalIdentitiesToLeave", n => { AllowExternalIdentitiesToLeave = n.GetBoolValue(); } },
+                { "allowDeletedIdentitiesDataRemoval", n => { AllowDeletedIdentitiesDataRemoval = n.GetBoolValue(); } },
+                { "allowExternalIdentitiesToLeave", n => { AllowExternalIdentitiesToLeave = n.GetBoolValue(); } },
             };
         }
         /// <summary>

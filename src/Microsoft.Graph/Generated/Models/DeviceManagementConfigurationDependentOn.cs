@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationDependentOn : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationDependentOn : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of parent setting/ parent setting option dependent on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DependentOn {
+        public string? DependentOn
+        {
             get { return BackingStore?.Get<string?>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
 #nullable restore
 #else
-        public string DependentOn {
+        public string DependentOn
+        {
             get { return BackingStore?.Get<string>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of parent setting/ parent setting id dependent on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentSettingId {
+        public string? ParentSettingId
+        {
             get { return BackingStore?.Get<string?>("parentSettingId"); }
             set { BackingStore?.Set("parentSettingId", value); }
         }
 #nullable restore
 #else
-        public string ParentSettingId {
+        public string ParentSettingId
+        {
             get { return BackingStore?.Get<string>("parentSettingId"); }
             set { BackingStore?.Set("parentSettingId", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dependentOn", n => { DependentOn = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"parentSettingId", n => { ParentSettingId = n.GetStringValue(); } },
+                { "dependentOn", n => { DependentOn = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "parentSettingId", n => { ParentSettingId = n.GetStringValue(); } },
             };
         }
         /// <summary>

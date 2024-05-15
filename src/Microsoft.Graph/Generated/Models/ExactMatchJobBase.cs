@@ -4,42 +4,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchJobBase : Entity, IParsable 
+    public class ExactMatchJobBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The completionDateTime property</summary>
-        public DateTimeOffset? CompletionDateTime {
+        public DateTimeOffset? CompletionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
         /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime {
+        public DateTimeOffset? CreationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClassificationError? Error {
+        public ClassificationError? Error
+        {
             get { return BackingStore?.Get<ClassificationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public ClassificationError Error {
+        public ClassificationError Error
+        {
             get { return BackingStore?.Get<ClassificationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>The lastUpdatedDateTime property</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -68,11 +75,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", n => { Error = n.GetObjectValue<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

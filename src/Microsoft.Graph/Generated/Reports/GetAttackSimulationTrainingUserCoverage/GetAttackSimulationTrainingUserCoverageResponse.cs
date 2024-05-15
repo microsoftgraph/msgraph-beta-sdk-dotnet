@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage {
+namespace Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage
+{
     [Obsolete("This class is obsolete. Use GetAttackSimulationTrainingUserCoverageGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetAttackSimulationTrainingUserCoverageResponse : GetAttackSimulationTrainingUserCoverageGetResponse, IParsable 
+    public class GetAttackSimulationTrainingUserCoverageResponse : GetAttackSimulationTrainingUserCoverageGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize
+{
     #pragma warning disable CS1591
-    public class ResizePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ResizePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
         /// <summary>The targetServicePlanId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetServicePlanId {
+        public string? TargetServicePlanId
+        {
             get { return BackingStore?.Get<string?>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
 #nullable restore
 #else
-        public string TargetServicePlanId {
+        public string TargetServicePlanId
+        {
             get { return BackingStore?.Get<string>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Re
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
+                { "targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
             };
         }
         /// <summary>

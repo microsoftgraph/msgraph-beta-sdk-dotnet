@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MessageTrace : Entity, IParsable 
+    public class MessageTrace : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The destinationIPAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationIPAddress {
+        public string? DestinationIPAddress
+        {
             get { return BackingStore?.Get<string?>("destinationIPAddress"); }
             set { BackingStore?.Set("destinationIPAddress", value); }
         }
 #nullable restore
 #else
-        public string DestinationIPAddress {
+        public string DestinationIPAddress
+        {
             get { return BackingStore?.Get<string>("destinationIPAddress"); }
             set { BackingStore?.Set("destinationIPAddress", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The messageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId {
+        public string? MessageId
+        {
             get { return BackingStore?.Get<string?>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
 #nullable restore
 #else
-        public string MessageId {
+        public string MessageId
+        {
             get { return BackingStore?.Get<string>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
 #endif
         /// <summary>The receivedDateTime property</summary>
-        public DateTimeOffset? ReceivedDateTime {
+        public DateTimeOffset? ReceivedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>The recipients property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageRecipient>? Recipients {
+        public List<MessageRecipient>? Recipients
+        {
             get { return BackingStore?.Get<List<MessageRecipient>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<MessageRecipient> Recipients {
+        public List<MessageRecipient> Recipients
+        {
             get { return BackingStore?.Get<List<MessageRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The senderEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderEmail {
+        public string? SenderEmail
+        {
             get { return BackingStore?.Get<string?>("senderEmail"); }
             set { BackingStore?.Set("senderEmail", value); }
         }
 #nullable restore
 #else
-        public string SenderEmail {
+        public string SenderEmail
+        {
             get { return BackingStore?.Get<string>("senderEmail"); }
             set { BackingStore?.Set("senderEmail", value); }
         }
 #endif
         /// <summary>The size property</summary>
-        public int? Size {
+        public int? Size
+        {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>The sourceIPAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceIPAddress {
+        public string? SourceIPAddress
+        {
             get { return BackingStore?.Get<string?>("sourceIPAddress"); }
             set { BackingStore?.Set("sourceIPAddress", value); }
         }
 #nullable restore
 #else
-        public string SourceIPAddress {
+        public string SourceIPAddress
+        {
             get { return BackingStore?.Get<string>("sourceIPAddress"); }
             set { BackingStore?.Set("sourceIPAddress", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"destinationIPAddress", n => { DestinationIPAddress = n.GetStringValue(); } },
-                {"messageId", n => { MessageId = n.GetStringValue(); } },
-                {"receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"senderEmail", n => { SenderEmail = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetIntValue(); } },
-                {"sourceIPAddress", n => { SourceIPAddress = n.GetStringValue(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "destinationIPAddress", n => { DestinationIPAddress = n.GetStringValue(); } },
+                { "messageId", n => { MessageId = n.GetStringValue(); } },
+                { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "senderEmail", n => { SenderEmail = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetIntValue(); } },
+                { "sourceIPAddress", n => { SourceIPAddress = n.GetStringValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

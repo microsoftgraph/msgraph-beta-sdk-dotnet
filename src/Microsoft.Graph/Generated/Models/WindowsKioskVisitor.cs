@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The class used to identify a visitor kiosk account
     /// </summary>
-    public class WindowsKioskVisitor : WindowsKioskUser, IParsable 
+    public class WindowsKioskVisitor : WindowsKioskUser, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="WindowsKioskVisitor"/> and sets the default values.

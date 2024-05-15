@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.EncryptBuffer {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.EncryptBuffer
+{
     #pragma warning disable CS1591
-    public class EncryptBufferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EncryptBufferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,19 +22,22 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Encr
         /// <summary>The buffer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Buffer {
+        public byte[]? Buffer
+        {
             get { return BackingStore?.Get<byte[]?>("buffer"); }
             set { BackingStore?.Set("buffer", value); }
         }
 #nullable restore
 #else
-        public byte[] Buffer {
+        public byte[] Buffer
+        {
             get { return BackingStore?.Get<byte[]>("buffer"); }
             set { BackingStore?.Set("buffer", value); }
         }
 #endif
         /// <summary>The labelId property</summary>
-        public Guid? LabelId {
+        public Guid? LabelId
+        {
             get { return BackingStore?.Get<Guid?>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Encr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"buffer", n => { Buffer = n.GetByteArrayValue(); } },
-                {"labelId", n => { LabelId = n.GetGuidValue(); } },
+                { "buffer", n => { Buffer = n.GetByteArrayValue(); } },
+                { "labelId", n => { LabelId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

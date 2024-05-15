@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Experimental profile to increase the rate of device check-ins per day of iOS devices. This profile type is deprecated.
     /// </summary>
-    public class IosExpeditedCheckinConfiguration : AppleExpeditedCheckinConfigurationBase, IParsable 
+    public class IosExpeditedCheckinConfiguration : AppleExpeditedCheckinConfigurationBase, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="IosExpeditedCheckinConfiguration"/> and sets the default values.

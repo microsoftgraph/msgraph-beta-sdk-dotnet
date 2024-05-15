@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The importedAppleDeviceIdentityResult resource represents the result of attempting to import Apple devices identities.
     /// </summary>
-    public class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity, IParsable 
+    public class ImportedAppleDeviceIdentityResult : ImportedAppleDeviceIdentity, IParsable
     {
         /// <summary>Status of imported device identity</summary>
-        public bool? Status {
+        public bool? Status
+        {
             get { return BackingStore?.Get<bool?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -33,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"status", n => { Status = n.GetBoolValue(); } },
+                { "status", n => { Status = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.ExportMobileConfig {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.EnrollmentProfiles.Item.ExportMobileConfig
+{
     [Obsolete("This class is obsolete. Use ExportMobileConfigGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ExportMobileConfigResponse : ExportMobileConfigGetResponse, IParsable 
+    public class ExportMobileConfigResponse : ExportMobileConfigGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

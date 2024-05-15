@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class DirectRoutingLogRow : CallLogRow, IParsable 
+    public class DirectRoutingLogRow : CallLogRow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of the user or bot who received the call (E.164 format, but might include more data).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CalleeNumber {
+        public string? CalleeNumber
+        {
             get { return BackingStore?.Get<string?>("calleeNumber"); }
             set { BackingStore?.Set("calleeNumber", value); }
         }
 #nullable restore
 #else
-        public string CalleeNumber {
+        public string CalleeNumber
+        {
             get { return BackingStore?.Get<string>("calleeNumber"); }
             set { BackingStore?.Set("calleeNumber", value); }
         }
 #endif
         /// <summary>In addition to the SIP codes, Microsoft has own subcodes that indicate the specific issue.</summary>
-        public int? CallEndSubReason {
+        public int? CallEndSubReason
+        {
             get { return BackingStore?.Get<int?>("callEndSubReason"); }
             set { BackingStore?.Set("callEndSubReason", value); }
         }
         /// <summary>Number of the user or bot who made the call (E.164 format, but might include more data).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallerNumber {
+        public string? CallerNumber
+        {
             get { return BackingStore?.Get<string?>("callerNumber"); }
             set { BackingStore?.Set("callerNumber", value); }
         }
 #nullable restore
 #else
-        public string CallerNumber {
+        public string CallerNumber
+        {
             get { return BackingStore?.Get<string>("callerNumber"); }
             set { BackingStore?.Set("callerNumber", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Call type and direction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallType {
+        public string? CallType
+        {
             get { return BackingStore?.Get<string?>("callType"); }
             set { BackingStore?.Set("callType", value); }
         }
 #nullable restore
 #else
-        public string CallType {
+        public string CallType
+        {
             get { return BackingStore?.Get<string>("callType"); }
             set { BackingStore?.Set("callType", value); }
         }
@@ -59,71 +67,83 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Identifier (GUID) for the call that you can use when calling Microsoft Support.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #endif
         /// <summary>Duration of the call in seconds.</summary>
-        public int? Duration {
+        public int? Duration
+        {
             get { return BackingStore?.Get<int?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>Only exists for successful (fully established) calls. The time when the call ended.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Only exists for failed (not fully established) calls.</summary>
-        public DateTimeOffset? FailureDateTime {
+        public DateTimeOffset? FailureDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("failureDateTime"); }
             set { BackingStore?.Set("failureDateTime", value); }
         }
         /// <summary>The final response code with which the call ended (RFC 3261).</summary>
-        public int? FinalSipCode {
+        public int? FinalSipCode
+        {
             get { return BackingStore?.Get<int?>("finalSipCode"); }
             set { BackingStore?.Set("finalSipCode", value); }
         }
         /// <summary>Description of the SIP code and Microsoft subcode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FinalSipCodePhrase {
+        public string? FinalSipCodePhrase
+        {
             get { return BackingStore?.Get<string?>("finalSipCodePhrase"); }
             set { BackingStore?.Set("finalSipCodePhrase", value); }
         }
 #nullable restore
 #else
-        public string FinalSipCodePhrase {
+        public string FinalSipCodePhrase
+        {
             get { return BackingStore?.Get<string>("finalSipCodePhrase"); }
             set { BackingStore?.Set("finalSipCodePhrase", value); }
         }
 #endif
         /// <summary>The date and time when the initial invite was sent.</summary>
-        public DateTimeOffset? InviteDateTime {
+        public DateTimeOffset? InviteDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("inviteDateTime"); }
             set { BackingStore?.Set("inviteDateTime", value); }
         }
         /// <summary>Indicates if the trunk was enabled for media bypass or not.</summary>
-        public bool? MediaBypassEnabled {
+        public bool? MediaBypassEnabled
+        {
             get { return BackingStore?.Get<bool?>("mediaBypassEnabled"); }
             set { BackingStore?.Set("mediaBypassEnabled", value); }
         }
         /// <summary>The data center used for media path in non-bypass call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaPathLocation {
+        public string? MediaPathLocation
+        {
             get { return BackingStore?.Get<string?>("mediaPathLocation"); }
             set { BackingStore?.Set("mediaPathLocation", value); }
         }
 #nullable restore
 #else
-        public string MediaPathLocation {
+        public string MediaPathLocation
+        {
             get { return BackingStore?.Get<string>("mediaPathLocation"); }
             set { BackingStore?.Set("mediaPathLocation", value); }
         }
@@ -131,37 +151,43 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The data center used for signaling for both bypass and non-bypass calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignalingLocation {
+        public string? SignalingLocation
+        {
             get { return BackingStore?.Get<string?>("signalingLocation"); }
             set { BackingStore?.Set("signalingLocation", value); }
         }
 #nullable restore
 #else
-        public string SignalingLocation {
+        public string SignalingLocation
+        {
             get { return BackingStore?.Get<string>("signalingLocation"); }
             set { BackingStore?.Set("signalingLocation", value); }
         }
 #endif
         /// <summary>Call start time.For failed and unanswered calls, this value can be equal to invite or failure time.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Success or attempt.</summary>
-        public bool? SuccessfulCall {
+        public bool? SuccessfulCall
+        {
             get { return BackingStore?.Get<bool?>("successfulCall"); }
             set { BackingStore?.Set("successfulCall", value); }
         }
         /// <summary>Correlation ID of the call to the transferor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransferorCorrelationId {
+        public string? TransferorCorrelationId
+        {
             get { return BackingStore?.Get<string?>("transferorCorrelationId"); }
             set { BackingStore?.Set("transferorCorrelationId", value); }
         }
 #nullable restore
 #else
-        public string TransferorCorrelationId {
+        public string TransferorCorrelationId
+        {
             get { return BackingStore?.Get<string>("transferorCorrelationId"); }
             set { BackingStore?.Set("transferorCorrelationId", value); }
         }
@@ -169,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Fully qualified domain name of the session border controller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrunkFullyQualifiedDomainName {
+        public string? TrunkFullyQualifiedDomainName
+        {
             get { return BackingStore?.Get<string?>("trunkFullyQualifiedDomainName"); }
             set { BackingStore?.Set("trunkFullyQualifiedDomainName", value); }
         }
 #nullable restore
 #else
-        public string TrunkFullyQualifiedDomainName {
+        public string TrunkFullyQualifiedDomainName
+        {
             get { return BackingStore?.Get<string>("trunkFullyQualifiedDomainName"); }
             set { BackingStore?.Set("trunkFullyQualifiedDomainName", value); }
         }
@@ -183,13 +211,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Country/region code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserCountryCode {
+        public string? UserCountryCode
+        {
             get { return BackingStore?.Get<string?>("userCountryCode"); }
             set { BackingStore?.Set("userCountryCode", value); }
         }
 #nullable restore
 #else
-        public string UserCountryCode {
+        public string UserCountryCode
+        {
             get { return BackingStore?.Get<string>("userCountryCode"); }
             set { BackingStore?.Set("userCountryCode", value); }
         }
@@ -212,25 +242,25 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callEndSubReason", n => { CallEndSubReason = n.GetIntValue(); } },
-                {"callType", n => { CallType = n.GetStringValue(); } },
-                {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
-                {"callerNumber", n => { CallerNumber = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"duration", n => { Duration = n.GetIntValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureDateTime", n => { FailureDateTime = n.GetDateTimeOffsetValue(); } },
-                {"finalSipCode", n => { FinalSipCode = n.GetIntValue(); } },
-                {"finalSipCodePhrase", n => { FinalSipCodePhrase = n.GetStringValue(); } },
-                {"inviteDateTime", n => { InviteDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mediaBypassEnabled", n => { MediaBypassEnabled = n.GetBoolValue(); } },
-                {"mediaPathLocation", n => { MediaPathLocation = n.GetStringValue(); } },
-                {"signalingLocation", n => { SignalingLocation = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"successfulCall", n => { SuccessfulCall = n.GetBoolValue(); } },
-                {"transferorCorrelationId", n => { TransferorCorrelationId = n.GetStringValue(); } },
-                {"trunkFullyQualifiedDomainName", n => { TrunkFullyQualifiedDomainName = n.GetStringValue(); } },
-                {"userCountryCode", n => { UserCountryCode = n.GetStringValue(); } },
+                { "callEndSubReason", n => { CallEndSubReason = n.GetIntValue(); } },
+                { "callType", n => { CallType = n.GetStringValue(); } },
+                { "calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
+                { "callerNumber", n => { CallerNumber = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetIntValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failureDateTime", n => { FailureDateTime = n.GetDateTimeOffsetValue(); } },
+                { "finalSipCode", n => { FinalSipCode = n.GetIntValue(); } },
+                { "finalSipCodePhrase", n => { FinalSipCodePhrase = n.GetStringValue(); } },
+                { "inviteDateTime", n => { InviteDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mediaBypassEnabled", n => { MediaBypassEnabled = n.GetBoolValue(); } },
+                { "mediaPathLocation", n => { MediaPathLocation = n.GetStringValue(); } },
+                { "signalingLocation", n => { SignalingLocation = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "successfulCall", n => { SuccessfulCall = n.GetBoolValue(); } },
+                { "transferorCorrelationId", n => { TransferorCorrelationId = n.GetStringValue(); } },
+                { "trunkFullyQualifiedDomainName", n => { TrunkFullyQualifiedDomainName = n.GetStringValue(); } },
+                { "userCountryCode", n => { UserCountryCode = n.GetStringValue(); } },
             };
         }
         /// <summary>

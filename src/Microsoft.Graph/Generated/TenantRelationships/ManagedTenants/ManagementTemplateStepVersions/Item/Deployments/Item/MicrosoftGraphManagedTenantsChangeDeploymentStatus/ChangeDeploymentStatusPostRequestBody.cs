@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.MicrosoftGraphManagedTenantsChangeDeploymentStatus {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions.Item.Deployments.Item.MicrosoftGraphManagedTenantsChangeDeploymentStatus
+{
     #pragma warning disable CS1591
-    public class ChangeDeploymentStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChangeDeploymentStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>The managementTemplateStepId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateStepId {
+        public string? ManagementTemplateStepId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateStepId"); }
             set { BackingStore?.Set("managementTemplateStepId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateStepId {
+        public string ManagementTemplateStepId
+        {
             get { return BackingStore?.Get<string>("managementTemplateStepId"); }
             set { BackingStore?.Set("managementTemplateStepId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managementTemplateStepId", n => { ManagementTemplateStepId = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "managementTemplateStepId", n => { ManagementTemplateStepId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

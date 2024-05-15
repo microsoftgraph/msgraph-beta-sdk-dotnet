@@ -6,40 +6,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.MicrosoftGraphWindowsUpdatesUpdateAudience {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.MicrosoftGraphWindowsUpdatesUpdateAudience
+{
     #pragma warning disable CS1591
-    public class UpdateAudiencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateAudiencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The addExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? AddExclusions {
+        public List<UpdatableAsset>? AddExclusions
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> AddExclusions {
+        public List<UpdatableAsset> AddExclusions
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The addMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? AddMembers {
+        public List<UpdatableAsset>? AddMembers
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> AddMembers {
+        public List<UpdatableAsset> AddMembers
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Mi
         /// <summary>The removeExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? RemoveExclusions {
+        public List<UpdatableAsset>? RemoveExclusions
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> RemoveExclusions {
+        public List<UpdatableAsset> RemoveExclusions
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Mi
         /// <summary>The removeMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? RemoveMembers {
+        public List<UpdatableAsset>? RemoveMembers
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> RemoveMembers {
+        public List<UpdatableAsset> RemoveMembers
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Mi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addExclusions", n => { AddExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"addMembers", n => { AddMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"removeExclusions", n => { RemoveExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"removeMembers", n => { RemoveMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addExclusions", n => { AddExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addMembers", n => { AddMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "removeExclusions", n => { RemoveExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "removeMembers", n => { RemoveMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

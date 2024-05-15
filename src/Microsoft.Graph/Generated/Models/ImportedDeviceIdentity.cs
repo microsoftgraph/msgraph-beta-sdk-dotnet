@@ -4,67 +4,78 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
     /// </summary>
-    public class ImportedDeviceIdentity : Entity, IParsable 
+    public class ImportedDeviceIdentity : Entity, IParsable
     {
         /// <summary>Created Date Time of the device</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The enrollmentState property</summary>
-        public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState {
+        public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>("enrollmentState"); }
             set { BackingStore?.Set("enrollmentState", value); }
         }
         /// <summary>Imported Device Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportedDeviceIdentifier {
+        public string? ImportedDeviceIdentifier
+        {
             get { return BackingStore?.Get<string?>("importedDeviceIdentifier"); }
             set { BackingStore?.Set("importedDeviceIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ImportedDeviceIdentifier {
+        public string ImportedDeviceIdentifier
+        {
             get { return BackingStore?.Get<string>("importedDeviceIdentifier"); }
             set { BackingStore?.Set("importedDeviceIdentifier", value); }
         }
 #endif
         /// <summary>The importedDeviceIdentityType property</summary>
-        public Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType? ImportedDeviceIdentityType {
+        public Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType? ImportedDeviceIdentityType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType?>("importedDeviceIdentityType"); }
             set { BackingStore?.Set("importedDeviceIdentityType", value); }
         }
         /// <summary>Last Contacted Date Time of the device</summary>
-        public DateTimeOffset? LastContactedDateTime {
+        public DateTimeOffset? LastContactedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastContactedDateTime"); }
             set { BackingStore?.Set("lastContactedDateTime", value); }
         }
         /// <summary>Last Modified DateTime of the description</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The platform property</summary>
-        public Microsoft.Graph.Beta.Models.Platform? Platform {
+        public Microsoft.Graph.Beta.Models.Platform? Platform
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Platform?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
@@ -91,14 +102,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
-                {"importedDeviceIdentifier", n => { ImportedDeviceIdentifier = n.GetStringValue(); } },
-                {"importedDeviceIdentityType", n => { ImportedDeviceIdentityType = n.GetEnumValue<ImportedDeviceIdentityType>(); } },
-                {"lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"platform", n => { Platform = n.GetEnumValue<Platform>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enrollmentState", n => { EnrollmentState = n.GetEnumValue<EnrollmentState>(); } },
+                { "importedDeviceIdentifier", n => { ImportedDeviceIdentifier = n.GetStringValue(); } },
+                { "importedDeviceIdentityType", n => { ImportedDeviceIdentityType = n.GetEnumValue<ImportedDeviceIdentityType>(); } },
+                { "lastContactedDateTime", n => { LastContactedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Platform>(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationSubmissionResource : Entity, IParsable 
+    public class EducationSubmissionResource : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentResourceUrl {
+        public string? AssignmentResourceUrl
+        {
             get { return BackingStore?.Get<string?>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
         }
 #nullable restore
 #else
-        public string AssignmentResourceUrl {
+        public string AssignmentResourceUrl
+        {
             get { return BackingStore?.Get<string>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dependentResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationSubmissionResource>? DependentResources {
+        public List<EducationSubmissionResource>? DependentResources
+        {
             get { return BackingStore?.Get<List<EducationSubmissionResource>?>("dependentResources"); }
             set { BackingStore?.Set("dependentResources", value); }
         }
 #nullable restore
 #else
-        public List<EducationSubmissionResource> DependentResources {
+        public List<EducationSubmissionResource> DependentResources
+        {
             get { return BackingStore?.Get<List<EducationSubmissionResource>>("dependentResources"); }
             set { BackingStore?.Set("dependentResources", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resource object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationResource? Resource {
+        public EducationResource? Resource
+        {
             get { return BackingStore?.Get<EducationResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public EducationResource Resource {
+        public EducationResource Resource
+        {
             get { return BackingStore?.Get<EducationResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
-                {"dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<EducationSubmissionResource>(EducationSubmissionResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
+                { "assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
+                { "dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<EducationSubmissionResource>(EducationSubmissionResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

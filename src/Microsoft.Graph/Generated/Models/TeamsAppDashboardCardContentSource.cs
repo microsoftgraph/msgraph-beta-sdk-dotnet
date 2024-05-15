@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppDashboardCardContentSource : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamsAppDashboardCardContentSource : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The configuration for the bot source. Required if sourceType is set to bot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamsAppDashboardCardBotConfiguration? BotConfiguration {
+        public TeamsAppDashboardCardBotConfiguration? BotConfiguration
+        {
             get { return BackingStore?.Get<TeamsAppDashboardCardBotConfiguration?>("botConfiguration"); }
             set { BackingStore?.Set("botConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamsAppDashboardCardBotConfiguration BotConfiguration {
+        public TeamsAppDashboardCardBotConfiguration BotConfiguration
+        {
             get { return BackingStore?.Get<TeamsAppDashboardCardBotConfiguration>("botConfiguration"); }
             set { BackingStore?.Set("botConfiguration", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Represents the type of source that powers the content of the dashboard card. The possible values are: bot, unknownFutureValue.</summary>
-        public TeamsAppDashboardCardSourceType? SourceType {
+        public TeamsAppDashboardCardSourceType? SourceType
+        {
             get { return BackingStore?.Get<TeamsAppDashboardCardSourceType?>("sourceType"); }
             set { BackingStore?.Set("sourceType", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"botConfiguration", n => { BotConfiguration = n.GetObjectValue<TeamsAppDashboardCardBotConfiguration>(TeamsAppDashboardCardBotConfiguration.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourceType", n => { SourceType = n.GetEnumValue<TeamsAppDashboardCardSourceType>(); } },
+                { "botConfiguration", n => { BotConfiguration = n.GetObjectValue<TeamsAppDashboardCardBotConfiguration>(TeamsAppDashboardCardBotConfiguration.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sourceType", n => { SourceType = n.GetEnumValue<TeamsAppDashboardCardSourceType>(); } },
             };
         }
         /// <summary>

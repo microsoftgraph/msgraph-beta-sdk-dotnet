@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnAttributeCollectionStartListener : AuthenticationEventListener, IParsable 
+    public class OnAttributeCollectionStartListener : AuthenticationEventListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Configuration for what to invoke if the event resolves to this listener.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnAttributeCollectionStartHandler? Handler {
+        public OnAttributeCollectionStartHandler? Handler
+        {
             get { return BackingStore?.Get<OnAttributeCollectionStartHandler?>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
 #nullable restore
 #else
-        public OnAttributeCollectionStartHandler Handler {
+        public OnAttributeCollectionStartHandler Handler
+        {
             get { return BackingStore?.Get<OnAttributeCollectionStartHandler>("handler"); }
             set { BackingStore?.Set("handler", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"handler", n => { Handler = n.GetObjectValue<OnAttributeCollectionStartHandler>(OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
+                { "handler", n => { Handler = n.GetObjectValue<OnAttributeCollectionStartHandler>(OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

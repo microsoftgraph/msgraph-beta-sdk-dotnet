@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the health summary of the Windows management app.
     /// </summary>
-    public class WindowsManagementAppHealthSummary : Entity, IParsable 
+    public class WindowsManagementAppHealthSummary : Entity, IParsable
     {
         /// <summary>Healthy device count.</summary>
-        public int? HealthyDeviceCount {
+        public int? HealthyDeviceCount
+        {
             get { return BackingStore?.Get<int?>("healthyDeviceCount"); }
             set { BackingStore?.Set("healthyDeviceCount", value); }
         }
         /// <summary>Unhealthy device count.</summary>
-        public int? UnhealthyDeviceCount {
+        public int? UnhealthyDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unhealthyDeviceCount"); }
             set { BackingStore?.Set("unhealthyDeviceCount", value); }
         }
         /// <summary>Unknown device count.</summary>
-        public int? UnknownDeviceCount {
+        public int? UnknownDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
@@ -43,9 +47,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"healthyDeviceCount", n => { HealthyDeviceCount = n.GetIntValue(); } },
-                {"unhealthyDeviceCount", n => { UnhealthyDeviceCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
+                { "healthyDeviceCount", n => { HealthyDeviceCount = n.GetIntValue(); } },
+                { "unhealthyDeviceCount", n => { UnhealthyDeviceCount = n.GetIntValue(); } },
+                { "unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RoleManagementAlert : Entity, IParsable 
+    public class RoleManagementAlert : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The various configurations of an alert for Microsoft Entra roles. The configurations are predefined and can&apos;t be created or deleted, but some of the configurations can be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementAlertConfiguration>? AlertConfigurations {
+        public List<UnifiedRoleManagementAlertConfiguration>? AlertConfigurations
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlertConfiguration>?>("alertConfigurations"); }
             set { BackingStore?.Set("alertConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementAlertConfiguration> AlertConfigurations {
+        public List<UnifiedRoleManagementAlertConfiguration> AlertConfigurations
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlertConfiguration>>("alertConfigurations"); }
             set { BackingStore?.Set("alertConfigurations", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Defines an alert, its impact, and measures to mitigate or prevent it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementAlertDefinition>? AlertDefinitions {
+        public List<UnifiedRoleManagementAlertDefinition>? AlertDefinitions
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlertDefinition>?>("alertDefinitions"); }
             set { BackingStore?.Set("alertDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementAlertDefinition> AlertDefinitions {
+        public List<UnifiedRoleManagementAlertDefinition> AlertDefinitions
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlertDefinition>>("alertDefinitions"); }
             set { BackingStore?.Set("alertDefinitions", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents the alert entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementAlert>? Alerts {
+        public List<UnifiedRoleManagementAlert>? Alerts
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlert>?>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementAlert> Alerts {
+        public List<UnifiedRoleManagementAlert> Alerts
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlert>>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents operations on resources that take a long time to complete and can run in the background until completion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LongRunningOperation>? Operations {
+        public List<LongRunningOperation>? Operations
+        {
             get { return BackingStore?.Get<List<LongRunningOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<LongRunningOperation> Operations {
+        public List<LongRunningOperation> Operations
+        {
             get { return BackingStore?.Get<List<LongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alertConfigurations", n => { AlertConfigurations = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"alertDefinitions", n => { AlertDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlert>(UnifiedRoleManagementAlert.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<LongRunningOperation>(LongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertConfigurations", n => { AlertConfigurations = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertDefinitions", n => { AlertDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlert>(UnifiedRoleManagementAlert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<LongRunningOperation>(LongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

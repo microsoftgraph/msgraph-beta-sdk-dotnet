@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The base class for a type of apps
     /// </summary>
-    public class WindowsKioskDesktopApp : WindowsKioskAppBase, IParsable 
+    public class WindowsKioskDesktopApp : WindowsKioskAppBase, IParsable
     {
         /// <summary>Define the DesktopApplicationID of the app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DesktopApplicationId {
+        public string? DesktopApplicationId
+        {
             get { return BackingStore?.Get<string?>("desktopApplicationId"); }
             set { BackingStore?.Set("desktopApplicationId", value); }
         }
 #nullable restore
 #else
-        public string DesktopApplicationId {
+        public string DesktopApplicationId
+        {
             get { return BackingStore?.Get<string>("desktopApplicationId"); }
             set { BackingStore?.Set("desktopApplicationId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Define the DesktopApplicationLinkPath of the app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DesktopApplicationLinkPath {
+        public string? DesktopApplicationLinkPath
+        {
             get { return BackingStore?.Get<string?>("desktopApplicationLinkPath"); }
             set { BackingStore?.Set("desktopApplicationLinkPath", value); }
         }
 #nullable restore
 #else
-        public string DesktopApplicationLinkPath {
+        public string DesktopApplicationLinkPath
+        {
             get { return BackingStore?.Get<string>("desktopApplicationLinkPath"); }
             set { BackingStore?.Set("desktopApplicationLinkPath", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Define the path of a desktop app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path {
+        public string? Path
+        {
             get { return BackingStore?.Get<string?>("path"); }
             set { BackingStore?.Set("path", value); }
         }
 #nullable restore
 #else
-        public string Path {
+        public string Path
+        {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"desktopApplicationId", n => { DesktopApplicationId = n.GetStringValue(); } },
-                {"desktopApplicationLinkPath", n => { DesktopApplicationLinkPath = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
+                { "desktopApplicationId", n => { DesktopApplicationId = n.GetStringValue(); } },
+                { "desktopApplicationLinkPath", n => { DesktopApplicationLinkPath = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>

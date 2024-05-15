@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the deployment state of a WindowsDefenderApplicationControl supplemental policy for a device.
     /// </summary>
-    public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity, IParsable 
+    public class WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus : Entity, IParsable
     {
         /// <summary>Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.</summary>
-        public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus {
+        public WindowsDefenderApplicationControlSupplementalPolicyStatuses? DeploymentStatus
+        {
             get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyStatuses?>("deploymentStatus"); }
             set { BackingStore?.Set("deploymentStatus", value); }
         }
         /// <summary>Device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -32,32 +36,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>Last sync date time.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Windows OS Version Description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDescription {
+        public string? OsDescription
+        {
             get { return BackingStore?.Get<string?>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
 #nullable restore
 #else
-        public string OsDescription {
+        public string OsDescription
+        {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Windows OS Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The navigation link to the WindowsDefenderApplicationControl supplemental policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDefenderApplicationControlSupplementalPolicy? Policy {
+        public WindowsDefenderApplicationControlSupplementalPolicy? Policy
+        {
             get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public WindowsDefenderApplicationControlSupplementalPolicy Policy {
+        public WindowsDefenderApplicationControlSupplementalPolicy Policy
+        {
             get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
@@ -93,13 +106,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Human readable version of the WindowsDefenderApplicationControl supplemental policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyVersion {
+        public string? PolicyVersion
+        {
             get { return BackingStore?.Get<string?>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
 #nullable restore
 #else
-        public string PolicyVersion {
+        public string PolicyVersion
+        {
             get { return BackingStore?.Get<string>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
@@ -107,13 +122,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the user of this device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -121,13 +138,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Principal Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -150,16 +169,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deploymentStatus", n => { DeploymentStatus = n.GetEnumValue<WindowsDefenderApplicationControlSupplementalPolicyStatuses>(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"policy", n => { Policy = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicy>(WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue); } },
-                {"policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "deploymentStatus", n => { DeploymentStatus = n.GetEnumValue<WindowsDefenderApplicationControlSupplementalPolicyStatuses>(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "osDescription", n => { OsDescription = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "policy", n => { Policy = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicy>(WindowsDefenderApplicationControlSupplementalPolicy.CreateFromDiscriminatorValue); } },
+                { "policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

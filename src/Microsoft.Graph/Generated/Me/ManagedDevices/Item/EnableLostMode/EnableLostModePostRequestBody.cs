@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode
+{
     #pragma warning disable CS1591
-    public class EnableLostModePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EnableLostModePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode {
         /// <summary>The footer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Footer {
+        public string? Footer
+        {
             get { return BackingStore?.Get<string?>("footer"); }
             set { BackingStore?.Set("footer", value); }
         }
 #nullable restore
 #else
-        public string Footer {
+        public string Footer
+        {
             get { return BackingStore?.Get<string>("footer"); }
             set { BackingStore?.Set("footer", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode {
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message {
+        public string? Message
+        {
             get { return BackingStore?.Get<string?>("message"); }
             set { BackingStore?.Set("message", value); }
         }
 #nullable restore
 #else
-        public string Message {
+        public string Message
+        {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode {
         /// <summary>The phoneNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"footer", n => { Footer = n.GetStringValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "footer", n => { Footer = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

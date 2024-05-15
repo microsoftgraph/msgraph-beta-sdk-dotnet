@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity which represents an OnPrem Ndes connector.
     /// </summary>
-    public class NdesConnector : Entity, IParsable 
+    public class NdesConnector : Entity, IParsable
     {
         /// <summary>The build version of the Ndes Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorVersion {
+        public string? ConnectorVersion
+        {
             get { return BackingStore?.Get<string?>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
 #nullable restore
 #else
-        public string ConnectorVersion {
+        public string ConnectorVersion
+        {
             get { return BackingStore?.Get<string>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
@@ -27,37 +30,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The friendly name of the Ndes Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Timestamp when on-prem certificate connector was enrolled in Intune.</summary>
-        public DateTimeOffset? EnrolledDateTime {
+        public DateTimeOffset? EnrolledDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("enrolledDateTime"); }
             set { BackingStore?.Set("enrolledDateTime", value); }
         }
         /// <summary>Last connection time for the Ndes Connector</summary>
-        public DateTimeOffset? LastConnectionDateTime {
+        public DateTimeOffset? LastConnectionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
             set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
         /// <summary>Name of the machine running on-prem certificate connector service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MachineName {
+        public string? MachineName
+        {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
 #nullable restore
 #else
-        public string MachineName {
+        public string MachineName
+        {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
@@ -65,19 +74,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
         /// <summary>The current status of the Ndes Connector.</summary>
-        public NdesConnectorState? State {
+        public NdesConnectorState? State
+        {
             get { return BackingStore?.Get<NdesConnectorState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -99,13 +111,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"machineName", n => { MachineName = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<NdesConnectorState>(); } },
+                { "connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "enrolledDateTime", n => { EnrolledDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "machineName", n => { MachineName = n.GetStringValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<NdesConnectorState>(); } },
             };
         }
         /// <summary>

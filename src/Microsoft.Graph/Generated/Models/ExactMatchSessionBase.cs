@@ -4,66 +4,77 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchSessionBase : ExactMatchJobBase, IParsable 
+    public class ExactMatchSessionBase : ExactMatchJobBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dataStoreId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataStoreId {
+        public string? DataStoreId
+        {
             get { return BackingStore?.Get<string?>("dataStoreId"); }
             set { BackingStore?.Set("dataStoreId", value); }
         }
 #nullable restore
 #else
-        public string DataStoreId {
+        public string DataStoreId
+        {
             get { return BackingStore?.Get<string>("dataStoreId"); }
             set { BackingStore?.Set("dataStoreId", value); }
         }
 #endif
         /// <summary>The processingCompletionDateTime property</summary>
-        public DateTimeOffset? ProcessingCompletionDateTime {
+        public DateTimeOffset? ProcessingCompletionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("processingCompletionDateTime"); }
             set { BackingStore?.Set("processingCompletionDateTime", value); }
         }
         /// <summary>The remainingBlockCount property</summary>
-        public int? RemainingBlockCount {
+        public int? RemainingBlockCount
+        {
             get { return BackingStore?.Get<int?>("remainingBlockCount"); }
             set { BackingStore?.Set("remainingBlockCount", value); }
         }
         /// <summary>The remainingJobCount property</summary>
-        public int? RemainingJobCount {
+        public int? RemainingJobCount
+        {
             get { return BackingStore?.Get<int?>("remainingJobCount"); }
             set { BackingStore?.Set("remainingJobCount", value); }
         }
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #endif
         /// <summary>The totalBlockCount property</summary>
-        public int? TotalBlockCount {
+        public int? TotalBlockCount
+        {
             get { return BackingStore?.Get<int?>("totalBlockCount"); }
             set { BackingStore?.Set("totalBlockCount", value); }
         }
         /// <summary>The totalJobCount property</summary>
-        public int? TotalJobCount {
+        public int? TotalJobCount
+        {
             get { return BackingStore?.Get<int?>("totalJobCount"); }
             set { BackingStore?.Set("totalJobCount", value); }
         }
         /// <summary>The uploadCompletionDateTime property</summary>
-        public DateTimeOffset? UploadCompletionDateTime {
+        public DateTimeOffset? UploadCompletionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("uploadCompletionDateTime"); }
             set { BackingStore?.Set("uploadCompletionDateTime", value); }
         }
@@ -97,14 +108,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dataStoreId", n => { DataStoreId = n.GetStringValue(); } },
-                {"processingCompletionDateTime", n => { ProcessingCompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"remainingBlockCount", n => { RemainingBlockCount = n.GetIntValue(); } },
-                {"remainingJobCount", n => { RemainingJobCount = n.GetIntValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"totalBlockCount", n => { TotalBlockCount = n.GetIntValue(); } },
-                {"totalJobCount", n => { TotalJobCount = n.GetIntValue(); } },
-                {"uploadCompletionDateTime", n => { UploadCompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "dataStoreId", n => { DataStoreId = n.GetStringValue(); } },
+                { "processingCompletionDateTime", n => { ProcessingCompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "remainingBlockCount", n => { RemainingBlockCount = n.GetIntValue(); } },
+                { "remainingJobCount", n => { RemainingJobCount = n.GetIntValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "totalBlockCount", n => { TotalBlockCount = n.GetIntValue(); } },
+                { "totalJobCount", n => { TotalJobCount = n.GetIntValue(); } },
+                { "uploadCompletionDateTime", n => { UploadCompletionDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

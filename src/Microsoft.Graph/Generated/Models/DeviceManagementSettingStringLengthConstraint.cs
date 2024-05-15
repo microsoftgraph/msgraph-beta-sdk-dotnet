@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint enforcing a given string length range
     /// </summary>
-    public class DeviceManagementSettingStringLengthConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingStringLengthConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>The maximum permitted string length</summary>
-        public int? MaximumLength {
+        public int? MaximumLength
+        {
             get { return BackingStore?.Get<int?>("maximumLength"); }
             set { BackingStore?.Set("maximumLength", value); }
         }
         /// <summary>The minimum permitted string length</summary>
-        public int? MinimumLength {
+        public int? MinimumLength
+        {
             get { return BackingStore?.Get<int?>("minimumLength"); }
             set { BackingStore?.Set("minimumLength", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"maximumLength", n => { MaximumLength = n.GetIntValue(); } },
-                {"minimumLength", n => { MinimumLength = n.GetIntValue(); } },
+                { "maximumLength", n => { MaximumLength = n.GetIntValue(); } },
+                { "minimumLength", n => { MinimumLength = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplateStepVersion : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementTemplateStepVersion : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acceptedFor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagementTemplateStep? AcceptedFor {
+        public ManagementTemplateStep? AcceptedFor
+        {
             get { return BackingStore?.Get<ManagementTemplateStep?>("acceptedFor"); }
             set { BackingStore?.Set("acceptedFor", value); }
         }
 #nullable restore
 #else
-        public ManagementTemplateStep AcceptedFor {
+        public ManagementTemplateStep AcceptedFor
+        {
             get { return BackingStore?.Get<ManagementTemplateStep>("acceptedFor"); }
             set { BackingStore?.Set("acceptedFor", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The contentMarkdown property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentMarkdown {
+        public string? ContentMarkdown
+        {
             get { return BackingStore?.Get<string?>("contentMarkdown"); }
             set { BackingStore?.Set("contentMarkdown", value); }
         }
 #nullable restore
 #else
-        public string ContentMarkdown {
+        public string ContentMarkdown
+        {
             get { return BackingStore?.Get<string>("contentMarkdown"); }
             set { BackingStore?.Set("contentMarkdown", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByUserId {
+        public string? CreatedByUserId
+        {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #nullable restore
 #else
-        public string CreatedByUserId {
+        public string CreatedByUserId
+        {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #endif
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The deployments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepDeployment>? Deployments {
+        public List<ManagementTemplateStepDeployment>? Deployments
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepDeployment>?>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepDeployment> Deployments {
+        public List<ManagementTemplateStepDeployment> Deployments
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepDeployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActionByUserId {
+        public string? LastActionByUserId
+        {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #nullable restore
 #else
-        public string LastActionByUserId {
+        public string LastActionByUserId
+        {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #endif
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -106,32 +121,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The templateStep property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagementTemplateStep? TemplateStep {
+        public ManagementTemplateStep? TemplateStep
+        {
             get { return BackingStore?.Get<ManagementTemplateStep?>("templateStep"); }
             set { BackingStore?.Set("templateStep", value); }
         }
 #nullable restore
 #else
-        public ManagementTemplateStep TemplateStep {
+        public ManagementTemplateStep TemplateStep
+        {
             get { return BackingStore?.Get<ManagementTemplateStep>("templateStep"); }
             set { BackingStore?.Set("templateStep", value); }
         }
 #endif
         /// <summary>The version property</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>The versionInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionInformation {
+        public string? VersionInformation
+        {
             get { return BackingStore?.Get<string?>("versionInformation"); }
             set { BackingStore?.Set("versionInformation", value); }
         }
 #nullable restore
 #else
-        public string VersionInformation {
+        public string VersionInformation
+        {
             get { return BackingStore?.Get<string>("versionInformation"); }
             set { BackingStore?.Set("versionInformation", value); }
         }
@@ -154,17 +174,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acceptedFor", n => { AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
-                {"contentMarkdown", n => { ContentMarkdown = n.GetStringValue(); } },
-                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"templateStep", n => { TemplateStep = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
-                {"version", n => { Version = n.GetIntValue(); } },
-                {"versionInformation", n => { VersionInformation = n.GetStringValue(); } },
+                { "acceptedFor", n => { AcceptedFor = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
+                { "contentMarkdown", n => { ContentMarkdown = n.GetStringValue(); } },
+                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "templateStep", n => { TemplateStep = n.GetObjectValue<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetIntValue(); } },
+                { "versionInformation", n => { VersionInformation = n.GetStringValue(); } },
             };
         }
         /// <summary>

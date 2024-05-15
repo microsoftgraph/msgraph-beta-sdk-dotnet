@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrintConnector : Entity, IParsable 
+    public class PrintConnector : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connector&apos;s version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppVersion {
+        public string? AppVersion
+        {
             get { return BackingStore?.Get<string?>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #nullable restore
 #else
-        public string AppVersion {
+        public string AppVersion
+        {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connector&apos;s device health.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceHealth? DeviceHealth {
+        public Microsoft.Graph.Beta.Models.DeviceHealth? DeviceHealth
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceHealth?>("deviceHealth"); }
             set { BackingStore?.Set("deviceHealth", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceHealth DeviceHealth {
+        public Microsoft.Graph.Beta.Models.DeviceHealth DeviceHealth
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceHealth>("deviceHealth"); }
             set { BackingStore?.Set("deviceHealth", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connector machine&apos;s hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FullyQualifiedDomainName {
+        public string? FullyQualifiedDomainName
+        {
             get { return BackingStore?.Get<string?>("fullyQualifiedDomainName"); }
             set { BackingStore?.Set("fullyQualifiedDomainName", value); }
         }
 #nullable restore
 #else
-        public string FullyQualifiedDomainName {
+        public string FullyQualifiedDomainName
+        {
             get { return BackingStore?.Get<string>("fullyQualifiedDomainName"); }
             set { BackingStore?.Set("fullyQualifiedDomainName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The physical and/or organizational location of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterLocation? Location {
+        public PrinterLocation? Location
+        {
             get { return BackingStore?.Get<PrinterLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public PrinterLocation Location {
+        public PrinterLocation Location
+        {
             get { return BackingStore?.Get<PrinterLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -96,19 +109,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connector machine&apos;s operating system version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
         /// <summary>The DateTimeOffset when the connector was registered.</summary>
-        public DateTimeOffset? RegisteredDateTime {
+        public DateTimeOffset? RegisteredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
             set { BackingStore?.Set("registeredDateTime", value); }
         }
@@ -130,14 +146,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"deviceHealth", n => { DeviceHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealth>(Microsoft.Graph.Beta.Models.DeviceHealth.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"fullyQualifiedDomainName", n => { FullyQualifiedDomainName = n.GetStringValue(); } },
-                {"location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "appVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "deviceHealth", n => { DeviceHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealth>(Microsoft.Graph.Beta.Models.DeviceHealth.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "fullyQualifiedDomainName", n => { FullyQualifiedDomainName = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

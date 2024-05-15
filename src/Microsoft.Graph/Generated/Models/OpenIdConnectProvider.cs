@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OpenIdConnectProvider : IdentityProvider, IParsable 
+    public class OpenIdConnectProvider : IdentityProvider, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>After the OIDC provider sends an ID token back to Microsoft Entra ID, Microsoft Entra ID needs to be able to map the claims from the received token to the claims that Microsoft Entra ID recognizes and uses. This complex type captures that mapping. It&apos;s a required property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ClaimsMapping? ClaimsMapping {
+        public Microsoft.Graph.Beta.Models.ClaimsMapping? ClaimsMapping
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping?>("claimsMapping"); }
             set { BackingStore?.Set("claimsMapping", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ClaimsMapping ClaimsMapping {
+        public Microsoft.Graph.Beta.Models.ClaimsMapping ClaimsMapping
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClaimsMapping>("claimsMapping"); }
             set { BackingStore?.Set("claimsMapping", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The domain hint can be used to skip directly to the sign-in page of the specified identity provider, instead of having the user make a selection among the list of available identity providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainHint {
+        public string? DomainHint
+        {
             get { return BackingStore?.Get<string?>("domainHint"); }
             set { BackingStore?.Set("domainHint", value); }
         }
 #nullable restore
 #else
-        public string DomainHint {
+        public string DomainHint
+        {
             get { return BackingStore?.Get<string>("domainHint"); }
             set { BackingStore?.Set("domainHint", value); }
         }
@@ -40,37 +45,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL for the metadata document of the OpenID Connect identity provider. Every OpenID Connect identity provider describes a metadata document that contains most of the information required to perform sign-in. This includes information such as the URLs to use and the location of the service&apos;s public signing keys. The OpenID Connect metadata document is always located at an endpoint that ends in a well-known/openid-configuration. For the OpenID Connect identity provider you&apos;re looking to add, you need to provide the metadata URL. It&apos;s a required property and is read only after creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetadataUrl {
+        public string? MetadataUrl
+        {
             get { return BackingStore?.Get<string?>("metadataUrl"); }
             set { BackingStore?.Set("metadataUrl", value); }
         }
 #nullable restore
 #else
-        public string MetadataUrl {
+        public string MetadataUrl
+        {
             get { return BackingStore?.Get<string>("metadataUrl"); }
             set { BackingStore?.Set("metadataUrl", value); }
         }
 #endif
         /// <summary>The responseMode property</summary>
-        public OpenIdConnectResponseMode? ResponseMode {
+        public OpenIdConnectResponseMode? ResponseMode
+        {
             get { return BackingStore?.Get<OpenIdConnectResponseMode?>("responseMode"); }
             set { BackingStore?.Set("responseMode", value); }
         }
         /// <summary>The responseType property</summary>
-        public OpenIdConnectResponseTypes? ResponseType {
+        public OpenIdConnectResponseTypes? ResponseType
+        {
             get { return BackingStore?.Get<OpenIdConnectResponseTypes?>("responseType"); }
             set { BackingStore?.Set("responseType", value); }
         }
         /// <summary>Scope defines the information and permissions you&apos;re looking to gather from your custom identity provider. OpenID Connect requests must contain the openid scope value in order to receive the ID token from the identity provider. Without the ID token, users aren&apos;t able to sign in to Azure AD B2C using the custom identity provider. Other scopes can be appended separated by space. For more information about the scope limitations, see RFC6749 Section 3.3. It&apos;s a required property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope {
+        public string? Scope
+        {
             get { return BackingStore?.Get<string?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public string Scope {
+        public string Scope
+        {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"claimsMapping", n => { ClaimsMapping = n.GetObjectValue<Microsoft.Graph.Beta.Models.ClaimsMapping>(Microsoft.Graph.Beta.Models.ClaimsMapping.CreateFromDiscriminatorValue); } },
-                {"domainHint", n => { DomainHint = n.GetStringValue(); } },
-                {"metadataUrl", n => { MetadataUrl = n.GetStringValue(); } },
-                {"responseMode", n => { ResponseMode = n.GetEnumValue<OpenIdConnectResponseMode>(); } },
-                {"responseType", n => { ResponseType = n.GetEnumValue<OpenIdConnectResponseTypes>(); } },
-                {"scope", n => { Scope = n.GetStringValue(); } },
+                { "claimsMapping", n => { ClaimsMapping = n.GetObjectValue<Microsoft.Graph.Beta.Models.ClaimsMapping>(Microsoft.Graph.Beta.Models.ClaimsMapping.CreateFromDiscriminatorValue); } },
+                { "domainHint", n => { DomainHint = n.GetStringValue(); } },
+                { "metadataUrl", n => { MetadataUrl = n.GetStringValue(); } },
+                { "responseMode", n => { ResponseMode = n.GetEnumValue<OpenIdConnectResponseMode>(); } },
+                { "responseType", n => { ResponseType = n.GetEnumValue<OpenIdConnectResponseTypes>(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
             };
         }
         /// <summary>

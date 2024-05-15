@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint indicating that this value is a secret and will be encrypted.
     /// </summary>
-    public class DeviceManagementIntentSettingSecretConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementIntentSettingSecretConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementIntentSettingSecretConstraint"/> and sets the default values.

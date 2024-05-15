@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Allows IT admins to set a predefined default search engine for MDM-Controlled devices.
     /// </summary>
-    public class EdgeSearchEngine : EdgeSearchEngineBase, IParsable 
+    public class EdgeSearchEngine : EdgeSearchEngineBase, IParsable
     {
         /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
-        public Microsoft.Graph.Beta.Models.EdgeSearchEngineType? EdgeSearchEngineType {
+        public Microsoft.Graph.Beta.Models.EdgeSearchEngineType? EdgeSearchEngineType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeSearchEngineType?>("edgeSearchEngineType"); }
             set { BackingStore?.Set("edgeSearchEngineType", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"edgeSearchEngineType", n => { EdgeSearchEngineType = n.GetEnumValue<EdgeSearchEngineType>(); } },
+                { "edgeSearchEngineType", n => { EdgeSearchEngineType = n.GetEnumValue<EdgeSearchEngineType>(); } },
             };
         }
         /// <summary>

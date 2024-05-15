@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TooManyGlobalAdminsAssignedToTenantAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable 
+    public class TooManyGlobalAdminsAssignedToTenantAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The threshold for the number of accounts assigned the Global Administrator role in the tenant. Triggers an alert if the number of global administrators in the tenant reaches or crosses this threshold value.</summary>
-        public int? GlobalAdminCountThreshold {
+        public int? GlobalAdminCountThreshold
+        {
             get { return BackingStore?.Get<int?>("globalAdminCountThreshold"); }
             set { BackingStore?.Set("globalAdminCountThreshold", value); }
         }
         /// <summary>Threshold of the percentage of global administrators out of all the role assignments in the tenant. Triggers an alert if the percentage in the tenant reaches or crosses this threshold value.</summary>
-        public int? PercentageOfGlobalAdminsOutOfRolesThreshold {
+        public int? PercentageOfGlobalAdminsOutOfRolesThreshold
+        {
             get { return BackingStore?.Get<int?>("percentageOfGlobalAdminsOutOfRolesThreshold"); }
             set { BackingStore?.Set("percentageOfGlobalAdminsOutOfRolesThreshold", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"globalAdminCountThreshold", n => { GlobalAdminCountThreshold = n.GetIntValue(); } },
-                {"percentageOfGlobalAdminsOutOfRolesThreshold", n => { PercentageOfGlobalAdminsOutOfRolesThreshold = n.GetIntValue(); } },
+                { "globalAdminCountThreshold", n => { GlobalAdminCountThreshold = n.GetIntValue(); } },
+                { "percentageOfGlobalAdminsOutOfRolesThreshold", n => { PercentageOfGlobalAdminsOutOfRolesThreshold = n.GetIntValue(); } },
             };
         }
         /// <summary>

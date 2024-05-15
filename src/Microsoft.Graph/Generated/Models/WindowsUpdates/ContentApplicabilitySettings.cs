@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ContentApplicabilitySettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ContentApplicabilitySettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Offer if the update is recommended by a vendor in the list, otherwise withhold the offer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OfferWhileRecommendedBy {
+        public List<string>? OfferWhileRecommendedBy
+        {
             get { return BackingStore?.Get<List<string>?>("offerWhileRecommendedBy"); }
             set { BackingStore?.Set("offerWhileRecommendedBy", value); }
         }
 #nullable restore
 #else
-        public List<string> OfferWhileRecommendedBy {
+        public List<string> OfferWhileRecommendedBy
+        {
             get { return BackingStore?.Get<List<string>>("offerWhileRecommendedBy"); }
             set { BackingStore?.Set("offerWhileRecommendedBy", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing safeguard-holds on offering content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SafeguardSettings? Safeguard {
+        public SafeguardSettings? Safeguard
+        {
             get { return BackingStore?.Get<SafeguardSettings?>("safeguard"); }
             set { BackingStore?.Set("safeguard", value); }
         }
 #nullable restore
 #else
-        public SafeguardSettings Safeguard {
+        public SafeguardSettings Safeguard
+        {
             get { return BackingStore?.Get<SafeguardSettings>("safeguard"); }
             set { BackingStore?.Set("safeguard", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"offerWhileRecommendedBy", n => { OfferWhileRecommendedBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"safeguard", n => { Safeguard = n.GetObjectValue<SafeguardSettings>(SafeguardSettings.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "offerWhileRecommendedBy", n => { OfferWhileRecommendedBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "safeguard", n => { Safeguard = n.GetObjectValue<SafeguardSettings>(SafeguardSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

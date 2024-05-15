@@ -4,55 +4,64 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserCredentialUsageDetails : Entity, IParsable 
+    public class UserCredentialUsageDetails : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authMethod property</summary>
-        public UsageAuthMethod? AuthMethod {
+        public UsageAuthMethod? AuthMethod
+        {
             get { return BackingStore?.Get<UsageAuthMethod?>("authMethod"); }
             set { BackingStore?.Set("authMethod", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? EventDateTime {
+        public DateTimeOffset? EventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Provides the failure reason for the corresponding reset or registration workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureReason {
+        public string? FailureReason
+        {
             get { return BackingStore?.Get<string?>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
 #nullable restore
 #else
-        public string FailureReason {
+        public string FailureReason
+        {
             get { return BackingStore?.Get<string>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
         /// <summary>The feature property</summary>
-        public FeatureType? Feature {
+        public FeatureType? Feature
+        {
             get { return BackingStore?.Get<FeatureType?>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Indicates success or failure of the workflow.</summary>
-        public bool? IsSuccess {
+        public bool? IsSuccess
+        {
             get { return BackingStore?.Get<bool?>("isSuccess"); }
             set { BackingStore?.Set("isSuccess", value); }
         }
         /// <summary>User name of the user performing the reset or registration workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -60,13 +69,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User principal name of the user performing the reset or registration workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -89,13 +100,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
-                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureReason", n => { FailureReason = n.GetStringValue(); } },
-                {"feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
-                {"isSuccess", n => { IsSuccess = n.GetBoolValue(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
+                { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failureReason", n => { FailureReason = n.GetStringValue(); } },
+                { "feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
+                { "isSuccess", n => { IsSuccess = n.GetBoolValue(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

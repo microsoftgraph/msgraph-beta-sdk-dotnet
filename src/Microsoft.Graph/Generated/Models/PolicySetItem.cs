@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for PolicySet Item.
     /// </summary>
-    public class PolicySetItem : Entity, IParsable 
+    public class PolicySetItem : Entity, IParsable
     {
         /// <summary>Creation time of the PolicySetItem.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>DisplayName of the PolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The errorCode property</summary>
-        public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode {
+        public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Tags of the guided deployment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GuidedDeploymentTags {
+        public List<string>? GuidedDeploymentTags
+        {
             get { return BackingStore?.Get<List<string>?>("guidedDeploymentTags"); }
             set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
 #nullable restore
 #else
-        public List<string> GuidedDeploymentTags {
+        public List<string> GuidedDeploymentTags
+        {
             get { return BackingStore?.Get<List<string>>("guidedDeploymentTags"); }
             set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
@@ -51,38 +58,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>policySetType of the PolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemType {
+        public string? ItemType
+        {
             get { return BackingStore?.Get<string?>("itemType"); }
             set { BackingStore?.Set("itemType", value); }
         }
 #nullable restore
 #else
-        public string ItemType {
+        public string ItemType
+        {
             get { return BackingStore?.Get<string>("itemType"); }
             set { BackingStore?.Set("itemType", value); }
         }
 #endif
         /// <summary>Last modified time of the PolicySetItem.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>PayloadId of the PolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadId {
+        public string? PayloadId
+        {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #nullable restore
 #else
-        public string PayloadId {
+        public string PayloadId
+        {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #endif
         /// <summary>The enum to specify the status of PolicySet.</summary>
-        public PolicySetStatus? Status {
+        public PolicySetStatus? Status
+        {
             get { return BackingStore?.Get<PolicySetStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -121,14 +134,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"errorCode", n => { ErrorCode = n.GetEnumValue<ErrorCode>(); } },
-                {"guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"itemType", n => { ItemType = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<PolicySetStatus>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetEnumValue<ErrorCode>(); } },
+                { "guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "itemType", n => { ItemType = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "payloadId", n => { PayloadId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<PolicySetStatus>(); } },
             };
         }
         /// <summary>

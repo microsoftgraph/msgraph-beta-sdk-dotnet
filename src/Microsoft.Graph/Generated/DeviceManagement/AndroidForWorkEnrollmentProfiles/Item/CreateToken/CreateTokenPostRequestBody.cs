@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item.CreateToken {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles.Item.CreateToken
+{
     #pragma warning disable CS1591
-    public class CreateTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tokenValidityInSeconds property</summary>
-        public int? TokenValidityInSeconds {
+        public int? TokenValidityInSeconds
+        {
             get { return BackingStore?.Get<int?>("tokenValidityInSeconds"); }
             set { BackingStore?.Set("tokenValidityInSeconds", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidForWorkEnrollmentProfiles
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"tokenValidityInSeconds", n => { TokenValidityInSeconds = n.GetIntValue(); } },
+                { "tokenValidityInSeconds", n => { TokenValidityInSeconds = n.GetIntValue(); } },
             };
         }
         /// <summary>

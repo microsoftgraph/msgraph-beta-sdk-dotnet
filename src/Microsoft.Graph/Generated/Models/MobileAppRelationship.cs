@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Describes a relationship between two mobile apps.
     /// </summary>
-    public class MobileAppRelationship : Entity, IParsable 
+    public class MobileAppRelationship : Entity, IParsable
     {
         /// <summary>The target mobile app&apos;s display name. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetDisplayName {
+        public string? TargetDisplayName
+        {
             get { return BackingStore?.Get<string?>("targetDisplayName"); }
             set { BackingStore?.Set("targetDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TargetDisplayName {
+        public string TargetDisplayName
+        {
             get { return BackingStore?.Get<string>("targetDisplayName"); }
             set { BackingStore?.Set("targetDisplayName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The target mobile app&apos;s display version. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetDisplayVersion {
+        public string? TargetDisplayVersion
+        {
             get { return BackingStore?.Get<string?>("targetDisplayVersion"); }
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
 #nullable restore
 #else
-        public string TargetDisplayVersion {
+        public string TargetDisplayVersion
+        {
             get { return BackingStore?.Get<string>("targetDisplayVersion"); }
             set { BackingStore?.Set("targetDisplayVersion", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The target mobile app&apos;s app id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetId {
+        public string? TargetId
+        {
             get { return BackingStore?.Get<string?>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
 #nullable restore
 #else
-        public string TargetId {
+        public string TargetId
+        {
             get { return BackingStore?.Get<string>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
@@ -55,19 +62,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The target mobile app&apos;s publisher. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetPublisher {
+        public string? TargetPublisher
+        {
             get { return BackingStore?.Get<string?>("targetPublisher"); }
             set { BackingStore?.Set("targetPublisher", value); }
         }
 #nullable restore
 #else
-        public string TargetPublisher {
+        public string TargetPublisher
+        {
             get { return BackingStore?.Get<string>("targetPublisher"); }
             set { BackingStore?.Set("targetPublisher", value); }
         }
 #endif
         /// <summary>Indicates whether the target of a relationship is the parent or the child in the relationship.</summary>
-        public MobileAppRelationshipType? TargetType {
+        public MobileAppRelationshipType? TargetType
+        {
             get { return BackingStore?.Get<MobileAppRelationshipType?>("targetType"); }
             set { BackingStore?.Set("targetType", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
-                {"targetDisplayVersion", n => { TargetDisplayVersion = n.GetStringValue(); } },
-                {"targetId", n => { TargetId = n.GetStringValue(); } },
-                {"targetPublisher", n => { TargetPublisher = n.GetStringValue(); } },
-                {"targetType", n => { TargetType = n.GetEnumValue<MobileAppRelationshipType>(); } },
+                { "targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
+                { "targetDisplayVersion", n => { TargetDisplayVersion = n.GetStringValue(); } },
+                { "targetId", n => { TargetId = n.GetStringValue(); } },
+                { "targetPublisher", n => { TargetPublisher = n.GetStringValue(); } },
+                { "targetType", n => { TargetType = n.GetEnumValue<MobileAppRelationshipType>(); } },
             };
         }
         /// <summary>

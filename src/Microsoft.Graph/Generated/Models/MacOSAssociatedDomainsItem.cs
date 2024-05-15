@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A mapping of application identifiers to associated domains.
     /// </summary>
-    public class MacOSAssociatedDomainsItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSAssociatedDomainsItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The application identifier of the app to associate domains with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationIdentifier {
+        public string? ApplicationIdentifier
+        {
             get { return BackingStore?.Get<string?>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ApplicationIdentifier {
+        public string ApplicationIdentifier
+        {
             get { return BackingStore?.Get<string>("applicationIdentifier"); }
             set { BackingStore?.Set("applicationIdentifier", value); }
         }
@@ -33,20 +37,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines whether data should be downloaded directly or via a CDN.</summary>
-        public bool? DirectDownloadsEnabled {
+        public bool? DirectDownloadsEnabled
+        {
             get { return BackingStore?.Get<bool?>("directDownloadsEnabled"); }
             set { BackingStore?.Set("directDownloadsEnabled", value); }
         }
         /// <summary>The list of domains to associate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains {
+        public List<string>? Domains
+        {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
 #nullable restore
 #else
-        public List<string> Domains {
+        public List<string> Domains
+        {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
-                {"directDownloadsEnabled", n => { DirectDownloadsEnabled = n.GetBoolValue(); } },
-                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
+                { "directDownloadsEnabled", n => { DirectDownloadsEnabled = n.GetBoolValue(); } },
+                { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

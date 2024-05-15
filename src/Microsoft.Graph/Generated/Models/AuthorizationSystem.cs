@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthorizationSystem : Entity, IParsable 
+    public class AuthorizationSystem : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the authorization system retrieved from the customer cloud environment. Supports $filter(eq, contains) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationSystemId {
+        public string? AuthorizationSystemId
+        {
             get { return BackingStore?.Get<string?>("authorizationSystemId"); }
             set { BackingStore?.Set("authorizationSystemId", value); }
         }
 #nullable restore
 #else
-        public string AuthorizationSystemId {
+        public string AuthorizationSystemId
+        {
             get { return BackingStore?.Get<string>("authorizationSystemId"); }
             set { BackingStore?.Set("authorizationSystemId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the authorization system detected after onboarding. Supports $filter(eq,contains) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationSystemName {
+        public string? AuthorizationSystemName
+        {
             get { return BackingStore?.Get<string?>("authorizationSystemName"); }
             set { BackingStore?.Set("authorizationSystemName", value); }
         }
 #nullable restore
 #else
-        public string AuthorizationSystemName {
+        public string AuthorizationSystemName
+        {
             get { return BackingStore?.Get<string>("authorizationSystemName"); }
             set { BackingStore?.Set("authorizationSystemName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of authorization system. Can be gcp, azure, or aws. Supports $filter(eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationSystemType {
+        public string? AuthorizationSystemType
+        {
             get { return BackingStore?.Get<string?>("authorizationSystemType"); }
             set { BackingStore?.Set("authorizationSystemType", value); }
         }
 #nullable restore
 #else
-        public string AuthorizationSystemType {
+        public string AuthorizationSystemType
+        {
             get { return BackingStore?.Get<string>("authorizationSystemType"); }
             set { BackingStore?.Set("authorizationSystemType", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Defines how and whether Permissions Management collects data from the onboarded authorization system. Supports $filter (eq) as follows:  $filter=dataCollectionInfo/entitlements/permissionsModificationCapability and $filter=dataCollectionInfo/entitlements/status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DataCollectionInfo? DataCollectionInfo {
+        public Microsoft.Graph.Beta.Models.DataCollectionInfo? DataCollectionInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataCollectionInfo?>("dataCollectionInfo"); }
             set { BackingStore?.Set("dataCollectionInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DataCollectionInfo DataCollectionInfo {
+        public Microsoft.Graph.Beta.Models.DataCollectionInfo DataCollectionInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataCollectionInfo>("dataCollectionInfo"); }
             set { BackingStore?.Set("dataCollectionInfo", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorizationSystemId", n => { AuthorizationSystemId = n.GetStringValue(); } },
-                {"authorizationSystemName", n => { AuthorizationSystemName = n.GetStringValue(); } },
-                {"authorizationSystemType", n => { AuthorizationSystemType = n.GetStringValue(); } },
-                {"dataCollectionInfo", n => { DataCollectionInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataCollectionInfo>(Microsoft.Graph.Beta.Models.DataCollectionInfo.CreateFromDiscriminatorValue); } },
+                { "authorizationSystemId", n => { AuthorizationSystemId = n.GetStringValue(); } },
+                { "authorizationSystemName", n => { AuthorizationSystemName = n.GetStringValue(); } },
+                { "authorizationSystemType", n => { AuthorizationSystemType = n.GetStringValue(); } },
+                { "dataCollectionInfo", n => { DataCollectionInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataCollectionInfo>(Microsoft.Graph.Beta.Models.DataCollectionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

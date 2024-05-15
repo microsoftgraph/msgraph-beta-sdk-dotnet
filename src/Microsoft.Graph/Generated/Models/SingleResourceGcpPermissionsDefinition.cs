@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SingleResourceGcpPermissionsDefinition : PermissionsDefinition, IParsable 
+    public class SingleResourceGcpPermissionsDefinition : PermissionsDefinition, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GcpPermissionsDefinitionAction? ActionInfo {
+        public GcpPermissionsDefinitionAction? ActionInfo
+        {
             get { return BackingStore?.Get<GcpPermissionsDefinitionAction?>("actionInfo"); }
             set { BackingStore?.Set("actionInfo", value); }
         }
 #nullable restore
 #else
-        public GcpPermissionsDefinitionAction ActionInfo {
+        public GcpPermissionsDefinitionAction ActionInfo
+        {
             get { return BackingStore?.Get<GcpPermissionsDefinitionAction>("actionInfo"); }
             set { BackingStore?.Set("actionInfo", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier for the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionInfo", n => { ActionInfo = n.GetObjectValue<GcpPermissionsDefinitionAction>(GcpPermissionsDefinitionAction.CreateFromDiscriminatorValue); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "actionInfo", n => { ActionInfo = n.GetObjectValue<GcpPermissionsDefinitionAction>(GcpPermissionsDefinitionAction.CreateFromDiscriminatorValue); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

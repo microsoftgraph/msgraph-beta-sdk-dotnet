@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchDataStoreBase : Entity, IParsable 
+    public class ExactMatchDataStoreBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The columns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExactDataMatchStoreColumn>? Columns {
+        public List<ExactDataMatchStoreColumn>? Columns
+        {
             get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<ExactDataMatchStoreColumn> Columns {
+        public List<ExactDataMatchStoreColumn> Columns
+        {
             get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #endif
         /// <summary>The dataLastUpdatedDateTime property</summary>
-        public DateTimeOffset? DataLastUpdatedDateTime {
+        public DateTimeOffset? DataLastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("dataLastUpdatedDateTime"); }
             set { BackingStore?.Set("dataLastUpdatedDateTime", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -79,10 +87,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"columns", n => { Columns = n.GetCollectionOfObjectValues<ExactDataMatchStoreColumn>(ExactDataMatchStoreColumn.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dataLastUpdatedDateTime", n => { DataLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<ExactDataMatchStoreColumn>(ExactDataMatchStoreColumn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dataLastUpdatedDateTime", n => { DataLastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

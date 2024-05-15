@@ -4,47 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcSnapshot : Entity, IParsable 
+    public class CloudPcSnapshot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudPcId {
+        public string? CloudPcId
+        {
             get { return BackingStore?.Get<string?>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
 #nullable restore
 #else
-        public string CloudPcId {
+        public string CloudPcId
+        {
             get { return BackingStore?.Get<string>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
 #endif
         /// <summary>The date and time at which the snapshot was taken. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time when the snapshot expires. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The date and time at which the snapshot was last used to restore the Cloud PC device. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastRestoredDateTime {
+        public DateTimeOffset? LastRestoredDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRestoredDateTime"); }
             set { BackingStore?.Set("lastRestoredDateTime", value); }
         }
         /// <summary>The type of snapshot that indicates how to create the snapshot. Possible values are automatic, manual. Default value is automatic.</summary>
-        public CloudPcSnapshotType? SnapshotType {
+        public CloudPcSnapshotType? SnapshotType
+        {
             get { return BackingStore?.Get<CloudPcSnapshotType?>("snapshotType"); }
             set { BackingStore?.Set("snapshotType", value); }
         }
         /// <summary>The status of the Cloud PC snapshot. The possible values are: ready, unknownFutureValue.</summary>
-        public CloudPcSnapshotStatus? Status {
+        public CloudPcSnapshotStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcSnapshotStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -66,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRestoredDateTime", n => { LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
-                {"snapshotType", n => { SnapshotType = n.GetEnumValue<CloudPcSnapshotType>(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcSnapshotStatus>(); } },
+                { "cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastRestoredDateTime", n => { LastRestoredDateTime = n.GetDateTimeOffsetValue(); } },
+                { "snapshotType", n => { SnapshotType = n.GetEnumValue<CloudPcSnapshotType>(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcSnapshotStatus>(); } },
             };
         }
         /// <summary>

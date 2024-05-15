@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class ImpactedMailboxAsset : ImpactedAsset, IParsable 
+    public class ImpactedMailboxAsset : ImpactedAsset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier property</summary>
-        public MailboxAssetIdentifier? Identifier {
+        public MailboxAssetIdentifier? Identifier
+        {
             get { return BackingStore?.Get<MailboxAssetIdentifier?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"identifier", n => { Identifier = n.GetEnumValue<MailboxAssetIdentifier>(); } },
+                { "identifier", n => { Identifier = n.GetEnumValue<MailboxAssetIdentifier>(); } },
             };
         }
         /// <summary>

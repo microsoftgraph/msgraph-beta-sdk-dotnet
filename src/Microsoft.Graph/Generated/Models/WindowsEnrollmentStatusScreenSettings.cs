@@ -5,73 +5,85 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Enrollment status screen setting
     /// </summary>
-    public class WindowsEnrollmentStatusScreenSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsEnrollmentStatusScreenSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Allow or block user to use device before profile and app installation complete</summary>
-        public bool? AllowDeviceUseBeforeProfileAndAppInstallComplete {
+        public bool? AllowDeviceUseBeforeProfileAndAppInstallComplete
+        {
             get { return BackingStore?.Get<bool?>("allowDeviceUseBeforeProfileAndAppInstallComplete"); }
             set { BackingStore?.Set("allowDeviceUseBeforeProfileAndAppInstallComplete", value); }
         }
         /// <summary>Allow the user to continue using the device on installation failure</summary>
-        public bool? AllowDeviceUseOnInstallFailure {
+        public bool? AllowDeviceUseOnInstallFailure
+        {
             get { return BackingStore?.Get<bool?>("allowDeviceUseOnInstallFailure"); }
             set { BackingStore?.Set("allowDeviceUseOnInstallFailure", value); }
         }
         /// <summary>Allow or block log collection on installation failure</summary>
-        public bool? AllowLogCollectionOnInstallFailure {
+        public bool? AllowLogCollectionOnInstallFailure
+        {
             get { return BackingStore?.Get<bool?>("allowLogCollectionOnInstallFailure"); }
             set { BackingStore?.Set("allowLogCollectionOnInstallFailure", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Allow the user to retry the setup on installation failure</summary>
-        public bool? BlockDeviceSetupRetryByUser {
+        public bool? BlockDeviceSetupRetryByUser
+        {
             get { return BackingStore?.Get<bool?>("blockDeviceSetupRetryByUser"); }
             set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
         /// <summary>Set custom error message to show upon installation failure</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomErrorMessage {
+        public string? CustomErrorMessage
+        {
             get { return BackingStore?.Get<string?>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
 #nullable restore
 #else
-        public string CustomErrorMessage {
+        public string CustomErrorMessage
+        {
             get { return BackingStore?.Get<string>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
 #endif
         /// <summary>Show or hide installation progress to user</summary>
-        public bool? HideInstallationProgress {
+        public bool? HideInstallationProgress
+        {
             get { return BackingStore?.Get<bool?>("hideInstallationProgress"); }
             set { BackingStore?.Set("hideInstallationProgress", value); }
         }
         /// <summary>Set installation progress timeout in minutes</summary>
-        public int? InstallProgressTimeoutInMinutes {
+        public int? InstallProgressTimeoutInMinutes
+        {
             get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
             set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -102,14 +114,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowDeviceUseBeforeProfileAndAppInstallComplete", n => { AllowDeviceUseBeforeProfileAndAppInstallComplete = n.GetBoolValue(); } },
-                {"allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
-                {"allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
-                {"blockDeviceSetupRetryByUser", n => { BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
-                {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
-                {"hideInstallationProgress", n => { HideInstallationProgress = n.GetBoolValue(); } },
-                {"installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowDeviceUseBeforeProfileAndAppInstallComplete", n => { AllowDeviceUseBeforeProfileAndAppInstallComplete = n.GetBoolValue(); } },
+                { "allowDeviceUseOnInstallFailure", n => { AllowDeviceUseOnInstallFailure = n.GetBoolValue(); } },
+                { "allowLogCollectionOnInstallFailure", n => { AllowLogCollectionOnInstallFailure = n.GetBoolValue(); } },
+                { "blockDeviceSetupRetryByUser", n => { BlockDeviceSetupRetryByUser = n.GetBoolValue(); } },
+                { "customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
+                { "hideInstallationProgress", n => { HideInstallationProgress = n.GetBoolValue(); } },
+                { "installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

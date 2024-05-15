@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+namespace Microsoft.Graph.Beta.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class ExternalActivityResult : ExternalActivity, IParsable 
+    public class ExternalActivityResult : ExternalActivity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Error information that explains the failure to process an external activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PublicError? Error {
+        public Microsoft.Graph.Beta.Models.PublicError? Error
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PublicError Error {
+        public Microsoft.Graph.Beta.Models.PublicError Error
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

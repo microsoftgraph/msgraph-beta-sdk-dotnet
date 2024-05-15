@@ -4,43 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class TunnelConfigurationIKEv2Custom : TunnelConfiguration, IParsable 
+    public class TunnelConfigurationIKEv2Custom : TunnelConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dhGroup property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.DhGroup? DhGroup {
+        public Microsoft.Graph.Beta.Models.Networkaccess.DhGroup? DhGroup
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.DhGroup?>("dhGroup"); }
             set { BackingStore?.Set("dhGroup", value); }
         }
         /// <summary>The ikeEncryption property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.IkeEncryption? IkeEncryption {
+        public Microsoft.Graph.Beta.Models.Networkaccess.IkeEncryption? IkeEncryption
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.IkeEncryption?>("ikeEncryption"); }
             set { BackingStore?.Set("ikeEncryption", value); }
         }
         /// <summary>The ikeIntegrity property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.IkeIntegrity? IkeIntegrity {
+        public Microsoft.Graph.Beta.Models.Networkaccess.IkeIntegrity? IkeIntegrity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.IkeIntegrity?>("ikeIntegrity"); }
             set { BackingStore?.Set("ikeIntegrity", value); }
         }
         /// <summary>The ipSecEncryption property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.IpSecEncryption? IpSecEncryption {
+        public Microsoft.Graph.Beta.Models.Networkaccess.IpSecEncryption? IpSecEncryption
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.IpSecEncryption?>("ipSecEncryption"); }
             set { BackingStore?.Set("ipSecEncryption", value); }
         }
         /// <summary>The ipSecIntegrity property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.IpSecIntegrity? IpSecIntegrity {
+        public Microsoft.Graph.Beta.Models.Networkaccess.IpSecIntegrity? IpSecIntegrity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.IpSecIntegrity?>("ipSecIntegrity"); }
             set { BackingStore?.Set("ipSecIntegrity", value); }
         }
         /// <summary>The pfsGroup property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.PfsGroup? PfsGroup {
+        public Microsoft.Graph.Beta.Models.Networkaccess.PfsGroup? PfsGroup
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.PfsGroup?>("pfsGroup"); }
             set { BackingStore?.Set("pfsGroup", value); }
         }
         /// <summary>a standard specifiying Security Association lifetime with recommended values from an RFC standard.</summary>
-        public long? SaLifeTimeSeconds {
+        public long? SaLifeTimeSeconds
+        {
             get { return BackingStore?.Get<long?>("saLifeTimeSeconds"); }
             set { BackingStore?.Set("saLifeTimeSeconds", value); }
         }
@@ -69,13 +77,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dhGroup", n => { DhGroup = n.GetEnumValue<DhGroup>(); } },
-                {"ikeEncryption", n => { IkeEncryption = n.GetEnumValue<IkeEncryption>(); } },
-                {"ikeIntegrity", n => { IkeIntegrity = n.GetEnumValue<IkeIntegrity>(); } },
-                {"ipSecEncryption", n => { IpSecEncryption = n.GetEnumValue<IpSecEncryption>(); } },
-                {"ipSecIntegrity", n => { IpSecIntegrity = n.GetEnumValue<IpSecIntegrity>(); } },
-                {"pfsGroup", n => { PfsGroup = n.GetEnumValue<PfsGroup>(); } },
-                {"saLifeTimeSeconds", n => { SaLifeTimeSeconds = n.GetLongValue(); } },
+                { "dhGroup", n => { DhGroup = n.GetEnumValue<DhGroup>(); } },
+                { "ikeEncryption", n => { IkeEncryption = n.GetEnumValue<IkeEncryption>(); } },
+                { "ikeIntegrity", n => { IkeIntegrity = n.GetEnumValue<IkeIntegrity>(); } },
+                { "ipSecEncryption", n => { IpSecEncryption = n.GetEnumValue<IpSecEncryption>(); } },
+                { "ipSecIntegrity", n => { IpSecIntegrity = n.GetEnumValue<IpSecIntegrity>(); } },
+                { "pfsGroup", n => { PfsGroup = n.GetEnumValue<PfsGroup>(); } },
+                { "saLifeTimeSeconds", n => { SaLifeTimeSeconds = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Item {
+namespace Microsoft.Graph.Beta.MobilityManagementPolicies.Item.IncludedGroups.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \mobilityManagementPolicies\{mobilityManagementPolicy-id}\includedGroups\{group-id}
     /// </summary>
-    public class GroupItemRequestBuilder : BaseRequestBuilder 
+    public class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of mobilityManagementPolicy entities.</summary>
         public RefRequestBuilder Ref

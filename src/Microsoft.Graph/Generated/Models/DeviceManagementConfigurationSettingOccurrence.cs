@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationSettingOccurrence : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationSettingOccurrence : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Maximum times setting can be set on device.</summary>
-        public int? MaxDeviceOccurrence {
+        public int? MaxDeviceOccurrence
+        {
             get { return BackingStore?.Get<int?>("maxDeviceOccurrence"); }
             set { BackingStore?.Set("maxDeviceOccurrence", value); }
         }
         /// <summary>Minimum times setting can be set on device. A MinDeviceOccurrence of 0 means setting is optional</summary>
-        public int? MinDeviceOccurrence {
+        public int? MinDeviceOccurrence
+        {
             get { return BackingStore?.Get<int?>("minDeviceOccurrence"); }
             set { BackingStore?.Set("minDeviceOccurrence", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"maxDeviceOccurrence", n => { MaxDeviceOccurrence = n.GetIntValue(); } },
-                {"minDeviceOccurrence", n => { MinDeviceOccurrence = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "maxDeviceOccurrence", n => { MaxDeviceOccurrence = n.GetIntValue(); } },
+                { "minDeviceOccurrence", n => { MinDeviceOccurrence = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

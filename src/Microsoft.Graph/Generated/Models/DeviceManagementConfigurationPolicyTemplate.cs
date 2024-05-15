@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Management Configuration Policy Template
     /// </summary>
-    public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable 
+    public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable
     {
         /// <summary>Allow unmanaged setting templates</summary>
-        public bool? AllowUnmanagedSettings {
+        public bool? AllowUnmanagedSettings
+        {
             get { return BackingStore?.Get<bool?>("allowUnmanagedSettings"); }
             set { BackingStore?.Set("allowUnmanagedSettings", value); }
         }
         /// <summary>Template base identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseId {
+        public string? BaseId
+        {
             get { return BackingStore?.Get<string?>("baseId"); }
             set { BackingStore?.Set("baseId", value); }
         }
 #nullable restore
 #else
-        public string BaseId {
+        public string BaseId
+        {
             get { return BackingStore?.Get<string>("baseId"); }
             set { BackingStore?.Set("baseId", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Template description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Template display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -60,58 +68,68 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of template version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayVersion {
+        public string? DisplayVersion
+        {
             get { return BackingStore?.Get<string?>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
 #nullable restore
 #else
-        public string DisplayVersion {
+        public string DisplayVersion
+        {
             get { return BackingStore?.Get<string>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
 #endif
         /// <summary>Describes current lifecycle state of a template</summary>
-        public DeviceManagementTemplateLifecycleState? LifecycleState {
+        public DeviceManagementTemplateLifecycleState? LifecycleState
+        {
             get { return BackingStore?.Get<DeviceManagementTemplateLifecycleState?>("lifecycleState"); }
             set { BackingStore?.Set("lifecycleState", value); }
         }
         /// <summary>Supported platform types.</summary>
-        public DeviceManagementConfigurationPlatforms? Platforms {
+        public DeviceManagementConfigurationPlatforms? Platforms
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Number of setting templates. Valid values 0 to 2147483647. This property is read-only.</summary>
-        public int? SettingTemplateCount {
+        public int? SettingTemplateCount
+        {
             get { return BackingStore?.Get<int?>("settingTemplateCount"); }
             set { BackingStore?.Set("settingTemplateCount", value); }
         }
         /// <summary>Setting templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingTemplate>? SettingTemplates {
+        public List<DeviceManagementConfigurationSettingTemplate>? SettingTemplates
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>?>("settingTemplates"); }
             set { BackingStore?.Set("settingTemplates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates {
+        public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>("settingTemplates"); }
             set { BackingStore?.Set("settingTemplates", value); }
         }
 #endif
         /// <summary>Describes which technology this setting can be deployed with</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies {
+        public DeviceManagementConfigurationTechnologies? Technologies
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>Describes the TemplateFamily for the Template entity</summary>
-        public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
+        public DeviceManagementConfigurationTemplateFamily? TemplateFamily
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
             set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template version. Valid values 1 to 2147483647. This property is read-only.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -133,18 +151,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowUnmanagedSettings", n => { AllowUnmanagedSettings = n.GetBoolValue(); } },
-                {"baseId", n => { BaseId = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
-                {"lifecycleState", n => { LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
-                {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"settingTemplateCount", n => { SettingTemplateCount = n.GetIntValue(); } },
-                {"settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                {"templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "allowUnmanagedSettings", n => { AllowUnmanagedSettings = n.GetBoolValue(); } },
+                { "baseId", n => { BaseId = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
+                { "lifecycleState", n => { LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
+                { "platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                { "settingTemplateCount", n => { SettingTemplateCount = n.GetIntValue(); } },
+                { "settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                { "templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Community : Entity, IParsable 
+    public class Community : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description of the community. The maximum length is 1024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the community. The maximum length is 255 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Microsoft 365 group that manages the membership of this community.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Group? Group {
+        public Microsoft.Graph.Beta.Models.Group? Group
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Group Group {
+        public Microsoft.Graph.Beta.Models.Group Group
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
             set { BackingStore?.Set("group", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the Microsoft 365 group that manages the membership of this community.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -68,19 +77,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The admins of the community. Limited to 100 users. If this property isn&apos;t specified when you create the community, the calling user is automatically assigned as the community owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<User>? Owners {
+        public List<User>? Owners
+        {
             get { return BackingStore?.Get<List<User>?>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #nullable restore
 #else
-        public List<User> Owners {
+        public List<User> Owners
+        {
             get { return BackingStore?.Get<List<User>>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #endif
         /// <summary>The privacy property</summary>
-        public CommunityPrivacy? Privacy {
+        public CommunityPrivacy? Privacy
+        {
             get { return BackingStore?.Get<CommunityPrivacy?>("privacy"); }
             set { BackingStore?.Set("privacy", value); }
         }
@@ -102,12 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
-                {"owners", n => { Owners = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"privacy", n => { Privacy = n.GetEnumValue<CommunityPrivacy>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "owners", n => { Owners = n.GetCollectionOfObjectValues<User>(User.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "privacy", n => { Privacy = n.GetEnumValue<CommunityPrivacy>(); } },
             };
         }
         /// <summary>

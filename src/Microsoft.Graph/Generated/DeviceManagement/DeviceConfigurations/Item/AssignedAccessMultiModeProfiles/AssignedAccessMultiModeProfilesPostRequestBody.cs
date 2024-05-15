@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles
+{
     #pragma warning disable CS1591
-    public class AssignedAccessMultiModeProfilesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignedAccessMultiModeProfilesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignedAccessMultiModeProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsAssignedAccessProfile>? AssignedAccessMultiModeProfiles {
+        public List<WindowsAssignedAccessProfile>? AssignedAccessMultiModeProfiles
+        {
             get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>?>("assignedAccessMultiModeProfiles"); }
             set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
 #nullable restore
 #else
-        public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles {
+        public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles
+        {
             get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>>("assignedAccessMultiModeProfiles"); }
             set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

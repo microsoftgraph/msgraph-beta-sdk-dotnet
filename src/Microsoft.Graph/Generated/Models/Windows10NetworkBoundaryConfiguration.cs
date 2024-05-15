@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows10 Network Boundary Configuration
     /// </summary>
-    public class Windows10NetworkBoundaryConfiguration : DeviceConfiguration, IParsable 
+    public class Windows10NetworkBoundaryConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Windows Network Isolation Policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy? WindowsNetworkIsolationPolicy {
+        public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy? WindowsNetworkIsolationPolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy?>("windowsNetworkIsolationPolicy"); }
             set { BackingStore?.Set("windowsNetworkIsolationPolicy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy WindowsNetworkIsolationPolicy {
+        public Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy WindowsNetworkIsolationPolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>("windowsNetworkIsolationPolicy"); }
             set { BackingStore?.Set("windowsNetworkIsolationPolicy", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"windowsNetworkIsolationPolicy", n => { WindowsNetworkIsolationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>(Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy.CreateFromDiscriminatorValue); } },
+                { "windowsNetworkIsolationPolicy", n => { WindowsNetworkIsolationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy>(Microsoft.Graph.Beta.Models.WindowsNetworkIsolationPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

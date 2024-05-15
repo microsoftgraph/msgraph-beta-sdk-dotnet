@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RelatedWebCategory : RelatedResource, IParsable 
+    public class RelatedWebCategory : RelatedResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The webCategoryName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebCategoryName {
+        public string? WebCategoryName
+        {
             get { return BackingStore?.Get<string?>("webCategoryName"); }
             set { BackingStore?.Set("webCategoryName", value); }
         }
 #nullable restore
 #else
-        public string WebCategoryName {
+        public string WebCategoryName
+        {
             get { return BackingStore?.Get<string>("webCategoryName"); }
             set { BackingStore?.Set("webCategoryName", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"webCategoryName", n => { WebCategoryName = n.GetStringValue(); } },
+                { "webCategoryName", n => { WebCategoryName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class UserExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the number of days after an update is installed, during which the user of the device can control when the device restarts.</summary>
-        public int? DaysUntilForcedReboot {
+        public int? DaysUntilForcedReboot
+        {
             get { return BackingStore?.Get<int?>("daysUntilForcedReboot"); }
             set { BackingStore?.Set("daysUntilForcedReboot", value); }
         }
         /// <summary>The isHotpatchEnabled property</summary>
-        public bool? IsHotpatchEnabled {
+        public bool? IsHotpatchEnabled
+        {
             get { return BackingStore?.Get<bool?>("isHotpatchEnabled"); }
             set { BackingStore?.Set("isHotpatchEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Specifies whether the update is offered as Optional rather than Required.</summary>
-        public bool? OfferAsOptional {
+        public bool? OfferAsOptional
+        {
             get { return BackingStore?.Get<bool?>("offerAsOptional"); }
             set { BackingStore?.Set("offerAsOptional", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
-                {"isHotpatchEnabled", n => { IsHotpatchEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"offerAsOptional", n => { OfferAsOptional = n.GetBoolValue(); } },
+                { "daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
+                { "isHotpatchEnabled", n => { IsHotpatchEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "offerAsOptional", n => { OfferAsOptional = n.GetBoolValue(); } },
             };
         }
         /// <summary>

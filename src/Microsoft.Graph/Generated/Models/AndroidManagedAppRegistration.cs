@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents the synchronization details of an android app, with management capabilities, for a specific user.
     /// </summary>
-    public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable 
+    public class AndroidManagedAppRegistration : ManagedAppRegistration, IParsable
     {
         /// <summary>The patch version for the current android app registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PatchVersion {
+        public string? PatchVersion
+        {
             get { return BackingStore?.Get<string?>("patchVersion"); }
             set { BackingStore?.Set("patchVersion", value); }
         }
 #nullable restore
 #else
-        public string PatchVersion {
+        public string PatchVersion
+        {
             get { return BackingStore?.Get<string>("patchVersion"); }
             set { BackingStore?.Set("patchVersion", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"patchVersion", n => { PatchVersion = n.GetStringValue(); } },
+                { "patchVersion", n => { PatchVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

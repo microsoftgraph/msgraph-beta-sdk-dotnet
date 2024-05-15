@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Windows Phone 8.1 AppX Line Of Business apps. Inherits from graph.mobileLobApp. Will be deprecated in February 2023.
     /// </summary>
-    public class WindowsPhone81AppX : MobileLobApp, IParsable 
+    public class WindowsPhone81AppX : MobileLobApp, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures {
+        public WindowsArchitecture? ApplicableArchitectures
+        {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityName {
+        public string? IdentityName
+        {
             get { return BackingStore?.Get<string?>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
 #nullable restore
 #else
-        public string IdentityName {
+        public string IdentityName
+        {
             get { return BackingStore?.Get<string>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Publisher Hash.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityPublisherHash {
+        public string? IdentityPublisherHash
+        {
             get { return BackingStore?.Get<string?>("identityPublisherHash"); }
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
 #nullable restore
 #else
-        public string IdentityPublisherHash {
+        public string IdentityPublisherHash
+        {
             get { return BackingStore?.Get<string>("identityPublisherHash"); }
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Resource Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityResourceIdentifier {
+        public string? IdentityResourceIdentifier
+        {
             get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
 #nullable restore
 #else
-        public string IdentityResourceIdentifier {
+        public string IdentityResourceIdentifier
+        {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityVersion {
+        public string? IdentityVersion
+        {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
 #nullable restore
 #else
-        public string IdentityVersion {
+        public string IdentityVersion
+        {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -88,13 +100,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Phone Product Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneProductIdentifier {
+        public string? PhoneProductIdentifier
+        {
             get { return BackingStore?.Get<string?>("phoneProductIdentifier"); }
             set { BackingStore?.Set("phoneProductIdentifier", value); }
         }
 #nullable restore
 #else
-        public string PhoneProductIdentifier {
+        public string PhoneProductIdentifier
+        {
             get { return BackingStore?.Get<string>("phoneProductIdentifier"); }
             set { BackingStore?.Set("phoneProductIdentifier", value); }
         }
@@ -102,13 +116,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Phone Publisher Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhonePublisherId {
+        public string? PhonePublisherId
+        {
             get { return BackingStore?.Get<string?>("phonePublisherId"); }
             set { BackingStore?.Set("phonePublisherId", value); }
         }
 #nullable restore
 #else
-        public string PhonePublisherId {
+        public string PhonePublisherId
+        {
             get { return BackingStore?.Get<string>("phonePublisherId"); }
             set { BackingStore?.Set("phonePublisherId", value); }
         }
@@ -143,14 +159,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
-                {"identityName", n => { IdentityName = n.GetStringValue(); } },
-                {"identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
-                {"identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"phoneProductIdentifier", n => { PhoneProductIdentifier = n.GetStringValue(); } },
-                {"phonePublisherId", n => { PhonePublisherId = n.GetStringValue(); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "identityName", n => { IdentityName = n.GetStringValue(); } },
+                { "identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
+                { "identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },
+                { "identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "phoneProductIdentifier", n => { PhoneProductIdentifier = n.GetStringValue(); } },
+                { "phonePublisherId", n => { PhonePublisherId = n.GetStringValue(); } },
             };
         }
         /// <summary>

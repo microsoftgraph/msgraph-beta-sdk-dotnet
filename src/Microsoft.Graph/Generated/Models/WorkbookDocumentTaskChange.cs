@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookDocumentTaskChange : Entity, IParsable 
+    public class WorkbookDocumentTaskChange : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user identity the task is assigned to. Only present when the type property is assign. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookEmailIdentity? Assignee {
+        public WorkbookEmailIdentity? Assignee
+        {
             get { return BackingStore?.Get<WorkbookEmailIdentity?>("assignee"); }
             set { BackingStore?.Set("assignee", value); }
         }
 #nullable restore
 #else
-        public WorkbookEmailIdentity Assignee {
+        public WorkbookEmailIdentity Assignee
+        {
             get { return BackingStore?.Get<WorkbookEmailIdentity>("assignee"); }
             set { BackingStore?.Set("assignee", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The changedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookEmailIdentity? ChangedBy {
+        public WorkbookEmailIdentity? ChangedBy
+        {
             get { return BackingStore?.Get<WorkbookEmailIdentity?>("changedBy"); }
             set { BackingStore?.Set("changedBy", value); }
         }
 #nullable restore
 #else
-        public WorkbookEmailIdentity ChangedBy {
+        public WorkbookEmailIdentity ChangedBy
+        {
             get { return BackingStore?.Get<WorkbookEmailIdentity>("changedBy"); }
             set { BackingStore?.Set("changedBy", value); }
         }
@@ -40,52 +45,61 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the associated comment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommentId {
+        public string? CommentId
+        {
             get { return BackingStore?.Get<string?>("commentId"); }
             set { BackingStore?.Set("commentId", value); }
         }
 #nullable restore
 #else
-        public string CommentId {
+        public string CommentId
+        {
             get { return BackingStore?.Get<string>("commentId"); }
             set { BackingStore?.Set("commentId", value); }
         }
 #endif
         /// <summary>Date and time when the task was changed. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The due date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? DueDateTime {
+        public DateTimeOffset? DueDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
         /// <summary>An integer value from 0 to 100 that represents the percentage of the completion of the task and associated comment. 100 means that the task and associated comment are completed. If you change the completion from 100 to a lower value, the associated task and comment are reactivated. Only present when the type property is setPercentComplete. Nullable.</summary>
-        public int? PercentComplete {
+        public int? PercentComplete
+        {
             get { return BackingStore?.Get<int?>("percentComplete"); }
             set { BackingStore?.Set("percentComplete", value); }
         }
         /// <summary>An integer value from 0 to 10 that represents the priority of the task. A lower value indicates a higher priority. 5 indicates the default priority if not set. Only present when the type property is setPriority. Nullable.</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The start date and time for the task. Only present when the type property is setSchedule. Nullable. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The title of the task. Only present when the type property is setTitle. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -93,13 +107,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of the change history. Possible values are: create, assign, unassign, unassignAll, setPriority, setTitle, setPercentComplete, setSchedule, remove, restore, undo.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -107,13 +123,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the workbookDocumentTaskChange that was undone for the undo change action. Only exists on an undo change history. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UndoChangeId {
+        public string? UndoChangeId
+        {
             get { return BackingStore?.Get<string?>("undoChangeId"); }
             set { BackingStore?.Set("undoChangeId", value); }
         }
 #nullable restore
 #else
-        public string UndoChangeId {
+        public string UndoChangeId
+        {
             get { return BackingStore?.Get<string>("undoChangeId"); }
             set { BackingStore?.Set("undoChangeId", value); }
         }
@@ -136,17 +154,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignee", n => { Assignee = n.GetObjectValue<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
-                {"changedBy", n => { ChangedBy = n.GetObjectValue<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
-                {"commentId", n => { CommentId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
-                {"percentComplete", n => { PercentComplete = n.GetIntValue(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"undoChangeId", n => { UndoChangeId = n.GetStringValue(); } },
+                { "assignee", n => { Assignee = n.GetObjectValue<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
+                { "changedBy", n => { ChangedBy = n.GetObjectValue<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
+                { "commentId", n => { CommentId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
+                { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "undoChangeId", n => { UndoChangeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

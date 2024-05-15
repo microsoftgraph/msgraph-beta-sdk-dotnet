@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AddFooter : MarkContent, IParsable 
+    public class AddFooter : MarkContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The alignment property</summary>
-        public Microsoft.Graph.Beta.Models.Alignment? Alignment {
+        public Microsoft.Graph.Beta.Models.Alignment? Alignment
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Alignment?>("alignment"); }
             set { BackingStore?.Set("alignment", value); }
         }
         /// <summary>The margin property</summary>
-        public int? Margin {
+        public int? Margin
+        {
             get { return BackingStore?.Get<int?>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alignment", n => { Alignment = n.GetEnumValue<Alignment>(); } },
-                {"margin", n => { Margin = n.GetIntValue(); } },
+                { "alignment", n => { Alignment = n.GetEnumValue<Alignment>(); } },
+                { "margin", n => { Margin = n.GetIntValue(); } },
             };
         }
         /// <summary>

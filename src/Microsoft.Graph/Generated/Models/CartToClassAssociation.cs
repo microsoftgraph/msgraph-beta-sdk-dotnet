@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// CartToClassAssociation for associating device carts with classrooms.
     /// </summary>
-    public class CartToClassAssociation : Entity, IParsable 
+    public class CartToClassAssociation : Entity, IParsable
     {
         /// <summary>Identifiers of classrooms to be associated with device carts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ClassroomIds {
+        public List<string>? ClassroomIds
+        {
             get { return BackingStore?.Get<List<string>?>("classroomIds"); }
             set { BackingStore?.Set("classroomIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ClassroomIds {
+        public List<string> ClassroomIds
+        {
             get { return BackingStore?.Get<List<string>>("classroomIds"); }
             set { BackingStore?.Set("classroomIds", value); }
         }
 #endif
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the CartToClassAssociation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifiers of device carts to be associated with classes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceCartIds {
+        public List<string>? DeviceCartIds
+        {
             get { return BackingStore?.Get<List<string>?>("deviceCartIds"); }
             set { BackingStore?.Set("deviceCartIds", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceCartIds {
+        public List<string> DeviceCartIds
+        {
             get { return BackingStore?.Get<List<string>>("deviceCartIds"); }
             set { BackingStore?.Set("deviceCartIds", value); }
         }
@@ -60,24 +68,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Admin provided name of the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Version of the CartToClassAssociation.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -99,13 +111,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classroomIds", n => { ClassroomIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceCartIds", n => { DeviceCartIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "classroomIds", n => { ClassroomIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceCartIds", n => { DeviceCartIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

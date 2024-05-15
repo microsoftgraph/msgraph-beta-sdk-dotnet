@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationStrengthRoot : Entity, IParsable 
+    public class AuthenticationStrengthRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of all valid authentication method combinations in the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? AuthenticationCombinations {
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? AuthenticationCombinations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("authenticationCombinations"); }
             set { BackingStore?.Set("authenticationCombinations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AuthenticationCombinations {
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AuthenticationCombinations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("authenticationCombinations"); }
             set { BackingStore?.Set("authenticationCombinations", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Names and descriptions of all valid authentication method modes in the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModeDetail>? AuthenticationMethodModes {
+        public List<AuthenticationMethodModeDetail>? AuthenticationMethodModes
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModeDetail>?>("authenticationMethodModes"); }
             set { BackingStore?.Set("authenticationMethodModes", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModeDetail> AuthenticationMethodModes {
+        public List<AuthenticationMethodModeDetail> AuthenticationMethodModes
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModeDetail>>("authenticationMethodModes"); }
             set { BackingStore?.Set("authenticationMethodModes", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The combinations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? Combinations {
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>? Combinations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>?>("combinations"); }
             set { BackingStore?.Set("combinations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> Combinations {
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> Combinations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("combinations"); }
             set { BackingStore?.Set("combinations", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationStrengthPolicy>? Policies {
+        public List<AuthenticationStrengthPolicy>? Policies
+        {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationStrengthPolicy> Policies {
+        public List<AuthenticationStrengthPolicy> Policies
+        {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationCombinations", n => { AuthenticationCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
-                {"authenticationMethodModes", n => { AuthenticationMethodModes = n.GetCollectionOfObjectValues<AuthenticationMethodModeDetail>(AuthenticationMethodModeDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"combinations", n => { Combinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
-                {"policies", n => { Policies = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationCombinations", n => { AuthenticationCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
+                { "authenticationMethodModes", n => { AuthenticationMethodModes = n.GetCollectionOfObjectValues<AuthenticationMethodModeDetail>(AuthenticationMethodModeDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "combinations", n => { Combinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

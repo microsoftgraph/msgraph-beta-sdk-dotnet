@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivateLinkDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PrivateLinkDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for the Private Link policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyId {
+        public string? PolicyId
+        {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
 #nullable restore
 #else
-        public string PolicyId {
+        public string PolicyId
+        {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the Private Link policy in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyName {
+        public string? PolicyName
+        {
             get { return BackingStore?.Get<string?>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
 #nullable restore
 #else
-        public string PolicyName {
+        public string PolicyName
+        {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The tenant identifier of the Microsoft Entra tenant the Private Link policy belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyTenantId {
+        public string? PolicyTenantId
+        {
             get { return BackingStore?.Get<string?>("policyTenantId"); }
             set { BackingStore?.Set("policyTenantId", value); }
         }
 #nullable restore
 #else
-        public string PolicyTenantId {
+        public string PolicyTenantId
+        {
             get { return BackingStore?.Get<string>("policyTenantId"); }
             set { BackingStore?.Set("policyTenantId", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Azure Resource Manager (ARM) path for the Private Link policy resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyId", n => { PolicyId = n.GetStringValue(); } },
-                {"policyName", n => { PolicyName = n.GetStringValue(); } },
-                {"policyTenantId", n => { PolicyTenantId = n.GetStringValue(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "policyName", n => { PolicyName = n.GetStringValue(); } },
+                { "policyTenantId", n => { PolicyTenantId = n.GetStringValue(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

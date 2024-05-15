@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class IpReferenceData : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IpReferenceData : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The asn property</summary>
-        public long? Asn {
+        public long? Asn
+        {
             get { return BackingStore?.Get<long?>("asn"); }
             set { BackingStore?.Set("asn", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City {
+        public string? City
+        {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
 #nullable restore
 #else
-        public string City {
+        public string City
+        {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The countryOrRegionCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOrRegionCode {
+        public string? CountryOrRegionCode
+        {
             get { return BackingStore?.Get<string?>("countryOrRegionCode"); }
             set { BackingStore?.Set("countryOrRegionCode", value); }
         }
 #nullable restore
 #else
-        public string CountryOrRegionCode {
+        public string CountryOrRegionCode
+        {
             get { return BackingStore?.Get<string>("countryOrRegionCode"); }
             set { BackingStore?.Set("countryOrRegionCode", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Organization {
+        public string? Organization
+        {
             get { return BackingStore?.Get<string?>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
 #nullable restore
 #else
-        public string Organization {
+        public string Organization
+        {
             get { return BackingStore?.Get<string>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vendor {
+        public string? Vendor
+        {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
 #nullable restore
 #else
-        public string Vendor {
+        public string Vendor
+        {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
@@ -132,13 +147,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"asn", n => { Asn = n.GetLongValue(); } },
-                {"city", n => { City = n.GetStringValue(); } },
-                {"countryOrRegionCode", n => { CountryOrRegionCode = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organization", n => { Organization = n.GetStringValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"vendor", n => { Vendor = n.GetStringValue(); } },
+                { "asn", n => { Asn = n.GetLongValue(); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "countryOrRegionCode", n => { CountryOrRegionCode = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "vendor", n => { Vendor = n.GetStringValue(); } },
             };
         }
         /// <summary>

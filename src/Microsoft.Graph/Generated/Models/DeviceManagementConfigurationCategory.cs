@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Management Configuration Policy
     /// </summary>
-    public class DeviceManagementConfigurationCategory : Entity, IParsable 
+    public class DeviceManagementConfigurationCategory : Entity, IParsable
     {
         /// <summary>Description of the category header in policy summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CategoryDescription {
+        public string? CategoryDescription
+        {
             get { return BackingStore?.Get<string?>("categoryDescription"); }
             set { BackingStore?.Set("categoryDescription", value); }
         }
 #nullable restore
 #else
-        public string CategoryDescription {
+        public string CategoryDescription
+        {
             get { return BackingStore?.Get<string>("categoryDescription"); }
             set { BackingStore?.Set("categoryDescription", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of child ids of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ChildCategoryIds {
+        public List<string>? ChildCategoryIds
+        {
             get { return BackingStore?.Get<List<string>?>("childCategoryIds"); }
             set { BackingStore?.Set("childCategoryIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ChildCategoryIds {
+        public List<string> ChildCategoryIds
+        {
             get { return BackingStore?.Get<List<string>>("childCategoryIds"); }
             set { BackingStore?.Set("childCategoryIds", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the category. For example: Display</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the category. For example: Device Lock</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Help text of the category. Give more details of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HelpText {
+        public string? HelpText
+        {
             get { return BackingStore?.Get<string?>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
 #nullable restore
 #else
-        public string HelpText {
+        public string HelpText
+        {
             get { return BackingStore?.Get<string>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
@@ -83,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -97,43 +110,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Direct parent id of the category. If the category is the root, the parent id is same as its id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentCategoryId {
+        public string? ParentCategoryId
+        {
             get { return BackingStore?.Get<string?>("parentCategoryId"); }
             set { BackingStore?.Set("parentCategoryId", value); }
         }
 #nullable restore
 #else
-        public string ParentCategoryId {
+        public string ParentCategoryId
+        {
             get { return BackingStore?.Get<string>("parentCategoryId"); }
             set { BackingStore?.Set("parentCategoryId", value); }
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DeviceManagementConfigurationPlatforms? Platforms {
+        public DeviceManagementConfigurationPlatforms? Platforms
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Root id of the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootCategoryId {
+        public string? RootCategoryId
+        {
             get { return BackingStore?.Get<string?>("rootCategoryId"); }
             set { BackingStore?.Set("rootCategoryId", value); }
         }
 #nullable restore
 #else
-        public string RootCategoryId {
+        public string RootCategoryId
+        {
             get { return BackingStore?.Get<string>("rootCategoryId"); }
             set { BackingStore?.Set("rootCategoryId", value); }
         }
 #endif
         /// <summary>Supported setting types</summary>
-        public DeviceManagementConfigurationSettingUsage? SettingUsage {
+        public DeviceManagementConfigurationSettingUsage? SettingUsage
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingUsage?>("settingUsage"); }
             set { BackingStore?.Set("settingUsage", value); }
         }
         /// <summary>Describes which technology this setting can be deployed with</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies {
+        public DeviceManagementConfigurationTechnologies? Technologies
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
@@ -155,17 +175,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categoryDescription", n => { CategoryDescription = n.GetStringValue(); } },
-                {"childCategoryIds", n => { ChildCategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"helpText", n => { HelpText = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"parentCategoryId", n => { ParentCategoryId = n.GetStringValue(); } },
-                {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
-                {"rootCategoryId", n => { RootCategoryId = n.GetStringValue(); } },
-                {"settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
-                {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
+                { "categoryDescription", n => { CategoryDescription = n.GetStringValue(); } },
+                { "childCategoryIds", n => { ChildCategoryIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "helpText", n => { HelpText = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "parentCategoryId", n => { ParentCategoryId = n.GetStringValue(); } },
+                { "platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                { "rootCategoryId", n => { RootCategoryId = n.GetStringValue(); } },
+                { "settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
+                { "technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
             };
         }
         /// <summary>

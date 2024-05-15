@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows 10 Associated Application definition.
     /// </summary>
-    public class Windows10AssociatedApps : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Windows10AssociatedApps : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Windows 10 Application type.</summary>
-        public Windows10AppType? AppType {
+        public Windows10AppType? AppType
+        {
             get { return BackingStore?.Get<Windows10AppType?>("appType"); }
             set { BackingStore?.Set("appType", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier {
+        public string? Identifier
+        {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #nullable restore
 #else
-        public string Identifier {
+        public string Identifier
+        {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appType", n => { AppType = n.GetEnumValue<Windows10AppType>(); } },
-                {"identifier", n => { Identifier = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "appType", n => { AppType = n.GetEnumValue<Windows10AppType>(); } },
+                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

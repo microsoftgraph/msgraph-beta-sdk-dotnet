@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// iOS Education configuration profile
     /// </summary>
-    public class IosEducationDeviceConfiguration : DeviceConfiguration, IParsable 
+    public class IosEducationDeviceConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="IosEducationDeviceConfiguration"/> and sets the default values.

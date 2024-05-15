@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TrimTransformation : CustomClaimTransformation, IParsable 
+    public class TrimTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type property</summary>
-        public TransformationTrimType? Type {
+        public TransformationTrimType? Type
+        {
             get { return BackingStore?.Get<TransformationTrimType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"type", n => { Type = n.GetEnumValue<TransformationTrimType>(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<TransformationTrimType>(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

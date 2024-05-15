@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// ManagedDevices that are scheduled for retire
     /// </summary>
-    public class RetireScheduledManagedDevice : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RetireScheduledManagedDevice : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The complianceState property</summary>
-        public ComplianceStatus? ComplianceState {
+        public ComplianceStatus? ComplianceState
+        {
             get { return BackingStore?.Get<ComplianceStatus?>("complianceState"); }
             set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>Device Compliance PolicyId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceCompliancePolicyId {
+        public string? DeviceCompliancePolicyId
+        {
             get { return BackingStore?.Get<string?>("deviceCompliancePolicyId"); }
             set { BackingStore?.Set("deviceCompliancePolicyId", value); }
         }
 #nullable restore
 #else
-        public string DeviceCompliancePolicyId {
+        public string DeviceCompliancePolicyId
+        {
             get { return BackingStore?.Get<string>("deviceCompliancePolicyId"); }
             set { BackingStore?.Set("deviceCompliancePolicyId", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device Compliance Policy Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceCompliancePolicyName {
+        public string? DeviceCompliancePolicyName
+        {
             get { return BackingStore?.Get<string?>("deviceCompliancePolicyName"); }
             set { BackingStore?.Set("deviceCompliancePolicyName", value); }
         }
 #nullable restore
 #else
-        public string DeviceCompliancePolicyName {
+        public string DeviceCompliancePolicyName
+        {
             get { return BackingStore?.Get<string>("deviceCompliancePolicyName"); }
             set { BackingStore?.Set("deviceCompliancePolicyName", value); }
         }
 #endif
         /// <summary>Device type.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceType? DeviceType {
+        public Microsoft.Graph.Beta.Models.DeviceType? DeviceType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>Key of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Managed DeviceId</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -87,56 +99,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Managed Device Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceName {
+        public string? ManagedDeviceName
+        {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceName {
+        public string ManagedDeviceName
+        {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
 #endif
         /// <summary>Management agent type.</summary>
-        public ManagementAgentType? ManagementAgent {
+        public ManagementAgentType? ManagementAgent
+        {
             get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Owner type of device.</summary>
-        public ManagedDeviceOwnerType? OwnerType {
+        public ManagedDeviceOwnerType? OwnerType
+        {
             get { return BackingStore?.Get<ManagedDeviceOwnerType?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>Managed Device Retire After DateTime</summary>
-        public DateTimeOffset? RetireAfterDateTime {
+        public DateTimeOffset? RetireAfterDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("retireAfterDateTime"); }
             set { BackingStore?.Set("retireAfterDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -167,18 +188,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceStatus>(); } },
-                {"deviceCompliancePolicyId", n => { DeviceCompliancePolicyId = n.GetStringValue(); } },
-                {"deviceCompliancePolicyName", n => { DeviceCompliancePolicyName = n.GetStringValue(); } },
-                {"deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                {"managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ownerType", n => { OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
-                {"retireAfterDateTime", n => { RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceStatus>(); } },
+                { "deviceCompliancePolicyId", n => { DeviceCompliancePolicyId = n.GetStringValue(); } },
+                { "deviceCompliancePolicyName", n => { DeviceCompliancePolicyName = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
+                { "retireAfterDateTime", n => { RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

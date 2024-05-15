@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Model for ReferenceSettingValue
     /// </summary>
-    public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable 
+    public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable
     {
         /// <summary>A note that admin can use to put some contextual information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note {
+        public string? Note
+        {
             get { return BackingStore?.Get<string?>("note"); }
             set { BackingStore?.Set("note", value); }
         }
 #nullable restore
 #else
-        public string Note {
+        public string Note
+        {
             get { return BackingStore?.Get<string>("note"); }
             set { BackingStore?.Set("note", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"note", n => { Note = n.GetStringValue(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
             };
         }
         /// <summary>

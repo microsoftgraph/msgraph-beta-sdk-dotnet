@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class LegalHold : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class LegalHold : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentQuery {
+        public string? ContentQuery
+        {
             get { return BackingStore?.Get<string?>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
 #nullable restore
 #else
-        public string ContentQuery {
+        public string ContentQuery
+        {
             get { return BackingStore?.Get<string>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The user who created the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The date and time the legal hold was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The legal hold description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The display name of the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -73,70 +83,81 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Lists any errors that happened while placing the hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Errors {
+        public List<string>? Errors
+        {
             get { return BackingStore?.Get<List<string>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<string> Errors {
+        public List<string> Errors
+        {
             get { return BackingStore?.Get<List<string>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #endif
         /// <summary>Indicates whether the hold is enabled and actively holding content.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>the user who last modified the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The date and time the legal hold was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Data source entity for SharePoint sites associated with the legal hold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SiteSource>? SiteSources {
+        public List<SiteSource>? SiteSources
+        {
             get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #nullable restore
 #else
-        public List<SiteSource> SiteSources {
+        public List<SiteSource> SiteSources
+        {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #endif
         /// <summary>The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.</summary>
-        public LegalHoldStatus? Status {
+        public LegalHoldStatus? Status
+        {
             get { return BackingStore?.Get<LegalHoldStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The unifiedGroupSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedGroupSource>? UnifiedGroupSources {
+        public List<UnifiedGroupSource>? UnifiedGroupSources
+        {
             get { return BackingStore?.Get<List<UnifiedGroupSource>?>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedGroupSource> UnifiedGroupSources {
+        public List<UnifiedGroupSource> UnifiedGroupSources
+        {
             get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
@@ -144,13 +165,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSource>? UserSources {
+        public List<UserSource>? UserSources
+        {
             get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #nullable restore
 #else
-        public List<UserSource> UserSources {
+        public List<UserSource> UserSources
+        {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
@@ -173,19 +196,19 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentQuery", n => { ContentQuery = n.GetStringValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<LegalHoldStatus>(); } },
-                {"unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentQuery", n => { ContentQuery = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<LegalHoldStatus>(); } },
+                { "unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

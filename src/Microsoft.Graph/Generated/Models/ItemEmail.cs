@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemEmail : ItemFacet, IParsable 
+    public class ItemEmail : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The email address itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address {
+        public string? Address
+        {
             get { return BackingStore?.Get<string?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public string Address {
+        public string Address
+        {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name or label a user has associated with a particular email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public EmailType? Type {
+        public EmailType? Type
+        {
             get { return BackingStore?.Get<EmailType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"address", n => { Address = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<EmailType>(); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<EmailType>(); } },
             };
         }
         /// <summary>

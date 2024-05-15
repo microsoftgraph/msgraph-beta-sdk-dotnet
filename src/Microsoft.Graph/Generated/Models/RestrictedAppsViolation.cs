@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Violation of restricted apps configuration profile per device per user
     /// </summary>
-    public class RestrictedAppsViolation : Entity, IParsable 
+    public class RestrictedAppsViolation : Entity, IParsable
     {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceConfigurationId {
+        public string? DeviceConfigurationId
+        {
             get { return BackingStore?.Get<string?>("deviceConfigurationId"); }
             set { BackingStore?.Set("deviceConfigurationId", value); }
         }
 #nullable restore
 #else
-        public string DeviceConfigurationId {
+        public string DeviceConfigurationId
+        {
             get { return BackingStore?.Get<string>("deviceConfigurationId"); }
             set { BackingStore?.Set("deviceConfigurationId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device configuration profile name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceConfigurationName {
+        public string? DeviceConfigurationName
+        {
             get { return BackingStore?.Get<string?>("deviceConfigurationName"); }
             set { BackingStore?.Set("deviceConfigurationName", value); }
         }
 #nullable restore
 #else
-        public string DeviceConfigurationName {
+        public string DeviceConfigurationName
+        {
             get { return BackingStore?.Get<string>("deviceConfigurationName"); }
             set { BackingStore?.Set("deviceConfigurationName", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -55,51 +62,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Managed device unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #endif
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType {
+        public PolicyPlatformType? PlatformType
+        {
             get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>List of violated restricted apps</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceReportedApp>? RestrictedApps {
+        public List<ManagedDeviceReportedApp>? RestrictedApps
+        {
             get { return BackingStore?.Get<List<ManagedDeviceReportedApp>?>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceReportedApp> RestrictedApps {
+        public List<ManagedDeviceReportedApp> RestrictedApps
+        {
             get { return BackingStore?.Get<List<ManagedDeviceReportedApp>>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
 #endif
         /// <summary>Restricted apps state</summary>
-        public Microsoft.Graph.Beta.Models.RestrictedAppsState? RestrictedAppsState {
+        public Microsoft.Graph.Beta.Models.RestrictedAppsState? RestrictedAppsState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictedAppsState?>("restrictedAppsState"); }
             set { BackingStore?.Set("restrictedAppsState", value); }
         }
         /// <summary>User unique identifier, must be Guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -107,13 +122,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -136,15 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceConfigurationId", n => { DeviceConfigurationId = n.GetStringValue(); } },
-                {"deviceConfigurationName", n => { DeviceConfigurationName = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"restrictedAppsState", n => { RestrictedAppsState = n.GetEnumValue<RestrictedAppsState>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
+                { "deviceConfigurationId", n => { DeviceConfigurationId = n.GetStringValue(); } },
+                { "deviceConfigurationName", n => { DeviceConfigurationName = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "restrictedAppsState", n => { RestrictedAppsState = n.GetEnumValue<RestrictedAppsState>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

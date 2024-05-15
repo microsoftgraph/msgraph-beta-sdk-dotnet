@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomClaim : CustomClaimBase, IParsable 
+    public class CustomClaim : CustomClaimBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Namespace {
+        public string? Namespace
+        {
             get { return BackingStore?.Get<string?>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #nullable restore
 #else
-        public string Namespace {
+        public string Namespace
+        {
             get { return BackingStore?.Get<string>("namespace"); }
             set { BackingStore?.Set("namespace", value); }
         }
 #endif
         /// <summary>The samlAttributeNameFormat property</summary>
-        public Microsoft.Graph.Beta.Models.SamlAttributeNameFormat? SamlAttributeNameFormat {
+        public Microsoft.Graph.Beta.Models.SamlAttributeNameFormat? SamlAttributeNameFormat
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SamlAttributeNameFormat?>("samlAttributeNameFormat"); }
             set { BackingStore?.Set("samlAttributeNameFormat", value); }
         }
         /// <summary>The tokenFormat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.TokenFormat?>? TokenFormat {
+        public List<Microsoft.Graph.Beta.Models.TokenFormat?>? TokenFormat
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenFormat?>?>("tokenFormat"); }
             set { BackingStore?.Set("tokenFormat", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.TokenFormat?> TokenFormat {
+        public List<Microsoft.Graph.Beta.Models.TokenFormat?> TokenFormat
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenFormat?>>("tokenFormat"); }
             set { BackingStore?.Set("tokenFormat", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"namespace", n => { Namespace = n.GetStringValue(); } },
-                {"samlAttributeNameFormat", n => { SamlAttributeNameFormat = n.GetEnumValue<SamlAttributeNameFormat>(); } },
-                {"tokenFormat", n => { TokenFormat = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.TokenFormat>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "namespace", n => { Namespace = n.GetStringValue(); } },
+                { "samlAttributeNameFormat", n => { SamlAttributeNameFormat = n.GetEnumValue<SamlAttributeNameFormat>(); } },
+                { "tokenFormat", n => { TokenFormat = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.TokenFormat>()?.ToList(); } },
             };
         }
         /// <summary>

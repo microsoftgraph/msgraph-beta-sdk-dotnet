@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcSupportedRegion : Entity, IParsable 
+    public class CloudPcSupportedRegion : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name for the supported region. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The regionGroup property</summary>
-        public CloudPcRegionGroup? RegionGroup {
+        public CloudPcRegionGroup? RegionGroup
+        {
             get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
         /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
-        public CloudPcSupportedRegionStatus? RegionStatus {
+        public CloudPcSupportedRegionStatus? RegionStatus
+        {
             get { return BackingStore?.Get<CloudPcSupportedRegionStatus?>("regionStatus"); }
             set { BackingStore?.Set("regionStatus", value); }
         }
         /// <summary>The supportedSolution property</summary>
-        public CloudPcManagementService? SupportedSolution {
+        public CloudPcManagementService? SupportedSolution
+        {
             get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
             set { BackingStore?.Set("supportedSolution", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
-                {"regionStatus", n => { RegionStatus = n.GetEnumValue<CloudPcSupportedRegionStatus>(); } },
-                {"supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
+                { "regionStatus", n => { RegionStatus = n.GetEnumValue<CloudPcSupportedRegionStatus>(); } },
+                { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
             };
         }
         /// <summary>

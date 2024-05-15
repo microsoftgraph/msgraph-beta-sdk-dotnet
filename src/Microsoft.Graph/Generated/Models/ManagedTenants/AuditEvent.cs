@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class AuditEvent : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class AuditEvent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A string that uniquely represents the operation that occurred. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Activity {
+        public string? Activity
+        {
             get { return BackingStore?.Get<string?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public string Activity {
+        public string Activity
+        {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #endif
         /// <summary>The time when the activity occurred. Required. Read-only.</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The identifier of the activity request that made the audit event. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityId {
+        public string? ActivityId
+        {
             get { return BackingStore?.Get<string?>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
 #nullable restore
 #else
-        public string ActivityId {
+        public string ActivityId
+        {
             get { return BackingStore?.Get<string>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>A category that represents a logical grouping of activities. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The HTTP verb that was used when making the API request. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HttpVerb {
+        public string? HttpVerb
+        {
             get { return BackingStore?.Get<string?>("httpVerb"); }
             set { BackingStore?.Set("httpVerb", value); }
         }
 #nullable restore
 #else
-        public string HttpVerb {
+        public string HttpVerb
+        {
             get { return BackingStore?.Get<string>("httpVerb"); }
             set { BackingStore?.Set("httpVerb", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The identifier of the app that was used to make the request. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedByAppId {
+        public string? InitiatedByAppId
+        {
             get { return BackingStore?.Get<string?>("initiatedByAppId"); }
             set { BackingStore?.Set("initiatedByAppId", value); }
         }
 #nullable restore
 #else
-        public string InitiatedByAppId {
+        public string InitiatedByAppId
+        {
             get { return BackingStore?.Get<string>("initiatedByAppId"); }
             set { BackingStore?.Set("initiatedByAppId", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The UPN of the user who initiated the activity. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedByUpn {
+        public string? InitiatedByUpn
+        {
             get { return BackingStore?.Get<string?>("initiatedByUpn"); }
             set { BackingStore?.Set("initiatedByUpn", value); }
         }
 #nullable restore
 #else
-        public string InitiatedByUpn {
+        public string InitiatedByUpn
+        {
             get { return BackingStore?.Get<string>("initiatedByUpn"); }
             set { BackingStore?.Set("initiatedByUpn", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The identifier of the user who initiated the activity. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedByUserId {
+        public string? InitiatedByUserId
+        {
             get { return BackingStore?.Get<string?>("initiatedByUserId"); }
             set { BackingStore?.Set("initiatedByUserId", value); }
         }
 #nullable restore
 #else
-        public string InitiatedByUserId {
+        public string InitiatedByUserId
+        {
             get { return BackingStore?.Get<string>("initiatedByUserId"); }
             set { BackingStore?.Set("initiatedByUserId", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The IP address of where the activity was initiated. This may be an IPv4 or IPv6 address. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The raw HTTP request body. Some sensitive information may be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestBody {
+        public string? RequestBody
+        {
             get { return BackingStore?.Get<string?>("requestBody"); }
             set { BackingStore?.Set("requestBody", value); }
         }
 #nullable restore
 #else
-        public string RequestBody {
+        public string RequestBody
+        {
             get { return BackingStore?.Get<string>("requestBody"); }
             set { BackingStore?.Set("requestBody", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The raw HTTP request URL. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestUrl {
+        public string? RequestUrl
+        {
             get { return BackingStore?.Get<string?>("requestUrl"); }
             set { BackingStore?.Set("requestUrl", value); }
         }
 #nullable restore
 #else
-        public string RequestUrl {
+        public string RequestUrl
+        {
             get { return BackingStore?.Get<string>("requestUrl"); }
             set { BackingStore?.Set("requestUrl", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of Microsoft Entra tenant identifiers for the managed tenants that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantIds {
+        public string? TenantIds
+        {
             get { return BackingStore?.Get<string?>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
 #nullable restore
 #else
-        public string TenantIds {
+        public string TenantIds
+        {
             get { return BackingStore?.Get<string>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
@@ -171,13 +195,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of tenant names that were affected by a change, and is formatted as a list of comma-separated values. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantNames {
+        public string? TenantNames
+        {
             get { return BackingStore?.Get<string?>("tenantNames"); }
             set { BackingStore?.Set("tenantNames", value); }
         }
 #nullable restore
 #else
-        public string TenantNames {
+        public string TenantNames
+        {
             get { return BackingStore?.Get<string>("tenantNames"); }
             set { BackingStore?.Set("tenantNames", value); }
         }
@@ -200,19 +226,19 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetStringValue(); } },
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityId", n => { ActivityId = n.GetStringValue(); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"httpVerb", n => { HttpVerb = n.GetStringValue(); } },
-                {"initiatedByAppId", n => { InitiatedByAppId = n.GetStringValue(); } },
-                {"initiatedByUpn", n => { InitiatedByUpn = n.GetStringValue(); } },
-                {"initiatedByUserId", n => { InitiatedByUserId = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"requestBody", n => { RequestBody = n.GetStringValue(); } },
-                {"requestUrl", n => { RequestUrl = n.GetStringValue(); } },
-                {"tenantIds", n => { TenantIds = n.GetStringValue(); } },
-                {"tenantNames", n => { TenantNames = n.GetStringValue(); } },
+                { "activity", n => { Activity = n.GetStringValue(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activityId", n => { ActivityId = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "httpVerb", n => { HttpVerb = n.GetStringValue(); } },
+                { "initiatedByAppId", n => { InitiatedByAppId = n.GetStringValue(); } },
+                { "initiatedByUpn", n => { InitiatedByUpn = n.GetStringValue(); } },
+                { "initiatedByUserId", n => { InitiatedByUserId = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "requestBody", n => { RequestBody = n.GetStringValue(); } },
+                { "requestUrl", n => { RequestUrl = n.GetStringValue(); } },
+                { "tenantIds", n => { TenantIds = n.GetStringValue(); } },
+                { "tenantNames", n => { TenantNames = n.GetStringValue(); } },
             };
         }
         /// <summary>

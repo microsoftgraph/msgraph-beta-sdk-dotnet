@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
+namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages
+{
     /// <summary>
     /// Provides operations to call the getAllRetainedMessages method.
     /// </summary>
-    public class GetAllRetainedMessagesRequestBuilder : BaseRequestBuilder 
+    public class GetAllRetainedMessagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="GetAllRetainedMessagesRequestBuilder"/> and sets the default values.
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
         {
         }
         /// <summary>
-        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAllRetainedMessagesGetResponse"/></returns>
@@ -50,12 +51,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GetAllRetainedMessagesGetResponse>(requestInfo, GetAllRetainedMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="GetAllRetainedMessagesResponse"/></returns>
@@ -75,12 +76,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GetAllRetainedMessagesResponse>(requestInfo, GetAllRetainedMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
             return new GetAllRetainedMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         public class GetAllRetainedMessagesRequestBuilderGetQueryParameters 
         {
@@ -176,7 +177,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.GetAllRetainedMessages {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetAllRetainedMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAllRetainedMessagesRequestBuilderGetQueryParameters> 
+        public class GetAllRetainedMessagesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetAllRetainedMessagesRequestBuilderGetQueryParameters>
         {
         }
     }

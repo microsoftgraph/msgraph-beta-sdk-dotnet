@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class ProtectByTemplateAction : InformationProtectionAction, IParsable 
+    public class ProtectByTemplateAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId {
+        public string? TemplateId
+        {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #nullable restore
 #else
-        public string TemplateId {
+        public string TemplateId
+        {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

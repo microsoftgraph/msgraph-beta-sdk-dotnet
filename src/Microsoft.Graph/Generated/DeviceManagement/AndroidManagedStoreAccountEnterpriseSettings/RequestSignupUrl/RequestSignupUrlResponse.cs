@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.RequestSignupUrl
+{
     [Obsolete("This class is obsolete. Use RequestSignupUrlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RequestSignupUrlResponse : RequestSignupUrlPostResponse, IParsable 
+    public class RequestSignupUrlResponse : RequestSignupUrlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

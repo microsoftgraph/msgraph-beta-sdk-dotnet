@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize {
+namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize
+{
     [Obsolete("This class is obsolete. Use BulkResizePostResponse instead.")]
     #pragma warning disable CS1591
-    public class BulkResizeResponse : BulkResizePostResponse, IParsable 
+    public class BulkResizeResponse : BulkResizePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

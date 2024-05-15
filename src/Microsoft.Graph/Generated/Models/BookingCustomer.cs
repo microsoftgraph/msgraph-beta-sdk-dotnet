@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a customer of the business.
     /// </summary>
-    public class BookingCustomer : BookingPerson, IParsable 
+    public class BookingCustomer : BookingPerson, IParsable
     {
         /// <summary>Addresses associated with the customer, including home, business and other addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PhysicalAddress>? Addresses {
+        public List<PhysicalAddress>? Addresses
+        {
             get { return BackingStore?.Get<List<PhysicalAddress>?>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
 #nullable restore
 #else
-        public List<PhysicalAddress> Addresses {
+        public List<PhysicalAddress> Addresses
+        {
             get { return BackingStore?.Get<List<PhysicalAddress>>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
 #endif
         /// <summary>The date, time and timezone when the customer was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date, time and timezone when the customer was last updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Phone numbers associated with the customer, including home, business and mobile numbers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones {
+        public List<Phone>? Phones
+        {
             get { return BackingStore?.Get<List<Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones {
+        public List<Phone> Phones
+        {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"addresses", n => { Addresses = n.GetCollectionOfObjectValues<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

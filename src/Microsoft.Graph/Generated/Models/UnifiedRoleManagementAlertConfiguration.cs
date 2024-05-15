@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementAlertConfiguration : Entity, IParsable 
+    public class UnifiedRoleManagementAlertConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The definition of the alert that contains its description, impact, and measures to mitigate or prevent it. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementAlertDefinition? AlertDefinition {
+        public UnifiedRoleManagementAlertDefinition? AlertDefinition
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition?>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementAlertDefinition AlertDefinition {
+        public UnifiedRoleManagementAlertDefinition AlertDefinition
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of an alert definition. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertDefinitionId {
+        public string? AlertDefinitionId
+        {
             get { return BackingStore?.Get<string?>("alertDefinitionId"); }
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string AlertDefinitionId {
+        public string AlertDefinitionId
+        {
             get { return BackingStore?.Get<string>("alertDefinitionId"); }
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
 #endif
         /// <summary>true if the alert is enabled. Setting it to false disables PIM scanning the tenant to identify instances that trigger the alert.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The identifier of the scope to which the alert is related. Only / is supported to represent the tenant scope. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeId {
+        public string? ScopeId
+        {
             get { return BackingStore?.Get<string?>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
 #nullable restore
 #else
-        public string ScopeId {
+        public string ScopeId
+        {
             get { return BackingStore?.Get<string>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeType {
+        public string? ScopeType
+        {
             get { return BackingStore?.Get<string?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
 #nullable restore
 #else
-        public string ScopeType {
+        public string ScopeType
+        {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
@@ -99,11 +109,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
-                {"alertDefinitionId", n => { AlertDefinitionId = n.GetStringValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"scopeId", n => { ScopeId = n.GetStringValue(); } },
-                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
+                { "alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
+                { "alertDefinitionId", n => { AlertDefinitionId = n.GetStringValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "scopeId", n => { ScopeId = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

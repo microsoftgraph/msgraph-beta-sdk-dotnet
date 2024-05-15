@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations.Item.ChangeSettings
+{
     #pragma warning disable CS1591
-    public class ChangeSettingsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChangeSettingsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSetting>? Settings {
+        public List<DeviceManagementConfigurationSetting>? Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSetting> Settings {
+        public List<DeviceManagementConfigurationSetting> Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurati
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

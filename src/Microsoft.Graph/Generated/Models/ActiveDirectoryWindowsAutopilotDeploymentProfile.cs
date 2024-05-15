@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable 
+    public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable
     {
         /// <summary>Configuration to join Active Directory domain</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDomainJoinConfiguration? DomainJoinConfiguration {
+        public WindowsDomainJoinConfiguration? DomainJoinConfiguration
+        {
             get { return BackingStore?.Get<WindowsDomainJoinConfiguration?>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
 #nullable restore
 #else
-        public WindowsDomainJoinConfiguration DomainJoinConfiguration {
+        public WindowsDomainJoinConfiguration DomainJoinConfiguration
+        {
             get { return BackingStore?.Get<WindowsDomainJoinConfiguration>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
 #endif
         /// <summary>The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.</summary>
-        public bool? HybridAzureADJoinSkipConnectivityCheck {
+        public bool? HybridAzureADJoinSkipConnectivityCheck
+        {
             get { return BackingStore?.Get<bool?>("hybridAzureADJoinSkipConnectivityCheck"); }
             set { BackingStore?.Set("hybridAzureADJoinSkipConnectivityCheck", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<WindowsDomainJoinConfiguration>(WindowsDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
-                {"hybridAzureADJoinSkipConnectivityCheck", n => { HybridAzureADJoinSkipConnectivityCheck = n.GetBoolValue(); } },
+                { "domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<WindowsDomainJoinConfiguration>(WindowsDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
+                { "hybridAzureADJoinSkipConnectivityCheck", n => { HybridAzureADJoinSkipConnectivityCheck = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class TemplateParameter : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TemplateParameter : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The description for the template parameter. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name for the template parameter. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The allowed values for the template parameter represented by a serialized string of JSON. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonAllowedValues {
+        public string? JsonAllowedValues
+        {
             get { return BackingStore?.Get<string?>("jsonAllowedValues"); }
             set { BackingStore?.Set("jsonAllowedValues", value); }
         }
 #nullable restore
 #else
-        public string JsonAllowedValues {
+        public string JsonAllowedValues
+        {
             get { return BackingStore?.Get<string>("jsonAllowedValues"); }
             set { BackingStore?.Set("jsonAllowedValues", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The default value for the template parameter represented by a serialized string of JSON. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonDefaultValue {
+        public string? JsonDefaultValue
+        {
             get { return BackingStore?.Get<string?>("jsonDefaultValue"); }
             set { BackingStore?.Set("jsonDefaultValue", value); }
         }
 #nullable restore
 #else
-        public string JsonDefaultValue {
+        public string JsonDefaultValue
+        {
             get { return BackingStore?.Get<string>("jsonDefaultValue"); }
             set { BackingStore?.Set("jsonDefaultValue", value); }
         }
@@ -76,19 +86,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The valueType property</summary>
-        public ManagementParameterValueType? ValueType {
+        public ManagementParameterValueType? ValueType
+        {
             get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"jsonAllowedValues", n => { JsonAllowedValues = n.GetStringValue(); } },
-                {"jsonDefaultValue", n => { JsonDefaultValue = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "jsonAllowedValues", n => { JsonAllowedValues = n.GetStringValue(); } },
+                { "jsonDefaultValue", n => { JsonDefaultValue = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
             };
         }
         /// <summary>

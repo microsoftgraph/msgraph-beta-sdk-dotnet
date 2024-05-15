@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BufferDecryptionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BufferDecryptionResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The decryptedBuffer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? DecryptedBuffer {
+        public byte[]? DecryptedBuffer
+        {
             get { return BackingStore?.Get<byte[]?>("decryptedBuffer"); }
             set { BackingStore?.Set("decryptedBuffer", value); }
         }
 #nullable restore
 #else
-        public byte[] DecryptedBuffer {
+        public byte[] DecryptedBuffer
+        {
             get { return BackingStore?.Get<byte[]>("decryptedBuffer"); }
             set { BackingStore?.Set("decryptedBuffer", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"decryptedBuffer", n => { DecryptedBuffer = n.GetByteArrayValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "decryptedBuffer", n => { DecryptedBuffer = n.GetByteArrayValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

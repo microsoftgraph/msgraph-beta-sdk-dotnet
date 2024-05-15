@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Setting Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationSettingInstanceTemplate : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationSettingInstanceTemplate : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates if a policy must specify this setting.</summary>
-        public bool? IsRequired {
+        public bool? IsRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Setting Definition Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingDefinitionId {
+        public string? SettingDefinitionId
+        {
             get { return BackingStore?.Get<string?>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string SettingDefinitionId {
+        public string SettingDefinitionId
+        {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
             set { BackingStore?.Set("settingDefinitionId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Setting Instance Template Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingInstanceTemplateId {
+        public string? SettingInstanceTemplateId
+        {
             get { return BackingStore?.Get<string?>("settingInstanceTemplateId"); }
             set { BackingStore?.Set("settingInstanceTemplateId", value); }
         }
 #nullable restore
 #else
-        public string SettingInstanceTemplateId {
+        public string SettingInstanceTemplateId
+        {
             get { return BackingStore?.Get<string>("settingInstanceTemplateId"); }
             set { BackingStore?.Set("settingInstanceTemplateId", value); }
         }
@@ -101,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
-                {"settingInstanceTemplateId", n => { SettingInstanceTemplateId = n.GetStringValue(); } },
+                { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
+                { "settingInstanceTemplateId", n => { SettingInstanceTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing the configuration of a cached report.
     /// </summary>
-    public class DeviceManagementCachedReportConfiguration : Entity, IParsable 
+    public class DeviceManagementCachedReportConfiguration : Entity, IParsable
     {
         /// <summary>Time that the cached report expires.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Filters applied on report creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filter {
+        public string? Filter
+        {
             get { return BackingStore?.Get<string?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #nullable restore
 #else
-        public string Filter {
+        public string Filter
+        {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #endif
         /// <summary>Time that the cached report was last refreshed.</summary>
-        public DateTimeOffset? LastRefreshDateTime {
+        public DateTimeOffset? LastRefreshDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshDateTime"); }
             set { BackingStore?.Set("lastRefreshDateTime", value); }
         }
         /// <summary>Caller-managed metadata associated with the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata {
+        public string? Metadata
+        {
             get { return BackingStore?.Get<string?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public string Metadata {
+        public string Metadata
+        {
             get { return BackingStore?.Get<string>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Ordering of columns in the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OrderBy {
+        public List<string>? OrderBy
+        {
             get { return BackingStore?.Get<List<string>?>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
 #nullable restore
 #else
-        public List<string> OrderBy {
+        public List<string> OrderBy
+        {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportName {
+        public string? ReportName
+        {
             get { return BackingStore?.Get<string?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
 #nullable restore
 #else
-        public string ReportName {
+        public string ReportName
+        {
             get { return BackingStore?.Get<string>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
@@ -79,19 +90,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Columns selected from the report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Select {
+        public List<string>? Select
+        {
             get { return BackingStore?.Get<List<string>?>("select"); }
             set { BackingStore?.Set("select", value); }
         }
 #nullable restore
 #else
-        public List<string> Select {
+        public List<string> Select
+        {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
 #endif
         /// <summary>Possible statuses associated with a generated report.</summary>
-        public DeviceManagementReportStatus? Status {
+        public DeviceManagementReportStatus? Status
+        {
             get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -113,14 +127,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"filter", n => { Filter = n.GetStringValue(); } },
-                {"lastRefreshDateTime", n => { LastRefreshDateTime = n.GetDateTimeOffsetValue(); } },
-                {"metadata", n => { Metadata = n.GetStringValue(); } },
-                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"reportName", n => { ReportName = n.GetStringValue(); } },
-                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "lastRefreshDateTime", n => { LastRefreshDateTime = n.GetDateTimeOffsetValue(); } },
+                { "metadata", n => { Metadata = n.GetStringValue(); } },
+                { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "reportName", n => { ReportName = n.GetStringValue(); } },
+                { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
             };
         }
         /// <summary>

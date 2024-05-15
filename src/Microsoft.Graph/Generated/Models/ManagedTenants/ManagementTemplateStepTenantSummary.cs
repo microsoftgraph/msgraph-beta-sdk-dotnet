@@ -4,79 +4,92 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplateStepTenantSummary : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementTemplateStepTenantSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignedTenantsCount property</summary>
-        public int? AssignedTenantsCount {
+        public int? AssignedTenantsCount
+        {
             get { return BackingStore?.Get<int?>("assignedTenantsCount"); }
             set { BackingStore?.Set("assignedTenantsCount", value); }
         }
         /// <summary>The compliantTenantsCount property</summary>
-        public int? CompliantTenantsCount {
+        public int? CompliantTenantsCount
+        {
             get { return BackingStore?.Get<int?>("compliantTenantsCount"); }
             set { BackingStore?.Set("compliantTenantsCount", value); }
         }
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByUserId {
+        public string? CreatedByUserId
+        {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #nullable restore
 #else
-        public string CreatedByUserId {
+        public string CreatedByUserId
+        {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #endif
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The dismissedTenantsCount property</summary>
-        public int? DismissedTenantsCount {
+        public int? DismissedTenantsCount
+        {
             get { return BackingStore?.Get<int?>("dismissedTenantsCount"); }
             set { BackingStore?.Set("dismissedTenantsCount", value); }
         }
         /// <summary>The ineligibleTenantsCount property</summary>
-        public int? IneligibleTenantsCount {
+        public int? IneligibleTenantsCount
+        {
             get { return BackingStore?.Get<int?>("ineligibleTenantsCount"); }
             set { BackingStore?.Set("ineligibleTenantsCount", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActionByUserId {
+        public string? LastActionByUserId
+        {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #nullable restore
 #else
-        public string LastActionByUserId {
+        public string LastActionByUserId
+        {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #endif
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplateCollectionDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateCollectionDisplayName {
+        public string? ManagementTemplateCollectionDisplayName
+        {
             get { return BackingStore?.Get<string?>("managementTemplateCollectionDisplayName"); }
             set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateCollectionDisplayName {
+        public string ManagementTemplateCollectionDisplayName
+        {
             get { return BackingStore?.Get<string>("managementTemplateCollectionDisplayName"); }
             set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
         }
@@ -84,13 +97,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateCollectionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateCollectionId {
+        public string? ManagementTemplateCollectionId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateCollectionId"); }
             set { BackingStore?.Set("managementTemplateCollectionId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateCollectionId {
+        public string ManagementTemplateCollectionId
+        {
             get { return BackingStore?.Get<string>("managementTemplateCollectionId"); }
             set { BackingStore?.Set("managementTemplateCollectionId", value); }
         }
@@ -98,13 +113,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateDisplayName {
+        public string? ManagementTemplateDisplayName
+        {
             get { return BackingStore?.Get<string?>("managementTemplateDisplayName"); }
             set { BackingStore?.Set("managementTemplateDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateDisplayName {
+        public string ManagementTemplateDisplayName
+        {
             get { return BackingStore?.Get<string>("managementTemplateDisplayName"); }
             set { BackingStore?.Set("managementTemplateDisplayName", value); }
         }
@@ -112,13 +129,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateId {
+        public string? ManagementTemplateId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateId {
+        public string ManagementTemplateId
+        {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
@@ -126,13 +145,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateStepDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateStepDisplayName {
+        public string? ManagementTemplateStepDisplayName
+        {
             get { return BackingStore?.Get<string?>("managementTemplateStepDisplayName"); }
             set { BackingStore?.Set("managementTemplateStepDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateStepDisplayName {
+        public string ManagementTemplateStepDisplayName
+        {
             get { return BackingStore?.Get<string>("managementTemplateStepDisplayName"); }
             set { BackingStore?.Set("managementTemplateStepDisplayName", value); }
         }
@@ -140,19 +161,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateStepId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateStepId {
+        public string? ManagementTemplateStepId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateStepId"); }
             set { BackingStore?.Set("managementTemplateStepId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateStepId {
+        public string ManagementTemplateStepId
+        {
             get { return BackingStore?.Get<string>("managementTemplateStepId"); }
             set { BackingStore?.Set("managementTemplateStepId", value); }
         }
 #endif
         /// <summary>The notCompliantTenantsCount property</summary>
-        public int? NotCompliantTenantsCount {
+        public int? NotCompliantTenantsCount
+        {
             get { return BackingStore?.Get<int?>("notCompliantTenantsCount"); }
             set { BackingStore?.Set("notCompliantTenantsCount", value); }
         }
@@ -174,21 +198,21 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignedTenantsCount", n => { AssignedTenantsCount = n.GetIntValue(); } },
-                {"compliantTenantsCount", n => { CompliantTenantsCount = n.GetIntValue(); } },
-                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"dismissedTenantsCount", n => { DismissedTenantsCount = n.GetIntValue(); } },
-                {"ineligibleTenantsCount", n => { IneligibleTenantsCount = n.GetIntValue(); } },
-                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplateCollectionDisplayName", n => { ManagementTemplateCollectionDisplayName = n.GetStringValue(); } },
-                {"managementTemplateCollectionId", n => { ManagementTemplateCollectionId = n.GetStringValue(); } },
-                {"managementTemplateDisplayName", n => { ManagementTemplateDisplayName = n.GetStringValue(); } },
-                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
-                {"managementTemplateStepDisplayName", n => { ManagementTemplateStepDisplayName = n.GetStringValue(); } },
-                {"managementTemplateStepId", n => { ManagementTemplateStepId = n.GetStringValue(); } },
-                {"notCompliantTenantsCount", n => { NotCompliantTenantsCount = n.GetIntValue(); } },
+                { "assignedTenantsCount", n => { AssignedTenantsCount = n.GetIntValue(); } },
+                { "compliantTenantsCount", n => { CompliantTenantsCount = n.GetIntValue(); } },
+                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "dismissedTenantsCount", n => { DismissedTenantsCount = n.GetIntValue(); } },
+                { "ineligibleTenantsCount", n => { IneligibleTenantsCount = n.GetIntValue(); } },
+                { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managementTemplateCollectionDisplayName", n => { ManagementTemplateCollectionDisplayName = n.GetStringValue(); } },
+                { "managementTemplateCollectionId", n => { ManagementTemplateCollectionId = n.GetStringValue(); } },
+                { "managementTemplateDisplayName", n => { ManagementTemplateDisplayName = n.GetStringValue(); } },
+                { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                { "managementTemplateStepDisplayName", n => { ManagementTemplateStepDisplayName = n.GetStringValue(); } },
+                { "managementTemplateStepId", n => { ManagementTemplateStepId = n.GetStringValue(); } },
+                { "notCompliantTenantsCount", n => { NotCompliantTenantsCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

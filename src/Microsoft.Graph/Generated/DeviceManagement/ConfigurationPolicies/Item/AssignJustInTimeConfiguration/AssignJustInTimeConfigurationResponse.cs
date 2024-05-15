@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration {
+namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration
+{
     [Obsolete("This class is obsolete. Use AssignJustInTimeConfigurationPostResponse instead.")]
     #pragma warning disable CS1591
-    public class AssignJustInTimeConfigurationResponse : AssignJustInTimeConfigurationPostResponse, IParsable 
+    public class AssignJustInTimeConfigurationResponse : AssignJustInTimeConfigurationPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

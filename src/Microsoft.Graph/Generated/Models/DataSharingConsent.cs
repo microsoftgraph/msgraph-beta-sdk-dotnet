@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Data sharing consent information.
     /// </summary>
-    public class DataSharingConsent : Entity, IParsable 
+    public class DataSharingConsent : Entity, IParsable
     {
         /// <summary>The time consent was granted for this account</summary>
-        public DateTimeOffset? GrantDateTime {
+        public DateTimeOffset? GrantDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("grantDateTime"); }
             set { BackingStore?.Set("grantDateTime", value); }
         }
         /// <summary>The granted state for the data sharing consent</summary>
-        public bool? Granted {
+        public bool? Granted
+        {
             get { return BackingStore?.Get<bool?>("granted"); }
             set { BackingStore?.Set("granted", value); }
         }
         /// <summary>The Upn of the user that granted consent for this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrantedByUpn {
+        public string? GrantedByUpn
+        {
             get { return BackingStore?.Get<string?>("grantedByUpn"); }
             set { BackingStore?.Set("grantedByUpn", value); }
         }
 #nullable restore
 #else
-        public string GrantedByUpn {
+        public string GrantedByUpn
+        {
             get { return BackingStore?.Get<string>("grantedByUpn"); }
             set { BackingStore?.Set("grantedByUpn", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The UserId of the user that granted consent for this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrantedByUserId {
+        public string? GrantedByUserId
+        {
             get { return BackingStore?.Get<string?>("grantedByUserId"); }
             set { BackingStore?.Set("grantedByUserId", value); }
         }
 #nullable restore
 #else
-        public string GrantedByUserId {
+        public string GrantedByUserId
+        {
             get { return BackingStore?.Get<string>("grantedByUserId"); }
             set { BackingStore?.Set("grantedByUserId", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the service work flow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceDisplayName {
+        public string? ServiceDisplayName
+        {
             get { return BackingStore?.Get<string?>("serviceDisplayName"); }
             set { BackingStore?.Set("serviceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ServiceDisplayName {
+        public string ServiceDisplayName
+        {
             get { return BackingStore?.Get<string>("serviceDisplayName"); }
             set { BackingStore?.Set("serviceDisplayName", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The TermsUrl for the data sharing consent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsUrl {
+        public string? TermsUrl
+        {
             get { return BackingStore?.Get<string?>("termsUrl"); }
             set { BackingStore?.Set("termsUrl", value); }
         }
 #nullable restore
 #else
-        public string TermsUrl {
+        public string TermsUrl
+        {
             get { return BackingStore?.Get<string>("termsUrl"); }
             set { BackingStore?.Set("termsUrl", value); }
         }
@@ -94,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"grantDateTime", n => { GrantDateTime = n.GetDateTimeOffsetValue(); } },
-                {"granted", n => { Granted = n.GetBoolValue(); } },
-                {"grantedByUpn", n => { GrantedByUpn = n.GetStringValue(); } },
-                {"grantedByUserId", n => { GrantedByUserId = n.GetStringValue(); } },
-                {"serviceDisplayName", n => { ServiceDisplayName = n.GetStringValue(); } },
-                {"termsUrl", n => { TermsUrl = n.GetStringValue(); } },
+                { "grantDateTime", n => { GrantDateTime = n.GetDateTimeOffsetValue(); } },
+                { "granted", n => { Granted = n.GetBoolValue(); } },
+                { "grantedByUpn", n => { GrantedByUpn = n.GetStringValue(); } },
+                { "grantedByUserId", n => { GrantedByUserId = n.GetStringValue(); } },
+                { "serviceDisplayName", n => { ServiceDisplayName = n.GetStringValue(); } },
+                { "termsUrl", n => { TermsUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

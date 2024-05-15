@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// win32MobileAppCatalogPackage extends mobileAppCatalogPackage by providing information necessary for the creation of a win32CatalogApp instance.
     /// </summary>
-    public class Win32MobileAppCatalogPackage : MobileAppCatalogPackage, IParsable 
+    public class Win32MobileAppCatalogPackage : MobileAppCatalogPackage, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures {
+        public WindowsArchitecture? ApplicableArchitectures
+        {
             get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The product branch name, which is a specific subset of product functionality as defined by the publisher (example: &quot;Fabrikam for Business (x64)&quot;). A specific product will have one or more branchDisplayNames. Read-only. Supports $filter, $search, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchDisplayName {
+        public string? BranchDisplayName
+        {
             get { return BackingStore?.Get<string?>("branchDisplayName"); }
             set { BackingStore?.Set("branchDisplayName", value); }
         }
 #nullable restore
 #else
-        public string BranchDisplayName {
+        public string BranchDisplayName
+        {
             get { return BackingStore?.Get<string>("branchDisplayName"); }
             set { BackingStore?.Set("branchDisplayName", value); }
         }
@@ -32,19 +36,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>One or more locale(s) supported by the branch. Value is a two-letter ISO 639 language tags with optional two-letter subtags (example: en-US, ko, de, de-DE), or mul to indicate multi-language. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Locales {
+        public List<string>? Locales
+        {
             get { return BackingStore?.Get<List<string>?>("locales"); }
             set { BackingStore?.Set("locales", value); }
         }
 #nullable restore
 #else
-        public List<string> Locales {
+        public List<string> Locales
+        {
             get { return BackingStore?.Get<List<string>>("locales"); }
             set { BackingStore?.Set("locales", value); }
         }
 #endif
         /// <summary>Indicates whether the package is capable to auto-update to latest when software/application updates are available. When TRUE, it indicates it is an auto-updating application. When FALSE, it indicates that it is not an auto-updating application. This property is read-only.</summary>
-        public bool? PackageAutoUpdateCapable {
+        public bool? PackageAutoUpdateCapable
+        {
             get { return BackingStore?.Get<bool?>("packageAutoUpdateCapable"); }
             set { BackingStore?.Set("packageAutoUpdateCapable", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
-                {"branchDisplayName", n => { BranchDisplayName = n.GetStringValue(); } },
-                {"locales", n => { Locales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"packageAutoUpdateCapable", n => { PackageAutoUpdateCapable = n.GetBoolValue(); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "branchDisplayName", n => { BranchDisplayName = n.GetStringValue(); } },
+                { "locales", n => { Locales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "packageAutoUpdateCapable", n => { PackageAutoUpdateCapable = n.GetBoolValue(); } },
             };
         }
         /// <summary>

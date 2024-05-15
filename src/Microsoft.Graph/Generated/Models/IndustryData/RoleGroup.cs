@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class RoleGroup : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class RoleGroup : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the role group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The set of roles included in the role group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleReferenceValue>? Roles {
+        public List<RoleReferenceValue>? Roles
+        {
             get { return BackingStore?.Get<List<RoleReferenceValue>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<RoleReferenceValue> Roles {
+        public List<RoleReferenceValue> Roles
+        {
             get { return BackingStore?.Get<List<RoleReferenceValue>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfObjectValues<RoleReferenceValue>(RoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<RoleReferenceValue>(RoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

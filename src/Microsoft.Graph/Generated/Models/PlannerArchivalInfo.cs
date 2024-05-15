@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerArchivalInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PlannerArchivalInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The statusChangedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? StatusChangedBy {
+        public IdentitySet? StatusChangedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("statusChangedBy"); }
             set { BackingStore?.Set("statusChangedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet StatusChangedBy {
+        public IdentitySet StatusChangedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("statusChangedBy"); }
             set { BackingStore?.Set("statusChangedBy", value); }
         }
 #endif
         /// <summary>The statusChangedDateTime property</summary>
-        public DateTimeOffset? StatusChangedDateTime {
+        public DateTimeOffset? StatusChangedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("statusChangedDateTime"); }
             set { BackingStore?.Set("statusChangedDateTime", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"statusChangedBy", n => { StatusChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"statusChangedDateTime", n => { StatusChangedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "statusChangedBy", n => { StatusChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "statusChangedDateTime", n => { StatusChangedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

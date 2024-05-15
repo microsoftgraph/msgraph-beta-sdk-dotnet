@@ -4,57 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcServicePlan : Entity, IParsable 
+    public class CloudPcServicePlan : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name for the service plan. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Specifies the type of license used when provisioning Cloud PCs. By default, the license type is dedicated. Possible values are: dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member.</summary>
-        public CloudPcProvisioningType? ProvisioningType {
+        public CloudPcProvisioningType? ProvisioningType
+        {
             get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
         /// <summary>The size of the RAM in GB. Read-only.</summary>
-        public int? RamInGB {
+        public int? RamInGB
+        {
             get { return BackingStore?.Get<int?>("ramInGB"); }
             set { BackingStore?.Set("ramInGB", value); }
         }
         /// <summary>The size of the OS Disk in GB. Read-only.</summary>
-        public int? StorageInGB {
+        public int? StorageInGB
+        {
             get { return BackingStore?.Get<int?>("storageInGB"); }
             set { BackingStore?.Set("storageInGB", value); }
         }
         /// <summary>The supportedSolution property</summary>
-        public CloudPcManagementService? SupportedSolution {
+        public CloudPcManagementService? SupportedSolution
+        {
             get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
             set { BackingStore?.Set("supportedSolution", value); }
         }
         /// <summary>The type of the service plan. Possible values are: enterprise, business, unknownFutureValue. Read-only.</summary>
-        public CloudPcServicePlanType? Type {
+        public CloudPcServicePlanType? Type
+        {
             get { return BackingStore?.Get<CloudPcServicePlanType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>The size of the user profile disk in GB. Read-only.</summary>
-        public int? UserProfileInGB {
+        public int? UserProfileInGB
+        {
             get { return BackingStore?.Get<int?>("userProfileInGB"); }
             set { BackingStore?.Set("userProfileInGB", value); }
         }
         /// <summary>The number of vCPUs. Read-only.</summary>
-        public int? VCpuCount {
+        public int? VCpuCount
+        {
             get { return BackingStore?.Get<int?>("vCpuCount"); }
             set { BackingStore?.Set("vCpuCount", value); }
         }
@@ -76,14 +86,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
-                {"ramInGB", n => { RamInGB = n.GetIntValue(); } },
-                {"storageInGB", n => { StorageInGB = n.GetIntValue(); } },
-                {"supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
-                {"type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
-                {"userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
-                {"vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
+                { "ramInGB", n => { RamInGB = n.GetIntValue(); } },
+                { "storageInGB", n => { StorageInGB = n.GetIntValue(); } },
+                { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
+                { "type", n => { Type = n.GetEnumValue<CloudPcServicePlanType>(); } },
+                { "userProfileInGB", n => { UserProfileInGB = n.GetIntValue(); } },
+                { "vCpuCount", n => { VCpuCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

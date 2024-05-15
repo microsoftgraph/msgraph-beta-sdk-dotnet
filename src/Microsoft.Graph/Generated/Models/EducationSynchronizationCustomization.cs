@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationSynchronizationCustomization : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EducationSynchronizationCustomization : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether the display name of the resource can be overwritten by the sync.</summary>
-        public bool? AllowDisplayNameUpdate {
+        public bool? AllowDisplayNameUpdate
+        {
             get { return BackingStore?.Get<bool?>("allowDisplayNameUpdate"); }
             set { BackingStore?.Set("allowDisplayNameUpdate", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether synchronization of the parent entity is deferred to a later date.</summary>
-        public bool? IsSyncDeferred {
+        public bool? IsSyncDeferred
+        {
             get { return BackingStore?.Get<bool?>("isSyncDeferred"); }
             set { BackingStore?.Set("isSyncDeferred", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,19 +50,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OptionalPropertiesToSync {
+        public List<string>? OptionalPropertiesToSync
+        {
             get { return BackingStore?.Get<List<string>?>("optionalPropertiesToSync"); }
             set { BackingStore?.Set("optionalPropertiesToSync", value); }
         }
 #nullable restore
 #else
-        public List<string> OptionalPropertiesToSync {
+        public List<string> OptionalPropertiesToSync
+        {
             get { return BackingStore?.Get<List<string>>("optionalPropertiesToSync"); }
             set { BackingStore?.Set("optionalPropertiesToSync", value); }
         }
 #endif
         /// <summary>The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments</summary>
-        public DateTimeOffset? SynchronizationStartDate {
+        public DateTimeOffset? SynchronizationStartDate
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("synchronizationStartDate"); }
             set { BackingStore?.Set("synchronizationStartDate", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowDisplayNameUpdate", n => { AllowDisplayNameUpdate = n.GetBoolValue(); } },
-                {"isSyncDeferred", n => { IsSyncDeferred = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"optionalPropertiesToSync", n => { OptionalPropertiesToSync = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"synchronizationStartDate", n => { SynchronizationStartDate = n.GetDateTimeOffsetValue(); } },
+                { "allowDisplayNameUpdate", n => { AllowDisplayNameUpdate = n.GetBoolValue(); } },
+                { "isSyncDeferred", n => { IsSyncDeferred = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "optionalPropertiesToSync", n => { OptionalPropertiesToSync = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "synchronizationStartDate", n => { SynchronizationStartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

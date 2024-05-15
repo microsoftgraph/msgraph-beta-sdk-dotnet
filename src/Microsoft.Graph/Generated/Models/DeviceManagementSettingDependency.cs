@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Dependency information for a setting
     /// </summary>
-    public class DeviceManagementSettingDependency : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementSettingDependency : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of constraints for the dependency setting value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConstraint>? Constraints {
+        public List<DeviceManagementConstraint>? Constraints
+        {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>?>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConstraint> Constraints {
+        public List<DeviceManagementConstraint> Constraints
+        {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting definition ID of the setting depended on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefinitionId {
+        public string? DefinitionId
+        {
             get { return BackingStore?.Get<string?>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
 #nullable restore
 #else
-        public string DefinitionId {
+        public string DefinitionId
+        {
             get { return BackingStore?.Get<string>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"definitionId", n => { DefinitionId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definitionId", n => { DefinitionId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

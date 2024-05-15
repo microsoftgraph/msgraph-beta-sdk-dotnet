@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents the filter type and evalaution result of the filter.
     /// </summary>
-    public class AssignmentFilterTypeAndEvaluationResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignmentFilterTypeAndEvaluationResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents type of the assignment filter.</summary>
-        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType {
+        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
             set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Supported evaluation results for filter.</summary>
-        public AssignmentFilterEvaluationResult? EvaluationResult {
+        public AssignmentFilterEvaluationResult? EvaluationResult
+        {
             get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
-                {"evaluationResult", n => { EvaluationResult = n.GetEnumValue<AssignmentFilterEvaluationResult>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
+                { "evaluationResult", n => { EvaluationResult = n.GetEnumValue<AssignmentFilterEvaluationResult>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

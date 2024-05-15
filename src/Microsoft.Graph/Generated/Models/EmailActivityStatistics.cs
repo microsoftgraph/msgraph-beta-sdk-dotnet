@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EmailActivityStatistics : ActivityStatistics, IParsable 
+    public class EmailActivityStatistics : ActivityStatistics, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Total hours spent on email outside of working hours, which is based on the user&apos;s Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? AfterHours {
+        public TimeSpan? AfterHours
+        {
             get { return BackingStore?.Get<TimeSpan?>("afterHours"); }
             set { BackingStore?.Set("afterHours", value); }
         }
         /// <summary>Total hours spent reading email. The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? ReadEmail {
+        public TimeSpan? ReadEmail
+        {
             get { return BackingStore?.Get<TimeSpan?>("readEmail"); }
             set { BackingStore?.Set("readEmail", value); }
         }
         /// <summary>Total hours spent writing and sending email. The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? SentEmail {
+        public TimeSpan? SentEmail
+        {
             get { return BackingStore?.Get<TimeSpan?>("sentEmail"); }
             set { BackingStore?.Set("sentEmail", value); }
         }
@@ -49,9 +53,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"afterHours", n => { AfterHours = n.GetTimeSpanValue(); } },
-                {"readEmail", n => { ReadEmail = n.GetTimeSpanValue(); } },
-                {"sentEmail", n => { SentEmail = n.GetTimeSpanValue(); } },
+                { "afterHours", n => { AfterHours = n.GetTimeSpanValue(); } },
+                { "readEmail", n => { ReadEmail = n.GetTimeSpanValue(); } },
+                { "sentEmail", n => { SentEmail = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

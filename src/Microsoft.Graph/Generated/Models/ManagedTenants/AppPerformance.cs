@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class AppPerformance : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class AppPerformance : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appFriendlyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppFriendlyName {
+        public string? AppFriendlyName
+        {
             get { return BackingStore?.Get<string?>("appFriendlyName"); }
             set { BackingStore?.Set("appFriendlyName", value); }
         }
 #nullable restore
 #else
-        public string AppFriendlyName {
+        public string AppFriendlyName
+        {
             get { return BackingStore?.Get<string>("appFriendlyName"); }
             set { BackingStore?.Set("appFriendlyName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The appName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName {
+        public string? AppName
+        {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #nullable restore
 #else
-        public string AppName {
+        public string AppName
+        {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
@@ -40,37 +45,43 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The appPublisher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppPublisher {
+        public string? AppPublisher
+        {
             get { return BackingStore?.Get<string?>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
 #nullable restore
 #else
-        public string AppPublisher {
+        public string AppPublisher
+        {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
 #endif
         /// <summary>The lastUpdatedDateTime property</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The meanTimeToFailureInMinutes property</summary>
-        public int? MeanTimeToFailureInMinutes {
+        public int? MeanTimeToFailureInMinutes
+        {
             get { return BackingStore?.Get<int?>("meanTimeToFailureInMinutes"); }
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
         /// <summary>The tenantDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -78,29 +89,34 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
         /// <summary>The totalActiveDeviceCount property</summary>
-        public int? TotalActiveDeviceCount {
+        public int? TotalActiveDeviceCount
+        {
             get { return BackingStore?.Get<int?>("totalActiveDeviceCount"); }
             set { BackingStore?.Set("totalActiveDeviceCount", value); }
         }
         /// <summary>The totalAppCrashCount property</summary>
-        public int? TotalAppCrashCount {
+        public int? TotalAppCrashCount
+        {
             get { return BackingStore?.Get<int?>("totalAppCrashCount"); }
             set { BackingStore?.Set("totalAppCrashCount", value); }
         }
         /// <summary>The totalAppFreezeCount property</summary>
-        public int? TotalAppFreezeCount {
+        public int? TotalAppFreezeCount
+        {
             get { return BackingStore?.Get<int?>("totalAppFreezeCount"); }
             set { BackingStore?.Set("totalAppFreezeCount", value); }
         }
@@ -122,16 +138,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appFriendlyName", n => { AppFriendlyName = n.GetStringValue(); } },
-                {"appName", n => { AppName = n.GetStringValue(); } },
-                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"totalActiveDeviceCount", n => { TotalActiveDeviceCount = n.GetIntValue(); } },
-                {"totalAppCrashCount", n => { TotalAppCrashCount = n.GetIntValue(); } },
-                {"totalAppFreezeCount", n => { TotalAppFreezeCount = n.GetIntValue(); } },
+                { "appFriendlyName", n => { AppFriendlyName = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "meanTimeToFailureInMinutes", n => { MeanTimeToFailureInMinutes = n.GetIntValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "totalActiveDeviceCount", n => { TotalActiveDeviceCount = n.GetIntValue(); } },
+                { "totalAppCrashCount", n => { TotalAppCrashCount = n.GetIntValue(); } },
+                { "totalAppFreezeCount", n => { TotalAppFreezeCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

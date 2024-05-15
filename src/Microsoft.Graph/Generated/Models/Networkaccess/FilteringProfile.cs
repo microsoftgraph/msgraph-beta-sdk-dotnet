@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class FilteringProfile : Profile, IParsable 
+    public class FilteringProfile : Profile, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessPolicy>? ConditionalAccessPolicies {
+        public List<ConditionalAccessPolicy>? ConditionalAccessPolicies
+        {
             get { return BackingStore?.Get<List<ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessPolicy> ConditionalAccessPolicies {
+        public List<ConditionalAccessPolicy> ConditionalAccessPolicies
+        {
             get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #endif
         /// <summary>The date and time when the filteringProfile was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The priority used to order the profile for processing within a list.</summary>
-        public long? Priority {
+        public long? Priority
+        {
             get { return BackingStore?.Get<long?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"priority", n => { Priority = n.GetLongValue(); } },
+                { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "priority", n => { Priority = n.GetLongValue(); } },
             };
         }
         /// <summary>

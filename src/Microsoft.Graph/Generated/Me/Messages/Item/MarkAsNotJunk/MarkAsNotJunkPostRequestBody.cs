@@ -5,20 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk {
+namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk
+{
     #pragma warning disable CS1591
-    public class MarkAsNotJunkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MarkAsNotJunkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The MoveToInbox property</summary>
-        public bool? MoveToInbox {
+        public bool? MoveToInbox
+        {
             get { return BackingStore?.Get<bool?>("MoveToInbox"); }
             set { BackingStore?.Set("MoveToInbox", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.MarkAsNotJunk {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"MoveToInbox", n => { MoveToInbox = n.GetBoolValue(); } },
+                { "MoveToInbox", n => { MoveToInbox = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class Alert : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Alert : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertAction>? Actions {
+        public List<AlertAction>? Actions
+        {
             get { return BackingStore?.Get<List<AlertAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<AlertAction> Actions {
+        public List<AlertAction> Actions
+        {
             get { return BackingStore?.Get<List<AlertAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>The alertType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.AlertType? AlertType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.AlertType? AlertType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.AlertType?>("alertType"); }
             set { BackingStore?.Set("alertType", value); }
         }
         /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime {
+        public DateTimeOffset? CreationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The relatedResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedResource>? RelatedResources {
+        public List<RelatedResource>? RelatedResources
+        {
             get { return BackingStore?.Get<List<RelatedResource>?>("relatedResources"); }
             set { BackingStore?.Set("relatedResources", value); }
         }
 #nullable restore
 #else
-        public List<RelatedResource> RelatedResources {
+        public List<RelatedResource> RelatedResources
+        {
             get { return BackingStore?.Get<List<RelatedResource>>("relatedResources"); }
             set { BackingStore?.Set("relatedResources", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actions", n => { Actions = n.GetCollectionOfObjectValues<AlertAction>(AlertAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"alertType", n => { AlertType = n.GetEnumValue<AlertType>(); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<RelatedResource>(RelatedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<AlertAction>(AlertAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertType", n => { AlertType = n.GetEnumValue<AlertType>(); } },
+                { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<RelatedResource>(RelatedResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

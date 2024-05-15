@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MfaDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MfaDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Indicates the MFA auth detail for the corresponding Sign-in activity when the MFA Required is &apos;Yes&apos;.</summary>
+        /// <summary>Indicates the MFA auth detail for the corresponding sign-in activity when the MFA Required is &apos;Yes&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthDetail {
+        public string? AuthDetail
+        {
             get { return BackingStore?.Get<string?>("authDetail"); }
             set { BackingStore?.Set("authDetail", value); }
         }
 #nullable restore
 #else
-        public string AuthDetail {
+        public string AuthDetail
+        {
             get { return BackingStore?.Get<string>("authDetail"); }
             set { BackingStore?.Set("authDetail", value); }
         }
 #endif
-        /// <summary>Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the value) for the corresponding sign-in activity when the MFA Required field is &apos;Yes&apos;.</summary>
+        /// <summary>Indicates the MFA Auth methods (SMS, Phone, Authenticator App are some of the values) for the corresponding sign-in activity when the MFA Required field is &apos;Yes&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthMethod {
+        public string? AuthMethod
+        {
             get { return BackingStore?.Get<string?>("authMethod"); }
             set { BackingStore?.Set("authMethod", value); }
         }
 #nullable restore
 #else
-        public string AuthMethod {
+        public string AuthMethod
+        {
             get { return BackingStore?.Get<string>("authMethod"); }
             set { BackingStore?.Set("authMethod", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authDetail", n => { AuthDetail = n.GetStringValue(); } },
-                {"authMethod", n => { AuthMethod = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "authDetail", n => { AuthDetail = n.GetStringValue(); } },
+                { "authMethod", n => { AuthMethod = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

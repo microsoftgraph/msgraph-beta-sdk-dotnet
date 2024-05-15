@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.ValidateComplianceScript
+{
     #pragma warning disable CS1591
-    public class ValidateComplianceScriptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ValidateComplianceScriptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Validat
         /// <summary>The deviceCompliancePolicyScript property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript {
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript? DeviceCompliancePolicyScript
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript?>("deviceCompliancePolicyScript"); }
             set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript {
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript DeviceCompliancePolicyScript
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>("deviceCompliancePolicyScript"); }
             set { BackingStore?.Set("deviceCompliancePolicyScript", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Validat
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceCompliancePolicyScript", n => { DeviceCompliancePolicyScript = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
+                { "deviceCompliancePolicyScript", n => { DeviceCompliancePolicyScript = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyScript.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

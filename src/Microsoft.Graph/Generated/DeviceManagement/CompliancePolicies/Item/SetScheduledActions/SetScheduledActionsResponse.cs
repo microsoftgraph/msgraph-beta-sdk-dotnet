@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
+namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions
+{
     [Obsolete("This class is obsolete. Use SetScheduledActionsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class SetScheduledActionsResponse : SetScheduledActionsPostResponse, IParsable 
+    public class SetScheduledActionsResponse : SetScheduledActionsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

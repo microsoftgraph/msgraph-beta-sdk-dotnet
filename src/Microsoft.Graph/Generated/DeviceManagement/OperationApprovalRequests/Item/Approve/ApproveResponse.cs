@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Approve {
+namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.Approve
+{
     [Obsolete("This class is obsolete. Use ApprovePostResponse instead.")]
     #pragma warning disable CS1591
-    public class ApproveResponse : ApprovePostResponse, IParsable 
+    public class ApproveResponse : ApprovePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

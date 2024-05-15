@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class LocalConnectivityConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LocalConnectivityConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Specifies ASN of one end of IPSec tunnel (local or peer).</summary>
-        public int? Asn {
+        public int? Asn
+        {
             get { return BackingStore?.Get<int?>("asn"); }
             set { BackingStore?.Set("asn", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Specifies BGP IPv4 address of one end of IPSec tunnel (local or peer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BgpAddress {
+        public string? BgpAddress
+        {
             get { return BackingStore?.Get<string?>("bgpAddress"); }
             set { BackingStore?.Set("bgpAddress", value); }
         }
 #nullable restore
 #else
-        public string BgpAddress {
+        public string BgpAddress
+        {
             get { return BackingStore?.Get<string>("bgpAddress"); }
             set { BackingStore?.Set("bgpAddress", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Specifies public IPv4 address of one end of IPSec tunnel (local or peer).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Endpoint {
+        public string? Endpoint
+        {
             get { return BackingStore?.Get<string?>("endpoint"); }
             set { BackingStore?.Set("endpoint", value); }
         }
 #nullable restore
 #else
-        public string Endpoint {
+        public string Endpoint
+        {
             get { return BackingStore?.Get<string>("endpoint"); }
             set { BackingStore?.Set("endpoint", value); }
         }
@@ -53,19 +60,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The region property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.Region? Region {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Region? Region
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Region?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"asn", n => { Asn = n.GetIntValue(); } },
-                {"bgpAddress", n => { BgpAddress = n.GetStringValue(); } },
-                {"endpoint", n => { Endpoint = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"region", n => { Region = n.GetEnumValue<Region>(); } },
+                { "asn", n => { Asn = n.GetIntValue(); } },
+                { "bgpAddress", n => { BgpAddress = n.GetStringValue(); } },
+                { "endpoint", n => { Endpoint = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetEnumValue<Region>(); } },
             };
         }
         /// <summary>

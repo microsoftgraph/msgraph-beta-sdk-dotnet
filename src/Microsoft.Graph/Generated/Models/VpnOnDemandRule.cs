@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN On-Demand Rule definition.
     /// </summary>
-    public class VpnOnDemandRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VpnOnDemandRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>VPN On-Demand Rule Connection Action.</summary>
-        public VpnOnDemandRuleConnectionAction? Action {
+        public VpnOnDemandRuleConnectionAction? Action
+        {
             get { return BackingStore?.Get<VpnOnDemandRuleConnectionAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>DNS Search Domains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DnsSearchDomains {
+        public List<string>? DnsSearchDomains
+        {
             get { return BackingStore?.Get<List<string>?>("dnsSearchDomains"); }
             set { BackingStore?.Set("dnsSearchDomains", value); }
         }
 #nullable restore
 #else
-        public List<string> DnsSearchDomains {
+        public List<string> DnsSearchDomains
+        {
             get { return BackingStore?.Get<List<string>>("dnsSearchDomains"); }
             set { BackingStore?.Set("dnsSearchDomains", value); }
         }
@@ -40,51 +45,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>DNS Search Server Address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DnsServerAddressMatch {
+        public List<string>? DnsServerAddressMatch
+        {
             get { return BackingStore?.Get<List<string>?>("dnsServerAddressMatch"); }
             set { BackingStore?.Set("dnsServerAddressMatch", value); }
         }
 #nullable restore
 #else
-        public List<string> DnsServerAddressMatch {
+        public List<string> DnsServerAddressMatch
+        {
             get { return BackingStore?.Get<List<string>>("dnsServerAddressMatch"); }
             set { BackingStore?.Set("dnsServerAddressMatch", value); }
         }
 #endif
         /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
-        public VpnOnDemandRuleConnectionDomainAction? DomainAction {
+        public VpnOnDemandRuleConnectionDomainAction? DomainAction
+        {
             get { return BackingStore?.Get<VpnOnDemandRuleConnectionDomainAction?>("domainAction"); }
             set { BackingStore?.Set("domainAction", value); }
         }
         /// <summary>Domains (Only applicable when Action is evaluate connection).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains {
+        public List<string>? Domains
+        {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
 #nullable restore
 #else
-        public List<string> Domains {
+        public List<string> Domains
+        {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
 #endif
         /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
-        public VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch {
+        public VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch
+        {
             get { return BackingStore?.Get<VpnOnDemandRuleInterfaceTypeMatch?>("interfaceTypeMatch"); }
             set { BackingStore?.Set("interfaceTypeMatch", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProbeRequiredUrl {
+        public string? ProbeRequiredUrl
+        {
             get { return BackingStore?.Get<string?>("probeRequiredUrl"); }
             set { BackingStore?.Set("probeRequiredUrl", value); }
         }
 #nullable restore
 #else
-        public string ProbeRequiredUrl {
+        public string ProbeRequiredUrl
+        {
             get { return BackingStore?.Get<string>("probeRequiredUrl"); }
             set { BackingStore?.Set("probeRequiredUrl", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A URL to probe. If this URL is successfully fetched (returning a 200 HTTP status code) without redirection, this rule matches.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProbeUrl {
+        public string? ProbeUrl
+        {
             get { return BackingStore?.Get<string?>("probeUrl"); }
             set { BackingStore?.Set("probeUrl", value); }
         }
 #nullable restore
 #else
-        public string ProbeUrl {
+        public string ProbeUrl
+        {
             get { return BackingStore?.Get<string>("probeUrl"); }
             set { BackingStore?.Set("probeUrl", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Network Service Set Identifiers (SSIDs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ssids {
+        public List<string>? Ssids
+        {
             get { return BackingStore?.Get<List<string>?>("ssids"); }
             set { BackingStore?.Set("ssids", value); }
         }
 #nullable restore
 #else
-        public List<string> Ssids {
+        public List<string> Ssids
+        {
             get { return BackingStore?.Get<List<string>>("ssids"); }
             set { BackingStore?.Set("ssids", value); }
         }
@@ -157,16 +176,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<VpnOnDemandRuleConnectionAction>(); } },
-                {"dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"dnsServerAddressMatch", n => { DnsServerAddressMatch = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"domainAction", n => { DomainAction = n.GetEnumValue<VpnOnDemandRuleConnectionDomainAction>(); } },
-                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"interfaceTypeMatch", n => { InterfaceTypeMatch = n.GetEnumValue<VpnOnDemandRuleInterfaceTypeMatch>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"probeRequiredUrl", n => { ProbeRequiredUrl = n.GetStringValue(); } },
-                {"probeUrl", n => { ProbeUrl = n.GetStringValue(); } },
-                {"ssids", n => { Ssids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "action", n => { Action = n.GetEnumValue<VpnOnDemandRuleConnectionAction>(); } },
+                { "dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "dnsServerAddressMatch", n => { DnsServerAddressMatch = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "domainAction", n => { DomainAction = n.GetEnumValue<VpnOnDemandRuleConnectionDomainAction>(); } },
+                { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "interfaceTypeMatch", n => { InterfaceTypeMatch = n.GetEnumValue<VpnOnDemandRuleInterfaceTypeMatch>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "probeRequiredUrl", n => { ProbeRequiredUrl = n.GetStringValue(); } },
+                { "probeUrl", n => { ProbeUrl = n.GetStringValue(); } },
+                { "ssids", n => { Ssids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

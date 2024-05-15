@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows update catalog item entity
     /// </summary>
-    public class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable 
+    public class WindowsQualityUpdateCatalogItem : WindowsUpdateCatalogItem, IParsable
     {
         /// <summary>Windows quality update classification</summary>
-        public WindowsQualityUpdateClassification? Classification {
+        public WindowsQualityUpdateClassification? Classification
+        {
             get { return BackingStore?.Get<WindowsQualityUpdateClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>Flag indicating if update qualifies for expedite</summary>
-        public bool? IsExpeditable {
+        public bool? IsExpeditable
+        {
             get { return BackingStore?.Get<bool?>("isExpeditable"); }
             set { BackingStore?.Set("isExpeditable", value); }
         }
         /// <summary>Knowledge base article id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KbArticleId {
+        public string? KbArticleId
+        {
             get { return BackingStore?.Get<string?>("kbArticleId"); }
             set { BackingStore?.Set("kbArticleId", value); }
         }
 #nullable restore
 #else
-        public string KbArticleId {
+        public string KbArticleId
+        {
             get { return BackingStore?.Get<string>("kbArticleId"); }
             set { BackingStore?.Set("kbArticleId", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classification", n => { Classification = n.GetEnumValue<WindowsQualityUpdateClassification>(); } },
-                {"isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
-                {"kbArticleId", n => { KbArticleId = n.GetStringValue(); } },
+                { "classification", n => { Classification = n.GetEnumValue<WindowsQualityUpdateClassification>(); } },
+                { "isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
+                { "kbArticleId", n => { KbArticleId = n.GetStringValue(); } },
             };
         }
         /// <summary>

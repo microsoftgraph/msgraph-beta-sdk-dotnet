@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.Evaluate {
+namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.Evaluate
+{
     #pragma warning disable CS1591
-    public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
         /// <summary>The evaluationInput property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DlpEvaluationInput? EvaluationInput {
+        public DlpEvaluationInput? EvaluationInput
+        {
             get { return BackingStore?.Get<DlpEvaluationInput?>("evaluationInput"); }
             set { BackingStore?.Set("evaluationInput", value); }
         }
 #nullable restore
 #else
-        public DlpEvaluationInput EvaluationInput {
+        public DlpEvaluationInput EvaluationInput
+        {
             get { return BackingStore?.Get<DlpEvaluationInput>("evaluationInput"); }
             set { BackingStore?.Set("evaluationInput", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
         /// <summary>The notificationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DlpNotification? NotificationInfo {
+        public DlpNotification? NotificationInfo
+        {
             get { return BackingStore?.Get<DlpNotification?>("notificationInfo"); }
             set { BackingStore?.Set("notificationInfo", value); }
         }
 #nullable restore
 #else
-        public DlpNotification NotificationInfo {
+        public DlpNotification NotificationInfo
+        {
             get { return BackingStore?.Get<DlpNotification>("notificationInfo"); }
             set { BackingStore?.Set("notificationInfo", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Target {
+        public string? Target
+        {
             get { return BackingStore?.Get<string?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public string Target {
+        public string Target
+        {
             get { return BackingStore?.Get<string>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"evaluationInput", n => { EvaluationInput = n.GetObjectValue<DlpEvaluationInput>(DlpEvaluationInput.CreateFromDiscriminatorValue); } },
-                {"notificationInfo", n => { NotificationInfo = n.GetObjectValue<DlpNotification>(DlpNotification.CreateFromDiscriminatorValue); } },
-                {"target", n => { Target = n.GetStringValue(); } },
+                { "evaluationInput", n => { EvaluationInput = n.GetObjectValue<DlpEvaluationInput>(DlpEvaluationInput.CreateFromDiscriminatorValue); } },
+                { "notificationInfo", n => { NotificationInfo = n.GetObjectValue<DlpNotification>(DlpNotification.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetStringValue(); } },
             };
         }
         /// <summary>

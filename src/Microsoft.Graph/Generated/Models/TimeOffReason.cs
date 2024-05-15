@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TimeOffReason : ChangeTrackedEntity, IParsable 
+    public class TimeOffReason : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code of the timeOffReason to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
+        public string? Code
+        {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #nullable restore
 #else
-        public string Code {
+        public string Code
+        {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
@@ -26,24 +29,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the timeOffReason. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Supported icon types are: none, car, calendar, running, plane, firstAid, doctor, notWorking, clock, juryDuty, globe, cup, phone, weather, umbrella, piggyBank, dog, cake, trafficCone, pin, sunny. Required.</summary>
-        public TimeOffReasonIconType? IconType {
+        public TimeOffReasonIconType? IconType
+        {
             get { return BackingStore?.Get<TimeOffReasonIconType?>("iconType"); }
             set { BackingStore?.Set("iconType", value); }
         }
         /// <summary>Indicates whether the timeOffReason can be used when creating new entities or updating existing ones. Required.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"iconType", n => { IconType = n.GetEnumValue<TimeOffReasonIconType>(); } },
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "iconType", n => { IconType = n.GetEnumValue<TimeOffReasonIconType>(); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
             };
         }
         /// <summary>

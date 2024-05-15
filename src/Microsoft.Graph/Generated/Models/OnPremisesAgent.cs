@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesAgent : Entity, IParsable 
+    public class OnPremisesAgent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesAgentGroup>? AgentGroups {
+        public List<OnPremisesAgentGroup>? AgentGroups
+        {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesAgentGroup> AgentGroups {
+        public List<OnPremisesAgentGroup> AgentGroups
+        {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The external IP address as detected by the service for the agent machine. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalIp {
+        public string? ExternalIp
+        {
             get { return BackingStore?.Get<string?>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
 #nullable restore
 #else
-        public string ExternalIp {
+        public string ExternalIp
+        {
             get { return BackingStore?.Get<string>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the machine that the agent is running on. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MachineName {
+        public string? MachineName
+        {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
 #nullable restore
 #else
-        public string MachineName {
+        public string MachineName
+        {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public AgentStatus? Status {
+        public AgentStatus? Status
+        {
             get { return BackingStore?.Get<AgentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The supportedPublishingTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesPublishingType?>? SupportedPublishingTypes {
+        public List<OnPremisesPublishingType?>? SupportedPublishingTypes
+        {
             get { return BackingStore?.Get<List<OnPremisesPublishingType?>?>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesPublishingType?> SupportedPublishingTypes {
+        public List<OnPremisesPublishingType?> SupportedPublishingTypes
+        {
             get { return BackingStore?.Get<List<OnPremisesPublishingType?>>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
-                {"machineName", n => { MachineName = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
-                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>()?.ToList(); } },
+                { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "externalIp", n => { ExternalIp = n.GetStringValue(); } },
+                { "machineName", n => { MachineName = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
+                { "supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>()?.ToList(); } },
             };
         }
         /// <summary>

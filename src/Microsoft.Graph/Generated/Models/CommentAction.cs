@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CommentAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CommentAction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If true, this activity was a reply to an existing comment thread.</summary>
-        public bool? IsReply {
+        public bool? IsReply
+        {
             get { return BackingStore?.Get<bool?>("isReply"); }
             set { BackingStore?.Set("isReply", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identity of the user who started the comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? ParentAuthor {
+        public IdentitySet? ParentAuthor
+        {
             get { return BackingStore?.Get<IdentitySet?>("parentAuthor"); }
             set { BackingStore?.Set("parentAuthor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet ParentAuthor {
+        public IdentitySet ParentAuthor
+        {
             get { return BackingStore?.Get<IdentitySet>("parentAuthor"); }
             set { BackingStore?.Set("parentAuthor", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identities of the users participating in this comment thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentitySet>? Participants {
+        public List<IdentitySet>? Participants
+        {
             get { return BackingStore?.Get<List<IdentitySet>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<IdentitySet> Participants {
+        public List<IdentitySet> Participants
+        {
             get { return BackingStore?.Get<List<IdentitySet>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isReply", n => { IsReply = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"parentAuthor", n => { ParentAuthor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"participants", n => { Participants = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isReply", n => { IsReply = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "parentAuthor", n => { ParentAuthor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

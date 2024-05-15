@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RemoveWatermarkAction : InformationProtectionAction, IParsable 
+    public class RemoveWatermarkAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the UI element of footer to be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UiElementNames {
+        public List<string>? UiElementNames
+        {
             get { return BackingStore?.Get<List<string>?>("uiElementNames"); }
             set { BackingStore?.Set("uiElementNames", value); }
         }
 #nullable restore
 #else
-        public List<string> UiElementNames {
+        public List<string> UiElementNames
+        {
             get { return BackingStore?.Get<List<string>>("uiElementNames"); }
             set { BackingStore?.Set("uiElementNames", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"uiElementNames", n => { UiElementNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "uiElementNames", n => { UiElementNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

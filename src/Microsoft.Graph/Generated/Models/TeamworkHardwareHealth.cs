@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkHardwareHealth : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkHardwareHealth : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The system health details for a teamworkDevice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? ComputeHealth {
+        public TeamworkPeripheralHealth? ComputeHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("computeHealth"); }
             set { BackingStore?.Set("computeHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth ComputeHealth {
+        public TeamworkPeripheralHealth ComputeHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("computeHealth"); }
             set { BackingStore?.Set("computeHealth", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The health details about the HDMI ingest of a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? HdmiIngestHealth {
+        public TeamworkPeripheralHealth? HdmiIngestHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth?>("hdmiIngestHealth"); }
             set { BackingStore?.Set("hdmiIngestHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth HdmiIngestHealth {
+        public TeamworkPeripheralHealth HdmiIngestHealth
+        {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("hdmiIngestHealth"); }
             set { BackingStore?.Set("hdmiIngestHealth", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"computeHealth", n => { ComputeHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                {"hdmiIngestHealth", n => { HdmiIngestHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "computeHealth", n => { ComputeHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "hdmiIngestHealth", n => { HdmiIngestHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

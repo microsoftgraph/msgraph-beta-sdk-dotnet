@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The DepMacOSEnrollmentProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile specific to macOS configuration. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
     /// </summary>
-    public class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable 
+    public class DepMacOSEnrollmentProfile : DepEnrollmentBaseProfile, IParsable
     {
         /// <summary>Indicates if Accessibility screen is disabled</summary>
-        public bool? AccessibilityScreenDisabled {
+        public bool? AccessibilityScreenDisabled
+        {
             get { return BackingStore?.Get<bool?>("accessibilityScreenDisabled"); }
             set { BackingStore?.Set("accessibilityScreenDisabled", value); }
         }
         /// <summary>Indicates what the full name for the admin account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminAccountFullName {
+        public string? AdminAccountFullName
+        {
             get { return BackingStore?.Get<string?>("adminAccountFullName"); }
             set { BackingStore?.Set("adminAccountFullName", value); }
         }
 #nullable restore
 #else
-        public string AdminAccountFullName {
+        public string AdminAccountFullName
+        {
             get { return BackingStore?.Get<string>("adminAccountFullName"); }
             set { BackingStore?.Set("adminAccountFullName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates what the password for the admin account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminAccountPassword {
+        public string? AdminAccountPassword
+        {
             get { return BackingStore?.Get<string?>("adminAccountPassword"); }
             set { BackingStore?.Set("adminAccountPassword", value); }
         }
 #nullable restore
 #else
-        public string AdminAccountPassword {
+        public string AdminAccountPassword
+        {
             get { return BackingStore?.Get<string>("adminAccountPassword"); }
             set { BackingStore?.Set("adminAccountPassword", value); }
         }
@@ -46,77 +52,91 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates what the user name for the admin account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdminAccountUserName {
+        public string? AdminAccountUserName
+        {
             get { return BackingStore?.Get<string?>("adminAccountUserName"); }
             set { BackingStore?.Set("adminAccountUserName", value); }
         }
 #nullable restore
 #else
-        public string AdminAccountUserName {
+        public string AdminAccountUserName
+        {
             get { return BackingStore?.Get<string>("adminAccountUserName"); }
             set { BackingStore?.Set("adminAccountUserName", value); }
         }
 #endif
         /// <summary>Indicates if Setup Assistant will automatically advance through its screen</summary>
-        public bool? AutoAdvanceSetupEnabled {
+        public bool? AutoAdvanceSetupEnabled
+        {
             get { return BackingStore?.Get<bool?>("autoAdvanceSetupEnabled"); }
             set { BackingStore?.Set("autoAdvanceSetupEnabled", value); }
         }
         /// <summary>Indicates if UnlockWithWatch screen is disabled</summary>
-        public bool? AutoUnlockWithWatchDisabled {
+        public bool? AutoUnlockWithWatchDisabled
+        {
             get { return BackingStore?.Get<bool?>("autoUnlockWithWatchDisabled"); }
             set { BackingStore?.Set("autoUnlockWithWatchDisabled", value); }
         }
         /// <summary>Indicates if iCloud Documents and Desktop screen is disabled</summary>
-        public bool? ChooseYourLockScreenDisabled {
+        public bool? ChooseYourLockScreenDisabled
+        {
             get { return BackingStore?.Get<bool?>("chooseYourLockScreenDisabled"); }
             set { BackingStore?.Set("chooseYourLockScreenDisabled", value); }
         }
         /// <summary>Indicates whether Setup Assistant will auto populate the primary account information</summary>
-        public bool? DontAutoPopulatePrimaryAccountInfo {
+        public bool? DontAutoPopulatePrimaryAccountInfo
+        {
             get { return BackingStore?.Get<bool?>("dontAutoPopulatePrimaryAccountInfo"); }
             set { BackingStore?.Set("dontAutoPopulatePrimaryAccountInfo", value); }
         }
         /// <summary>Indicates whether the user will enable blockediting</summary>
-        public bool? EnableRestrictEditing {
+        public bool? EnableRestrictEditing
+        {
             get { return BackingStore?.Get<bool?>("enableRestrictEditing"); }
             set { BackingStore?.Set("enableRestrictEditing", value); }
         }
         /// <summary>Indicates if file vault is disabled</summary>
-        public bool? FileVaultDisabled {
+        public bool? FileVaultDisabled
+        {
             get { return BackingStore?.Get<bool?>("fileVaultDisabled"); }
             set { BackingStore?.Set("fileVaultDisabled", value); }
         }
         /// <summary>Indicates whether the admin account should be hidded or not</summary>
-        public bool? HideAdminAccount {
+        public bool? HideAdminAccount
+        {
             get { return BackingStore?.Get<bool?>("hideAdminAccount"); }
             set { BackingStore?.Set("hideAdminAccount", value); }
         }
         /// <summary>Indicates if iCloud Analytics screen is disabled</summary>
-        public bool? ICloudDiagnosticsDisabled {
+        public bool? ICloudDiagnosticsDisabled
+        {
             get { return BackingStore?.Get<bool?>("iCloudDiagnosticsDisabled"); }
             set { BackingStore?.Set("iCloudDiagnosticsDisabled", value); }
         }
         /// <summary>Indicates if iCloud Documents and Desktop screen is disabled</summary>
-        public bool? ICloudStorageDisabled {
+        public bool? ICloudStorageDisabled
+        {
             get { return BackingStore?.Get<bool?>("iCloudStorageDisabled"); }
             set { BackingStore?.Set("iCloudStorageDisabled", value); }
         }
         /// <summary>Indicates if Passcode setup pane is disabled</summary>
-        public bool? PassCodeDisabled {
+        public bool? PassCodeDisabled
+        {
             get { return BackingStore?.Get<bool?>("passCodeDisabled"); }
             set { BackingStore?.Set("passCodeDisabled", value); }
         }
         /// <summary>Indicates what the full name for the primary account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryAccountFullName {
+        public string? PrimaryAccountFullName
+        {
             get { return BackingStore?.Get<string?>("primaryAccountFullName"); }
             set { BackingStore?.Set("primaryAccountFullName", value); }
         }
 #nullable restore
 #else
-        public string PrimaryAccountFullName {
+        public string PrimaryAccountFullName
+        {
             get { return BackingStore?.Get<string>("primaryAccountFullName"); }
             set { BackingStore?.Set("primaryAccountFullName", value); }
         }
@@ -124,39 +144,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates what the account name for the primary account is</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryAccountUserName {
+        public string? PrimaryAccountUserName
+        {
             get { return BackingStore?.Get<string?>("primaryAccountUserName"); }
             set { BackingStore?.Set("primaryAccountUserName", value); }
         }
 #nullable restore
 #else
-        public string PrimaryAccountUserName {
+        public string PrimaryAccountUserName
+        {
             get { return BackingStore?.Get<string>("primaryAccountUserName"); }
             set { BackingStore?.Set("primaryAccountUserName", value); }
         }
 #endif
         /// <summary>Indicates if registration is disabled</summary>
-        public bool? RegistrationDisabled {
+        public bool? RegistrationDisabled
+        {
             get { return BackingStore?.Get<bool?>("registrationDisabled"); }
             set { BackingStore?.Set("registrationDisabled", value); }
         }
         /// <summary>Indicates if the device is network-tethered to run the command</summary>
-        public bool? RequestRequiresNetworkTether {
+        public bool? RequestRequiresNetworkTether
+        {
             get { return BackingStore?.Get<bool?>("requestRequiresNetworkTether"); }
             set { BackingStore?.Set("requestRequiresNetworkTether", value); }
         }
         /// <summary>Indicates whether Setup Assistant will set the account as a regular user</summary>
-        public bool? SetPrimarySetupAccountAsRegularUser {
+        public bool? SetPrimarySetupAccountAsRegularUser
+        {
             get { return BackingStore?.Get<bool?>("setPrimarySetupAccountAsRegularUser"); }
             set { BackingStore?.Set("setPrimarySetupAccountAsRegularUser", value); }
         }
         /// <summary>Indicates whether Setup Assistant will skip the user interface for primary account setup</summary>
-        public bool? SkipPrimarySetupAccountCreation {
+        public bool? SkipPrimarySetupAccountCreation
+        {
             get { return BackingStore?.Get<bool?>("skipPrimarySetupAccountCreation"); }
             set { BackingStore?.Set("skipPrimarySetupAccountCreation", value); }
         }
         /// <summary>Indicates if zoom setup pane is disabled</summary>
-        public bool? ZoomDisabled {
+        public bool? ZoomDisabled
+        {
             get { return BackingStore?.Get<bool?>("zoomDisabled"); }
             set { BackingStore?.Set("zoomDisabled", value); }
         }
@@ -185,27 +212,27 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessibilityScreenDisabled", n => { AccessibilityScreenDisabled = n.GetBoolValue(); } },
-                {"adminAccountFullName", n => { AdminAccountFullName = n.GetStringValue(); } },
-                {"adminAccountPassword", n => { AdminAccountPassword = n.GetStringValue(); } },
-                {"adminAccountUserName", n => { AdminAccountUserName = n.GetStringValue(); } },
-                {"autoAdvanceSetupEnabled", n => { AutoAdvanceSetupEnabled = n.GetBoolValue(); } },
-                {"autoUnlockWithWatchDisabled", n => { AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
-                {"chooseYourLockScreenDisabled", n => { ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
-                {"dontAutoPopulatePrimaryAccountInfo", n => { DontAutoPopulatePrimaryAccountInfo = n.GetBoolValue(); } },
-                {"enableRestrictEditing", n => { EnableRestrictEditing = n.GetBoolValue(); } },
-                {"fileVaultDisabled", n => { FileVaultDisabled = n.GetBoolValue(); } },
-                {"hideAdminAccount", n => { HideAdminAccount = n.GetBoolValue(); } },
-                {"iCloudDiagnosticsDisabled", n => { ICloudDiagnosticsDisabled = n.GetBoolValue(); } },
-                {"iCloudStorageDisabled", n => { ICloudStorageDisabled = n.GetBoolValue(); } },
-                {"passCodeDisabled", n => { PassCodeDisabled = n.GetBoolValue(); } },
-                {"primaryAccountFullName", n => { PrimaryAccountFullName = n.GetStringValue(); } },
-                {"primaryAccountUserName", n => { PrimaryAccountUserName = n.GetStringValue(); } },
-                {"registrationDisabled", n => { RegistrationDisabled = n.GetBoolValue(); } },
-                {"requestRequiresNetworkTether", n => { RequestRequiresNetworkTether = n.GetBoolValue(); } },
-                {"setPrimarySetupAccountAsRegularUser", n => { SetPrimarySetupAccountAsRegularUser = n.GetBoolValue(); } },
-                {"skipPrimarySetupAccountCreation", n => { SkipPrimarySetupAccountCreation = n.GetBoolValue(); } },
-                {"zoomDisabled", n => { ZoomDisabled = n.GetBoolValue(); } },
+                { "accessibilityScreenDisabled", n => { AccessibilityScreenDisabled = n.GetBoolValue(); } },
+                { "adminAccountFullName", n => { AdminAccountFullName = n.GetStringValue(); } },
+                { "adminAccountPassword", n => { AdminAccountPassword = n.GetStringValue(); } },
+                { "adminAccountUserName", n => { AdminAccountUserName = n.GetStringValue(); } },
+                { "autoAdvanceSetupEnabled", n => { AutoAdvanceSetupEnabled = n.GetBoolValue(); } },
+                { "autoUnlockWithWatchDisabled", n => { AutoUnlockWithWatchDisabled = n.GetBoolValue(); } },
+                { "chooseYourLockScreenDisabled", n => { ChooseYourLockScreenDisabled = n.GetBoolValue(); } },
+                { "dontAutoPopulatePrimaryAccountInfo", n => { DontAutoPopulatePrimaryAccountInfo = n.GetBoolValue(); } },
+                { "enableRestrictEditing", n => { EnableRestrictEditing = n.GetBoolValue(); } },
+                { "fileVaultDisabled", n => { FileVaultDisabled = n.GetBoolValue(); } },
+                { "hideAdminAccount", n => { HideAdminAccount = n.GetBoolValue(); } },
+                { "iCloudDiagnosticsDisabled", n => { ICloudDiagnosticsDisabled = n.GetBoolValue(); } },
+                { "iCloudStorageDisabled", n => { ICloudStorageDisabled = n.GetBoolValue(); } },
+                { "passCodeDisabled", n => { PassCodeDisabled = n.GetBoolValue(); } },
+                { "primaryAccountFullName", n => { PrimaryAccountFullName = n.GetStringValue(); } },
+                { "primaryAccountUserName", n => { PrimaryAccountUserName = n.GetStringValue(); } },
+                { "registrationDisabled", n => { RegistrationDisabled = n.GetBoolValue(); } },
+                { "requestRequiresNetworkTether", n => { RequestRequiresNetworkTether = n.GetBoolValue(); } },
+                { "setPrimarySetupAccountAsRegularUser", n => { SetPrimarySetupAccountAsRegularUser = n.GetBoolValue(); } },
+                { "skipPrimarySetupAccountCreation", n => { SkipPrimarySetupAccountCreation = n.GetBoolValue(); } },
+                { "zoomDisabled", n => { ZoomDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

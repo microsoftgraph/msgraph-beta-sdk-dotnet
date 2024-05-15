@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an ADMX listBox element and an ADMX list element.
     /// </summary>
-    public class GroupPolicyPresentationListBox : GroupPolicyUploadedPresentation, IParsable 
+    public class GroupPolicyPresentationListBox : GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.</summary>
-        public bool? ExplicitValue {
+        public bool? ExplicitValue
+        {
             get { return BackingStore?.Get<bool?>("explicitValue"); }
             set { BackingStore?.Set("explicitValue", value); }
         }
         /// <summary>The valuePrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValuePrefix {
+        public string? ValuePrefix
+        {
             get { return BackingStore?.Get<string?>("valuePrefix"); }
             set { BackingStore?.Set("valuePrefix", value); }
         }
 #nullable restore
 #else
-        public string ValuePrefix {
+        public string ValuePrefix
+        {
             get { return BackingStore?.Get<string>("valuePrefix"); }
             set { BackingStore?.Set("valuePrefix", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"explicitValue", n => { ExplicitValue = n.GetBoolValue(); } },
-                {"valuePrefix", n => { ValuePrefix = n.GetStringValue(); } },
+                { "explicitValue", n => { ExplicitValue = n.GetBoolValue(); } },
+                { "valuePrefix", n => { ValuePrefix = n.GetStringValue(); } },
             };
         }
         /// <summary>

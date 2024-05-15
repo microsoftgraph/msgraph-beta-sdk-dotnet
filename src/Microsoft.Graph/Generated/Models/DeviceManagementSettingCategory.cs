@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing a setting category
     /// </summary>
-    public class DeviceManagementSettingCategory : Entity, IParsable 
+    public class DeviceManagementSettingCategory : Entity, IParsable
     {
         /// <summary>The category name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The category contains top level required setting</summary>
-        public bool? HasRequiredSetting {
+        public bool? HasRequiredSetting
+        {
             get { return BackingStore?.Get<bool?>("hasRequiredSetting"); }
             set { BackingStore?.Set("hasRequiredSetting", value); }
         }
         /// <summary>The setting definitions this category contains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingDefinition>? SettingDefinitions {
+        public List<DeviceManagementSettingDefinition>? SettingDefinitions
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>?>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingDefinition> SettingDefinitions {
+        public List<DeviceManagementSettingDefinition> SettingDefinitions
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingDefinition>>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"hasRequiredSetting", n => { HasRequiredSetting = n.GetBoolValue(); } },
-                {"settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementSettingDefinition>(DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "hasRequiredSetting", n => { HasRequiredSetting = n.GetBoolValue(); } },
+                { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementSettingDefinition>(DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

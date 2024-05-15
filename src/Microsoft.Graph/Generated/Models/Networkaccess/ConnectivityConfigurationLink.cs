@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class ConnectivityConfigurationLink : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ConnectivityConfigurationLink : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the name of the link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Specifies Microsoft&apos;s end of the tunnel configuration for a device link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LocalConnectivityConfiguration>? LocalConfigurations {
+        public List<LocalConnectivityConfiguration>? LocalConfigurations
+        {
             get { return BackingStore?.Get<List<LocalConnectivityConfiguration>?>("localConfigurations"); }
             set { BackingStore?.Set("localConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<LocalConnectivityConfiguration> LocalConfigurations {
+        public List<LocalConnectivityConfiguration> LocalConfigurations
+        {
             get { return BackingStore?.Get<List<LocalConnectivityConfiguration>>("localConfigurations"); }
             set { BackingStore?.Set("localConfigurations", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The peerConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PeerConnectivityConfiguration? PeerConfiguration {
+        public PeerConnectivityConfiguration? PeerConfiguration
+        {
             get { return BackingStore?.Get<PeerConnectivityConfiguration?>("peerConfiguration"); }
             set { BackingStore?.Set("peerConfiguration", value); }
         }
 #nullable restore
 #else
-        public PeerConnectivityConfiguration PeerConfiguration {
+        public PeerConnectivityConfiguration PeerConfiguration
+        {
             get { return BackingStore?.Get<PeerConnectivityConfiguration>("peerConfiguration"); }
             set { BackingStore?.Set("peerConfiguration", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"localConfigurations", n => { LocalConfigurations = n.GetCollectionOfObjectValues<LocalConnectivityConfiguration>(LocalConnectivityConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"peerConfiguration", n => { PeerConfiguration = n.GetObjectValue<PeerConnectivityConfiguration>(PeerConnectivityConfiguration.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "localConfigurations", n => { LocalConfigurations = n.GetCollectionOfObjectValues<LocalConnectivityConfiguration>(LocalConnectivityConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "peerConfiguration", n => { PeerConfiguration = n.GetObjectValue<PeerConnectivityConfiguration>(PeerConnectivityConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

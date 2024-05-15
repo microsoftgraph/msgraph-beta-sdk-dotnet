@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke {
+namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke
+{
     #pragma warning disable CS1591
-    public class RevokePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RevokePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke {
         /// <summary>The reviewerJustification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewerJustification {
+        public string? ReviewerJustification
+        {
             get { return BackingStore?.Get<string?>("reviewerJustification"); }
             set { BackingStore?.Set("reviewerJustification", value); }
         }
 #nullable restore
 #else
-        public string ReviewerJustification {
+        public string ReviewerJustification
+        {
             get { return BackingStore?.Get<string>("reviewerJustification"); }
             set { BackingStore?.Set("reviewerJustification", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ElevationRequests.Item.Revoke {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"reviewerJustification", n => { ReviewerJustification = n.GetStringValue(); } },
+                { "reviewerJustification", n => { ReviewerJustification = n.GetStringValue(); } },
             };
         }
         /// <summary>

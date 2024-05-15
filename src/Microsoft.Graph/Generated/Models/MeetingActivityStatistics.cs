@@ -4,38 +4,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingActivityStatistics : ActivityStatistics, IParsable 
+    public class MeetingActivityStatistics : ActivityStatistics, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Time spent on meetings outside of working hours, which is based on the user&apos;s Outlook calendar setting for work hours. The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? AfterHours {
+        public TimeSpan? AfterHours
+        {
             get { return BackingStore?.Get<TimeSpan?>("afterHours"); }
             set { BackingStore?.Set("afterHours", value); }
         }
         /// <summary>Time spent in conflicting meetings (meetings that overlap with other meetings that the person accepted and where the person’s status is set to Busy). The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? Conflicting {
+        public TimeSpan? Conflicting
+        {
             get { return BackingStore?.Get<TimeSpan?>("conflicting"); }
             set { BackingStore?.Set("conflicting", value); }
         }
         /// <summary>Time spent in long meetings (more than an hour in duration). The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? Long {
+        public TimeSpan? Long
+        {
             get { return BackingStore?.Get<TimeSpan?>("long"); }
             set { BackingStore?.Set("long", value); }
         }
         /// <summary>Time spent in meetings where the person was multitasking (read/sent more than a minimum number of emails and/or sent more than a minimum number of messages in Teams or in Skype for Business). The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? Multitasking {
+        public TimeSpan? Multitasking
+        {
             get { return BackingStore?.Get<TimeSpan?>("multitasking"); }
             set { BackingStore?.Set("multitasking", value); }
         }
         /// <summary>Time spent in meetings organized by the user. The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? Organized {
+        public TimeSpan? Organized
+        {
             get { return BackingStore?.Get<TimeSpan?>("organized"); }
             set { BackingStore?.Set("organized", value); }
         }
         /// <summary>Time spent on recurring meetings. The value is represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? Recurring {
+        public TimeSpan? Recurring
+        {
             get { return BackingStore?.Get<TimeSpan?>("recurring"); }
             set { BackingStore?.Set("recurring", value); }
         }
@@ -64,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"afterHours", n => { AfterHours = n.GetTimeSpanValue(); } },
-                {"conflicting", n => { Conflicting = n.GetTimeSpanValue(); } },
-                {"long", n => { Long = n.GetTimeSpanValue(); } },
-                {"multitasking", n => { Multitasking = n.GetTimeSpanValue(); } },
-                {"organized", n => { Organized = n.GetTimeSpanValue(); } },
-                {"recurring", n => { Recurring = n.GetTimeSpanValue(); } },
+                { "afterHours", n => { AfterHours = n.GetTimeSpanValue(); } },
+                { "conflicting", n => { Conflicting = n.GetTimeSpanValue(); } },
+                { "long", n => { Long = n.GetTimeSpanValue(); } },
+                { "multitasking", n => { Multitasking = n.GetTimeSpanValue(); } },
+                { "organized", n => { Organized = n.GetTimeSpanValue(); } },
+                { "recurring", n => { Recurring = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

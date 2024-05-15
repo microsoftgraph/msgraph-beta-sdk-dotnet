@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EmployeeExperience : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EmployeeExperience : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of communities in Viva Engage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Community>? Communities {
+        public List<Community>? Communities
+        {
             get { return BackingStore?.Get<List<Community>?>("communities"); }
             set { BackingStore?.Set("communities", value); }
         }
 #nullable restore
 #else
-        public List<Community> Communities {
+        public List<Community> Communities
+        {
             get { return BackingStore?.Get<List<Community>>("communities"); }
             set { BackingStore?.Set("communities", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of long-running, asynchronous operations related to Viva Engage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EngagementAsyncOperation>? EngagementAsyncOperations {
+        public List<EngagementAsyncOperation>? EngagementAsyncOperations
+        {
             get { return BackingStore?.Get<List<EngagementAsyncOperation>?>("engagementAsyncOperations"); }
             set { BackingStore?.Set("engagementAsyncOperations", value); }
         }
 #nullable restore
 #else
-        public List<EngagementAsyncOperation> EngagementAsyncOperations {
+        public List<EngagementAsyncOperation> EngagementAsyncOperations
+        {
             get { return BackingStore?.Get<List<EngagementAsyncOperation>>("engagementAsyncOperations"); }
             set { BackingStore?.Set("engagementAsyncOperations", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a collection of goals in a Viva Goals organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Goals? Goals {
+        public Microsoft.Graph.Beta.Models.Goals? Goals
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Goals?>("goals"); }
             set { BackingStore?.Set("goals", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Goals Goals {
+        public Microsoft.Graph.Beta.Models.Goals Goals
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Goals>("goals"); }
             set { BackingStore?.Set("goals", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LearningCourseActivity>? LearningCourseActivities {
+        public List<LearningCourseActivity>? LearningCourseActivities
+        {
             get { return BackingStore?.Get<List<LearningCourseActivity>?>("learningCourseActivities"); }
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
 #nullable restore
 #else
-        public List<LearningCourseActivity> LearningCourseActivities {
+        public List<LearningCourseActivity> LearningCourseActivities
+        {
             get { return BackingStore?.Get<List<LearningCourseActivity>>("learningCourseActivities"); }
             set { BackingStore?.Set("learningCourseActivities", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of learning providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LearningProvider>? LearningProviders {
+        public List<LearningProvider>? LearningProviders
+        {
             get { return BackingStore?.Get<List<LearningProvider>?>("learningProviders"); }
             set { BackingStore?.Set("learningProviders", value); }
         }
 #nullable restore
 #else
-        public List<LearningProvider> LearningProviders {
+        public List<LearningProvider> LearningProviders
+        {
             get { return BackingStore?.Get<List<LearningProvider>>("learningProviders"); }
             set { BackingStore?.Set("learningProviders", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"communities", n => { Communities = n.GetCollectionOfObjectValues<Community>(Community.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"engagementAsyncOperations", n => { EngagementAsyncOperations = n.GetCollectionOfObjectValues<EngagementAsyncOperation>(EngagementAsyncOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"goals", n => { Goals = n.GetObjectValue<Microsoft.Graph.Beta.Models.Goals>(Microsoft.Graph.Beta.Models.Goals.CreateFromDiscriminatorValue); } },
-                {"learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"learningProviders", n => { LearningProviders = n.GetCollectionOfObjectValues<LearningProvider>(LearningProvider.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "communities", n => { Communities = n.GetCollectionOfObjectValues<Community>(Community.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "engagementAsyncOperations", n => { EngagementAsyncOperations = n.GetCollectionOfObjectValues<EngagementAsyncOperation>(EngagementAsyncOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "goals", n => { Goals = n.GetObjectValue<Microsoft.Graph.Beta.Models.Goals>(Microsoft.Graph.Beta.Models.Goals.CreateFromDiscriminatorValue); } },
+                { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<LearningCourseActivity>(LearningCourseActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "learningProviders", n => { LearningProviders = n.GetCollectionOfObjectValues<LearningProvider>(LearningProvider.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

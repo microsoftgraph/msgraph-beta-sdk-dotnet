@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class DetectionRule : ProtectionRule, IParsable 
+    public class DetectionRule : ProtectionRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Complex type representing the actions taken when a detection is made by this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.DetectionAction? DetectionAction {
+        public Microsoft.Graph.Beta.Models.Security.DetectionAction? DetectionAction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetectionAction?>("detectionAction"); }
             set { BackingStore?.Set("detectionAction", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.DetectionAction DetectionAction {
+        public Microsoft.Graph.Beta.Models.Security.DetectionAction DetectionAction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetectionAction>("detectionAction"); }
             set { BackingStore?.Set("detectionAction", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The ID of the detector that triggered the alert. Also see the &apos;detectorId&apos; field in microsoft.graph.security.alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetectorId {
+        public string? DetectorId
+        {
             get { return BackingStore?.Get<string?>("detectorId"); }
             set { BackingStore?.Set("detectorId", value); }
         }
 #nullable restore
 #else
-        public string DetectorId {
+        public string DetectorId
+        {
             get { return BackingStore?.Get<string>("detectorId"); }
             set { BackingStore?.Set("detectorId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Complex type holding details about the last run of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RunDetails? LastRunDetails {
+        public RunDetails? LastRunDetails
+        {
             get { return BackingStore?.Get<RunDetails?>("lastRunDetails"); }
             set { BackingStore?.Set("lastRunDetails", value); }
         }
 #nullable restore
 #else
-        public RunDetails LastRunDetails {
+        public RunDetails LastRunDetails
+        {
             get { return BackingStore?.Get<RunDetails>("lastRunDetails"); }
             set { BackingStore?.Set("lastRunDetails", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Complex type holding data about the advanced hunting query of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.QueryCondition? QueryCondition {
+        public Microsoft.Graph.Beta.Models.Security.QueryCondition? QueryCondition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.QueryCondition?>("queryCondition"); }
             set { BackingStore?.Set("queryCondition", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.QueryCondition QueryCondition {
+        public Microsoft.Graph.Beta.Models.Security.QueryCondition QueryCondition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.QueryCondition>("queryCondition"); }
             set { BackingStore?.Set("queryCondition", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Complex type holding data about the triggering schedule of this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RuleSchedule? Schedule {
+        public RuleSchedule? Schedule
+        {
             get { return BackingStore?.Get<RuleSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public RuleSchedule Schedule {
+        public RuleSchedule Schedule
+        {
             get { return BackingStore?.Get<RuleSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"detectionAction", n => { DetectionAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>(Microsoft.Graph.Beta.Models.Security.DetectionAction.CreateFromDiscriminatorValue); } },
-                {"detectorId", n => { DetectorId = n.GetStringValue(); } },
-                {"lastRunDetails", n => { LastRunDetails = n.GetObjectValue<RunDetails>(RunDetails.CreateFromDiscriminatorValue); } },
-                {"queryCondition", n => { QueryCondition = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.QueryCondition>(Microsoft.Graph.Beta.Models.Security.QueryCondition.CreateFromDiscriminatorValue); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<RuleSchedule>(RuleSchedule.CreateFromDiscriminatorValue); } },
+                { "detectionAction", n => { DetectionAction = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetectionAction>(Microsoft.Graph.Beta.Models.Security.DetectionAction.CreateFromDiscriminatorValue); } },
+                { "detectorId", n => { DetectorId = n.GetStringValue(); } },
+                { "lastRunDetails", n => { LastRunDetails = n.GetObjectValue<RunDetails>(RunDetails.CreateFromDiscriminatorValue); } },
+                { "queryCondition", n => { QueryCondition = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.QueryCondition>(Microsoft.Graph.Beta.Models.Security.QueryCondition.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<RuleSchedule>(RuleSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

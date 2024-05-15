@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class RoleAssignment : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RoleAssignment : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The type of the admin relationship(s) associated with the role assignment. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges.</summary>
-        public DelegatedPrivilegeStatus? AssignmentType {
+        public DelegatedPrivilegeStatus? AssignmentType
+        {
             get { return BackingStore?.Get<DelegatedPrivilegeStatus?>("assignmentType"); }
             set { BackingStore?.Set("assignmentType", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of roles assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleDefinition>? Roles {
+        public List<RoleDefinition>? Roles
+        {
             get { return BackingStore?.Get<List<RoleDefinition>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<RoleDefinition> Roles {
+        public List<RoleDefinition> Roles
+        {
             get { return BackingStore?.Get<List<RoleDefinition>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentType", n => { AssignmentType = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfObjectValues<RoleDefinition>(RoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentType", n => { AssignmentType = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<RoleDefinition>(RoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

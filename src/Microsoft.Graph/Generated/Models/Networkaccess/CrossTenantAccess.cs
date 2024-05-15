@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class CrossTenantAccess : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CrossTenantAccess : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of devices that accessed the external tenant.</summary>
-        public long? DeviceCount {
+        public long? DeviceCount
+        {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The timestamp of the most recent access to the external tenant.</summary>
-        public DateTimeOffset? LastAccessDateTime {
+        public DateTimeOffset? LastAccessDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The tenant ID of the external tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceTenantId {
+        public string? ResourceTenantId
+        {
             get { return BackingStore?.Get<string?>("resourceTenantId"); }
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #nullable restore
 #else
-        public string ResourceTenantId {
+        public string ResourceTenantId
+        {
             get { return BackingStore?.Get<string>("resourceTenantId"); }
             set { BackingStore?.Set("resourceTenantId", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The name of the external tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceTenantName {
+        public string? ResourceTenantName
+        {
             get { return BackingStore?.Get<string?>("resourceTenantName"); }
             set { BackingStore?.Set("resourceTenantName", value); }
         }
 #nullable restore
 #else
-        public string ResourceTenantName {
+        public string ResourceTenantName
+        {
             get { return BackingStore?.Get<string>("resourceTenantName"); }
             set { BackingStore?.Set("resourceTenantName", value); }
         }
@@ -72,24 +82,28 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The domain of the external tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceTenantPrimaryDomain {
+        public string? ResourceTenantPrimaryDomain
+        {
             get { return BackingStore?.Get<string?>("resourceTenantPrimaryDomain"); }
             set { BackingStore?.Set("resourceTenantPrimaryDomain", value); }
         }
 #nullable restore
 #else
-        public string ResourceTenantPrimaryDomain {
+        public string ResourceTenantPrimaryDomain
+        {
             get { return BackingStore?.Get<string>("resourceTenantPrimaryDomain"); }
             set { BackingStore?.Set("resourceTenantPrimaryDomain", value); }
         }
 #endif
         /// <summary>The usageStatus property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.UsageStatus? UsageStatus {
+        public Microsoft.Graph.Beta.Models.Networkaccess.UsageStatus? UsageStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.UsageStatus?>("usageStatus"); }
             set { BackingStore?.Set("usageStatus", value); }
         }
         /// <summary>The number of users that accessed the external tenant.</summary>
-        public long? UserCount {
+        public long? UserCount
+        {
             get { return BackingStore?.Get<long?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
@@ -119,14 +133,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
-                {"lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
-                {"resourceTenantName", n => { ResourceTenantName = n.GetStringValue(); } },
-                {"resourceTenantPrimaryDomain", n => { ResourceTenantPrimaryDomain = n.GetStringValue(); } },
-                {"usageStatus", n => { UsageStatus = n.GetEnumValue<UsageStatus>(); } },
-                {"userCount", n => { UserCount = n.GetLongValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                { "lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
+                { "resourceTenantName", n => { ResourceTenantName = n.GetStringValue(); } },
+                { "resourceTenantPrimaryDomain", n => { ResourceTenantPrimaryDomain = n.GetStringValue(); } },
+                { "usageStatus", n => { UsageStatus = n.GetEnumValue<UsageStatus>(); } },
+                { "userCount", n => { UserCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

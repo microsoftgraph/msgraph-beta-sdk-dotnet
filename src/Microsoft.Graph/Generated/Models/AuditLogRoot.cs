@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuditLogRoot : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuditLogRoot : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a custom security attribute audit log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSecurityAttributeAudit>? CustomSecurityAttributeAudits {
+        public List<CustomSecurityAttributeAudit>? CustomSecurityAttributeAudits
+        {
             get { return BackingStore?.Get<List<CustomSecurityAttributeAudit>?>("customSecurityAttributeAudits"); }
             set { BackingStore?.Set("customSecurityAttributeAudits", value); }
         }
 #nullable restore
 #else
-        public List<CustomSecurityAttributeAudit> CustomSecurityAttributeAudits {
+        public List<CustomSecurityAttributeAudit> CustomSecurityAttributeAudits
+        {
             get { return BackingStore?.Get<List<CustomSecurityAttributeAudit>>("customSecurityAttributeAudits"); }
             set { BackingStore?.Set("customSecurityAttributeAudits", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The directoryAudits property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryAudit>? DirectoryAudits {
+        public List<DirectoryAudit>? DirectoryAudits
+        {
             get { return BackingStore?.Get<List<DirectoryAudit>?>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryAudit> DirectoryAudits {
+        public List<DirectoryAudit> DirectoryAudits
+        {
             get { return BackingStore?.Get<List<DirectoryAudit>>("directoryAudits"); }
             set { BackingStore?.Set("directoryAudits", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The directoryProvisioning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningObjectSummary>? DirectoryProvisioning {
+        public List<ProvisioningObjectSummary>? DirectoryProvisioning
+        {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>?>("directoryProvisioning"); }
             set { BackingStore?.Set("directoryProvisioning", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningObjectSummary> DirectoryProvisioning {
+        public List<ProvisioningObjectSummary> DirectoryProvisioning
+        {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("directoryProvisioning"); }
             set { BackingStore?.Set("directoryProvisioning", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents an action performed by the Microsoft Entra provisioning service and its associated properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningObjectSummary>? Provisioning {
+        public List<ProvisioningObjectSummary>? Provisioning
+        {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>?>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningObjectSummary> Provisioning {
+        public List<ProvisioningObjectSummary> Provisioning
+        {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The signIns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SignIn>? SignIns {
+        public List<SignIn>? SignIns
+        {
             get { return BackingStore?.Get<List<SignIn>?>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
 #nullable restore
 #else
-        public List<SignIn> SignIns {
+        public List<SignIn> SignIns
+        {
             get { return BackingStore?.Get<List<SignIn>>("signIns"); }
             set { BackingStore?.Set("signIns", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"customSecurityAttributeAudits", n => { CustomSecurityAttributeAudits = n.GetCollectionOfObjectValues<CustomSecurityAttributeAudit>(CustomSecurityAttributeAudit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSecurityAttributeAudits", n => { CustomSecurityAttributeAudits = n.GetCollectionOfObjectValues<CustomSecurityAttributeAudit>(CustomSecurityAttributeAudit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

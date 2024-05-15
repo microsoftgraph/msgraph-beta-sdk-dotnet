@@ -5,59 +5,69 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class CrossTenantSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CrossTenantSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The total number of authentication sessions between startDateTime and endDateTime.</summary>
-        public int? AuthTransactionCount {
+        public int? AuthTransactionCount
+        {
             get { return BackingStore?.Get<int?>("authTransactionCount"); }
             set { BackingStore?.Set("authTransactionCount", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of unique devices that performed cross-tenant access.</summary>
-        public int? DeviceCount {
+        public int? DeviceCount
+        {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The number of unique tenants that were accessed between endDateTime and discoveryPivotDateTime, but weren&apos;t accessed between discoveryPivotDateTime and startDateTime.</summary>
-        public int? NewTenantCount {
+        public int? NewTenantCount
+        {
             get { return BackingStore?.Get<int?>("newTenantCount"); }
             set { BackingStore?.Set("newTenantCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The rarelyUsedTenantCount property</summary>
-        public int? RarelyUsedTenantCount {
+        public int? RarelyUsedTenantCount
+        {
             get { return BackingStore?.Get<int?>("rarelyUsedTenantCount"); }
             set { BackingStore?.Set("rarelyUsedTenantCount", value); }
         }
         /// <summary>The number of unique tenants that were accessed, not including the device&apos;s tenant.</summary>
-        public int? TenantCount {
+        public int? TenantCount
+        {
             get { return BackingStore?.Get<int?>("tenantCount"); }
             set { BackingStore?.Set("tenantCount", value); }
         }
         /// <summary>The number of unique users that performed cross-tenant access.</summary>
-        public int? UserCount {
+        public int? UserCount
+        {
             get { return BackingStore?.Get<int?>("userCount"); }
             set { BackingStore?.Set("userCount", value); }
         }
@@ -87,13 +97,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authTransactionCount", n => { AuthTransactionCount = n.GetIntValue(); } },
-                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
-                {"newTenantCount", n => { NewTenantCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"rarelyUsedTenantCount", n => { RarelyUsedTenantCount = n.GetIntValue(); } },
-                {"tenantCount", n => { TenantCount = n.GetIntValue(); } },
-                {"userCount", n => { UserCount = n.GetIntValue(); } },
+                { "authTransactionCount", n => { AuthTransactionCount = n.GetIntValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                { "newTenantCount", n => { NewTenantCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "rarelyUsedTenantCount", n => { RarelyUsedTenantCount = n.GetIntValue(); } },
+                { "tenantCount", n => { TenantCount = n.GetIntValue(); } },
+                { "userCount", n => { UserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

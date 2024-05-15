@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AlertHistoryState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlertHistoryState : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The Application ID of the calling application that submitted an update (PATCH) to the alert. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>UPN of user the alert was assigned to (note: alert.assignedTo only stores the last value/UPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo {
+        public string? AssignedTo
+        {
             get { return BackingStore?.Get<string?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public string AssignedTo {
+        public string AssignedTo
+        {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
@@ -48,56 +54,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Comment entered by signed-in user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Comments {
+        public List<string>? Comments
+        {
             get { return BackingStore?.Get<List<string>?>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #nullable restore
 #else
-        public List<string> Comments {
+        public List<string> Comments
+        {
             get { return BackingStore?.Get<List<string>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
 #endif
         /// <summary>Analyst feedback on the alert in this update. Possible values are: unknown, truePositive, falsePositive, benignPositive.</summary>
-        public AlertFeedback? Feedback {
+        public AlertFeedback? Feedback
+        {
             get { return BackingStore?.Get<AlertFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.</summary>
-        public AlertStatus? Status {
+        public AlertStatus? Status
+        {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Date and time of the alert update. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? UpdatedDateTime {
+        public DateTimeOffset? UpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
             set { BackingStore?.Set("updatedDateTime", value); }
         }
         /// <summary>UPN of the signed-in user that updated the alert (taken from the bearer token - if in user/delegated auth mode).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? User {
+        public string? User
+        {
             get { return BackingStore?.Get<string?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public string User {
+        public string User
+        {
             get { return BackingStore?.Get<string>("user"); }
             set { BackingStore?.Set("user", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
-                {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"user", n => { User = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
+                { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "user", n => { User = n.GetStringValue(); } },
             };
         }
         /// <summary>

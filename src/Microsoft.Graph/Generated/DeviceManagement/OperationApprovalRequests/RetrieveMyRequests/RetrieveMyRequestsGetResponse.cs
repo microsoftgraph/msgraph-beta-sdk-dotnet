@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequests {
+namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequests
+{
     #pragma warning disable CS1591
-    public class RetrieveMyRequestsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class RetrieveMyRequestsGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OperationApprovalRequest>? Value {
+        public List<OperationApprovalRequest>? Value
+        {
             get { return BackingStore?.Get<List<OperationApprovalRequest>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OperationApprovalRequest> Value {
+        public List<OperationApprovalRequest> Value
+        {
             get { return BackingStore?.Get<List<OperationApprovalRequest>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Retrie
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<OperationApprovalRequest>(OperationApprovalRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<OperationApprovalRequest>(OperationApprovalRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

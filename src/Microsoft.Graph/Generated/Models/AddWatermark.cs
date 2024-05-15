@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AddWatermark : MarkContent, IParsable 
+    public class AddWatermark : MarkContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The orientation property</summary>
-        public PageOrientation? Orientation {
+        public PageOrientation? Orientation
+        {
             get { return BackingStore?.Get<PageOrientation?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"orientation", n => { Orientation = n.GetEnumValue<PageOrientation>(); } },
+                { "orientation", n => { Orientation = n.GetEnumValue<PageOrientation>(); } },
             };
         }
         /// <summary>

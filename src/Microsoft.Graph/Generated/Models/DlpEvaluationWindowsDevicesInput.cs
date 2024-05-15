@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DlpEvaluationWindowsDevicesInput : DlpEvaluationInput, IParsable 
+    public class DlpEvaluationWindowsDevicesInput : DlpEvaluationInput, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The contentProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ContentProperties? ContentProperties {
+        public Microsoft.Graph.Beta.Models.ContentProperties? ContentProperties
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties?>("contentProperties"); }
             set { BackingStore?.Set("contentProperties", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ContentProperties ContentProperties {
+        public Microsoft.Graph.Beta.Models.ContentProperties ContentProperties
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties>("contentProperties"); }
             set { BackingStore?.Set("contentProperties", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sharedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharedBy {
+        public string? SharedBy
+        {
             get { return BackingStore?.Get<string?>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
 #nullable restore
 #else
-        public string SharedBy {
+        public string SharedBy
+        {
             get { return BackingStore?.Get<string>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentProperties", n => { ContentProperties = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentProperties>(Microsoft.Graph.Beta.Models.ContentProperties.CreateFromDiscriminatorValue); } },
-                {"sharedBy", n => { SharedBy = n.GetStringValue(); } },
+                { "contentProperties", n => { ContentProperties = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentProperties>(Microsoft.Graph.Beta.Models.ContentProperties.CreateFromDiscriminatorValue); } },
+                { "sharedBy", n => { SharedBy = n.GetStringValue(); } },
             };
         }
         /// <summary>

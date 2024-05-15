@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Default device compliance policy rules that are enforced account wide.
     /// </summary>
-    public class DefaultDeviceCompliancePolicy : DeviceCompliancePolicy, IParsable 
+    public class DefaultDeviceCompliancePolicy : DeviceCompliancePolicy, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DefaultDeviceCompliancePolicy"/> and sets the default values.

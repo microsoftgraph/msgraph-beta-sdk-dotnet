@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesSipInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnPremisesSipInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the user is currently enabled for on-premises Skype for Business.</summary>
-        public bool? IsSipEnabled {
+        public bool? IsSipEnabled
+        {
             get { return BackingStore?.Get<bool?>("isSipEnabled"); }
             set { BackingStore?.Set("isSipEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates a fully qualified DNS name of the Microsoft Online Communications Server deployment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SipDeploymentLocation {
+        public string? SipDeploymentLocation
+        {
             get { return BackingStore?.Get<string?>("sipDeploymentLocation"); }
             set { BackingStore?.Set("sipDeploymentLocation", value); }
         }
 #nullable restore
 #else
-        public string SipDeploymentLocation {
+        public string SipDeploymentLocation
+        {
             get { return BackingStore?.Get<string>("sipDeploymentLocation"); }
             set { BackingStore?.Set("sipDeploymentLocation", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Serves as a unique identifier for each user on the on-premises Skype for Business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SipPrimaryAddress {
+        public string? SipPrimaryAddress
+        {
             get { return BackingStore?.Get<string?>("sipPrimaryAddress"); }
             set { BackingStore?.Set("sipPrimaryAddress", value); }
         }
 #nullable restore
 #else
-        public string SipPrimaryAddress {
+        public string SipPrimaryAddress
+        {
             get { return BackingStore?.Get<string>("sipPrimaryAddress"); }
             set { BackingStore?.Set("sipPrimaryAddress", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isSipEnabled", n => { IsSipEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sipDeploymentLocation", n => { SipDeploymentLocation = n.GetStringValue(); } },
-                {"sipPrimaryAddress", n => { SipPrimaryAddress = n.GetStringValue(); } },
+                { "isSipEnabled", n => { IsSipEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sipDeploymentLocation", n => { SipDeploymentLocation = n.GetStringValue(); } },
+                { "sipPrimaryAddress", n => { SipPrimaryAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

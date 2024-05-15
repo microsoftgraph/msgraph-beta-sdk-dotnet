@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DirectoryObject : Entity, IParsable 
+    public class DirectoryObject : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when this object was deleted. Always null when the object hasn&apos;t been deleted.</summary>
-        public DateTimeOffset? DeletedDateTime {
+        public DateTimeOffset? DeletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
@@ -75,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

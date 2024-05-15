@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CertificateAuthorityPath : Entity, IParsable 
+    public class CertificateAuthorityPath : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the trusted certificate authorities for certificates that can be added to apps and service principals in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificateBasedApplicationConfiguration>? CertificateBasedApplicationConfigurations {
+        public List<CertificateBasedApplicationConfiguration>? CertificateBasedApplicationConfigurations
+        {
             get { return BackingStore?.Get<List<CertificateBasedApplicationConfiguration>?>("certificateBasedApplicationConfigurations"); }
             set { BackingStore?.Set("certificateBasedApplicationConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<CertificateBasedApplicationConfiguration> CertificateBasedApplicationConfigurations {
+        public List<CertificateBasedApplicationConfiguration> CertificateBasedApplicationConfigurations
+        {
             get { return BackingStore?.Get<List<CertificateBasedApplicationConfiguration>>("certificateBasedApplicationConfigurations"); }
             set { BackingStore?.Set("certificateBasedApplicationConfigurations", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateBasedApplicationConfigurations", n => { CertificateBasedApplicationConfigurations = n.GetCollectionOfObjectValues<CertificateBasedApplicationConfiguration>(CertificateBasedApplicationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateBasedApplicationConfigurations", n => { CertificateBasedApplicationConfigurations = n.GetCollectionOfObjectValues<CertificateBasedApplicationConfiguration>(CertificateBasedApplicationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

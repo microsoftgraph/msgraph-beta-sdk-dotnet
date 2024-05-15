@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryReviewSet : DataSet, IParsable 
+    public class EdiscoveryReviewSet : DataSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents files within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryFile>? Files {
+        public List<EdiscoveryFile>? Files
+        {
             get { return BackingStore?.Get<List<EdiscoveryFile>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryFile> Files {
+        public List<EdiscoveryFile> Files
+        {
             get { return BackingStore?.Get<List<EdiscoveryFile>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Represents queries within the review set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewSetQuery>? Queries {
+        public List<EdiscoveryReviewSetQuery>? Queries
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewSetQuery> Queries {
+        public List<EdiscoveryReviewSetQuery> Queries
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"files", n => { Files = n.GetCollectionOfObjectValues<EdiscoveryFile>(EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"queries", n => { Queries = n.GetCollectionOfObjectValues<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<EdiscoveryFile>(EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

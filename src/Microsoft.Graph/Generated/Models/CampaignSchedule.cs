@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CampaignSchedule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CampaignSchedule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time at which the campaign completed.</summary>
-        public DateTimeOffset? CompletionDateTime {
+        public DateTimeOffset? CompletionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
         /// <summary>The date and time at which the campaign was launched.</summary>
-        public DateTimeOffset? LaunchDateTime {
+        public DateTimeOffset? LaunchDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("launchDateTime"); }
             set { BackingStore?.Set("launchDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The current state of the campaign. The possible values are: unknown, draft, inProgress, scheduled, completed, failed, cancelled, excluded, deleted, unknownFutureValue.</summary>
-        public CampaignStatus? Status {
+        public CampaignStatus? Status
+        {
             get { return BackingStore?.Get<CampaignStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CampaignStatus>(); } },
+                { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CampaignStatus>(); } },
             };
         }
         /// <summary>

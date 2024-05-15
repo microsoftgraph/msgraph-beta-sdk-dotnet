@@ -6,20 +6,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply
+{
     #pragma warning disable CS1591
-    public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The policySettings property</summary>
-        public CloudPcPolicySettingType? PolicySettings {
+        public CloudPcPolicySettingType? PolicySettings
+        {
             get { return BackingStore?.Get<CloudPcPolicySettingType?>("policySettings"); }
             set { BackingStore?.Set("policySettings", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"policySettings", n => { PolicySettings = n.GetEnumValue<CloudPcPolicySettingType>(); } },
+                { "policySettings", n => { PolicySettings = n.GetEnumValue<CloudPcPolicySettingType>(); } },
             };
         }
         /// <summary>

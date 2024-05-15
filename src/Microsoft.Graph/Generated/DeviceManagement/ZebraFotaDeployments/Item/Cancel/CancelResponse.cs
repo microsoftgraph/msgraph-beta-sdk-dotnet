@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel {
+namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments.Item.Cancel
+{
     [Obsolete("This class is obsolete. Use CancelPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CancelResponse : CancelPostResponse, IParsable 
+    public class CancelResponse : CancelPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

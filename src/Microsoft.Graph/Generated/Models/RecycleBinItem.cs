@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RecycleBinItem : BaseItem, IParsable 
+    public class RecycleBinItem : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time when the item was deleted. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? DeletedDateTime {
+        public DateTimeOffset? DeletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>Relative URL of the list or folder that originally contained the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeletedFromLocation {
+        public string? DeletedFromLocation
+        {
             get { return BackingStore?.Get<string?>("deletedFromLocation"); }
             set { BackingStore?.Set("deletedFromLocation", value); }
         }
 #nullable restore
 #else
-        public string DeletedFromLocation {
+        public string DeletedFromLocation
+        {
             get { return BackingStore?.Get<string>("deletedFromLocation"); }
             set { BackingStore?.Set("deletedFromLocation", value); }
         }
 #endif
         /// <summary>Size of the item in bytes.</summary>
-        public long? Size {
+        public long? Size
+        {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deletedFromLocation", n => { DeletedFromLocation = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetLongValue(); } },
+                { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deletedFromLocation", n => { DeletedFromLocation = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
             };
         }
         /// <summary>

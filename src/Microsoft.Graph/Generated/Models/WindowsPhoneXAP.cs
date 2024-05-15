@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Windows Phone XAP Line Of Business apps.
     /// </summary>
-    public class WindowsPhoneXAP : MobileLobApp, IParsable 
+    public class WindowsPhoneXAP : MobileLobApp, IParsable
     {
         /// <summary>The identity version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityVersion {
+        public string? IdentityVersion
+        {
             get { return BackingStore?.Get<string?>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
 #nullable restore
 #else
-        public string IdentityVersion {
+        public string IdentityVersion
+        {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Product Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductIdentifier {
+        public string? ProductIdentifier
+        {
             get { return BackingStore?.Get<string?>("productIdentifier"); }
             set { BackingStore?.Set("productIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ProductIdentifier {
+        public string ProductIdentifier
+        {
             get { return BackingStore?.Get<string>("productIdentifier"); }
             set { BackingStore?.Set("productIdentifier", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"productIdentifier", n => { ProductIdentifier = n.GetStringValue(); } },
+                { "identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<WindowsMinimumOperatingSystem>(WindowsMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "productIdentifier", n => { ProductIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

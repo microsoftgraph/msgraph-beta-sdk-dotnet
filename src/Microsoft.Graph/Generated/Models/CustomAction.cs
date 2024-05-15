@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomAction : InformationProtectionAction, IParsable 
+    public class CustomAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Name of the custom action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Properties, in key value pair format, of the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Properties {
+        public List<KeyValuePair>? Properties
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Properties {
+        public List<KeyValuePair> Properties
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"properties", n => { Properties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "properties", n => { Properties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

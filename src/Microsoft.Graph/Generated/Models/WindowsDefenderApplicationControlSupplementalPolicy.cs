@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable 
+    public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The associated group assignments for the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Assignments {
+        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments {
+        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the content of the Windows Defender Application Control Supplemental Policy in byte array format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the file name associated with the content of the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentFileName {
+        public string? ContentFileName
+        {
             get { return BackingStore?.Get<string?>("contentFileName"); }
             set { BackingStore?.Set("contentFileName", value); }
         }
 #nullable restore
 #else
-        public string ContentFileName {
+        public string ContentFileName
+        {
             get { return BackingStore?.Get<string>("contentFileName"); }
             set { BackingStore?.Set("contentFileName", value); }
         }
 #endif
         /// <summary>Indicates the created date and time when the Windows Defender Application Control Supplemental Policy was uploaded.</summary>
-        public DateTimeOffset? CreationDateTime {
+        public DateTimeOffset? CreationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>WindowsDefenderApplicationControl supplemental policy deployment summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary? DeploySummary {
+        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary? DeploySummary
+        {
             get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary?>("deploySummary"); }
             set { BackingStore?.Set("deploySummary", value); }
         }
 #nullable restore
 #else
-        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary DeploySummary {
+        public WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary DeploySummary
+        {
             get { return BackingStore?.Get<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>("deploySummary"); }
             set { BackingStore?.Set("deploySummary", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of device deployment states for this WindowsDefenderApplicationControl supplemental policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>? DeviceStatuses {
+        public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>? DeviceStatuses
+        {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> DeviceStatuses {
+        public List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus> DeviceStatuses
+        {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
@@ -101,32 +115,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the Windows Defender Application Control Supplemental Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates the last modified date and time of the Windows Defender Application Control Supplemental Policy.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for the Windows Defender Application Control Supplemental Policy entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the Windows Defender Application Control Supplemental Policy&apos;s version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -163,17 +184,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"contentFileName", n => { ContentFileName = n.GetStringValue(); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deploySummary", n => { DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "contentFileName", n => { ContentFileName = n.GetStringValue(); } },
+                { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deploySummary", n => { DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

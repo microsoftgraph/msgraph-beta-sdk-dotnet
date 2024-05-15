@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomClaimsPolicy : Entity, IParsable 
+    public class CustomClaimsPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The audienceOverride property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AudienceOverride {
+        public string? AudienceOverride
+        {
             get { return BackingStore?.Get<string?>("audienceOverride"); }
             set { BackingStore?.Set("audienceOverride", value); }
         }
 #nullable restore
 #else
-        public string AudienceOverride {
+        public string AudienceOverride
+        {
             get { return BackingStore?.Get<string>("audienceOverride"); }
             set { BackingStore?.Set("audienceOverride", value); }
         }
@@ -26,24 +29,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The claims property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomClaimBase>? Claims {
+        public List<CustomClaimBase>? Claims
+        {
             get { return BackingStore?.Get<List<CustomClaimBase>?>("claims"); }
             set { BackingStore?.Set("claims", value); }
         }
 #nullable restore
 #else
-        public List<CustomClaimBase> Claims {
+        public List<CustomClaimBase> Claims
+        {
             get { return BackingStore?.Get<List<CustomClaimBase>>("claims"); }
             set { BackingStore?.Set("claims", value); }
         }
 #endif
         /// <summary>The includeApplicationIdInIssuer property</summary>
-        public bool? IncludeApplicationIdInIssuer {
+        public bool? IncludeApplicationIdInIssuer
+        {
             get { return BackingStore?.Get<bool?>("includeApplicationIdInIssuer"); }
             set { BackingStore?.Set("includeApplicationIdInIssuer", value); }
         }
         /// <summary>The includeBasicClaimSet property</summary>
-        public bool? IncludeBasicClaimSet {
+        public bool? IncludeBasicClaimSet
+        {
             get { return BackingStore?.Get<bool?>("includeBasicClaimSet"); }
             set { BackingStore?.Set("includeBasicClaimSet", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"audienceOverride", n => { AudienceOverride = n.GetStringValue(); } },
-                {"claims", n => { Claims = n.GetCollectionOfObjectValues<CustomClaimBase>(CustomClaimBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"includeApplicationIdInIssuer", n => { IncludeApplicationIdInIssuer = n.GetBoolValue(); } },
-                {"includeBasicClaimSet", n => { IncludeBasicClaimSet = n.GetBoolValue(); } },
+                { "audienceOverride", n => { AudienceOverride = n.GetStringValue(); } },
+                { "claims", n => { Claims = n.GetCollectionOfObjectValues<CustomClaimBase>(CustomClaimBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeApplicationIdInIssuer", n => { IncludeApplicationIdInIssuer = n.GetBoolValue(); } },
+                { "includeBasicClaimSet", n => { IncludeBasicClaimSet = n.GetBoolValue(); } },
             };
         }
         /// <summary>

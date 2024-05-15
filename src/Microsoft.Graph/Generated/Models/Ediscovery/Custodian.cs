@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class Custodian : DataSourceContainer, IParsable 
+    public class Custodian : DataSourceContainer, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time the custodian acknowledged a hold notification.</summary>
-        public DateTimeOffset? AcknowledgedDateTime {
+        public DateTimeOffset? AcknowledgedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("acknowledgedDateTime"); }
             set { BackingStore?.Set("acknowledgedDateTime", value); }
         }
         /// <summary>Identifies whether a custodian&apos;s sources were placed on hold during creation.</summary>
-        public bool? ApplyHoldToSources {
+        public bool? ApplyHoldToSources
+        {
             get { return BackingStore?.Get<bool?>("applyHoldToSources"); }
             set { BackingStore?.Set("applyHoldToSources", value); }
         }
         /// <summary>Email address of the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Data source entity for SharePoint sites associated with the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SiteSource>? SiteSources {
+        public List<SiteSource>? SiteSources
+        {
             get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
 #nullable restore
 #else
-        public List<SiteSource> SiteSources {
+        public List<SiteSource> SiteSources
+        {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Data source entity for groups associated with the custodian.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedGroupSource>? UnifiedGroupSources {
+        public List<UnifiedGroupSource>? UnifiedGroupSources
+        {
             get { return BackingStore?.Get<List<UnifiedGroupSource>?>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedGroupSource> UnifiedGroupSources {
+        public List<UnifiedGroupSource> UnifiedGroupSources
+        {
             get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Data source entity for a the custodian. This is the container for a custodian&apos;s mailbox and OneDrive for Business site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSource>? UserSources {
+        public List<UserSource>? UserSources
+        {
             get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
 #nullable restore
 #else
-        public List<UserSource> UserSources {
+        public List<UserSource> UserSources
+        {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acknowledgedDateTime", n => { AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"applyHoldToSources", n => { ApplyHoldToSources = n.GetBoolValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "acknowledgedDateTime", n => { AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "applyHoldToSources", n => { ApplyHoldToSources = n.GetBoolValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "siteSources", n => { SiteSources = n.GetCollectionOfObjectValues<SiteSource>(SiteSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unifiedGroupSources", n => { UnifiedGroupSources = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userSources", n => { UserSources = n.GetCollectionOfObjectValues<UserSource>(UserSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

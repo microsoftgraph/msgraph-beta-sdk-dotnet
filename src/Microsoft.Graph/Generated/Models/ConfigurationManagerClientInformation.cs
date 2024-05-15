@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Configuration Manager client information synced from SCCM
     /// </summary>
-    public class ConfigurationManagerClientInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConfigurationManagerClientInformation : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Configuration Manager Client Id from SCCM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientIdentifier {
+        public string? ClientIdentifier
+        {
             get { return BackingStore?.Get<string?>("clientIdentifier"); }
             set { BackingStore?.Set("clientIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ClientIdentifier {
+        public string ClientIdentifier
+        {
             get { return BackingStore?.Get<string>("clientIdentifier"); }
             set { BackingStore?.Set("clientIdentifier", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Configuration Manager Client version from SCCM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientVersion {
+        public string? ClientVersion
+        {
             get { return BackingStore?.Get<string?>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
 #nullable restore
 #else
-        public string ClientVersion {
+        public string ClientVersion
+        {
             get { return BackingStore?.Get<string>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
 #endif
         /// <summary>Configuration Manager Client blocked status from SCCM</summary>
-        public bool? IsBlocked {
+        public bool? IsBlocked
+        {
             get { return BackingStore?.Get<bool?>("isBlocked"); }
             set { BackingStore?.Set("isBlocked", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientIdentifier", n => { ClientIdentifier = n.GetStringValue(); } },
-                {"clientVersion", n => { ClientVersion = n.GetStringValue(); } },
-                {"isBlocked", n => { IsBlocked = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "clientIdentifier", n => { ClientIdentifier = n.GetStringValue(); } },
+                { "clientVersion", n => { ClientVersion = n.GetStringValue(); } },
+                { "isBlocked", n => { IsBlocked = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

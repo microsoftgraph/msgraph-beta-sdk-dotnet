@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewStatus
+{
     #pragma warning disable CS1591
-    public class BulkSetCloudPcReviewStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BulkSetCloudPcReviewStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
         /// <summary>The managedDeviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ManagedDeviceIds {
+        public List<string>? ManagedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ManagedDeviceIds {
+        public List<string> ManagedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
         /// <summary>The reviewStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcReviewStatus? ReviewStatus {
+        public CloudPcReviewStatus? ReviewStatus
+        {
             get { return BackingStore?.Get<CloudPcReviewStatus?>("reviewStatus"); }
             set { BackingStore?.Set("reviewStatus", value); }
         }
 #nullable restore
 #else
-        public CloudPcReviewStatus ReviewStatus {
+        public CloudPcReviewStatus ReviewStatus
+        {
             get { return BackingStore?.Get<CloudPcReviewStatus>("reviewStatus"); }
             set { BackingStore?.Set("reviewStatus", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.BulkSetCloudPcReviewSta
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"reviewStatus", n => { ReviewStatus = n.GetObjectValue<CloudPcReviewStatus>(CloudPcReviewStatus.CreateFromDiscriminatorValue); } },
+                { "managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "reviewStatus", n => { ReviewStatus = n.GetObjectValue<CloudPcReviewStatus>(CloudPcReviewStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

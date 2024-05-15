@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an ADMX comboBox element and an ADMX text element.
     /// </summary>
-    public class GroupPolicyPresentationComboBox : GroupPolicyUploadedPresentation, IParsable 
+    public class GroupPolicyPresentationComboBox : GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>Localized default string displayed in the combo box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValue {
+        public string? DefaultValue
+        {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public string DefaultValue {
+        public string DefaultValue
+        {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
         /// <summary>An unsigned integer that specifies the maximum number of text characters for the parameter. The default value is 1023.</summary>
-        public long? MaxLength {
+        public long? MaxLength
+        {
             get { return BackingStore?.Get<long?>("maxLength"); }
             set { BackingStore?.Set("maxLength", value); }
         }
         /// <summary>Specifies whether a value must be specified for the parameter. The default value is false.</summary>
-        public bool? Required {
+        public bool? Required
+        {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
         }
         /// <summary>Localized strings listed in the drop-down list of the combo box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Suggestions {
+        public List<string>? Suggestions
+        {
             get { return BackingStore?.Get<List<string>?>("suggestions"); }
             set { BackingStore?.Set("suggestions", value); }
         }
 #nullable restore
 #else
-        public List<string> Suggestions {
+        public List<string> Suggestions
+        {
             get { return BackingStore?.Get<List<string>>("suggestions"); }
             set { BackingStore?.Set("suggestions", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
-                {"maxLength", n => { MaxLength = n.GetLongValue(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
-                {"suggestions", n => { Suggestions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                { "maxLength", n => { MaxLength = n.GetLongValue(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "suggestions", n => { Suggestions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

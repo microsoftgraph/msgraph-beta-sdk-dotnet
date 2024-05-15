@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkConversationIdentity : Identity, IParsable 
+    public class TeamworkConversationIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of conversation. Possible values are: team, channel, and chat.</summary>
-        public TeamworkConversationIdentityType? ConversationIdentityType {
+        public TeamworkConversationIdentityType? ConversationIdentityType
+        {
             get { return BackingStore?.Get<TeamworkConversationIdentityType?>("conversationIdentityType"); }
             set { BackingStore?.Set("conversationIdentityType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conversationIdentityType", n => { ConversationIdentityType = n.GetEnumValue<TeamworkConversationIdentityType>(); } },
+                { "conversationIdentityType", n => { ConversationIdentityType = n.GetEnumValue<TeamworkConversationIdentityType>(); } },
             };
         }
         /// <summary>

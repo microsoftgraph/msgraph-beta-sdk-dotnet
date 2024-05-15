@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class OperationalInsightsConnection : ResourceConnection, IParsable 
+    public class OperationalInsightsConnection : ResourceConnection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the Azure resource group that contains the Log Analytics workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureResourceGroupName {
+        public string? AzureResourceGroupName
+        {
             get { return BackingStore?.Get<string?>("azureResourceGroupName"); }
             set { BackingStore?.Set("azureResourceGroupName", value); }
         }
 #nullable restore
 #else
-        public string AzureResourceGroupName {
+        public string AzureResourceGroupName
+        {
             get { return BackingStore?.Get<string>("azureResourceGroupName"); }
             set { BackingStore?.Set("azureResourceGroupName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The Azure subscription ID that contains the Log Analytics workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureSubscriptionId {
+        public string? AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
 #nullable restore
 #else
-        public string AzureSubscriptionId {
+        public string AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The name of the Log Analytics workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkspaceName {
+        public string? WorkspaceName
+        {
             get { return BackingStore?.Get<string?>("workspaceName"); }
             set { BackingStore?.Set("workspaceName", value); }
         }
 #nullable restore
 #else
-        public string WorkspaceName {
+        public string WorkspaceName
+        {
             get { return BackingStore?.Get<string>("workspaceName"); }
             set { BackingStore?.Set("workspaceName", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureResourceGroupName", n => { AzureResourceGroupName = n.GetStringValue(); } },
-                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
-                {"workspaceName", n => { WorkspaceName = n.GetStringValue(); } },
+                { "azureResourceGroupName", n => { AzureResourceGroupName = n.GetStringValue(); } },
+                { "azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                { "workspaceName", n => { WorkspaceName = n.GetStringValue(); } },
             };
         }
         /// <summary>

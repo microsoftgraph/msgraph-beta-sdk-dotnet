@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId {
+namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId
+{
     #pragma warning disable CS1591
-    public class DeleteTiIndicatorsByExternalIdPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class DeleteTiIndicatorsByExternalIdPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResultInfo>? Value {
+        public List<ResultInfo>? Value
+        {
             get { return BackingStore?.Get<List<ResultInfo>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ResultInfo> Value {
+        public List<ResultInfo> Value
+        {
             get { return BackingStore?.Get<List<ResultInfo>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExterna
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

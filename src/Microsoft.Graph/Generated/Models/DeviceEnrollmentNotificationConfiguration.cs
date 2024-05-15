@@ -4,57 +4,66 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Enrollment Notification Configuration which is used to send notification
     /// </summary>
-    public class DeviceEnrollmentNotificationConfiguration : DeviceEnrollmentConfiguration, IParsable 
+    public class DeviceEnrollmentNotificationConfiguration : DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Branding Options for the Message Template. Branding is defined in the Intune Admin Console.</summary>
-        public EnrollmentNotificationBrandingOptions? BrandingOptions {
+        public EnrollmentNotificationBrandingOptions? BrandingOptions
+        {
             get { return BackingStore?.Get<EnrollmentNotificationBrandingOptions?>("brandingOptions"); }
             set { BackingStore?.Set("brandingOptions", value); }
         }
         /// <summary>DefaultLocale for the Enrollment Notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLocale {
+        public string? DefaultLocale
+        {
             get { return BackingStore?.Get<string?>("defaultLocale"); }
             set { BackingStore?.Set("defaultLocale", value); }
         }
 #nullable restore
 #else
-        public string DefaultLocale {
+        public string DefaultLocale
+        {
             get { return BackingStore?.Get<string>("defaultLocale"); }
             set { BackingStore?.Set("defaultLocale", value); }
         }
 #endif
         /// <summary>Notification Message Template Id</summary>
-        public Guid? NotificationMessageTemplateId {
+        public Guid? NotificationMessageTemplateId
+        {
             get { return BackingStore?.Get<Guid?>("notificationMessageTemplateId"); }
             set { BackingStore?.Set("notificationMessageTemplateId", value); }
         }
         /// <summary>The list of notification data -</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotificationTemplates {
+        public List<string>? NotificationTemplates
+        {
             get { return BackingStore?.Get<List<string>?>("notificationTemplates"); }
             set { BackingStore?.Set("notificationTemplates", value); }
         }
 #nullable restore
 #else
-        public List<string> NotificationTemplates {
+        public List<string> NotificationTemplates
+        {
             get { return BackingStore?.Get<List<string>>("notificationTemplates"); }
             set { BackingStore?.Set("notificationTemplates", value); }
         }
 #endif
         /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
-        public EnrollmentRestrictionPlatformType? PlatformType {
+        public EnrollmentRestrictionPlatformType? PlatformType
+        {
             get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>This enum indicates the Template type for which the enrollment notification applies.</summary>
-        public EnrollmentNotificationTemplateType? TemplateType {
+        public EnrollmentNotificationTemplateType? TemplateType
+        {
             get { return BackingStore?.Get<EnrollmentNotificationTemplateType?>("templateType"); }
             set { BackingStore?.Set("templateType", value); }
         }
@@ -83,12 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"brandingOptions", n => { BrandingOptions = n.GetEnumValue<EnrollmentNotificationBrandingOptions>(); } },
-                {"defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
-                {"notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetGuidValue(); } },
-                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
-                {"templateType", n => { TemplateType = n.GetEnumValue<EnrollmentNotificationTemplateType>(); } },
+                { "brandingOptions", n => { BrandingOptions = n.GetEnumValue<EnrollmentNotificationBrandingOptions>(); } },
+                { "defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
+                { "notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetGuidValue(); } },
+                { "notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
+                { "templateType", n => { TemplateType = n.GetEnumValue<EnrollmentNotificationTemplateType>(); } },
             };
         }
         /// <summary>

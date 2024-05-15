@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.GetCustomizedSettings
+{
     [Obsolete("This class is obsolete. Use GetCustomizedSettingsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCustomizedSettingsResponse : GetCustomizedSettingsGetResponse, IParsable 
+    public class GetCustomizedSettingsResponse : GetCustomizedSettingsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

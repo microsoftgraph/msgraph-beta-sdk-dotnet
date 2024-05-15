@@ -5,54 +5,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcBulkActionSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcBulkActionSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of Cloud PCs where the action failed.</summary>
-        public int? FailedCount {
+        public int? FailedCount
+        {
             get { return BackingStore?.Get<int?>("failedCount"); }
             set { BackingStore?.Set("failedCount", value); }
         }
         /// <summary>The number of Cloud PCs where the action is in progress.</summary>
-        public int? InProgressCount {
+        public int? InProgressCount
+        {
             get { return BackingStore?.Get<int?>("inProgressCount"); }
             set { BackingStore?.Set("inProgressCount", value); }
         }
         /// <summary>The number of Cloud PCs where the action isn&apos;t supported.</summary>
-        public int? NotSupportedCount {
+        public int? NotSupportedCount
+        {
             get { return BackingStore?.Get<int?>("notSupportedCount"); }
             set { BackingStore?.Set("notSupportedCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of Cloud PCs where the action is pending.</summary>
-        public int? PendingCount {
+        public int? PendingCount
+        {
             get { return BackingStore?.Get<int?>("pendingCount"); }
             set { BackingStore?.Set("pendingCount", value); }
         }
         /// <summary>The number of Cloud PCs where the action is successful.</summary>
-        public int? SuccessfulCount {
+        public int? SuccessfulCount
+        {
             get { return BackingStore?.Get<int?>("successfulCount"); }
             set { BackingStore?.Set("successfulCount", value); }
         }
@@ -82,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"failedCount", n => { FailedCount = n.GetIntValue(); } },
-                {"inProgressCount", n => { InProgressCount = n.GetIntValue(); } },
-                {"notSupportedCount", n => { NotSupportedCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"pendingCount", n => { PendingCount = n.GetIntValue(); } },
-                {"successfulCount", n => { SuccessfulCount = n.GetIntValue(); } },
+                { "failedCount", n => { FailedCount = n.GetIntValue(); } },
+                { "inProgressCount", n => { InProgressCount = n.GetIntValue(); } },
+                { "notSupportedCount", n => { NotSupportedCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "pendingCount", n => { PendingCount = n.GetIntValue(); } },
+                { "successfulCount", n => { SuccessfulCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

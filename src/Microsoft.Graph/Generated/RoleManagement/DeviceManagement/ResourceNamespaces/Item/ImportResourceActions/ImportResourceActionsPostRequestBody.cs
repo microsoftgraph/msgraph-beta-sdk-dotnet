@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ImportResourceActions {
+namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespaces.Item.ImportResourceActions
+{
     #pragma warning disable CS1591
-    public class ImportResourceActionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ImportResourceActionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
         /// <summary>The format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Format {
+        public string? Format
+        {
             get { return BackingStore?.Get<string?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #nullable restore
 #else
-        public string Format {
+        public string Format
+        {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
 #endif
         /// <summary>The overwriteResourceNamespace property</summary>
-        public bool? OverwriteResourceNamespace {
+        public bool? OverwriteResourceNamespace
+        {
             get { return BackingStore?.Get<bool?>("overwriteResourceNamespace"); }
             set { BackingStore?.Set("overwriteResourceNamespace", value); }
         }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"format", n => { Format = n.GetStringValue(); } },
-                {"overwriteResourceNamespace", n => { OverwriteResourceNamespace = n.GetBoolValue(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "format", n => { Format = n.GetStringValue(); } },
+                { "overwriteResourceNamespace", n => { OverwriteResourceNamespace = n.GetBoolValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

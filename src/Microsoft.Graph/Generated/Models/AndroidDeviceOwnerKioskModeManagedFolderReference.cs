@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A reference to folder containing apps and weblinks on the Managed Home Screen
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable 
+    public class AndroidDeviceOwnerKioskModeManagedFolderReference : AndroidDeviceOwnerKioskModeHomeScreenItem, IParsable
     {
         /// <summary>Unique identifier for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderIdentifier {
+        public string? FolderIdentifier
+        {
             get { return BackingStore?.Get<string?>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
 #nullable restore
 #else
-        public string FolderIdentifier {
+        public string FolderIdentifier
+        {
             get { return BackingStore?.Get<string>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderName {
+        public string? FolderName
+        {
             get { return BackingStore?.Get<string?>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
 #nullable restore
 #else
-        public string FolderName {
+        public string FolderName
+        {
             get { return BackingStore?.Get<string>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"folderIdentifier", n => { FolderIdentifier = n.GetStringValue(); } },
-                {"folderName", n => { FolderName = n.GetStringValue(); } },
+                { "folderIdentifier", n => { FolderIdentifier = n.GetStringValue(); } },
+                { "folderName", n => { FolderName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class CaseIndexOperation : CaseOperation, IParsable 
+    public class CaseIndexOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

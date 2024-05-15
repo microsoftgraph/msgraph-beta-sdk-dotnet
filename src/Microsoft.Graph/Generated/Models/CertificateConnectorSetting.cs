@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Certificate connector settings.
     /// </summary>
-    public class CertificateConnectorSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CertificateConnectorSetting : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Certificate expire time</summary>
-        public DateTimeOffset? CertExpiryTime {
+        public DateTimeOffset? CertExpiryTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("certExpiryTime"); }
             set { BackingStore?.Set("certExpiryTime", value); }
         }
         /// <summary>Version of certificate connector</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorVersion {
+        public string? ConnectorVersion
+        {
             get { return BackingStore?.Get<string?>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
 #nullable restore
 #else
-        public string ConnectorVersion {
+        public string ConnectorVersion
+        {
             get { return BackingStore?.Get<string>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
@@ -40,43 +45,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Certificate connector enrollment error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrollmentError {
+        public string? EnrollmentError
+        {
             get { return BackingStore?.Get<string?>("enrollmentError"); }
             set { BackingStore?.Set("enrollmentError", value); }
         }
 #nullable restore
 #else
-        public string EnrollmentError {
+        public string EnrollmentError
+        {
             get { return BackingStore?.Get<string>("enrollmentError"); }
             set { BackingStore?.Set("enrollmentError", value); }
         }
 #endif
         /// <summary>Last time certificate connector connected</summary>
-        public DateTimeOffset? LastConnectorConnectionTime {
+        public DateTimeOffset? LastConnectorConnectionTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastConnectorConnectionTime"); }
             set { BackingStore?.Set("lastConnectorConnectionTime", value); }
         }
         /// <summary>Version of last uploaded certificate connector</summary>
-        public long? LastUploadVersion {
+        public long? LastUploadVersion
+        {
             get { return BackingStore?.Get<long?>("lastUploadVersion"); }
             set { BackingStore?.Set("lastUploadVersion", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Certificate connector status</summary>
-        public int? Status {
+        public int? Status
+        {
             get { return BackingStore?.Get<int?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -106,13 +118,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certExpiryTime", n => { CertExpiryTime = n.GetDateTimeOffsetValue(); } },
-                {"connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
-                {"enrollmentError", n => { EnrollmentError = n.GetStringValue(); } },
-                {"lastConnectorConnectionTime", n => { LastConnectorConnectionTime = n.GetDateTimeOffsetValue(); } },
-                {"lastUploadVersion", n => { LastUploadVersion = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetIntValue(); } },
+                { "certExpiryTime", n => { CertExpiryTime = n.GetDateTimeOffsetValue(); } },
+                { "connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
+                { "enrollmentError", n => { EnrollmentError = n.GetStringValue(); } },
+                { "lastConnectorConnectionTime", n => { LastConnectorConnectionTime = n.GetDateTimeOffsetValue(); } },
+                { "lastUploadVersion", n => { LastUploadVersion = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetIntValue(); } },
             };
         }
         /// <summary>

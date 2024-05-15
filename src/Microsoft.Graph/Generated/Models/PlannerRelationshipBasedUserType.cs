@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerRelationshipBasedUserType : PlannerTaskConfigurationRoleBase, IParsable 
+    public class PlannerRelationshipBasedUserType : PlannerTaskConfigurationRoleBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The role property</summary>
-        public PlannerRelationshipUserRoles? Role {
+        public PlannerRelationshipUserRoles? Role
+        {
             get { return BackingStore?.Get<PlannerRelationshipUserRoles?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"role", n => { Role = n.GetEnumValue<PlannerRelationshipUserRoles>(); } },
+                { "role", n => { Role = n.GetEnumValue<PlannerRelationshipUserRoles>(); } },
             };
         }
         /// <summary>

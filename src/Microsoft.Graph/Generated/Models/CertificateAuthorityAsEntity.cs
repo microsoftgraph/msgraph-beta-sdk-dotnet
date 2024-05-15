@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CertificateAuthorityAsEntity : Entity, IParsable 
+    public class CertificateAuthorityAsEntity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The trusted certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Certificate {
+        public byte[]? Certificate
+        {
             get { return BackingStore?.Get<byte[]?>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
 #nullable restore
 #else
-        public byte[] Certificate {
+        public byte[] Certificate
+        {
             get { return BackingStore?.Get<byte[]>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
 #endif
         /// <summary>Indicates if the certificate is a root authority. In a certificateBasedApplicationConfiguration object, at least one object in the trustedCertificateAuthorities collection must be a root authority.</summary>
-        public bool? IsRootAuthority {
+        public bool? IsRootAuthority
+        {
             get { return BackingStore?.Get<bool?>("isRootAuthority"); }
             set { BackingStore?.Set("isRootAuthority", value); }
         }
         /// <summary>The issuer of the trusted certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer {
+        public string? Issuer
+        {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
 #nullable restore
 #else
-        public string Issuer {
+        public string Issuer
+        {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subject key identifier of the trusted certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerSubjectKeyIdentifier {
+        public string? IssuerSubjectKeyIdentifier
+        {
             get { return BackingStore?.Get<string?>("issuerSubjectKeyIdentifier"); }
             set { BackingStore?.Set("issuerSubjectKeyIdentifier", value); }
         }
 #nullable restore
 #else
-        public string IssuerSubjectKeyIdentifier {
+        public string IssuerSubjectKeyIdentifier
+        {
             get { return BackingStore?.Get<string>("issuerSubjectKeyIdentifier"); }
             set { BackingStore?.Set("issuerSubjectKeyIdentifier", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificate", n => { Certificate = n.GetByteArrayValue(); } },
-                {"isRootAuthority", n => { IsRootAuthority = n.GetBoolValue(); } },
-                {"issuer", n => { Issuer = n.GetStringValue(); } },
-                {"issuerSubjectKeyIdentifier", n => { IssuerSubjectKeyIdentifier = n.GetStringValue(); } },
+                { "certificate", n => { Certificate = n.GetByteArrayValue(); } },
+                { "isRootAuthority", n => { IsRootAuthority = n.GetBoolValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "issuerSubjectKeyIdentifier", n => { IssuerSubjectKeyIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

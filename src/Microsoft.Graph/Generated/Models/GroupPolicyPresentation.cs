@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The base entity for the display presentation of any of the additional options in a group policy definition.
     /// </summary>
-    public class GroupPolicyPresentation : Entity, IParsable 
+    public class GroupPolicyPresentation : Entity, IParsable
     {
         /// <summary>The group policy definition associated with the presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyDefinition? Definition {
+        public GroupPolicyDefinition? Definition
+        {
             get { return BackingStore?.Get<GroupPolicyDefinition?>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyDefinition Definition {
+        public GroupPolicyDefinition Definition
+        {
             get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Localized text label for any presentation entity. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label {
+        public string? Label
+        {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
 #nullable restore
 #else
-        public string Label {
+        public string Label
+        {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
 #endif
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -75,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"definition", n => { Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "definition", n => { Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

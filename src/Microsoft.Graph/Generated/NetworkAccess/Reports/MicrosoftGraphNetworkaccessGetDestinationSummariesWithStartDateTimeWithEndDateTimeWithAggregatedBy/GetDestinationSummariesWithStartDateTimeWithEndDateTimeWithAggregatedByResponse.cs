@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy {
+namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessGetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedBy
+{
     [Obsolete("This class is obsolete. Use GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse : GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse, IParsable 
+    public class GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByResponse : GetDestinationSummariesWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

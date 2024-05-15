@@ -5,45 +5,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Metric snapshot value returned in response to a GetHealthMetricTimeSeries request.
     /// </summary>
-    public class CertificateConnectorHealthMetricValue : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CertificateConnectorHealthMetricValue : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Timestamp for this metric data-point.</summary>
-        public DateTimeOffset? DateTime {
+        public DateTimeOffset? DateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>Count of failed requests/operations.</summary>
-        public long? FailureCount {
+        public long? FailureCount
+        {
             get { return BackingStore?.Get<long?>("failureCount"); }
             set { BackingStore?.Set("failureCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Count of successful requests/operations.</summary>
-        public long? SuccessCount {
+        public long? SuccessCount
+        {
             get { return BackingStore?.Get<long?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
-                {"failureCount", n => { FailureCount = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"successCount", n => { SuccessCount = n.GetLongValue(); } },
+                { "dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
+                { "failureCount", n => { FailureCount = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "successCount", n => { SuccessCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

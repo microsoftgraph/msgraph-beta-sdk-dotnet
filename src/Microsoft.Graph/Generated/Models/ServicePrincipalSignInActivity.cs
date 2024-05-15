@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServicePrincipalSignInActivity : Entity, IParsable 
+    public class ServicePrincipalSignInActivity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application ID of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? ApplicationAuthenticationClientSignInActivity {
+        public SignInActivity? ApplicationAuthenticationClientSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity?>("applicationAuthenticationClientSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationClientSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity ApplicationAuthenticationClientSignInActivity {
+        public SignInActivity ApplicationAuthenticationClientSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity>("applicationAuthenticationClientSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationClientSignInActivity", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? ApplicationAuthenticationResourceSignInActivity {
+        public SignInActivity? ApplicationAuthenticationResourceSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity?>("applicationAuthenticationResourceSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationResourceSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity ApplicationAuthenticationResourceSignInActivity {
+        public SignInActivity ApplicationAuthenticationResourceSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity>("applicationAuthenticationResourceSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationResourceSignInActivity", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sign-in activity of the application in a delegated flow (user sign-in) where the application acts like a client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? DelegatedClientSignInActivity {
+        public SignInActivity? DelegatedClientSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity?>("delegatedClientSignInActivity"); }
             set { BackingStore?.Set("delegatedClientSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity DelegatedClientSignInActivity {
+        public SignInActivity DelegatedClientSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity>("delegatedClientSignInActivity"); }
             set { BackingStore?.Set("delegatedClientSignInActivity", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sign-in activity of the application in a delegated flow (user sign-in) where the application acts like a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? DelegatedResourceSignInActivity {
+        public SignInActivity? DelegatedResourceSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity?>("delegatedResourceSignInActivity"); }
             set { BackingStore?.Set("delegatedResourceSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity DelegatedResourceSignInActivity {
+        public SignInActivity DelegatedResourceSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity>("delegatedResourceSignInActivity"); }
             set { BackingStore?.Set("delegatedResourceSignInActivity", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The most recent sign-in activity of the application across delegated or app-only flows where the application is used either as a client or resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? LastSignInActivity {
+        public SignInActivity? LastSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity?>("lastSignInActivity"); }
             set { BackingStore?.Set("lastSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity LastSignInActivity {
+        public SignInActivity LastSignInActivity
+        {
             get { return BackingStore?.Get<SignInActivity>("lastSignInActivity"); }
             set { BackingStore?.Set("lastSignInActivity", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"applicationAuthenticationClientSignInActivity", n => { ApplicationAuthenticationClientSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                {"applicationAuthenticationResourceSignInActivity", n => { ApplicationAuthenticationResourceSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                {"delegatedClientSignInActivity", n => { DelegatedClientSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                {"delegatedResourceSignInActivity", n => { DelegatedResourceSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                {"lastSignInActivity", n => { LastSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "applicationAuthenticationClientSignInActivity", n => { ApplicationAuthenticationClientSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
+                { "applicationAuthenticationResourceSignInActivity", n => { ApplicationAuthenticationResourceSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
+                { "delegatedClientSignInActivity", n => { DelegatedClientSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
+                { "delegatedResourceSignInActivity", n => { DelegatedResourceSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
+                { "lastSignInActivity", n => { LastSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

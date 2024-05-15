@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AddWatermarkAction : InformationProtectionAction, IParsable 
+    public class AddWatermarkAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Color of the font to use for the watermark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontColor {
+        public string? FontColor
+        {
             get { return BackingStore?.Get<string?>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
 #nullable restore
 #else
-        public string FontColor {
+        public string FontColor
+        {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the font to use for the watermark.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontName {
+        public string? FontName
+        {
             get { return BackingStore?.Get<string?>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
 #nullable restore
 #else
-        public string FontName {
+        public string FontName
+        {
             get { return BackingStore?.Get<string>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
 #endif
         /// <summary>Font size to use for the watermark.</summary>
-        public int? FontSize {
+        public int? FontSize
+        {
             get { return BackingStore?.Get<int?>("fontSize"); }
             set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The layout property</summary>
-        public WatermarkLayout? Layout {
+        public WatermarkLayout? Layout
+        {
             get { return BackingStore?.Get<WatermarkLayout?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
         /// <summary>The contents of the watermark itself.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the UI element where the watermark should be placed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UiElementName {
+        public string? UiElementName
+        {
             get { return BackingStore?.Get<string?>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }
         }
 #nullable restore
 #else
-        public string UiElementName {
+        public string UiElementName
+        {
             get { return BackingStore?.Get<string>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fontColor", n => { FontColor = n.GetStringValue(); } },
-                {"fontName", n => { FontName = n.GetStringValue(); } },
-                {"fontSize", n => { FontSize = n.GetIntValue(); } },
-                {"layout", n => { Layout = n.GetEnumValue<WatermarkLayout>(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
-                {"uiElementName", n => { UiElementName = n.GetStringValue(); } },
+                { "fontColor", n => { FontColor = n.GetStringValue(); } },
+                { "fontName", n => { FontName = n.GetStringValue(); } },
+                { "fontSize", n => { FontSize = n.GetIntValue(); } },
+                { "layout", n => { Layout = n.GetEnumValue<WatermarkLayout>(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "uiElementName", n => { UiElementName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SessionLifetimePolicy : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SessionLifetimePolicy : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The human-readable details of the conditional access session management policy applied to the sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detail {
+        public string? Detail
+        {
             get { return BackingStore?.Get<string?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public string Detail {
+        public string Detail
+        {
             get { return BackingStore?.Get<string>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
         /// <summary>If a conditional access session management policy required the user to authenticate in this sign-in event, this field describes the policy type that required authentication. The possible values are: rememberMultifactorAuthenticationOnTrustedDevices, tenantTokenLifetimePolicy, audienceTokenLifetimePolicy, signInFrequencyPeriodicReauthentication, ngcMfa, signInFrequencyEveryTime, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.ExpirationRequirement? ExpirationRequirement {
+        public Microsoft.Graph.Beta.Models.ExpirationRequirement? ExpirationRequirement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpirationRequirement?>("expirationRequirement"); }
             set { BackingStore?.Set("expirationRequirement", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"detail", n => { Detail = n.GetStringValue(); } },
-                {"expirationRequirement", n => { ExpirationRequirement = n.GetEnumValue<ExpirationRequirement>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "detail", n => { Detail = n.GetStringValue(); } },
+                { "expirationRequirement", n => { ExpirationRequirement = n.GetEnumValue<ExpirationRequirement>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

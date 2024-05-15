@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResource : Entity, IParsable 
+    public class AccessPackageResource : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment&apos;s originId. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment? AccessPackageResourceEnvironment {
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment? AccessPackageResourceEnvironment
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment?>("accessPackageResourceEnvironment"); }
             set { BackingStore?.Set("accessPackageResourceEnvironment", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment AccessPackageResourceEnvironment {
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment AccessPackageResourceEnvironment
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment"); }
             set { BackingStore?.Set("accessPackageResourceEnvironment", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRole>? AccessPackageResourceRoles {
+        public List<AccessPackageResourceRole>? AccessPackageResourceRoles
+        {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRole> AccessPackageResourceRoles {
+        public List<AccessPackageResourceRole> AccessPackageResourceRoles
+        {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceScope>? AccessPackageResourceScopes {
+        public List<AccessPackageResourceScope>? AccessPackageResourceScopes
+        {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceScope> AccessPackageResourceScopes {
+        public List<AccessPackageResourceScope> AccessPackageResourceScopes
+        {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the user or application that first added this resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddedBy {
+        public string? AddedBy
+        {
             get { return BackingStore?.Get<string?>("addedBy"); }
             set { BackingStore?.Set("addedBy", value); }
         }
 #nullable restore
 #else
-        public string AddedBy {
+        public string AddedBy
+        {
             get { return BackingStore?.Get<string>("addedBy"); }
             set { BackingStore?.Set("addedBy", value); }
         }
 #endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? AddedOn {
+        public DateTimeOffset? AddedOn
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("addedOn"); }
             set { BackingStore?.Set("addedOn", value); }
         }
         /// <summary>Contains information about the attributes to be collected from the requestor and sent to the resource application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceAttribute>? Attributes {
+        public List<AccessPackageResourceAttribute>? Attributes
+        {
             get { return BackingStore?.Get<List<AccessPackageResourceAttribute>?>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceAttribute> Attributes {
+        public List<AccessPackageResourceAttribute> Attributes
+        {
             get { return BackingStore?.Get<List<AccessPackageResourceAttribute>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A description for the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -101,32 +115,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the resource, such as the application name, group name, or site name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>True if the resource is not yet available for assignment. Read-only.</summary>
-        public bool? IsPendingOnboarding {
+        public bool? IsPendingOnboarding
+        {
             get { return BackingStore?.Get<bool?>("isPendingOnboarding"); }
             set { BackingStore?.Set("isPendingOnboarding", value); }
         }
         /// <summary>The unique identifier of the resource in the origin system. In the case of a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginId {
+        public string? OriginId
+        {
             get { return BackingStore?.Get<string?>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
 #nullable restore
 #else
-        public string OriginId {
+        public string OriginId
+        {
             get { return BackingStore?.Get<string>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, or AadGroup. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginSystem {
+        public string? OriginSystem
+        {
             get { return BackingStore?.Get<string?>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
 #nullable restore
 #else
-        public string OriginSystem {
+        public string OriginSystem
+        {
             get { return BackingStore?.Get<string>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of the resource, such as Application if it is a Microsoft Entra connected application, or SharePoint Online Site for a SharePoint Online site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType {
+        public string? ResourceType
+        {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #nullable restore
 #else
-        public string ResourceType {
+        public string ResourceType
+        {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
@@ -162,13 +185,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A unique resource locator for the resource, such as the URL for signing a user into an application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -191,19 +216,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessPackageResourceEnvironment", n => { AccessPackageResourceEnvironment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
-                {"accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"addedBy", n => { AddedBy = n.GetStringValue(); } },
-                {"addedOn", n => { AddedOn = n.GetDateTimeOffsetValue(); } },
-                {"attributes", n => { Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isPendingOnboarding", n => { IsPendingOnboarding = n.GetBoolValue(); } },
-                {"originId", n => { OriginId = n.GetStringValue(); } },
-                {"originSystem", n => { OriginSystem = n.GetStringValue(); } },
-                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "accessPackageResourceEnvironment", n => { AccessPackageResourceEnvironment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
+                { "accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addedBy", n => { AddedBy = n.GetStringValue(); } },
+                { "addedOn", n => { AddedOn = n.GetDateTimeOffsetValue(); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isPendingOnboarding", n => { IsPendingOnboarding = n.GetBoolValue(); } },
+                { "originId", n => { OriginId = n.GetStringValue(); } },
+                { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
+                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

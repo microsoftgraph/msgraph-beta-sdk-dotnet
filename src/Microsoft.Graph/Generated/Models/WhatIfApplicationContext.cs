@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WhatIfApplicationContext : ConditionalAccessContext, IParsable 
+    public class WhatIfApplicationContext : ConditionalAccessContext, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The includeApplications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeApplications {
+        public List<string>? IncludeApplications
+        {
             get { return BackingStore?.Get<List<string>?>("includeApplications"); }
             set { BackingStore?.Set("includeApplications", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeApplications {
+        public List<string> IncludeApplications
+        {
             get { return BackingStore?.Get<List<string>>("includeApplications"); }
             set { BackingStore?.Set("includeApplications", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

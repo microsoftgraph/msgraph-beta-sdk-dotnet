@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties used to assign a device management script to a group.
     /// </summary>
-    public class DeviceHealthScriptAssignment : Entity, IParsable 
+    public class DeviceHealthScriptAssignment : Entity, IParsable
     {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>
-        public bool? RunRemediationScript {
+        public bool? RunRemediationScript
+        {
             get { return BackingStore?.Get<bool?>("runRemediationScript"); }
             set { BackingStore?.Set("runRemediationScript", value); }
         }
         /// <summary>Script run schedule for the target group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceHealthScriptRunSchedule? RunSchedule {
+        public DeviceHealthScriptRunSchedule? RunSchedule
+        {
             get { return BackingStore?.Get<DeviceHealthScriptRunSchedule?>("runSchedule"); }
             set { BackingStore?.Set("runSchedule", value); }
         }
 #nullable restore
 #else
-        public DeviceHealthScriptRunSchedule RunSchedule {
+        public DeviceHealthScriptRunSchedule RunSchedule
+        {
             get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>("runSchedule"); }
             set { BackingStore?.Set("runSchedule", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Azure Active Directory group we are targeting the script to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target {
+        public DeviceAndAppManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target {
+        public DeviceAndAppManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"runRemediationScript", n => { RunRemediationScript = n.GetBoolValue(); } },
-                {"runSchedule", n => { RunSchedule = n.GetObjectValue<DeviceHealthScriptRunSchedule>(DeviceHealthScriptRunSchedule.CreateFromDiscriminatorValue); } },
-                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "runRemediationScript", n => { RunRemediationScript = n.GetBoolValue(); } },
+                { "runSchedule", n => { RunSchedule = n.GetObjectValue<DeviceHealthScriptRunSchedule>(DeviceHealthScriptRunSchedule.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

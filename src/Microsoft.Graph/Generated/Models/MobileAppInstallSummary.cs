@@ -4,59 +4,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the installation summary of a mobile app. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class MobileAppInstallSummary : Entity, IParsable 
+    public class MobileAppInstallSummary : Entity, IParsable
     {
         /// <summary>Number of Devices that have failed to install this app.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more device that failed to install this app.</summary>
-        public int? FailedUserCount {
+        public int? FailedUserCount
+        {
             get { return BackingStore?.Get<int?>("failedUserCount"); }
             set { BackingStore?.Set("failedUserCount", value); }
         }
         /// <summary>Number of Devices that have successfully installed this app.</summary>
-        public int? InstalledDeviceCount {
+        public int? InstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("installedDeviceCount"); }
             set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Number of Users whose devices have all succeeded to install this app.</summary>
-        public int? InstalledUserCount {
+        public int? InstalledUserCount
+        {
             get { return BackingStore?.Get<int?>("installedUserCount"); }
             set { BackingStore?.Set("installedUserCount", value); }
         }
         /// <summary>Number of Devices that are not applicable for this app.</summary>
-        public int? NotApplicableDeviceCount {
+        public int? NotApplicableDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
             set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Number of Users whose devices were all not applicable for this app.</summary>
-        public int? NotApplicableUserCount {
+        public int? NotApplicableUserCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableUserCount"); }
             set { BackingStore?.Set("notApplicableUserCount", value); }
         }
         /// <summary>Number of Devices that does not have this app installed.</summary>
-        public int? NotInstalledDeviceCount {
+        public int? NotInstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
             set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more devices that did not install this app.</summary>
-        public int? NotInstalledUserCount {
+        public int? NotInstalledUserCount
+        {
             get { return BackingStore?.Get<int?>("notInstalledUserCount"); }
             set { BackingStore?.Set("notInstalledUserCount", value); }
         }
         /// <summary>Number of Devices that have been notified to install this app.</summary>
-        public int? PendingInstallDeviceCount {
+        public int? PendingInstallDeviceCount
+        {
             get { return BackingStore?.Get<int?>("pendingInstallDeviceCount"); }
             set { BackingStore?.Set("pendingInstallDeviceCount", value); }
         }
         /// <summary>Number of Users that have 1 or more device that have been notified to install this app and have 0 devices with failures.</summary>
-        public int? PendingInstallUserCount {
+        public int? PendingInstallUserCount
+        {
             get { return BackingStore?.Get<int?>("pendingInstallUserCount"); }
             set { BackingStore?.Set("pendingInstallUserCount", value); }
         }
@@ -78,16 +89,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
-                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
-                {"installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
-                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
-                {"pendingInstallDeviceCount", n => { PendingInstallDeviceCount = n.GetIntValue(); } },
-                {"pendingInstallUserCount", n => { PendingInstallUserCount = n.GetIntValue(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                { "installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                { "installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
+                { "notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                { "notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                { "notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                { "notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
+                { "pendingInstallDeviceCount", n => { PendingInstallDeviceCount = n.GetIntValue(); } },
+                { "pendingInstallUserCount", n => { PendingInstallUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

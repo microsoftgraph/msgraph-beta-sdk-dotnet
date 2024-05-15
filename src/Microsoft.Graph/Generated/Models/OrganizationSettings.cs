@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OrganizationSettings : Entity, IParsable 
+    public class OrganizationSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user&apos;s contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InsightsSettings? ContactInsights {
+        public InsightsSettings? ContactInsights
+        {
             get { return BackingStore?.Get<InsightsSettings?>("contactInsights"); }
             set { BackingStore?.Set("contactInsights", value); }
         }
 #nullable restore
 #else
-        public InsightsSettings ContactInsights {
+        public InsightsSettings ContactInsights
+        {
             get { return BackingStore?.Get<InsightsSettings>("contactInsights"); }
             set { BackingStore?.Set("contactInsights", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains the properties that are configured by an administrator for the visibility of Microsoft Graph-derived insights, between a user and other items in Microsoft 365, such as documents or sites. List itemInsights returns the settings to display or return item insights in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InsightsSettings? ItemInsights {
+        public InsightsSettings? ItemInsights
+        {
             get { return BackingStore?.Get<InsightsSettings?>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
 #nullable restore
 #else
-        public InsightsSettings ItemInsights {
+        public InsightsSettings ItemInsights
+        {
             get { return BackingStore?.Get<InsightsSettings>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The microsoftApplicationDataAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MicrosoftApplicationDataAccessSettings? MicrosoftApplicationDataAccess {
+        public MicrosoftApplicationDataAccessSettings? MicrosoftApplicationDataAccess
+        {
             get { return BackingStore?.Get<MicrosoftApplicationDataAccessSettings?>("microsoftApplicationDataAccess"); }
             set { BackingStore?.Set("microsoftApplicationDataAccess", value); }
         }
 #nullable restore
 #else
-        public MicrosoftApplicationDataAccessSettings MicrosoftApplicationDataAccess {
+        public MicrosoftApplicationDataAccessSettings MicrosoftApplicationDataAccess
+        {
             get { return BackingStore?.Get<MicrosoftApplicationDataAccessSettings>("microsoftApplicationDataAccess"); }
             set { BackingStore?.Set("microsoftApplicationDataAccess", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains the properties that are configured by an administrator for the visibility of a list of people relevant and working with a user in Microsoft 365. List peopleInsights returns the settings to display or return people insights in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InsightsSettings? PeopleInsights {
+        public InsightsSettings? PeopleInsights
+        {
             get { return BackingStore?.Get<InsightsSettings?>("peopleInsights"); }
             set { BackingStore?.Set("peopleInsights", value); }
         }
 #nullable restore
 #else
-        public InsightsSettings PeopleInsights {
+        public InsightsSettings PeopleInsights
+        {
             get { return BackingStore?.Get<InsightsSettings>("peopleInsights"); }
             set { BackingStore?.Set("peopleInsights", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contactInsights", n => { ContactInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
-                {"itemInsights", n => { ItemInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
-                {"microsoftApplicationDataAccess", n => { MicrosoftApplicationDataAccess = n.GetObjectValue<MicrosoftApplicationDataAccessSettings>(MicrosoftApplicationDataAccessSettings.CreateFromDiscriminatorValue); } },
-                {"peopleInsights", n => { PeopleInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
+                { "contactInsights", n => { ContactInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
+                { "itemInsights", n => { ItemInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
+                { "microsoftApplicationDataAccess", n => { MicrosoftApplicationDataAccess = n.GetObjectValue<MicrosoftApplicationDataAccessSettings>(MicrosoftApplicationDataAccessSettings.CreateFromDiscriminatorValue); } },
+                { "peopleInsights", n => { PeopleInsights = n.GetObjectValue<InsightsSettings>(InsightsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

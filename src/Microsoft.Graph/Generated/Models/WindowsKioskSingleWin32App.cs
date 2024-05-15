@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The class used to identify the single app configuration for the kiosk win32 configuration
     /// </summary>
-    public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable 
+    public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>The win32App property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsKioskWin32App? Win32App {
+        public WindowsKioskWin32App? Win32App
+        {
             get { return BackingStore?.Get<WindowsKioskWin32App?>("win32App"); }
             set { BackingStore?.Set("win32App", value); }
         }
 #nullable restore
 #else
-        public WindowsKioskWin32App Win32App {
+        public WindowsKioskWin32App Win32App
+        {
             get { return BackingStore?.Get<WindowsKioskWin32App>("win32App"); }
             set { BackingStore?.Set("win32App", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"win32App", n => { Win32App = n.GetObjectValue<WindowsKioskWin32App>(WindowsKioskWin32App.CreateFromDiscriminatorValue); } },
+                { "win32App", n => { Win32App = n.GetObjectValue<WindowsKioskWin32App>(WindowsKioskWin32App.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

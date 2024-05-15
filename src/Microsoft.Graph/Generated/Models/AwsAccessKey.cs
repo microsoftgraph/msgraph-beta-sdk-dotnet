@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsAccessKey : AwsIdentity, IParsable 
+    public class AwsAccessKey : AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the owner of the access key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsUser? Owner {
+        public AwsUser? Owner
+        {
             get { return BackingStore?.Get<AwsUser?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public AwsUser Owner {
+        public AwsUser Owner
+        {
             get { return BackingStore?.Get<AwsUser>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"owner", n => { Owner = n.GetObjectValue<AwsUser>(AwsUser.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<AwsUser>(AwsUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

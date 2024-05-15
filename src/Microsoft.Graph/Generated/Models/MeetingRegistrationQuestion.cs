@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingRegistrationQuestion : Entity, IParsable 
+    public class MeetingRegistrationQuestion : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Answer input type of the custom registration question.</summary>
-        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
+        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>("answerInputType"); }
             set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>Answer options when answerInputType is radioButton.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AnswerOptions {
+        public List<string>? AnswerOptions
+        {
             get { return BackingStore?.Get<List<string>?>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
 #nullable restore
 #else
-        public List<string> AnswerOptions {
+        public List<string> AnswerOptions
+        {
             get { return BackingStore?.Get<List<string>>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
@@ -31,19 +35,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name of the custom registration question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether the question is required. Default value is false.</summary>
-        public bool? IsRequired {
+        public bool? IsRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
-                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                { "answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
+                { "answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
             };
         }
         /// <summary>

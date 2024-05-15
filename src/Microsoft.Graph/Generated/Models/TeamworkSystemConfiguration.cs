@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkSystemConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkSystemConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date and time configurations for a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDateTimeConfiguration? DateTimeConfiguration {
+        public TeamworkDateTimeConfiguration? DateTimeConfiguration
+        {
             get { return BackingStore?.Get<TeamworkDateTimeConfiguration?>("dateTimeConfiguration"); }
             set { BackingStore?.Set("dateTimeConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkDateTimeConfiguration DateTimeConfiguration {
+        public TeamworkDateTimeConfiguration DateTimeConfiguration
+        {
             get { return BackingStore?.Get<TeamworkDateTimeConfiguration>("dateTimeConfiguration"); }
             set { BackingStore?.Set("dateTimeConfiguration", value); }
         }
@@ -34,57 +38,67 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The default password for the device. Write-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultPassword {
+        public string? DefaultPassword
+        {
             get { return BackingStore?.Get<string?>("defaultPassword"); }
             set { BackingStore?.Set("defaultPassword", value); }
         }
 #nullable restore
 #else
-        public string DefaultPassword {
+        public string DefaultPassword
+        {
             get { return BackingStore?.Get<string>("defaultPassword"); }
             set { BackingStore?.Set("defaultPassword", value); }
         }
 #endif
         /// <summary>The device lock timeout in seconds.</summary>
-        public TimeSpan? DeviceLockTimeout {
+        public TimeSpan? DeviceLockTimeout
+        {
             get { return BackingStore?.Get<TimeSpan?>("deviceLockTimeout"); }
             set { BackingStore?.Set("deviceLockTimeout", value); }
         }
         /// <summary>True if the device lock is enabled.</summary>
-        public bool? IsDeviceLockEnabled {
+        public bool? IsDeviceLockEnabled
+        {
             get { return BackingStore?.Get<bool?>("isDeviceLockEnabled"); }
             set { BackingStore?.Set("isDeviceLockEnabled", value); }
         }
         /// <summary>True if logging is enabled.</summary>
-        public bool? IsLoggingEnabled {
+        public bool? IsLoggingEnabled
+        {
             get { return BackingStore?.Get<bool?>("isLoggingEnabled"); }
             set { BackingStore?.Set("isLoggingEnabled", value); }
         }
         /// <summary>True if power saving is enabled.</summary>
-        public bool? IsPowerSavingEnabled {
+        public bool? IsPowerSavingEnabled
+        {
             get { return BackingStore?.Get<bool?>("isPowerSavingEnabled"); }
             set { BackingStore?.Set("isPowerSavingEnabled", value); }
         }
         /// <summary>True if screen capture is enabled.</summary>
-        public bool? IsScreenCaptureEnabled {
+        public bool? IsScreenCaptureEnabled
+        {
             get { return BackingStore?.Get<bool?>("isScreenCaptureEnabled"); }
             set { BackingStore?.Set("isScreenCaptureEnabled", value); }
         }
         /// <summary>True if silent mode is enabled.</summary>
-        public bool? IsSilentModeEnabled {
+        public bool? IsSilentModeEnabled
+        {
             get { return BackingStore?.Get<bool?>("isSilentModeEnabled"); }
             set { BackingStore?.Set("isSilentModeEnabled", value); }
         }
         /// <summary>The language option for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -92,13 +106,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The pin that unlocks the device. Write-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LockPin {
+        public string? LockPin
+        {
             get { return BackingStore?.Get<string?>("lockPin"); }
             set { BackingStore?.Set("lockPin", value); }
         }
 #nullable restore
 #else
-        public string LockPin {
+        public string LockPin
+        {
             get { return BackingStore?.Get<string>("lockPin"); }
             set { BackingStore?.Set("lockPin", value); }
         }
@@ -106,13 +122,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The logging level for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoggingLevel {
+        public string? LoggingLevel
+        {
             get { return BackingStore?.Get<string?>("loggingLevel"); }
             set { BackingStore?.Set("loggingLevel", value); }
         }
 #nullable restore
 #else
-        public string LoggingLevel {
+        public string LoggingLevel
+        {
             get { return BackingStore?.Get<string>("loggingLevel"); }
             set { BackingStore?.Set("loggingLevel", value); }
         }
@@ -120,13 +138,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The network configuration for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkNetworkConfiguration? NetworkConfiguration {
+        public TeamworkNetworkConfiguration? NetworkConfiguration
+        {
             get { return BackingStore?.Get<TeamworkNetworkConfiguration?>("networkConfiguration"); }
             set { BackingStore?.Set("networkConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkNetworkConfiguration NetworkConfiguration {
+        public TeamworkNetworkConfiguration NetworkConfiguration
+        {
             get { return BackingStore?.Get<TeamworkNetworkConfiguration>("networkConfiguration"); }
             set { BackingStore?.Set("networkConfiguration", value); }
         }
@@ -134,13 +154,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -171,19 +193,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dateTimeConfiguration", n => { DateTimeConfiguration = n.GetObjectValue<TeamworkDateTimeConfiguration>(TeamworkDateTimeConfiguration.CreateFromDiscriminatorValue); } },
-                {"defaultPassword", n => { DefaultPassword = n.GetStringValue(); } },
-                {"deviceLockTimeout", n => { DeviceLockTimeout = n.GetTimeSpanValue(); } },
-                {"isDeviceLockEnabled", n => { IsDeviceLockEnabled = n.GetBoolValue(); } },
-                {"isLoggingEnabled", n => { IsLoggingEnabled = n.GetBoolValue(); } },
-                {"isPowerSavingEnabled", n => { IsPowerSavingEnabled = n.GetBoolValue(); } },
-                {"isScreenCaptureEnabled", n => { IsScreenCaptureEnabled = n.GetBoolValue(); } },
-                {"isSilentModeEnabled", n => { IsSilentModeEnabled = n.GetBoolValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"lockPin", n => { LockPin = n.GetStringValue(); } },
-                {"loggingLevel", n => { LoggingLevel = n.GetStringValue(); } },
-                {"networkConfiguration", n => { NetworkConfiguration = n.GetObjectValue<TeamworkNetworkConfiguration>(TeamworkNetworkConfiguration.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "dateTimeConfiguration", n => { DateTimeConfiguration = n.GetObjectValue<TeamworkDateTimeConfiguration>(TeamworkDateTimeConfiguration.CreateFromDiscriminatorValue); } },
+                { "defaultPassword", n => { DefaultPassword = n.GetStringValue(); } },
+                { "deviceLockTimeout", n => { DeviceLockTimeout = n.GetTimeSpanValue(); } },
+                { "isDeviceLockEnabled", n => { IsDeviceLockEnabled = n.GetBoolValue(); } },
+                { "isLoggingEnabled", n => { IsLoggingEnabled = n.GetBoolValue(); } },
+                { "isPowerSavingEnabled", n => { IsPowerSavingEnabled = n.GetBoolValue(); } },
+                { "isScreenCaptureEnabled", n => { IsScreenCaptureEnabled = n.GetBoolValue(); } },
+                { "isSilentModeEnabled", n => { IsSilentModeEnabled = n.GetBoolValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "lockPin", n => { LockPin = n.GetStringValue(); } },
+                { "loggingLevel", n => { LoggingLevel = n.GetStringValue(); } },
+                { "networkConfiguration", n => { NetworkConfiguration = n.GetObjectValue<TeamworkNetworkConfiguration>(TeamworkNetworkConfiguration.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

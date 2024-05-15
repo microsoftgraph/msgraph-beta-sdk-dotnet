@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDateTimeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkDateTimeConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The date format for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateFormat {
+        public string? DateFormat
+        {
             get { return BackingStore?.Get<string?>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
 #nullable restore
 #else
-        public string DateFormat {
+        public string DateFormat
+        {
             get { return BackingStore?.Get<string>("dateFormat"); }
             set { BackingStore?.Set("dateFormat", value); }
         }
@@ -35,37 +39,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The time of the day when the device is turned off.</summary>
-        public Time? OfficeHoursEndTime {
+        public Time? OfficeHoursEndTime
+        {
             get { return BackingStore?.Get<Time?>("officeHoursEndTime"); }
             set { BackingStore?.Set("officeHoursEndTime", value); }
         }
         /// <summary>The time of the day when the device is turned on.</summary>
-        public Time? OfficeHoursStartTime {
+        public Time? OfficeHoursStartTime
+        {
             get { return BackingStore?.Get<Time?>("officeHoursStartTime"); }
             set { BackingStore?.Set("officeHoursStartTime", value); }
         }
         /// <summary>The time format for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeFormat {
+        public string? TimeFormat
+        {
             get { return BackingStore?.Get<string?>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
 #nullable restore
 #else
-        public string TimeFormat {
+        public string TimeFormat
+        {
             get { return BackingStore?.Get<string>("timeFormat"); }
             set { BackingStore?.Set("timeFormat", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The time zone to which the office hours apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone {
+        public string? TimeZone
+        {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public string TimeZone {
+        public string TimeZone
+        {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dateFormat", n => { DateFormat = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"officeHoursEndTime", n => { OfficeHoursEndTime = n.GetTimeValue(); } },
-                {"officeHoursStartTime", n => { OfficeHoursStartTime = n.GetTimeValue(); } },
-                {"timeFormat", n => { TimeFormat = n.GetStringValue(); } },
-                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "dateFormat", n => { DateFormat = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "officeHoursEndTime", n => { OfficeHoursEndTime = n.GetTimeValue(); } },
+                { "officeHoursStartTime", n => { OfficeHoursStartTime = n.GetTimeValue(); } },
+                { "timeFormat", n => { TimeFormat = n.GetStringValue(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>

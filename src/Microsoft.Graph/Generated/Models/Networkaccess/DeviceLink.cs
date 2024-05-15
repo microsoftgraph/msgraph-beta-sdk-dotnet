@@ -4,64 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class DeviceLink : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class DeviceLink : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines the maximum allowed Mbps (megabits per second) bandwidth from a device link. The possible values are:250,500,750,1000.</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps? BandwidthCapacityInMbps {
+        public Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps? BandwidthCapacityInMbps
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.BandwidthCapacityInMbps?>("bandwidthCapacityInMbps"); }
             set { BackingStore?.Set("bandwidthCapacityInMbps", value); }
         }
         /// <summary>The bgpConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration? BgpConfiguration {
+        public Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration? BgpConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration?>("bgpConfiguration"); }
             set { BackingStore?.Set("bgpConfiguration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration BgpConfiguration {
+        public Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration BgpConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration>("bgpConfiguration"); }
             set { BackingStore?.Set("bgpConfiguration", value); }
         }
 #endif
         /// <summary>The deviceVendor property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.DeviceVendor? DeviceVendor {
+        public Microsoft.Graph.Beta.Models.Networkaccess.DeviceVendor? DeviceVendor
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.DeviceVendor?>("deviceVendor"); }
             set { BackingStore?.Set("deviceVendor", value); }
         }
         /// <summary>The public IP address of your CPE (customer premise equipment) device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
         /// <summary>last modified time.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The redundancyConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration? RedundancyConfiguration {
+        public Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration? RedundancyConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration?>("redundancyConfiguration"); }
             set { BackingStore?.Set("redundancyConfiguration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration RedundancyConfiguration {
+        public Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration RedundancyConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration>("redundancyConfiguration"); }
             set { BackingStore?.Set("redundancyConfiguration", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The tunnelConfiguration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration? TunnelConfiguration {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration? TunnelConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration?>("tunnelConfiguration"); }
             set { BackingStore?.Set("tunnelConfiguration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration TunnelConfiguration {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration TunnelConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration>("tunnelConfiguration"); }
             set { BackingStore?.Set("tunnelConfiguration", value); }
         }
@@ -112,14 +126,14 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bandwidthCapacityInMbps", n => { BandwidthCapacityInMbps = n.GetEnumValue<BandwidthCapacityInMbps>(); } },
-                {"bgpConfiguration", n => { BgpConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration.CreateFromDiscriminatorValue); } },
-                {"deviceVendor", n => { DeviceVendor = n.GetEnumValue<DeviceVendor>(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"redundancyConfiguration", n => { RedundancyConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration.CreateFromDiscriminatorValue); } },
-                {"tunnelConfiguration", n => { TunnelConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration.CreateFromDiscriminatorValue); } },
+                { "bandwidthCapacityInMbps", n => { BandwidthCapacityInMbps = n.GetEnumValue<BandwidthCapacityInMbps>(); } },
+                { "bgpConfiguration", n => { BgpConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.BgpConfiguration.CreateFromDiscriminatorValue); } },
+                { "deviceVendor", n => { DeviceVendor = n.GetEnumValue<DeviceVendor>(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "redundancyConfiguration", n => { RedundancyConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.RedundancyConfiguration.CreateFromDiscriminatorValue); } },
+                { "tunnelConfiguration", n => { TunnelConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.TunnelConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

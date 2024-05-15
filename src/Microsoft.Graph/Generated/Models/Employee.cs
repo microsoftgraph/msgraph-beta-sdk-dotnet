@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Employee : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Employee : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? Address {
+        public PostalAddressType? Address
+        {
             get { return BackingStore?.Get<PostalAddressType?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType Address {
+        public PostalAddressType Address
+        {
             get { return BackingStore?.Get<PostalAddressType>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -33,20 +37,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The birthDate property</summary>
-        public Date? BirthDate {
+        public Date? BirthDate
+        {
             get { return BackingStore?.Get<Date?>("birthDate"); }
             set { BackingStore?.Set("birthDate", value); }
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -54,70 +61,81 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #endif
         /// <summary>The employmentDate property</summary>
-        public Date? EmploymentDate {
+        public Date? EmploymentDate
+        {
             get { return BackingStore?.Get<Date?>("employmentDate"); }
             set { BackingStore?.Set("employmentDate", value); }
         }
         /// <summary>The givenName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GivenName {
+        public string? GivenName
+        {
             get { return BackingStore?.Get<string?>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
 #nullable restore
 #else
-        public string GivenName {
+        public string GivenName
+        {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The jobTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitle {
+        public string? JobTitle
+        {
             get { return BackingStore?.Get<string?>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
 #nullable restore
 #else
-        public string JobTitle {
+        public string JobTitle
+        {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
 #endif
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The middleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MiddleName {
+        public string? MiddleName
+        {
             get { return BackingStore?.Get<string?>("middleName"); }
             set { BackingStore?.Set("middleName", value); }
         }
 #nullable restore
 #else
-        public string MiddleName {
+        public string MiddleName
+        {
             get { return BackingStore?.Get<string>("middleName"); }
             set { BackingStore?.Set("middleName", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mobilePhone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MobilePhone {
+        public string? MobilePhone
+        {
             get { return BackingStore?.Get<string?>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
 #nullable restore
 #else
-        public string MobilePhone {
+        public string MobilePhone
+        {
             get { return BackingStore?.Get<string>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number {
+        public string? Number
+        {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public string Number {
+        public string Number
+        {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The personalEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PersonalEmail {
+        public string? PersonalEmail
+        {
             get { return BackingStore?.Get<string?>("personalEmail"); }
             set { BackingStore?.Set("personalEmail", value); }
         }
 #nullable restore
 #else
-        public string PersonalEmail {
+        public string PersonalEmail
+        {
             get { return BackingStore?.Get<string>("personalEmail"); }
             set { BackingStore?.Set("personalEmail", value); }
         }
@@ -181,13 +207,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The phoneNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
@@ -195,13 +223,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
+        public List<Microsoft.Graph.Beta.Models.Picture>? Picture
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Picture> Picture {
+        public List<Microsoft.Graph.Beta.Models.Picture> Picture
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
@@ -209,13 +239,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The statisticsGroupCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatisticsGroupCode {
+        public string? StatisticsGroupCode
+        {
             get { return BackingStore?.Get<string?>("statisticsGroupCode"); }
             set { BackingStore?.Set("statisticsGroupCode", value); }
         }
 #nullable restore
 #else
-        public string StatisticsGroupCode {
+        public string StatisticsGroupCode
+        {
             get { return BackingStore?.Get<string>("statisticsGroupCode"); }
             set { BackingStore?.Set("statisticsGroupCode", value); }
         }
@@ -223,13 +255,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -237,19 +271,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The surname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Surname {
+        public string? Surname
+        {
             get { return BackingStore?.Get<string?>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
 #nullable restore
 #else
-        public string Surname {
+        public string Surname
+        {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
 #endif
         /// <summary>The terminationDate property</summary>
-        public Date? TerminationDate {
+        public Date? TerminationDate
+        {
             get { return BackingStore?.Get<Date?>("terminationDate"); }
             set { BackingStore?.Set("terminationDate", value); }
         }
@@ -279,26 +316,26 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"birthDate", n => { BirthDate = n.GetDateValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"employmentDate", n => { EmploymentDate = n.GetDateValue(); } },
-                {"givenName", n => { GivenName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"middleName", n => { MiddleName = n.GetStringValue(); } },
-                {"mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
-                {"number", n => { Number = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"personalEmail", n => { PersonalEmail = n.GetStringValue(); } },
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"statisticsGroupCode", n => { StatisticsGroupCode = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"surname", n => { Surname = n.GetStringValue(); } },
-                {"terminationDate", n => { TerminationDate = n.GetDateValue(); } },
+                { "address", n => { Address = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "birthDate", n => { BirthDate = n.GetDateValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "employmentDate", n => { EmploymentDate = n.GetDateValue(); } },
+                { "givenName", n => { GivenName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "middleName", n => { MiddleName = n.GetStringValue(); } },
+                { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "personalEmail", n => { PersonalEmail = n.GetStringValue(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "statisticsGroupCode", n => { StatisticsGroupCode = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "surname", n => { Surname = n.GetStringValue(); } },
+                { "terminationDate", n => { TerminationDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessSettings : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ConditionalAccessSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The signalingStatus property</summary>
-        public Status? SignalingStatus {
+        public Status? SignalingStatus
+        {
             get { return BackingStore?.Get<Status?>("signalingStatus"); }
             set { BackingStore?.Set("signalingStatus", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"signalingStatus", n => { SignalingStatus = n.GetEnumValue<Status>(); } },
+                { "signalingStatus", n => { SignalingStatus = n.GetEnumValue<Status>(); } },
             };
         }
         /// <summary>

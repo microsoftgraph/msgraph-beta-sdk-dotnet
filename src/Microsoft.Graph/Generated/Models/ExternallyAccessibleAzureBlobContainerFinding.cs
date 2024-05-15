@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExternallyAccessibleAzureBlobContainerFinding : Finding, IParsable 
+    public class ExternallyAccessibleAzureBlobContainerFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessibility property</summary>
-        public AzureAccessType? Accessibility {
+        public AzureAccessType? Accessibility
+        {
             get { return BackingStore?.Get<AzureAccessType?>("accessibility"); }
             set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>The encryptionManagedBy property</summary>
-        public AzureEncryption? EncryptionManagedBy {
+        public AzureEncryption? EncryptionManagedBy
+        {
             get { return BackingStore?.Get<AzureEncryption?>("encryptionManagedBy"); }
             set { BackingStore?.Set("encryptionManagedBy", value); }
         }
         /// <summary>The storageAccount property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? StorageAccount {
+        public AuthorizationSystemResource? StorageAccount
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource?>("storageAccount"); }
             set { BackingStore?.Set("storageAccount", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource StorageAccount {
+        public AuthorizationSystemResource StorageAccount
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource>("storageAccount"); }
             set { BackingStore?.Set("storageAccount", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessibility", n => { Accessibility = n.GetEnumValue<AzureAccessType>(); } },
-                {"encryptionManagedBy", n => { EncryptionManagedBy = n.GetEnumValue<AzureEncryption>(); } },
-                {"storageAccount", n => { StorageAccount = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "accessibility", n => { Accessibility = n.GetEnumValue<AzureAccessType>(); } },
+                { "encryptionManagedBy", n => { EncryptionManagedBy = n.GetEnumValue<AzureEncryption>(); } },
+                { "storageAccount", n => { StorageAccount = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

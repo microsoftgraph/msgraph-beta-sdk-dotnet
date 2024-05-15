@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PaymentTerm : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PaymentTerm : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The calculateDiscountOnCreditMemos property</summary>
-        public bool? CalculateDiscountOnCreditMemos {
+        public bool? CalculateDiscountOnCreditMemos
+        {
             get { return BackingStore?.Get<bool?>("calculateDiscountOnCreditMemos"); }
             set { BackingStore?.Set("calculateDiscountOnCreditMemos", value); }
         }
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
+        public string? Code
+        {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #nullable restore
 #else
-        public string Code {
+        public string Code
+        {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
@@ -39,32 +44,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The discountDateCalculation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscountDateCalculation {
+        public string? DiscountDateCalculation
+        {
             get { return BackingStore?.Get<string?>("discountDateCalculation"); }
             set { BackingStore?.Set("discountDateCalculation", value); }
         }
 #nullable restore
 #else
-        public string DiscountDateCalculation {
+        public string DiscountDateCalculation
+        {
             get { return BackingStore?.Get<string>("discountDateCalculation"); }
             set { BackingStore?.Set("discountDateCalculation", value); }
         }
 #endif
         /// <summary>The discountPercent property</summary>
-        public decimal? DiscountPercent {
+        public decimal? DiscountPercent
+        {
             get { return BackingStore?.Get<decimal?>("discountPercent"); }
             set { BackingStore?.Set("discountPercent", value); }
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -72,37 +82,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dueDateCalculation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DueDateCalculation {
+        public string? DueDateCalculation
+        {
             get { return BackingStore?.Get<string?>("dueDateCalculation"); }
             set { BackingStore?.Set("dueDateCalculation", value); }
         }
 #nullable restore
 #else
-        public string DueDateCalculation {
+        public string DueDateCalculation
+        {
             get { return BackingStore?.Get<string>("dueDateCalculation"); }
             set { BackingStore?.Set("dueDateCalculation", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -133,15 +149,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"calculateDiscountOnCreditMemos", n => { CalculateDiscountOnCreditMemos = n.GetBoolValue(); } },
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"discountDateCalculation", n => { DiscountDateCalculation = n.GetStringValue(); } },
-                {"discountPercent", n => { DiscountPercent = n.GetDecimalValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"dueDateCalculation", n => { DueDateCalculation = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "calculateDiscountOnCreditMemos", n => { CalculateDiscountOnCreditMemos = n.GetBoolValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "discountDateCalculation", n => { DiscountDateCalculation = n.GetStringValue(); } },
+                { "discountPercent", n => { DiscountPercent = n.GetDecimalValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "dueDateCalculation", n => { DueDateCalculation = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class AzureADDeviceRegistrationError : UpdatableAssetError, IParsable 
+    public class AzureADDeviceRegistrationError : UpdatableAssetError, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The reason property</summary>
-        public AzureADDeviceRegistrationErrorReason? Reason {
+        public AzureADDeviceRegistrationErrorReason? Reason
+        {
             get { return BackingStore?.Get<AzureADDeviceRegistrationErrorReason?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"reason", n => { Reason = n.GetEnumValue<AzureADDeviceRegistrationErrorReason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<AzureADDeviceRegistrationErrorReason>(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementAlert : Entity, IParsable 
+    public class UnifiedRoleManagementAlert : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementAlertConfiguration? AlertConfiguration {
+        public UnifiedRoleManagementAlertConfiguration? AlertConfiguration
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementAlertConfiguration?>("alertConfiguration"); }
             set { BackingStore?.Set("alertConfiguration", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementAlertConfiguration AlertConfiguration {
+        public UnifiedRoleManagementAlertConfiguration AlertConfiguration
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementAlertConfiguration>("alertConfiguration"); }
             set { BackingStore?.Set("alertConfiguration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementAlertDefinition? AlertDefinition {
+        public UnifiedRoleManagementAlertDefinition? AlertDefinition
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition?>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementAlertDefinition AlertDefinition {
+        public UnifiedRoleManagementAlertDefinition AlertDefinition
+        {
             get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of an alert definition. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertDefinitionId {
+        public string? AlertDefinitionId
+        {
             get { return BackingStore?.Get<string?>("alertDefinitionId"); }
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string AlertDefinitionId {
+        public string AlertDefinitionId
+        {
             get { return BackingStore?.Get<string>("alertDefinitionId"); }
             set { BackingStore?.Set("alertDefinitionId", value); }
         }
@@ -54,47 +61,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementAlertIncident>? AlertIncidents {
+        public List<UnifiedRoleManagementAlertIncident>? AlertIncidents
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlertIncident>?>("alertIncidents"); }
             set { BackingStore?.Set("alertIncidents", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementAlertIncident> AlertIncidents {
+        public List<UnifiedRoleManagementAlertIncident> AlertIncidents
+        {
             get { return BackingStore?.Get<List<UnifiedRoleManagementAlertIncident>>("alertIncidents"); }
             set { BackingStore?.Set("alertIncidents", value); }
         }
 #endif
         /// <summary>The number of incidents triggered in the tenant and relating to the alert. Can only be a positive integer.</summary>
-        public int? IncidentCount {
+        public int? IncidentCount
+        {
             get { return BackingStore?.Get<int?>("incidentCount"); }
             set { BackingStore?.Set("incidentCount", value); }
         }
         /// <summary>false by default. true if the alert is active.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The date time when the alert configuration was updated or new incidents generated.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The date time when the tenant was last scanned for incidents that trigger this alert.</summary>
-        public DateTimeOffset? LastScannedDateTime {
+        public DateTimeOffset? LastScannedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastScannedDateTime"); }
             set { BackingStore?.Set("lastScannedDateTime", value); }
         }
         /// <summary>The identifier of the scope where the alert is related. / is the only supported one for the tenant. Supports $filter (eq, ne).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeId {
+        public string? ScopeId
+        {
             get { return BackingStore?.Get<string?>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
 #nullable restore
 #else
-        public string ScopeId {
+        public string ScopeId
+        {
             get { return BackingStore?.Get<string>("scopeId"); }
             set { BackingStore?.Set("scopeId", value); }
         }
@@ -102,13 +117,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of scope where the alert is created. DirectoryRole is the only currently supported scope type for Microsoft Entra roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeType {
+        public string? ScopeType
+        {
             get { return BackingStore?.Get<string?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
 #nullable restore
 #else
-        public string ScopeType {
+        public string ScopeType
+        {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
@@ -131,16 +148,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alertConfiguration", n => { AlertConfiguration = n.GetObjectValue<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue); } },
-                {"alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
-                {"alertDefinitionId", n => { AlertDefinitionId = n.GetStringValue(); } },
-                {"alertIncidents", n => { AlertIncidents = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertIncident>(UnifiedRoleManagementAlertIncident.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"incidentCount", n => { IncidentCount = n.GetIntValue(); } },
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastScannedDateTime", n => { LastScannedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"scopeId", n => { ScopeId = n.GetStringValue(); } },
-                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
+                { "alertConfiguration", n => { AlertConfiguration = n.GetObjectValue<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue); } },
+                { "alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
+                { "alertDefinitionId", n => { AlertDefinitionId = n.GetStringValue(); } },
+                { "alertIncidents", n => { AlertIncidents = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertIncident>(UnifiedRoleManagementAlertIncident.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "incidentCount", n => { IncidentCount = n.GetIntValue(); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastScannedDateTime", n => { LastScannedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "scopeId", n => { ScopeId = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

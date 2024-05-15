@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ContentApprovalRule : ComplianceChangeRule, IParsable 
+    public class ContentApprovalRule : ComplianceChangeRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A filter to determine which content matches the rule on an ongoing basis.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter? ContentFilter {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter? ContentFilter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter?>("contentFilter"); }
             set { BackingStore?.Set("contentFilter", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter ContentFilter {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter ContentFilter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter>("contentFilter"); }
             set { BackingStore?.Set("contentFilter", value); }
         }
 #endif
         /// <summary>The time before the deployment starts represented in ISO 8601 format for durations.</summary>
-        public TimeSpan? DurationBeforeDeploymentStart {
+        public TimeSpan? DurationBeforeDeploymentStart
+        {
             get { return BackingStore?.Get<TimeSpan?>("durationBeforeDeploymentStart"); }
             set { BackingStore?.Set("durationBeforeDeploymentStart", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentFilter", n => { ContentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter>(Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter.CreateFromDiscriminatorValue); } },
-                {"durationBeforeDeploymentStart", n => { DurationBeforeDeploymentStart = n.GetTimeSpanValue(); } },
+                { "contentFilter", n => { ContentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter>(Microsoft.Graph.Beta.Models.WindowsUpdates.ContentFilter.CreateFromDiscriminatorValue); } },
+                { "durationBeforeDeploymentStart", n => { DurationBeforeDeploymentStart = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BookingsAvailability : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BookingsAvailability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The availabilityType property</summary>
-        public BookingsServiceAvailabilityType? AvailabilityType {
+        public BookingsServiceAvailabilityType? AvailabilityType
+        {
             get { return BackingStore?.Get<BookingsServiceAvailabilityType?>("availabilityType"); }
             set { BackingStore?.Set("availabilityType", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hours of operation in a week. The business hours value is set to null if the availability type isn&apos;t customWeeklyHours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkHours>? BusinessHours {
+        public List<BookingWorkHours>? BusinessHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>?>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkHours> BusinessHours {
+        public List<BookingWorkHours> BusinessHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -81,9 +88,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"availabilityType", n => { AvailabilityType = n.GetEnumValue<BookingsServiceAvailabilityType>(); } },
-                {"businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "availabilityType", n => { AvailabilityType = n.GetEnumValue<BookingsServiceAvailabilityType>(); } },
+                { "businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchSession : ExactMatchSessionBase, IParsable 
+    public class ExactMatchSession : ExactMatchSessionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The checksum property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Checksum {
+        public string? Checksum
+        {
             get { return BackingStore?.Get<string?>("checksum"); }
             set { BackingStore?.Set("checksum", value); }
         }
 #nullable restore
 #else
-        public string Checksum {
+        public string Checksum
+        {
             get { return BackingStore?.Get<string>("checksum"); }
             set { BackingStore?.Set("checksum", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dataUploadURI property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataUploadURI {
+        public string? DataUploadURI
+        {
             get { return BackingStore?.Get<string?>("dataUploadURI"); }
             set { BackingStore?.Set("dataUploadURI", value); }
         }
 #nullable restore
 #else
-        public string DataUploadURI {
+        public string DataUploadURI
+        {
             get { return BackingStore?.Get<string>("dataUploadURI"); }
             set { BackingStore?.Set("dataUploadURI", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Fields {
+        public List<string>? Fields
+        {
             get { return BackingStore?.Get<List<string>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public List<string> Fields {
+        public List<string> Fields
+        {
             get { return BackingStore?.Get<List<string>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The fileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
         /// <summary>The rowsPerBlock property</summary>
-        public int? RowsPerBlock {
+        public int? RowsPerBlock
+        {
             get { return BackingStore?.Get<int?>("rowsPerBlock"); }
             set { BackingStore?.Set("rowsPerBlock", value); }
         }
         /// <summary>The salt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Salt {
+        public string? Salt
+        {
             get { return BackingStore?.Get<string?>("salt"); }
             set { BackingStore?.Set("salt", value); }
         }
 #nullable restore
 #else
-        public string Salt {
+        public string Salt
+        {
             get { return BackingStore?.Get<string>("salt"); }
             set { BackingStore?.Set("salt", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The uploadAgent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExactMatchUploadAgent? UploadAgent {
+        public ExactMatchUploadAgent? UploadAgent
+        {
             get { return BackingStore?.Get<ExactMatchUploadAgent?>("uploadAgent"); }
             set { BackingStore?.Set("uploadAgent", value); }
         }
 #nullable restore
 #else
-        public ExactMatchUploadAgent UploadAgent {
+        public ExactMatchUploadAgent UploadAgent
+        {
             get { return BackingStore?.Get<ExactMatchUploadAgent>("uploadAgent"); }
             set { BackingStore?.Set("uploadAgent", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The uploadAgentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadAgentId {
+        public string? UploadAgentId
+        {
             get { return BackingStore?.Get<string?>("uploadAgentId"); }
             set { BackingStore?.Set("uploadAgentId", value); }
         }
 #nullable restore
 #else
-        public string UploadAgentId {
+        public string UploadAgentId
+        {
             get { return BackingStore?.Get<string>("uploadAgentId"); }
             set { BackingStore?.Set("uploadAgentId", value); }
         }
@@ -130,14 +146,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"checksum", n => { Checksum = n.GetStringValue(); } },
-                {"dataUploadURI", n => { DataUploadURI = n.GetStringValue(); } },
-                {"fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"rowsPerBlock", n => { RowsPerBlock = n.GetIntValue(); } },
-                {"salt", n => { Salt = n.GetStringValue(); } },
-                {"uploadAgent", n => { UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
-                {"uploadAgentId", n => { UploadAgentId = n.GetStringValue(); } },
+                { "checksum", n => { Checksum = n.GetStringValue(); } },
+                { "dataUploadURI", n => { DataUploadURI = n.GetStringValue(); } },
+                { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "rowsPerBlock", n => { RowsPerBlock = n.GetIntValue(); } },
+                { "salt", n => { Salt = n.GetStringValue(); } },
+                { "uploadAgent", n => { UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
+                { "uploadAgentId", n => { UploadAgentId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RelatedRemoteNetwork : RelatedResource, IParsable 
+    public class RelatedRemoteNetwork : RelatedResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The remoteNetworkId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteNetworkId {
+        public string? RemoteNetworkId
+        {
             get { return BackingStore?.Get<string?>("remoteNetworkId"); }
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
 #nullable restore
 #else
-        public string RemoteNetworkId {
+        public string RemoteNetworkId
+        {
             get { return BackingStore?.Get<string>("remoteNetworkId"); }
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
+                { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
             };
         }
         /// <summary>

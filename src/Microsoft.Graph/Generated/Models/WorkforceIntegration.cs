@@ -4,74 +4,86 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WorkforceIntegration : ChangeTrackedEntity, IParsable 
+    public class WorkforceIntegration : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>API version for the callback URL. Start with 1.</summary>
-        public int? ApiVersion {
+        public int? ApiVersion
+        {
             get { return BackingStore?.Get<int?>("apiVersion"); }
             set { BackingStore?.Set("apiVersion", value); }
         }
         /// <summary>Name of the workforce integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The eligibilityFilteringEnabledEntities property</summary>
-        public Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities {
+        public Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities?>("eligibilityFilteringEnabledEntities"); }
             set { BackingStore?.Set("eligibilityFilteringEnabledEntities", value); }
         }
         /// <summary>The workforce integration encryption resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkforceIntegrationEncryption? Encryption {
+        public WorkforceIntegrationEncryption? Encryption
+        {
             get { return BackingStore?.Get<WorkforceIntegrationEncryption?>("encryption"); }
             set { BackingStore?.Set("encryption", value); }
         }
 #nullable restore
 #else
-        public WorkforceIntegrationEncryption Encryption {
+        public WorkforceIntegrationEncryption Encryption
+        {
             get { return BackingStore?.Get<WorkforceIntegrationEncryption>("encryption"); }
             set { BackingStore?.Set("encryption", value); }
         }
 #endif
         /// <summary>Indicates whether this workforce integration is currently active and available.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>This property has replaced supports in v1.0. We recommend that you use this property instead of supports. The supports property is still supported in beta for the time being. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.</summary>
-        public WorkforceIntegrationSupportedEntities? SupportedEntities {
+        public WorkforceIntegrationSupportedEntities? SupportedEntities
+        {
             get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>("supportedEntities"); }
             set { BackingStore?.Set("supportedEntities", value); }
         }
         /// <summary>The Shifts entities supported for synchronous change notifications. Shifts make a callback to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. The possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard, timeOffReason, timeOff, timeOffRequest. If selecting more than one value, all values must start with the first letter in uppercase.</summary>
-        public WorkforceIntegrationSupportedEntities? Supports {
+        public WorkforceIntegrationSupportedEntities? Supports
+        {
             get { return BackingStore?.Get<WorkforceIntegrationSupportedEntities?>("supports"); }
             set { BackingStore?.Set("supports", value); }
         }
         /// <summary>Workforce Integration URL for callbacks from the Shifts service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url {
+        public string? Url
+        {
             get { return BackingStore?.Get<string?>("url"); }
             set { BackingStore?.Set("url", value); }
         }
 #nullable restore
 #else
-        public string Url {
+        public string Url
+        {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
@@ -101,14 +113,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"apiVersion", n => { ApiVersion = n.GetIntValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"eligibilityFilteringEnabledEntities", n => { EligibilityFilteringEnabledEntities = n.GetEnumValue<EligibilityFilteringEnabledEntities>(); } },
-                {"encryption", n => { Encryption = n.GetObjectValue<WorkforceIntegrationEncryption>(WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"supportedEntities", n => { SupportedEntities = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
-                {"supports", n => { Supports = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "apiVersion", n => { ApiVersion = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "eligibilityFilteringEnabledEntities", n => { EligibilityFilteringEnabledEntities = n.GetEnumValue<EligibilityFilteringEnabledEntities>(); } },
+                { "encryption", n => { Encryption = n.GetObjectValue<WorkforceIntegrationEncryption>(WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "supportedEntities", n => { SupportedEntities = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
+                { "supports", n => { Supports = n.GetEnumValue<WorkforceIntegrationSupportedEntities>(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

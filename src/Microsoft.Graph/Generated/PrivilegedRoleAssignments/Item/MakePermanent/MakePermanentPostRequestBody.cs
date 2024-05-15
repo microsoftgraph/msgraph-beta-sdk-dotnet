@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent
+{
     #pragma warning disable CS1591
-    public class MakePermanentPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MakePermanentPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         /// <summary>The ticketNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketNumber {
+        public string? TicketNumber
+        {
             get { return BackingStore?.Get<string?>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
 #nullable restore
 #else
-        public string TicketNumber {
+        public string TicketNumber
+        {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         /// <summary>The ticketSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketSystem {
+        public string? TicketSystem
+        {
             get { return BackingStore?.Get<string?>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
 #nullable restore
 #else
-        public string TicketSystem {
+        public string TicketSystem
+        {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
-                {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                { "ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

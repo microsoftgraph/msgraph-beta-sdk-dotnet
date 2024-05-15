@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProjectParticipation : ItemFacet, IParsable 
+    public class ProjectParticipation : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains categories a user has associated with the project (for example, digital transformation, oil rig).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories {
+        public List<string>? Categories
+        {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<string> Categories {
+        public List<string> Categories
+        {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains detailed information about the client the project was for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CompanyDetail? Client {
+        public CompanyDetail? Client
+        {
             get { return BackingStore?.Get<CompanyDetail?>("client"); }
             set { BackingStore?.Set("client", value); }
         }
 #nullable restore
 #else
-        public CompanyDetail Client {
+        public CompanyDetail Client
+        {
             get { return BackingStore?.Get<CompanyDetail>("client"); }
             set { BackingStore?.Set("client", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CollaborationTags {
+        public List<string>? CollaborationTags
+        {
             get { return BackingStore?.Get<List<string>?>("collaborationTags"); }
             set { BackingStore?.Set("collaborationTags", value); }
         }
 #nullable restore
 #else
-        public List<string> CollaborationTags {
+        public List<string> CollaborationTags
+        {
             get { return BackingStore?.Get<List<string>>("collaborationTags"); }
             set { BackingStore?.Set("collaborationTags", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Lists people that also worked on the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedPerson>? Colleagues {
+        public List<RelatedPerson>? Colleagues
+        {
             get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
 #nullable restore
 #else
-        public List<RelatedPerson> Colleagues {
+        public List<RelatedPerson> Colleagues
+        {
             get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains detail about the user&apos;s role on the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PositionDetail? Detail {
+        public PositionDetail? Detail
+        {
             get { return BackingStore?.Get<PositionDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PositionDetail Detail {
+        public PositionDetail Detail
+        {
             get { return BackingStore?.Get<PositionDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains a friendly name for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Person or people who sponsored the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedPerson>? Sponsors {
+        public List<RelatedPerson>? Sponsors
+        {
             get { return BackingStore?.Get<List<RelatedPerson>?>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
 #nullable restore
 #else
-        public List<RelatedPerson> Sponsors {
+        public List<RelatedPerson> Sponsors
+        {
             get { return BackingStore?.Get<List<RelatedPerson>>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The thumbnailUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailUrl {
+        public string? ThumbnailUrl
+        {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
 #nullable restore
 #else
-        public string ThumbnailUrl {
+        public string ThumbnailUrl
+        {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
@@ -146,14 +163,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"client", n => { Client = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
-                {"collaborationTags", n => { CollaborationTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "client", n => { Client = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
+                { "collaborationTags", n => { CollaborationTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

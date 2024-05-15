@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsResourcePerformance.SummarizeDeviceResourcePerformanceWithSummarizeBy
+{
     [Obsolete("This class is obsolete. Use SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse instead.")]
     #pragma warning disable CS1591
-    public class SummarizeDeviceResourcePerformanceWithSummarizeByResponse : SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse, IParsable 
+    public class SummarizeDeviceResourcePerformanceWithSummarizeByResponse : SummarizeDeviceResourcePerformanceWithSummarizeByGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

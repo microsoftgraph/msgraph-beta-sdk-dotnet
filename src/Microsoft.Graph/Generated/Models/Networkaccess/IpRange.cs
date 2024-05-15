@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class IpRange : RuleDestination, IParsable 
+    public class IpRange : RuleDestination, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the starting IP address of the IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BeginAddress {
+        public string? BeginAddress
+        {
             get { return BackingStore?.Get<string?>("beginAddress"); }
             set { BackingStore?.Set("beginAddress", value); }
         }
 #nullable restore
 #else
-        public string BeginAddress {
+        public string BeginAddress
+        {
             get { return BackingStore?.Get<string>("beginAddress"); }
             set { BackingStore?.Set("beginAddress", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Specifies the ending IP address of the IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndAddress {
+        public string? EndAddress
+        {
             get { return BackingStore?.Get<string?>("endAddress"); }
             set { BackingStore?.Set("endAddress", value); }
         }
 #nullable restore
 #else
-        public string EndAddress {
+        public string EndAddress
+        {
             get { return BackingStore?.Get<string>("endAddress"); }
             set { BackingStore?.Set("endAddress", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"beginAddress", n => { BeginAddress = n.GetStringValue(); } },
-                {"endAddress", n => { EndAddress = n.GetStringValue(); } },
+                { "beginAddress", n => { BeginAddress = n.GetStringValue(); } },
+                { "endAddress", n => { EndAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

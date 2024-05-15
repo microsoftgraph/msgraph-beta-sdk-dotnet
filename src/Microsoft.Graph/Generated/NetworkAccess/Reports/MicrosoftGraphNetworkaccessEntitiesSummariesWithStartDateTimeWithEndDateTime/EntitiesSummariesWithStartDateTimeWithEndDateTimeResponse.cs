@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime
+{
     [Obsolete("This class is obsolete. Use EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class EntitiesSummariesWithStartDateTimeWithEndDateTimeResponse : EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse, IParsable 
+    public class EntitiesSummariesWithStartDateTimeWithEndDateTimeResponse : EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

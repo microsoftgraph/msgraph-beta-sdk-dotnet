@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.TimeCards.ClockIn {
+namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedule.TimeCards.ClockIn
+{
     #pragma warning disable CS1591
-    public class ClockInPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClockInPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The atApprovedLocation property</summary>
-        public bool? AtApprovedLocation {
+        public bool? AtApprovedLocation
+        {
             get { return BackingStore?.Get<bool?>("atApprovedLocation"); }
             set { BackingStore?.Set("atApprovedLocation", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Notes {
+        public ItemBody? Notes
+        {
             get { return BackingStore?.Get<ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public ItemBody Notes {
+        public ItemBody Notes
+        {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         /// <summary>The onBehalfOfUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnBehalfOfUserId {
+        public string? OnBehalfOfUserId
+        {
             get { return BackingStore?.Get<string?>("onBehalfOfUserId"); }
             set { BackingStore?.Set("onBehalfOfUserId", value); }
         }
 #nullable restore
 #else
-        public string OnBehalfOfUserId {
+        public string OnBehalfOfUserId
+        {
             get { return BackingStore?.Get<string>("onBehalfOfUserId"); }
             set { BackingStore?.Set("onBehalfOfUserId", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Schedu
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
-                {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"onBehalfOfUserId", n => { OnBehalfOfUserId = n.GetStringValue(); } },
+                { "atApprovedLocation", n => { AtApprovedLocation = n.GetBoolValue(); } },
+                { "notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "onBehalfOfUserId", n => { OnBehalfOfUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Command : Entity, IParsable 
+    public class Command : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appServiceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppServiceName {
+        public string? AppServiceName
+        {
             get { return BackingStore?.Get<string?>("appServiceName"); }
             set { BackingStore?.Set("appServiceName", value); }
         }
 #nullable restore
 #else
-        public string AppServiceName {
+        public string AppServiceName
+        {
             get { return BackingStore?.Get<string>("appServiceName"); }
             set { BackingStore?.Set("appServiceName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error {
+        public string? Error
+        {
             get { return BackingStore?.Get<string?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public string Error {
+        public string Error
+        {
             get { return BackingStore?.Get<string>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The packageFamilyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageFamilyName {
+        public string? PackageFamilyName
+        {
             get { return BackingStore?.Get<string?>("packageFamilyName"); }
             set { BackingStore?.Set("packageFamilyName", value); }
         }
 #nullable restore
 #else
-        public string PackageFamilyName {
+        public string PackageFamilyName
+        {
             get { return BackingStore?.Get<string>("packageFamilyName"); }
             set { BackingStore?.Set("packageFamilyName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PayloadRequest? Payload {
+        public PayloadRequest? Payload
+        {
             get { return BackingStore?.Get<PayloadRequest?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #nullable restore
 #else
-        public PayloadRequest Payload {
+        public PayloadRequest Payload
+        {
             get { return BackingStore?.Get<PayloadRequest>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The permissionTicket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PermissionTicket {
+        public string? PermissionTicket
+        {
             get { return BackingStore?.Get<string?>("permissionTicket"); }
             set { BackingStore?.Set("permissionTicket", value); }
         }
 #nullable restore
 #else
-        public string PermissionTicket {
+        public string PermissionTicket
+        {
             get { return BackingStore?.Get<string>("permissionTicket"); }
             set { BackingStore?.Set("permissionTicket", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The postBackUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostBackUri {
+        public string? PostBackUri
+        {
             get { return BackingStore?.Get<string?>("postBackUri"); }
             set { BackingStore?.Set("postBackUri", value); }
         }
 #nullable restore
 #else
-        public string PostBackUri {
+        public string PostBackUri
+        {
             get { return BackingStore?.Get<string>("postBackUri"); }
             set { BackingStore?.Set("postBackUri", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The responsepayload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PayloadResponse? Responsepayload {
+        public PayloadResponse? Responsepayload
+        {
             get { return BackingStore?.Get<PayloadResponse?>("responsepayload"); }
             set { BackingStore?.Set("responsepayload", value); }
         }
 #nullable restore
 #else
-        public PayloadResponse Responsepayload {
+        public PayloadResponse Responsepayload
+        {
             get { return BackingStore?.Get<PayloadResponse>("responsepayload"); }
             set { BackingStore?.Set("responsepayload", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -153,15 +172,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appServiceName", n => { AppServiceName = n.GetStringValue(); } },
-                {"error", n => { Error = n.GetStringValue(); } },
-                {"packageFamilyName", n => { PackageFamilyName = n.GetStringValue(); } },
-                {"payload", n => { Payload = n.GetObjectValue<PayloadRequest>(PayloadRequest.CreateFromDiscriminatorValue); } },
-                {"permissionTicket", n => { PermissionTicket = n.GetStringValue(); } },
-                {"postBackUri", n => { PostBackUri = n.GetStringValue(); } },
-                {"responsepayload", n => { Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "appServiceName", n => { AppServiceName = n.GetStringValue(); } },
+                { "error", n => { Error = n.GetStringValue(); } },
+                { "packageFamilyName", n => { PackageFamilyName = n.GetStringValue(); } },
+                { "payload", n => { Payload = n.GetObjectValue<PayloadRequest>(PayloadRequest.CreateFromDiscriminatorValue); } },
+                { "permissionTicket", n => { PermissionTicket = n.GetStringValue(); } },
+                { "postBackUri", n => { PostBackUri = n.GetStringValue(); } },
+                { "responsepayload", n => { Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

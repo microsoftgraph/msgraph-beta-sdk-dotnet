@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TimeCard : ChangeTrackedEntity, IParsable 
+    public class TimeCard : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of breaks associated with the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeCardBreak>? Breaks {
+        public List<TimeCardBreak>? Breaks
+        {
             get { return BackingStore?.Get<List<TimeCardBreak>?>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
 #nullable restore
 #else
-        public List<TimeCardBreak> Breaks {
+        public List<TimeCardBreak> Breaks
+        {
             get { return BackingStore?.Get<List<TimeCardBreak>>("breaks"); }
             set { BackingStore?.Set("breaks", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The clock-in event of the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? ClockInEvent {
+        public TimeCardEvent? ClockInEvent
+        {
             get { return BackingStore?.Get<TimeCardEvent?>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent ClockInEvent {
+        public TimeCardEvent ClockInEvent
+        {
             get { return BackingStore?.Get<TimeCardEvent>("clockInEvent"); }
             set { BackingStore?.Set("clockInEvent", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The clock-out event of the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? ClockOutEvent {
+        public TimeCardEvent? ClockOutEvent
+        {
             get { return BackingStore?.Get<TimeCardEvent?>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent ClockOutEvent {
+        public TimeCardEvent ClockOutEvent
+        {
             get { return BackingStore?.Get<TimeCardEvent>("clockOutEvent"); }
             set { BackingStore?.Set("clockOutEvent", value); }
         }
 #endif
         /// <summary>Indicates whether this timeCard entry is confirmed. Possible values are none, user, manager, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.ConfirmedBy? ConfirmedBy {
+        public Microsoft.Graph.Beta.Models.ConfirmedBy? ConfirmedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfirmedBy?>("confirmedBy"); }
             set { BackingStore?.Set("confirmedBy", value); }
         }
         /// <summary>Notes about the timeCard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Notes {
+        public ItemBody? Notes
+        {
             get { return BackingStore?.Get<ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public ItemBody Notes {
+        public ItemBody Notes
+        {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The original timeCardEntry of the timeCard, before user edits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEntry? OriginalEntry {
+        public TimeCardEntry? OriginalEntry
+        {
             get { return BackingStore?.Get<TimeCardEntry?>("originalEntry"); }
             set { BackingStore?.Set("originalEntry", value); }
         }
 #nullable restore
 #else
-        public TimeCardEntry OriginalEntry {
+        public TimeCardEntry OriginalEntry
+        {
             get { return BackingStore?.Get<TimeCardEntry>("originalEntry"); }
             set { BackingStore?.Set("originalEntry", value); }
         }
 #endif
         /// <summary>The current state of the timeCard during its life cycle.Possible values are: clockedIn, onBreak, clockedOut, unknownFutureValue.</summary>
-        public TimeCardState? State {
+        public TimeCardState? State
+        {
             get { return BackingStore?.Get<TimeCardState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User ID to which  the timeCard belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"breaks", n => { Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>(TimeCardBreak.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"clockInEvent", n => { ClockInEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
-                {"clockOutEvent", n => { ClockOutEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
-                {"confirmedBy", n => { ConfirmedBy = n.GetEnumValue<ConfirmedBy>(); } },
-                {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"originalEntry", n => { OriginalEntry = n.GetObjectValue<TimeCardEntry>(TimeCardEntry.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<TimeCardState>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "breaks", n => { Breaks = n.GetCollectionOfObjectValues<TimeCardBreak>(TimeCardBreak.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clockInEvent", n => { ClockInEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "clockOutEvent", n => { ClockOutEvent = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "confirmedBy", n => { ConfirmedBy = n.GetEnumValue<ConfirmedBy>(); } },
+                { "notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "originalEntry", n => { OriginalEntry = n.GetObjectValue<TimeCardEntry>(TimeCardEntry.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<TimeCardState>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

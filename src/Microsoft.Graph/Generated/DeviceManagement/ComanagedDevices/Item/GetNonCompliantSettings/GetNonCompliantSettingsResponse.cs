@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonCompliantSettings {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonCompliantSettings
+{
     [Obsolete("This class is obsolete. Use GetNonCompliantSettingsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetNonCompliantSettingsResponse : GetNonCompliantSettingsGetResponse, IParsable 
+    public class GetNonCompliantSettingsResponse : GetNonCompliantSettingsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

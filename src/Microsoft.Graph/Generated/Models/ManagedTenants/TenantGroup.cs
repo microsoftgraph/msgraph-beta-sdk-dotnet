@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class TenantGroup : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class TenantGroup : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.</summary>
-        public bool? AllTenantsIncluded {
+        public bool? AllTenantsIncluded
+        {
             get { return BackingStore?.Get<bool?>("allTenantsIncluded"); }
             set { BackingStore?.Set("allTenantsIncluded", value); }
         }
         /// <summary>The display name for the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of management action associated with the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementActionInfo>? ManagementActions {
+        public List<ManagementActionInfo>? ManagementActions
+        {
             get { return BackingStore?.Get<List<ManagementActionInfo>?>("managementActions"); }
             set { BackingStore?.Set("managementActions", value); }
         }
 #nullable restore
 #else
-        public List<ManagementActionInfo> ManagementActions {
+        public List<ManagementActionInfo> ManagementActions
+        {
             get { return BackingStore?.Get<List<ManagementActionInfo>>("managementActions"); }
             set { BackingStore?.Set("managementActions", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of management intents associated with the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementIntentInfo>? ManagementIntents {
+        public List<ManagementIntentInfo>? ManagementIntents
+        {
             get { return BackingStore?.Get<List<ManagementIntentInfo>?>("managementIntents"); }
             set { BackingStore?.Set("managementIntents", value); }
         }
 #nullable restore
 #else
-        public List<ManagementIntentInfo> ManagementIntents {
+        public List<ManagementIntentInfo> ManagementIntents
+        {
             get { return BackingStore?.Get<List<ManagementIntentInfo>>("managementIntents"); }
             set { BackingStore?.Set("managementIntents", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of managed tenant identifiers include in the tenant group. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TenantIds {
+        public List<string>? TenantIds
+        {
             get { return BackingStore?.Get<List<string>?>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
 #nullable restore
 #else
-        public List<string> TenantIds {
+        public List<string> TenantIds
+        {
             get { return BackingStore?.Get<List<string>>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allTenantsIncluded", n => { AllTenantsIncluded = n.GetBoolValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantIds", n => { TenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allTenantsIncluded", n => { AllTenantsIncluded = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantIds", n => { TenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

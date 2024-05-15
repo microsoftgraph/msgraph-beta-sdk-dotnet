@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class TenantAllowOrBlockListAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TenantAllowOrBlockListAction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the tenant allow-or-block list is an allow or block. The possible values are: allow, block, and unkownFutureValue.</summary>
-        public TenantAllowBlockListAction? Action {
+        public TenantAllowBlockListAction? Action
+        {
             get { return BackingStore?.Get<TenantAllowBlockListAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies when the tenant allow-block-list expires in date time.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Specifies the note added to the tenant allow-or-block list entry in the format of string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note {
+        public string? Note
+        {
             get { return BackingStore?.Get<string?>("note"); }
             set { BackingStore?.Set("note", value); }
         }
 #nullable restore
 #else
-        public string Note {
+        public string Note
+        {
             get { return BackingStore?.Get<string>("note"); }
             set { BackingStore?.Set("note", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Contains the result of the submission that lead to the tenant allow-block-list entry creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantAllowBlockListEntryResult>? Results {
+        public List<TenantAllowBlockListEntryResult>? Results
+        {
             get { return BackingStore?.Get<List<TenantAllowBlockListEntryResult>?>("results"); }
             set { BackingStore?.Set("results", value); }
         }
 #nullable restore
 #else
-        public List<TenantAllowBlockListEntryResult> Results {
+        public List<TenantAllowBlockListEntryResult> Results
+        {
             get { return BackingStore?.Get<List<TenantAllowBlockListEntryResult>>("results"); }
             set { BackingStore?.Set("results", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<TenantAllowBlockListAction>(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"note", n => { Note = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"results", n => { Results = n.GetCollectionOfObjectValues<TenantAllowBlockListEntryResult>(TenantAllowBlockListEntryResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "action", n => { Action = n.GetEnumValue<TenantAllowBlockListAction>(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<TenantAllowBlockListEntryResult>(TenantAllowBlockListEntryResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,61 +4,71 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Android Device Owner SCEP certificate profile
     /// </summary>
-    public class AndroidDeviceOwnerScepCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable 
+    public class AndroidDeviceOwnerScepCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable
     {
         /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
-        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
             set { BackingStore?.Set("certificateAccessType", value); }
         }
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
-        public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
+        public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
             set { BackingStore?.Set("certificateStore", value); }
         }
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
+        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
+        {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #nullable restore
 #else
-        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
+        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames
+        {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #endif
         /// <summary>Hash Algorithm Options.</summary>
-        public HashAlgorithms? HashAlgorithm {
+        public HashAlgorithms? HashAlgorithm
+        {
             get { return BackingStore?.Get<HashAlgorithms?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
         /// <summary>Key Size Options.</summary>
-        public Microsoft.Graph.Beta.Models.KeySize? KeySize {
+        public Microsoft.Graph.Beta.Models.KeySize? KeySize
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage {
+        public KeyUsages? KeyUsage
+        {
             get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
@@ -66,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>SCEP Server Url(s)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScepServerUrls {
+        public List<string>? ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>?>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> ScepServerUrls {
+        public List<string> ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
@@ -80,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails {
+        public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>?>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
+        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
@@ -94,13 +108,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom String that defines the AAD Attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectAlternativeNameFormatString {
+        public string? SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectAlternativeNameFormatString {
+        public string SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
@@ -108,13 +124,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectNameFormatString {
+        public string? SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectNameFormatString {
+        public string SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
@@ -144,17 +162,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
-                {"certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
-                {"customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
-                {"keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
-                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
-                {"subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
+                { "certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
+                { "certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
+                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
+                { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
         }
         /// <summary>

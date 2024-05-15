@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class SubmissionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SubmissionResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.</summary>
-        public SubmissionResultCategory? Category {
+        public SubmissionResultCategory? Category
+        {
             get { return BackingStore?.Get<SubmissionResultCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>Specifies the extra details provided by Microsoft to substantiate their analysis result.</summary>
-        public SubmissionResultDetail? Detail {
+        public SubmissionResultDetail? Detail
+        {
             get { return BackingStore?.Get<SubmissionResultDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Specifies the files detected by Microsoft in the submitted emails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubmissionDetectedFile>? DetectedFiles {
+        public List<SubmissionDetectedFile>? DetectedFiles
+        {
             get { return BackingStore?.Get<List<SubmissionDetectedFile>?>("detectedFiles"); }
             set { BackingStore?.Set("detectedFiles", value); }
         }
 #nullable restore
 #else
-        public List<SubmissionDetectedFile> DetectedFiles {
+        public List<SubmissionDetectedFile> DetectedFiles
+        {
             get { return BackingStore?.Get<List<SubmissionDetectedFile>>("detectedFiles"); }
             set { BackingStore?.Set("detectedFiles", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies the URLs detected by Microsoft in the submitted email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DetectedUrls {
+        public List<string>? DetectedUrls
+        {
             get { return BackingStore?.Get<List<string>?>("detectedUrls"); }
             set { BackingStore?.Set("detectedUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> DetectedUrls {
+        public List<string> DetectedUrls
+        {
             get { return BackingStore?.Get<List<string>>("detectedUrls"); }
             set { BackingStore?.Set("detectedUrls", value); }
         }
@@ -58,19 +66,22 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Specifies the setting for user mailbox denoted by a comma-separated string.</summary>
-        public Microsoft.Graph.Beta.Models.Security.UserMailboxSetting? UserMailboxSetting {
+        public Microsoft.Graph.Beta.Models.Security.UserMailboxSetting? UserMailboxSetting
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserMailboxSetting?>("userMailboxSetting"); }
             set { BackingStore?.Set("userMailboxSetting", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"category", n => { Category = n.GetEnumValue<SubmissionResultCategory>(); } },
-                {"detail", n => { Detail = n.GetEnumValue<SubmissionResultDetail>(); } },
-                {"detectedFiles", n => { DetectedFiles = n.GetCollectionOfObjectValues<SubmissionDetectedFile>(SubmissionDetectedFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"detectedUrls", n => { DetectedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"userMailboxSetting", n => { UserMailboxSetting = n.GetEnumValue<UserMailboxSetting>(); } },
+                { "category", n => { Category = n.GetEnumValue<SubmissionResultCategory>(); } },
+                { "detail", n => { Detail = n.GetEnumValue<SubmissionResultDetail>(); } },
+                { "detectedFiles", n => { DetectedFiles = n.GetCollectionOfObjectValues<SubmissionDetectedFile>(SubmissionDetectedFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detectedUrls", n => { DetectedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "userMailboxSetting", n => { UserMailboxSetting = n.GetEnumValue<UserMailboxSetting>(); } },
             };
         }
         /// <summary>

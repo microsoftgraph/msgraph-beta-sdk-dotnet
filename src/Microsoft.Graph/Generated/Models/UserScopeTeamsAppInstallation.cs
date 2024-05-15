@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable 
+    public class UserScopeTeamsAppInstallation : TeamsAppInstallation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The chat between the user and Teams app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Chat? Chat {
+        public Microsoft.Graph.Beta.Models.Chat? Chat
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Chat?>("chat"); }
             set { BackingStore?.Set("chat", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Chat Chat {
+        public Microsoft.Graph.Beta.Models.Chat Chat
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Chat>("chat"); }
             set { BackingStore?.Set("chat", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"chat", n => { Chat = n.GetObjectValue<Microsoft.Graph.Beta.Models.Chat>(Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue); } },
+                { "chat", n => { Chat = n.GetObjectValue<Microsoft.Graph.Beta.Models.Chat>(Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This entity represents a single payload with requested assignment filter Id
     /// </summary>
-    public class PayloadByFilter : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PayloadByFilter : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents type of the assignment filter.</summary>
-        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType {
+        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
             set { BackingStore?.Set("assignmentFilterType", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Azure AD security group ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -54,19 +61,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policy identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadId {
+        public string? PayloadId
+        {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #nullable restore
 #else
-        public string PayloadId {
+        public string PayloadId
+        {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #endif
         /// <summary>This enum represents associated assignment payload type</summary>
-        public AssociatedAssignmentPayloadType? PayloadType {
+        public AssociatedAssignmentPayloadType? PayloadType
+        {
             get { return BackingStore?.Get<AssociatedAssignmentPayloadType?>("payloadType"); }
             set { BackingStore?.Set("payloadType", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
-                {"payloadType", n => { PayloadType = n.GetEnumValue<AssociatedAssignmentPayloadType>(); } },
+                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "payloadId", n => { PayloadId = n.GetStringValue(); } },
+                { "payloadType", n => { PayloadType = n.GetEnumValue<AssociatedAssignmentPayloadType>(); } },
             };
         }
         /// <summary>

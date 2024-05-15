@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AzureAssociatedIdentities : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AzureAssociatedIdentities : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureIdentity>? All {
+        public List<AzureIdentity>? All
+        {
             get { return BackingStore?.Get<List<AzureIdentity>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<AzureIdentity> All {
+        public List<AzureIdentity> All
+        {
             get { return BackingStore?.Get<List<AzureIdentity>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The managedIdentities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureManagedIdentity>? ManagedIdentities {
+        public List<AzureManagedIdentity>? ManagedIdentities
+        {
             get { return BackingStore?.Get<List<AzureManagedIdentity>?>("managedIdentities"); }
             set { BackingStore?.Set("managedIdentities", value); }
         }
 #nullable restore
 #else
-        public List<AzureManagedIdentity> ManagedIdentities {
+        public List<AzureManagedIdentity> ManagedIdentities
+        {
             get { return BackingStore?.Get<List<AzureManagedIdentity>>("managedIdentities"); }
             set { BackingStore?.Set("managedIdentities", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The servicePrincipals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureServicePrincipal>? ServicePrincipals {
+        public List<AzureServicePrincipal>? ServicePrincipals
+        {
             get { return BackingStore?.Get<List<AzureServicePrincipal>?>("servicePrincipals"); }
             set { BackingStore?.Set("servicePrincipals", value); }
         }
 #nullable restore
 #else
-        public List<AzureServicePrincipal> ServicePrincipals {
+        public List<AzureServicePrincipal> ServicePrincipals
+        {
             get { return BackingStore?.Get<List<AzureServicePrincipal>>("servicePrincipals"); }
             set { BackingStore?.Set("servicePrincipals", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureUser>? Users {
+        public List<AzureUser>? Users
+        {
             get { return BackingStore?.Get<List<AzureUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<AzureUser> Users {
+        public List<AzureUser> Users
+        {
             get { return BackingStore?.Get<List<AzureUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"all", n => { All = n.GetCollectionOfObjectValues<AzureIdentity>(AzureIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedIdentities", n => { ManagedIdentities = n.GetCollectionOfObjectValues<AzureManagedIdentity>(AzureManagedIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"servicePrincipals", n => { ServicePrincipals = n.GetCollectionOfObjectValues<AzureServicePrincipal>(AzureServicePrincipal.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<AzureUser>(AzureUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<AzureIdentity>(AzureIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedIdentities", n => { ManagedIdentities = n.GetCollectionOfObjectValues<AzureManagedIdentity>(AzureManagedIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "servicePrincipals", n => { ServicePrincipals = n.GetCollectionOfObjectValues<AzureServicePrincipal>(AzureServicePrincipal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<AzureUser>(AzureUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
     /// </summary>
-    public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable 
+    public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable
     {
         /// <summary>The contents of the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The default language of the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLanguageCode {
+        public string? DefaultLanguageCode
+        {
             get { return BackingStore?.Get<string?>("defaultLanguageCode"); }
             set { BackingStore?.Set("defaultLanguageCode", value); }
         }
 #nullable restore
 #else
-        public string DefaultLanguageCode {
+        public string DefaultLanguageCode
+        {
             get { return BackingStore?.Get<string>("defaultLanguageCode"); }
             set { BackingStore?.Set("defaultLanguageCode", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of operations on the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyOperation>? GroupPolicyOperations {
+        public List<GroupPolicyOperation>? GroupPolicyOperations
+        {
             get { return BackingStore?.Get<List<GroupPolicyOperation>?>("groupPolicyOperations"); }
             set { BackingStore?.Set("groupPolicyOperations", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyOperation> GroupPolicyOperations {
+        public List<GroupPolicyOperation> GroupPolicyOperations
+        {
             get { return BackingStore?.Get<List<GroupPolicyOperation>>("groupPolicyOperations"); }
             set { BackingStore?.Set("groupPolicyOperations", value); }
         }
@@ -55,24 +62,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of ADML files associated with the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles {
+        public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles
+        {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
+        public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles
+        {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
 #endif
         /// <summary>Type of Group Policy uploaded definition file status.</summary>
-        public GroupPolicyUploadedDefinitionFileStatus? Status {
+        public GroupPolicyUploadedDefinitionFileStatus? Status
+        {
             get { return BackingStore?.Get<GroupPolicyUploadedDefinitionFileStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The uploaded time of the uploaded ADMX file.</summary>
-        public DateTimeOffset? UploadDateTime {
+        public DateTimeOffset? UploadDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("uploadDateTime"); }
             set { BackingStore?.Set("uploadDateTime", value); }
         }
@@ -101,12 +112,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"defaultLanguageCode", n => { DefaultLanguageCode = n.GetStringValue(); } },
-                {"groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
-                {"uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "defaultLanguageCode", n => { DefaultLanguageCode = n.GetStringValue(); } },
+                { "groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
+                { "uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

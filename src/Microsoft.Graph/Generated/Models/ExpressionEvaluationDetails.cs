@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExpressionEvaluationDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExpressionEvaluationDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents expression which has been evaluated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Expression {
+        public string? Expression
+        {
             get { return BackingStore?.Get<string?>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
 #nullable restore
 #else
-        public string Expression {
+        public string Expression
+        {
             get { return BackingStore?.Get<string>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents the details of the evaluation of the expression.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExpressionEvaluationDetails>? ExpressionEvaluationDetailsProp {
+        public List<ExpressionEvaluationDetails>? ExpressionEvaluationDetailsProp
+        {
             get { return BackingStore?.Get<List<ExpressionEvaluationDetails>?>("expressionEvaluationDetails"); }
             set { BackingStore?.Set("expressionEvaluationDetails", value); }
         }
 #nullable restore
 #else
-        public List<ExpressionEvaluationDetails> ExpressionEvaluationDetailsProp {
+        public List<ExpressionEvaluationDetails> ExpressionEvaluationDetailsProp
+        {
             get { return BackingStore?.Get<List<ExpressionEvaluationDetails>>("expressionEvaluationDetails"); }
             set { BackingStore?.Set("expressionEvaluationDetails", value); }
         }
 #endif
         /// <summary>Represents the value of the result of the current expression.</summary>
-        public bool? ExpressionResult {
+        public bool? ExpressionResult
+        {
             get { return BackingStore?.Get<bool?>("expressionResult"); }
             set { BackingStore?.Set("expressionResult", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Defines the name of the property and the value of that property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PropertyToEvaluate? PropertyToEvaluate {
+        public Microsoft.Graph.Beta.Models.PropertyToEvaluate? PropertyToEvaluate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate?>("propertyToEvaluate"); }
             set { BackingStore?.Set("propertyToEvaluate", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PropertyToEvaluate PropertyToEvaluate {
+        public Microsoft.Graph.Beta.Models.PropertyToEvaluate PropertyToEvaluate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PropertyToEvaluate>("propertyToEvaluate"); }
             set { BackingStore?.Set("propertyToEvaluate", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expression", n => { Expression = n.GetStringValue(); } },
-                {"expressionEvaluationDetails", n => { ExpressionEvaluationDetailsProp = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"expressionResult", n => { ExpressionResult = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"propertyToEvaluate", n => { PropertyToEvaluate = n.GetObjectValue<Microsoft.Graph.Beta.Models.PropertyToEvaluate>(Microsoft.Graph.Beta.Models.PropertyToEvaluate.CreateFromDiscriminatorValue); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
+                { "expressionEvaluationDetails", n => { ExpressionEvaluationDetailsProp = n.GetCollectionOfObjectValues<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "expressionResult", n => { ExpressionResult = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "propertyToEvaluate", n => { PropertyToEvaluate = n.GetObjectValue<Microsoft.Graph.Beta.Models.PropertyToEvaluate>(Microsoft.Graph.Beta.Models.PropertyToEvaluate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

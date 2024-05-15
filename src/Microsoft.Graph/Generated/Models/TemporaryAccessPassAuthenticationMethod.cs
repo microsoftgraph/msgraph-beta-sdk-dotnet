@@ -4,41 +4,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable 
+    public class TemporaryAccessPassAuthenticationMethod : AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the Temporary Access Pass was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Determines whether the pass is limited to a one-time use. If true, the pass can be used once; if false, the pass can be used multiple times within the Temporary Access Pass lifetime.</summary>
-        public bool? IsUsableOnce {
+        public bool? IsUsableOnce
+        {
             get { return BackingStore?.Get<bool?>("isUsableOnce"); }
             set { BackingStore?.Set("isUsableOnce", value); }
         }
         /// <summary>The lifetime of the Temporary Access Pass in minutes starting at startDateTime. Must be between 10 and 43200 inclusive (equivalent to 30 days).</summary>
-        public int? LifetimeInMinutes {
+        public int? LifetimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("lifetimeInMinutes"); }
             set { BackingStore?.Set("lifetimeInMinutes", value); }
         }
         /// <summary>The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemporaryAccessPass {
+        public string? TemporaryAccessPass
+        {
             get { return BackingStore?.Get<string?>("temporaryAccessPass"); }
             set { BackingStore?.Set("temporaryAccessPass", value); }
         }
 #nullable restore
 #else
-        public string TemporaryAccessPass {
+        public string TemporaryAccessPass
+        {
             get { return BackingStore?.Get<string>("temporaryAccessPass"); }
             set { BackingStore?.Set("temporaryAccessPass", value); }
         }
@@ -68,11 +75,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isUsableOnce", n => { IsUsableOnce = n.GetBoolValue(); } },
-                {"lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"temporaryAccessPass", n => { TemporaryAccessPass = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isUsableOnce", n => { IsUsableOnce = n.GetBoolValue(); } },
+                { "lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "temporaryAccessPass", n => { TemporaryAccessPass = n.GetStringValue(); } },
             };
         }
         /// <summary>

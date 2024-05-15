@@ -5,54 +5,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDisplayScreenConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkDisplayScreenConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The brightness level on the device (0-100). Not applicable for Microsoft Teams Rooms devices.</summary>
-        public int? BacklightBrightness {
+        public int? BacklightBrightness
+        {
             get { return BackingStore?.Get<int?>("backlightBrightness"); }
             set { BackingStore?.Set("backlightBrightness", value); }
         }
         /// <summary>Timeout for backlight (30-3600 secs). Not applicable for Teams Rooms devices.</summary>
-        public TimeSpan? BacklightTimeout {
+        public TimeSpan? BacklightTimeout
+        {
             get { return BackingStore?.Get<TimeSpan?>("backlightTimeout"); }
             set { BackingStore?.Set("backlightTimeout", value); }
         }
         /// <summary>True if high contrast mode is enabled. Not applicable for Teams Rooms devices.</summary>
-        public bool? IsHighContrastEnabled {
+        public bool? IsHighContrastEnabled
+        {
             get { return BackingStore?.Get<bool?>("isHighContrastEnabled"); }
             set { BackingStore?.Set("isHighContrastEnabled", value); }
         }
         /// <summary>True if screensaver is enabled. Not applicable for Teams Rooms devices.</summary>
-        public bool? IsScreensaverEnabled {
+        public bool? IsScreensaverEnabled
+        {
             get { return BackingStore?.Get<bool?>("isScreensaverEnabled"); }
             set { BackingStore?.Set("isScreensaverEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Screensaver timeout from 30 to 3600 secs. Not applicable for Teams Rooms devices.</summary>
-        public TimeSpan? ScreensaverTimeout {
+        public TimeSpan? ScreensaverTimeout
+        {
             get { return BackingStore?.Get<TimeSpan?>("screensaverTimeout"); }
             set { BackingStore?.Set("screensaverTimeout", value); }
         }
@@ -82,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"backlightBrightness", n => { BacklightBrightness = n.GetIntValue(); } },
-                {"backlightTimeout", n => { BacklightTimeout = n.GetTimeSpanValue(); } },
-                {"isHighContrastEnabled", n => { IsHighContrastEnabled = n.GetBoolValue(); } },
-                {"isScreensaverEnabled", n => { IsScreensaverEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"screensaverTimeout", n => { ScreensaverTimeout = n.GetTimeSpanValue(); } },
+                { "backlightBrightness", n => { BacklightBrightness = n.GetIntValue(); } },
+                { "backlightTimeout", n => { BacklightTimeout = n.GetTimeSpanValue(); } },
+                { "isHighContrastEnabled", n => { IsHighContrastEnabled = n.GetBoolValue(); } },
+                { "isScreensaverEnabled", n => { IsScreensaverEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "screensaverTimeout", n => { ScreensaverTimeout = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole {
+namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole
+{
     #pragma warning disable CS1591
-    public class GetByUserIdAndRoleWithUserIdWithRoleGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetByUserIdAndRoleWithUserIdWithRoleGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventTownhall>? Value {
+        public List<VirtualEventTownhall>? Value
+        {
             get { return BackingStore?.Get<List<VirtualEventTownhall>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventTownhall> Value {
+        public List<VirtualEventTownhall> Value
+        {
             get { return BackingStore?.Get<List<VirtualEventTownhall>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<VirtualEventTownhall>(VirtualEventTownhall.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<VirtualEventTownhall>(VirtualEventTownhall.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

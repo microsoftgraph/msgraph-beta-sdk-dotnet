@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BookingPageSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BookingPageSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessControl property</summary>
-        public BookingPageAccessControl? AccessControl {
+        public BookingPageAccessControl? AccessControl
+        {
             get { return BackingStore?.Get<BookingPageAccessControl?>("accessControl"); }
             set { BackingStore?.Set("accessControl", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom color for the bookings page. The value should be in Hex format. Example: #123456.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BookingPageColorCode {
+        public string? BookingPageColorCode
+        {
             get { return BackingStore?.Get<string?>("bookingPageColorCode"); }
             set { BackingStore?.Set("bookingPageColorCode", value); }
         }
 #nullable restore
 #else
-        public string BookingPageColorCode {
+        public string BookingPageColorCode
+        {
             get { return BackingStore?.Get<string>("bookingPageColorCode"); }
             set { BackingStore?.Set("bookingPageColorCode", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessTimeZone {
+        public string? BusinessTimeZone
+        {
             get { return BackingStore?.Get<string?>("businessTimeZone"); }
             set { BackingStore?.Set("businessTimeZone", value); }
         }
 #nullable restore
 #else
-        public string BusinessTimeZone {
+        public string BusinessTimeZone
+        {
             get { return BackingStore?.Get<string>("businessTimeZone"); }
             set { BackingStore?.Set("businessTimeZone", value); }
         }
@@ -53,52 +60,61 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The personal data collection and usage consent message in the bookings page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerConsentMessage {
+        public string? CustomerConsentMessage
+        {
             get { return BackingStore?.Get<string?>("customerConsentMessage"); }
             set { BackingStore?.Set("customerConsentMessage", value); }
         }
 #nullable restore
 #else
-        public string CustomerConsentMessage {
+        public string CustomerConsentMessage
+        {
             get { return BackingStore?.Get<string>("customerConsentMessage"); }
             set { BackingStore?.Set("customerConsentMessage", value); }
         }
 #endif
         /// <summary>Determines if the one-time password is required to create an appointment. The default value is false.</summary>
-        public bool? EnforceOneTimePassword {
+        public bool? EnforceOneTimePassword
+        {
             get { return BackingStore?.Get<bool?>("enforceOneTimePassword"); }
             set { BackingStore?.Set("enforceOneTimePassword", value); }
         }
         /// <summary>Indicates if the business logo is displayed on the bookings page. The default value is false.</summary>
-        public bool? IsBusinessLogoDisplayEnabled {
+        public bool? IsBusinessLogoDisplayEnabled
+        {
             get { return BackingStore?.Get<bool?>("isBusinessLogoDisplayEnabled"); }
             set { BackingStore?.Set("isBusinessLogoDisplayEnabled", value); }
         }
         /// <summary>Enables personal data collection and the usage consent toggle on the bookings page. The default value is false.</summary>
-        public bool? IsCustomerConsentEnabled {
+        public bool? IsCustomerConsentEnabled
+        {
             get { return BackingStore?.Get<bool?>("isCustomerConsentEnabled"); }
             set { BackingStore?.Set("isCustomerConsentEnabled", value); }
         }
         /// <summary>Ensures that the web crawlers don&apos;t index this page. The defaults value is false.</summary>
-        public bool? IsSearchEngineIndexabilityDisabled {
+        public bool? IsSearchEngineIndexabilityDisabled
+        {
             get { return BackingStore?.Get<bool?>("isSearchEngineIndexabilityDisabled"); }
             set { BackingStore?.Set("isSearchEngineIndexabilityDisabled", value); }
         }
         /// <summary>Displays the booking time slots in the business time zone. The default value is false.</summary>
-        public bool? IsTimeSlotTimeZoneSetToBusinessTimeZone {
+        public bool? IsTimeSlotTimeZoneSetToBusinessTimeZone
+        {
             get { return BackingStore?.Get<bool?>("isTimeSlotTimeZoneSetToBusinessTimeZone"); }
             set { BackingStore?.Set("isTimeSlotTimeZoneSetToBusinessTimeZone", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -106,13 +122,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>RL of a webpage that provides the terms and conditions of the business. If a privacy policy isn&apos;t included, the following text appears on the bookings page as default: &apos;The policies and practices of &lt;booking business&apos;s name&gt; apply to the use of your data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrivacyPolicyWebUrl {
+        public string? PrivacyPolicyWebUrl
+        {
             get { return BackingStore?.Get<string?>("privacyPolicyWebUrl"); }
             set { BackingStore?.Set("privacyPolicyWebUrl", value); }
         }
 #nullable restore
 #else
-        public string PrivacyPolicyWebUrl {
+        public string PrivacyPolicyWebUrl
+        {
             get { return BackingStore?.Get<string>("privacyPolicyWebUrl"); }
             set { BackingStore?.Set("privacyPolicyWebUrl", value); }
         }
@@ -120,13 +138,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>URL of a webpage that provides the terms and conditions of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsAndConditionsWebUrl {
+        public string? TermsAndConditionsWebUrl
+        {
             get { return BackingStore?.Get<string?>("termsAndConditionsWebUrl"); }
             set { BackingStore?.Set("termsAndConditionsWebUrl", value); }
         }
 #nullable restore
 #else
-        public string TermsAndConditionsWebUrl {
+        public string TermsAndConditionsWebUrl
+        {
             get { return BackingStore?.Get<string>("termsAndConditionsWebUrl"); }
             set { BackingStore?.Set("termsAndConditionsWebUrl", value); }
         }
@@ -157,18 +177,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessControl", n => { AccessControl = n.GetEnumValue<BookingPageAccessControl>(); } },
-                {"bookingPageColorCode", n => { BookingPageColorCode = n.GetStringValue(); } },
-                {"businessTimeZone", n => { BusinessTimeZone = n.GetStringValue(); } },
-                {"customerConsentMessage", n => { CustomerConsentMessage = n.GetStringValue(); } },
-                {"enforceOneTimePassword", n => { EnforceOneTimePassword = n.GetBoolValue(); } },
-                {"isBusinessLogoDisplayEnabled", n => { IsBusinessLogoDisplayEnabled = n.GetBoolValue(); } },
-                {"isCustomerConsentEnabled", n => { IsCustomerConsentEnabled = n.GetBoolValue(); } },
-                {"isSearchEngineIndexabilityDisabled", n => { IsSearchEngineIndexabilityDisabled = n.GetBoolValue(); } },
-                {"isTimeSlotTimeZoneSetToBusinessTimeZone", n => { IsTimeSlotTimeZoneSetToBusinessTimeZone = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"privacyPolicyWebUrl", n => { PrivacyPolicyWebUrl = n.GetStringValue(); } },
-                {"termsAndConditionsWebUrl", n => { TermsAndConditionsWebUrl = n.GetStringValue(); } },
+                { "accessControl", n => { AccessControl = n.GetEnumValue<BookingPageAccessControl>(); } },
+                { "bookingPageColorCode", n => { BookingPageColorCode = n.GetStringValue(); } },
+                { "businessTimeZone", n => { BusinessTimeZone = n.GetStringValue(); } },
+                { "customerConsentMessage", n => { CustomerConsentMessage = n.GetStringValue(); } },
+                { "enforceOneTimePassword", n => { EnforceOneTimePassword = n.GetBoolValue(); } },
+                { "isBusinessLogoDisplayEnabled", n => { IsBusinessLogoDisplayEnabled = n.GetBoolValue(); } },
+                { "isCustomerConsentEnabled", n => { IsCustomerConsentEnabled = n.GetBoolValue(); } },
+                { "isSearchEngineIndexabilityDisabled", n => { IsSearchEngineIndexabilityDisabled = n.GetBoolValue(); } },
+                { "isTimeSlotTimeZoneSetToBusinessTimeZone", n => { IsTimeSlotTimeZoneSetToBusinessTimeZone = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "privacyPolicyWebUrl", n => { PrivacyPolicyWebUrl = n.GetStringValue(); } },
+                { "termsAndConditionsWebUrl", n => { TermsAndConditionsWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

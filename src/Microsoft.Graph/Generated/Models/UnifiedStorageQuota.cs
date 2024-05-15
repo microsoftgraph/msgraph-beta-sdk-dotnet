@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedStorageQuota : Entity, IParsable 
+    public class UnifiedStorageQuota : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The deleted property</summary>
-        public long? Deleted {
+        public long? Deleted
+        {
             get { return BackingStore?.Get<long?>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
         }
         /// <summary>A URL that can be used in a browser to manage the breakdown. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManageWebUrl {
+        public string? ManageWebUrl
+        {
             get { return BackingStore?.Get<string?>("manageWebUrl"); }
             set { BackingStore?.Set("manageWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ManageWebUrl {
+        public string ManageWebUrl
+        {
             get { return BackingStore?.Get<string>("manageWebUrl"); }
             set { BackingStore?.Set("manageWebUrl", value); }
         }
 #endif
         /// <summary>Total space remaining before reaching the quota limit in bytes.</summary>
-        public long? Remaining {
+        public long? Remaining
+        {
             get { return BackingStore?.Get<long?>("remaining"); }
             set { BackingStore?.Set("remaining", value); }
         }
         /// <summary>The breakdown of services contributing to the user&apos;s quota usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceStorageQuotaBreakdown>? Services {
+        public List<ServiceStorageQuotaBreakdown>? Services
+        {
             get { return BackingStore?.Get<List<ServiceStorageQuotaBreakdown>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<ServiceStorageQuotaBreakdown> Services {
+        public List<ServiceStorageQuotaBreakdown> Services
+        {
             get { return BackingStore?.Get<List<ServiceStorageQuotaBreakdown>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
@@ -50,24 +57,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the state of the storage space. The possible values are: normal, nearing, critical, full, and overLimit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #endif
         /// <summary>Total allowed storage space in bytes.</summary>
-        public long? Total {
+        public long? Total
+        {
             get { return BackingStore?.Get<long?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
         /// <summary>Total space used in bytes.</summary>
-        public long? Used {
+        public long? Used
+        {
             get { return BackingStore?.Get<long?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
@@ -89,13 +100,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deleted", n => { Deleted = n.GetLongValue(); } },
-                {"manageWebUrl", n => { ManageWebUrl = n.GetStringValue(); } },
-                {"remaining", n => { Remaining = n.GetLongValue(); } },
-                {"services", n => { Services = n.GetCollectionOfObjectValues<ServiceStorageQuotaBreakdown>(ServiceStorageQuotaBreakdown.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"total", n => { Total = n.GetLongValue(); } },
-                {"used", n => { Used = n.GetLongValue(); } },
+                { "deleted", n => { Deleted = n.GetLongValue(); } },
+                { "manageWebUrl", n => { ManageWebUrl = n.GetStringValue(); } },
+                { "remaining", n => { Remaining = n.GetLongValue(); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<ServiceStorageQuotaBreakdown>(ServiceStorageQuotaBreakdown.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "total", n => { Total = n.GetLongValue(); } },
+                { "used", n => { Used = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DlpWindowsDevicesNotification : DlpNotification, IParsable 
+    public class DlpWindowsDevicesNotification : DlpNotification, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The contentName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentName {
+        public string? ContentName
+        {
             get { return BackingStore?.Get<string?>("contentName"); }
             set { BackingStore?.Set("contentName", value); }
         }
 #nullable restore
 #else
-        public string ContentName {
+        public string ContentName
+        {
             get { return BackingStore?.Get<string>("contentName"); }
             set { BackingStore?.Set("contentName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The lastModfiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastModfiedBy {
+        public string? LastModfiedBy
+        {
             get { return BackingStore?.Get<string?>("lastModfiedBy"); }
             set { BackingStore?.Set("lastModfiedBy", value); }
         }
 #nullable restore
 #else
-        public string LastModfiedBy {
+        public string LastModfiedBy
+        {
             get { return BackingStore?.Get<string>("lastModfiedBy"); }
             set { BackingStore?.Set("lastModfiedBy", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contentName", n => { ContentName = n.GetStringValue(); } },
-                {"lastModfiedBy", n => { LastModfiedBy = n.GetStringValue(); } },
+                { "contentName", n => { ContentName = n.GetStringValue(); } },
+                { "lastModfiedBy", n => { LastModfiedBy = n.GetStringValue(); } },
             };
         }
         /// <summary>

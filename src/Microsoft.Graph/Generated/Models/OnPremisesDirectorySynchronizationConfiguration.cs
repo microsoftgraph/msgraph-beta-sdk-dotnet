@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesDirectorySynchronizationConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnPremisesDirectorySynchronizationConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the accidental deletion prevention configuration for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesAccidentalDeletionPrevention? AccidentalDeletionPrevention {
+        public OnPremisesAccidentalDeletionPrevention? AccidentalDeletionPrevention
+        {
             get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention?>("accidentalDeletionPrevention"); }
             set { BackingStore?.Set("accidentalDeletionPrevention", value); }
         }
 #nullable restore
 #else
-        public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention {
+        public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention
+        {
             get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention"); }
             set { BackingStore?.Set("accidentalDeletionPrevention", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The anchor attribute allows customers to customize the property used to create source anchors for synchronization enabled objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnchorAttribute {
+        public string? AnchorAttribute
+        {
             get { return BackingStore?.Get<string?>("anchorAttribute"); }
             set { BackingStore?.Set("anchorAttribute", value); }
         }
 #nullable restore
 #else
-        public string AnchorAttribute {
+        public string AnchorAttribute
+        {
             get { return BackingStore?.Get<string>("anchorAttribute"); }
             set { BackingStore?.Set("anchorAttribute", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the on-premises directory synchronization client application that is configured for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId {
+        public string? ApplicationId
+        {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
 #nullable restore
 #else
-        public string ApplicationId {
+        public string ApplicationId
+        {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
@@ -62,32 +70,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Data for the current export run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesCurrentExportData? CurrentExportData {
+        public OnPremisesCurrentExportData? CurrentExportData
+        {
             get { return BackingStore?.Get<OnPremisesCurrentExportData?>("currentExportData"); }
             set { BackingStore?.Set("currentExportData", value); }
         }
 #nullable restore
 #else
-        public OnPremisesCurrentExportData CurrentExportData {
+        public OnPremisesCurrentExportData CurrentExportData
+        {
             get { return BackingStore?.Get<OnPremisesCurrentExportData>("currentExportData"); }
             set { BackingStore?.Set("currentExportData", value); }
         }
 #endif
         /// <summary>Interval of time that the customer requested the sync client waits between sync cycles.</summary>
-        public TimeSpan? CustomerRequestedSynchronizationInterval {
+        public TimeSpan? CustomerRequestedSynchronizationInterval
+        {
             get { return BackingStore?.Get<TimeSpan?>("customerRequestedSynchronizationInterval"); }
             set { BackingStore?.Set("customerRequestedSynchronizationInterval", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,32 +108,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the version of the on-premises directory synchronization application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SynchronizationClientVersion {
+        public string? SynchronizationClientVersion
+        {
             get { return BackingStore?.Get<string?>("synchronizationClientVersion"); }
             set { BackingStore?.Set("synchronizationClientVersion", value); }
         }
 #nullable restore
 #else
-        public string SynchronizationClientVersion {
+        public string SynchronizationClientVersion
+        {
             get { return BackingStore?.Get<string>("synchronizationClientVersion"); }
             set { BackingStore?.Set("synchronizationClientVersion", value); }
         }
 #endif
         /// <summary>Interval of time the sync client should honor between sync cycles</summary>
-        public TimeSpan? SynchronizationInterval {
+        public TimeSpan? SynchronizationInterval
+        {
             get { return BackingStore?.Get<TimeSpan?>("synchronizationInterval"); }
             set { BackingStore?.Set("synchronizationInterval", value); }
         }
         /// <summary>Configuration to control how cloud created or owned objects are synchronized back to the on-premises directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesWritebackConfiguration? WritebackConfiguration {
+        public OnPremisesWritebackConfiguration? WritebackConfiguration
+        {
             get { return BackingStore?.Get<OnPremisesWritebackConfiguration?>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
 #nullable restore
 #else
-        public OnPremisesWritebackConfiguration WritebackConfiguration {
+        public OnPremisesWritebackConfiguration WritebackConfiguration
+        {
             get { return BackingStore?.Get<OnPremisesWritebackConfiguration>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
@@ -151,15 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accidentalDeletionPrevention", n => { AccidentalDeletionPrevention = n.GetObjectValue<OnPremisesAccidentalDeletionPrevention>(OnPremisesAccidentalDeletionPrevention.CreateFromDiscriminatorValue); } },
-                {"anchorAttribute", n => { AnchorAttribute = n.GetStringValue(); } },
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
-                {"currentExportData", n => { CurrentExportData = n.GetObjectValue<OnPremisesCurrentExportData>(OnPremisesCurrentExportData.CreateFromDiscriminatorValue); } },
-                {"customerRequestedSynchronizationInterval", n => { CustomerRequestedSynchronizationInterval = n.GetTimeSpanValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"synchronizationClientVersion", n => { SynchronizationClientVersion = n.GetStringValue(); } },
-                {"synchronizationInterval", n => { SynchronizationInterval = n.GetTimeSpanValue(); } },
-                {"writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<OnPremisesWritebackConfiguration>(OnPremisesWritebackConfiguration.CreateFromDiscriminatorValue); } },
+                { "accidentalDeletionPrevention", n => { AccidentalDeletionPrevention = n.GetObjectValue<OnPremisesAccidentalDeletionPrevention>(OnPremisesAccidentalDeletionPrevention.CreateFromDiscriminatorValue); } },
+                { "anchorAttribute", n => { AnchorAttribute = n.GetStringValue(); } },
+                { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                { "currentExportData", n => { CurrentExportData = n.GetObjectValue<OnPremisesCurrentExportData>(OnPremisesCurrentExportData.CreateFromDiscriminatorValue); } },
+                { "customerRequestedSynchronizationInterval", n => { CustomerRequestedSynchronizationInterval = n.GetTimeSpanValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "synchronizationClientVersion", n => { SynchronizationClientVersion = n.GetStringValue(); } },
+                { "synchronizationInterval", n => { SynchronizationInterval = n.GetTimeSpanValue(); } },
+                { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<OnPremisesWritebackConfiguration>(OnPremisesWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

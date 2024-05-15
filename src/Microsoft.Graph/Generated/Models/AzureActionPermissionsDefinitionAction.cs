@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AzureActionPermissionsDefinitionAction : AzurePermissionsDefinitionAction, IParsable 
+    public class AzureActionPermissionsDefinitionAction : AzurePermissionsDefinitionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions relating to the Azure permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions {
+        public List<string>? Actions
+        {
             get { return BackingStore?.Get<List<string>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<string> Actions {
+        public List<string> Actions
+        {
             get { return BackingStore?.Get<List<string>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

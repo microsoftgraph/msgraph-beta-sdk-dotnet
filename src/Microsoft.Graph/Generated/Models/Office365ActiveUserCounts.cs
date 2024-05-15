@@ -5,67 +5,79 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Office365ActiveUserCounts : Entity, IParsable 
+    public class Office365ActiveUserCounts : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of active users in Exchange. Any user who can read and send email is considered an active user.</summary>
-        public long? Exchange {
+        public long? Exchange
+        {
             get { return BackingStore?.Get<long?>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
         /// <summary>The number of active users in Microsoft 365. This number includes all the active users in Exchange, OneDrive, SharePoint, Skype For Business, Yammer, and Microsoft Teams. You can find the definition of active user for each product in the respective property description.</summary>
-        public long? Office365 {
+        public long? Office365
+        {
             get { return BackingStore?.Get<long?>("office365"); }
             set { BackingStore?.Set("office365", value); }
         }
         /// <summary>The number of active users in OneDrive. Any user who viewed or edited files, shared files internally or externally, or synced files is considered an active user.</summary>
-        public long? OneDrive {
+        public long? OneDrive
+        {
             get { return BackingStore?.Get<long?>("oneDrive"); }
             set { BackingStore?.Set("oneDrive", value); }
         }
         /// <summary>The date on which a number of users were active.</summary>
-        public Date? ReportDate {
+        public Date? ReportDate
+        {
             get { return BackingStore?.Get<Date?>("reportDate"); }
             set { BackingStore?.Set("reportDate", value); }
         }
         /// <summary>The number of days the report covers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportPeriod {
+        public string? ReportPeriod
+        {
             get { return BackingStore?.Get<string?>("reportPeriod"); }
             set { BackingStore?.Set("reportPeriod", value); }
         }
 #nullable restore
 #else
-        public string ReportPeriod {
+        public string ReportPeriod
+        {
             get { return BackingStore?.Get<string>("reportPeriod"); }
             set { BackingStore?.Set("reportPeriod", value); }
         }
 #endif
         /// <summary>The latest date of the content.</summary>
-        public Date? ReportRefreshDate {
+        public Date? ReportRefreshDate
+        {
             get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
             set { BackingStore?.Set("reportRefreshDate", value); }
         }
         /// <summary>The number of active users in SharePoint. Any user who viewed or edited files, shared files internally or externally, synced files, or viewed SharePoint pages is considered an active user.</summary>
-        public long? SharePoint {
+        public long? SharePoint
+        {
             get { return BackingStore?.Get<long?>("sharePoint"); }
             set { BackingStore?.Set("sharePoint", value); }
         }
         /// <summary>The number of active users in Skype For Business. Any user who organized or participated in conferences, or joined peer-to-peer sessions is considered an active user.</summary>
-        public long? SkypeForBusiness {
+        public long? SkypeForBusiness
+        {
             get { return BackingStore?.Get<long?>("skypeForBusiness"); }
             set { BackingStore?.Set("skypeForBusiness", value); }
         }
         /// <summary>The number of active users in Microsoft Teams. Any user who posted messages in team channels, sent messages in private chat sessions, or participated in meetings or calls is considered an active user.</summary>
-        public long? Teams {
+        public long? Teams
+        {
             get { return BackingStore?.Get<long?>("teams"); }
             set { BackingStore?.Set("teams", value); }
         }
         /// <summary>The number of active users in Yammer. Any user who can post, read, or like messages is considered an active user.</summary>
-        public long? Yammer {
+        public long? Yammer
+        {
             get { return BackingStore?.Get<long?>("yammer"); }
             set { BackingStore?.Set("yammer", value); }
         }
@@ -87,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"exchange", n => { Exchange = n.GetLongValue(); } },
-                {"office365", n => { Office365 = n.GetLongValue(); } },
-                {"oneDrive", n => { OneDrive = n.GetLongValue(); } },
-                {"reportDate", n => { ReportDate = n.GetDateValue(); } },
-                {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
-                {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
-                {"sharePoint", n => { SharePoint = n.GetLongValue(); } },
-                {"skypeForBusiness", n => { SkypeForBusiness = n.GetLongValue(); } },
-                {"teams", n => { Teams = n.GetLongValue(); } },
-                {"yammer", n => { Yammer = n.GetLongValue(); } },
+                { "exchange", n => { Exchange = n.GetLongValue(); } },
+                { "office365", n => { Office365 = n.GetLongValue(); } },
+                { "oneDrive", n => { OneDrive = n.GetLongValue(); } },
+                { "reportDate", n => { ReportDate = n.GetDateValue(); } },
+                { "reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
+                { "reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                { "sharePoint", n => { SharePoint = n.GetLongValue(); } },
+                { "skypeForBusiness", n => { SkypeForBusiness = n.GetLongValue(); } },
+                { "teams", n => { Teams = n.GetLongValue(); } },
+                { "yammer", n => { Yammer = n.GetLongValue(); } },
             };
         }
         /// <summary>

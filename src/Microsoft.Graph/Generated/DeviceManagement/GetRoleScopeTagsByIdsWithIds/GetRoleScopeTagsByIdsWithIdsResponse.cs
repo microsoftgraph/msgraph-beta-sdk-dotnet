@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds {
+namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds
+{
     [Obsolete("This class is obsolete. Use GetRoleScopeTagsByIdsWithIdsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetRoleScopeTagsByIdsWithIdsResponse : GetRoleScopeTagsByIdsWithIdsGetResponse, IParsable 
+    public class GetRoleScopeTagsByIdsWithIdsResponse : GetRoleScopeTagsByIdsWithIdsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

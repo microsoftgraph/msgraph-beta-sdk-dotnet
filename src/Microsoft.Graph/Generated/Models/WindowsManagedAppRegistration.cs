@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents the synchronization details of a Windows app, with management capabilities, for a specific user.
     /// </summary>
-    public class WindowsManagedAppRegistration : ManagedAppRegistration, IParsable 
+    public class WindowsManagedAppRegistration : ManagedAppRegistration, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="WindowsManagedAppRegistration"/> and sets the default values.

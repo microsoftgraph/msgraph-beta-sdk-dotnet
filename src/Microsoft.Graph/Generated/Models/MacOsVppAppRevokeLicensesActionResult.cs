@@ -5,63 +5,73 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Defines results for actions on MacOS Vpp Apps, contains inherited properties for ActionResult.
     /// </summary>
-    public class MacOsVppAppRevokeLicensesActionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOsVppAppRevokeLicensesActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
-        public VppTokenActionFailureReason? ActionFailureReason {
+        public VppTokenActionFailureReason? ActionFailureReason
+        {
             get { return BackingStore?.Get<VppTokenActionFailureReason?>("actionFailureReason"); }
             set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>Action name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionName {
+        public string? ActionName
+        {
             get { return BackingStore?.Get<string?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
 #nullable restore
 #else
-        public string ActionName {
+        public string ActionName
+        {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
 #endif
         /// <summary>The actionState property</summary>
-        public Microsoft.Graph.Beta.Models.ActionState? ActionState {
+        public Microsoft.Graph.Beta.Models.ActionState? ActionState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
             set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A count of the number of licenses for which revoke failed.</summary>
-        public int? FailedLicensesCount {
+        public int? FailedLicensesCount
+        {
             get { return BackingStore?.Get<int?>("failedLicensesCount"); }
             set { BackingStore?.Set("failedLicensesCount", value); }
         }
         /// <summary>Time the action state was last updated</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>DeviceId associated with the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -69,37 +79,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Time the action was initiated</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>A count of the number of licenses for which revoke was attempted.</summary>
-        public int? TotalLicensesCount {
+        public int? TotalLicensesCount
+        {
             get { return BackingStore?.Get<int?>("totalLicensesCount"); }
             set { BackingStore?.Set("totalLicensesCount", value); }
         }
         /// <summary>UserId associated with the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -130,16 +146,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<VppTokenActionFailureReason>(); } },
-                {"actionName", n => { ActionName = n.GetStringValue(); } },
-                {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
-                {"failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<VppTokenActionFailureReason>(); } },
+                { "actionName", n => { ActionName = n.GetStringValue(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

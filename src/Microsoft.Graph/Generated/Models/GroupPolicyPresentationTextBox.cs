@@ -4,33 +4,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an ADMX textBox element and an ADMX text element.
     /// </summary>
-    public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable 
+    public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>Localized default string displayed in the text box. The default value is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValue {
+        public string? DefaultValue
+        {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public string DefaultValue {
+        public string DefaultValue
+        {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #endif
         /// <summary>An unsigned integer that specifies the maximum number of text characters. Default value is 1023.</summary>
-        public long? MaxLength {
+        public long? MaxLength
+        {
             get { return BackingStore?.Get<long?>("maxLength"); }
             set { BackingStore?.Set("maxLength", value); }
         }
         /// <summary>Requirement to enter a value in the text box. Default value is false.</summary>
-        public bool? Required {
+        public bool? Required
+        {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
-                {"maxLength", n => { MaxLength = n.GetLongValue(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
+                { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                { "maxLength", n => { MaxLength = n.GetLongValue(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
             };
         }
         /// <summary>

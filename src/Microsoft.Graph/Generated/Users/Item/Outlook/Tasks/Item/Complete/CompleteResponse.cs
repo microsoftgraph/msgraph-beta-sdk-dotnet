@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete {
+namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.Item.Complete
+{
     [Obsolete("This class is obsolete. Use CompletePostResponse instead.")]
     #pragma warning disable CS1591
-    public class CompleteResponse : CompletePostResponse, IParsable 
+    public class CompleteResponse : CompletePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

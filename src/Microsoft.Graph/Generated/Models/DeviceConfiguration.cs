@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class DeviceConfiguration : Entity, IParsable 
+    public class DeviceConfiguration : Entity, IParsable
     {
         /// <summary>The list of assignments for the device configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationAssignment>? Assignments {
+        public List<DeviceConfigurationAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationAssignment> Assignments {
+        public List<DeviceConfigurationAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The device mode applicability rule for this Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode? DeviceManagementApplicabilityRuleDeviceMode {
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode? DeviceManagementApplicabilityRuleDeviceMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode?>("deviceManagementApplicabilityRuleDeviceMode"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleDeviceMode", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode {
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode DeviceManagementApplicabilityRuleDeviceMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode>("deviceManagementApplicabilityRuleDeviceMode"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleDeviceMode", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OS edition applicability for this Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition? DeviceManagementApplicabilityRuleOsEdition {
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition? DeviceManagementApplicabilityRuleOsEdition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition?>("deviceManagementApplicabilityRuleOsEdition"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleOsEdition", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition {
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition DeviceManagementApplicabilityRuleOsEdition
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition>("deviceManagementApplicabilityRuleOsEdition"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleOsEdition", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OS version applicability rule for this Policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion? DeviceManagementApplicabilityRuleOsVersion {
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion? DeviceManagementApplicabilityRuleOsVersion
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion?>("deviceManagementApplicabilityRuleOsVersion"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleOsVersion", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion {
+        public Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion DeviceManagementApplicabilityRuleOsVersion
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion>("deviceManagementApplicabilityRuleOsVersion"); }
             set { BackingStore?.Set("deviceManagementApplicabilityRuleOsVersion", value); }
         }
@@ -88,13 +100,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device Configuration Setting State Device Summary</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingStateDeviceSummary>? DeviceSettingStateSummaries {
+        public List<SettingStateDeviceSummary>? DeviceSettingStateSummaries
+        {
             get { return BackingStore?.Get<List<SettingStateDeviceSummary>?>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<SettingStateDeviceSummary> DeviceSettingStateSummaries {
+        public List<SettingStateDeviceSummary> DeviceSettingStateSummaries
+        {
             get { return BackingStore?.Get<List<SettingStateDeviceSummary>>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
@@ -102,13 +116,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device configuration installation status by device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationDeviceStatus>? DeviceStatuses {
+        public List<DeviceConfigurationDeviceStatus>? DeviceStatuses
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationDeviceStatus> DeviceStatuses {
+        public List<DeviceConfigurationDeviceStatus> DeviceStatuses
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
@@ -116,13 +132,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device Configuration devices status overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceConfigurationDeviceOverview? DeviceStatusOverview {
+        public DeviceConfigurationDeviceOverview? DeviceStatusOverview
+        {
             get { return BackingStore?.Get<DeviceConfigurationDeviceOverview?>("deviceStatusOverview"); }
             set { BackingStore?.Set("deviceStatusOverview", value); }
         }
 #nullable restore
 #else
-        public DeviceConfigurationDeviceOverview DeviceStatusOverview {
+        public DeviceConfigurationDeviceOverview DeviceStatusOverview
+        {
             get { return BackingStore?.Get<DeviceConfigurationDeviceOverview>("deviceStatusOverview"); }
             set { BackingStore?.Set("deviceStatusOverview", value); }
         }
@@ -130,13 +148,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Admin provided name of the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -144,51 +164,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of group assignments for the device configuration profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationGroupAssignment>? GroupAssignments {
+        public List<DeviceConfigurationGroupAssignment>? GroupAssignments
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationGroupAssignment> GroupAssignments {
+        public List<DeviceConfigurationGroupAssignment> GroupAssignments
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationGroupAssignment>>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #endif
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
         /// <summary>Indicates whether or not the underlying Device Configuration supports the assignment of scope tags. Assigning to the ScopeTags property is not allowed when this value is false and entities will not be visible to scoped users. This occurs for Legacy policies created in Silverlight and can be resolved by deleting and recreating the policy in the Azure Portal. This property is read-only.</summary>
-        public bool? SupportsScopeTags {
+        public bool? SupportsScopeTags
+        {
             get { return BackingStore?.Get<bool?>("supportsScopeTags"); }
             set { BackingStore?.Set("supportsScopeTags", value); }
         }
         /// <summary>Device configuration installation status by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationUserStatus>? UserStatuses {
+        public List<DeviceConfigurationUserStatus>? UserStatuses
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationUserStatus> UserStatuses {
+        public List<DeviceConfigurationUserStatus> UserStatuses
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
@@ -196,19 +224,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device Configuration users status overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceConfigurationUserOverview? UserStatusOverview {
+        public DeviceConfigurationUserOverview? UserStatusOverview
+        {
             get { return BackingStore?.Get<DeviceConfigurationUserOverview?>("userStatusOverview"); }
             set { BackingStore?.Set("userStatusOverview", value); }
         }
 #nullable restore
 #else
-        public DeviceConfigurationUserOverview UserStatusOverview {
+        public DeviceConfigurationUserOverview UserStatusOverview
+        {
             get { return BackingStore?.Get<DeviceConfigurationUserOverview>("userStatusOverview"); }
             set { BackingStore?.Set("userStatusOverview", value); }
         }
 #endif
         /// <summary>Version of the device configuration.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -371,23 +402,23 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceConfigurationAssignment>(DeviceConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceManagementApplicabilityRuleDeviceMode", n => { DeviceManagementApplicabilityRuleDeviceMode = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode>(Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode.CreateFromDiscriminatorValue); } },
-                {"deviceManagementApplicabilityRuleOsEdition", n => { DeviceManagementApplicabilityRuleOsEdition = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition>(Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition.CreateFromDiscriminatorValue); } },
-                {"deviceManagementApplicabilityRuleOsVersion", n => { DeviceManagementApplicabilityRuleOsVersion = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion>(Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion.CreateFromDiscriminatorValue); } },
-                {"deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<SettingStateDeviceSummary>(SettingStateDeviceSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceStatusOverview", n => { DeviceStatusOverview = n.GetObjectValue<DeviceConfigurationDeviceOverview>(DeviceConfigurationDeviceOverview.CreateFromDiscriminatorValue); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<DeviceConfigurationDeviceStatus>(DeviceConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<DeviceConfigurationGroupAssignment>(DeviceConfigurationGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"supportsScopeTags", n => { SupportsScopeTags = n.GetBoolValue(); } },
-                {"userStatusOverview", n => { UserStatusOverview = n.GetObjectValue<DeviceConfigurationUserOverview>(DeviceConfigurationUserOverview.CreateFromDiscriminatorValue); } },
-                {"userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<DeviceConfigurationUserStatus>(DeviceConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceConfigurationAssignment>(DeviceConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceManagementApplicabilityRuleDeviceMode", n => { DeviceManagementApplicabilityRuleDeviceMode = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode>(Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleDeviceMode.CreateFromDiscriminatorValue); } },
+                { "deviceManagementApplicabilityRuleOsEdition", n => { DeviceManagementApplicabilityRuleOsEdition = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition>(Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsEdition.CreateFromDiscriminatorValue); } },
+                { "deviceManagementApplicabilityRuleOsVersion", n => { DeviceManagementApplicabilityRuleOsVersion = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion>(Microsoft.Graph.Beta.Models.DeviceManagementApplicabilityRuleOsVersion.CreateFromDiscriminatorValue); } },
+                { "deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<SettingStateDeviceSummary>(SettingStateDeviceSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStatusOverview", n => { DeviceStatusOverview = n.GetObjectValue<DeviceConfigurationDeviceOverview>(DeviceConfigurationDeviceOverview.CreateFromDiscriminatorValue); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<DeviceConfigurationDeviceStatus>(DeviceConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<DeviceConfigurationGroupAssignment>(DeviceConfigurationGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "supportsScopeTags", n => { SupportsScopeTags = n.GetBoolValue(); } },
+                { "userStatusOverview", n => { UserStatusOverview = n.GetObjectValue<DeviceConfigurationUserOverview>(DeviceConfigurationUserOverview.CreateFromDiscriminatorValue); } },
+                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<DeviceConfigurationUserStatus>(DeviceConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

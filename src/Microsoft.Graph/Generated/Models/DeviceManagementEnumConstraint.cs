@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint that enforces the setting value is from a permitted set of strings
     /// </summary>
-    public class DeviceManagementEnumConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementEnumConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>List of valid values for this string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementEnumValue>? Values {
+        public List<DeviceManagementEnumValue>? Values
+        {
             get { return BackingStore?.Get<List<DeviceManagementEnumValue>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementEnumValue> Values {
+        public List<DeviceManagementEnumValue> Values
+        {
             get { return BackingStore?.Get<List<DeviceManagementEnumValue>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"values", n => { Values = n.GetCollectionOfObjectValues<DeviceManagementEnumValue>(DeviceManagementEnumValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<DeviceManagementEnumValue>(DeviceManagementEnumValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

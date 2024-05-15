@@ -4,87 +4,102 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics battery health model performance entity contains battery related information for all unique device models in their organization.
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsBatteryHealthModelPerformance : Entity, IParsable
     {
         /// <summary>Number of active devices for that model. Valid values 0 to 2147483647</summary>
-        public int? ActiveDevices {
+        public int? ActiveDevices
+        {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
         }
         /// <summary>The mean of the battery age for all devices of a given model in a tenant. Unit in days. Valid values 0 to 2147483647</summary>
-        public int? AverageBatteryAgeInDays {
+        public int? AverageBatteryAgeInDays
+        {
             get { return BackingStore?.Get<int?>("averageBatteryAgeInDays"); }
             set { BackingStore?.Set("averageBatteryAgeInDays", value); }
         }
         /// <summary>The mean of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647</summary>
-        public int? AverageEstimatedRuntimeInMinutes {
+        public int? AverageEstimatedRuntimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("averageEstimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("averageEstimatedRuntimeInMinutes", value); }
         }
         /// <summary>The mean of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</summary>
-        public int? AverageMaxCapacityPercentage {
+        public int? AverageMaxCapacityPercentage
+        {
             get { return BackingStore?.Get<int?>("averageMaxCapacityPercentage"); }
             set { BackingStore?.Set("averageMaxCapacityPercentage", value); }
         }
         /// <summary>Name of the device manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
         /// <summary>The mean of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647</summary>
-        public int? MeanFullBatteryDrainCount {
+        public int? MeanFullBatteryDrainCount
+        {
             get { return BackingStore?.Get<int?>("meanFullBatteryDrainCount"); }
             set { BackingStore?.Set("meanFullBatteryDrainCount", value); }
         }
         /// <summary>The median of the estimated runtimes on full charge for all devices of a given model. Unit in minutes. Valid values 0 to 2147483647</summary>
-        public int? MedianEstimatedRuntimeInMinutes {
+        public int? MedianEstimatedRuntimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("medianEstimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("medianEstimatedRuntimeInMinutes", value); }
         }
         /// <summary>The median of number of times the battery has been discharged an amount that equals 100% of its capacity for all devices of a given model in a tenant. Valid values 0 to 2147483647</summary>
-        public int? MedianFullBatteryDrainCount {
+        public int? MedianFullBatteryDrainCount
+        {
             get { return BackingStore?.Get<int?>("medianFullBatteryDrainCount"); }
             set { BackingStore?.Set("medianFullBatteryDrainCount", value); }
         }
         /// <summary>The median of the maximum capacity for all devices of a given model. Maximum capacity measures the full charge vs. design capacity for a device’s batteries.. Valid values 0 to 2147483647</summary>
-        public int? MedianMaxCapacityPercentage {
+        public int? MedianMaxCapacityPercentage
+        {
             get { return BackingStore?.Get<int?>("medianMaxCapacityPercentage"); }
             set { BackingStore?.Set("medianMaxCapacityPercentage", value); }
         }
         /// <summary>The model name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #endif
         /// <summary>A weighted average of a model’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647</summary>
-        public int? ModelBatteryHealthScore {
+        public int? ModelBatteryHealthScore
+        {
             get { return BackingStore?.Get<int?>("modelBatteryHealthScore"); }
             set { BackingStore?.Set("modelBatteryHealthScore", value); }
         }
         /// <summary>The modelHealthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? ModelHealthStatus {
+        public UserExperienceAnalyticsHealthState? ModelHealthStatus
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("modelHealthStatus"); }
             set { BackingStore?.Set("modelHealthStatus", value); }
         }
@@ -106,18 +121,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
-                {"averageBatteryAgeInDays", n => { AverageBatteryAgeInDays = n.GetIntValue(); } },
-                {"averageEstimatedRuntimeInMinutes", n => { AverageEstimatedRuntimeInMinutes = n.GetIntValue(); } },
-                {"averageMaxCapacityPercentage", n => { AverageMaxCapacityPercentage = n.GetIntValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"meanFullBatteryDrainCount", n => { MeanFullBatteryDrainCount = n.GetIntValue(); } },
-                {"medianEstimatedRuntimeInMinutes", n => { MedianEstimatedRuntimeInMinutes = n.GetIntValue(); } },
-                {"medianFullBatteryDrainCount", n => { MedianFullBatteryDrainCount = n.GetIntValue(); } },
-                {"medianMaxCapacityPercentage", n => { MedianMaxCapacityPercentage = n.GetIntValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"modelBatteryHealthScore", n => { ModelBatteryHealthScore = n.GetIntValue(); } },
-                {"modelHealthStatus", n => { ModelHealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
+                { "averageBatteryAgeInDays", n => { AverageBatteryAgeInDays = n.GetIntValue(); } },
+                { "averageEstimatedRuntimeInMinutes", n => { AverageEstimatedRuntimeInMinutes = n.GetIntValue(); } },
+                { "averageMaxCapacityPercentage", n => { AverageMaxCapacityPercentage = n.GetIntValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "meanFullBatteryDrainCount", n => { MeanFullBatteryDrainCount = n.GetIntValue(); } },
+                { "medianEstimatedRuntimeInMinutes", n => { MedianEstimatedRuntimeInMinutes = n.GetIntValue(); } },
+                { "medianFullBatteryDrainCount", n => { MedianFullBatteryDrainCount = n.GetIntValue(); } },
+                { "medianMaxCapacityPercentage", n => { MedianMaxCapacityPercentage = n.GetIntValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "modelBatteryHealthScore", n => { ModelBatteryHealthScore = n.GetIntValue(); } },
+                { "modelHealthStatus", n => { ModelHealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that encapsulates all information required for a user&apos;s PFX certificates.
     /// </summary>
-    public class UserPFXCertificate : Entity, IParsable 
+    public class UserPFXCertificate : Entity, IParsable
     {
         /// <summary>Date/time when this PFX certificate was imported.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Encrypted PFX blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? EncryptedPfxBlob {
+        public byte[]? EncryptedPfxBlob
+        {
             get { return BackingStore?.Get<byte[]?>("encryptedPfxBlob"); }
             set { BackingStore?.Set("encryptedPfxBlob", value); }
         }
 #nullable restore
 #else
-        public byte[] EncryptedPfxBlob {
+        public byte[] EncryptedPfxBlob
+        {
             get { return BackingStore?.Get<byte[]>("encryptedPfxBlob"); }
             set { BackingStore?.Set("encryptedPfxBlob", value); }
         }
@@ -32,80 +36,93 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Encrypted PFX password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncryptedPfxPassword {
+        public string? EncryptedPfxPassword
+        {
             get { return BackingStore?.Get<string?>("encryptedPfxPassword"); }
             set { BackingStore?.Set("encryptedPfxPassword", value); }
         }
 #nullable restore
 #else
-        public string EncryptedPfxPassword {
+        public string EncryptedPfxPassword
+        {
             get { return BackingStore?.Get<string>("encryptedPfxPassword"); }
             set { BackingStore?.Set("encryptedPfxPassword", value); }
         }
 #endif
         /// <summary>Certificate&apos;s validity expiration date/time.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Supported values for the intended purpose of a user PFX certificate.</summary>
-        public UserPfxIntendedPurpose? IntendedPurpose {
+        public UserPfxIntendedPurpose? IntendedPurpose
+        {
             get { return BackingStore?.Get<UserPfxIntendedPurpose?>("intendedPurpose"); }
             set { BackingStore?.Set("intendedPurpose", value); }
         }
         /// <summary>Name of the key (within the provider) used to encrypt the blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyName {
+        public string? KeyName
+        {
             get { return BackingStore?.Get<string?>("keyName"); }
             set { BackingStore?.Set("keyName", value); }
         }
 #nullable restore
 #else
-        public string KeyName {
+        public string KeyName
+        {
             get { return BackingStore?.Get<string>("keyName"); }
             set { BackingStore?.Set("keyName", value); }
         }
 #endif
         /// <summary>Date/time when this PFX certificate was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Supported values for the padding scheme used by encryption provider.</summary>
-        public UserPfxPaddingScheme? PaddingScheme {
+        public UserPfxPaddingScheme? PaddingScheme
+        {
             get { return BackingStore?.Get<UserPfxPaddingScheme?>("paddingScheme"); }
             set { BackingStore?.Set("paddingScheme", value); }
         }
         /// <summary>Crypto provider used to encrypt this blob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderName {
+        public string? ProviderName
+        {
             get { return BackingStore?.Get<string?>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
 #nullable restore
 #else
-        public string ProviderName {
+        public string ProviderName
+        {
             get { return BackingStore?.Get<string>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
 #endif
         /// <summary>Certificate&apos;s validity start date/time.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>SHA-1 thumbprint of the PFX certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Thumbprint {
+        public string? Thumbprint
+        {
             get { return BackingStore?.Get<string?>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
 #nullable restore
 #else
-        public string Thumbprint {
+        public string Thumbprint
+        {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
@@ -113,13 +130,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Principal Name of the PFX certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -142,18 +161,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"encryptedPfxBlob", n => { EncryptedPfxBlob = n.GetByteArrayValue(); } },
-                {"encryptedPfxPassword", n => { EncryptedPfxPassword = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"intendedPurpose", n => { IntendedPurpose = n.GetEnumValue<UserPfxIntendedPurpose>(); } },
-                {"keyName", n => { KeyName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"paddingScheme", n => { PaddingScheme = n.GetEnumValue<UserPfxPaddingScheme>(); } },
-                {"providerName", n => { ProviderName = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "encryptedPfxBlob", n => { EncryptedPfxBlob = n.GetByteArrayValue(); } },
+                { "encryptedPfxPassword", n => { EncryptedPfxPassword = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "intendedPurpose", n => { IntendedPurpose = n.GetEnumValue<UserPfxIntendedPurpose>(); } },
+                { "keyName", n => { KeyName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "paddingScheme", n => { PaddingScheme = n.GetEnumValue<UserPfxPaddingScheme>(); } },
+                { "providerName", n => { ProviderName = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "thumbprint", n => { Thumbprint = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

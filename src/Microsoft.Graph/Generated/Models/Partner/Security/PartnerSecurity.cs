@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Partner.Security {
+namespace Microsoft.Graph.Beta.Models.Partner.Security
+{
     #pragma warning disable CS1591
-    public class PartnerSecurity : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class PartnerSecurity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The securityAlerts property</summary>
+        /// <summary>The security alerts or a vulnerability of a CSP partner&apos;s customer that the partner must be made aware of for further action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PartnerSecurityAlert>? SecurityAlerts {
+        public List<PartnerSecurityAlert>? SecurityAlerts
+        {
             get { return BackingStore?.Get<List<PartnerSecurityAlert>?>("securityAlerts"); }
             set { BackingStore?.Set("securityAlerts", value); }
         }
 #nullable restore
 #else
-        public List<PartnerSecurityAlert> SecurityAlerts {
+        public List<PartnerSecurityAlert> SecurityAlerts
+        {
             get { return BackingStore?.Get<List<PartnerSecurityAlert>>("securityAlerts"); }
             set { BackingStore?.Set("securityAlerts", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"securityAlerts", n => { SecurityAlerts = n.GetCollectionOfObjectValues<PartnerSecurityAlert>(PartnerSecurityAlert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "securityAlerts", n => { SecurityAlerts = n.GetCollectionOfObjectValues<PartnerSecurityAlert>(PartnerSecurityAlert.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

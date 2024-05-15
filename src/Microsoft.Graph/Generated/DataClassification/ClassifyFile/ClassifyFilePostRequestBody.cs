@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
+namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile
+{
     #pragma warning disable CS1591
-    public class ClassifyFilePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClassifyFilePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// <summary>The file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? File {
+        public byte[]? File
+        {
             get { return BackingStore?.Get<byte[]?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public byte[] File {
+        public byte[] File
+        {
             get { return BackingStore?.Get<byte[]>("file"); }
             set { BackingStore?.Set("file", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// <summary>The sensitiveTypeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SensitiveTypeIds {
+        public List<string>? SensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SensitiveTypeIds {
+        public List<string> SensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"file", n => { File = n.GetByteArrayValue(); } },
-                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "file", n => { File = n.GetByteArrayValue(); } },
+                { "sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

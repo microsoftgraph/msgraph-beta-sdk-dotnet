@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InformationalUrls : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InformationalUrls : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appSignUpUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppSignUpUrl {
+        public string? AppSignUpUrl
+        {
             get { return BackingStore?.Get<string?>("appSignUpUrl"); }
             set { BackingStore?.Set("appSignUpUrl", value); }
         }
 #nullable restore
 #else
-        public string AppSignUpUrl {
+        public string AppSignUpUrl
+        {
             get { return BackingStore?.Get<string>("appSignUpUrl"); }
             set { BackingStore?.Set("appSignUpUrl", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The singleSignOnDocumentationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SingleSignOnDocumentationUrl {
+        public string? SingleSignOnDocumentationUrl
+        {
             get { return BackingStore?.Get<string?>("singleSignOnDocumentationUrl"); }
             set { BackingStore?.Set("singleSignOnDocumentationUrl", value); }
         }
 #nullable restore
 #else
-        public string SingleSignOnDocumentationUrl {
+        public string SingleSignOnDocumentationUrl
+        {
             get { return BackingStore?.Get<string>("singleSignOnDocumentationUrl"); }
             set { BackingStore?.Set("singleSignOnDocumentationUrl", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appSignUpUrl", n => { AppSignUpUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"singleSignOnDocumentationUrl", n => { SingleSignOnDocumentationUrl = n.GetStringValue(); } },
+                { "appSignUpUrl", n => { AppSignUpUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "singleSignOnDocumentationUrl", n => { SingleSignOnDocumentationUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

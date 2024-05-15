@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Group id options type
     /// </summary>
-    public class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource, IParsable 
+    public class DeliveryOptimizationGroupIdSourceOptions : DeliveryOptimizationGroupIdSource, IParsable
     {
         /// <summary>Possible values for the DeliveryOptimizationGroupIdOptionsType setting.</summary>
-        public DeliveryOptimizationGroupIdOptionsType? GroupIdSourceOption {
+        public DeliveryOptimizationGroupIdOptionsType? GroupIdSourceOption
+        {
             get { return BackingStore?.Get<DeliveryOptimizationGroupIdOptionsType?>("groupIdSourceOption"); }
             set { BackingStore?.Set("groupIdSourceOption", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupIdSourceOption", n => { GroupIdSourceOption = n.GetEnumValue<DeliveryOptimizationGroupIdOptionsType>(); } },
+                { "groupIdSourceOption", n => { GroupIdSourceOption = n.GetEnumValue<DeliveryOptimizationGroupIdOptionsType>(); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Choice Setting Collection Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingCollectionInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable
     {
         /// <summary>Linked policy may append values which are not present in the template.</summary>
-        public bool? AllowUnmanagedValues {
+        public bool? AllowUnmanagedValues
+        {
             get { return BackingStore?.Get<bool?>("allowUnmanagedValues"); }
             set { BackingStore?.Set("allowUnmanagedValues", value); }
         }
         /// <summary>Choice Setting Collection Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationChoiceSettingValueTemplate>? ChoiceSettingCollectionValueTemplate {
+        public List<DeviceManagementConfigurationChoiceSettingValueTemplate>? ChoiceSettingCollectionValueTemplate
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>?>("choiceSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate {
+        public List<DeviceManagementConfigurationChoiceSettingValueTemplate> ChoiceSettingCollectionValueTemplate
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValueTemplate>>("choiceSettingCollectionValueTemplate"); }
             set { BackingStore?.Set("choiceSettingCollectionValueTemplate", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowUnmanagedValues", n => { AllowUnmanagedValues = n.GetBoolValue(); } },
-                {"choiceSettingCollectionValueTemplate", n => { ChoiceSettingCollectionValueTemplate = n.GetCollectionOfObjectValues<DeviceManagementConfigurationChoiceSettingValueTemplate>(DeviceManagementConfigurationChoiceSettingValueTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowUnmanagedValues", n => { AllowUnmanagedValues = n.GetBoolValue(); } },
+                { "choiceSettingCollectionValueTemplate", n => { ChoiceSettingCollectionValueTemplate = n.GetCollectionOfObjectValues<DeviceManagementConfigurationChoiceSettingValueTemplate>(DeviceManagementConfigurationChoiceSettingValueTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

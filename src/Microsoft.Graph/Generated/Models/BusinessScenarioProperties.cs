@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessScenarioProperties : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BusinessScenarioProperties : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier for the bucketDefinition configured in the plannerPlanConfiguration for the scenario. The task will be placed in the corresponding plannerBucket in the target plan. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalBucketId {
+        public string? ExternalBucketId
+        {
             get { return BackingStore?.Get<string?>("externalBucketId"); }
             set { BackingStore?.Set("externalBucketId", value); }
         }
 #nullable restore
 #else
-        public string ExternalBucketId {
+        public string ExternalBucketId
+        {
             get { return BackingStore?.Get<string>("externalBucketId"); }
             set { BackingStore?.Set("externalBucketId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier for the context of the task. Context is an application controlled value, and tasks can be queried by their externalContextId. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalContextId {
+        public string? ExternalContextId
+        {
             get { return BackingStore?.Get<string?>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
 #nullable restore
 #else
-        public string ExternalContextId {
+        public string ExternalContextId
+        {
             get { return BackingStore?.Get<string>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Application-specific identifier for the task. Every task for the same scenario must have a unique identifier specified for this property. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalObjectId {
+        public string? ExternalObjectId
+        {
             get { return BackingStore?.Get<string?>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }
         }
 #nullable restore
 #else
-        public string ExternalObjectId {
+        public string ExternalObjectId
+        {
             get { return BackingStore?.Get<string>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Application-specific version of the task. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalObjectVersion {
+        public string? ExternalObjectVersion
+        {
             get { return BackingStore?.Get<string?>("externalObjectVersion"); }
             set { BackingStore?.Set("externalObjectVersion", value); }
         }
 #nullable restore
 #else
-        public string ExternalObjectVersion {
+        public string ExternalObjectVersion
+        {
             get { return BackingStore?.Get<string>("externalObjectVersion"); }
             set { BackingStore?.Set("externalObjectVersion", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL to the application-specific experience for this task. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"externalBucketId", n => { ExternalBucketId = n.GetStringValue(); } },
-                {"externalContextId", n => { ExternalContextId = n.GetStringValue(); } },
-                {"externalObjectId", n => { ExternalObjectId = n.GetStringValue(); } },
-                {"externalObjectVersion", n => { ExternalObjectVersion = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "externalBucketId", n => { ExternalBucketId = n.GetStringValue(); } },
+                { "externalContextId", n => { ExternalContextId = n.GetStringValue(); } },
+                { "externalObjectId", n => { ExternalObjectId = n.GetStringValue(); } },
+                { "externalObjectVersion", n => { ExternalObjectVersion = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

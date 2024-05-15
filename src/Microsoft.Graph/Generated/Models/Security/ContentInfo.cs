@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class ContentInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ContentInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The format of the content to be labeled. Possible values are: file, email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentFormat {
+        public string? ContentFormat
+        {
             get { return BackingStore?.Get<string?>("contentFormat"); }
             set { BackingStore?.Set("contentFormat", value); }
         }
 #nullable restore
 #else
-        public string ContentFormat {
+        public string ContentFormat
+        {
             get { return BackingStore?.Get<string>("contentFormat"); }
             set { BackingStore?.Set("contentFormat", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Identifier used for Azure Information Protection Analytics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier {
+        public string? Identifier
+        {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #nullable restore
 #else
-        public string Identifier {
+        public string Identifier
+        {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIPLabelGUID_PropName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Metadata {
+        public List<KeyValuePair>? Metadata
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Metadata {
+        public List<KeyValuePair> Metadata
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
@@ -62,19 +70,22 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ContentState? State {
+        public ContentState? State
+        {
             get { return BackingStore?.Get<ContentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentFormat", n => { ContentFormat = n.GetStringValue(); } },
-                {"identifier", n => { Identifier = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<ContentState>(); } },
+                { "contentFormat", n => { ContentFormat = n.GetStringValue(); } },
+                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<ContentState>(); } },
             };
         }
         /// <summary>

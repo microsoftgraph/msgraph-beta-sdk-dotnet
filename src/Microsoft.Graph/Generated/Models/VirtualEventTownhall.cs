@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventTownhall : VirtualEvent, IParsable 
+    public class VirtualEventTownhall : VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The audience to whom the town hall is visible. Possible values are: everyone, organization, unknownFutureValue.</summary>
-        public MeetingAudience? Audience {
+        public MeetingAudience? Audience
+        {
             get { return BackingStore?.Get<MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CommunicationsUserIdentity>? CoOrganizers {
+        public List<CommunicationsUserIdentity>? CoOrganizers
+        {
             get { return BackingStore?.Get<List<CommunicationsUserIdentity>?>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #nullable restore
 #else
-        public List<CommunicationsUserIdentity> CoOrganizers {
+        public List<CommunicationsUserIdentity> CoOrganizers
+        {
             get { return BackingStore?.Get<List<CommunicationsUserIdentity>>("coOrganizers"); }
             set { BackingStore?.Set("coOrganizers", value); }
         }
@@ -31,19 +35,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The attendees invited to the town hall. The supported identites are: communicationsUserIdentity and communicationsGuestIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Identity>? InvitedAttendees {
+        public List<Identity>? InvitedAttendees
+        {
             get { return BackingStore?.Get<List<Identity>?>("invitedAttendees"); }
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #nullable restore
 #else
-        public List<Identity> InvitedAttendees {
+        public List<Identity> InvitedAttendees
+        {
             get { return BackingStore?.Get<List<Identity>>("invitedAttendees"); }
             set { BackingStore?.Set("invitedAttendees", value); }
         }
 #endif
         /// <summary>Indicates whether the town hall is only open to invited people and groups within your organization. The isInviteOnly property can only be true if the value of the audience property is set to organization.</summary>
-        public bool? IsInviteOnly {
+        public bool? IsInviteOnly
+        {
             get { return BackingStore?.Get<bool?>("isInviteOnly"); }
             set { BackingStore?.Set("isInviteOnly", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
-                {"coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<Identity>(Identity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
+                { "audience", n => { Audience = n.GetEnumValue<MeetingAudience>(); } },
+                { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<CommunicationsUserIdentity>(CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<Identity>(Identity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

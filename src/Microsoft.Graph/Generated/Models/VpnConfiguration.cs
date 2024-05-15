@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Base VPN Configuration profile.
     /// </summary>
-    public class VpnConfiguration : DeviceConfiguration, IParsable 
+    public class VpnConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>VPN Authentication Method.</summary>
-        public VpnAuthenticationMethod? AuthenticationMethod {
+        public VpnAuthenticationMethod? AuthenticationMethod
+        {
             get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionName {
+        public string? ConnectionName
+        {
             get { return BackingStore?.Get<string?>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
 #nullable restore
 #else
-        public string ConnectionName {
+        public string ConnectionName
+        {
             get { return BackingStore?.Get<string>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Realm {
+        public string? Realm
+        {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
 #nullable restore
 #else
-        public string Realm {
+        public string Realm
+        {
             get { return BackingStore?.Get<string>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role {
+        public string? Role
+        {
             get { return BackingStore?.Get<string?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public string Role {
+        public string Role
+        {
             get { return BackingStore?.Get<string>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnServer>? Servers {
+        public List<VpnServer>? Servers
+        {
             get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #nullable restore
 #else
-        public List<VpnServer> Servers {
+        public List<VpnServer> Servers
+        {
             get { return BackingStore?.Get<List<VpnServer>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
@@ -101,11 +111,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
-                {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
-                {"realm", n => { Realm = n.GetStringValue(); } },
-                {"role", n => { Role = n.GetStringValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
+                { "connectionName", n => { ConnectionName = n.GetStringValue(); } },
+                { "realm", n => { Realm = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetStringValue(); } },
+                { "servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

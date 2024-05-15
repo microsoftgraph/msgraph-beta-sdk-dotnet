@@ -5,45 +5,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcGalleryImage : Entity, IParsable 
+    public class CloudPcGalleryImage : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of this gallery image. For example, Windows 11 Enterprise + Microsoft 365 Apps 22H2. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date when the status of image becomes supportedWithWarning. Users can still provision new Cloud PCs if the current time is later than endDate and earlier than expirationDate. For example, assume the endDate of a gallery image is 2023-9-14 and expirationDate is 2024-3-14, users are able to provision new Cloud PCs if today is 2023-10-01. Read-only.</summary>
-        public Date? EndDate {
+        public Date? EndDate
+        {
             get { return BackingStore?.Get<Date?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
         /// <summary>The date when the image is no longer available. Users are unable to provision new Cloud PCs if the current time is later than expirationDate. The value is usually endDate plus six months. For example, if the startDate is 2025-10-14, the expirationDate is usually 2026-04-14. Read-only.</summary>
-        public Date? ExpirationDate {
+        public Date? ExpirationDate
+        {
             get { return BackingStore?.Get<Date?>("expirationDate"); }
             set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>The offer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Offer {
+        public string? Offer
+        {
             get { return BackingStore?.Get<string?>("offer"); }
             set { BackingStore?.Set("offer", value); }
         }
 #nullable restore
 #else
-        public string Offer {
+        public string Offer
+        {
             get { return BackingStore?.Get<string>("offer"); }
             set { BackingStore?.Set("offer", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The offerDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfferDisplayName {
+        public string? OfferDisplayName
+        {
             get { return BackingStore?.Get<string?>("offerDisplayName"); }
             set { BackingStore?.Set("offerDisplayName", value); }
         }
 #nullable restore
 #else
-        public string OfferDisplayName {
+        public string OfferDisplayName
+        {
             get { return BackingStore?.Get<string>("offerDisplayName"); }
             set { BackingStore?.Set("offerDisplayName", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The offer name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfferName {
+        public string? OfferName
+        {
             get { return BackingStore?.Get<string?>("offerName"); }
             set { BackingStore?.Set("offerName", value); }
         }
 #nullable restore
 #else
-        public string OfferName {
+        public string OfferName
+        {
             get { return BackingStore?.Get<string>("offerName"); }
             set { BackingStore?.Set("offerName", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The publisher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
@@ -93,13 +106,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The publisher name of this gallery image that is passed to ARM to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublisherName {
+        public string? PublisherName
+        {
             get { return BackingStore?.Get<string?>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
 #nullable restore
 #else
-        public string PublisherName {
+        public string PublisherName
+        {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
@@ -107,32 +122,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recommendedSku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedSku {
+        public string? RecommendedSku
+        {
             get { return BackingStore?.Get<string?>("recommendedSku"); }
             set { BackingStore?.Set("recommendedSku", value); }
         }
 #nullable restore
 #else
-        public string RecommendedSku {
+        public string RecommendedSku
+        {
             get { return BackingStore?.Get<string>("recommendedSku"); }
             set { BackingStore?.Set("recommendedSku", value); }
         }
 #endif
         /// <summary>Indicates the size of this image in gigabytes. For example, 64. Read-only.</summary>
-        public int? SizeInGB {
+        public int? SizeInGB
+        {
             get { return BackingStore?.Get<int?>("sizeInGB"); }
             set { BackingStore?.Set("sizeInGB", value); }
         }
         /// <summary>The sku property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sku {
+        public string? Sku
+        {
             get { return BackingStore?.Get<string?>("sku"); }
             set { BackingStore?.Set("sku", value); }
         }
 #nullable restore
 #else
-        public string Sku {
+        public string Sku
+        {
             get { return BackingStore?.Get<string>("sku"); }
             set { BackingStore?.Set("sku", value); }
         }
@@ -140,13 +160,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The skuDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkuDisplayName {
+        public string? SkuDisplayName
+        {
             get { return BackingStore?.Get<string?>("skuDisplayName"); }
             set { BackingStore?.Set("skuDisplayName", value); }
         }
 #nullable restore
 #else
-        public string SkuDisplayName {
+        public string SkuDisplayName
+        {
             get { return BackingStore?.Get<string>("skuDisplayName"); }
             set { BackingStore?.Set("skuDisplayName", value); }
         }
@@ -154,24 +176,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The SKU name of this image that is passed to ARM to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SkuName {
+        public string? SkuName
+        {
             get { return BackingStore?.Get<string?>("skuName"); }
             set { BackingStore?.Set("skuName", value); }
         }
 #nullable restore
 #else
-        public string SkuName {
+        public string SkuName
+        {
             get { return BackingStore?.Get<string>("skuName"); }
             set { BackingStore?.Set("skuName", value); }
         }
 #endif
         /// <summary>The date when the Cloud PC image is available for provisioning new Cloud PCs. For example, 2022-09-20. Read-only.</summary>
-        public Date? StartDate {
+        public Date? StartDate
+        {
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
-        public CloudPcGalleryImageStatus? Status {
+        public CloudPcGalleryImageStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcGalleryImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -193,21 +219,21 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"endDate", n => { EndDate = n.GetDateValue(); } },
-                {"expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
-                {"offer", n => { Offer = n.GetStringValue(); } },
-                {"offerDisplayName", n => { OfferDisplayName = n.GetStringValue(); } },
-                {"offerName", n => { OfferName = n.GetStringValue(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
-                {"recommendedSku", n => { RecommendedSku = n.GetStringValue(); } },
-                {"sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
-                {"sku", n => { Sku = n.GetStringValue(); } },
-                {"skuDisplayName", n => { SkuDisplayName = n.GetStringValue(); } },
-                {"skuName", n => { SkuName = n.GetStringValue(); } },
-                {"startDate", n => { StartDate = n.GetDateValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcGalleryImageStatus>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endDate", n => { EndDate = n.GetDateValue(); } },
+                { "expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
+                { "offer", n => { Offer = n.GetStringValue(); } },
+                { "offerDisplayName", n => { OfferDisplayName = n.GetStringValue(); } },
+                { "offerName", n => { OfferName = n.GetStringValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "publisherName", n => { PublisherName = n.GetStringValue(); } },
+                { "recommendedSku", n => { RecommendedSku = n.GetStringValue(); } },
+                { "sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
+                { "sku", n => { Sku = n.GetStringValue(); } },
+                { "skuDisplayName", n => { SkuDisplayName = n.GetStringValue(); } },
+                { "skuName", n => { SkuName = n.GetStringValue(); } },
+                { "startDate", n => { StartDate = n.GetDateValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcGalleryImageStatus>(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My
+{
     #pragma warning disable CS1591
-    public class MyGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class MyGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedRoleAssignment>? Value {
+        public List<PrivilegedRoleAssignment>? Value
+        {
             get { return BackingStore?.Get<List<PrivilegedRoleAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedRoleAssignment> Value {
+        public List<PrivilegedRoleAssignment> Value
+        {
             get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<PrivilegedRoleAssignment>(PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<PrivilegedRoleAssignment>(PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AuditCoreRoot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class AuditCoreRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditLogQuery>? Queries {
+        public List<AuditLogQuery>? Queries
+        {
             get { return BackingStore?.Get<List<AuditLogQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<AuditLogQuery> Queries {
+        public List<AuditLogQuery> Queries
+        {
             get { return BackingStore?.Get<List<AuditLogQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"queries", n => { Queries = n.GetCollectionOfObjectValues<AuditLogQuery>(AuditLogQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<AuditLogQuery>(AuditLogQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

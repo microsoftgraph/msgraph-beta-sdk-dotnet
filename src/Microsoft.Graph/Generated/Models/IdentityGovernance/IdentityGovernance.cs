@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+namespace Microsoft.Graph.Beta.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IdentityGovernance : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessReviews property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessReviewSet? AccessReviews {
+        public Microsoft.Graph.Beta.Models.AccessReviewSet? AccessReviews
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewSet?>("accessReviews"); }
             set { BackingStore?.Set("accessReviews", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessReviewSet AccessReviews {
+        public Microsoft.Graph.Beta.Models.AccessReviewSet AccessReviews
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewSet>("accessReviews"); }
             set { BackingStore?.Set("accessReviews", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appConsent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AppConsentApprovalRoute? AppConsent {
+        public Microsoft.Graph.Beta.Models.AppConsentApprovalRoute? AppConsent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute?>("appConsent"); }
             set { BackingStore?.Set("appConsent", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AppConsentApprovalRoute AppConsent {
+        public Microsoft.Graph.Beta.Models.AppConsentApprovalRoute AppConsent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>("appConsent"); }
             set { BackingStore?.Set("appConsent", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The entitlementManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.EntitlementManagement? EntitlementManagement {
+        public Microsoft.Graph.Beta.Models.EntitlementManagement? EntitlementManagement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EntitlementManagement?>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.EntitlementManagement EntitlementManagement {
+        public Microsoft.Graph.Beta.Models.EntitlementManagement EntitlementManagement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EntitlementManagement>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The lifecycleWorkflows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LifecycleWorkflowsContainer? LifecycleWorkflows {
+        public LifecycleWorkflowsContainer? LifecycleWorkflows
+        {
             get { return BackingStore?.Get<LifecycleWorkflowsContainer?>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
 #nullable restore
 #else
-        public LifecycleWorkflowsContainer LifecycleWorkflows {
+        public LifecycleWorkflowsContainer LifecycleWorkflows
+        {
             get { return BackingStore?.Get<LifecycleWorkflowsContainer>("lifecycleWorkflows"); }
             set { BackingStore?.Set("lifecycleWorkflows", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The permissionsAnalytics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation? PermissionsAnalytics {
+        public Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation? PermissionsAnalytics
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation?>("permissionsAnalytics"); }
             set { BackingStore?.Set("permissionsAnalytics", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation PermissionsAnalytics {
+        public Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation PermissionsAnalytics
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>("permissionsAnalytics"); }
             set { BackingStore?.Set("permissionsAnalytics", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The permissionsManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PermissionsManagement? PermissionsManagement {
+        public Microsoft.Graph.Beta.Models.PermissionsManagement? PermissionsManagement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsManagement?>("permissionsManagement"); }
             set { BackingStore?.Set("permissionsManagement", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PermissionsManagement PermissionsManagement {
+        public Microsoft.Graph.Beta.Models.PermissionsManagement PermissionsManagement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsManagement>("permissionsManagement"); }
             set { BackingStore?.Set("permissionsManagement", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The privilegedAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PrivilegedAccessRoot? PrivilegedAccess {
+        public Microsoft.Graph.Beta.Models.PrivilegedAccessRoot? PrivilegedAccess
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot?>("privilegedAccess"); }
             set { BackingStore?.Set("privilegedAccess", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PrivilegedAccessRoot PrivilegedAccess {
+        public Microsoft.Graph.Beta.Models.PrivilegedAccessRoot PrivilegedAccess
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>("privilegedAccess"); }
             set { BackingStore?.Set("privilegedAccess", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The roleManagementAlerts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RoleManagementAlert? RoleManagementAlerts {
+        public Microsoft.Graph.Beta.Models.RoleManagementAlert? RoleManagementAlerts
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleManagementAlert?>("roleManagementAlerts"); }
             set { BackingStore?.Set("roleManagementAlerts", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RoleManagementAlert RoleManagementAlerts {
+        public Microsoft.Graph.Beta.Models.RoleManagementAlert RoleManagementAlerts
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoleManagementAlert>("roleManagementAlerts"); }
             set { BackingStore?.Set("roleManagementAlerts", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The termsOfUse property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TermsOfUseContainer? TermsOfUse {
+        public Microsoft.Graph.Beta.Models.TermsOfUseContainer? TermsOfUse
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsOfUseContainer?>("termsOfUse"); }
             set { BackingStore?.Set("termsOfUse", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TermsOfUseContainer TermsOfUse {
+        public Microsoft.Graph.Beta.Models.TermsOfUseContainer TermsOfUse
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsOfUseContainer>("termsOfUse"); }
             set { BackingStore?.Set("termsOfUse", value); }
         }
@@ -183,16 +205,16 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessReviews", n => { AccessReviews = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSet>(Microsoft.Graph.Beta.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
-                {"appConsent", n => { AppConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>(Microsoft.Graph.Beta.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
-                {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>(Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
-                {"lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"permissionsAnalytics", n => { PermissionsAnalytics = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>(Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation.CreateFromDiscriminatorValue); } },
-                {"permissionsManagement", n => { PermissionsManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>(Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue); } },
-                {"privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>(Microsoft.Graph.Beta.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
-                {"roleManagementAlerts", n => { RoleManagementAlerts = n.GetObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>(Microsoft.Graph.Beta.Models.RoleManagementAlert.CreateFromDiscriminatorValue); } },
-                {"termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsOfUseContainer>(Microsoft.Graph.Beta.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
+                { "accessReviews", n => { AccessReviews = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewSet>(Microsoft.Graph.Beta.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
+                { "appConsent", n => { AppConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppConsentApprovalRoute>(Microsoft.Graph.Beta.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
+                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.EntitlementManagement>(Microsoft.Graph.Beta.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
+                { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<LifecycleWorkflowsContainer>(LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "permissionsAnalytics", n => { PermissionsAnalytics = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation>(Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation.CreateFromDiscriminatorValue); } },
+                { "permissionsManagement", n => { PermissionsManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsManagement>(Microsoft.Graph.Beta.Models.PermissionsManagement.CreateFromDiscriminatorValue); } },
+                { "privilegedAccess", n => { PrivilegedAccess = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedAccessRoot>(Microsoft.Graph.Beta.Models.PrivilegedAccessRoot.CreateFromDiscriminatorValue); } },
+                { "roleManagementAlerts", n => { RoleManagementAlerts = n.GetObjectValue<Microsoft.Graph.Beta.Models.RoleManagementAlert>(Microsoft.Graph.Beta.Models.RoleManagementAlert.CreateFromDiscriminatorValue); } },
+                { "termsOfUse", n => { TermsOfUse = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsOfUseContainer>(Microsoft.Graph.Beta.Models.TermsOfUseContainer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

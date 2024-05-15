@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcConnectivityHistory {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetCloudPcConnectivityHistory
+{
     [Obsolete("This class is obsolete. Use GetCloudPcConnectivityHistoryGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetCloudPcConnectivityHistoryResponse : GetCloudPcConnectivityHistoryGetResponse, IParsable 
+    public class GetCloudPcConnectivityHistoryResponse : GetCloudPcConnectivityHistoryGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

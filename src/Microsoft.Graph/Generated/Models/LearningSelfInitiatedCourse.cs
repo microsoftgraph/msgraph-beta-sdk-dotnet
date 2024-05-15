@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class LearningSelfInitiatedCourse : LearningCourseActivity, IParsable 
+    public class LearningSelfInitiatedCourse : LearningCourseActivity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time on which the self-initiated course was started by the learner. Optional.</summary>
-        public DateTimeOffset? StartedDateTime {
+        public DateTimeOffset? StartedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

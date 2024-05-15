@@ -5,60 +5,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN Security Association Parameters
     /// </summary>
-    public class CryptographySuite : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CryptographySuite : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Authentication Transform Constants. Possible values are: md596, sha196, sha256128, aes128Gcm, aes192Gcm, aes256Gcm.</summary>
-        public AuthenticationTransformConstant? AuthenticationTransformConstants {
+        public AuthenticationTransformConstant? AuthenticationTransformConstants
+        {
             get { return BackingStore?.Get<AuthenticationTransformConstant?>("authenticationTransformConstants"); }
             set { BackingStore?.Set("authenticationTransformConstants", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Cipher Transform Constants. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
-        public VpnEncryptionAlgorithmType? CipherTransformConstants {
+        public VpnEncryptionAlgorithmType? CipherTransformConstants
+        {
             get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("cipherTransformConstants"); }
             set { BackingStore?.Set("cipherTransformConstants", value); }
         }
         /// <summary>Diffie Hellman Group. Possible values are: group1, group2, group14, ecp256, ecp384, group24.</summary>
-        public DiffieHellmanGroup? DhGroup {
+        public DiffieHellmanGroup? DhGroup
+        {
             get { return BackingStore?.Get<DiffieHellmanGroup?>("dhGroup"); }
             set { BackingStore?.Set("dhGroup", value); }
         }
         /// <summary>Encryption Method. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
-        public VpnEncryptionAlgorithmType? EncryptionMethod {
+        public VpnEncryptionAlgorithmType? EncryptionMethod
+        {
             get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Integrity Check Method. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
-        public VpnIntegrityAlgorithmType? IntegrityCheckMethod {
+        public VpnIntegrityAlgorithmType? IntegrityCheckMethod
+        {
             get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
             set { BackingStore?.Set("integrityCheckMethod", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.</summary>
-        public PerfectForwardSecrecyGroup? PfsGroup {
+        public PerfectForwardSecrecyGroup? PfsGroup
+        {
             get { return BackingStore?.Get<PerfectForwardSecrecyGroup?>("pfsGroup"); }
             set { BackingStore?.Set("pfsGroup", value); }
         }
@@ -88,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authenticationTransformConstants", n => { AuthenticationTransformConstants = n.GetEnumValue<AuthenticationTransformConstant>(); } },
-                {"cipherTransformConstants", n => { CipherTransformConstants = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
-                {"dhGroup", n => { DhGroup = n.GetEnumValue<DiffieHellmanGroup>(); } },
-                {"encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
-                {"integrityCheckMethod", n => { IntegrityCheckMethod = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"pfsGroup", n => { PfsGroup = n.GetEnumValue<PerfectForwardSecrecyGroup>(); } },
+                { "authenticationTransformConstants", n => { AuthenticationTransformConstants = n.GetEnumValue<AuthenticationTransformConstant>(); } },
+                { "cipherTransformConstants", n => { CipherTransformConstants = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
+                { "dhGroup", n => { DhGroup = n.GetEnumValue<DiffieHellmanGroup>(); } },
+                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
+                { "integrityCheckMethod", n => { IntegrityCheckMethod = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "pfsGroup", n => { PfsGroup = n.GetEnumValue<PerfectForwardSecrecyGroup>(); } },
             };
         }
         /// <summary>

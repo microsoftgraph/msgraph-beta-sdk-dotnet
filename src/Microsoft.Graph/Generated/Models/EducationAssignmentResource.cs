@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationAssignmentResource : Entity, IParsable 
+    public class EducationAssignmentResource : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dependentResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationAssignmentResource>? DependentResources {
+        public List<EducationAssignmentResource>? DependentResources
+        {
             get { return BackingStore?.Get<List<EducationAssignmentResource>?>("dependentResources"); }
             set { BackingStore?.Set("dependentResources", value); }
         }
 #nullable restore
 #else
-        public List<EducationAssignmentResource> DependentResources {
+        public List<EducationAssignmentResource> DependentResources
+        {
             get { return BackingStore?.Get<List<EducationAssignmentResource>>("dependentResources"); }
             set { BackingStore?.Set("dependentResources", value); }
         }
 #endif
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
-        public bool? DistributeForStudentWork {
+        public bool? DistributeForStudentWork
+        {
             get { return BackingStore?.Get<bool?>("distributeForStudentWork"); }
             set { BackingStore?.Set("distributeForStudentWork", value); }
         }
         /// <summary>Resource object that has been associated with this assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationResource? Resource {
+        public EducationResource? Resource
+        {
             get { return BackingStore?.Get<EducationResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public EducationResource Resource {
+        public EducationResource Resource
+        {
             get { return BackingStore?.Get<EducationResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<EducationAssignmentResource>(EducationAssignmentResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"distributeForStudentWork", n => { DistributeForStudentWork = n.GetBoolValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
+                { "dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<EducationAssignmentResource>(EducationAssignmentResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "distributeForStudentWork", n => { DistributeForStudentWork = n.GetBoolValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<EducationResource>(EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

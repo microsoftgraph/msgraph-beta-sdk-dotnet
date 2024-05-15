@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire
+{
     #pragma warning disable CS1591
-    public class GetDevicesScheduledToRetireGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetDevicesScheduledToRetireGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RetireScheduledManagedDevice>? Value {
+        public List<RetireScheduledManagedDevice>? Value
+        {
             get { return BackingStore?.Get<List<RetireScheduledManagedDevice>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<RetireScheduledManagedDevice> Value {
+        public List<RetireScheduledManagedDevice> Value
+        {
             get { return BackingStore?.Get<List<RetireScheduledManagedDevice>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<RetireScheduledManagedDevice>(RetireScheduledManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<RetireScheduledManagedDevice>(RetireScheduledManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EndsWithTransformation : CustomClaimTransformation, IParsable 
+    public class EndsWithTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TransformationAttribute? Output {
+        public TransformationAttribute? Output
+        {
             get { return BackingStore?.Get<TransformationAttribute?>("output"); }
             set { BackingStore?.Set("output", value); }
         }
 #nullable restore
 #else
-        public TransformationAttribute Output {
+        public TransformationAttribute Output
+        {
             get { return BackingStore?.Get<TransformationAttribute>("output"); }
             set { BackingStore?.Set("output", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"output", n => { Output = n.GetObjectValue<TransformationAttribute>(TransformationAttribute.CreateFromDiscriminatorValue); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "output", n => { Output = n.GetObjectValue<TransformationAttribute>(TransformationAttribute.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

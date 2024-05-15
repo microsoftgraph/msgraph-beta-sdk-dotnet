@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider, IParsable 
+    public class EducationPowerSchoolDataProvider : EducationSynchronizationDataProvider, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the source has multiple identifiers for a single student or teacher.</summary>
-        public bool? AllowTeachersInMultipleSchools {
+        public bool? AllowTeachersInMultipleSchools
+        {
             get { return BackingStore?.Get<bool?>("allowTeachersInMultipleSchools"); }
             set { BackingStore?.Set("allowTeachersInMultipleSchools", value); }
         }
         /// <summary>The client ID used to connect to PowerSchool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientId {
+        public string? ClientId
+        {
             get { return BackingStore?.Get<string?>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
 #nullable restore
 #else
-        public string ClientId {
+        public string ClientId
+        {
             get { return BackingStore?.Get<string>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The client secret to authenticate the connection to the PowerSchool instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientSecret {
+        public string? ClientSecret
+        {
             get { return BackingStore?.Get<string?>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
 #nullable restore
 #else
-        public string ClientSecret {
+        public string ClientSecret
+        {
             get { return BackingStore?.Get<string>("clientSecret"); }
             set { BackingStore?.Set("clientSecret", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connection URL to the PowerSchool instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionUrl {
+        public string? ConnectionUrl
+        {
             get { return BackingStore?.Get<string?>("connectionUrl"); }
             set { BackingStore?.Set("connectionUrl", value); }
         }
 #nullable restore
 #else
-        public string ConnectionUrl {
+        public string ConnectionUrl
+        {
             get { return BackingStore?.Get<string>("connectionUrl"); }
             set { BackingStore?.Set("connectionUrl", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Optional customization to be applied to the synchronization profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomizations? Customizations {
+        public EducationSynchronizationCustomizations? Customizations
+        {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations?>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomizations Customizations {
+        public EducationSynchronizationCustomizations Customizations
+        {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of schools to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SchoolsIds {
+        public List<string>? SchoolsIds
+        {
             get { return BackingStore?.Get<List<string>?>("schoolsIds"); }
             set { BackingStore?.Set("schoolsIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SchoolsIds {
+        public List<string> SchoolsIds
+        {
             get { return BackingStore?.Get<List<string>>("schoolsIds"); }
             set { BackingStore?.Set("schoolsIds", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The school year to sync.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchoolYear {
+        public string? SchoolYear
+        {
             get { return BackingStore?.Get<string?>("schoolYear"); }
             set { BackingStore?.Set("schoolYear", value); }
         }
 #nullable restore
 #else
-        public string SchoolYear {
+        public string SchoolYear
+        {
             get { return BackingStore?.Get<string>("schoolYear"); }
             set { BackingStore?.Set("schoolYear", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowTeachersInMultipleSchools", n => { AllowTeachersInMultipleSchools = n.GetBoolValue(); } },
-                {"clientId", n => { ClientId = n.GetStringValue(); } },
-                {"clientSecret", n => { ClientSecret = n.GetStringValue(); } },
-                {"connectionUrl", n => { ConnectionUrl = n.GetStringValue(); } },
-                {"customizations", n => { Customizations = n.GetObjectValue<EducationSynchronizationCustomizations>(EducationSynchronizationCustomizations.CreateFromDiscriminatorValue); } },
-                {"schoolYear", n => { SchoolYear = n.GetStringValue(); } },
-                {"schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "allowTeachersInMultipleSchools", n => { AllowTeachersInMultipleSchools = n.GetBoolValue(); } },
+                { "clientId", n => { ClientId = n.GetStringValue(); } },
+                { "clientSecret", n => { ClientSecret = n.GetStringValue(); } },
+                { "connectionUrl", n => { ConnectionUrl = n.GetStringValue(); } },
+                { "customizations", n => { Customizations = n.GetObjectValue<EducationSynchronizationCustomizations>(EducationSynchronizationCustomizations.CreateFromDiscriminatorValue); } },
+                { "schoolYear", n => { SchoolYear = n.GetStringValue(); } },
+                { "schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

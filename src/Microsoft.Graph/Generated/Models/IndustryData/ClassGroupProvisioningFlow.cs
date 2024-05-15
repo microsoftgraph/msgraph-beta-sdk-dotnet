@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class ClassGroupProvisioningFlow : ProvisioningFlow, IParsable 
+    public class ClassGroupProvisioningFlow : ProvisioningFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClassGroupConfiguration? Configuration {
+        public ClassGroupConfiguration? Configuration
+        {
             get { return BackingStore?.Get<ClassGroupConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public ClassGroupConfiguration Configuration {
+        public ClassGroupConfiguration Configuration
+        {
             get { return BackingStore?.Get<ClassGroupConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<ClassGroupConfiguration>(ClassGroupConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<ClassGroupConfiguration>(ClassGroupConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

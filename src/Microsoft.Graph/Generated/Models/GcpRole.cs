@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GcpRole : Entity, IParsable 
+    public class GcpRole : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the GCP role. Supports $filter and (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the GCP role as defined by GCP. Alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
         /// <summary>The gcpRoleType property</summary>
-        public Microsoft.Graph.Beta.Models.GcpRoleType? GcpRoleType {
+        public Microsoft.Graph.Beta.Models.GcpRoleType? GcpRoleType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GcpRoleType?>("gcpRoleType"); }
             set { BackingStore?.Set("gcpRoleType", value); }
         }
         /// <summary>Resources that an identity assigned this GCP role can perform actions on. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpScope>? Scopes {
+        public List<GcpScope>? Scopes
+        {
             get { return BackingStore?.Get<List<GcpScope>?>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
 #nullable restore
 #else
-        public List<GcpScope> Scopes {
+        public List<GcpScope> Scopes
+        {
             get { return BackingStore?.Get<List<GcpScope>>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"gcpRoleType", n => { GcpRoleType = n.GetEnumValue<GcpRoleType>(); } },
-                {"scopes", n => { Scopes = n.GetCollectionOfObjectValues<GcpScope>(GcpScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "gcpRoleType", n => { GcpRoleType = n.GetEnumValue<GcpRoleType>(); } },
+                { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<GcpScope>(GcpScope.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

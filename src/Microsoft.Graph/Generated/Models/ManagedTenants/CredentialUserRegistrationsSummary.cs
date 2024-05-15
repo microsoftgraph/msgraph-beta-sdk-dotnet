@@ -4,70 +4,82 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class CredentialUserRegistrationsSummary : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class CredentialUserRegistrationsSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
-        public DateTimeOffset? LastRefreshedDateTime {
+        public DateTimeOffset? LastRefreshedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The number of users that are capable of performing multi-factor authentication or self service password reset. Optional. Read-only.</summary>
-        public int? MfaAndSsprCapableUserCount {
+        public int? MfaAndSsprCapableUserCount
+        {
             get { return BackingStore?.Get<int?>("mfaAndSsprCapableUserCount"); }
             set { BackingStore?.Set("mfaAndSsprCapableUserCount", value); }
         }
         /// <summary>The state of a conditional access policy that enforces multi-factor authentication. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MfaConditionalAccessPolicyState {
+        public string? MfaConditionalAccessPolicyState
+        {
             get { return BackingStore?.Get<string?>("mfaConditionalAccessPolicyState"); }
             set { BackingStore?.Set("mfaConditionalAccessPolicyState", value); }
         }
 #nullable restore
 #else
-        public string MfaConditionalAccessPolicyState {
+        public string MfaConditionalAccessPolicyState
+        {
             get { return BackingStore?.Get<string>("mfaConditionalAccessPolicyState"); }
             set { BackingStore?.Set("mfaConditionalAccessPolicyState", value); }
         }
 #endif
         /// <summary>The number of users in the multi-factor authentication exclusion security group (Microsoft 365 Lighthouse - MFA exclusions). Optional. Read-only.</summary>
-        public int? MfaExcludedUserCount {
+        public int? MfaExcludedUserCount
+        {
             get { return BackingStore?.Get<int?>("mfaExcludedUserCount"); }
             set { BackingStore?.Set("mfaExcludedUserCount", value); }
         }
         /// <summary>The number of users registered for multi-factor authentication. Optional. Read-only.</summary>
-        public int? MfaRegisteredUserCount {
+        public int? MfaRegisteredUserCount
+        {
             get { return BackingStore?.Get<int?>("mfaRegisteredUserCount"); }
             set { BackingStore?.Set("mfaRegisteredUserCount", value); }
         }
         /// <summary>A flag indicating whether Identity Security Defaults is enabled. Optional. Read-only.</summary>
-        public bool? SecurityDefaultsEnabled {
+        public bool? SecurityDefaultsEnabled
+        {
             get { return BackingStore?.Get<bool?>("securityDefaultsEnabled"); }
             set { BackingStore?.Set("securityDefaultsEnabled", value); }
         }
         /// <summary>The number of users enabled for self service password reset. Optional. Read-only.</summary>
-        public int? SsprEnabledUserCount {
+        public int? SsprEnabledUserCount
+        {
             get { return BackingStore?.Get<int?>("ssprEnabledUserCount"); }
             set { BackingStore?.Set("ssprEnabledUserCount", value); }
         }
         /// <summary>The number of users registered for self service password reset. Optional. Read-only.</summary>
-        public int? SsprRegisteredUserCount {
+        public int? SsprRegisteredUserCount
+        {
             get { return BackingStore?.Get<int?>("ssprRegisteredUserCount"); }
             set { BackingStore?.Set("ssprRegisteredUserCount", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -75,13 +87,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -89,19 +103,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The license type associated with the tenant; for example, AADFree, AADPremium1, AADPremium2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantLicenseType {
+        public string? TenantLicenseType
+        {
             get { return BackingStore?.Get<string?>("tenantLicenseType"); }
             set { BackingStore?.Set("tenantLicenseType", value); }
         }
 #nullable restore
 #else
-        public string TenantLicenseType {
+        public string TenantLicenseType
+        {
             get { return BackingStore?.Get<string>("tenantLicenseType"); }
             set { BackingStore?.Set("tenantLicenseType", value); }
         }
 #endif
         /// <summary>The total number of users in the given managed tenant. Optional. Read-only.</summary>
-        public int? TotalUserCount {
+        public int? TotalUserCount
+        {
             get { return BackingStore?.Get<int?>("totalUserCount"); }
             set { BackingStore?.Set("totalUserCount", value); }
         }
@@ -123,18 +140,18 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mfaAndSsprCapableUserCount", n => { MfaAndSsprCapableUserCount = n.GetIntValue(); } },
-                {"mfaConditionalAccessPolicyState", n => { MfaConditionalAccessPolicyState = n.GetStringValue(); } },
-                {"mfaExcludedUserCount", n => { MfaExcludedUserCount = n.GetIntValue(); } },
-                {"mfaRegisteredUserCount", n => { MfaRegisteredUserCount = n.GetIntValue(); } },
-                {"securityDefaultsEnabled", n => { SecurityDefaultsEnabled = n.GetBoolValue(); } },
-                {"ssprEnabledUserCount", n => { SsprEnabledUserCount = n.GetIntValue(); } },
-                {"ssprRegisteredUserCount", n => { SsprRegisteredUserCount = n.GetIntValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"tenantLicenseType", n => { TenantLicenseType = n.GetStringValue(); } },
-                {"totalUserCount", n => { TotalUserCount = n.GetIntValue(); } },
+                { "lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mfaAndSsprCapableUserCount", n => { MfaAndSsprCapableUserCount = n.GetIntValue(); } },
+                { "mfaConditionalAccessPolicyState", n => { MfaConditionalAccessPolicyState = n.GetStringValue(); } },
+                { "mfaExcludedUserCount", n => { MfaExcludedUserCount = n.GetIntValue(); } },
+                { "mfaRegisteredUserCount", n => { MfaRegisteredUserCount = n.GetIntValue(); } },
+                { "securityDefaultsEnabled", n => { SecurityDefaultsEnabled = n.GetBoolValue(); } },
+                { "ssprEnabledUserCount", n => { SsprEnabledUserCount = n.GetIntValue(); } },
+                { "ssprRegisteredUserCount", n => { SsprRegisteredUserCount = n.GetIntValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "tenantLicenseType", n => { TenantLicenseType = n.GetStringValue(); } },
+                { "totalUserCount", n => { TotalUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

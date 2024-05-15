@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A `managedAppLogUpload` represents the log upload result for a given Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs.
     /// </summary>
-    public class ManagedAppLogUpload : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ManagedAppLogUpload : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedAppComponent {
+        public string? ManagedAppComponent
+        {
             get { return BackingStore?.Get<string?>("managedAppComponent"); }
             set { BackingStore?.Set("managedAppComponent", value); }
         }
 #nullable restore
 #else
-        public string ManagedAppComponent {
+        public string ManagedAppComponent
+        {
             get { return BackingStore?.Get<string>("managedAppComponent"); }
             set { BackingStore?.Set("managedAppComponent", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Mobile Application Management (MAM) Logs Uploading Component. Such components can be the application itself, the MAM SDK, and other on-device components that are capable of uploading diagnostic logs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedAppComponentDescription {
+        public string? ManagedAppComponentDescription
+        {
             get { return BackingStore?.Get<string?>("managedAppComponentDescription"); }
             set { BackingStore?.Set("managedAppComponentDescription", value); }
         }
 #nullable restore
 #else
-        public string ManagedAppComponentDescription {
+        public string ManagedAppComponentDescription
+        {
             get { return BackingStore?.Get<string>("managedAppComponentDescription"); }
             set { BackingStore?.Set("managedAppComponentDescription", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -63,17 +71,25 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A provider-specific reference id for the uploaded logs. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceId {
+        public string? ReferenceId
+        {
             get { return BackingStore?.Get<string?>("referenceId"); }
             set { BackingStore?.Set("referenceId", value); }
         }
 #nullable restore
 #else
-        public string ReferenceId {
+        public string ReferenceId
+        {
             get { return BackingStore?.Get<string>("referenceId"); }
             set { BackingStore?.Set("referenceId", value); }
         }
 #endif
+        /// <summary>Represents the current status of the associated `managedAppLogCollectionRequest`.</summary>
+        public ManagedAppLogUploadState? Status
+        {
+            get { return BackingStore?.Get<ManagedAppLogUploadState?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ManagedAppLogUpload"/> and sets the default values.
         /// </summary>
@@ -100,10 +116,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managedAppComponent", n => { ManagedAppComponent = n.GetStringValue(); } },
-                {"managedAppComponentDescription", n => { ManagedAppComponentDescription = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"referenceId", n => { ReferenceId = n.GetStringValue(); } },
+                { "managedAppComponent", n => { ManagedAppComponent = n.GetStringValue(); } },
+                { "managedAppComponentDescription", n => { ManagedAppComponentDescription = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "referenceId", n => { ReferenceId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ManagedAppLogUploadState>(); } },
             };
         }
         /// <summary>
@@ -117,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("managedAppComponentDescription", ManagedAppComponentDescription);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("referenceId", ReferenceId);
+            writer.WriteEnumValue<ManagedAppLogUploadState>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint enforcing the setting is well formed SDDL
     /// </summary>
-    public class DeviceManagementSettingSddlConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingSddlConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementSettingSddlConstraint"/> and sets the default values.

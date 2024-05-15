@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate {
+namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate
+{
     #pragma warning disable CS1591
-    public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EvaluatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appliedPoliciesOnly property</summary>
-        public bool? AppliedPoliciesOnly {
+        public bool? AppliedPoliciesOnly
+        {
             get { return BackingStore?.Get<bool?>("appliedPoliciesOnly"); }
             set { BackingStore?.Set("appliedPoliciesOnly", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate {
         /// <summary>The conditionalAccessContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ConditionalAccessContext? ConditionalAccessContext {
+        public Microsoft.Graph.Beta.Models.ConditionalAccessContext? ConditionalAccessContext
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessContext?>("conditionalAccessContext"); }
             set { BackingStore?.Set("conditionalAccessContext", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ConditionalAccessContext ConditionalAccessContext {
+        public Microsoft.Graph.Beta.Models.ConditionalAccessContext ConditionalAccessContext
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessContext>("conditionalAccessContext"); }
             set { BackingStore?.Set("conditionalAccessContext", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate {
         /// <summary>The conditionalAccessWhatIfConditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions? ConditionalAccessWhatIfConditions {
+        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions? ConditionalAccessWhatIfConditions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions?>("conditionalAccessWhatIfConditions"); }
             set { BackingStore?.Set("conditionalAccessWhatIfConditions", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions ConditionalAccessWhatIfConditions {
+        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions ConditionalAccessWhatIfConditions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions>("conditionalAccessWhatIfConditions"); }
             set { BackingStore?.Set("conditionalAccessWhatIfConditions", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate {
         /// <summary>The conditionalAccessWhatIfSubject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject? ConditionalAccessWhatIfSubject {
+        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject? ConditionalAccessWhatIfSubject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject?>("conditionalAccessWhatIfSubject"); }
             set { BackingStore?.Set("conditionalAccessWhatIfSubject", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject ConditionalAccessWhatIfSubject {
+        public Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject ConditionalAccessWhatIfSubject
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject>("conditionalAccessWhatIfSubject"); }
             set { BackingStore?.Set("conditionalAccessWhatIfSubject", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Evaluate {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appliedPoliciesOnly", n => { AppliedPoliciesOnly = n.GetBoolValue(); } },
-                {"conditionalAccessContext", n => { ConditionalAccessContext = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessContext>(Microsoft.Graph.Beta.Models.ConditionalAccessContext.CreateFromDiscriminatorValue); } },
-                {"conditionalAccessWhatIfConditions", n => { ConditionalAccessWhatIfConditions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions>(Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions.CreateFromDiscriminatorValue); } },
-                {"conditionalAccessWhatIfSubject", n => { ConditionalAccessWhatIfSubject = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject>(Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject.CreateFromDiscriminatorValue); } },
+                { "appliedPoliciesOnly", n => { AppliedPoliciesOnly = n.GetBoolValue(); } },
+                { "conditionalAccessContext", n => { ConditionalAccessContext = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessContext>(Microsoft.Graph.Beta.Models.ConditionalAccessContext.CreateFromDiscriminatorValue); } },
+                { "conditionalAccessWhatIfConditions", n => { ConditionalAccessWhatIfConditions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions>(Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions.CreateFromDiscriminatorValue); } },
+                { "conditionalAccessWhatIfSubject", n => { ConditionalAccessWhatIfSubject = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject>(Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfSubject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

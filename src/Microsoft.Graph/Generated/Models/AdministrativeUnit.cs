@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AdministrativeUnit : DirectoryObject, IParsable 
+    public class AdministrativeUnit : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of open extensions defined for this administrative unit. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions {
+        public List<Extension>? Extensions
+        {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions {
+        public List<Extension> Extensions
+        {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>The isMemberManagementRestricted property</summary>
-        public bool? IsMemberManagementRestricted {
+        public bool? IsMemberManagementRestricted
+        {
             get { return BackingStore?.Get<bool?>("isMemberManagementRestricted"); }
             set { BackingStore?.Set("isMemberManagementRestricted", value); }
         }
         /// <summary>Users and groups that are members of this administrative unit. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Members {
+        public List<DirectoryObject>? Members
+        {
             get { return BackingStore?.Get<List<DirectoryObject>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Members {
+        public List<DirectoryObject> Members
+        {
             get { return BackingStore?.Get<List<DirectoryObject>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The membershipRule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MembershipRule {
+        public string? MembershipRule
+        {
             get { return BackingStore?.Get<string?>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
 #nullable restore
 #else
-        public string MembershipRule {
+        public string MembershipRule
+        {
             get { return BackingStore?.Get<string>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The membershipRuleProcessingState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MembershipRuleProcessingState {
+        public string? MembershipRuleProcessingState
+        {
             get { return BackingStore?.Get<string?>("membershipRuleProcessingState"); }
             set { BackingStore?.Set("membershipRuleProcessingState", value); }
         }
 #nullable restore
 #else
-        public string MembershipRuleProcessingState {
+        public string MembershipRuleProcessingState
+        {
             get { return BackingStore?.Get<string>("membershipRuleProcessingState"); }
             set { BackingStore?.Set("membershipRuleProcessingState", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The membershipType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MembershipType {
+        public string? MembershipType
+        {
             get { return BackingStore?.Get<string?>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
         }
 #nullable restore
 #else
-        public string MembershipType {
+        public string MembershipType
+        {
             get { return BackingStore?.Get<string>("membershipType"); }
             set { BackingStore?.Set("membershipType", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Scoped-role members of this administrative unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScopedRoleMembership>? ScopedRoleMembers {
+        public List<ScopedRoleMembership>? ScopedRoleMembers
+        {
             get { return BackingStore?.Get<List<ScopedRoleMembership>?>("scopedRoleMembers"); }
             set { BackingStore?.Set("scopedRoleMembers", value); }
         }
 #nullable restore
 #else
-        public List<ScopedRoleMembership> ScopedRoleMembers {
+        public List<ScopedRoleMembership> ScopedRoleMembers
+        {
             get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedRoleMembers"); }
             set { BackingStore?.Set("scopedRoleMembers", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The visibility property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Visibility {
+        public string? Visibility
+        {
             get { return BackingStore?.Get<string?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
 #nullable restore
 #else
-        public string Visibility {
+        public string Visibility
+        {
             get { return BackingStore?.Get<string>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
@@ -165,16 +185,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isMemberManagementRestricted", n => { IsMemberManagementRestricted = n.GetBoolValue(); } },
-                {"members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"membershipRule", n => { MembershipRule = n.GetStringValue(); } },
-                {"membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
-                {"membershipType", n => { MembershipType = n.GetStringValue(); } },
-                {"scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"visibility", n => { Visibility = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isMemberManagementRestricted", n => { IsMemberManagementRestricted = n.GetBoolValue(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "membershipRule", n => { MembershipRule = n.GetStringValue(); } },
+                { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
+                { "membershipType", n => { MembershipType = n.GetStringValue(); } },
+                { "scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<ScopedRoleMembership>(ScopedRoleMembership.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
         }
         /// <summary>

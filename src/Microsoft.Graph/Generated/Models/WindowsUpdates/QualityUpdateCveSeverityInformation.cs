@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class QualityUpdateCveSeverityInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class QualityUpdateCveSeverityInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,37 +22,43 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The exploitedCves property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CveInformation>? ExploitedCves {
+        public List<CveInformation>? ExploitedCves
+        {
             get { return BackingStore?.Get<List<CveInformation>?>("exploitedCves"); }
             set { BackingStore?.Set("exploitedCves", value); }
         }
 #nullable restore
 #else
-        public List<CveInformation> ExploitedCves {
+        public List<CveInformation> ExploitedCves
+        {
             get { return BackingStore?.Get<List<CveInformation>>("exploitedCves"); }
             set { BackingStore?.Set("exploitedCves", value); }
         }
 #endif
         /// <summary>Highest base score that occurs of any CVE addressed by the quality update. Read-only.</summary>
-        public double? MaxBaseScore {
+        public double? MaxBaseScore
+        {
             get { return BackingStore?.Get<double?>("maxBaseScore"); }
             set { BackingStore?.Set("maxBaseScore", value); }
         }
         /// <summary>The maxSeverity property</summary>
-        public CveSeverityLevel? MaxSeverity {
+        public CveSeverityLevel? MaxSeverity
+        {
             get { return BackingStore?.Get<CveSeverityLevel?>("maxSeverity"); }
             set { BackingStore?.Set("maxSeverity", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"exploitedCves", n => { ExploitedCves = n.GetCollectionOfObjectValues<CveInformation>(CveInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"maxBaseScore", n => { MaxBaseScore = n.GetDoubleValue(); } },
-                {"maxSeverity", n => { MaxSeverity = n.GetEnumValue<CveSeverityLevel>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "exploitedCves", n => { ExploitedCves = n.GetCollectionOfObjectValues<CveInformation>(CveInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "maxBaseScore", n => { MaxBaseScore = n.GetDoubleValue(); } },
+                { "maxSeverity", n => { MaxSeverity = n.GetEnumValue<CveSeverityLevel>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

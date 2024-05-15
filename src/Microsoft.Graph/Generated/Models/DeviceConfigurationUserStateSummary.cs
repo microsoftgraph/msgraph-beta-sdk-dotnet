@@ -4,43 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceConfigurationUserStateSummary : Entity, IParsable 
+    public class DeviceConfigurationUserStateSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of compliant users</summary>
-        public int? CompliantUserCount {
+        public int? CompliantUserCount
+        {
             get { return BackingStore?.Get<int?>("compliantUserCount"); }
             set { BackingStore?.Set("compliantUserCount", value); }
         }
         /// <summary>Number of conflict users</summary>
-        public int? ConflictUserCount {
+        public int? ConflictUserCount
+        {
             get { return BackingStore?.Get<int?>("conflictUserCount"); }
             set { BackingStore?.Set("conflictUserCount", value); }
         }
         /// <summary>Number of error users</summary>
-        public int? ErrorUserCount {
+        public int? ErrorUserCount
+        {
             get { return BackingStore?.Get<int?>("errorUserCount"); }
             set { BackingStore?.Set("errorUserCount", value); }
         }
         /// <summary>Number of NonCompliant users</summary>
-        public int? NonCompliantUserCount {
+        public int? NonCompliantUserCount
+        {
             get { return BackingStore?.Get<int?>("nonCompliantUserCount"); }
             set { BackingStore?.Set("nonCompliantUserCount", value); }
         }
         /// <summary>Number of not applicable users</summary>
-        public int? NotApplicableUserCount {
+        public int? NotApplicableUserCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableUserCount"); }
             set { BackingStore?.Set("notApplicableUserCount", value); }
         }
         /// <summary>Number of remediated users</summary>
-        public int? RemediatedUserCount {
+        public int? RemediatedUserCount
+        {
             get { return BackingStore?.Get<int?>("remediatedUserCount"); }
             set { BackingStore?.Set("remediatedUserCount", value); }
         }
         /// <summary>Number of unknown users</summary>
-        public int? UnknownUserCount {
+        public int? UnknownUserCount
+        {
             get { return BackingStore?.Get<int?>("unknownUserCount"); }
             set { BackingStore?.Set("unknownUserCount", value); }
         }
@@ -62,13 +70,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"compliantUserCount", n => { CompliantUserCount = n.GetIntValue(); } },
-                {"conflictUserCount", n => { ConflictUserCount = n.GetIntValue(); } },
-                {"errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
-                {"nonCompliantUserCount", n => { NonCompliantUserCount = n.GetIntValue(); } },
-                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
-                {"remediatedUserCount", n => { RemediatedUserCount = n.GetIntValue(); } },
-                {"unknownUserCount", n => { UnknownUserCount = n.GetIntValue(); } },
+                { "compliantUserCount", n => { CompliantUserCount = n.GetIntValue(); } },
+                { "conflictUserCount", n => { ConflictUserCount = n.GetIntValue(); } },
+                { "errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
+                { "nonCompliantUserCount", n => { NonCompliantUserCount = n.GetIntValue(); } },
+                { "notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                { "remediatedUserCount", n => { RemediatedUserCount = n.GetIntValue(); } },
+                { "unknownUserCount", n => { UnknownUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

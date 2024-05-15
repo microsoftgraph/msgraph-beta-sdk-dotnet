@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewDecision : Entity, IParsable 
+    public class AccessReviewDecision : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The feature- generated recommendation shown to the reviewer, one of: Approve, Deny, NotAvailable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessRecommendation {
+        public string? AccessRecommendation
+        {
             get { return BackingStore?.Get<string?>("accessRecommendation"); }
             set { BackingStore?.Set("accessRecommendation", value); }
         }
 #nullable restore
 #else
-        public string AccessRecommendation {
+        public string AccessRecommendation
+        {
             get { return BackingStore?.Get<string>("accessRecommendation"); }
             set { BackingStore?.Set("accessRecommendation", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The feature-generated ID of the access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessReviewId {
+        public string? AccessReviewId
+        {
             get { return BackingStore?.Get<string?>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
 #nullable restore
 #else
-        public string AccessReviewId {
+        public string AccessReviewId
+        {
             get { return BackingStore?.Get<string>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was autoapplied, the userPrincipalName is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? AppliedBy {
+        public UserIdentity? AppliedBy
+        {
             get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity AppliedBy {
+        public UserIdentity AppliedBy
+        {
             get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
 #endif
         /// <summary>The date and time when the review decision was applied.</summary>
-        public DateTimeOffset? AppliedDateTime {
+        public DateTimeOffset? AppliedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("appliedDateTime"); }
             set { BackingStore?.Set("appliedDateTime", value); }
         }
         /// <summary>The outcome of applying the decision, one of: NotApplied, Success, Failed, NotFound, NotSupported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplyResult {
+        public string? ApplyResult
+        {
             get { return BackingStore?.Get<string?>("applyResult"); }
             set { BackingStore?.Set("applyResult", value); }
         }
 #nullable restore
 #else
-        public string ApplyResult {
+        public string ApplyResult
+        {
             get { return BackingStore?.Get<string>("applyResult"); }
             set { BackingStore?.Set("applyResult", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The reviewer&apos;s business justification, if supplied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -87,32 +99,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? ReviewedBy {
+        public UserIdentity? ReviewedBy
+        {
             get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity ReviewedBy {
+        public UserIdentity ReviewedBy
+        {
             get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
 #endif
         /// <summary>The reviewedDateTime property</summary>
-        public DateTimeOffset? ReviewedDateTime {
+        public DateTimeOffset? ReviewedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
             set { BackingStore?.Set("reviewedDateTime", value); }
         }
         /// <summary>The result of the review, one of NotReviewed, Deny, DontKnow or Approve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewResult {
+        public string? ReviewResult
+        {
             get { return BackingStore?.Get<string?>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
 #nullable restore
 #else
-        public string ReviewResult {
+        public string ReviewResult
+        {
             get { return BackingStore?.Get<string>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
@@ -135,15 +152,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessRecommendation", n => { AccessRecommendation = n.GetStringValue(); } },
-                {"accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
-                {"appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"applyResult", n => { ApplyResult = n.GetStringValue(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"reviewResult", n => { ReviewResult = n.GetStringValue(); } },
-                {"reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "accessRecommendation", n => { AccessRecommendation = n.GetStringValue(); } },
+                { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
+                { "appliedBy", n => { AppliedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "reviewResult", n => { ReviewResult = n.GetStringValue(); } },
+                { "reviewedBy", n => { ReviewedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "reviewedDateTime", n => { ReviewedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

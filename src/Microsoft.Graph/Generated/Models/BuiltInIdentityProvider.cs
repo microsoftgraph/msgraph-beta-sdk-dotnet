@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BuiltInIdentityProvider : IdentityProviderBase, IParsable 
+    public class BuiltInIdentityProvider : IdentityProviderBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProviderType {
+        public string? IdentityProviderType
+        {
             get { return BackingStore?.Get<string?>("identityProviderType"); }
             set { BackingStore?.Set("identityProviderType", value); }
         }
 #nullable restore
 #else
-        public string IdentityProviderType {
+        public string IdentityProviderType
+        {
             get { return BackingStore?.Get<string>("identityProviderType"); }
             set { BackingStore?.Set("identityProviderType", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public IdentityProviderState? State {
+        public IdentityProviderState? State
+        {
             get { return BackingStore?.Get<IdentityProviderState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"identityProviderType", n => { IdentityProviderType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<IdentityProviderState>(); } },
+                { "identityProviderType", n => { IdentityProviderType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<IdentityProviderState>(); } },
             };
         }
         /// <summary>

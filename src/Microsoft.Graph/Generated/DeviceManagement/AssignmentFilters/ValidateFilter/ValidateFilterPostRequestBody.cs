@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
+{
     #pragma warning disable CS1591
-    public class ValidateFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ValidateFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
         /// <summary>The deviceAndAppManagementAssignmentFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter? DeviceAndAppManagementAssignmentFilter {
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter? DeviceAndAppManagementAssignmentFilter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter?>("deviceAndAppManagementAssignmentFilter"); }
             set { BackingStore?.Set("deviceAndAppManagementAssignmentFilter", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter {
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter DeviceAndAppManagementAssignmentFilter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>("deviceAndAppManagementAssignmentFilter"); }
             set { BackingStore?.Set("deviceAndAppManagementAssignmentFilter", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.ValidateFilter
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceAndAppManagementAssignmentFilter", n => { DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
+                { "deviceAndAppManagementAssignmentFilter", n => { DeviceAndAppManagementAssignmentFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
+namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials
+{
     [Obsolete("This class is obsolete. Use GetPasswordSingleSignOnCredentialsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPasswordSingleSignOnCredentialsResponse : GetPasswordSingleSignOnCredentialsPostResponse, IParsable 
+    public class GetPasswordSingleSignOnCredentialsResponse : GetPasswordSingleSignOnCredentialsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class NetworkInterface : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NetworkInterface : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the NIC (for example, Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Last IPv4 address associated with this NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpV4Address {
+        public string? IpV4Address
+        {
             get { return BackingStore?.Get<string?>("ipV4Address"); }
             set { BackingStore?.Set("ipV4Address", value); }
         }
 #nullable restore
 #else
-        public string IpV4Address {
+        public string IpV4Address
+        {
             get { return BackingStore?.Get<string>("ipV4Address"); }
             set { BackingStore?.Set("ipV4Address", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Last Public (also known as global) IPv6 address associated with this NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpV6Address {
+        public string? IpV6Address
+        {
             get { return BackingStore?.Get<string?>("ipV6Address"); }
             set { BackingStore?.Set("ipV6Address", value); }
         }
 #nullable restore
 #else
-        public string IpV6Address {
+        public string IpV6Address
+        {
             get { return BackingStore?.Get<string>("ipV6Address"); }
             set { BackingStore?.Set("ipV6Address", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Last local (link-local or site-local) IPv6 address associated with this NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalIpV6Address {
+        public string? LocalIpV6Address
+        {
             get { return BackingStore?.Get<string?>("localIpV6Address"); }
             set { BackingStore?.Set("localIpV6Address", value); }
         }
 #nullable restore
 #else
-        public string LocalIpV6Address {
+        public string LocalIpV6Address
+        {
             get { return BackingStore?.Get<string>("localIpV6Address"); }
             set { BackingStore?.Set("localIpV6Address", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>MAC address of the NIC on this host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MacAddress {
+        public string? MacAddress
+        {
             get { return BackingStore?.Get<string?>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
 #nullable restore
 #else
-        public string MacAddress {
+        public string MacAddress
+        {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"ipV4Address", n => { IpV4Address = n.GetStringValue(); } },
-                {"ipV6Address", n => { IpV6Address = n.GetStringValue(); } },
-                {"localIpV6Address", n => { LocalIpV6Address = n.GetStringValue(); } },
-                {"macAddress", n => { MacAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "ipV4Address", n => { IpV4Address = n.GetStringValue(); } },
+                { "ipV6Address", n => { IpV6Address = n.GetStringValue(); } },
+                { "localIpV6Address", n => { LocalIpV6Address = n.GetStringValue(); } },
+                { "macAddress", n => { MacAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

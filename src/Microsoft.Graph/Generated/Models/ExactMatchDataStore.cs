@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExactMatchDataStore : ExactMatchDataStoreBase, IParsable 
+    public class ExactMatchDataStore : ExactMatchDataStoreBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExactMatchSession>? Sessions {
+        public List<ExactMatchSession>? Sessions
+        {
             get { return BackingStore?.Get<List<ExactMatchSession>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<ExactMatchSession> Sessions {
+        public List<ExactMatchSession> Sessions
+        {
             get { return BackingStore?.Get<List<ExactMatchSession>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<ExactMatchSession>(ExactMatchSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<ExactMatchSession>(ExactMatchSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

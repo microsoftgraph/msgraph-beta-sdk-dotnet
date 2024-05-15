@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandProactiveRemediation {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandProactiveRemediation
+{
     #pragma warning disable CS1591
-    public class InitiateOnDemandProactiveRemediationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InitiateOnDemandProactiveRemediationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandPr
         /// <summary>The scriptPolicyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScriptPolicyId {
+        public string? ScriptPolicyId
+        {
             get { return BackingStore?.Get<string?>("scriptPolicyId"); }
             set { BackingStore?.Set("scriptPolicyId", value); }
         }
 #nullable restore
 #else
-        public string ScriptPolicyId {
+        public string ScriptPolicyId
+        {
             get { return BackingStore?.Get<string>("scriptPolicyId"); }
             set { BackingStore?.Set("scriptPolicyId", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.InitiateOnDemandPr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"scriptPolicyId", n => { ScriptPolicyId = n.GetStringValue(); } },
+                { "scriptPolicyId", n => { ScriptPolicyId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Partner.Security {
+namespace Microsoft.Graph.Beta.Models.Partner.Security
+{
     #pragma warning disable CS1591
-    public class ActivityLog : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ActivityLog : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,43 +22,50 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The statusFrom property</summary>
-        public SecurityAlertStatus? StatusFrom {
+        public SecurityAlertStatus? StatusFrom
+        {
             get { return BackingStore?.Get<SecurityAlertStatus?>("statusFrom"); }
             set { BackingStore?.Set("statusFrom", value); }
         }
         /// <summary>The statusTo property</summary>
-        public SecurityAlertStatus? StatusTo {
+        public SecurityAlertStatus? StatusTo
+        {
             get { return BackingStore?.Get<SecurityAlertStatus?>("statusTo"); }
             set { BackingStore?.Set("statusTo", value); }
         }
-        /// <summary>The updatedBy property</summary>
+        /// <summary>The UPN of the partner user who did the status update activity. This attribute is set by the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedBy {
+        public string? UpdatedBy
+        {
             get { return BackingStore?.Get<string?>("updatedBy"); }
             set { BackingStore?.Set("updatedBy", value); }
         }
 #nullable restore
 #else
-        public string UpdatedBy {
+        public string UpdatedBy
+        {
             get { return BackingStore?.Get<string>("updatedBy"); }
             set { BackingStore?.Set("updatedBy", value); }
         }
 #endif
-        /// <summary>The updatedDateTime property</summary>
-        public DateTimeOffset? UpdatedDateTime {
+        /// <summary>The date and time for the status update activity. This attribute is set by the system. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? UpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
             set { BackingStore?.Set("updatedDateTime", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"statusFrom", n => { StatusFrom = n.GetEnumValue<SecurityAlertStatus>(); } },
-                {"statusTo", n => { StatusTo = n.GetEnumValue<SecurityAlertStatus>(); } },
-                {"updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
-                {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "statusFrom", n => { StatusFrom = n.GetEnumValue<SecurityAlertStatus>(); } },
+                { "statusTo", n => { StatusTo = n.GetEnumValue<SecurityAlertStatus>(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
+                { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

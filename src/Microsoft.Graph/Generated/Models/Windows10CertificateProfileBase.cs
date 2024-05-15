@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Base class for Windows 10 certificate profile.
     /// </summary>
-    public class Windows10CertificateProfileBase : WindowsCertificateProfileBase, IParsable 
+    public class Windows10CertificateProfileBase : WindowsCertificateProfileBase, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="Windows10CertificateProfileBase"/> and sets the default values.

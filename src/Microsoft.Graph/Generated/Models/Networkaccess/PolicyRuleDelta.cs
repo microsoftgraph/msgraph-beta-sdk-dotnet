@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class PolicyRuleDelta : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PolicyRuleDelta : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public ForwardingRuleAction? Action {
+        public ForwardingRuleAction? Action
+        {
             get { return BackingStore?.Get<ForwardingRuleAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The identifier of the policy rule to update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleId {
+        public string? RuleId
+        {
             get { return BackingStore?.Get<string?>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
 #nullable restore
 #else
-        public string RuleId {
+        public string RuleId
+        {
             get { return BackingStore?.Get<string>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<ForwardingRuleAction>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ruleId", n => { RuleId = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetEnumValue<ForwardingRuleAction>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ruleId", n => { RuleId = n.GetStringValue(); } },
             };
         }
         /// <summary>

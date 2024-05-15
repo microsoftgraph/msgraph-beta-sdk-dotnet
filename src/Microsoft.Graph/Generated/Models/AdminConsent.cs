@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Admin consent information.
     /// </summary>
-    public class AdminConsent : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AdminConsent : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Admin consent state.</summary>
-        public AdminConsentState? ShareAPNSData {
+        public AdminConsentState? ShareAPNSData
+        {
             get { return BackingStore?.Get<AdminConsentState?>("shareAPNSData"); }
             set { BackingStore?.Set("shareAPNSData", value); }
         }
         /// <summary>Admin consent state.</summary>
-        public AdminConsentState? ShareUserExperienceAnalyticsData {
+        public AdminConsentState? ShareUserExperienceAnalyticsData
+        {
             get { return BackingStore?.Get<AdminConsentState?>("shareUserExperienceAnalyticsData"); }
             set { BackingStore?.Set("shareUserExperienceAnalyticsData", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"shareAPNSData", n => { ShareAPNSData = n.GetEnumValue<AdminConsentState>(); } },
-                {"shareUserExperienceAnalyticsData", n => { ShareUserExperienceAnalyticsData = n.GetEnumValue<AdminConsentState>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "shareAPNSData", n => { ShareAPNSData = n.GetEnumValue<AdminConsentState>(); } },
+                { "shareUserExperienceAnalyticsData", n => { ShareUserExperienceAnalyticsData = n.GetEnumValue<AdminConsentState>(); } },
             };
         }
         /// <summary>

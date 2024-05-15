@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MarkContent : LabelActionBase, IParsable 
+    public class MarkContent : LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fontColor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FontColor {
+        public string? FontColor
+        {
             get { return BackingStore?.Get<string?>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
 #nullable restore
 #else
-        public string FontColor {
+        public string FontColor
+        {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
 #endif
         /// <summary>The fontSize property</summary>
-        public long? FontSize {
+        public long? FontSize
+        {
             get { return BackingStore?.Get<long?>("fontSize"); }
             set { BackingStore?.Set("fontSize", value); }
         }
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -74,9 +80,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fontColor", n => { FontColor = n.GetStringValue(); } },
-                {"fontSize", n => { FontSize = n.GetLongValue(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
+                { "fontColor", n => { FontColor = n.GetStringValue(); } },
+                { "fontSize", n => { FontSize = n.GetLongValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

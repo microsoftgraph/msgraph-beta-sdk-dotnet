@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to apps for users to whom the configuration is scoped
     /// </summary>
-    public class ManagedAppConfiguration : ManagedAppPolicy, IParsable 
+    public class ManagedAppConfiguration : ManagedAppPolicy, IParsable
     {
         /// <summary>A set of string key and string value pairs to be sent to apps for users to whom the configuration is scoped, unalterned by this service</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomSettings {
+        public List<KeyValuePair>? CustomSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomSettings {
+        public List<KeyValuePair> CustomSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("customSettings"); }
             set { BackingStore?.Set("customSettings", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of settings contained in this App Configuration policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSetting>? Settings {
+        public List<DeviceManagementConfigurationSetting>? Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSetting> Settings {
+        public List<DeviceManagementConfigurationSetting> Settings
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -68,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSettings", n => { CustomSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

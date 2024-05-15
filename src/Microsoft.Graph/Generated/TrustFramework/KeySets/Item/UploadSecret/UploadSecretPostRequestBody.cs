@@ -5,52 +5,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
+namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret
+{
     #pragma warning disable CS1591
-    public class UploadSecretPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UploadSecretPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The exp property</summary>
-        public long? Exp {
+        public long? Exp
+        {
             get { return BackingStore?.Get<long?>("exp"); }
             set { BackingStore?.Set("exp", value); }
         }
         /// <summary>The k property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? K {
+        public string? K
+        {
             get { return BackingStore?.Get<string?>("k"); }
             set { BackingStore?.Set("k", value); }
         }
 #nullable restore
 #else
-        public string K {
+        public string K
+        {
             get { return BackingStore?.Get<string>("k"); }
             set { BackingStore?.Set("k", value); }
         }
 #endif
         /// <summary>The nbf property</summary>
-        public long? Nbf {
+        public long? Nbf
+        {
             get { return BackingStore?.Get<long?>("nbf"); }
             set { BackingStore?.Set("nbf", value); }
         }
         /// <summary>The use property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Use {
+        public string? Use
+        {
             get { return BackingStore?.Get<string?>("use"); }
             set { BackingStore?.Set("use", value); }
         }
 #nullable restore
 #else
-        public string Use {
+        public string Use
+        {
             get { return BackingStore?.Get<string>("use"); }
             set { BackingStore?.Set("use", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"exp", n => { Exp = n.GetLongValue(); } },
-                {"k", n => { K = n.GetStringValue(); } },
-                {"nbf", n => { Nbf = n.GetLongValue(); } },
-                {"use", n => { Use = n.GetStringValue(); } },
+                { "exp", n => { Exp = n.GetLongValue(); } },
+                { "k", n => { K = n.GetStringValue(); } },
+                { "nbf", n => { Nbf = n.GetLongValue(); } },
+                { "use", n => { Use = n.GetStringValue(); } },
             };
         }
         /// <summary>

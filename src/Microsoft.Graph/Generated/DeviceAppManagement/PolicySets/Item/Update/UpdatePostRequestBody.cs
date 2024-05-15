@@ -6,40 +6,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update
+{
     #pragma warning disable CS1591
-    public class UpdatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The addedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySetItem>? AddedPolicySetItems {
+        public List<PolicySetItem>? AddedPolicySetItems
+        {
             get { return BackingStore?.Get<List<PolicySetItem>?>("addedPolicySetItems"); }
             set { BackingStore?.Set("addedPolicySetItems", value); }
         }
 #nullable restore
 #else
-        public List<PolicySetItem> AddedPolicySetItems {
+        public List<PolicySetItem> AddedPolicySetItems
+        {
             get { return BackingStore?.Get<List<PolicySetItem>>("addedPolicySetItems"); }
             set { BackingStore?.Set("addedPolicySetItems", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySetAssignment>? Assignments {
+        public List<PolicySetAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<PolicySetAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<PolicySetAssignment> Assignments {
+        public List<PolicySetAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
         /// <summary>The deletedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeletedPolicySetItems {
+        public List<string>? DeletedPolicySetItems
+        {
             get { return BackingStore?.Get<List<string>?>("deletedPolicySetItems"); }
             set { BackingStore?.Set("deletedPolicySetItems", value); }
         }
 #nullable restore
 #else
-        public List<string> DeletedPolicySetItems {
+        public List<string> DeletedPolicySetItems
+        {
             get { return BackingStore?.Get<List<string>>("deletedPolicySetItems"); }
             set { BackingStore?.Set("deletedPolicySetItems", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
         /// <summary>The updatedPolicySetItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicySetItem>? UpdatedPolicySetItems {
+        public List<PolicySetItem>? UpdatedPolicySetItems
+        {
             get { return BackingStore?.Get<List<PolicySetItem>?>("updatedPolicySetItems"); }
             set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
 #nullable restore
 #else
-        public List<PolicySetItem> UpdatedPolicySetItems {
+        public List<PolicySetItem> UpdatedPolicySetItems
+        {
             get { return BackingStore?.Get<List<PolicySetItem>>("updatedPolicySetItems"); }
             set { BackingStore?.Set("updatedPolicySetItems", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addedPolicySetItems", n => { AddedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deletedPolicySetItems", n => { DeletedPolicySetItems = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"updatedPolicySetItems", n => { UpdatedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addedPolicySetItems", n => { AddedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<PolicySetAssignment>(PolicySetAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedPolicySetItems", n => { DeletedPolicySetItems = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "updatedPolicySetItems", n => { UpdatedPolicySetItems = n.GetCollectionOfObjectValues<PolicySetItem>(PolicySetItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

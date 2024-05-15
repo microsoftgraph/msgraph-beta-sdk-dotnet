@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MachineLearningDetectedSensitiveContent : DetectedSensitiveContent, IParsable 
+    public class MachineLearningDetectedSensitiveContent : DetectedSensitiveContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The matchTolerance property</summary>
-        public MlClassificationMatchTolerance? MatchTolerance {
+        public MlClassificationMatchTolerance? MatchTolerance
+        {
             get { return BackingStore?.Get<MlClassificationMatchTolerance?>("matchTolerance"); }
             set { BackingStore?.Set("matchTolerance", value); }
         }
         /// <summary>The modelVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelVersion {
+        public string? ModelVersion
+        {
             get { return BackingStore?.Get<string?>("modelVersion"); }
             set { BackingStore?.Set("modelVersion", value); }
         }
 #nullable restore
 #else
-        public string ModelVersion {
+        public string ModelVersion
+        {
             get { return BackingStore?.Get<string>("modelVersion"); }
             set { BackingStore?.Set("modelVersion", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"matchTolerance", n => { MatchTolerance = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
-                {"modelVersion", n => { ModelVersion = n.GetStringValue(); } },
+                { "matchTolerance", n => { MatchTolerance = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
+                { "modelVersion", n => { ModelVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

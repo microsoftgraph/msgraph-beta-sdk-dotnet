@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EntitlementsDataCollection : EntitlementsDataCollectionInfo, IParsable 
+    public class EntitlementsDataCollection : EntitlementsDataCollectionInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Last transformation time of entitlements.</summary>
-        public DateTimeOffset? LastCollectionDateTime {
+        public DateTimeOffset? LastCollectionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCollectionDateTime"); }
             set { BackingStore?.Set("lastCollectionDateTime", value); }
         }
         /// <summary>The permissionsModificationCapability property</summary>
-        public Microsoft.Graph.Beta.Models.PermissionsModificationCapability? PermissionsModificationCapability {
+        public Microsoft.Graph.Beta.Models.PermissionsModificationCapability? PermissionsModificationCapability
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsModificationCapability?>("permissionsModificationCapability"); }
             set { BackingStore?.Set("permissionsModificationCapability", value); }
         }
         /// <summary>The status property</summary>
-        public DataCollectionStatus? Status {
+        public DataCollectionStatus? Status
+        {
             get { return BackingStore?.Get<DataCollectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -49,9 +53,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastCollectionDateTime", n => { LastCollectionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"permissionsModificationCapability", n => { PermissionsModificationCapability = n.GetEnumValue<PermissionsModificationCapability>(); } },
-                {"status", n => { Status = n.GetEnumValue<DataCollectionStatus>(); } },
+                { "lastCollectionDateTime", n => { LastCollectionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "permissionsModificationCapability", n => { PermissionsModificationCapability = n.GetEnumValue<PermissionsModificationCapability>(); } },
+                { "status", n => { Status = n.GetEnumValue<DataCollectionStatus>(); } },
             };
         }
         /// <summary>

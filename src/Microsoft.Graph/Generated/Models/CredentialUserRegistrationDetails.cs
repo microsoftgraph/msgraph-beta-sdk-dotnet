@@ -4,55 +4,64 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CredentialUserRegistrationDetails : Entity, IParsable 
+    public class CredentialUserRegistrationDetails : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RegistrationAuthMethod?>? AuthMethods {
+        public List<RegistrationAuthMethod?>? AuthMethods
+        {
             get { return BackingStore?.Get<List<RegistrationAuthMethod?>?>("authMethods"); }
             set { BackingStore?.Set("authMethods", value); }
         }
 #nullable restore
 #else
-        public List<RegistrationAuthMethod?> AuthMethods {
+        public List<RegistrationAuthMethod?> AuthMethods
+        {
             get { return BackingStore?.Get<List<RegistrationAuthMethod?>>("authMethods"); }
             set { BackingStore?.Set("authMethods", value); }
         }
 #endif
         /// <summary>Indicates whether the user is ready to perform self-service password reset or MFA.</summary>
-        public bool? IsCapable {
+        public bool? IsCapable
+        {
             get { return BackingStore?.Get<bool?>("isCapable"); }
             set { BackingStore?.Set("isCapable", value); }
         }
         /// <summary>Indicates whether the user enabled to perform self-service password reset.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Indicates whether the user is registered for MFA.</summary>
-        public bool? IsMfaRegistered {
+        public bool? IsMfaRegistered
+        {
             get { return BackingStore?.Get<bool?>("isMfaRegistered"); }
             set { BackingStore?.Set("isMfaRegistered", value); }
         }
         /// <summary>Indicates whether the user has registered any authentication methods for self-service password reset.</summary>
-        public bool? IsRegistered {
+        public bool? IsRegistered
+        {
             get { return BackingStore?.Get<bool?>("isRegistered"); }
             set { BackingStore?.Set("isRegistered", value); }
         }
         /// <summary>Provides the user name of the corresponding user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -60,13 +69,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Provides the user principal name of the corresponding user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -89,13 +100,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authMethods", n => { AuthMethods = n.GetCollectionOfEnumValues<RegistrationAuthMethod>()?.ToList(); } },
-                {"isCapable", n => { IsCapable = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
-                {"isRegistered", n => { IsRegistered = n.GetBoolValue(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "authMethods", n => { AuthMethods = n.GetCollectionOfEnumValues<RegistrationAuthMethod>()?.ToList(); } },
+                { "isCapable", n => { IsCapable = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
+                { "isRegistered", n => { IsRegistered = n.GetBoolValue(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

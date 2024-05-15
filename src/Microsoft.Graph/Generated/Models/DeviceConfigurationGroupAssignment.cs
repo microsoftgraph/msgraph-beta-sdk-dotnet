@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device configuration group assignment.
     /// </summary>
-    public class DeviceConfigurationGroupAssignment : Entity, IParsable 
+    public class DeviceConfigurationGroupAssignment : Entity, IParsable
     {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceConfiguration? DeviceConfiguration {
+        public Microsoft.Graph.Beta.Models.DeviceConfiguration? DeviceConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration?>("deviceConfiguration"); }
             set { BackingStore?.Set("deviceConfiguration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration {
+        public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfiguration>("deviceConfiguration"); }
             set { BackingStore?.Set("deviceConfiguration", value); }
         }
 #endif
         /// <summary>Indicates if this group is should be excluded. Defaults that the group should be included</summary>
-        public bool? ExcludeGroup {
+        public bool? ExcludeGroup
+        {
             get { return BackingStore?.Get<bool?>("excludeGroup"); }
             set { BackingStore?.Set("excludeGroup", value); }
         }
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetGroupId {
+        public string? TargetGroupId
+        {
             get { return BackingStore?.Get<string?>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
 #nullable restore
 #else
-        public string TargetGroupId {
+        public string TargetGroupId
+        {
             get { return BackingStore?.Get<string>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceConfiguration", n => { DeviceConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue); } },
-                {"excludeGroup", n => { ExcludeGroup = n.GetBoolValue(); } },
-                {"targetGroupId", n => { TargetGroupId = n.GetStringValue(); } },
+                { "deviceConfiguration", n => { DeviceConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue); } },
+                { "excludeGroup", n => { ExcludeGroup = n.GetBoolValue(); } },
+                { "targetGroupId", n => { TargetGroupId = n.GetStringValue(); } },
             };
         }
         /// <summary>

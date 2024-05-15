@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementActionDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ManagementActionDeploymentStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The identifier for the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementActionId {
+        public string? ManagementActionId
+        {
             get { return BackingStore?.Get<string?>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
 #nullable restore
 #else
-        public string ManagementActionId {
+        public string ManagementActionId
+        {
             get { return BackingStore?.Get<string>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
@@ -34,51 +38,59 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The management template identifier that was used to generate the management action. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateId {
+        public string? ManagementTemplateId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateId {
+        public string ManagementTemplateId
+        {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #endif
         /// <summary>The managementTemplateVersion property</summary>
-        public int? ManagementTemplateVersion {
+        public int? ManagementTemplateVersion
+        {
             get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
             set { BackingStore?.Set("managementTemplateVersion", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ManagementActionStatus? Status {
+        public ManagementActionStatus? Status
+        {
             get { return BackingStore?.Get<ManagementActionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The collection of workload action deployment statues for the given management action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkloadActionDeploymentStatus>? WorkloadActionDeploymentStatuses {
+        public List<WorkloadActionDeploymentStatus>? WorkloadActionDeploymentStatuses
+        {
             get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>?>("workloadActionDeploymentStatuses"); }
             set { BackingStore?.Set("workloadActionDeploymentStatuses", value); }
         }
 #nullable restore
 #else
-        public List<WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses {
+        public List<WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses
+        {
             get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>>("workloadActionDeploymentStatuses"); }
             set { BackingStore?.Set("workloadActionDeploymentStatuses", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
-                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
-                {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ManagementActionStatus>(); } },
-                {"workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementActionId", n => { ManagementActionId = n.GetStringValue(); } },
+                { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                { "managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ManagementActionStatus>(); } },
+                { "workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

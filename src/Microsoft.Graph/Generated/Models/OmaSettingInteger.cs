@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// OMA Settings Integer definition.
     /// </summary>
-    public class OmaSettingInteger : OmaSetting, IParsable 
+    public class OmaSettingInteger : OmaSetting, IParsable
     {
         /// <summary>By setting to true, the CSP (configuration service provider) specified in the OMA-URI will perform a get, instead of set</summary>
-        public bool? IsReadOnly {
+        public bool? IsReadOnly
+        {
             get { return BackingStore?.Get<bool?>("isReadOnly"); }
             set { BackingStore?.Set("isReadOnly", value); }
         }
         /// <summary>Value.</summary>
-        public int? Value {
+        public int? Value
+        {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isReadOnly", n => { IsReadOnly = n.GetBoolValue(); } },
-                {"value", n => { Value = n.GetIntValue(); } },
+                { "isReadOnly", n => { IsReadOnly = n.GetBoolValue(); } },
+                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>

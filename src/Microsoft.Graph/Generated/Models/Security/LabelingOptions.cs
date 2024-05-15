@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class LabelingOptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LabelingOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignmentMethod property</summary>
-        public Microsoft.Graph.Beta.Models.Security.AssignmentMethod? AssignmentMethod {
+        public Microsoft.Graph.Beta.Models.Security.AssignmentMethod? AssignmentMethod
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AssignmentMethod?>("assignmentMethod"); }
             set { BackingStore?.Set("assignmentMethod", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.DowngradeJustification? DowngradeJustification {
+        public Microsoft.Graph.Beta.Models.Security.DowngradeJustification? DowngradeJustification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification?>("downgradeJustification"); }
             set { BackingStore?.Set("downgradeJustification", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification {
+        public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification"); }
             set { BackingStore?.Set("downgradeJustification", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? ExtendedProperties {
+        public List<KeyValuePair>? ExtendedProperties
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("extendedProperties"); }
             set { BackingStore?.Set("extendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> ExtendedProperties {
+        public List<KeyValuePair> ExtendedProperties
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("extendedProperties"); }
             set { BackingStore?.Set("extendedProperties", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The GUID of the label that should be applied to the information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LabelId {
+        public string? LabelId
+        {
             get { return BackingStore?.Get<string?>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
         }
 #nullable restore
 #else
-        public string LabelId {
+        public string LabelId
+        {
             get { return BackingStore?.Get<string>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
-                {"downgradeJustification", n => { DowngradeJustification = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>(Microsoft.Graph.Beta.Models.Security.DowngradeJustification.CreateFromDiscriminatorValue); } },
-                {"extendedProperties", n => { ExtendedProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"labelId", n => { LabelId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<AssignmentMethod>(); } },
+                { "downgradeJustification", n => { DowngradeJustification = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>(Microsoft.Graph.Beta.Models.Security.DowngradeJustification.CreateFromDiscriminatorValue); } },
+                { "extendedProperties", n => { ExtendedProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labelId", n => { LabelId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GovernanceRuleSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GovernanceRuleSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The id of the rule. For example, ExpirationRule and MfaRule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleIdentifier {
+        public string? RuleIdentifier
+        {
             get { return BackingStore?.Get<string?>("ruleIdentifier"); }
             set { BackingStore?.Set("ruleIdentifier", value); }
         }
 #nullable restore
 #else
-        public string RuleIdentifier {
+        public string RuleIdentifier
+        {
             get { return BackingStore?.Get<string>("ruleIdentifier"); }
             set { BackingStore?.Set("ruleIdentifier", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The settings of the rule. The value is a JSON string with a list of pairs in the format of ParameterName:ParameterValue. For example, {&apos;permanentAssignment&apos;:false,&apos;maximumGrantPeriodInMinutes&apos;:129600}</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Setting {
+        public string? Setting
+        {
             get { return BackingStore?.Get<string?>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
 #nullable restore
 #else
-        public string Setting {
+        public string Setting
+        {
             get { return BackingStore?.Get<string>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ruleIdentifier", n => { RuleIdentifier = n.GetStringValue(); } },
-                {"setting", n => { Setting = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ruleIdentifier", n => { RuleIdentifier = n.GetStringValue(); } },
+                { "setting", n => { Setting = n.GetStringValue(); } },
             };
         }
         /// <summary>

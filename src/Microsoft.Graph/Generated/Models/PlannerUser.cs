@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerUser : PlannerDelta, IParsable 
+    public class PlannerUser : PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerDelta>? All {
+        public List<PlannerDelta>? All
+        {
             get { return BackingStore?.Get<List<PlannerDelta>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<PlannerDelta> All {
+        public List<PlannerDelta> All
+        {
             get { return BackingStore?.Get<List<PlannerDelta>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection that contains the references to the plans that the user marked as favorites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFavoritePlanReferenceCollection? FavoritePlanReferences {
+        public PlannerFavoritePlanReferenceCollection? FavoritePlanReferences
+        {
             get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection?>("favoritePlanReferences"); }
             set { BackingStore?.Set("favoritePlanReferences", value); }
         }
 #nullable restore
 #else
-        public PlannerFavoritePlanReferenceCollection FavoritePlanReferences {
+        public PlannerFavoritePlanReferenceCollection FavoritePlanReferences
+        {
             get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection>("favoritePlanReferences"); }
             set { BackingStore?.Set("favoritePlanReferences", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlan>? FavoritePlans {
+        public List<PlannerPlan>? FavoritePlans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>?>("favoritePlans"); }
             set { BackingStore?.Set("favoritePlans", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlan> FavoritePlans {
+        public List<PlannerPlan> FavoritePlans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>>("favoritePlans"); }
             set { BackingStore?.Set("favoritePlans", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Returns the plannerTasks to be shown in the My Day view of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerTask>? MyDayTasks {
+        public List<PlannerTask>? MyDayTasks
+        {
             get { return BackingStore?.Get<List<PlannerTask>?>("myDayTasks"); }
             set { BackingStore?.Set("myDayTasks", value); }
         }
 #nullable restore
 #else
-        public List<PlannerTask> MyDayTasks {
+        public List<PlannerTask> MyDayTasks
+        {
             get { return BackingStore?.Get<List<PlannerTask>>("myDayTasks"); }
             set { BackingStore?.Set("myDayTasks", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The plans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlan>? Plans {
+        public List<PlannerPlan>? Plans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlan> Plans {
+        public List<PlannerPlan> Plans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection that contains references to the plans that the user recently viewed in apps that support recent plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerRecentPlanReferenceCollection? RecentPlanReferences {
+        public PlannerRecentPlanReferenceCollection? RecentPlanReferences
+        {
             get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection?>("recentPlanReferences"); }
             set { BackingStore?.Set("recentPlanReferences", value); }
         }
 #nullable restore
 #else
-        public PlannerRecentPlanReferenceCollection RecentPlanReferences {
+        public PlannerRecentPlanReferenceCollection RecentPlanReferences
+        {
             get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection>("recentPlanReferences"); }
             set { BackingStore?.Set("recentPlanReferences", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Returns the plannerPlans that the user recently viewed in apps that support recent plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlan>? RecentPlans {
+        public List<PlannerPlan>? RecentPlans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>?>("recentPlans"); }
             set { BackingStore?.Set("recentPlans", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlan> RecentPlans {
+        public List<PlannerPlan> RecentPlans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>>("recentPlans"); }
             set { BackingStore?.Set("recentPlans", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlan>? RosterPlans {
+        public List<PlannerPlan>? RosterPlans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>?>("rosterPlans"); }
             set { BackingStore?.Set("rosterPlans", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlan> RosterPlans {
+        public List<PlannerPlan> RosterPlans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>>("rosterPlans"); }
             set { BackingStore?.Set("rosterPlans", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerTask>? Tasks {
+        public List<PlannerTask>? Tasks
+        {
             get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<PlannerTask> Tasks {
+        public List<PlannerTask> Tasks
+        {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
@@ -153,15 +172,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"all", n => { All = n.GetCollectionOfObjectValues<PlannerDelta>(PlannerDelta.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"favoritePlanReferences", n => { FavoritePlanReferences = n.GetObjectValue<PlannerFavoritePlanReferenceCollection>(PlannerFavoritePlanReferenceCollection.CreateFromDiscriminatorValue); } },
-                {"favoritePlans", n => { FavoritePlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"myDayTasks", n => { MyDayTasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"recentPlanReferences", n => { RecentPlanReferences = n.GetObjectValue<PlannerRecentPlanReferenceCollection>(PlannerRecentPlanReferenceCollection.CreateFromDiscriminatorValue); } },
-                {"recentPlans", n => { RecentPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"rosterPlans", n => { RosterPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<PlannerDelta>(PlannerDelta.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "favoritePlanReferences", n => { FavoritePlanReferences = n.GetObjectValue<PlannerFavoritePlanReferenceCollection>(PlannerFavoritePlanReferenceCollection.CreateFromDiscriminatorValue); } },
+                { "favoritePlans", n => { FavoritePlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "myDayTasks", n => { MyDayTasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recentPlanReferences", n => { RecentPlanReferences = n.GetObjectValue<PlannerRecentPlanReferenceCollection>(PlannerRecentPlanReferenceCollection.CreateFromDiscriminatorValue); } },
+                { "recentPlans", n => { RecentPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rosterPlans", n => { RosterPlans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServiceProvisioningResourceError : ServiceProvisioningError, IParsable 
+    public class ServiceProvisioningResourceError : ServiceProvisioningError, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceProvisioningResourceErrorDetail>? Errors {
+        public List<ServiceProvisioningResourceErrorDetail>? Errors
+        {
             get { return BackingStore?.Get<List<ServiceProvisioningResourceErrorDetail>?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
 #nullable restore
 #else
-        public List<ServiceProvisioningResourceErrorDetail> Errors {
+        public List<ServiceProvisioningResourceErrorDetail> Errors
+        {
             get { return BackingStore?.Get<List<ServiceProvisioningResourceErrorDetail>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<ServiceProvisioningResourceErrorDetail>(ServiceProvisioningResourceErrorDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<ServiceProvisioningResourceErrorDetail>(ServiceProvisioningResourceErrorDetail.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

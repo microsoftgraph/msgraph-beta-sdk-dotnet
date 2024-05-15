@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The security baseline compliance state of a setting for a device
     /// </summary>
-    public class SecurityBaselineContributingPolicy : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SecurityBaselineContributingPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,19 +55,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique identifier of the policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceId {
+        public string? SourceId
+        {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
 #nullable restore
 #else
-        public string SourceId {
+        public string SourceId
+        {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
 #endif
         /// <summary>Authoring source of a policy</summary>
-        public SecurityBaselinePolicySourceType? SourceType {
+        public SecurityBaselinePolicySourceType? SourceType
+        {
             get { return BackingStore?.Get<SecurityBaselinePolicySourceType?>("sourceType"); }
             set { BackingStore?.Set("sourceType", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourceId", n => { SourceId = n.GetStringValue(); } },
-                {"sourceType", n => { SourceType = n.GetEnumValue<SecurityBaselinePolicySourceType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "sourceType", n => { SourceType = n.GetEnumValue<SecurityBaselinePolicySourceType>(); } },
             };
         }
         /// <summary>

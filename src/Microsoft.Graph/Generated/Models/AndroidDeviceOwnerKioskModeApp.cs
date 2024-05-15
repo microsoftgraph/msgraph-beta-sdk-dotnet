@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// An application on the Android Device Owner Managed Home Screen
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem, IParsable 
+    public class AndroidDeviceOwnerKioskModeApp : AndroidDeviceOwnerKioskModeFolderItem, IParsable
     {
         /// <summary>Class name of application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassName {
+        public string? ClassName
+        {
             get { return BackingStore?.Get<string?>("className"); }
             set { BackingStore?.Set("className", value); }
         }
 #nullable restore
 #else
-        public string ClassName {
+        public string ClassName
+        {
             get { return BackingStore?.Get<string>("className"); }
             set { BackingStore?.Set("className", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Package name of application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Package {
+        public string? Package
+        {
             get { return BackingStore?.Get<string?>("package"); }
             set { BackingStore?.Set("package", value); }
         }
 #nullable restore
 #else
-        public string Package {
+        public string Package
+        {
             get { return BackingStore?.Get<string>("package"); }
             set { BackingStore?.Set("package", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"className", n => { ClassName = n.GetStringValue(); } },
-                {"package", n => { Package = n.GetStringValue(); } },
+                { "className", n => { ClassName = n.GetStringValue(); } },
+                { "package", n => { Package = n.GetStringValue(); } },
             };
         }
         /// <summary>

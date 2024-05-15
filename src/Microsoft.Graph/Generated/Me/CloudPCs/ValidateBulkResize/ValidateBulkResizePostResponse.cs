@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize {
+namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize
+{
     #pragma warning disable CS1591
-    public class ValidateBulkResizePostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class ValidateBulkResizePostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcResizeValidationResult>? Value {
+        public List<CloudPcResizeValidationResult>? Value
+        {
             get { return BackingStore?.Get<List<CloudPcResizeValidationResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcResizeValidationResult> Value {
+        public List<CloudPcResizeValidationResult> Value
+        {
             get { return BackingStore?.Get<List<CloudPcResizeValidationResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<CloudPcResizeValidationResult>(CloudPcResizeValidationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<CloudPcResizeValidationResult>(CloudPcResizeValidationResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

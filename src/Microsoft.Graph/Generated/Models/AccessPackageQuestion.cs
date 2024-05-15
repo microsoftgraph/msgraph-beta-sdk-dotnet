@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageQuestion : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessPackageQuestion : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,56 +22,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #endif
         /// <summary>Specifies whether the requestor is allowed to edit answers to questions.</summary>
-        public bool? IsAnswerEditable {
+        public bool? IsAnswerEditable
+        {
             get { return BackingStore?.Get<bool?>("isAnswerEditable"); }
             set { BackingStore?.Set("isAnswerEditable", value); }
         }
         /// <summary>Whether the requestor is required to supply an answer or not.</summary>
-        public bool? IsRequired {
+        public bool? IsRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Relative position of this question when displaying a list of questions to the requestor.</summary>
-        public int? Sequence {
+        public int? Sequence
+        {
             get { return BackingStore?.Get<int?>("sequence"); }
             set { BackingStore?.Set("sequence", value); }
         }
         /// <summary>The text of the question to show to the requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageLocalizedContent? Text {
+        public AccessPackageLocalizedContent? Text
+        {
             get { return BackingStore?.Get<AccessPackageLocalizedContent?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public AccessPackageLocalizedContent Text {
+        public AccessPackageLocalizedContent Text
+        {
             get { return BackingStore?.Get<AccessPackageLocalizedContent>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -106,12 +117,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
-                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sequence", n => { Sequence = n.GetIntValue(); } },
-                {"text", n => { Text = n.GetObjectValue<AccessPackageLocalizedContent>(AccessPackageLocalizedContent.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "isAnswerEditable", n => { IsAnswerEditable = n.GetBoolValue(); } },
+                { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sequence", n => { Sequence = n.GetIntValue(); } },
+                { "text", n => { Text = n.GetObjectValue<AccessPackageLocalizedContent>(AccessPackageLocalizedContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

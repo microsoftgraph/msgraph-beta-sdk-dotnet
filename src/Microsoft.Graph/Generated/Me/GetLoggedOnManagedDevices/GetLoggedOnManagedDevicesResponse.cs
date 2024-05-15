@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices {
+namespace Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices
+{
     [Obsolete("This class is obsolete. Use GetLoggedOnManagedDevicesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetLoggedOnManagedDevicesResponse : GetLoggedOnManagedDevicesGetResponse, IParsable 
+    public class GetLoggedOnManagedDevicesResponse : GetLoggedOnManagedDevicesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
